@@ -1,3 +1,3 @@
-Source code of the [Architecture Dashboard Examples](https://zeljkoobrenovic.github.io/grounded-architecture-dashboard-examples/). The dashboard is a static website generated from JSON files and published via GitHub pages.
+This repository provided examples of how to build the Architecture Data Dashboard as a part of Grounded Architecture practice. For more information, see the book [Grounded Architecture](https://grounded-architecture.io/) and the section about [Data Foundation](https://grounded-architecture.io/data/).
 
-For more information see book [Grounded Architecture](https://grounded-architecture.io/), and section about [Data Foundation](https://grounded-architecture.io/data/).
+Source code of the [Architecture Dashboard Examples](https://zeljkoobrenovic.github.io/grounded-architecture-dashboard-examples/). The dashboard is a static website generated from JSON files and published via GitHub pages.
