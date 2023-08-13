@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slack Buzz</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px">
+    <h1 style="font-size: 50px; margin-bottom: 0px; margin-left: 6px">
+        <img src="assets/logo.png" style="vertical-align: middle; height: 90px">
+        <div style="display: inline-block; vertical-align: top">
+            <b style="">#Slack Buzz</b><br>
+            <p style="font-size: 14px; color: grey">Slack activity in the past 30 days</p>
+
+        </div>
+    </h1>
+    <br>
+</div>
+
+<script>
+    const getImage = function (channel) {
+        const id = channel.toLowerCase();
+
+        return 'slack.png'
+    }
+</script>
+<script>
+    const array = [{"name": "channel 1", "created": "Thu Feb 16 2023 00:00:00 GMT+0100 (Central European Standard Time)", "total_membership": "10", "messages_posted": "32", "members_who_posted": "6", "members_who_viewed": "9"}, {"name": "channel 2", "created": "Thu March 16 2023 00:00:00 GMT+0100 (Central European Standard Time)", "total_membership": "20", "messages_posted": "22", "members_who_posted": "12", "members_who_viewed": "20"}];
+
+    activeChannels = array.filter(a => parseInt('' + a.members_who_posted) > 0).sort((a, b) => parseInt(b.members_who_posted + '') - parseInt(a.members_who_posted + ''));
+
+    const currentYear = new Date().getFullYear();
+    const firstYear = 1991;
+
+    let html = '<div style="max-width: 1200px">';
+    html += '<table style="margin-left: 27px">';
+    html += '<tr>';
+    html += '<th></th>';
+    html += '<th>Active Channel (' + activeChannels.length + ')</th>';
+    html += '<th>members who posted</th>';
+    html += '<th>messages posted</th>';
+    html += '<th>members who viewed</th>';
+    html += ('</tr>');
+    activeChannels.forEach(function (channel) {
+            html += '<tr style="font-size: 120%">';
+            html += '<td style="padding-bottom: 14px; padding-right: 10px">';
+            html += '<img src="assets/logos/' + getImage(channel.name) + '" style="width: 42px; height: 42px; object-fit: contain">';
+            html += '</td>';
+            html += '<td style="max-width: 400px; width: 400px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">';
+            html += '<div>#' + channel.name + '</div>';
+            html += '<div style="color: grey; font-size: 16px"><b>' + channel.total_membership + '</b> members</div>';
+            html += '</td>';
+            html += '<td>';
+            html += channel.members_who_posted;
+            let change = channel.change_in_members_who_posted;
+            html += '<div style="color: grey; font-size: 15px">' + (change > 0 ? '+' + change + '%' : (change < 0 ? change + '%' : '')) + '</div>';
+            html += '</td>';
+            html += '<td>';
+            html += channel.messages_posted;
+            html += '</td>';
+            html += '<td>';
+            html += channel.members_who_viewed;
+            html += '</td>';
+            html += ('</tr>');
+        }
+    );
+    html += ('</table>');
+    html += ('</div>');
+
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    div.outerHTML = html;
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on 2023-08-12</a>
+</div>
+</body>
+</html>

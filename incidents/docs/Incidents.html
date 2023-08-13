@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Incidents</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px">
+    <h1 style="font-size: 56px; margin-bottom: 0px; margin-left: 6px">
+        <img src="assets/logo.png" style="vertical-align: middle; height: 100px">
+        <div style="display: inline-block; vertical-align: top">
+            <b style="margin-bottom: 0">Incidents</b><br>
+            <p style="margin-top: 4px; font-size: 18px; color: grey">Visualization of incidents' timeline</p>
+        </div>
+    </h1>
+    <br>
+</div>
+
+<script>
+    const getImage = function (channel) {
+        const id = channel.toLowerCase();
+
+        return 'logo.png'
+    }
+</script>
+<script>
+    const array = [{"date": "2023-07-20", "brand": "Brand A", "title": "Incident #1", "link": "https://google.com/"}, {"date": "2023-07-23", "brand": "Brand B", "title": "Incident #2", "link": "https://google.com/"}, {"date": "2023-07-27", "brand": "Brand A", "title": "Incident #3", "link": "https://google.com/"}, {"date": "2023-07-28", "brand": "Brand B", "title": "Incident #4", "link": "https://google.com/"}, {"date": "2023-07-29", "brand": "Brand A", "title": "Incident #5", "link": "https://google.com/"}, {"date": "2023-07-30", "brand": "Brand A", "title": "Incident #6", "link": "https://google.com/"}, {"date": "2023-08-03", "brand": "Brand B", "title": "Incident #7", "link": "https://google.com/"}, {"date": "2023-08-04", "brand": "Brand C", "title": "Incident #8", "link": "https://google.com/"}, {"date": "2023-08-09", "brand": "Brand C", "title": "Incident #9", "link": "https://google.com/"}, {"date": "2023-08-13", "brand": "Brand A", "title": "Incident #10", "link": "https://google.com/"}];
+
+    function getIncidentsByDate(date, brand) {
+        incidents = [];
+        for (item of array) {
+            if (item.date === date.toISOString().substring(0, 10) && item.brand.toLowerCase() == brand.toLowerCase()) {
+                incidents.push(item);
+            }
+        }
+
+        return incidents;
+    }
+
+    activeChannels = array.filter(a => parseInt('' + a.members_who_posted) > 0).sort((a, b) => parseInt(b.members_who_posted + '') - parseInt(a.members_who_posted + ''));
+
+    const currentYear = new Date().getFullYear();
+    const firstYear = 2022;
+
+    const brands = [
+        {id: "Brand A", name: "Brand A", icon: "a.png"},
+        {id: "Brand B", name: "Brand B", icon: "b.png"},
+        {id: "Brand C", name: "Brand C", icon: "c.png"},
+    ]
+
+    let html = '<div style="max-width: 1200px">';
+
+    html += '<table style="margin-left: 24px">';
+    html += '<tr>';
+    html += '<td></td>';
+    const today = new Date();
+    for (let i = 0; i < 365; i++) {
+        const day = new Date(today.getTime() - i * 1000 * 60 * 60 * 24);
+        const dayOfWeek = day.getUTCDay();
+        const color = (dayOfWeek === 0 || dayOfWeek === 6) ? '#d0d0d0' : '#f3f3f3';
+        html += '<td style="text-align: center; background-color: ' + color + '">';
+        html += '<div>';
+        html += '<div>' + day.getUTCFullYear() + '</div>';
+        html += '<div>' + (day.getMonth() + 1) + '</div>';
+        html += '<div style="font-size: 120%">' + (day.getUTCDate()) + '</div>';
+        html += '</div>';
+        html += '</td>';
+    }
+    html += '<td></td>';
+    html += '</tr>';
+    for (brand of brands) {
+        html += '<tr>';
+        html += '<td style="padding-right: 12px">' +
+            '<img src="assets/logos/' + brand.icon + '" style="margin: auto; width: 100px; height: 42px; object-fit: contain; vertical-align: middle"></td>';
+        for (let i = 0; i < 365; i++) {
+            const day = new Date(today.getTime() - i * 1000 * 60 * 60 * 24);
+            const dayOfWeek = day.getUTCDay();
+            const color = (dayOfWeek === 0 || dayOfWeek === 6) ? '#d0d0d0' : '#fafafa';
+            html += '<td style="text-align: center; background-color: ' + color + '; white-space: nowrap">';
+            const incidents = getIncidentsByDate(day, brand.id);
+            incidents.forEach(incident => {
+                html += '<a target="_blank" href="' + item.link + '" title="' + incident.title + '">';
+                html += '<div style="display: inline-block; background-color: indianred; margin: 5px; border-radius: 50%; width: 32px; height: 32px; box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;">' +
+                    '</div>';
+                html += '</a>';
+            });
+            html += '</td>';
+        }
+        html += '</tr>';
+    }
+    html += '</table>';
+
+    html += '</div>';
+
+    const div = document.createElement('div');
+    document.body.appendChild(div);
+    div.outerHTML = html;
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%">
+    generated on 2023-08-13</a> from this <a href="${source_link}" target="_blank">data source</a>
+</div>
+</body>
+</html>

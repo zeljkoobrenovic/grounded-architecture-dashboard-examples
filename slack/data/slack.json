@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "exportDate": "2023-07-06"
+  },
+  "data": [
+    {
+      "source": "index",
+      "data": [
+        {
+          "name": "channel 1",
+          "created": "Thu Feb 16 2023 00:00:00 GMT+0100 (Central European Standard Time)",
+          "total_membership": "10",
+          "messages_posted": "32",
+          "members_who_posted": "6",
+          "members_who_viewed": "9"
+        },
+        {
+          "name": "channel 2",
+          "created": "Thu March 16 2023 00:00:00 GMT+0100 (Central European Standard Time)",
+          "total_membership": "20",
+          "messages_posted": "22",
+          "members_who_posted": "12",
+          "members_who_viewed": "20"
+        }
+      ]
+    }
+  ]
+}

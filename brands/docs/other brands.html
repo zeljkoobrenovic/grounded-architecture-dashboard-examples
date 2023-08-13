@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 15px;
+            margin-right: 25px;
+            padding: 5px;
+            background-color: #f0f1f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .brand {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 220px;
+            width: 240px;
+            object-fit: contain;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: top;
+            background-color: white;
+            background-color: #f8f8f8;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 120%;
+            margin-top: 14px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            border: 0.5px solid #d0d0d0;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+
+        .type {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .photo {
+            width: 212px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 4px;
+            padding: 13px;
+            margin-top: 4px;
+            background-color: white;
+            border: 0.5px solid lightgrey;
+        }
+
+        .channel {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .mobile {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .channel-blog {
+            display: inline-block;
+            width: 24px;
+            margin: 1px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px" >
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="icons/other brands.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">Other Brands (example data)</b>
+    </h1>
+    <br>
+</div>
+<script>
+    const array = [{"startgroup": "Other North America", "company": "Realtor", "type": "General", "link": "https://www.realtor.com", "monthlyvisits": "144M", "activelistings": "620K", "logo": "logos/realtor.svg", "country": "US", "ios": "https://apps.apple.com/US/app/id336698281?mt=8", "android": "https://play.google.com/store/apps/details?id=com.move.realtor", "facebook": "https://www.facebook.com/realtor.com", "instagram": "https://www.instagram.com/realtordotcom/?hl=en", "youtube": "https://www.youtube.com/user/RealtorDotCom", "twitter": "https://twitter.com/REALTORdotcom", "pinterest": "https://www.pinterest.com/realtordotcom/", "linkedin": "https://www.linkedin.com/company/realtor-com/", "techblog": "https://techblog.realtor.com/"}, {"company": "Redfin", "type": "General", "link": "https://www.redfin.com", "monthlyvisits": "87M", "logo": "logos/redfin.png", "country": "US", "ios": "https://apps.apple.com/us/app/redfin-homes-for-sale-rent/id327962480", "android": "https://play.google.com/store/apps/details?id=com.redfin.android&hl=en&gl=US", "facebook": "https://www.facebook.com/redfin", "instagram": "https://www.instagram.com/redfinrealestate/", "twitter": "https://twitter.com/Redfin", "pinterest": "https://www.pinterest.com/redfin/", "techblog": "https://redfin.engineering/"}, {"company": "Apartments", "type": "General", "link": "https://www.apartments.com", "monthlyvisits": "60M", "logo": "logos/apartments.png", "country": "US", "ios": "https://apps.apple.com/us/app/apartments-com-rental-finder/id319836632", "android": "https://play.google.com/store/apps/details?id=com.apartments.mobile.android&hl=en&gl=US", "facebook": "https://facebook.com/apartments.com", "youtube": "https://www.youtube.com/user/apartmentscom/custom", "twitter": "https://twitter.com/apartmentscom", "pinterest": "http://pinterest.com/apartmentscom", "linkedin": "https://linkedin.com/company/apartments-com", "blog": "https://www.apartments.com/blog"}, {"company": "MoveTo", "type": "General", "link": "https://www.movoto.com", "monthlyvisits": "23M", "logo": "logos/movoto.png", "ios": "https://apps.apple.com/us/app/movoto-by-ojo-real-estate/id537795977", "android": "https://play.google.com/store/apps/details?id=com.movoto.movoto&hl=en&gl=US"}, {"company": "Homes", "type": "General", "link": "https://www.homes.com", "monthlyvisits": "12M", "logo": "logos/homes.svg", "country": "US"}, {"company": "Loopnet", "type": "General", "link": "https://www.loopnet.com", "monthlyvisits": "11M", "logo": "logos/loopnet.svg", "country": "US"}, {"company": "OneHome", "type": "General", "link": "https://www.onehome.com", "monthlyvisits": "17M", "logo": "logos/onehome.jpeg", "country": "US"}, {"company": "Rent", "type": "Renting", "link": "https://www.rent.com", "monthlyvisits": "12M", "logo": "logos/rent.svg", "country": "US"}, {"company": "Coldwell Banker Homes", "type": "General", "link": "https://www.coldwellbankerhomes.com", "monthlyvisits": "11M", "logo": "logos/cbh.svg", "country": "US"}, {"company": "Centris", "type": "General", "link": "https://www.centris.ca", "monthlyvisits": "11M", "logo": "logos/centris-ca.gif", "country": "CA"}, {"company": "Foreclosure", "type": "Foreclosure", "link": "https://www.foreclosure.com/", "monthlyvisits": "1.5M", "logo": "logos/foreclosure.webp", "country": "US"}, {"company": "FSBO", "type": "DIY", "link": "https://fsbo.com/", "monthlyvisits": "0.12M", "logo": "logos/fsbo.webp", "country": "US"}, {"startgroup": "Netherlands", "company": "Funda", "type": "General", "link": "https://www.funda.nl", "monthlyvisits": "30M", "activelistings": "70K", "logo": "logos/funda.svg", "country": "NL", "ios": "https://apps.apple.com/nl/app/funda/id989095964", "android": "https://play.google.com/store/apps/details?id=com.funda.two&hl=en&gl=US", "facebook": "https://www.facebook.com/funda", "instagram": "https://www.instagram.com/funda.nl/", "youtube": "https://www.youtube.com/funda", "twitter": "https://www.twitter.com/funda", "linkedin": "https://www.linkedin.com/company/funda", "techblog": "https://blog.funda.nl/"}];
+
+    let appendObject = document.body;
+
+    array.forEach(function (brand) {
+        if (brand.startgroup) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = brand.startgroup;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        let div = document.createElement('div');
+        appendObject.appendChild(div);
+        let html = '<div class="brand">';
+
+
+        if (brand.country)
+            html += '<img class="flag" title="' + brand.country + '" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + brand.country.toLowerCase() + '.svg">\n';
+
+        if (brand.type)
+            html += '    <img title="' + brand.type + '" class="type" src="icons/' + brand.type.toLowerCase() + '.png">';
+
+        let width = (brand.ios || brand.android) ? ((brand.ios && brand.android) ? 109 : 134) : 159;
+
+        let statsLink = 'https://www.similarweb.com/website/' + brand.link.replace(/.*\/\//, '').replace(/\//g, '').replace(/www[.]/g, '') + '/#overview';
+
+        html += "<div style='display: inline-block; width: " + width + "px; text-align: left; vertical-align: top; padding-top: 4px; padding-left: 4px; font-size: 80%;'>" + (brand.monthlyvisits ?
+            "<a href='" + statsLink + "' target='_blank'>" + brand.monthlyvisits + ' <span style="color: #a0a0a0">visits/m</span></a>'
+            : '') + "</div>"
+
+        if (brand.ios)
+            html += '<a href="' + brand.ios + '" target="_blank" title="iOS App"><img class="mobile" src="icons/ios.png"></a>';
+        if (brand.android)
+            html += '<a href="' + brand.android + '" target="_blank" title="Android App"><img class="mobile" src="icons/android.png"></a>';
+
+
+        html += '    <div class="container">\n';
+        html += '<a href="' + brand.link + '" target="_blank">'
+        html += '    <div><img class="photo" src="' + brand.logo + '"></div>\n';
+        html += '    </div>\n';
+        html += '</a>'
+        html += '<div style="margin-top: 8px">';
+
+        if (brand.facebook)
+            html += '<a href="' + brand.facebook + '" target="_blank" title="Facebook"><img class="channel" src="icons/facebook.svg"></a>';
+        if (brand.instagram)
+            html += '<a href="' + brand.instagram + '" target="_blank" title="Instagram"><img class="channel" src="icons/instagram.svg"></a>';
+        if (brand.youtube)
+            html += '<a href="' + brand.youtube + '" target="_blank" title="Youtube"><img class="channel" src="icons/youtube.svg"></a>';
+        if (brand.twitter)
+            html += '<a href="' + brand.twitter + '" target="_blank" title="Twitter"><img class="channel" src="icons/twitter.svg"></a>';
+        if (brand.pinterest)
+            html += '<a href="' + brand.pinterest + '" target="_blank" title="Pinterest"><img class="channel" src="icons/pinterest.svg"></a>';
+        if (brand.tiktok)
+            html += '<a href="' + brand.tiktok + '" target="_blank" title="TikTok"><img class="channel" style="border-radius: 50%; border: 1px solid grey" src="icons/tiktok.png"></a>';
+        if (brand.linkedin)
+            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
+        if (brand.xing)
+            html += '<a href="' + brand.xing + '" target="_blank" title="Xing"><img class="channel" src="icons/xing.png"></a>';
+
+        html += '&nbsp;&nbsp;&nbsp;';
+
+        if (brand.blog)
+            html += '<a href="' + brand.blog + '" target="_blank" title="Blog"><img class="channel-blog" src="icons/blog.png"></a>';
+        if (brand.techblog)
+            html += '<a href="' + brand.techblog + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/tech-blog.png"></a>';
+        if (brand.github)
+            html += '<a href="' + brand.github + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/github.png"></a>';
+
+        html += '</div>';
+        html += '</div>';
+
+        div.outerHTML = html;
+    });
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" >
+    generated on 2023-08-13 based on this source <a style="text-decoration: underline; color: #a0a0a0;"
+               href="https://docs.google.com/spreadsheets/d/195iHjfUCGlHEREka2hvWxV9WWBeX9PfDp6OizYSWqiQ/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

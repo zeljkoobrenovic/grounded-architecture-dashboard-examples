@@ -1,0 +1,40 @@
+{
+  "days": [
+    {
+      "date": {
+        "dayOfWeek": "Wed",
+        "day": 22,
+        "month": "March",
+        "year": 2024,
+        "feedbackForm": "https://forms.gle/"
+      },
+      "sessions": [
+        {
+          "start": "09:00 CET",
+          "end": "11:00 CET",
+          "title": "Morning Session: Opening",
+          "icon": "opening.png",
+          "calendar": "",
+          "outlook": "",
+          "meetId": "",
+          "slides": [
+            "https://docs.google.com/presentation/"
+          ],
+          "video": "https://drive.google.com/file/",
+          "videoDuration": "1h 10min",
+          "attendance": "100",
+          "slots": [
+            {
+              "title": "Opening",
+              "video": "",
+              "slides": "",
+              "speakers": [
+                "Željko Obrenović"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

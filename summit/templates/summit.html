@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Architecture Summit</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .day {
+            padding-top: 10px;
+            margin: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            height: 320px;
+            width: 100%;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .dayTable {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+        }
+
+        .date {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            width: 70px;
+        }
+
+        .session {
+            margin-left: 16px;
+            margin-bottom: 40px;
+            vertical-align: top;
+            padding-left: 10px;
+        }
+
+        .slot {
+            border-left: 3px dotted crimson;
+            margin: 6px 16px 16px 16px;
+            vertical-align: top;
+            padding: 10px 20px 10px 20px;
+
+        }
+
+        .org {
+            border-left: 3px solid #f0f0f0;
+            margin: 6px 16px 16px 16px;
+            vertical-align: top;
+            padding: 10px 20px 10px 20px;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin: 8px; margin-top: 0; font-size: 50px; color: #080808">Architecture Summit</div>
+<div style="margin-bottom: 46px; font-size: 22px; color: #080808">
+    November 24-25, 2024
+</div>
+<div style="margin-bottom: 20px;">
+    <div><img src="icons/superglue.png" style="height: 300px"></div>
+</div>
+<div id="timer" style="text-align: center; width: 100%; margin-bottom: 42px">
+    <table style="text-align: center; margin: auto">
+        <tr style="font-size: 32px">
+            <td id="days"
+                style="background-color: yellow; font-weight: bold; font-size: 150%; padding: 10px 20px 10px 20px">...
+            </td>
+            <td id="hours" style="background-color: #f0f0f0; padding-left: 20px; padding-right: 20px">...</td>
+            <td id="minutes" style="background-color: #f0f0f0; padding-left: 20px; padding-right: 20px">...</td>
+            <td id="seconds" style="background-color: #f0f0f0; padding-left: 20px; padding-right: 20px">...</td>
+        </tr>
+        <tr style="color: grey;">
+            <td>days</td>
+            <td>hours</td>
+            <td>min</td>
+            <td>sec</td>
+        </tr>
+    </table>
+</div>
+
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'Program')">Program</button>
+    <button class="tablinks" onclick="openTab(event, 'About')">About</button>
+</div>
+<div id="Program" class="tabcontent" style="display: block">
+    <div id="ProgramContent" style="padding: 20px"></div>
+</div>
+<div id="About" class="tabcontent">
+    <div style="padding: 20px; text-align: left">
+        <ul>
+            <li>...</li>
+            <li>...</li>
+    </div>
+</div>
+<script>
+    var array = ${data};
+
+    var appendObject = document.getElementById('ProgramContent');
+    var div = document.createElement('div');
+    appendObject.appendChild(div);
+    let html = '';
+
+    array.days.forEach(function (day) {
+        html += '<table class="dayTable">';
+        html += '<tr>';
+        html += '<td style="vertical-align: top; padding-top: 10px; width: 60px">';
+        html += '<div class="date">';
+        html += '<div style="padding: 6px; background-color: #1e73be; color: #f0f0f0">' + day.date.month + '</div>';
+        html += '<div style="padding: 10px 16px 10px 16px; font-size: 32px">' + day.date.day + '</div>';
+        html += '<div style="border-top: 1px solid lightgrey; padding: 3px; font-size: 12px">' + day.date.dayOfWeek + '</div>';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="vertical-align: top; text-align: left; padding-top: 10px">';
+
+
+        day.sessions.forEach(session => {
+            html += '<div class="session">';
+            html += '<div style="color: black; margin-bottom: 6px; font-size: 130%">' + session.title + '</div>';
+            html += session.start + ' - ';
+            html += session.end + '';
+            html += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="icons/calendar.svg" style="margin-left: 4px; margin-right: 6px; width: 20px; vertical-align: middle">';
+            html += '  <span style="color: darkgrey"><a href="' + session.calendar + '" target="_blank">Google Calendar</a></span>';
+            html += ' <img src="icons/outlook.png" style="margin-left: 16px; margin-right: 5px; width: 20px; vertical-align: middle">';
+            html += '  <span style="color: darkgrey"><a href="outlook/' + session.outlook + '">Outlook (ICS)</a></span>';
+            html += ' <img src="icons/meet.png" style="margin-left: 26px; margin-right: 5px; width: 30px; vertical-align: middle">';
+            html += '  <span style="color: darkgrey"><a href="https://meet.google.com/' + session.meetId + '">' +
+                '<span style="color: #b0b0b0">meet.google.com/</span>' + session.meetId + '</a></span>';
+            html += '<div>';
+            html += '<div style="display: inline-block; vertical-align: top">';
+            html += '<img src="icons/' + session.icon + '" style="width: 62px; margin: 10px; margin-right: 0">';
+            if (session.attendance) {
+                html += '<div style="text-align: center; color: darkgray; margin-left: 10px">' + session.attendance + '</div>';
+            }
+            html += '</div>';
+
+            html += '<div style="display: inline-block; width: 595px">';
+            if (session.organizers) {
+                const prefix = session.organizers.length == 1 ? 'Organizer' : 'Organizers';
+                html += '<div class="org" style="color: #1e73be">';
+                html += '<div >' + prefix + ': <b>' + session.organizers.join(', ') + '</b></div>';
+                session.organizers.forEach(speaker => {
+                    if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                    html += '<img style="width: 36px; height: 36px; margin: 5px; border-radius: 50%; object-fit: cover" src="people/' + speaker.replace(/\(.*?\)/, '').trim() + '.png"' +
+                        'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                });
+                html += '</div>';
+            }
+            session.slots.forEach(slot => {
+                html += '<div class="slot">';
+                let titleStyle = 'font-size: 120%; font-weight: bold;';
+                if (slot.title.toUpperCase().startsWith('CANCELED')) {
+                    titleStyle += 'text-decoration: line-through; color: darkgrey';
+                }
+                html += '<div style="' + titleStyle + '">' + slot.title + '</div>';
+                if (slot.roundtable) {
+                    slot.roundtable.forEach(speaker => {
+                        if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                        html += '<div style="color: grey; margin: 4px"> - ' + speaker + '</div>';
+                    });
+                    slot.roundtable.forEach(speaker => {
+                        if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                        html += '<img style="width: 50px; height: 50px; margin: 4px; border-radius: 50%; object-fit: cover" src="people/' + speaker.replace(/\(.*?\)/, '').trim() + '.png"' +
+                            'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                    });
+                }
+                if (slot.speakers && slot.speakers.length > 0) {
+                    html += '<div style="color: #1e73be; display: inline-block; margin-top: 4px">' + slot.speakers.join(' + ') + '</div>';
+                    html += '<div>';
+                    slot.speakers.forEach(speaker => {
+                        if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                        speaker = speaker.replace(/ö/, 'o')
+                        html += '<img style="width: 50px; height: 50px; margin: 4px; border-radius: 50%; object-fit: cover" src="people/' + speaker.replace(/\(.*?\)/, '').trim() + '.png"' +
+                            'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                    });
+                    html += '</div>';
+                }
+                html += '</div>';
+            });
+            html += '</div>';
+            if (session.slides && session.slides.length > 0) {
+                html += '<div style="display: inline-block; margin-top: 80px; vertical-align: top; padding-top: 30px; padding-left: 18px; padding-right: 18px; padding-bottom: 12px; box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px">';
+                if (session.video) {
+                    html += '<div style="margin-bottom:30px">';
+                    html += '<a href="' + session.video + '" target="_blank">';
+                    html += '<img src="icons/video.png" style="width: 70px">';
+                    html += '<div style="font-size: 80%; color: darkgrey; text-align: center">' + session.videoDuration + '</div>';
+                    html += '</div>';
+                }
+                html += '<div>';
+                session.slides.filter(s => s && s.length > 0).forEach(slide => {
+                    html += '<div>';
+                    html += '<a href="' + slide + '" target="_blank">';
+                    html += '<img src="icons/slides.png" style="width: 70px">';
+                    html += '<div style="font-size: 80%; color: darkgrey; text-align: center">slides</div>';
+                    html += '</div>';
+                });
+                html += '</div>';
+                html += '</div>';
+            }
+            html += '</div>';
+            html += '</div>';
+        });
+
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+    });
+    div.outerHTML = html;
+
+    appendObject = document.getElementById('About');
+    div = document.createElement('div');
+    div.style = 'padding: 20px; text-align: left;';
+    appendObject.appendChild(div);
+    html = '';
+
+    const speakersMap = {}
+    let counter = 0;
+    html += '<div style="margin: 20px; margin-left: 40px; text-align: left">';
+    html += '<div>Participants:</div>';
+    array.days.forEach(function (day) {
+        day.sessions.forEach(session => {
+            if (session.organizers) {
+                session.organizers.forEach(speaker => {
+                    speaker = speaker.replace(/\(.*?\)/, '').trim();
+                    speaker = speaker.replace(/ö/, 'o')
+                    if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                    if (speakersMap[speaker]) return;
+                    html += '<img style="width: 50px; height: 50px; margin: 4px; border-radius: 50%; object-fit: cover" src="people/' + speaker + '.png"' +
+                        'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                    speakersMap[speaker] = speaker;
+                    counter += 1;
+                });
+            }
+            session.slots.forEach(slot => {
+                if (slot.roundtable) {
+                    slot.roundtable.forEach(speaker => {
+                        speaker = speaker.replace(/\(.*?\)/, '').trim();
+                        speaker = speaker.replace(/ö/, 'o')
+                        if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+                        if (speakersMap[speaker]) return;
+                        html += '<img style="width: 50px; height: 50px; margin: 4px; border-radius: 50%; object-fit: cover" src="people/' + speaker + '.png"' +
+                            'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                        speakersMap[speaker] = speaker;
+                        counter += 1;
+                    });
+                }
+                if (slot.speakers && slot.speakers.length > 0) {
+                    slot.speakers.forEach(speaker => {
+                        speaker = speaker.replace(/\(.*?\)/, '').trim();
+                        speaker = speaker.replace(/ö/, 'o')
+                        if (speaker.startsWith('All ')) return;
+                        if (speaker.startsWith('Ž')) speaker = 'Zeljko Obrenovic';
+
+                        if (speakersMap[speaker]) return;
+                        html += '<img style="width: 50px; height: 50px; margin: 4px; border-radius: 50%; object-fit: cover" src="people/' + speaker + '.png"' +
+                            'onerror="this.onerror=null;this.src=\'people/default.png\';">';
+                        speakersMap[speaker] = speaker;
+                        counter += 1;
+                    });
+                }
+            });
+        });
+    });
+    html += '<div style="color: gray; font-size: 80%">' + counter + ' people</div>';
+    html += '</div">';
+    div.outerHTML = html;
+
+</script>
+<script>
+    function setTime() {
+        const today = new Date();
+        const target = new Date("22 Nov 2024 08:00:00 GMT");
+
+        let delta = Math.round((target.getTime() - today.getTime()) / 1000);
+
+        if (delta < 0) {
+            document.getElementById("timer").style = 'display: none';
+            return;
+        }
+
+        const days = Math.floor(delta / 86400);
+        delta -= days * 86400;
+
+        const hours = Math.floor(delta / 3600) % 24;
+        delta -= hours * 3600;
+
+        const minutes = Math.floor(delta / 60) % 60;
+        delta -= minutes * 60;
+
+        const seconds = delta % 60;
+
+        document.getElementById("days").innerHTML = "" + ((days < 10 ? '0' : '') + days);
+        document.getElementById("hours").innerHTML = "" + ((hours < 10 ? '0' : '') + hours);
+        document.getElementById("minutes").innerHTML = "" + ((minutes < 10 ? '0' : '') + minutes);
+        document.getElementById("seconds").innerHTML = "" + ((seconds < 10 ? '0' : '') + seconds);
+    }
+
+    function loop() {
+        setTimeout(() => {
+            setTime();
+            loop();
+        }, 1000);
+    }
+
+    setTime();
+    loop();
+</script>
+</body>
+</html>

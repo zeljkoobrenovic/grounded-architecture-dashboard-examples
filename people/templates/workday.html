@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Workday Data Explorer</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 240px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+
+        .hold {
+            background-color: #dd3333;
+            color: #ffffff;
+            width: 40px;
+            height: 38px;
+            padding-top: 2px;
+            border-radius: 6px;
+            font-size: 60%;
+            text-align: center;
+        }
+
+        .adopt {
+            background-color: skyblue;
+            width: 40px;
+            height: 38px;
+            padding-top: 2px;
+            border-radius: 6px;
+            font-size: 60%;
+            text-align: center;
+        }
+
+        .assess {
+            background-color: #c0c0c0;
+            width: 40px;
+            height: 38px;
+            padding-top: 2px;
+            border-radius: 6px;
+            font-size: 60%;
+            text-align: center;
+        }
+
+        .trial {
+            background-color: #c0c0c0;
+            width: 40px;
+            height: 38px;
+            padding-top: 2px;
+            border-radius: 6px;
+            font-size: 60%;
+            text-align: center;
+        }
+
+        .empty {
+            background-color: white;
+            border: 1px dashed grey;
+            width: 40px;
+            height: 38px;
+            padding-top: 2px;
+            border-radius: 6px;
+            font-size: 60%;
+            text-align: center;
+        }
+
+        .card-text {
+            margin-top: 1px;
+            font-size: 130%;
+        }
+
+        .image {
+            height: 48px;
+            width: 48px;
+            object-fit: contain;
+        }
+
+
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 8px; margin-top: -20px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 5px; margin-left: 0px">
+        <img src="icons/workday.png" style="vertical-align: middle; height: 80px">
+        <div style="display: inline-block; vertical-align: top; margin-top: 12px">
+            <b>Workday Explorer</b>
+        </div>
+    </h1>
+    <div style="margin-left: 5px; font-size: 16px; color: grey">An overview of people and reporting lines from workday
+    </div>
+</div>
+
+<script>
+    function findGetParameter(parameterName) {
+        var result = null, tmp = [];
+        location.search.substr(1).split("&").forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+        return result;
+    }
+
+    const filterParam = findGetParameter('filter');
+    const focusedMode = filterParam && filterParam.length > 0;
+</script>
+
+<script>
+    const data = ${data};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+
+    const root = data.filter(person => person.reports_to === undefined)[0];
+    const peopleMap = {};
+
+    data.forEach(person => {
+        person.children = [];
+        peopleMap[person.unique_identifier] = person;
+    });
+
+    data.forEach(person => {
+        if (person.reports_to) {
+            peopleMap[person.reports_to].children.push(person);
+        }
+    });
+
+    function countChildrenInDepth(person) {
+        let count = 1;
+
+        person.children.forEach(child => {
+            count += countChildrenInDepth(child);
+        });
+
+        return count;
+    }
+
+    function countManagers(person) {
+        let count = person.children.length ? 1 : 0;
+
+        person.children.forEach(child => {
+            count += countManagers(child);
+        });
+
+        return count;
+    }
+
+    function countContractors(person) {
+        let count = person.name.toUpperCase().includes('[C]');
+
+        person.children.forEach(child => {
+            count += countContractors(child);
+        });
+
+        return count;
+    }
+
+    function countAtLevel(person, level, targetLevel) {
+        let count = level === targetLevel ? 1 : 0;
+
+        person.children.forEach(child => {
+            count += countAtLevel(child, level + 1, targetLevel);
+        });
+
+        return count;
+    }
+
+    function countManagersAtLevel(person, level, targetLevel) {
+        let count = ((level === targetLevel) && person.children.length) ? 1 : 0;
+
+        person.children.forEach(child => {
+            count += countManagersAtLevel(child, level + 1, targetLevel);
+        });
+
+        return count;
+    }
+
+    function highlight(person) {
+        let filter = document.getElementById('filter') ? document.getElementById('filter').value : '';
+
+        if (filter) filter = normalizeName(filter).toLowerCase();
+
+        let personName = normalizeName(person.name).toLowerCase();
+
+        if (filter && personName.includes(filter)) return true;
+
+        return false;
+    }
+
+    function normalizeName(name) {
+        if (!name) return name;
+        name = name.toLowerCase();
+        name = name.replace('ž', 'z');
+        name = name.replace('ć', 'c');
+        name = name.replace('č', 'c');
+        name = name.replace('ç', 'c');
+        name = name.replace('ß', 'ss');
+        name = name.replace('è', 'e');
+        name = name.replace('é', 'e');
+        name = name.replace('ê', 'e');
+        name = name.replace('ë', 'e');
+        name = name.replace('ē', 'e');
+        name = name.replace('ė', 'e');
+        name = name.replace('ę', 'e');
+        name = name.replace('ô', 'o');
+        name = name.replace('ô', 'o');
+        name = name.replace('ö', 'o');
+        name = name.replace('ò', 'o');
+        name = name.replace('ó', 'o');
+        name = name.replace('œ', 'o');
+        name = name.replace('ø', 'o');
+        name = name.replace('ō', 'o');
+        name = name.replace('õ', 'o');
+        name = name.replace('û', 'u');
+        name = name.replace('ü', 'u');
+        name = name.replace('ù', 'u');
+        name = name.replace('ú', 'u');
+        name = name.replace('ū', 'u');
+        name = name.replace('î', 'i');
+        name = name.replace('ï', 'i');
+        name = name.replace('í', 'i');
+        name = name.replace('ī', 'i');
+        name = name.replace('į', 'i');
+        name = name.replace('ì', 'i');
+        name = name.replace('î', 'i');
+        return name;
+    }
+
+    function show(person) {
+        let filter = document.getElementById('filter') ? document.getElementById('filter').value : '';
+
+        if (!filter) return true;
+
+        filter = normalizeName(filter).toLowerCase();
+
+        let showValue = false;
+
+        let personName = normalizeName(person.name).toLowerCase();
+        if (personName.includes(filter)) return true;
+
+        person.children.forEach(child => {
+            if (show(child)) {
+                showValue = true;
+                return;
+            }
+        });
+
+        if (showValue) return showValue
+
+        if (person.reports_to) {
+            let p = peopleMap[person.reports_to];
+            while (p) {
+                if (normalizeName(p.name).toLowerCase().includes(filter.toLowerCase())) return true;
+                if (p.reports_to) {
+                    p = peopleMap[p.reports_to];
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    function flagOf(city) {
+        if (city) {
+            city = city.toLowerCase();
+
+            if (city.includes('berlin')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/de.svg";
+            if (city.includes('hamburg')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/de.svg";
+            if (city.includes('nürnberg')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/de.svg";
+            if (city.includes('nurnberg')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/de.svg";
+            if (city.includes('paris')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/fr.svg";
+            if (city.includes('lyon')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/fr.svg";
+            if (city.includes('aix')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/fr.svg";
+            if (city.includes('bruxelles')) return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/be.svg";
+        }
+
+        return "https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/de.svg";
+    }
+
+    function isContractor(person) {
+        return person.name.toLowerCase().includes('[c]');
+    }
+
+    function showPerson(person, level, maxLevel, maxFont) {
+        if (!show(person)) return '';
+
+        let fragment = '';
+
+        let imgStyle = '';
+        if (highlight(person)) {
+            imgStyle = isContractor(person) ? 'border: 6px dashed crimson;' : 'border: 6px solid crimson;';
+        } else {
+            imgStyle = isContractor(person) ? 'border: 2px dashed grey;' : 'border: 1px solid black;';
+        }
+        let personTitle = person.name + '\n\n' + person.line_detail_1 + '\n' + person.line_detail_2;
+
+        if (person.children.length) {
+            // let fontSize = maxFont === 0 ? 16 : (maxFont - 2 * level) + 'px; padding: ' + (30 - 5 * level);
+            let fontSize = 16;
+            // fragment += '<br>';
+            fragment += '<div style="min-width: 620px; vertical-align: top; margin-left: 8px; box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; padding: 10px; margin: 18px; font-size: ' + fontSize + 'px; display: inline-block; " title="' + personTitle + '">'
+            fragment += '<div style="display: inline-block; padding: 2px;">'
+            fragment += '<table>'
+            fragment += '<td>'
+
+            fragment += '<img style="' + imgStyle + 'cursor: help; width: 64px; height: 64px; border-radius: 50%;" src="workday-images/' + person.unique_identifier + '.png" onerror="this.onerror=null;this.src=\'icons/person.png\';">';
+            fragment += '<img style="display: block; margin-top: -20px; width: 22px;" src="' + flagOf(person.line_detail_2) + '">';
+            fragment += '</td>'
+            fragment += '<td style="padding-left: 6px">'
+            let totalGroupHeadcount = countChildrenInDepth(person);
+            let managersCount = countManagers(person) - 1;
+            let managersContractors = countContractors(person);
+            fragment += '<span style="color: blue; font-weight: bold">' + person.name + '</span> ' +
+                '<div style="color: grey;">' + (totalGroupHeadcount)
+                + ' people, ' + person.children.length + ' direct, '
+                + (totalGroupHeadcount - person.children.length - 1) + ' indirect; ' + managersCount + ' managers, '
+                + (totalGroupHeadcount - managersCount) + ' ICs; '
+                + (managersContractors) + ' contractors'
+                + '</div>';
+            fragment += '<div style="color: grey; font-size: 90%">' + person.line_detail_1 + '</div>';
+            fragment += '<div style="color: grey; font-size: 70%">' + person.line_detail_2.replace(' (Local Office)', '') + '</div>';
+            fragment += '</td>'
+            fragment += '</tr>'
+            fragment += '</table>'
+            fragment += '</div>'
+        } else {
+            fragment += '<div style="padding: 0px; display: inline-block; font-size: 11px;">'
+            fragment += '<img style="' + imgStyle + 'margin-right: -6px; cursor: help; width: 50px; height: 50px; border-radius: 50%" src="workday-images/' + person.unique_identifier + '.png" onerror="this.onerror=null;this.src=\'icons/person.png\';" title="' + personTitle + '">';
+            fragment += '<img style="display: block; margin-top: -14px; width: 18px;" src="' + flagOf(person.line_detail_2) + '">';
+        }
+        if (person.children.length) {
+            let childrenWithoutReports = person.children.filter(c => c.children.length === 0);
+            if (childrenWithoutReports.length) {
+                fragment += '<div style="padding: 10px; margin: 0px; margin-left: 14px;">'
+                childrenWithoutReports
+                    .sort((a, b) => (isContractor(a) ? 10000 : 0) - (isContractor(b) ? 10000 : 0))
+                    .sort((a, b) => countChildrenInDepth(b) - countChildrenInDepth(a))
+                    .forEach(child => {
+                        if (level < maxLevel) {
+                            fragment += showPerson(child, level + 1, maxLevel, maxFont);
+                        }
+                    });
+                fragment += '</div>'
+            }
+            let childrenWithReports = person.children.filter(c => c.children.length > 0);
+            if (childrenWithReports.length > 0) {
+                fragment += '<div style="margin-left: 8px;">'
+                childrenWithReports
+                    .sort((a, b) => (isContractor(a) ? 10000 : 0) - (isContractor(b) ? 10000 : 0))
+                    .sort((a, b) => countChildrenInDepth(b) - countChildrenInDepth(a))
+                    .sort((a, b) => (a.children.length ? 10000 : 0) - (b.children.length ? 10000 : 0))
+                    .forEach(child => {
+                        if (level < maxLevel) {
+                            fragment += showPerson(child, level + 1, maxLevel, maxFont);
+                        }
+                    });
+                fragment += '</div>'
+            }
+        }
+        fragment += '</div>'
+
+        return fragment;
+    }
+
+    html += '<div style="margin: 12px">';
+    if (!focusedMode) {
+        html += '<div style="margin-bottom: 6px">' + data.length + ' people, ' + countManagers(root) + ' managers</div>';
+        html += '<table>';
+        html += '<tr>';
+        for (let i = 2; i <= 8; i++) {
+            html += '<td style="vertical-align: bottom; text-align: center">';
+            let count = countAtLevel(root, 1, i);
+            let managers = countManagersAtLevel(root, 1, i);
+            html += '<div style="font-size: 9px">' + managers + '</div>';
+            let ics = count - managers;
+            html += '<div style="font-size: 9px">' + ics + '</div>';
+            html += '<div style="width: 40px; background-color: #ff00ff; height: ' + (1 + Math.round(64 * (managers) / 700)) + 'px"></div>';
+            html += '<div style="width: 40px; background-color: #1e73be; height: ' + (1 + Math.round(64 * ics / 700)) + 'px"></div>';
+            html += '</td>';
+        }
+        html += '</tr>';
+        html += '<tr>';
+        for (let i = 2; i <= 8; i++) {
+            html += '<td style="text-align: center">';
+            html += 'L' + i;
+            html += '</td>';
+        }
+        html += '</tr>';
+        html += '</table>';
+    }
+    html += '<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">\n' +
+        '    <div>\n' +
+        '        <input id="filter" type="text" placeholder="search people..."\n' +
+        '               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">\n' +
+        '        <div id="summary" style="display: inline-block"></div>\n' +
+        '    </div>\n' +
+        '</div>';
+
+    if (!focusedMode) {
+        html += '<div class="tab">';
+        html += '<button class="tablinks active" onclick="openTab(event, \'all\')">All</button>';
+        html += '<button class="tablinks" onclick="openTab(event, \'l2\')">L2</button>';
+        html += '<button class="tablinks" onclick="openTab(event, \'l3\')">L3</button>';
+        html += '<button class="tablinks" onclick="openTab(event, \'l4\')">L4</button>';
+        html += '<button class="tablinks" onclick="openTab(event, \'l5\')">L5</button>';
+        html += '<button class="tablinks" onclick="openTab(event, \'culture-maps\')">Culture Maps</button>';
+        html += '</div>';
+    }
+
+    html += '<div id="content"></div>';
+    html += '<div id="culture"></div>';
+
+
+    html += '</div>';
+    console.log(root);
+
+
+    div.outerHTML = html;
+
+    function update() {
+        let html = '';
+        html += '<div id="l2" class="tabcontent">'
+        html += showPerson(root, 1, 2, 26);
+        html += '</div>'
+
+        html += '<div id="l3" class="tabcontent">'
+        html += showPerson(root, 1, 3, 28);
+        html += '</div>'
+
+        html += '<div id="l4" class="tabcontent">'
+        html += showPerson(root, 1, 4, 30);
+        html += '</div>'
+
+        html += '<div id="l5" class="tabcontent">'
+        html += showPerson(root, 1, 5, 32);
+        html += '</div>'
+
+        html += '<div id="all" class="tabcontent" style="display: block">'
+        html += showPerson(root, 1, 1000, 0);
+        html += '</div>'
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    if (filterParam) {
+        document.getElementById('filter').value = filterParam;
+    }
+    update();
+
+    const countries = ['de', 'fr', 'be', 'es', 'il', 'ch', 'nl', 'au', 'ie', 'se', 'us', 'ca', 'cn', 'jp', 'dk', 'no', 'fi', 'ro', 'bg', 'ru', 'tr', 'mx'];
+
+    let mapHtml = '<div id="culture-maps" class="tabcontent">\n';
+
+    countries.forEach(country => {
+        mapHtml += '<div class="map">';
+        mapHtml += '<img class="flag" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + country + '.svg"><br>';
+        mapHtml += '<a target="_blank" href="culture-map/' + country + '.png">';
+        mapHtml += '<img src="culture-map/' + country + '.png" class="mapThumb">';
+        mapHtml += '</a>';
+        mapHtml += '</div>';
+    });
+
+    mapHtml += '</div>\n';
+    document.getElementById('culture').innerHTML = mapHtml;
+
+</script>
+<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="color: #a0a0a0;" target="_blank" href="">data sheet</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "exportDate": "2019-08-01"
+  },
+  "data": [
+    {
+      "source": "Org Chart",
+      "data": [
+        {
+          "unique_identifier": "0_Name_Surname",
+          "name": "Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Brussels"
+        }, {
+          "unique_identifier": "1_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "0_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }, {
+          "unique_identifier": "2_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "1_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }, {
+          "unique_identifier": "3_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "0_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }, {
+          "unique_identifier": "4_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "0_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }, {
+          "unique_identifier": "5_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "4_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }, {
+          "unique_identifier": "6_Name_Surname",
+          "name": "Name_Surname",
+          "reports_to": "4_Name_Surname",
+          "line_detail_1": "Role",
+          "line_detail_2": "Amsterdam"
+        }
+      ]
+    }
+  ]
+}

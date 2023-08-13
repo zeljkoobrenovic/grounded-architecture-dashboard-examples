@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Searchable Page</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+    <div>
+        <input id="filter" type="text" placeholder="search..."
+               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+               onkeyup="update()">
+        <div id="search-summary" style="display: inline-block"></div>
+    </div>
+</div>
+
+<div id="content"></div>
+
+<script>
+    const data = ${data};
+
+    function update() {
+        const filter = document.getElementById('filter').value.toLowerCase().trim();
+        let html = '';
+
+        const filteredData = data.filter(item => item.label.toLowerCase().includes(filter) || item.value.toLowerCase().includes(filter))
+        document.getElementById('search-summary').innerHTML = ' = ' + filteredData.length + ' ' + (filteredData.length === 1 ? 'item' : 'items');
+
+        filteredData.forEach(item => {
+            html += '<div class="group">';
+            html += item.label + ' = ' + item.value;
+            html += '</div>';
+        });
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

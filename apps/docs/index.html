@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Architecture Dashboard</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .app {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            height: 320px;
+            width: 220px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 12px;
+            color: #5009DC;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-top: 10px"><img src="icons/architecture.png" style="height: 124px"></div>
+<div style="margin: 8px; margin-top: 0; font-size: 40px; color: #8c8c8c">Architecture Team Dashboard Examples</div>
+<div style="margin-bottom: 36px; font-size: 20px; color: #8c8c8c">Reducing Subjectivity in Architecture with Data and
+    Insights
+</div>
+<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+    <div>
+        <input id="filter" type="text" placeholder="search..."
+               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+               onkeyup="update()">
+        <div id="summary" style="display: inline-block"></div>
+    </div>
+</div>
+<div id="content"></div>
+<script>
+    const array = [{"startgroup": "knowledge sharing", "name": "Architecture Summit", "link": "/summit/index.html", "icon": "summit.png", "description": "March 3, 2030", "source": ""}, {"startgroup": "source code", "name": "All Repositories", "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html", "icon": "atlas.png", "description": "analysis of all active<br>source code repositories", "source": "source code analysis"}, {"startgroup": "operations", "name": "AWS Usage Explorer", "link": "/aws/index.html", "icon": "aws.png", "description": "tech radar generated<br>from AWS billing report", "source": "cloud billing report"}, {"name": "Incidents Explorer", "link": "/incidents/index.html", "icon": "incidents.png", "description": "visualization of incidents' timeline", "source": "slack"}, {"startgroup": "group info", "name": "Who-is-Who", "link": "/people/workday.html", "icon": "who-is-who.png", "description": "people index based on<br>Workday data", "source": "workday"}, {"name": "Key People", "link": "/people/index.html", "icon": "architecture.png", "description": "architects per domain", "source": "sheet"}, {"name": "Brands", "link": "/brands/brands.html", "icon": "brands.png", "description": "overview of<br>company's brands", "source": "public online resources"}, {"name": "Competition", "link": "/brands/competition.html", "icon": "competition.png", "description": "index of other companies", "source": "public online resources"}, {"name": "#Slack Buzz", "link": "/slack/index.html", "icon": "slack.png", "description": "overview of activity in Slack channels in past 30 days", "source": "slack analytics"}];
+
+    function parseStartGroup(group) {
+        group = group.trim();
+        if (group.startsWith('[')) {
+            const label = group.replace(/\(.*/g, '').replace(/\[/g, '').replace(/\]/g, '').trim();
+            const href = group.replace(/.*\(/g, '').replace(/\)/g, '').trim();
+            return {label, href};
+        } else {
+            return {label: group};
+        }
+    }
+
+    function update() {
+        const filter = document.getElementById('filter').value;
+        let html = '';
+        let prevGroup = null;
+        array.filter(a => !filter || (a.name).toLowerCase().includes(filter.toLowerCase())).forEach(function (app) {
+            if (filter.length === 0 && app.startgroup) {
+                if (prevGroup) {
+                    html += '</div>';
+                }
+                html += '<div class="group">'
+                html += '<div content="group-title">'
+                let parsedGroup = parseStartGroup(app.startgroup);
+                prevGroup = parsedGroup.label;
+                if (parsedGroup.href) {
+                    html += '<a target="_blank" href="' + parsedGroup.href + ' style="padding-top:3px">'
+                        + parsedGroup.label
+                        + '<img src="icons/open-new-window.png" style="width:14px; margin-left: 4px; vertical-align: top">'
+                        + '</a>';
+                } else {
+                    html += parsedGroup.label;
+                }
+                html += '</div>';
+            }
+            html += '<div class="app">';
+            html += '    <a target="_blank" href="' + app.link + '">\n';
+            html += '    <div style="height: 38px">\n';
+            html += '    <div class="name">' + app.name + '</div>\n';
+            if (app.source) {
+                html += '    <div class="source">source: ' + app.source + '</div>\n';
+            } else {
+                html += '    <div class="source"></div>\n';
+            }
+            html += '    </div>\n';
+            html += '    <div><img class="icon" src="icons/' + app.icon + '"></div>\n';
+            html += '    <div class="description">' + app.description + '</div>\n';
+            html += '    </a>\n';
+            html += '    <br>\n';
+            html += '</div>';
+        });
+        if (prevGroup) {
+            html += '</div>';
+        }
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

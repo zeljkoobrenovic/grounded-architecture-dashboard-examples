@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px;
+            margin-right: 18px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .person {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 290px;
+            width: 210px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 120%;
+            margin-top: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .sound {
+            position: absolute;
+            top: 7px;
+            left: 167px;
+            width: 24px;
+            heigh: 24px;
+            border-radius: 50%;
+            opacity: 0.6;
+            background-color: white;
+            padding: 2px;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        .photo {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    var array = ${data};
+
+    var appendObject = document.body;
+
+    array.forEach(function (person) {
+        if (person.startgroup) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = person.startgroup;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        var div = document.createElement('div');
+        appendObject.appendChild(div);
+        const style = person.name.includes('*') ? 'filter: grayscale(100%); opacity: 0.6;' : '';
+        var html = '<div class="person" style="' + style + '">';
+        html += '    <div class="container">\n';
+        if (person.image)
+            html += '    <div><img class="photo" src="' + person.image + '"></div>\n';
+        else
+            html += '    <div><img class="photo" src="https://zeljkoobrenovic.github.io/sokrates-media/icons/person.svg"></div>\n';
+
+        if (person.country) {
+            var country = person.country.toLowerCase();
+            html += '    <div><a target="_blank" href="culture-map/' + country + '.png"><img class="flag" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/' + country + '.svg"></a></div>\n';
+        }
+        if (person.pronounce) {
+            html += '<a href="' + person.pronounce + '" target="_blank"><img class="sound" src="icons/sound.png"></a>';
+        }
+
+
+        html += '    </div>\n';
+        html += '    <div class="name" title="' + person.name + '">' + person.name + '</div>\n';
+        html += '    <div class="role" title="' + person.title + '">' + person.title + '</div>\n';
+        html += '    <br>\n';
+        if (person.linkedin) {
+            html += '    <div class="link"><a href="' + person.linkedin + '" target="_blank">linkedin</a></div>';
+        }
+        html += '</div>';
+
+        div.outerHTML = html;
+
+
+    });
+</script>
+</body>
+</html>

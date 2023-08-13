@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 230px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 23px; margin-top: -10px">
+    <h1 style="font-size: 50px; margin-bottom: -10px; margin-left: 6px">
+        <img src="icons/who-is-who.png" style="vertical-align: middle; height: 110px; vertical-align: top">
+        <div style="display: inline-block;  padding-left: 6px; vertical-align: top; padding-top: 8px;">
+            <b>People</b>
+            <p style="font-size: 17px; margin-top: 4px; color: gray">A curated list of key people in the
+                organization</p>
+        </div>
+    </h1>
+    <br>
+</div>
+<script>
+    const array = ${data};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '<div style="margin-left: 30px">';
+    html += '<div class="tab">';
+    let first = true;
+    array.forEach(function (source) {
+        html += '<button class="tablinks' + (first ? ' active' : '') + '" onclick="openTab(event, \'' + source.name + '\')">' + source.name + ' (' + source.count + ')</button>';
+        first = false;
+    });
+    html += '<button class="tablinks" onclick="openTab(event, \'culture-maps\')">Culture Maps</button>';
+    html += '</div>';
+
+    first = true;
+    array.forEach(function (source) {
+        if (first) {
+            first = false;
+            html += '<div id="' + source.name + '" class="tabcontent" style="display: block"><iframe src="' + source.name + '.html" class="frame" frameborder="0"></iframe></div>\n';
+        } else {
+            html += '<div id="' + source.name + '" class="tabcontent"><iframe src="' + source.name + '.html" class="frame" frameborder="0"></iframe></div>\n';
+        }
+    });
+
+    const countries = ['de', 'fr', 'be', 'es', 'il', 'ch', 'nl', 'au', 'ie', 'se', 'us', 'ca', 'cn', 'jp', 'dk', 'no', 'fi', 'ro', 'bg', 'ru', 'tr', 'mx'];
+
+    html += '<div id="culture-maps" class="tabcontent">\n';
+
+    countries.forEach(country => {
+        html += '<div class="map">';
+        html += '<img class="flag" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + country + '.svg"><br>';
+        html += '<a target="_blank" href="culture-map/' + country + '.png">';
+        html += '<img src="culture-map/' + country + '.png" class="mapThumb">';
+        html += '</a>';
+        html += '</div>';
+    });
+
+    html += '</div>\n';
+
+    html += '</div>';
+    div.outerHTML = html;
+</script>
+
+<div style="margin-left: 30px; margin-top: 8px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a target="_blank" style="" href="${source_link}">data sheet</a>.
+</div>
+</body>
+</html>
