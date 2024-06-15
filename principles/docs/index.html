@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Principles</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 240px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 24px; margin-top: 10px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 5px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 70px">
+        <div style="display: inline-block; vertical-align: top">
+            <b>Architecture Principles</b>
+        </div>
+    </h1>
+    <div style="margin-left: 12px; font-size: 16px; color: grey">The John Lewis Partnership Engineering Principles</div>
+</div>
+<script>
+    const array = [{"source": "Principles", "data": [{"id": 1, "principle": "Build Differentiators", "start_group": "Design", "link": "https://engineering-principles.jlp.engineering/principles/design/build-differentiators/", "description": "If functionality is a differentiator for the Partnership then we should prefer to build, rather than buy and/or customise.", "rationale": "Customisation of Commercial Off-The-Shelf (COTS) packages, and misuse of Software-as-a-Service (SaaS) beyond its designed-for use cases, can be costly in comparison to building equivalent functionality. It also has a longer-standing impact on the future pace of change, requiring maintenance and development on top of often-complex customisations that require specialist knowledge.", "implication_1": "Extract what value we can from existing COTS packages and SaaS.", "implication_2": "Use COTS packages and SaaS for their specific strengths,and compose differentiating systems around them as appropriate.", "implication_3": "Legacy systems, where we can differentiate, may need a wrapper layer to facilitate strangulation and subsequent replacement.", "implication_4": "Prepare for today\u2019s differentiator becoming tomorrow\u2019s commodity. We should watch the market and change our approach when there is value in doing so."}, {"id": 3, "principle": "Design Evolutionary Systems", "link": "https://engineering-principles.jlp.engineering/principles/design/evolutionary-systems/", "description": "Systems and architectures should be designed and built to enable easy, incremental change."}, {"id": 5, "principle": "Small and Simple", "link": "https://engineering-principles.jlp.engineering/principles/design/small-and-simple/", "description": "Where software is tending towards complexity, look for opportunities to break it down into smaller and simpler systems."}, {"id": 6, "principle": "Smarts in the Nodes not the Network", "link": "https://engineering-principles.jlp.engineering/principles/design/smarts-in-the-nodes-not-the-network/", "description": "Aim to have systems as decoupled and cohesive as possible, and not centrally choreographed in middleware."}, {"id": 4, "principle": "Scale Horizontally", "link": "https://engineering-principles.jlp.engineering/principles/design/scale-horizontally/", "description": "System components should be horizontally scalable where possible."}, {"id": 7, "principle": "Cloud Native", "start_group": "Operational", "link": "https://engineering-principles.jlp.engineering/principles/operational/cloud-native/", "description": "Build systems that are suitable for running in the public cloud, using cloud-native technologies suited to our provider of choice."}, {"id": 9, "principle": "Production Ready", "link": "https://engineering-principles.jlp.engineering/principles/operational/data-stewardship/", "description": "Systems are engineering for use in Production from the start \u2013 they are scalable, observable and tolerant of failure."}, {"id": 8, "principle": "Data Stewardship", "link": "https://engineering-principles.jlp.engineering/principles/operational/production-ready/", "description": "Actively protect and care for the data stored and accessed by a system, at least as much as the functional behaviour of that system."}, {"id": 10, "principle": "Keep Pace with Technological Change", "start_group": "Organizations", "link": "https://engineering-principles.jlp.engineering/principles/organisation/keep-pace-with-technological-change/", "description": "Use the latest, most appropriate tools and technologies that solve the business problem."}, {"id": 11, "principle": "Model the Business Domain", "link": "https://engineering-principles.jlp.engineering/principles/organisation/model-the-business-domain/", "description": "Terms, concepts and capabilities of the business should be reflected in the way we write, structure and deploy our code and systems."}, {"id": 15, "principle": "Design for Understandability", "start_group": "Practices", "link": "https://engineering-principles.jlp.engineering/principles/practices/understandability/", "description": "Each codebase must be understandable and easy to change by new developers with minimal experience of the application."}, {"id": 18, "principle": "Design for Testability", "link": "https://engineering-principles.jlp.engineering/principles/practices/testability/", "description": "Solutions should be designed - and code structured - in a way that makes execution of its tests happen more easily and quickly."}, {"id": 12, "principle": "Secure by Design", "link": "https://engineering-principles.jlp.engineering/principles/practices/secure-by-design/", "description": "Systems will be designed and maintained with the assumption that our software and the data they hold will be attacked and possibly compromised."}, {"id": 2, "principle": "Design for Emergent Reuse", "link": "https://engineering-principles.jlp.engineering/principles/design/design-for-emergent-reuse/", "description": "Design for well-defined use cases and adaptability. Address reuse as an optimisation opportunity rather than a goal."}, {"id": 13, "principle": "Automate by Default", "link": "https://engineering-principles.jlp.engineering/principles/practices/automate-by-default/", "description": "Tasks that can be automated should be automated by default. The choice not to automate should always be a conscious decision."}, {"id": 17, "principle": "Get Feedback Early and Often", "link": "https://engineering-principles.jlp.engineering/principles/practices/get-feedback-early-and-often/", "description": "Gain feedback by frequent and early releases of functionality, rather than Big Bang releases."}, {"id": 14, "principle": "Create Consistent Environments", "link": "https://engineering-principles.jlp.engineering/principles/practices/consistent-environments/", "description": "Environments should have homogeneous application configuration, software, operating system, infrastructure and data (where appropriate)."}, {"id": 16, "principle": "Pay Attention to Performance", "link": "https://engineering-principles.jlp.engineering/principles/practices/performance-importance/", "description": "Meet or exceed users' expectations of performance. Degradations are investigated, understood and either remedied, or accepted as appropriate in the business context."}]}];
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '<div style="margin-left: 30px">';
+    html += '<div class="tab">';
+    let first = true;
+    array.forEach(function (source) {
+        html += '<button class="tablinks' + (first ? ' active' : '') + '" onclick="openTab(event, \'' + source.source + '\')">' + source.source + ' (' + source.data.length + ')</button>';
+        first = false;
+    });
+    html += '</div>';
+
+    first = true;
+    array.forEach(function (source) {
+        if (first) {
+            first = false;
+            html += '<div id="' + source.source + '" class="tabcontent" style="display: block"><iframe src="' + source.source + '.html" class="frame" frameborder="0"></iframe></div>\n';
+        } else {
+            html += '<div id="' + source.source + '" class="tabcontent"><iframe src="' + source.source + '.html" class="frame" frameborder="0"></iframe></div>\n';
+        }
+    });
+
+    html += '</div>';
+    div.outerHTML = html;
+</script>
+
+<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on 2024-06-08 based on this source
+    <a style="color: #a0a0a0;" target="_blank" href="https://docs.google.com/spreadsheets/d/1X95BiP5Ot_SJ9VIVthBkMPmmL4i42BZygvFCfuY5eDo/edit?usp=sharing">data sheet</a>
+</div>
+</body>
+</html>

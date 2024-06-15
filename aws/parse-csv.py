@@ -144,3 +144,4 @@ def process(awsgroup):
 
 process('services')
 process('regions')
+process('api-operations')

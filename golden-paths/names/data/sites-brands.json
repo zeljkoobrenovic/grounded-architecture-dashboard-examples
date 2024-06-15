@@ -1,0 +1,28 @@
+{
+  "sites": [
+    {
+      "short_name": "CA",
+      "company": "Company A",
+      "group": "North AMerica",
+      "type": "General",
+      "link": "https://www.google.com/",
+      "country": "US"
+    },
+    {
+      "short_name": "CB",
+      "company": "Company B",
+      "group": "South America",
+      "type": "General",
+      "link": "https://www.google.com/",
+      "country": "BR"
+    },
+    {
+      "short_name": "CC",
+      "company": "Company A",
+      "group": "Europe",
+      "type": "General",
+      "link": "https://www.google.com/",
+      "country": "NL"
+    }
+  ]
+}

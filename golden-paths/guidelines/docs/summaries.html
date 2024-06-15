@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Paths</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 80%;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .section-title {
+            font-size: 170%;
+            margin-top: 4px;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .app {
+            margin: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            width: 250px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+            padding: 2px;
+            font-size: 80%;
+        }
+
+        .type {
+            font-weight: bold;
+            font-size: 11px;
+            margin-top: 12px;
+            margin-bottom: 0px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 15px;
+            margin: 2px 8px;
+            color: #5009DC;
+            overflow: hidden;
+        }
+
+        .qualifier {
+            color: grey;
+            font-weight: bold;
+            font-size: 10px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 8px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    const hightlight = ['AWS account', 'AWS Account', 'bounded context', 'capabilities', 'tagging convention', 'finops', 'verifying compliance', 'access control', 'reporting costs', 'naming conventions', 'automation', 'resource analysis', 'API documentation', 'OpenAPI', 'endpoints and parameters', 'Design principles', 'semantic versioning', 'error handling', 'deprication strategies', 'idempotent operations', 'optimistic locking', 'concurrency', 'pagination', 'AWS Lambda', 'TypeScript', 'deployment package', 'Amazon S3', 'CloudWatch', 'AWS Lambda Powwertools', 'Event source mapping', 'AWS', 'Datadog', 'instrumentation', 'traces', 'Traces', 'context propagation', 'Context propagation', 'sampling', 'Sampling rules', 'logs,', 'metrics', 'internal state', 'Event Driven APIs', 'processing events for consumers', 'CloudEvent', 'event specification', 'context attributes', 'new topic', 'API major version', 'SNS', 'idempotent', 'idempotency', 'unique idempotency keys', 'atomic operation', 'handling errors', 'Lambda Power Tools', 'serverless', 'event-driven systems', 'Single Source of Truth', 'SSoT', 'a single reference point for operational data', 'REST API', 'state of the world', 'HTTP API', 'FIFO', 'http-feeds', 'Classified Management', 'lambda function', 'Terraform', 'timeout', 'API secrets', 'JIRA tickets', 'lambda', 'feature flags', 'white-label strategy', 'plug-and-play', 'sustainable architecture design', 'Unified Frontend', 'Shell architecture', 'Design System', 'Concurrency', 'soft limit', 'PNPM', 'NPM', 'React', 'best practice', 'anti-pattern', 'Large components', 'Props drilling', 'Passing all props', 're-rendering', 're-render', 'Forgetting to use the key', 'Using the index as key', 'state management library', 'state management', 'Suspense', 'Redux', 'Zustand', 'Jotai', 'Recoil.js', 'Valtio', 'Changesets', 'Package naming convention:', 'Package release guidelines:', 'scope, name, and version', 'Gemini', 'design system', 'open contribution', 'design principles', 'conventional commit specifications', 'commands for development', 'CSS', 'micro-frontend architecture', 'micro-frontend', 'front-end components', 'decompose a front-end monolith', 'domain-centricity, isolation', 'composition', 'routing pattern', 'data provider pattern', 'data provider', 'data retrieval', 'concrete use case', 'registry', 'runtime discovery', 'Brand Routing', 'Application Routing', 'DNS', 'Shell server', 'Discovery:', 'Routing:', 'Rendering:', 'SSR', 'Lifecycle:', 'Federation:', 'Mobile:', 'Blue/Green Deployment', 'Canary Deployment', 'A/B Testing', 'Feature Flagging', 'Golden paths', 'opinionated', 'Strategic:', 'Requirements', 'Use cases', 'Constraints', 'arc42', 'Fundamental decisions', 'Building Block', 'ADRs', 'Technical Design Document', 'TDR', 'Confluence', 'Components', 'Logical groups of components', 'Network information', 'SQS', 'DLQ', 'ECS', 'Fargate', 'Step-function', 'QA', 'acceptance criteria', 'DoD', 'DoR', 'Test coverage', 'X-Ray', 'Automation strategy', 'as early as possible', 'Test strategy', 'Root Cause Analysis', 'problem-solving method', 'learning from', 'preventing future issues', 'Jira', 'roles and responsibilities', 'foster collaboration', 'year-end code freeze', 'ensure stability', 'holiday season', 'allows critical bug fixes', 'security issue', 'prohibits new feature', 'SonarCloud', 'CI/CD pipelines', 'CircleCI', 'static code analysis', 'Essential configurations', 'CI/CD', 'Bitrise', 'SonarLint', 'IDEs', '&lt;EUR 1,000:', 'EUR 1,000 - 10,000:', 'EUR 10,000 - 100,000:', '&gt;EUR 100,000:', 'validating a third-party tool', 'AAPSC project', 'Security Assessment', 'Initiation', 'Tech Discovery Review', 'Implementation Review', 'Security Questionnaire', 'Architecture Diagram', 'Application Security Report', 'CSP', 'XSS', 'SPF', 'DKIM', 'DMARC', 'HSTS', 'Okta', 'Session cookines', 'SQL injection', 'SQL', 'TLS', 'Green IT', 'Green webdesign', 'Green coding', 'Green Software Foundation', 'accessibility', 'accessibility compliance', 'integrated early', 'WCAG', 'AA', 'Axe for Figma', 'Axe Devtool', 'application configuration', 'Parameter Store', 'AWS App Config', 'DynamoDb', 'API Gateway', 'JIRA', 'JPD', 'Discovery', 'Initiative-Candidate', 'Tech Assessment', 'Commit phase', 'Cycle', 'multi-cycle', 'Product Roadmap', 'RTP', 'RTS', 'project structure', 'CoE', 'Epic', 'Templates', 'Ceremonies', 'Beebole', 'time-tracking', 'keeping track of hours spent', 'capitalized', 'EBITDA', 'Proven', 'Supported', 'Internal knowledge', 'documenting a system', 'RFC process', 'RFC', 'formal process', 'mandatory and optional reviewers', 'Business Impact', 'integration', 'ownership', 'authentication', 'permission', 'retirement', 'SAML', 'RACI', 'Responsibility Assignment Matrix', 'Spoke Account', "SLA", 'priority level', 'bug resolution', 'Critical bugs', 'Blocker bugs', 'High-priority bugs', 'Medium-priority bugs', 'Low-priority bugs', 'bug management', 'logging', 'diagnostic', 'escalation', 'continuous improvement', 'Service Portal'];
+</script>
+<script>
+    const array = [{"source": "Architecture", "data": [{"type": "General", "start_group": "General", "path": "Golden Paths Process", "link": "https://engineering.atspotify.com/2020/08/how-we-use-golden-paths-to-solve-fragmentation-in-our-software-ecosystem/", "icon": "golden.png"}, {"type": "General", "path": "RFC Process for System Design Reviews", "link": "https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/", "icon": "rfc.png"}, {"type": "General", "path": "Simple ADR/RFC Template", "link": "https://github.com/joelparkerhenderson/architecture-decision-record?tab=readme-ov-file#adr-example-templates", "icon": "decision.png"}, {"type": "General", "path": "Architecture Diagram Standards", "link": "https://c4model.com/", "icon": "document.png"}]}, {"source": "AWS", "data": [{"type": "General", "start_group": "Frontend", "path": "Front-end web & mobile Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/front-end-on-aws-how-to-choose/", "icon": "aws_frontend.png", "description": "Articulate your business requirements for building your web or mobile app on AWS."}, {"type": "General", "start_group": "Data", "path": "Storage Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/storage-on-aws-how-to-choose/", "icon": "aws_storage.png", "description": "Evaluate and choose the right AWS storage service for your workload."}, {"type": "General", "path": "Databases Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/databases-on-aws-how-to-choose/databases-on-aws-how-to-choose.html", "icon": "aws_databases.png", "description": "Establish the criteria that make sense for you to make your database choice."}, {"type": "General", "path": "Analytics Decision Guidelines", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/data-lake-for-growth-scale/welcome.html", "icon": "aws_analytics.png", "description": "Learn which questions to ask when building your modern data architecture on AWS."}, {"type": "General", "path": "Machine learning Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/machine-learning-on-aws-how-to-choose/", "icon": "aws_ml.png", "description": "Evaluate our ML services and how they can be used to solve your business problems."}, {"type": "General", "path": "Application integration Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/databases-on-aws-how-to-choose/databases-on-aws-how-to-choose.html", "icon": "aws_integration.png", "description": "Evaluate and choose AWS integration services for your workloads."}, {"type": "General", "start_group": "Compute", "path": "Containers Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/containers-on-aws-how-to-choose/choosing-aws-container-service.html", "icon": "aws_containers.png", "description": "Choose the appropriate AWS container service for your modern app development."}, {"type": "General", "path": "Amazon Lightsail or Amazon EC2 Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/lightsail-or-ec2/lightsail-or-ec2.html", "icon": "aws_ls_ec2.png", "description": "Choose between Amazon Lightsail or Amazon EC2 for your specific use case."}, {"type": "General", "path": "Networking & Content Delivery Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/networking-on-aws-how-to-choose/choosing-networking-and-content-delivery-service.html", "icon": "aws_network.png", "description": "Decide which AWS networking and content delivery services are the best fit for you."}, {"type": "General", "start_group": "DevOps & FinOps", "path": "Monitoring & observability Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/monitoring-on-aws-how-to-choose/", "icon": "aws_monitoring.png", "description": "Evaluate the AWS monitoring and observability services to see how they fit your needs."}, {"type": "General", "path": "Cost management Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/cost-management-on-aws-how-to-choose/", "icon": "aws_costs.png", "description": "Determine which cost management services and tools are the best fit for your needs."}, {"type": "General", "start_group": "Security", "path": "Security Decision Guidelines", "link": "https://docs.aws.amazon.com/decision-guides/latest/security-on-aws-how-to-choose", "icon": "aws_security.png", "description": "Select the security, identity, and compliance services that are the best fit for your needs."}, {"type": "General", "start_group": "Other", "path": "Migration Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/migration-on-aws-how-to-choose/", "icon": "aws_migration.png", "description": "Choose the AWS migration strategy that best fits your specific needs."}, {"type": "General", "path": "Modern application strategy Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/modern-apps-strategy-on-aws-how-to-choose/", "icon": "aws_modern.png", "description": "Determine which modern app development strategy is the best fit for your organization."}, {"type": "General", "path": "Internet of Things (IoT) Decision Guidelines", "link": "https://aws.amazon.com/getting-started/decision-guides/iot-on-aws-how-to-choose/", "icon": "aws_iot.png", "description": "Determine which IoT services are the best fit for your specific use case."}]}, {"source": "QA & DevOps", "data": [{"type": "General", "start_group": "General", "path": "Code Freeze", "link": "https://www.jetbrains.com/teamcity/ci-cd-guide/faq/code-freeze/", "icon": "freeze.png"}, {"type": "General", "start_group": "Bugs & Incidents", "path": "Production Bugs SLAs / SLOs", "link": "https://www.atlassian.com/incident-management/kpis/sla-vs-slo-vs-sli", "icon": "prod-bugs.png"}, {"type": "General", "path": "Bug Management Process", "link": "https://www.geeksforgeeks.org/defect-management-process/", "icon": "bugs.png"}, {"type": "General", "path": "Root Cause Analysis (RCA) Process", "link": "https://www.cms.gov/medicare/provider-enrollment-and-certification/qapi/downloads/guidanceforrca.pdf", "icon": "root.png"}]}, {"source": "Security", "data": [{"type": "General", "start_group": "General", "path": "Secure Product Lifecycle (SPLC) Assessment", "link": "https://beguier.eu/nicolas/articles/splc-vs-sdlc-differences-why-they-matter.html#:~:text=The%20Secure%20Product%20LifeCycle%20(SPLC)%20is%20a%20framework%20for%20managing,rather%20than%20just%20software%20development.", "icon": "security-assessment.png"}, {"type": "General", "path": "Security Guidelines", "link": "https://owasp.org/www-project-top-ten/", "icon": "security-guidelines.png"}]}, {"source": "Owners", "data": [{"owner": "DevOps CoE", "contact": "Head of DevOps", "scope": "DevOps"}, {"owner": "QA CoE", "contact": "Head of QA", "scope": "QA"}, {"owner": "Security CoE", "contact": "Head of Security", "scope": "Security technologies, security review of other technologies"}, {"owner": "Backend Guild", "contact": "Backend Lead", "scope": "Cloud technologies"}, {"owner": "Frontend Guild", "contact": "Frontend Lead", "scope": "Web technologies"}, {"owner": "CIO ", "contact": "CIO", "scope": "Internal and enterprise tools"}, {"owner": "Architecture CoE", "contact": "Head of Architecture", "scope": "General technologies, overall coordination and curation"}]}];
+
+    let appendObject = document.body;
+
+    array.forEach(function (group) {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('group');
+        const sectionTitle = document.createElement('div');
+        let source = group.source.toUpperCase();
+        if (source === 'OWNERS') return;
+        sectionTitle.innerHTML = source;
+        sectionTitle.classList.add('section-title');
+        sectionDiv.appendChild(sectionTitle);
+        document.body.append(sectionDiv);
+        let prev_group = '';
+        group.data.filter(a => a.path).forEach(function (app) {
+            if (app.start_group && app.start_group !== prev_group) {
+                prev_group = app.start_group;
+                const groupDiv = document.createElement('div');
+                const title = document.createElement('div');
+                title.innerHTML = app.start_group;
+                title.classList.add('group-title');
+                groupDiv.appendChild(title);
+                groupDiv.classList.add('group');
+                sectionDiv.append(groupDiv);
+                appendObject = groupDiv
+            }
+            const div = document.createElement('div');
+            appendObject.appendChild(div);
+            let html = '<div class="app" title="' + app.description + '">';
+            if (app.link) {
+                html += '    <a target="_blank" href="' + app.link + '">\n';
+            }
+            html += '    <div class="type">';
+            // html += app.type;
+            // if (app.warning) {
+            //     html += '<img title="' + app.warning + '" src="icons/warning.png" style="width: 16px; margin-left: 14px; vertical-align: middle">';
+            // }
+            // if (app.link) {
+            //     html += '<img style="height: 12px; margin-left: 8px; opacity: 0.5; vertical-align: middle" src="icons/link.png">';
+            // }
+            html += '</div>';
+            html += '    <div><img class="icon" style="filter: grayscale(100%);" src="icons/' + app.icon + '" onerror="this.src=\'icons/process.png\';"></div>\n';
+            html += '    <br>\n';
+            let title = app.path;
+            if (app.constraints) {
+                title += '<div style="font-size: 80%">(' + app.constraints + ')</div>';
+            }
+            html += '    <div class="name">' + title + '</div>\n';
+            if (app.description && app.description.length > 0) {
+                html += '<div style="margin: 1px; font-size: 90%; color: #404040; padding: 3px; text-align: left">';
+                html += '<ul style="margin-left: -20px">';
+                const lines = app.description.split(". ");
+                lines.forEach(line => {
+                    hightlight.forEach(h => {
+                        line = line.replace('\\"', '"')
+                        line = line.replace(h, '<span style="background-color: yellow">' + h + '</span>')
+                    });
+                    html += '<li style="margin-bottom: 10px">' + line + '</li>';
+                });
+                html += '</ul>';
+                html += '</div>';
+            }
+            if (app.link) {
+                html += '    </a>\n';
+            }
+            html += '</div>';
+
+            div.outerHTML = html;
+        });
+    });
+</script>
+</body>
+</html>

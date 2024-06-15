@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Paths</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px;
+            margin-right: 18px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 80%;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .section-title {
+            font-size: 170%;
+            margin-top: 4px;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        .app {
+            margin: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            width: 120px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+            padding: 3px
+        }
+
+        .type {
+            font-weight: bold;
+            font-size: 11px;
+            margin-top: 12px;
+            margin-bottom: 0px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 13px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: #5009DC;
+            overflow: hidden;
+        }
+
+        .qualifier {
+            color: grey;
+            font-weight: bold;
+            font-size: 10px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 8px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 0px;
+            margin-bottom: 6px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    const array = ${data};
+
+    let appendObject = document.body;
+
+    array.forEach(function (group) {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.classList.add('group');
+        const sectionTitle = document.createElement('div');
+        let source = group.source.toUpperCase();
+        if (source === 'OWNERS') return;
+        sectionTitle.innerHTML = source;
+        sectionTitle.classList.add('section-title');
+        sectionDiv.appendChild(sectionTitle);
+        document.body.append(sectionDiv);
+        group.data.filter(a => a.path).forEach(function (app) {
+            if (app.start_group) {
+                const groupDiv = document.createElement('div');
+                const title = document.createElement('div');
+                title.innerHTML = app.start_group;
+                title.classList.add('group-title');
+                groupDiv.appendChild(title);
+                groupDiv.classList.add('group');
+                sectionDiv.append(groupDiv);
+                appendObject = groupDiv
+            }
+            const div = document.createElement('div');
+            appendObject.appendChild(div);
+            let html = '<div class="app" title="' + app.description + '">';
+            if (app.link) {
+                html += '    <a target="_blank" href="' + app.link + '">\n';
+            }
+            html += '    <div class="type">';
+            html += app.type;
+            if (app.warning) {
+                html += '<img title="' + app.warning + '" src="icons/warning.png" style="width: 16px; margin-left: 14px; vertical-align: middle">';
+            }
+            if (app.link) {
+                html += '<img style="height: 12px; margin-left: 8px; opacity: 0.5; vertical-align: middle" src="icons/link.png">';
+            }
+            html += '</div>';
+            html += '    <br>\n';
+            html += '    <div><img class="icon" src="icons/' + app.icon + '" onerror="this.src=\'icons/tech.png\';"></div>\n';
+            let title = app.path;
+            if (app.constraints) {
+                title += '<div style="font-size: 80%">(' + app.constraints + ')</div>';
+            }
+            html += '    <div class="name">' + title + '</div>\n';
+            html += '    <div class="qualifier">' + (app.qualifier ? app.qualifier : '-') + '</div>\n';
+            if (app.link) {
+                html += '    </a>\n';
+            }
+            html += '</div>';
+
+            div.outerHTML = html;
+        });
+    });
+</script>
+</body>
+</html>

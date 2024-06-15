@@ -1,0 +1,550 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-09"
+  },
+  "data": [
+    {
+      "source": "Strategic Initiaitves",
+      "data": [
+        {
+          "group": "General",
+          "initiative": "CRM Concepts Definitions",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        },
+        {
+          "initiative": "Capabilities Roadmap Definition",
+          "status": "In Progress",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Capabilities Communication Material",
+          "status": "In Progress",
+          "architects": "Felonious Gru"
+        },
+        {
+          "group": "Domain A",
+          "initiative": "Capability A1",
+          "status": "In Progress",
+          "architects": "Margo"
+        },
+        {
+          "initiative": "Capability A2",
+          "status": "In Progress",
+          "architects": "Margo"
+        },
+        {
+          "initiative": "Capability A3",
+          "status": "In Progress",
+          "architects": "Margo"
+        },
+        {
+          "initiative": "Capability A4",
+          "status": "In Progress",
+          "architects": "Margo"
+        },
+        {
+          "initiative": "Capability A5",
+          "status": "In Progress",
+          "architects": "Margo"
+        },
+        {
+          "group": "Domain B",
+          "initiative": "Capability B1",
+          "status": "In Progress",
+          "architects": "Bob the Minion"
+        },
+        {
+          "initiative": "Capability B2",
+          "status": "In Progress",
+          "architects": "Bob the Minion"
+        },
+        {
+          "initiative": "Capability B3",
+          "status": "In Progress",
+          "architects": "Bob the Minion"
+        },
+        {
+          "initiative": "Capability B4",
+          "status": "In Progress",
+          "architects": "Bob the Minion"
+        },
+        {
+          "initiative": "Capability B5",
+          "status": "In Progress",
+          "architects": "Bob the Minion"
+        },
+        {
+          "group": "Domain C",
+          "initiative": "Capability C1",
+          "status": "In Progress",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Capability C2",
+          "status": "In Progress",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Capability C3",
+          "status": "In Progress",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Capability C4",
+          "status": "In Progress",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Capability C5",
+          "status": "In Progress",
+          "architects": "Dave the Minion"
+        },
+        {
+          "group": "Domain D",
+          "initiative": "Capability D1",
+          "status": "In Progress",
+          "architects": "Kevin the Minion"
+        },
+        {
+          "initiative": "Capability D2",
+          "status": "In Progress",
+          "architects": "Kevin the Minion"
+        },
+        {
+          "initiative": "Capability D3",
+          "status": "In Progress",
+          "architects": "Kevin the Minion"
+        },
+        {
+          "initiative": "Capability D4",
+          "status": "In Progress",
+          "architects": "Kevin the Minion"
+        },
+        {
+          "initiative": "Capability D5",
+          "status": "In Progress",
+          "architects": "Kevin the Minion"
+        },
+        {
+          "group": "Domain E",
+          "initiative": "Capability E1",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        },
+        {
+          "initiative": "Capability E2",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        },
+        {
+          "initiative": "Capability E3",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        },
+        {
+          "initiative": "Capability E4",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        },
+        {
+          "initiative": "Capability E5",
+          "status": "In Progress",
+          "architects": "Lucy Wilde"
+        }
+      ]
+    },
+    {
+      "source": "Legacy Retirement",
+      "data": [
+        {
+          "initiative": "Brand A Legacy",
+          "architects": "Dave the Minion",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Brand B Legacy",
+          "architects": "Jerry the Minion",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Brand C Legacy",
+          "architects": "Kevin the Minion",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Brand D Legacy",
+          "architects": "Lucy Wilde, Larry The Minion, Jorge the Minion, Margo",
+          "status": "Ad-Hoc"
+        }
+      ]
+    },
+    {
+      "source": "Big Picture Dashboard",
+      "data": [
+        {
+          "initiative": "Architecture Dashboard Website",
+          "type": "Infrastructure",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Mark the Minion"
+        },
+        {
+          "initiative": "GitHub Repositories Analysis",
+          "type": "Source Code Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jorge the Minion"
+        },
+        {
+          "initiative": "AWS Costs Analysis",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "GCP Costs Analysis",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Incidents Explorer",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Data Models",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Capabilities Map",
+          "type": "Strategy",
+          "status": "In progress",
+          "architects": "Felonious Gru, Lucy Wilde"
+        },
+        {
+          "initiative": "Architecture Summits",
+          "type": "Community Building",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Architecture Talks",
+          "type": "Community Building",
+          "status": "Maintenance",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Architecture Backlog",
+          "type": "Architecture System",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Who-is-Who",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Competition Overview",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Slack Buzz",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Decision Records Index",
+          "type": "Architecture System",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Teams",
+          "type": "Knowledge Base",
+          "status": "In progress",
+          "architects": "Felonious Gru"
+        }
+      ]
+    },
+    {
+      "source": "People Communities Building",
+      "data": [
+        {
+          "initiative": "Frontend Guild",
+          "status": "Active",
+          "architects": "Mark the Minion, Tim the Minion"
+        },
+        {
+          "initiative": "Backed Guild",
+          "status": "Active",
+          "architects": "Dave the Minion, Jorge the Minion"
+        },
+        {
+          "initiative": "Data Guild",
+          "status": "Active",
+          "architects": "Jorge the Minion"
+        },
+        {
+          "initiative": "Architecture Talks",
+          "status": "Active",
+          "architects": "Dave the Minion"
+        }
+      ]
+    },
+    {
+      "source": "People Connections",
+      "data": [
+        {
+          "group": "L2",
+          "initiative": "CTO",
+          "architects": "Felonious Gru",
+          "status": "Regular"
+        },
+        {
+          "initiative": "CPO",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "VP Strategy & Transformation",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "VP People",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "VP Legal",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "VP Growth & Analytics",
+          "status": "Inactive"
+        },
+        {
+          "group": "CTO LT",
+          "initiative": "Engineering Director Domain A",
+          "architects": "Margo",
+          "status": "Regular"
+        },
+        {
+          "initiative": "Engineering Director Domain B",
+          "architects": "Bob the Minion",
+          "status": "Regular"
+        },
+        {
+          "initiative": "Engineering Director Domain C",
+          "architects": "Dave the Minion",
+          "status": "Regular"
+        },
+        {
+          "initiative": "CIO",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "CISO",
+          "architects": "Felonious Gru, Margo",
+          "status": "Ad-Hoc"
+        },
+        {
+          "group": "CPO LT",
+          "initiative": "Product Director Domain A",
+          "architects": "Margo, Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Product Director Domain B",
+          "architects": "Felonious Gru",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Product Director Domain C",
+          "architects": "Dave the Minion",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Director Marketing",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Director Design and Research",
+          "status": "Ad-Hoc"
+        },
+        {
+          "initiative": "Director Product Operations",
+          "architects": "Bob the Minion",
+          "status": "Ad-Hoc"
+        }
+      ]
+    },
+    {
+      "source": "Activities Meetings",
+      "data": [
+        {
+          "initiative": "Bi-Weekly EA Sync",
+          "architects": "Core EA"
+        },
+        {
+          "initiative": "Weekly P&T LT Meeting",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Weekly Tech LT Meeting",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Bi-Weekly Strategy Review: Program 1",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Bi-Weekly Strategy Review: Program 2",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Bi-Weekly Strategy Review: Program 3",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Transformation SteerCo Monthly",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Six Weekly  Architecture Group Retrospective",
+          "architects": "All",
+          "status": "Active"
+        }
+      ]
+    },
+    {
+      "source": "Activities Architecture Operations",
+      "data": [
+        {
+          "initiative": "Technical Design Review Process",
+          "status": "In Progress",
+          "architects": "Jerry the Minion"
+        },
+        {
+          "initiative": "ADR/RFC Templates and Process",
+          "status": "In Progress",
+          "architects": "Jerry the Minion"
+        },
+        {
+          "initiative": "Architecture documentation",
+          "status": "In Progress",
+          "architects": "Jerry the Minion"
+        },
+        {
+          "initiative": "Architecture Wiki Space Manitenance",
+          "status": "Maintenance",
+          "architects": "Jerry the Minion"
+        }
+      ]
+    },
+    {
+      "source": "Internal Coaching",
+      "data": [
+        {
+          "group": "Coaching",
+          "initiative": "Margo",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Jorge the Minion",
+          "architects": "Margo",
+          "status": "Active"
+        },
+        {
+          "initiative": "Larry The Minion",
+          "architects": "Margo",
+          "status": "Active"
+        },
+        {
+          "initiative": "Jerry the Minion",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Mark the Minion",
+          "architects": "Jerry the Minion",
+          "status": "Active"
+        },
+        {
+          "initiative": "Dave the Minion",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Kevin the Minion",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Olivia Xhignesse",
+          "architects": "Kevin the Minion",
+          "status": "Inactive"
+        },
+        {
+          "initiative": "Lucy Wilde",
+          "architects": "Felonious Gru",
+          "status": "Active"
+        },
+        {
+          "initiative": "Tim the Minion",
+          "architects": "Lucy Wilde",
+          "status": "Active"
+        },
+        {
+          "initiative": "Tim the Minion",
+          "status": "Inactive"
+        },
+        {
+          "initiative": "Amin Khansari",
+          "architects": "Dave the Minion",
+          "status": "Active"
+        }
+      ]
+    },
+    {
+      "source": "Thought Leadership",
+      "data": [
+        {
+          "initiative": "OSS: sokrates.dev",
+          "status": "Active",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Grounded Architecture",
+          "status": "Active",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Architecture Talks",
+          "status": "Active",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Medium Blog",
+          "status": "Active",
+          "architects": "Jorge the Minion"
+        }
+      ]
+    }
+  ]
+}

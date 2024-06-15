@@ -8,7 +8,7 @@
     "source": ""
   },
   {
-    "startgroup": "source code",
+    "startgroup": "tracking",
     "name": "All Repositories",
     "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html",
     "icon": "atlas.png",
@@ -16,7 +16,6 @@
     "source": "source code analysis"
   },
   {
-    "startgroup": "operations",
     "name": "AWS Usage Explorer",
     "link": "../../aws/docs/index.html",
     "icon": "aws.png",
@@ -29,6 +28,57 @@
     "icon": "incidents.png",
     "description": "visualization of incidents' timeline",
     "source": "slack"
+  },
+  {
+    "name": "Legacy Assets",
+    "link": "../../legacy/docs/index.html",
+    "icon": "legacydebt.png",
+    "description": "overview of legacy assets<br>and WL connectors and ACLs",
+    "source": "source code"
+  },
+  {
+    "startgroup": "architecture practice",
+    "name": "Grounded Architecture",
+    "link": "https://grounded-architecture.io/",
+    "icon": "grounded-architecture.jpeg",
+    "description": "the grounded architecture vision",
+    "source": ""
+  },
+  {
+    "name": "Architecture Backlog",
+    "link": "../../backlog/docs/index.html",
+    "icon": "backlog.png",
+    "description": "an overview of what<br>architects actually do",
+    "source": ""
+  },
+  {
+    "name": "Golden Guidelines",
+    "startgroup": "golden paths",
+    "link": "../../golden-paths/guidelines/docs/index.html",
+    "icon": "golden-process.png",
+    "description": "key guidelines and processes",
+    "source": "conventions document"
+  },
+  {
+    "name": "Golden Paths: Tech",
+    "link": "../../golden-paths/tech/docs/index.html",
+    "icon": "golden-paths.png",
+    "description": "recommended technologies<br>for WL products",
+    "source": "golden paths sheet"
+  },
+  {
+    "name": "Naming Conventions",
+    "link": "../../golden-paths/names/docs/index.html",
+    "icon": "tags.png",
+    "description": "naming and tagging<br>conventions",
+    "source": "conventions document"
+  },
+  {
+    "name": "Architecture Principles",
+    "link": "../../principles/docs/index.html",
+    "icon": "principles.png",
+    "description": "The John Lewis Partnership Engineering Principles",
+    "source": "sheet"
   },
   {
     "startgroup": "group info",
@@ -68,7 +118,7 @@
   },
   {
     "startgroup": "source code",
-    "name": "Source Code",
+    "name": "This Source Code",
     "link": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples",
     "icon": "github.png",
     "description": "source code of<br>this dashboard",

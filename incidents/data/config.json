@@ -1,0 +1,43 @@
+{
+  "brands": [
+    {
+      "id": "Brand A",
+      "name": "Brand A",
+      "icon": "a.png"
+    },
+    {
+      "id": "Brand B",
+      "name": "Brand B",
+      "icon": "b.png"
+    },
+    {
+      "id": "Brand C",
+      "name": "Brand C",
+      "icon": "c.png"
+    }
+  ],
+  "domains": [
+    {
+      "brand": "b2c",
+      "displayName": "B2C",
+      "logo": "logos/b2c.png",
+      "color": "red"
+    },
+    {
+      "brand": "b2b",
+      "displayName": "B2B",
+      "logo": "logos/b2b.png",
+      "color": "blue"
+    },
+    {
+      "brand": "undefined",
+      "displayName": "Undefined",
+      "logo": "logos/undefined.png",
+      "color": "green"
+    }
+  ],
+  "roi": {
+    "maintenanceSavingPoolMEur": 2,
+    "infrastructureSavingPoolMEur": 1
+  }
+}

@@ -1,0 +1,554 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-11"
+  },
+  "data": [
+    {
+      "source": "Frontend",
+      "data": [
+        {
+          "type": "General",
+          "path": "React",
+          "qualifier": "Web",
+          "start_group": "Web",
+          "icon": "react.png",
+          "description": "React is a standard Web framework."
+        },
+        {
+          "type": "General",
+          "path": "TypeScript",
+          "qualifier": "Web",
+          "icon": "typescript.png",
+          "description": "TypeScript is a standard programming language for Web development, already widely adopted."
+        },
+        {
+          "type": "General",
+          "path": "Swift",
+          "qualifier": "iOS",
+          "start_group": "Mobile",
+          "icon": "swift.png",
+          "description": "Swift is the de facto standard for writing native iOS mobile applications, already widely adopted."
+        },
+        {
+          "type": "General",
+          "path": "SwiftUI",
+          "qualifier": "iOS",
+          "icon": "swiftui.jpeg",
+          "description": "SwiftUI is a standard user interface toolking for native iOS apps."
+        },
+        {
+          "type": "General",
+          "path": "Kotlin",
+          "qualifier": "Android",
+          "icon": "kotlin.png",
+          "description": "Kotlin is the de facto standard for writing native Android mobile applications, already widely adopted."
+        },
+        {
+          "type": "General",
+          "path": "Compose",
+          "qualifier": "Android",
+          "icon": "compose.png",
+          "description": "Compose is Android's recommended modern toolkit for building native UI."
+        },
+        {
+          "type": "General",
+          "path": "Airship",
+          "qualifier": "Push notifications",
+          "icon": "airship.png",
+          "description": "Airship is standard tool for mobile push notifications."
+        },
+        {
+          "type": "General",
+          "path": "Firebase",
+          "qualifier": "monitoring, a/b tests, config",
+          "icon": "firebase.png",
+          "description": "Firebase is standard set of tools for native mobile development."
+        },
+        {
+          "type": "General",
+          "path": "Google Analytics",
+          "qualifier": "User Tracking",
+          "start_group": "User Tracking",
+          "icon": "google-analytics.png",
+          "description": "Google Analytics is de facto standard for use tracking on both mobile and web."
+        },
+        {
+          "type": "General",
+          "path": "Lokalise",
+          "qualifier": "Localization and Translation",
+          "start_group": "Localization",
+          "icon": "lokalise.png",
+          "description": "Lokalise is a standard localization and translation management platform."
+        },
+        {
+          "type": "General",
+          "path": "UserCentrics",
+          "qualifier": "Consent Management Platform",
+          "start_group": "Consent Management",
+          "icon": "usercentrics.png",
+          "description": "UserCentrics is our Consent Management Platforms (CMP) standard."
+        },
+        {
+          "type": "General",
+          "path": "Kameleoon",
+          "start_group": "A/B Testing",
+          "icon": "kameleoon.png"
+        }
+      ]
+    },
+    {
+      "source": "Backend & Infra",
+      "data": [
+        {
+          "type": "AWS",
+          "path": "API Gateway",
+          "constraints": "REST only",
+          "constraints_explanation": "non-REST API are less secure",
+          "qualifier": "REST only",
+          "start_group": "API Management",
+          "icon": "aws/apigateway.svg",
+          "description": "A fully managed AWS service to create, publish, maintain, monitor, and secure APIs at any scale. An API Gateway is used the entry point for client requests to an API."
+        },
+        {
+          "type": "General",
+          "path": "TypeScript",
+          "qualifier": "Lambdas, BFF, Services",
+          "start_group": "Backend Programming",
+          "icon": "typescript.png",
+          "description": "A standard open-source high-level programming language that adds static typing with optional type annotations to JavaScript. "
+        },
+        {
+          "type": "General",
+          "path": "NodeJS",
+          "qualifier": "Lambdas, BFF, Services",
+          "icon": "nodejs.png",
+          "description": "Node.js is a standard, cross-platform, open-source server environment, a back-end JavaScript runtime environment."
+        },
+        {
+          "type": "General",
+          "path": "Terraform",
+          "start_group": "IaC",
+          "icon": "terraform.png",
+          "description": "A standard open-source infrastructure-as-code software tool, already widely used."
+        },
+        {
+          "type": "General",
+          "path": "Docker",
+          "constraints": "Linux images",
+          "constraints_explanation": "uniforming OS usage to enable global optimization and having golden, optimized and secure images",
+          "qualifier": "Services, BFFs",
+          "start_group": "Compute",
+          "icon": "docker.png",
+          "description": "A standard open-source infrastructure-as-code software tool."
+        },
+        {
+          "type": "AWS",
+          "path": "ECS",
+          "constraints": "on Fargate",
+          "constraints_explanation": "discouraging EC2 usage",
+          "qualifier": "Services, BFFs",
+          "icon": "aws/ecs.svg",
+          "description": "A fully managed AWS container orchestration service that simplifies deployment, management, and scaling of containerized applications. Amazon ECS will launch, monitor, and scale applications across flexible compute options with automatic integrations to other supporting AWS services. Perform system operations such as creating custom scaling and capacity rules, and observe and query data from application logs and telemetry."
+        },
+        {
+          "type": "AWS",
+          "path": "Fargate",
+          "icon": "aws/fargate.svg",
+          "description": "A serverless, pay-as-you-go AWS compute engine that runs conternarized applications without managing servers or clusters. "
+        },
+        {
+          "type": "AWS",
+          "path": "Lambdas",
+          "constraints": "on NodeJS Stack",
+          "constraints_explanation": "harmonizong tech stack and knowledge around lanbda runtime",
+          "icon": "aws/lambda.svg",
+          "description": "A serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers. You can trigger Lambda from over 200 AWS services and software as a service (SaaS) applications, and only pay for what you use."
+        },
+        {
+          "type": "AWS",
+          "path": "Step Functions",
+          "qualifier": "workflow orchestration",
+          "start_group": "Workflow Orchestration",
+          "icon": "aws/steps.svg",
+          "description": "A visual workflow service that helps developers use AWS services to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning (ML) pipelines."
+        },
+        {
+          "type": "AWS",
+          "path": "SQS",
+          "qualifier": "message queue",
+          "start_group": "Messaging",
+          "icon": "aws/sqs.svg",
+          "description": "Amazon Simple Queue Service (Amazon SQS) is fully managed message queuing for microservices, distributed systems, and serverless applications."
+        },
+        {
+          "type": "AWS",
+          "path": "SNS",
+          "qualifier": "A2A & A2P messaging",
+          "icon": "aws/sns.svg",
+          "description": "Amazon Simple Notification Service (Amazon SNS)  is a fully managed Pub/Sub service for application-to-application (A2A) and application-to-person (A2P) messaging."
+        },
+        {
+          "type": "AWS",
+          "path": "Event Bridge",
+          "qualifier": "event routing",
+          "icon": "aws/eventbridge.svg",
+          "description": "A serverless event bus that helps you receive, filter, transform, route, and deliver events."
+        },
+        {
+          "type": "AWS",
+          "path": "S3",
+          "qualifier": "object store",
+          "start_group": "Storage & Data",
+          "icon": "aws/s3.svg",
+          "description": "An object storage service offering industry-leading scalability, data availability, security, and performance."
+        },
+        {
+          "type": "AWS",
+          "path": "RDS",
+          "constraints": "Aurora PostgreSQL",
+          "constraints_explanation": "other DB engies are less efficient and more expensive",
+          "qualifier": "sql database",
+          "icon": "aws/rds.svg",
+          "description": "Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud."
+        },
+        {
+          "type": "AWS",
+          "path": "DynamoDB",
+          "qualifier": "key-value store",
+          "icon": "aws/dynamodb.svg",
+          "description": "A fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale. DynamoDB offers built-in security, continuous backups, automated multi-Region replication, in-memory caching, and data import and export tools."
+        },
+        {
+          "type": "AWS",
+          "path": "ElastiCache",
+          "constraints": "on Redis",
+          "constraints_explanation": "more advanced than Memcached",
+          "qualifier": "in memory store",
+          "icon": "aws/elasticache.svg",
+          "description": "A fully managed, Redis-compatible service delivering real-time, cost-optimized performance for modern applications. ElastiCache scales to hundreds of millions of operations per second with microsecond response time, and offers enterprise-grade security and reliability."
+        },
+        {
+          "type": "AWS",
+          "path": "OpenSearch",
+          "qualifier": "advanced search",
+          "icon": "aws/opensearch.svg",
+          "description": "A mamanged service to perform interactive website search, log analytics, real-time application monitoring and more. OpenSearch is an open source, distributed search and analytics suite derived from Elasticsearch. Amazon OpenSearch Service offers the latest versions of OpenSearch, as well as visualization capabilities powered by OpenSearch Dashboards and Kibana."
+        },
+        {
+          "type": "AWS",
+          "path": "CloudFront",
+          "qualifier": "CDN",
+          "icon": "aws/cloudfront.svg",
+          "description": "A content delivery network (CDN) service built for high performance, security, and developer convenience."
+        },
+        {
+          "type": "AWS",
+          "path": "Elastic Load Balancer",
+          "qualifier": "application load balancer",
+          "icon": "aws/elb.svg",
+          "description": "Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets and virtual appliances in one or more Availability Zones (AZs)."
+        },
+        {
+          "type": "AWS",
+          "path": "WAF",
+          "qualifier": "application firewall",
+          "start_group": "Security",
+          "icon": "aws/waf.svg",
+          "description": "Helps you protect against common web exploits and bots that can affect availability, compromise security, or consume excessive resources."
+        },
+        {
+          "type": "General",
+          "path": "Datadome",
+          "qualifier": "bot protection",
+          "icon": "datadome.jpeg",
+          "description": "A standard SaaS bot protection solution."
+        },
+        {
+          "type": "AWS",
+          "path": "Secret Manager",
+          "qualifier": "key other secrets",
+          "start_group": "Config",
+          "icon": "aws/secretmanager.svg",
+          "description": "Helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. Many AWS services that use secrets store them in Secrets Manager."
+        },
+        {
+          "type": "AWS",
+          "path": "Parameter Store",
+          "qualifier": "parameters",
+          "icon": "aws/param-store.svg",
+          "description": "A capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values."
+        },
+        {
+          "type": "AWS",
+          "path": "Cost Explorer",
+          "start_group": "FinOps",
+          "icon": "aws/cost-explorer.svg",
+          "description": "Visualize, understand, and manage your AWS costs and usage over time."
+        },
+        {
+          "type": "Specification ",
+          "path": "CloudEvent",
+          "qualifier": "Event envelope model standard",
+          "icon": "cloudevents.png",
+          "description": "A specification for describing event data in a common way"
+        },
+        {
+          "type": "General",
+          "path": "Async API",
+          "qualifier": "Event Driven API Documentation",
+          "icon": "asyncapi.png",
+          "description": "A set of solutions & tools to automate and formalize the documentation or code generation of event-driven services"
+        }
+      ]
+    },
+    {
+      "source": "Data Engineering",
+      "data": [
+        {
+          "type": "General",
+          "path": "Python",
+          "start_group": "Compute",
+          "icon": "python.png"
+        },
+        {
+          "type": "AWS",
+          "path": "Lambdas",
+          "constraints": "on Python Stack",
+          "constraints_explanation": "typically owned by team building python services",
+          "icon": "aws/lambda.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "Athena",
+          "icon": "aws/athena.svg",
+          "description": "A serverless, interactive analytics service supporting open-table and file formats. Athena provides a simplified, flexible way to analyze petabytes of data where it lives, e.g., from an Amazon Simple Storage Service (S3) data lake and 30 data sources, including on-premises data sources or other cloud systems using SQL or Python. Built on open-source Trino and Presto engines and Apache Spark frameworks, with no provisioning or configuration effort required."
+        },
+        {
+          "type": "AWS",
+          "path": "Glue",
+          "icon": "aws/glue.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "Lake Formation",
+          "icon": "aws/lake-formation.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "EMR",
+          "icon": "aws/emr.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "Sagemaker",
+          "start_group": "ML/AI",
+          "icon": "aws/sagemaker.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "Jupyter Notebooks",
+          "icon": "jupyter.png"
+        }
+      ]
+    },
+    {
+      "source": "DevOps",
+      "data": [
+        {
+          "type": "General",
+          "path": "GitHub",
+          "qualifier": "Source Code",
+          "start_group": "Version Control",
+          "icon": "github.png",
+          "description": "A standard and widely used platform and cloud-based service for software development and version control using Git,"
+        },
+        {
+          "type": "General",
+          "path": "Renovate",
+          "qualifier": "Dependencies",
+          "warning": "under security review",
+          "icon": "renovate.png",
+          "description": "A standard universal dependency update tool."
+        },
+        {
+          "type": "General",
+          "path": "CircleCI",
+          "qualifier": "CI/CD",
+          "start_group": "CI/CD",
+          "icon": "circleci.png",
+          "description": "A standard continuous integration and continuous delivery platform."
+        },
+        {
+          "type": "AWS",
+          "path": "ECR",
+          "qualifier": "container registery",
+          "start_group": "Package/Image management",
+          "icon": "aws/ecr.svg",
+          "description": "Amazon Elastic Container Registry (Amazon ECR) is a fully managed container registry offering high-performance hosting, so you can reliably deploy application images and artifacts anywhere."
+        },
+        {
+          "type": "AWS",
+          "path": "CodeArtifact",
+          "qualifier": "artifacts registry",
+          "icon": "Arch_AWS-CodeArtifact_64.png",
+          "description": "A central CodeArtifact for storing packages of all feature teams"
+        },
+        {
+          "type": "General",
+          "path": "DataDog",
+          "start_group": "Observability",
+          "icon": "datadog.png",
+          "description": "A standard platform for monitoring of servers, databases, tools, and services, through a SaaS-based data analytics platform."
+        },
+        {
+          "type": "General",
+          "path": "OpsGenie",
+          "start_group": "OnCall Management",
+          "icon": "opsgenie.svg"
+        },
+        {
+          "type": "General",
+          "path": "Backstage",
+          "qualifier": "Backstage",
+          "start_group": "Technical Documentation",
+          "icon": "backstage.svg"
+        },
+        {
+          "type": "General",
+          "path": "Open API",
+          "qualifier": "API Management",
+          "icon": "openapi.png"
+        }
+      ]
+    },
+    {
+      "source": "QA",
+      "data": [
+        {
+          "type": "General",
+          "path": "Xray",
+          "qualifier": "Internal Quality",
+          "start_group": "Test Case Management",
+          "icon": "xray.png",
+          "description": "Xray for Jira allows our teams to create, view, and manage test cases directly within the Jira environment. Some key features of Xray include: Test Case Management, Test Execution, Integration with Jira, Requirements Traceability, Test Automation Integration and Reporting and Metrics"
+        },
+        {
+          "type": "General",
+          "path": "Sonarcloud",
+          "qualifier": "Internal Quality",
+          "start_group": "Internal Quality",
+          "icon": "sonarcloud.png",
+          "description": "Sonarcloud is our tool that helps you keep your code in tip-top shape. One of the standout features of SonarCloud is its ability to analyze your code for issues like bugs, security vulnerabilities, code smells, and more."
+        },
+        {
+          "type": "General",
+          "path": "Chromatic",
+          "qualifier": "Internal Quality",
+          "start_group": "Visual Testing",
+          "icon": "chromatic.png",
+          "description": "Chromatic is a visual testing & review tool that scans every possible UI state across browsers to catch visual and functional bugs. Assign reviewers and resolve discussions to streamline team sign-off."
+        },
+        {
+          "type": "General",
+          "path": "Datadog Synthetic Test",
+          "qualifier": "Internal Quality",
+          "start_group": "Proactive Monitoring",
+          "icon": "datadog.png",
+          "description": "Synthetic testing, also known as synthetic monitoring or proactive monitoring, is a way that we identify performance issues with key user journeys by simulating real user traffic."
+        },
+        {
+          "type": "General",
+          "path": "Provar",
+          "qualifier": "Internal Quality",
+          "start_group": "Salesforce Test Automation",
+          "icon": "provar.png",
+          "description": "Provar is our test automation tool for testing applications built on the Salesforce platform. Salesforce is a cloud-based customer relationship management (CRM) platform used by many organizations for managing customer interactions and business processes"
+        },
+        {
+          "type": "General",
+          "path": "Mailausor",
+          "qualifier": "Internal Quality",
+          "start_group": "Email & SMS Testing",
+          "icon": "mailosaur.png",
+          "description": "Mailosaur is a test and analyze email and SMS messages as part of manual and automated testing process."
+        },
+        {
+          "type": "General",
+          "path": "WebdriverIO",
+          "qualifier": "Internal Quality",
+          "start_group": "Unified Automation Framework",
+          "icon": "wdiologo.png",
+          "description": "Unified Automation Framework for automating applications across all brands and platforms."
+        }
+      ]
+    },
+    {
+      "source": "Avoid",
+      "data": [
+        {
+          "type": "AWS",
+          "path": "EC2",
+          "constraints": "avoid any EC2 usage",
+          "constraints_explanation": "EC2 provides generic virtual machines that require a significant level of low-level configuration and management by the team using it. In addition, using EC2 can lead to a considerable diversity of OS and other basic infrastructural layers, which, compared to containerized applications, can reduce portability and increase the complexity of our technology landscape. Always containerize your loads or implement them as serverless functions.",
+          "start_group": "Compute",
+          "icon": "aws/ec2.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "EKS",
+          "constraints": "avoid Managed Kubernetes",
+          "constraints_explanation": "Requires investment and internal team to properly manage, maintain and secure EKS (compared to ECS, requires minimal additional management),",
+          "icon": "aws/eks.svg"
+        },
+        {
+          "type": "AWS",
+          "path": "RDS",
+          "constraints": "avoid non-Aurora PostgreSQL",
+          "constraints_explanation": "Inefficient and more expensive compared to Aurora PostgreSQL.",
+          "start_group": "Storage",
+          "icon": "aws/rds.svg"
+        }
+      ]
+    },
+    {
+      "source": "Owners",
+      "data": [
+        {
+          "owner": "DevOps CoE",
+          "contact": "Head of DevOps",
+          "scope": "DevOps"
+        },
+        {
+          "owner": "QA CoE",
+          "contact": "Head of QA",
+          "scope": "QA"
+        },
+        {
+          "owner": "Security CoE",
+          "contact": "Head of Security",
+          "scope": "Security technologies, security review of other technologies"
+        },
+        {
+          "owner": "Backend Guild",
+          "contact": "Backend Lead",
+          "scope": "Cloud technologies"
+        },
+        {
+          "owner": "Frontend Guild",
+          "contact": "Frontend Lead",
+          "scope": "Web technologies"
+        },
+        {
+          "owner": "CIO ",
+          "contact": "CIO",
+          "scope": "Internal and enterprise tools"
+        },
+        {
+          "owner": "Architecture CoE",
+          "contact": "Head of Architecture",
+          "scope": "General technologies, overall coordination and curation"
+        }
+      ]
+    }
+  ]
+}

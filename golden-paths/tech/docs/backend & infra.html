@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Paths</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .app {
+            margin: 10px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            min-height: 300px;
+            width: 360px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .type {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 12px;
+            margin-bottom: 0px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: #5009DC;
+            overflow: hidden;
+        }
+
+        .qualifier {
+            color: grey;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 14px;
+            text-align: left;
+        }
+
+        .constraint {
+            font-size: 15px;
+            color: crimson;
+            margin: 3px;
+            line-height: 21px;
+            padding: 0px 14px 0px 10px;
+            text-align: left;
+            border-left: 4px dotted crimson;
+            margin-left: 16px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    var array = [{"type": "AWS", "path": "API Gateway", "constraints": "REST only", "constraints_explanation": "non-REST API are less secure", "qualifier": "REST only", "start_group": "API Management", "icon": "aws/apigateway.svg", "description": "A fully managed AWS service to create, publish, maintain, monitor, and secure APIs at any scale. An API Gateway is used the entry point for client requests to an API."}, {"type": "General", "path": "TypeScript", "qualifier": "Lambdas, BFF, Services", "start_group": "Backend Programming", "icon": "typescript.png", "description": "A standard open-source high-level programming language that adds static typing with optional type annotations to JavaScript. "}, {"type": "General", "path": "NodeJS", "qualifier": "Lambdas, BFF, Services", "icon": "nodejs.png", "description": "Node.js is a standard, cross-platform, open-source server environment, a back-end JavaScript runtime environment."}, {"type": "General", "path": "Terraform", "start_group": "IaC", "icon": "terraform.png", "description": "A standard open-source infrastructure-as-code software tool, already widely used."}, {"type": "General", "path": "Docker", "constraints": "Linux images", "constraints_explanation": "uniforming OS usage to enable global optimization and having golden, optimized and secure images", "qualifier": "Services, BFFs", "start_group": "Compute", "icon": "docker.png", "description": "A standard open-source infrastructure-as-code software tool."}, {"type": "AWS", "path": "ECS", "constraints": "on Fargate", "constraints_explanation": "discouraging EC2 usage", "qualifier": "Services, BFFs", "icon": "aws/ecs.svg", "description": "A fully managed AWS container orchestration service that simplifies deployment, management, and scaling of containerized applications. Amazon ECS will launch, monitor, and scale applications across flexible compute options with automatic integrations to other supporting AWS services. Perform system operations such as creating custom scaling and capacity rules, and observe and query data from application logs and telemetry."}, {"type": "AWS", "path": "Fargate", "icon": "aws/fargate.svg", "description": "A serverless, pay-as-you-go AWS compute engine that runs conternarized applications without managing servers or clusters. "}, {"type": "AWS", "path": "Lambdas", "constraints": "on NodeJS Stack", "constraints_explanation": "harmonizong tech stack and knowledge around lanbda runtime", "icon": "aws/lambda.svg", "description": "A serverless, event-driven compute service that lets you run code for virtually any type of application or backend service without provisioning or managing servers. You can trigger Lambda from over 200 AWS services and software as a service (SaaS) applications, and only pay for what you use."}, {"type": "AWS", "path": "Step Functions", "qualifier": "workflow orchestration", "start_group": "Workflow Orchestration", "icon": "aws/steps.svg", "description": "A visual workflow service that helps developers use AWS services to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning (ML) pipelines."}, {"type": "AWS", "path": "SQS", "qualifier": "message queue", "start_group": "Messaging", "icon": "aws/sqs.svg", "description": "Amazon Simple Queue Service (Amazon SQS) is fully managed message queuing for microservices, distributed systems, and serverless applications."}, {"type": "AWS", "path": "SNS", "qualifier": "A2A & A2P messaging", "icon": "aws/sns.svg", "description": "Amazon Simple Notification Service (Amazon SNS)  is a fully managed Pub/Sub service for application-to-application (A2A) and application-to-person (A2P) messaging."}, {"type": "AWS", "path": "Event Bridge", "qualifier": "event routing", "icon": "aws/eventbridge.svg", "description": "A serverless event bus that helps you receive, filter, transform, route, and deliver events."}, {"type": "AWS", "path": "S3", "qualifier": "object store", "start_group": "Storage & Data", "icon": "aws/s3.svg", "description": "An object storage service offering industry-leading scalability, data availability, security, and performance."}, {"type": "AWS", "path": "RDS", "constraints": "Aurora PostgreSQL", "constraints_explanation": "other DB engies are less efficient and more expensive", "qualifier": "sql database", "icon": "aws/rds.svg", "description": "Amazon Relational Database Service (Amazon RDS) is a collection of managed services that makes it simple to set up, operate, and scale databases in the cloud."}, {"type": "AWS", "path": "DynamoDB", "qualifier": "key-value store", "icon": "aws/dynamodb.svg", "description": "A fully managed, serverless, key-value NoSQL database designed to run high-performance applications at any scale. DynamoDB offers built-in security, continuous backups, automated multi-Region replication, in-memory caching, and data import and export tools."}, {"type": "AWS", "path": "ElastiCache", "constraints": "on Redis", "constraints_explanation": "more advanced than Memcached", "qualifier": "in memory store", "icon": "aws/elasticache.svg", "description": "A fully managed, Redis-compatible service delivering real-time, cost-optimized performance for modern applications. ElastiCache scales to hundreds of millions of operations per second with microsecond response time, and offers enterprise-grade security and reliability."}, {"type": "AWS", "path": "OpenSearch", "qualifier": "advanced search", "icon": "aws/opensearch.svg", "description": "A mamanged service to perform interactive website search, log analytics, real-time application monitoring and more. OpenSearch is an open source, distributed search and analytics suite derived from Elasticsearch. Amazon OpenSearch Service offers the latest versions of OpenSearch, as well as visualization capabilities powered by OpenSearch Dashboards and Kibana."}, {"type": "AWS", "path": "CloudFront", "qualifier": "CDN", "icon": "aws/cloudfront.svg", "description": "A content delivery network (CDN) service built for high performance, security, and developer convenience."}, {"type": "AWS", "path": "Elastic Load Balancer", "qualifier": "application load balancer", "icon": "aws/elb.svg", "description": "Elastic Load Balancing (ELB) automatically distributes incoming application traffic across multiple targets and virtual appliances in one or more Availability Zones (AZs)."}, {"type": "AWS", "path": "WAF", "qualifier": "application firewall", "start_group": "Security", "icon": "aws/waf.svg", "description": "Helps you protect against common web exploits and bots that can affect availability, compromise security, or consume excessive resources."}, {"type": "General", "path": "Datadome", "qualifier": "bot protection", "icon": "datadome.jpeg", "description": "A standard SaaS bot protection solution."}, {"type": "AWS", "path": "Secret Manager", "qualifier": "key other secrets", "start_group": "Config", "icon": "aws/secretmanager.svg", "description": "Helps you manage, retrieve, and rotate database credentials, application credentials, OAuth tokens, API keys, and other secrets throughout their lifecycles. Many AWS services that use secrets store them in Secrets Manager."}, {"type": "AWS", "path": "Parameter Store", "qualifier": "parameters", "icon": "aws/param-store.svg", "description": "A capability of AWS Systems Manager, provides secure, hierarchical storage for configuration data management and secrets management. You can store data such as database strings, Amazon Machine Image (AMI) IDs, and license codes as parameter values."}, {"type": "AWS", "path": "Cost Explorer", "start_group": "FinOps", "icon": "aws/cost-explorer.svg", "description": "Visualize, understand, and manage your AWS costs and usage over time."}, {"type": "Specification ", "path": "CloudEvent", "qualifier": "Event envelope model standard", "icon": "cloudevents.png", "description": "A specification for describing event data in a common way"}, {"type": "General", "path": "Async API", "qualifier": "Event Driven API Documentation", "icon": "asyncapi.png", "description": "A set of solutions & tools to automate and formalize the documentation or code generation of event-driven services"}];
+
+    var appendObject = document.body;
+
+    array.forEach(function (app) {
+        if (app.start_group) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = app.start_group;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        var div = document.createElement('div');
+        appendObject.appendChild(div);
+        var html = '<div class="app">';
+        if (app.link) {
+            html += '    <a target="_blank" href="' + app.link + '">\n';
+        }
+        html += '    <div class="type">' + app.type + '</div>';
+        html += '    <div class="name">' + app.path.replace(/\&/g, '&amp;');
+        if (app.warning) {
+            html += '<img title="' + app.warning + '" src="icons/warning.png" style="width: 26px; margin-left: 14px; vertical-align: top">';
+        }
+        html += '</div>\n';
+        html += '    <div class="qualifier">' + (app.qualifier ? app.qualifier : '-') + '</div>\n';
+        html += '    <div><img class="icon" src="icons/' + app.icon + '" onerror="this.src=\'icons/tech.png\';"></div>\n';
+        html += '    <div class="description">' + (app.description ? app.description : '') + '</div>\n';
+        if (app.constraints) {
+            html += '    <div class="constraint">Constraint: ' + (app.constraints);
+            html += ' <div style="margin-top: 4px; font-size: 90%; color: grey">';
+            html += app.constraints_explanation + '</div></div>\n';
+        }
+        if (app.link) {
+            html += '    <div><img style="height: 20px" src="icons/link.png"></div>\n';
+            html += '    </a>\n';
+        }
+        html += '</div>';
+
+        div.outerHTML = html;
+
+    });
+</script>
+</body>
+</html>

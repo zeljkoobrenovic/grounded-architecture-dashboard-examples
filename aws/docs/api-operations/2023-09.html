@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Usage Trend</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .domain {
+            padding: 5px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            font-size: 10px;
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .image {
+            height: 64px;
+            width: 64px;
+            object-fit: contain;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    const getImage = function (service) {
+        const id = service.toLowerCase();
+
+        if (id.includes('ec2')) return 'aws/Amazon-EC2.png'
+        if (id.includes('runinstance')) return 'aws/Amazon-EC2.png'
+        if (id.includes('relational database')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbinstance')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbproxy')) return 'aws/Amazon-RDS.png'
+        if (id.includes('elasticsearch')) return 'general/elasticsearch.png'
+        if (id.includes('esdomain')) return 'general/elasticsearch.png'
+        if (id.includes('circleci')) return 'general/circleci.png'
+        if (id.includes('databricks')) return 'general/databricks.png'
+        if (id.includes('cloudwatch')) return 'aws/Amazon-CloudWatch.png'
+        if (id.includes('s3')) return 'aws/Amazon-Simple-Storage-Service.png'
+        if (id.includes('cloudfront')) return 'aws/Amazon-CloudFront.png'
+        if (id.includes('cloudtrail')) return 'aws/AWS-CloudTrail.png'
+        if (id.includes('vpc')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('natgateway')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('dynamodb')) return 'aws/Amazon-DynamoDB.png'
+        if (id.includes('elasticache')) return 'aws/Amazon-ElastiCache.png'
+        if (id.includes('route 53')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('registrar')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('guardduty')) return 'aws/Amazon-GuardDuty.png'
+        if (id.includes('api gateway')) return 'aws/Amazon-API-Gateway.png'
+        if (id.includes('kinesis firehose')) return 'aws/Amazon-Kinesis-Firehose.png'
+        if (id.includes('kinesis')) return 'aws/Amazon-Kinesis.png'
+        if (id.includes('opensearch')) return 'aws/Amazon-OpenSearch-Service.png'
+        if (id.includes('sns')) return 'aws/Amazon-Simple-Notification-Service.png'
+        if (id.includes('sqs')) return 'aws/Amazon-Simple-Queue-Service.png'
+        if (id.includes('lambda')) return 'aws/AWS-Lambda.png'
+        if (id.includes('redshift')) return 'aws/Amazon-Redshift.png'
+        if (id.includes('glue')) return 'aws/AWS-Glue.png'
+        if (id.includes('waf')) return 'aws/AWS-WAF.png'
+        if (id.includes('shield')) return 'aws/AWS-Shield.png'
+        if (id.includes('config')) return 'aws/AWS-Config.png'
+        if (id.includes('elastic container service for kubernetes')) return 'aws/Amazon-Elastic-Container-Kubernetes.png'
+        if (id.includes('elastic container')) return 'aws/Amazon-Elastic-Container-Service.png'
+        if (id.includes('secrets manager')) return 'aws/AWS-Secrets-Manager.png'
+        if (id.includes('transfer family')) return 'aws/AWS-Transfer-Family.png'
+        if (id.includes('managed streaming for apache kafka')) return 'aws/Amazon-Managed-Streaming-for-Apache-Kafka.png'
+        if (id.includes('managed workflows for apache airflow')) return 'aws/Amazon-Managed-Workflows-for-Apache-Airflow.png'
+        if (id.includes('elastic file system')) return 'aws/Amazon-EFS.png'
+        if (id.includes('documentdb')) return 'aws/Amazon-DocumentDB.png'
+        if (id.includes('key management service')) return 'aws/AWS-Key-Management-Service.png'
+        if (id.includes('confluent')) return 'general/confluent.png'
+        if (id.includes('netgo group')) return 'general/okta.png'
+        if (id.includes('center for internet security')) return 'general/cis.png'
+
+        if (id.includes('glacier')) return 'aws/Amazon-Simple-Storage-Service-Glacier.png'
+        if (id.includes('athena')) return 'aws/Amazon-Athena.png'
+        if (id.includes('step functions')) return 'aws/AWS-Step-Functions.png'
+        if (id.includes('ses')) return 'aws/Amazon-Simple-Email-Service.png'
+        if (id.includes('x-ray')) return 'aws/AWS-X-Ray.png'
+        if (id.includes('backup')) return 'aws/AWS-Backup.png'
+        if (id.includes('cloud wan')) return 'aws/AWS-Cloud-WAN.png'
+        if (id.includes('directory service')) return 'aws/AWS-Directory-Service.png'
+        if (id.includes('network firewall')) return 'aws/AWS-Network-Firewall.png'
+        if (id.includes('systems manager')) return 'aws/AWS-Systems-Manager.png'
+        if (id.includes('direct connect')) return 'aws/AWS-Direct-Connect.png'
+        if (id.includes('certificate manager')) return 'aws/AWS-Certificate-Manager.png'
+        if (id.includes('quicksight')) return 'aws/Amazon-QuickSight.png'
+        if (id.includes('codebuild')) return 'aws/AWS-CodeBuild.png'
+        if (id.includes('codepipeline')) return 'aws/AWS-CodePipeline.png'
+        if (id.includes('codeartifact')) return 'aws/AWS-CodeArtifact.png'
+        if (id.includes('data pipeline')) return 'aws/AWS-Data-Pipeline.png'
+        if (id.includes('security hub')) return 'aws/AWS-Security-Hub.png'
+        if (id.includes('sagemaker')) return 'aws/Amazon-SageMaker.png'
+        if (id.includes('lightsail')) return 'aws/Amazon-Lightsail.png'
+        if (id.includes('global accelerator')) return 'aws/AWS-Global-Accelerator.png'
+        if (id.includes('cognito')) return 'aws/Amazon-Cognito.png'
+        if (id.includes('amplify')) return 'aws/AWS-Amplify.png'
+        if (id.includes('cost explorer')) return 'aws/AWS-Cost-Explorer.png'
+        if (id.includes('elemental mediaconvert')) return 'aws/AWS-Elemental-MediaConvert.png'
+        if (id.includes('elemental mediaconnect')) return 'aws/AWS-Elemental-MediaConnect.png'
+        if (id.includes('elemental medialive')) return 'aws/AWS-Elemental-MediaLive.png'
+        if (id.includes('elemental mediapackage')) return 'aws/AWS-Elemental-MediaPackage.png'
+        if (id.includes('elemental mediastore')) return 'aws/AWS-Elemental-MediaStore.png'
+        if (id.includes('elemental mediatailor')) return 'aws/AWS-Elemental-MediaTailor.png'
+        if (id.includes('macie')) return 'aws/Amazon-Macie.png'
+        if (id.includes('budgets')) return 'aws/AWS-Budgets.png'
+        if (id.includes('devops guru')) return 'aws/Amazon-DevOps-Guru.png'
+        if (id.includes('service catalog')) return 'aws/AWS-Service-Catalog.png'
+        if (id.includes('comprehend')) return 'aws/Amazon-Comprehend.png'
+        if (id.includes('rekognition')) return 'aws/Amazon-Rekognition.png'
+        if (id.includes('firewall manager')) return 'aws/AWS-Firewall-Manager.png'
+        if (id.includes('cloudshell')) return 'aws/AWS-CloudShell.png'
+        if (id.includes('aurora')) return 'aws/Amazon-Aurora.png'
+        if (id.includes('sql server')) return 'general/sqlserver.png'
+        if (id.includes('postgres')) return 'general/postgresql.png'
+        if (id.includes('mysql')) return 'general/mysql.png'
+        if (id.includes('mariadb')) return 'general/mariadb.png'
+        if (id.includes('neptune')) return 'aws/Amazon-Neptune.png'
+        if (id == 'translate') return 'aws/Amazon-Translate.png'
+        if (id === 'dms') return 'aws/AWS-Database-Migration-Service.png'
+
+        if (id.includes('emr')) return 'aws/Amazon-EMR.png'
+        if (id.includes('kafka')) return 'general/kafka.png'
+        if (id.includes('airflow')) return 'general/airflow.png'
+        if (id.includes('mongodb')) return 'general/mongodb.png'
+        if (id.includes('datadog')) return 'general/datadog.png'
+
+        if (id.includes('(ireland)')) return 'flags/4x3/ie.svg'
+        if (id.includes('(frankfurt)')) return 'flags/4x3/de.svg'
+        if (id.includes('(paris)')) return 'flags/4x3/fr.svg'
+        if (id.includes('(london)')) return 'flags/4x3/gb.svg'
+        if (id.includes('(milan)')) return 'flags/4x3/it.svg'
+        if (id.includes('(stockholm)')) return 'flags/4x3/se.svg'
+        if (id.includes('(sao paulo)')) return 'flags/4x3/br.svg'
+        if (id.includes('(singapore)')) return 'flags/4x3/sg.svg'
+        if (id.includes('(mumbai)')) return 'flags/4x3/in.svg'
+        if (id.includes('(tokyo)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(osaka)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(sydney)')) return 'flags/4x3/au.svg'
+        if (id.includes('(seoul)')) return 'flags/4x3/kr.svg'
+        if (id.includes('(cape town)')) return 'flags/4x3/za.svg'
+        if (id.includes('(bahrain)')) return 'flags/4x3/bh.svg'
+        if (id.includes('(hong kong)')) return 'flags/4x3/hk.svg'
+        if (id.startsWith('us ')) return 'flags/4x3/us.svg'
+        if (id.startsWith('eu ')) return 'flags/4x3/eu.svg'
+        if (id.startsWith('canada ')) return 'flags/4x3/ca.svg'
+        if (id.includes('global')) return 'flags/4x3/un.svg'
+
+        return 'general/aws.svg';
+    }
+</script>
+<div id="Header"></div>
+<div id="Content"></div>
+<script>
+    function findGetParameter(parameterName) {
+        var result = null, tmp = [];
+        location.search.substr(1).split("&").forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+        return result;
+    }
+
+    const filterParam = findGetParameter('filter');
+
+
+    const array = [{"service": "StandardStorage", "usage": 0.692987922156826, "costs": 9.874824146}, {"service": "No operation", "usage": 0.1733377873286697, "costs": 2.47}, {"service": "Unknown", "usage": 0.0701772476371274, "costs": 1.0000000827}, {"service": "CreateVolume-Gp2", "usage": 0.0617559716906173, "costs": 0.879999984}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0016818550055229167, "costs": 0.023965818}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 5.68324006859346e-05, "costs": 0.0008098409}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.009876206110567e-06, "costs": 2.864e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 2.2456717386710243e-07, "costs": 3.2e-06}, {"service": "ReadACL", "usage": 2.8070896733387804e-08, "costs": 4e-07}, {"service": "Storage", "usage": 1.212662738882353e-07, "costs": 1.728e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}];
+    const months = ["2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05"];
+    let totalCosts = 14.249633839600001;
+    const focusMonth = "2023-09";
+    const mediaLinkPrefix = "https://zeljkoobrenovic.github.io/sokrates-media/";
+
+    const numberWithCommas = function (x) {
+        return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    let html = '<div style="margin-left: 6px; margin-bottom: 18px; white-space: nowrap">';
+    const params = filterParam ? '?filter=' + filterParam : '';
+    html += '<a href="trends.html' + params + '" style="background-color: #f6f6f6; margin-right: 8px; padding: 14px; padding-bottom: 9px">Trend</a>';
+    months.reverse().forEach(month => {
+        const bgColor = focusMonth === month ? '#c0c0c0' : '#f6f6f6';
+        html += '<a href="' + month + '.html' + params + '" style="background-color: ' + bgColor + '; margin-right: 8px; padding: 14px; padding-bottom: 9px">';
+        html += month + '</a>';
+    });
+    html += '</div>';
+    html += '<div style="margin-left: 10px; margin-top: 20px; margin-bottom: 4px; color: grey">\n' +
+        '    <div>\n' +
+        '        <input id="filter" type="text" placeholder="search..."\n' +
+        '               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">\n' +
+        '        <div id="summary" style="display: inline-block"></div>\n' +
+        '    </div>\n' +
+        '</div>';
+
+    document.getElementById('Header').innerHTML = html;
+
+    function update() {
+        html = '';
+        let filter = document.getElementById('filter').value.trim().toLowerCase().replace(/\*/g, '');
+        let filtered = array.filter(a => filter.length === 0 || a.service.toLowerCase().includes(filter));
+        if (filtered.length) {
+            totalCosts = filtered.map(i => i.costs).reduce((a, b) => a + b);
+        }
+        html += '<div style="margin-left: 12px; color: grey">Total costs: $' + numberWithCommas(totalCosts) + '</div>';
+
+        html += '<div>';
+
+        filtered.filter(m => m.usage >= 0).sort((a, b) => b.costs - a.costs).forEach(function (month) {
+                let style = month.usage > 0.01 ? '' : 'opacity: 0.7';
+
+                style += '; border: 1px dashed #fcfcfc;'
+
+                html += '<div class="domain" title="' + month.service + '" style="' + style + '">';
+                html += '<div><a target="_blank" href="https://www.google.com/search?q=Amazon AWS ' + month.service + '">';
+                html += '<img class="image" src="https://zeljkoobrenovic.github.io/sokrates-media/' + getImage(month.service) + '" onerror="this.onerror=null;this.src=\'../logos/general/aws.svg\';">';
+                html += '</a></div>';
+                let perc = month.costs / totalCosts;
+                console.log(perc);
+                html += '<div style="color: blue; font-size: 19px; margin: 2px;">' + (perc > 0.01 ? Math.round(perc * 100) : '<1') + '%</div>';
+                html += '<div style="color: grey; font-size: 12px; margin: 2px;">' + ('$' + numberWithCommas(month.costs)) + '</div>';
+                html += '<div style="color: grey; ">' + month.service + '</div>';
+                html += '</div>';
+            }
+        );
+        html += ('</div>');
+        html += ('<div style="color: grey; font-size: 80%">' + filtered.length + ' items</div>');
+        document.getElementById('Content').innerHTML = html;
+    }
+
+    if (filterParam) {
+        document.getElementById('filter').value = filterParam;
+    }
+
+    update();
+</script>
+
+<div style="margin-top: 20px; color: #a0a0a0; font-size: 60%">
+    generated on 2024-06-08
+</div>
+</body>
+</html>

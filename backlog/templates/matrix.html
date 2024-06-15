@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Architecture Backlog</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .activityType {
+            border: 1px solid lightgrey;
+            text-align: left;
+            border-radius: 6px;
+            margin: 8px;
+            margin-right: 18px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .model {
+            margin: 10px 0px 0px 0px;
+            border: solid lightgrey 1px;
+            object-fit: contain;
+            text-align: left;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+            width: 100%;
+            padding: 12px;
+        }
+
+        .block {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            object-fit: contain;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .subBlock {
+            margin: 10px;
+            padding: 4px;
+            border: solid lightgrey 1px;
+            border-radius: 6px;
+            object-fit: contain;
+            text-align: center;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .item {
+            padding: 4px;
+            border: solid lightgrey 1px;
+            border-radius: 2px;
+            object-fit: contain;
+            vertical-align: top;
+            background-color: white;
+            text-align: left;
+            width: 160px;
+            min-width: 160px;
+            max-width: 160px;
+            overflow-x: hidden;
+            white-space: nowrap;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #5009DC;
+            overflow: hidden;
+            height: 3em;
+        }
+
+        .qualifier {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 6px;
+            margin-bottom: 4px;
+            color: grey;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 8px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<script>
+    var architects = ${architects};
+    var activityTypes = ${data};
+
+    function architectByName(name) {
+        console.log(name);
+        return architects.filter(a => a.name.trim().toLowerCase() === name.trim().toLowerCase())[0];
+        return null;
+    }
+
+
+    var appendObject = document.body;
+
+    let html = '';
+    const div = document.createElement('div');
+    appendObject.appendChild(div);
+
+    function tagColor(status) {
+        if (status.toLowerCase().startsWith('not ')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('unknown')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('no ')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('inactive')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('-')) return 'lightgrey';
+
+        if (status.toLowerCase().includes('regular')) return 'lightgreen';
+        if (status.toLowerCase().includes('active')) return 'lightgreen';
+        if (status.toLowerCase().includes('supported')) return 'lightgreen';
+        if (status.toLowerCase().includes('supporting')) return 'lightgreen';
+        if (status.toLowerCase().includes('run ')) return '#7FFFD4';
+        if (status.toLowerCase().includes('maintenance')) return '#7FFFD4';
+        if (status.toLowerCase().includes('in progress')) return 'lightgreen';
+
+        if (status.toLowerCase().includes('ad-hoc')) return 'lemonchiffon';
+        if (status.toLowerCase().includes('planned')) return 'lemonchiffon';
+        if (status.toLowerCase().includes('exploration')) return 'lemonchiffon';
+
+        if (status.toLowerCase().includes('done')) return 'darkgrey';
+        return "lightgrey";
+    }
+
+    function isNotActive(status) {
+        return !status || status.toLowerCase().startsWith('not ') ||
+            status.toLowerCase().startsWith('unknown') || status.toLowerCase().startsWith('inactive') ||
+            status.toLowerCase().startsWith('coming later') || status.toLowerCase().startsWith('- ');
+    }
+
+    function isActive(status) {
+        return !isNotActive(status) && !isDone(status);
+    }
+
+    function isDone(status) {
+        return status && (status.toLowerCase() === 'done' || status.toLowerCase() === 'canceled');
+    }
+
+    html += '<table>';
+    html += '<tr>';
+    html += '<td></td>';
+    architects.forEach(architect => {
+        html += '<td>';
+
+        html += '<div style="max-width: 42px; vertical-align: top">';
+        html += '<div style="text-align: center; display: inline-block; vertical-align: top"><img src="' + architect.image + '" style="height: 42px; vertical-align: top"></div>';
+        html += '<div style="height: 4em; overflow: hidden; font-size: 60%; text-align: center; display: inline-block; vertical-align: top; text-align: left">' + architect.name + '</div>';
+        html += '</div>';
+
+        html += '</td>';
+    });
+    html += '</tr>';
+    activityTypes.forEach(type => {
+        html += '<tr>';
+        html += '<td style="font-size: 80%; text-align: left">';
+        html += type.source;
+        html += '</td>';
+        architects.forEach(architect => {
+            let architectActivities = type.data
+                .filter(item => item.architects && (item.architects.toLowerCase() === 'all' || item.architects.toLowerCase().includes(architect.name.toLowerCase())));
+            html += '<td>';
+
+            let count = architectActivities.length;
+            html += '<div style="' + (count ? 'background-color: skyblue' : 'background-color: #f8f8f8') + '" title="'
+                + (architectActivities.map(a => a.initiative).join('\n')) + '">';
+            html += count ? count : '&nbsp;';
+            html += '</div>';
+
+            html += '</td>';
+        });
+
+
+        html += '</tr>';
+    });
+    html += '</table>';
+    div.outerHTML = html;
+
+</script>
+</body>
+</html>

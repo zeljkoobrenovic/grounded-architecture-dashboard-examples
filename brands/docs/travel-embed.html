@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 15px;
+            margin-right: 25px;
+            padding: 5px;
+            background-color: #f0f1f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .brand {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 220px;
+            width: 240px;
+            object-fit: contain;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: top;
+            background-color: white;
+            background-color: #f8f8f8;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 120%;
+            margin-top: 14px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            border: 0.5px solid #d0d0d0;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+
+        .type {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .photo {
+            width: 212px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 4px;
+            padding: 13px;
+            margin-top: 4px;
+            background-color: white;
+            border: 0.5px solid lightgrey;
+        }
+
+        .channel {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .mobile {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .channel-blog {
+            display: inline-block;
+            width: 24px;
+            margin: 1px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px" class="hidden">
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="icons/travel.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">Travel (example data)</b>
+    </h1>
+    <br>
+</div>
+<script>
+    const array = [{"startgroup": "Booking Holding", "company": "Booking.com", "type": "Travel", "link": "https://www.booking.com/", "monthlyvisits": "566M", "activelistings": "28M", "logo": "logos/bookingcom.svg", "country": "NL", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Booking.com", "linkedin_people": "15.1k", "techblog": "https://blog.booking.com/", "ios": "https://apps.apple.com/nl/app/booking-com-reisdeals/id367003839", "android": "https://play.google.com/store/apps/details?id=com.booking", "facebook": "https://www.facebook.com/bookingcom/", "youtube": "https://www.youtube.com/@bookingcom", "twitter": "https://x.com/bookingcom"}, {"company": "Agoda", "type": "Travel", "link": "https://www.agoda.com/", "monthlyvisits": "88M", "activelistings": "4M", "logo": "logos/agoda.jpeg", "country": "SG", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Agoda", "linkedin_people": "9.6k", "blog": "https://medium.com/priceline-labs", "techblog": "https://medium.com/agoda-engineering", "ios": "https://apps.apple.com/us/app/agoda-cheap-flights-hotels/id440676901", "android": "https://play.google.com/store/apps/details?id=com.agoda.mobile.consumer&hl=en", "youtube": "https://www.youtube.com/@agoda"}, {"company": "OpenTable", "type": "Restaurant", "link": "https://www.opentable.com/", "monthlyvisits": "47M", "activelistings": "55k", "logo": "logos/opentable.png", "country": "US", "linkedin": "https://www.linkedin.com/company/opentable/", "linkedin_people": "2.1k", "blog": "https://www.opentable.com/blog/", "techblog": "https://tech.opentable.com/", "ios": "https://apps.apple.com/us/app/opentable/id296581815", "android": "https://play.google.com/store/apps/details?id=com.opentable&hl=en", "facebook": "https://www.facebook.com/OpenTable/", "instagram": "https://www.instagram.com/opentable/", "youtube": "https://www.youtube.com/@opentable", "twitter": "https://x.com/opentable"}, {"company": "Priceline", "type": "Loans", "link": "http://www.priceline.com/", "monthlyvisits": "41M", "activelistings": "600k", "logo": "logos/priceline.jpeg", "country": "US", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Priceline", "linkedin_people": "1.9k", "techblog": "https://medium.com/priceline-labs", "ios": "https://apps.apple.com/us/app/priceline-hotel-car-flight/id336381998", "android": "https://play.google.com/store/apps/details?id=com.priceline.android.negotiator&hl=en", "youtube": "https://www.youtube.com/@priceline"}, {"company": "Kayak", "type": "Travel", "link": "https://www.kayak.com/", "monthlyvisits": "40M", "logo": "logos/kayak.png", "country": "US", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Kayak", "linkedin_people": "1.2k", "techblog": "https://www.kayak.com/news/travel-innovations/", "ios": "https://apps.apple.com/us/app/kayak-flights-hotels-cars/id305204535", "android": "https://play.google.com/store/apps/details?id=com.kayak.android", "youtube": "https://www.youtube.com/@kayak"}, {"company": "FareHarbor", "type": "Booking", "link": "https://fareharbor.com/", "monthlyvisits": "33M", "logo": "logos/fareharbor.jpeg", "country": "US", "linkedin": "https://www.linkedin.com/company/fareharbor/", "linkedin_people": "780", "blog": "https://fareharbor.com/blog/", "ios": "https://www.google.com/search?q=FareHarbor+iOS+App", "android": "https://www.google.com/search?q=FareHarbor+Android+App", "youtube": "https://www.google.com/search?q=FareHarbor+Youtube"}, {"company": "CheapFlights", "type": "Travel", "link": "https://www.cheapflights.com/", "monthlyvisits": "21M", "logo": "logos/cheapflights.png", "country": "NL", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=CheapFlights", "blog": "https://www.cheaptickets.nl/blog/", "ios": "https://www.google.com/search?q=CheapFlights+iOS+App", "android": "https://www.google.com/search?q=CheapFlights+ANdroid+App"}, {"company": "Momondo", "type": "Flights", "link": "https://www.momondo.com/", "monthlyvisits": "10M", "logo": "logos/momondo.png", "country": "US", "linkedin": "https://www.linkedin.com/company/momondo-a-s/", "linkedin_people": "50", "ios": "https://www.google.com/search?q=Momondo+iOS+App", "android": "https://www.google.com/search?q=Momondo+ANdroid+App"}, {"company": "Rentalcars", "type": "Cars", "link": "https://www.rentalcars.com/", "monthlyvisits": "9M", "logo": "logos/rentalcars.png", "country": "US", "linkedin": "https://www.linkedin.com/company/rentalcars-com", "linkedin_people": "250", "ios": "https://www.google.com/search?q=Rentalcars+iOS+App", "android": "https://www.google.com/search?q=Rentalcars+ANdroid+App", "facebook": "https://www.facebook.com/Rocketmiles/", "instagram": "https://www.instagram.com/rocketmiles/", "twitter": "https://twitter.com/rocketmiles"}, {"company": "HotelsCombined", "type": "Hotels", "link": "https://www.hotelscombined.com/", "monthlyvisits": "3M", "logo": "logos/hotelcombined.png", "country": "AU", "linkedin": "https://www.linkedin.com/company/hotelscombined-com/", "linkedin_people": "70", "ios": "https://www.google.com/search?q=HotelsCombined+iOS+App", "android": "https://www.google.com/search?q=HotelsCombined+ANdroid+App"}, {"company": "RocketMiles", "type": "Flights", "link": "https://www.rocketmiles.com/", "monthlyvisits": "210K", "logo": "logos/rocketmiles.png", "country": "US", "ios": "https://www.google.com/search?q=RocketMiles+iOS+App", "android": "https://www.google.com/search?q=RocketMiles+ANdroid+App"}, {"company": "Booking Holdings", "type": "Group", "link": "https://www.bookingholdings.com/", "monthlyvisits": "450k", "logo": "logos/bookingholding.png", "country": "US", "linkedin": "https://www.linkedin.com/company/bookingholdings", "linkedin_people": "16.2k"}, {"startgroup": "Expedia Group", "company": "Expedia", "type": "Travel", "link": "https://expedia.com", "monthlyvisits": "272M", "activelistings": "22k", "logo": "logos/expedia.png", "country": "US", "linkedin": "https://www.linkedin.com/company/expedia/", "linkedin_people": "22k", "techblog": "https://medium.com/expedia-group-tech", "ios": "https://www.google.com/search?q=Expedia+iOS+App", "android": "https://www.google.com/search?q=Expedia+ANdroid+App"}, {"company": "Hotels.com", "type": "Hotels", "link": "https://www.hotels.com", "monthlyvisits": "150M", "logo": "logos/hotels.svg", "country": "US", "techblog": "https://medium.com/@Hotels.com_Engineering", "ios": "https://www.google.com/search?q=Hotels.com+iOS+App", "android": "https://www.google.com/search?q=Hotels.com+ANdroid+App"}, {"company": "Vrbo", "type": "Hotels", "link": "https://vrbo.com", "monthlyvisits": "129M", "logo": "logos/vrbo.svg", "country": "US", "linkedin": "https://www.linkedin.com/showcase/vrbo/about/", "ios": "https://www.google.com/search?q=Vrbo+iOS+App", "android": "https://www.google.com/search?q=Vrbo+ANdroid+App"}, {"company": "Traveloka", "type": "Hotels", "link": "https://www.traveloka.com/", "monthlyvisits": "63M", "logo": "logos/traveloka.png", "country": "SG", "linkedin": "https://www.linkedin.com/company/traveloka/", "linkedin_people": "3k", "techblog": "https://medium.com/traveloka-engineering", "ios": "https://www.google.com/search?q=Traveloka+iOS+App", "android": "https://www.google.com/search?q=Traveloka+ANdroid+App"}, {"company": "Travelocity", "type": "Hotels", "link": "https://travelocity.com", "monthlyvisits": "23M", "logo": "logos/travelocity.png", "country": "US", "ios": "https://www.google.com/search?q=Travelocity+iOS+App", "android": "https://www.google.com/search?q=Travelocity+ANdroid+App"}, {"company": "Trivago", "type": "Hotels", "link": "https://trivago.com", "monthlyvisits": "21M", "logo": "logos/trivago.png", "country": "DE", "linkedin": "https://www.linkedin.com/company/trivagonv/", "linkedin_people": "1k", "techblog": "https://tech.trivago.com/", "ios": "https://www.google.com/search?q=Trivago+iOS+App", "android": "https://www.google.com/search?q=Trivago+ANdroid+App"}, {"company": "Orbitz", "type": "Hotels", "link": "https://orbitz.com", "monthlyvisits": "16M", "logo": "logos/orbitz.png", "country": "US", "linkedin": "https://www.linkedin.com/company/orbitz/", "techblog": "https://www.google.com/search?q=Orbitz tech blog", "ios": "https://www.google.com/search?q=Orbitz+iOS+App", "android": "https://www.google.com/search?q=Orbitz+ANdroid+App"}, {"company": "Hotwire", "type": "Hotels", "link": "https://hotwire.com", "monthlyvisits": "7.5M", "logo": "logos/hotwire.png", "country": "US", "techblog": "https://medium.com/expedia-group-tech/hotwire-tech-blog-aee94038dd16", "ios": "https://www.google.com/search?q=Hotwire+iOS+App", "android": "https://www.google.com/search?q=Hotwire+ANdroid+App"}, {"company": "Wotif", "type": "Hotels", "link": "https://wotif.com", "monthlyvisits": "5.5M", "logo": "logos/wotif.png", "country": "AU", "linkedin": "https://www.linkedin.com/company/wotif.com/", "ios": "https://www.google.com/search?q=Wotif+iOS+App", "android": "https://www.google.com/search?q=Wotif+ANdroid+App"}, {"company": "CheapTickets", "type": "Hotels", "link": "https://cheaptickets.com", "monthlyvisits": "3M", "logo": "logos/cheaptickets.jpeg", "country": "US", "ios": "https://www.google.com/search?q=CheapTickets+iOS+App", "android": "https://www.google.com/search?q=CheapTickets+ANdroid+App"}, {"company": "CarRentals", "type": "Hotels", "link": "https://carrentals.com", "monthlyvisits": "1.6M", "logo": "logos/carrentals.svg", "country": "US", "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=CarRentals", "ios": "https://www.google.com/search?q=CarRentals+iOS+App", "android": "https://www.google.com/search?q=CarRentals+ANdroid+App"}, {"company": "ebookers", "type": "Hotels", "link": "https://ebookers.com", "monthlyvisits": "700k", "logo": "logos/ebookers.png", "country": "US", "ios": "https://www.google.com/search?q=ebookers+iOS+App", "android": "https://www.google.com/search?q=ebookers+ANdroid+App"}, {"company": "Expedia Cruises", "type": "Hotels", "link": "https://www.expediacruises.com/", "monthlyvisits": "400k", "logo": "logos/ecruises.svg", "country": "CA", "linkedin": "https://www.linkedin.com/company/expedia-cruises/", "linkedin_people": "2.8k"}, {"company": "Expedia Group Media Solutions", "type": "Hotels", "link": "https://advertising.expedia.com/", "monthlyvisits": "300k", "logo": "logos/emediasolutions.svg", "country": "US", "linkedin": "https://www.linkedin.com/company/expedia-group-media-solutions/", "blog": "https://advertising.expedia.com/blog/", "techblog": "https://www.google.com/search?q=Expedia Group Media Solutions tech blog"}, {"company": "Expedia Group", "type": "Travel", "link": "https://www.expediagroup.com/", "monthlyvisits": "2.3M", "logo": "logos/expediagroup.png", "country": "US", "linkedin": "https://www.linkedin.com/company/expedia/", "linkedin_people": "22.1k", "techblog": "https://medium.com/expedia-group-tech"}, {"startgroup": "Trip.com Group", "company": "Trip.com", "type": "Hotels", "link": "https://group.trip.com/", "monthlyvisits": "157M", "logo": "logos/tripcom.png", "country": "CN", "linkedin": "https://www.linkedin.com/company/tripcomgroup/", "linkedin_people": "10.7k", "ios": "https://www.google.com/search?q=Trip.com+iOS+App", "android": "https://www.google.com/search?q=Trip.com+ANdroid+App"}, {"company": "Ctrip", "type": "Hotels", "link": "https://www.ctrip.com/", "monthlyvisits": "81M", "logo": "logos/ctrip.png", "country": "CN", "linkedin_people": "1.4k", "ios": "https://www.google.com/search?q=Ctrip+iOS+App", "android": "https://www.google.com/search?q=Ctrip+ANdroid+App"}, {"company": "Skyscanner", "type": "Hotels", "link": "https://skyscanner.com", "monthlyvisits": "48M", "logo": "logos/skyscanner.png", "country": "GB", "linkedin": "https://www.linkedin.com/company/skyscanner/", "techblog": "https://medium.com/@SkyscannerEng", "ios": "https://www.google.com/search?q=Skyscanner+iOS+App", "android": "https://www.google.com/search?q=Skyscanner+ANdroid+App"}, {"company": "Qunar", "type": "Hotels", "link": "https://qunar.com", "monthlyvisits": "7M", "logo": "logos/qunar.png", "country": "US", "ios": "https://www.google.com/search?q=Qunar+iOS+App", "android": "https://www.google.com/search?q=Qunar+ANdroid+App"}, {"company": "Trip.com Group", "type": "Hotels", "link": "https://group.trip.com/", "monthlyvisits": "70k", "logo": "logos/tripcomgroup.png", "country": "CN", "linkedin": "https://www.linkedin.com/company/tripcomgroup/", "linkedin_people": "10.7k"}, {"startgroup": "AMEX GBT", "company": "Egencia", "type": "Hotels", "link": "https://www.egencia.com/", "monthlyvisits": "1.6M", "logo": "logos/egencia.png", "country": "US", "linkedin": "https://www.linkedin.com/company/amexgbtegencia/", "linkedin_people": "3k", "techblog": "https://www.egencia.co.uk/en/technology", "ios": "https://www.google.com/search?q=Egencia+iOS+App", "android": "https://www.google.com/search?q=Egencia+ANdroid+App"}, {"company": "Select", "type": "Hotels", "link": "https://www.amexglobalbusinesstravel.com/corporate-travel-services/", "logo": "logos/select.png", "country": "US"}, {"company": "Neo1", "type": "Loans", "link": "https://www.neo1.com/", "logo": "logos/neo1.png", "country": "US", "techblog": "https://www.google.com/search?q=Neo1 tech blog"}, {"company": "Neo", "type": "Loans", "link": "https://www.amexglobalbusinesstravel.com/uk/neo-travel-expense/", "logo": "logos/neo.png", "country": "US"}, {"company": "Ovation", "type": "Hotels", "link": "https://www.amexglobalbusinesstravel.com/ovation/", "logo": "logos/ovation.png", "country": "US"}, {"company": "American Express Global Business Travel", "type": "Group", "link": "https://www.amexglobalbusinesstravel.com/", "logo": "logos/gbt.png", "country": "US", "linkedin": "https://www.linkedin.com/company/american-express-global-business-travel/", "linkedin_people": "15.6k"}, {"startgroup": "Other ", "company": "Airbnb", "type": "Hotels", "link": "https://www.airbnb.com/", "monthlyvisits": "305M", "logo": "logos/airbnb.png", "country": "US", "linkedin": "https://www.linkedin.com/company/airbnb/", "linkedin_people": "37k", "techblog": "https://medium.com/airbnb-engineering", "ios": "https://www.google.com/search?q=Airbnb+iOS+App", "android": "https://www.google.com/search?q=Airbnb+ANdroid+App"}, {"company": "CWT Global", "type": "Group", "link": "https://www.mycwt.com/", "logo": "logos/cwt.png", "country": "US", "linkedin": "https://www.linkedin.com/company/mycwt", "linkedin_people": "13.5k", "blog": "https://www.mycwt.com/news/blog/", "ios": "https://www.google.com/search?q=CWT Global+iOS+App", "android": "https://www.google.com/search?q=CWT Global+ANdroid+App"}, {"company": "Hotel Reservation Service (HRS)", "type": "Group", "link": "http://www.hrs.com/", "logo": "logos/hrs.svg", "country": "US", "techblog": "https://www.google.com/search?q=Hotel Reservation Service (HRS) tech blog", "ios": "https://www.google.com/search?q=Hotel Reservation Service (HRS)+iOS+App", "android": "https://www.google.com/search?q=Hotel Reservation Service (HRS)+ANdroid+App"}];
+
+    let appendObject = document.body;
+
+    array.forEach(function (brand) {
+        if (brand.startgroup) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = brand.startgroup;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        let div = document.createElement('div');
+        appendObject.appendChild(div);
+        let html = '<div class="brand">';
+
+
+        if (brand.country)
+            html += '<img class="flag" title="' + brand.country + '" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + brand.country.toLowerCase() + '.svg">\n';
+
+        if (brand.type)
+            html += '    <img title="' + brand.type + '" class="type" src="icons/' + brand.type.toLowerCase() + '.png">';
+
+        let width = (brand.ios || brand.android) ? ((brand.ios && brand.android) ? 109 : 134) : 159;
+
+        let statsLink = 'https://www.similarweb.com/website/' + brand.link.replace(/.*\/\//, '').replace(/\//g, '').replace(/www[.]/g, '') + '/#overview';
+
+        html += "<div style='display: inline-block; width: " + width + "px; text-align: left; vertical-align: top; padding-top: 4px; padding-left: 4px; font-size: 80%;'>" + (brand.monthlyvisits ?
+            "<a href='" + statsLink + "' target='_blank'>" + brand.monthlyvisits + ' <span style="color: #a0a0a0">visits/m</span></a>'
+            : '') + "</div>"
+
+        if (brand.ios)
+            html += '<a href="' + brand.ios + '" target="_blank" title="iOS App"><img class="mobile" src="icons/ios.png"></a>';
+        if (brand.android)
+            html += '<a href="' + brand.android + '" target="_blank" title="Android App"><img class="mobile" src="icons/android.png"></a>';
+
+
+        html += '    <div class="container">\n';
+        html += '<a href="' + brand.link + '" target="_blank">'
+        html += '    <div><img class="photo" src="' + brand.logo + '"></div>\n';
+        html += '    </div>\n';
+        html += '</a>'
+        html += '<div style="margin-top: 8px">';
+
+        if (brand.linkedin_people) {
+             html += '<div style="font-size: 80%; margin-right: 0px; display: inline-block; vertical-align: top; padding-top: 2px; color: grey">';
+             html += brand.linkedin_people + ' 😀';
+             html += '</div>';
+        }
+        if (brand.linkedin)
+            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
+        if (brand.facebook)
+            html += '<a href="' + brand.facebook + '" target="_blank" title="Facebook"><img class="channel" src="icons/facebook.svg"></a>';
+        if (brand.instagram)
+            html += '<a href="' + brand.instagram + '" target="_blank" title="Instagram"><img class="channel" src="icons/instagram.svg"></a>';
+        if (brand.youtube)
+            html += '<a href="' + brand.youtube + '" target="_blank" title="Youtube"><img class="channel" src="icons/youtube.svg"></a>';
+        if (brand.twitter)
+            html += '<a href="' + brand.twitter + '" target="_blank" title="Twitter"><img class="channel" src="icons/twitter.svg"></a>';
+        if (brand.pinterest)
+            html += '<a href="' + brand.pinterest + '" target="_blank" title="Pinterest"><img class="channel" src="icons/pinterest.svg"></a>';
+        if (brand.tiktok)
+            html += '<a href="' + brand.tiktok + '" target="_blank" title="TikTok"><img class="channel" style="border-radius: 50%; border: 1px solid grey" src="icons/tiktok.png"></a>';
+        if (brand.xing)
+            html += '<a href="' + brand.xing + '" target="_blank" title="Xing"><img class="channel" src="icons/xing.png"></a>';
+
+        html += '&nbsp;&nbsp;&nbsp;';
+
+        if (brand.blog)
+            html += '<a href="' + brand.blog + '" target="_blank" title="Blog"><img class="channel-blog" src="icons/blog.png"></a>';
+        if (brand.techblog)
+            html += '<a href="' + brand.techblog + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/tech-blog.png"></a>';
+        if (brand.github)
+            html += '<a href="' + brand.github + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/github.png"></a>';
+
+        html += '</div>';
+        html += '</div>';
+
+        div.outerHTML = html;
+    });
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on 2024-06-15 based on this source <a style="text-decoration: underline; color: #a0a0a0;"
+               href="https://docs.google.com/spreadsheets/d/195iHjfUCGlHEREka2hvWxV9WWBeX9PfDp6OizYSWqiQ/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

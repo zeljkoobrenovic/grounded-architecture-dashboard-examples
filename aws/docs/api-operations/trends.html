@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Usage Trend</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .domain {
+            padding-top: 5px;
+            text-align: center;
+            font-size: 10px;
+            width: 82px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-right: 8px;
+        }
+
+        .image {
+            height: 64px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    const getImage = function (service) {
+        const id = service.toLowerCase();
+
+        if (id.includes('ec2')) return 'aws/Amazon-EC2.png'
+        if (id.includes('runinstance')) return 'aws/Amazon-EC2.png'
+        if (id.includes('relational database')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbinstance')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbproxy')) return 'aws/Amazon-RDS.png'
+        if (id.includes('elasticsearch')) return 'general/elasticsearch.png'
+        if (id.includes('esdomain')) return 'general/elasticsearch.png'
+        if (id.includes('circleci')) return 'general/circleci.png'
+        if (id.includes('databricks')) return 'general/databricks.png'
+        if (id.includes('cloudwatch')) return 'aws/Amazon-CloudWatch.png'
+        if (id.includes('s3')) return 'aws/Amazon-Simple-Storage-Service.png'
+        if (id.includes('cloudfront')) return 'aws/Amazon-CloudFront.png'
+        if (id.includes('cloudtrail')) return 'aws/AWS-CloudTrail.png'
+        if (id.includes('vpc')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('natgateway')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('dynamodb')) return 'aws/Amazon-DynamoDB.png'
+        if (id.includes('elasticache')) return 'aws/Amazon-ElastiCache.png'
+        if (id.includes('route 53')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('registrar')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('guardduty')) return 'aws/Amazon-GuardDuty.png'
+        if (id.includes('api gateway')) return 'aws/Amazon-API-Gateway.png'
+        if (id.includes('kinesis firehose')) return 'aws/Amazon-Kinesis-Firehose.png'
+        if (id.includes('kinesis')) return 'aws/Amazon-Kinesis.png'
+        if (id.includes('opensearch')) return 'aws/Amazon-OpenSearch-Service.png'
+        if (id.includes('sns')) return 'aws/Amazon-Simple-Notification-Service.png'
+        if (id.includes('sqs')) return 'aws/Amazon-Simple-Queue-Service.png'
+        if (id.includes('lambda')) return 'aws/AWS-Lambda.png'
+        if (id.includes('redshift')) return 'aws/Amazon-Redshift.png'
+        if (id.includes('glue')) return 'aws/AWS-Glue.png'
+        if (id.includes('waf')) return 'aws/AWS-WAF.png'
+        if (id.includes('shield')) return 'aws/AWS-Shield.png'
+        if (id.includes('config')) return 'aws/AWS-Config.png'
+        if (id.includes('elastic container service for kubernetes')) return 'aws/Amazon-Elastic-Container-Kubernetes.png'
+        if (id.includes('elastic container')) return 'aws/Amazon-Elastic-Container-Service.png'
+        if (id.includes('secrets manager')) return 'aws/AWS-Secrets-Manager.png'
+        if (id.includes('transfer family')) return 'aws/AWS-Transfer-Family.png'
+        if (id.includes('managed streaming for apache kafka')) return 'aws/Amazon-Managed-Streaming-for-Apache-Kafka.png'
+        if (id.includes('managed workflows for apache airflow')) return 'aws/Amazon-Managed-Workflows-for-Apache-Airflow.png'
+        if (id.includes('elastic file system')) return 'aws/Amazon-EFS.png'
+        if (id.includes('documentdb')) return 'aws/Amazon-DocumentDB.png'
+        if (id.includes('key management service')) return 'aws/AWS-Key-Management-Service.png'
+        if (id.includes('confluent')) return 'general/confluent.png'
+        if (id.includes('netgo group')) return 'general/okta.png'
+        if (id.includes('center for internet security')) return 'general/cis.png'
+
+        if (id.includes('glacier')) return 'aws/Amazon-Simple-Storage-Service-Glacier.png'
+        if (id.includes('athena')) return 'aws/Amazon-Athena.png'
+        if (id.includes('step functions')) return 'aws/AWS-Step-Functions.png'
+        if (id.includes('ses')) return 'aws/Amazon-Simple-Email-Service.png'
+        if (id.includes('x-ray')) return 'aws/AWS-X-Ray.png'
+        if (id.includes('backup')) return 'aws/AWS-Backup.png'
+        if (id.includes('cloud wan')) return 'aws/AWS-Cloud-WAN.png'
+        if (id.includes('directory service')) return 'aws/AWS-Directory-Service.png'
+        if (id.includes('network firewall')) return 'aws/AWS-Network-Firewall.png'
+        if (id.includes('systems manager')) return 'aws/AWS-Systems-Manager.png'
+        if (id.includes('direct connect')) return 'aws/AWS-Direct-Connect.png'
+        if (id.includes('certificate manager')) return 'aws/AWS-Certificate-Manager.png'
+        if (id.includes('quicksight')) return 'aws/Amazon-QuickSight.png'
+        if (id.includes('codebuild')) return 'aws/AWS-CodeBuild.png'
+        if (id.includes('codepipeline')) return 'aws/AWS-CodePipeline.png'
+        if (id.includes('codeartifact')) return 'aws/AWS-CodeArtifact.png'
+        if (id.includes('data pipeline')) return 'aws/AWS-Data-Pipeline.png'
+        if (id.includes('security hub')) return 'aws/AWS-Security-Hub.png'
+        if (id.includes('sagemaker')) return 'aws/Amazon-SageMaker.png'
+        if (id.includes('lightsail')) return 'aws/Amazon-Lightsail.png'
+        if (id.includes('global accelerator')) return 'aws/AWS-Global-Accelerator.png'
+        if (id.includes('cognito')) return 'aws/Amazon-Cognito.png'
+        if (id.includes('amplify')) return 'aws/AWS-Amplify.png'
+        if (id.includes('cost explorer')) return 'aws/AWS-Cost-Explorer.png'
+        if (id.includes('elemental mediaconvert')) return 'aws/AWS-Elemental-MediaConvert.png'
+        if (id.includes('elemental mediaconnect')) return 'aws/AWS-Elemental-MediaConnect.png'
+        if (id.includes('elemental medialive')) return 'aws/AWS-Elemental-MediaLive.png'
+        if (id.includes('elemental mediapackage')) return 'aws/AWS-Elemental-MediaPackage.png'
+        if (id.includes('elemental mediastore')) return 'aws/AWS-Elemental-MediaStore.png'
+        if (id.includes('elemental mediatailor')) return 'aws/AWS-Elemental-MediaTailor.png'
+        if (id.includes('macie')) return 'aws/Amazon-Macie.png'
+        if (id.includes('budgets')) return 'aws/AWS-Budgets.png'
+        if (id.includes('devops guru')) return 'aws/Amazon-DevOps-Guru.png'
+        if (id.includes('service catalog')) return 'aws/AWS-Service-Catalog.png'
+        if (id.includes('comprehend')) return 'aws/Amazon-Comprehend.png'
+        if (id.includes('rekognition')) return 'aws/Amazon-Rekognition.png'
+        if (id.includes('firewall manager')) return 'aws/AWS-Firewall-Manager.png'
+        if (id.includes('cloudshell')) return 'aws/AWS-CloudShell.png'
+        if (id.includes('aurora')) return 'aws/Amazon-Aurora.png'
+        if (id.includes('sql server')) return 'general/sqlserver.png'
+        if (id.includes('postgres')) return 'general/postgresql.png'
+        if (id.includes('mysql')) return 'general/mysql.png'
+        if (id.includes('mariadb')) return 'general/mariadb.png'
+        if (id.includes('neptune')) return 'aws/Amazon-Neptune.png'
+        if (id == 'translate') return 'aws/Amazon-Translate.png'
+        if (id === 'dms') return 'aws/AWS-Database-Migration-Service.png'
+
+        if (id.includes('emr')) return 'aws/Amazon-EMR.png'
+        if (id.includes('kafka')) return 'general/kafka.png'
+        if (id.includes('airflow')) return 'general/airflow.png'
+        if (id.includes('mongodb')) return 'general/mongodb.png'
+        if (id.includes('datadog')) return 'general/datadog.png'
+
+        if (id.includes('(ireland)')) return 'flags/4x3/ie.svg'
+        if (id.includes('(frankfurt)')) return 'flags/4x3/de.svg'
+        if (id.includes('(paris)')) return 'flags/4x3/fr.svg'
+        if (id.includes('(london)')) return 'flags/4x3/gb.svg'
+        if (id.includes('(milan)')) return 'flags/4x3/it.svg'
+        if (id.includes('(stockholm)')) return 'flags/4x3/se.svg'
+        if (id.includes('(sao paulo)')) return 'flags/4x3/br.svg'
+        if (id.includes('(singapore)')) return 'flags/4x3/sg.svg'
+        if (id.includes('(mumbai)')) return 'flags/4x3/in.svg'
+        if (id.includes('(tokyo)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(osaka)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(sydney)')) return 'flags/4x3/au.svg'
+        if (id.includes('(seoul)')) return 'flags/4x3/kr.svg'
+        if (id.includes('(cape town)')) return 'flags/4x3/za.svg'
+        if (id.includes('(bahrain)')) return 'flags/4x3/bh.svg'
+        if (id.includes('(hong kong)')) return 'flags/4x3/hk.svg'
+        if (id.startsWith('us ')) return 'flags/4x3/us.svg'
+        if (id.startsWith('eu ')) return 'flags/4x3/eu.svg'
+        if (id.startsWith('canada ')) return 'flags/4x3/ca.svg'
+        if (id.includes('global')) return 'flags/4x3/un.svg'
+
+        return 'general/aws.svg';
+    }
+</script>
+<div id="Header"></div>
+<div id="Content"></div>
+<script>
+    function findGetParameter(parameterName) {
+        var result = null, tmp = [];
+        location.search.substr(1).split("&").forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+        return result;
+    }
+
+    const filterParam = findGetParameter('filter');
+
+    const all = [{"month": "2023-06", "total": 12.873739689899997, "services": [{"service": "StandardStorage", "usage": 0.6793871332866713, "costs": 8.7462531026}, {"service": "No operation", "usage": 0.17322083976496208, "costs": 2.23}, {"service": "Unknown", "usage": 0.07767751304498902, "costs": 1.0000000827}, {"service": "CreateVolume-Gp2", "usage": 0.06835620458369202, "costs": 0.879999984}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0011696282481005304, "costs": 0.0150574896}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 0.00018326524046862461, "costs": 0.002359309}, {"service": "none", "usage": 2.485680211873895e-06, "costs": 3.2e-05}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.5413749841211946e-06, "costs": 3.2717e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 9.321300794527108e-08, "costs": 1.2e-06}, {"service": "ReadACL", "usage": 6.346252290940539e-08, "costs": 8.17e-07}, {"service": "Storage", "usage": 1.3422673144119035e-07, "costs": 1.728e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 3.262455278084488e-08, "costs": 4.2e-07}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 3.262455278084488e-08, "costs": 4.2e-07}, {"service": "ReadBucketServerSideEncryption", "usage": 3.262455278084488e-08, "costs": 4.2e-07}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0.0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0.0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-07", "total": 12.875643906699997, "services": [{"service": "StandardStorage", "usage": 0.6793079585828432, "costs": 8.7465273777}, {"service": "No operation", "usage": 0.1731952216261272, "costs": 2.23}, {"service": "Unknown", "usage": 0.07766601622771176, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.06834609648858658, "costs": 0.8800000008}, {"service": "PutObject", "usage": 2.8129156306624377e-06, "costs": 3.62181e-05}, {"service": "GetObject", "usage": 0.0014200555275131236, "costs": 0.0182841293}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 5.9072851463701323e-05, "costs": 0.000760601}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.475992675085621e-06, "costs": 3.188e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 6.21328149331398e-08, "costs": 8e-07}, {"service": "ReadACL", "usage": 9.475254277303818e-08, "costs": 1.22e-06}, {"service": "Storage", "usage": 1.3290209114198604e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0.0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-08", "total": 19.502856121799994, "services": [{"service": "StandardStorage", "usage": 0.4869869802292028, "costs": 9.4976370086}, {"service": "No operation", "usage": 0.1733079493019429, "costs": 3.38}, {"service": "Unknown", "usage": 0.05127453960357198, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.0451215963089811, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.24066269938553023, "costs": 4.69361}, {"service": "GetObject", "usage": 0.0006736305655926395, "costs": 0.01313772}, {"service": "UploadPart", "usage": 0.0011857237655643281, "costs": 0.023125}, {"service": "ListBucket", "usage": 0.00036571824944282616, "costs": 0.0071325504}, {"service": "none", "usage": 2.9329037574174952e-05, "costs": 0.000572}, {"service": "InitiateMultipartUpload", "usage": 0.00017767540704598017, "costs": 0.0034651779}, {"service": "CompleteMultipartUpload", "usage": 0.00017741859850631188, "costs": 0.0034601694}, {"service": "PutEvents", "usage": 3.045707748087399e-05, "costs": 0.000594}, {"service": "HeadBucket", "usage": 3.46273384668579e-06, "costs": 6.75332e-05}, {"service": "ListAllMyBuckets", "usage": 7.691181182038886e-07, "costs": 1.5e-05}, {"service": "HeadObject", "usage": 6.792441023647036e-07, "costs": 1.32472e-05}, {"service": "ReadACL", "usage": 4.1606726467769695e-07, "costs": 8.1145e-06}, {"service": "Storage", "usage": 8.774099492469962e-08, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 2.8970115785679804e-07, "costs": 5.65e-06}, {"service": "ReadBucketPublicAccessBlock", "usage": 2.8970115785679804e-07, "costs": 5.65e-06}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 6.152944945631108e-08, "costs": 1.2e-06}, {"service": "ReadBucketOwnershipControls", "usage": 6.152944945631108e-08, "costs": 1.2e-06}, {"service": "ReadAccountPublicAccessBlock", "usage": 1.0254908242718514e-07, "costs": 2e-06}, {"service": "GetLensConfiguration", "usage": 4.1019632970874056e-08, "costs": 8e-07}, {"service": "ReadBucketPolicy", "usage": 2.153530730970888e-08, "costs": 4.2e-07}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0.0}, {"service": "Decrypt", "usage": 0.0, "costs": 0.0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0.0}, {"service": "Notification", "usage": 0.0, "costs": 0.0}, {"service": "Publish", "usage": 0.0, "costs": 0.0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0.0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0.0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-09", "total": 14.249633839600001, "services": [{"service": "StandardStorage", "usage": 0.692987922156826, "costs": 9.874824146}, {"service": "No operation", "usage": 0.1733377873286697, "costs": 2.47}, {"service": "Unknown", "usage": 0.0701772476371274, "costs": 1.0000000827}, {"service": "CreateVolume-Gp2", "usage": 0.0617559716906173, "costs": 0.879999984}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0016818550055229167, "costs": 0.023965818}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 5.68324006859346e-05, "costs": 0.0008098409}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.009876206110567e-06, "costs": 2.864e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 2.2456717386710243e-07, "costs": 3.2e-06}, {"service": "ReadACL", "usage": 2.8070896733387804e-08, "costs": 4e-07}, {"service": "Storage", "usage": 1.212662738882353e-07, "costs": 1.728e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-10", "total": 14.2999183683, "services": [{"service": "StandardStorage", "usage": 0.690551222571345, "costs": 9.8748261119}, {"service": "No operation", "usage": 0.1734275634396385, "costs": 2.48}, {"service": "Unknown", "usage": 0.06993046693306976, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.06153881288936448, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.00447974931395469, "costs": 0.0640600495}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 6.78865973215627e-05, "costs": 0.0009707728}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 1.8545560412980697e-06, "costs": 2.652e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 1.5384703208355026e-06, "costs": 2.2e-05}, {"service": "ReadACL", "usage": 8.531517233724152e-08, "costs": 1.22e-06}, {"service": "Storage", "usage": 1.1966501877335055e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 7.002487526221048e-07, "costs": 1.00135e-05}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0.0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-11", "total": 14.2909011821, "services": [{"service": "StandardStorage", "usage": 0.6909870724715855, "costs": 9.8748279708}, {"service": "No operation", "usage": 0.17353699171234296, "costs": 2.48}, {"service": "Unknown", "usage": 0.06997459921929523, "costs": 1.0000000827}, {"service": "CreateVolume-Gp2", "usage": 0.0615776411009153, "costs": 0.879999984}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0038669936763133725, "costs": 0.0552628245}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 5.372276319156398e-05, "costs": 0.0007677467}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.713803664710598e-06, "costs": 3.87827e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 1.4433659387300397e-07, "costs": 2.0627e-06}, {"service": "ReadACL", "usage": 0.0, "costs": 0}, {"service": "Storage", "usage": 1.209160974511809e-07, "costs": 1.728e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0.0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2023-12", "total": 14.266026729399996, "services": [{"service": "StandardStorage", "usage": 0.6921920328839393, "costs": 9.874830043}, {"service": "No operation", "usage": 0.17313860732573322, "costs": 2.47}, {"service": "Unknown", "usage": 0.07009659995513398, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.0616850099535045, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0028349589389631675, "costs": 0.0404436}, {"service": "UploadPart", "usage": 0.0, "costs": 0}, {"service": "ListBucket", "usage": 4.9470067131276306e-05, "costs": 0.0007057413}, {"service": "none", "usage": 0.0, "costs": 0}, {"service": "InitiateMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "CompleteMultipartUpload", "usage": 0.0, "costs": 0}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.7747389480508043e-06, "costs": 3.95845e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 2.2430912689973532e-07, "costs": 3.2e-06}, {"service": "ReadACL", "usage": 2.018782142097618e-07, "costs": 2.88e-06}, {"service": "Storage", "usage": 1.1994930560963347e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0.0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2024-01", "total": 14.310387682199998, "services": [{"service": "StandardStorage", "usage": 0.691768167609706, "costs": 9.8994706647}, {"service": "No operation", "usage": 0.173300685842687, "costs": 2.48}, {"service": "Unknown", "usage": 0.0698793066133248, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.061493791806534324, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.0, "costs": 0}, {"service": "GetObject", "usage": 0.0031659491556859706, "costs": 0.0453059598}, {"service": "UploadPart", "usage": 0.0002232643916400746, "costs": 0.003195}, {"service": "ListBucket", "usage": 6.11126630124637e-05, "costs": 0.0008745459}, {"service": "none", "usage": 4.2766136990211475e-05, "costs": 0.000612}, {"service": "InitiateMultipartUpload", "usage": 2.2017076475985622e-05, "costs": 0.0003150729}, {"service": "CompleteMultipartUpload", "usage": 2.2016824910473917e-05, "costs": 0.0003150693}, {"service": "PutEvents", "usage": 1.635175826096321e-05, "costs": 0.000234}, {"service": "HeadBucket", "usage": 4.025048187314021e-06, "costs": 5.76e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 3.074689587531544e-07, "costs": 4.4e-06}, {"service": "ReadACL", "usage": 2.9349309699164738e-08, "costs": 4.2e-07}, {"service": "Storage", "usage": 1.1957747323145404e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 5.932753317759729e-08, "costs": 8.49e-07}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 2.9349309699164738e-08, "costs": 4.2e-07}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0.0}, {"service": "Decrypt", "usage": 0.0, "costs": 0.0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0.0}, {"service": "Notification", "usage": 0.0, "costs": 0.0}, {"service": "Publish", "usage": 0.0, "costs": 0.0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0.0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0.0}, {"service": "Invalidations", "usage": 0.0, "costs": 0.0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0.0}]}, {"month": "2024-02", "total": 14.4508285292, "services": [{"service": "StandardStorage", "usage": 0.6896850063829348, "costs": 9.9665197664}, {"service": "No operation", "usage": 0.1730004611810587, "costs": 2.5}, {"service": "Unknown", "usage": 0.06920017895024874, "costs": 0.9999999202}, {"service": "CreateVolume-Gp2", "usage": 0.06089616156069059, "costs": 0.8799999888}, {"service": "PutObject", "usage": 0.005006168037619428, "costs": 0.0723432759}, {"service": "GetObject", "usage": 0.0012628354328006318, "costs": 0.0182490183}, {"service": "UploadPart", "usage": 0.0001565758458366581, "costs": 0.0022626507}, {"service": "ListBucket", "usage": 0.0001752135730407266, "costs": 0.0025319813}, {"service": "none", "usage": 0.0006086294624718588, "costs": 0.0087952}, {"service": "InitiateMultipartUpload", "usage": 2.425632546201176e-06, "costs": 3.50524e-05}, {"service": "CompleteMultipartUpload", "usage": 6.937456893729398e-07, "costs": 1.00252e-05}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 2.8496635965743985e-06, "costs": 4.118e-05}, {"service": "ListAllMyBuckets", "usage": 6.920018447242348e-07, "costs": 1e-05}, {"service": "HeadObject", "usage": 6.490977303513322e-07, "costs": 9.38e-06}, {"service": "ReadACL", "usage": 3.909810422691926e-07, "costs": 5.65e-06}, {"service": "Storage", "usage": 1.2040832098201686e-07, "costs": 1.74e-06}, {"service": "ReadBucketPolicyStatus", "usage": 3.909810422691926e-07, "costs": 5.65e-06}, {"service": "ReadBucketPublicAccessBlock", "usage": 3.909810422691926e-07, "costs": 5.65e-06}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 1.3840036894484694e-07, "costs": 2e-06}, {"service": "GetLensConfiguration", "usage": 2.768007378896939e-08, "costs": 4e-07}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2024-03", "total": 14.4057547315, "services": [{"service": "StandardStorage", "usage": 0.692392904801414, "costs": 9.9744423644}, {"service": "No operation", "usage": 0.17284759086973076, "costs": 2.49}, {"service": "Unknown", "usage": 0.06941670098084995, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.06108669883680366, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.0022189949013987904, "costs": 0.0319662963}, {"service": "GetObject", "usage": 0.0015408487659076455, "costs": 0.0221970894}, {"service": "UploadPart", "usage": 0.0001250746061961023, "costs": 0.0018017941}, {"service": "ListBucket", "usage": 6.148619190795918e-05, "costs": 0.000885755}, {"service": "none", "usage": 0.0002984918235902981, "costs": 0.0043}, {"service": "InitiateMultipartUpload", "usage": 3.4732161509451287e-06, "costs": 5.00343e-05}, {"service": "CompleteMultipartUpload", "usage": 3.1260354517580316e-06, "costs": 4.50329e-05}, {"service": "PutEvents", "usage": 1.8048342821738954e-06, "costs": 2.6e-05}, {"service": "HeadBucket", "usage": 2.6020504096210535e-06, "costs": 3.74845e-05}, {"service": "ListAllMyBuckets", "usage": 0.0, "costs": 0}, {"service": "HeadObject", "usage": 5.553336252842755e-08, "costs": 8e-07}, {"service": "ReadACL", "usage": 2.7766681264213774e-08, "costs": 4e-07}, {"service": "Storage", "usage": 1.1878586244830654e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 0.0, "costs": 0}, {"service": "ReadBucketOwnershipControls", "usage": 0.0, "costs": 0}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0.0}, {"service": "Decrypt", "usage": 0.0, "costs": 0.0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0.0}, {"service": "Notification", "usage": 0.0, "costs": 0.0}, {"service": "Publish", "usage": 0.0, "costs": 0.0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0.0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0.0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0.0}]}, {"month": "2024-04", "total": 15.005100718699998, "services": [{"service": "StandardStorage", "usage": 0.6672870835063262, "costs": 10.0127098963}, {"service": "No operation", "usage": 0.17327441173119013, "costs": 2.6}, {"service": "Unknown", "usage": 0.06664401002345537, "costs": 1.0000000827}, {"service": "CreateVolume-Gp2", "usage": 0.05864672290425258, "costs": 0.879999984}, {"service": "PutObject", "usage": 0.032284355105746315, "costs": 0.48443}, {"service": "GetObject", "usage": 0.0014917302802309514, "costs": 0.0223835631}, {"service": "UploadPart", "usage": 0.00013695342927215218, "costs": 0.002055}, {"service": "ListBucket", "usage": 0.00015251339147280763, "costs": 0.0022884788}, {"service": "none", "usage": 5.1982323519357033e-05, "costs": 0.00078}, {"service": "InitiateMultipartUpload", "usage": 8.331040380436071e-06, "costs": 0.0001250081}, {"service": "CompleteMultipartUpload", "usage": 8.331013722834267e-06, "costs": 0.0001250077}, {"service": "PutEvents", "usage": 1.732744117311901e-06, "costs": 2.6e-05}, {"service": "HeadBucket", "usage": 5.461476169758088e-06, "costs": 8.195e-05}, {"service": "ListAllMyBuckets", "usage": 4.6650803158397335e-06, "costs": 7e-05}, {"service": "HeadObject", "usage": 1.346208891142323e-07, "costs": 2.02e-06}, {"service": "ReadACL", "usage": 1.066304072191939e-07, "costs": 1.6e-06}, {"service": "Storage", "usage": 1.1516083979672943e-07, "costs": 1.728e-06}, {"service": "ReadBucketPolicyStatus", "usage": 1.066304072191939e-07, "costs": 1.6e-06}, {"service": "ReadBucketPublicAccessBlock", "usage": 1.066304072191939e-07, "costs": 1.6e-06}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 3.998640270719772e-07, "costs": 6e-06}, {"service": "ReadBucketOwnershipControls", "usage": 3.732064252671787e-07, "costs": 5.6e-06}, {"service": "ReadAccountPublicAccessBlock", "usage": 1.066304072191939e-07, "costs": 1.6e-06}, {"service": "GetLensConfiguration", "usage": 1.5994561082879086e-07, "costs": 2.4e-06}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 5.331520360959695e-08, "costs": 8e-07}, {"service": "ReadBucketServerSideEncryption", "usage": 5.331520360959695e-08, "costs": 8e-07}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0.0}, {"service": "Decrypt", "usage": 0.0, "costs": 0.0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0.0}, {"service": "Notification", "usage": 0.0, "costs": 0.0}, {"service": "Publish", "usage": 0.0, "costs": 0.0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0.0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0.0}, {"service": "Invalidations", "usage": 0.0, "costs": 0.0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}, {"month": "2024-05", "total": 15.094920084499993, "services": [{"service": "StandardStorage", "usage": 0.6657589258931731, "costs": 10.0495777819}, {"service": "No operation", "usage": 0.17290585080208817, "costs": 2.61}, {"service": "Unknown", "usage": 0.06624745033442316, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.05829775817783995, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.03368749500185538, "costs": 0.5085100449}, {"service": "GetObject", "usage": 0.002482899511239212, "costs": 0.0374791697}, {"service": "UploadPart", "usage": 0.00022984240927267704, "costs": 0.0034694528}, {"service": "ListBucket", "usage": 6.837803010695366e-05, "costs": 0.0010321609}, {"service": "none", "usage": 0.000293926696873067, "costs": 0.0044368}, {"service": "InitiateMultipartUpload", "usage": 1.2919988904098931e-05, "costs": 0.0001950262}, {"service": "CompleteMultipartUpload", "usage": 1.126720108804297e-05, "costs": 0.0001700775}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 1.7018970525308985e-06, "costs": 2.569e-05}, {"service": "ListAllMyBuckets", "usage": 9.937117862188975e-07, "costs": 1.5e-05}, {"service": "HeadObject", "usage": 2.384908286925354e-07, "costs": 3.6e-06}, {"service": "ReadACL", "usage": 0.0, "costs": 0}, {"service": "Storage", "usage": 1.1336264057185183e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadBucketOwnershipControls", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}]}];
+    const array = [{"service": "StandardStorage", "usage": 0.6657589258931731, "costs": 10.0495777819}, {"service": "No operation", "usage": 0.17290585080208817, "costs": 2.61}, {"service": "Unknown", "usage": 0.06624745033442316, "costs": 0.9999999686}, {"service": "CreateVolume-Gp2", "usage": 0.05829775817783995, "costs": 0.8800000008}, {"service": "PutObject", "usage": 0.03368749500185538, "costs": 0.5085100449}, {"service": "GetObject", "usage": 0.002482899511239212, "costs": 0.0374791697}, {"service": "UploadPart", "usage": 0.00022984240927267704, "costs": 0.0034694528}, {"service": "ListBucket", "usage": 6.837803010695366e-05, "costs": 0.0010321609}, {"service": "none", "usage": 0.000293926696873067, "costs": 0.0044368}, {"service": "InitiateMultipartUpload", "usage": 1.2919988904098931e-05, "costs": 0.0001950262}, {"service": "CompleteMultipartUpload", "usage": 1.126720108804297e-05, "costs": 0.0001700775}, {"service": "PutEvents", "usage": 0.0, "costs": 0}, {"service": "HeadBucket", "usage": 1.7018970525308985e-06, "costs": 2.569e-05}, {"service": "ListAllMyBuckets", "usage": 9.937117862188975e-07, "costs": 1.5e-05}, {"service": "HeadObject", "usage": 2.384908286925354e-07, "costs": 3.6e-06}, {"service": "ReadACL", "usage": 0.0, "costs": 0}, {"service": "Storage", "usage": 1.1336264057185183e-07, "costs": 1.7112e-06}, {"service": "ReadBucketPolicyStatus", "usage": 0.0, "costs": 0}, {"service": "ReadBucketPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "CreateBucket", "usage": 0.0, "costs": 0}, {"service": "ReadVersioningProps", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadBucketOwnershipControls", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadAccountPublicAccessBlock", "usage": 0.0, "costs": 0}, {"service": "GetLensConfiguration", "usage": 7.94969428975118e-08, "costs": 1.2e-06}, {"service": "ReadBucketPolicy", "usage": 0.0, "costs": 0}, {"service": "ReadBucketObjectLockConfig", "usage": 0.0, "costs": 0}, {"service": "ReadBucketServerSideEncryption", "usage": 0.0, "costs": 0}, {"service": "ReadLocation", "usage": 0.0, "costs": 0}, {"service": "GET", "usage": 0.0, "costs": 0.0}, {"service": "HEAD", "usage": 0.0, "costs": 0.0}, {"service": "HourlyStorageMetering", "usage": 0.0, "costs": 0.0}, {"service": "POST", "usage": 0.0, "costs": 0}, {"service": "PreflightRequest", "usage": 0.0, "costs": 0}, {"service": "Build", "usage": 0.0, "costs": 0}, {"service": "Decrypt", "usage": 0.0, "costs": 0}, {"service": "GenerateDataKey", "usage": 0.0, "costs": 0}, {"service": "Notification", "usage": 0.0, "costs": 0}, {"service": "Publish", "usage": 0.0, "costs": 0}, {"service": "PutLogEvents", "usage": 0.0, "costs": 0}, {"service": "USE1-activePipeline", "usage": 0.0, "costs": 0}, {"service": "Invalidations", "usage": 0.0, "costs": 0}, {"service": "UnknownAction", "usage": 0.0, "costs": 0}];
+    const months = ["2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05"];
+    const mediaLinkPrefix = "https://zeljkoobrenovic.github.io/sokrates-media/";
+
+    const numberWithCommas = function (x) {
+        return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    const getCosts = function (service, month) {
+        let filtered = all.filter(m => m.month === month)[0].services.filter(s => s.service === service);
+
+        if (filtered.length > 0) return filtered[0].costs;
+
+        return 0;
+    }
+
+    const getTotalCosts = function (month) {
+        let filter = document.getElementById('filter').value.trim().toLowerCase().replace(/\*/g, '');
+
+        let costs = 0;
+
+        all.filter(m => m.month === month).forEach(month => {
+            let services = month.services.filter(s => filter.length === 0 || s.service.toLowerCase().includes(filter));
+            if (services && services.length) {
+                costs += services.map(s => s.costs).reduce((a, b) => a + b);
+            }
+        });
+
+        return costs;
+    }
+
+    let html = '';
+
+    html += '<div style="margin-left: 6px; margin-bottom: 28px; white-space: nowrap">';
+
+    const params = filterParam ? '?filter=' + filterParam : '';
+
+    html += '<a href="trends.html' + params + '" style="background-color: #c0c0c0; margin-right: 8px; padding: 14px; padding-bottom: 9px">Trend</a>';
+    months.reverse().forEach(month => {
+        html += '<a href="' + month + '.html' + params + '" style="background-color: #f6f6f6; margin-right: 8px; padding: 14px; padding-bottom: 9px">';
+        html += month + '</a>';
+    });
+    html += '</div>';
+    html += '<div style="margin-left: 10px; margin-top: 20px; margin-bottom: 4px; color: grey">\n' +
+        '    <div>\n' +
+        '        <input id="filter" type="text" placeholder="search..."\n' +
+        '               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">\n' +
+        '        <div id="summary" style="display: inline-block"></div>\n' +
+        '    </div>\n' +
+        '</div>';
+    document.getElementById('Header').innerHTML = html;
+
+    function update() {
+        let html = '';
+        let filter = document.getElementById('filter').value.trim().toLowerCase().replace(/\*/g, '');
+        console.log(filter);
+        let filtered = array.filter(a => filter.length === 0 || a.service.toLowerCase().includes(filter));
+        html += '<table>';
+        html += '<tr style="font-size: 60%; color: grey;">';
+
+        let maxTotal = 1;
+        let allCostsTotal = 0;
+        months.sort().reverse().forEach(month => {
+            let value = getTotalCosts((month));
+            maxTotal = Math.round(Math.max(maxTotal, value));
+            allCostsTotal += value;
+        });
+
+        html += '<td style="background-color: white; vertical-align: middle">$' + numberWithCommas(allCostsTotal) + '</td>';
+
+        months.sort().reverse().forEach(month => {
+            let value = getTotalCosts(month);
+            html += '<td style="background-color: white; padding: 6px; vertical-align: bottom">'
+                + '<div style="color: blue">$' + numberWithCommas(value) + '</div>'
+                + '<div style="width: 100%; background-color: #000000; height: ' + (56 * value / maxTotal) + 'px"></div>'
+                + month
+                + '</td>';
+        })
+
+        html += '</tr>';
+
+        let max = 1;
+        filtered.filter(m => m.usage >= 0).forEach(function (month) {
+            months.sort().reverse().forEach(m => {
+                max = Math.max(max, getCosts(month.service, m));
+            });
+        });
+
+        filtered.filter(m => m.usage >= 0).sort((a, b) => b.costs - a.costs).forEach(function (month) {
+                const style = month.usage > 0.01 ? '' : 'opacity: 0.7';
+                html += '<tr>';
+                html += '<td>';
+                html += '<div class="domain" title="' + month.service + '" style="' + style + '">';
+                html += '<div>';
+                html += '<div style="color: grey; ">' + month.service + '</div>';
+                html += '<img class="image" src="https://zeljkoobrenovic.github.io/sokrates-media/' + getImage(month.service) + '" onerror="this.onerror=null;this.src=\'../logos/general/aws.svg\';">';
+                html += '</div>';
+                html += '</div>';
+                html += '</td>';
+
+                const costs = [];
+                months.sort().reverse().forEach(m => {
+                    costs.push({
+                        month: m,
+                        costs: getCosts(month.service, m)
+                    });
+                });
+
+                let index = 0;
+                costs.forEach(cost => {
+                    const m = cost.month;
+                    const nextCost = index + 1 < costs.length ? costs[index + 1].costs : null;
+                    html += '<td style="text-align: center; vertical-align: bottom; font-size: 12px">';
+                    let value = getCosts(month.service, m);
+                    let delta = nextCost ? ((value > nextCost ? '<span style="color: crimson">▲+</span>' : '<span style="color: green">▼</span>') + Math.round(100 * (value / nextCost - 1))) + '%' : '';
+                    if (value > 0) {
+                        color = (delta.includes('+')) ? 'crimson' : 'darkgreen';
+                        html += '<div style="width: 100%; text-align: center; font-size: 90%; color: ' + color + '">' + delta + '</div>'
+                        html += '$' + numberWithCommas(value);
+                        html += '<div style="width: 100%; background-color: #1e73be; height: ' + (56 * value / max) + 'px"></div>'
+                    }
+                    html += '</td>';
+                    index += 1;
+                })
+
+
+                html += '</tr>';
+            }
+        );
+        html += ('</table>');
+        html += ('<div style="color: grey; font-size: 80%">' + filtered.length + ' items</div>');
+        document.getElementById('Content').innerHTML = html;
+    }
+
+    if (filterParam) {
+        document.getElementById('filter').value = filterParam;
+    }
+
+    update();
+
+</script>
+
+<div style="margin-top: 27px; color: #a0a0a0; font-size: 60%">
+    generated on 2024-06-08
+</div>
+</body>
+</html>

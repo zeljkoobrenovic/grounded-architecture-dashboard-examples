@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strategic Tech Golden Path</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3JKMKS4NR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-L3JKMKS4NR');
+    </script>
+
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 280px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 24px; margin-top: 10px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 0px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 100px">
+        <div style="display: inline-block; vertical-align: middle">
+            <b>WL Golden Paths: Technologies</b>
+        </div>
+    </h1>
+    <div style="margin-top: 6px; margin-left: 4px; font-size: 16px; color: grey">
+        Recommended key tech stacks (golden paths).
+    </div>
+</div>
+<div style="margin-left: 30px">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'Model0')">Overview</button>
+        <button class="tablinks" onclick="openTab(event, 'Model1')">Frontend</button>
+        <button class="tablinks" onclick="openTab(event, 'Model2')">Backend & Infra</button>
+        <button class="tablinks" onclick="openTab(event, 'Model5')">DevOps</button>
+        <button class="tablinks" onclick="openTab(event, 'Model4')">QA</button>
+        <button class="tablinks" onclick="openTab(event, 'Model3')">Data Engineering</button>
+        <button class="tablinks" onclick="openTab(event, 'Model8')">Path To Avoid!</button>
+        <button class="tablinks" onclick="openTab(event, 'Model9')">Owners</button>
+        <button class="tablinks" onclick="openTab(event, 'Legend')">About</button>
+    </div>
+    <div id="Model0" class="tabcontent" style="display: block;">
+        <div>
+            <iframe id="Model0Frame" src="overview.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model1" class="tabcontent" style="">
+        <div>
+            <iframe id="Model1Frame" src="frontend.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model2" class="tabcontent">
+        <div>
+            <iframe id="Model2Frame" src="backend & infra.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model3" class="tabcontent">
+        <div>
+            <iframe id="Model3Frame" src="data engineering.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model4" class="tabcontent">
+        <div>
+            <iframe id="Model4Frame" src="qa.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model5" class="tabcontent">
+        <div>
+            <iframe id="Model5Frame" src="devops.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model6" class="tabcontent">
+        <div>
+            <iframe id="Model6Frame" src="special.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model7" class="tabcontent">
+        <div>
+            <iframe id="Model7Frame" src="evaluate.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model8" class="tabcontent">
+        <div>
+            <iframe id="Model8Frame" src="avoid.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model9" class="tabcontent">
+        <div>
+            <iframe id="Model9Frame" src="owners.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Model10" class="tabcontent">
+        <div>
+            <iframe id="Model10Frame" src="platform engineering tools.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 280px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Legend" class="tabcontent">
+        <div>
+            <img src="slides/img_1.png">
+        </div>
+        <div>
+            <img src="slides/img_2.png">
+        </div>
+    </div>
+</div>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%">
+    generated based on this source <a style="text-decoration: underline; color: #a0a0a0;"
+                                      href="https://docs.google.com/spreadsheets/d/12gZSAUy6Af5NbnfYMTYnsbo_QgLrI7xqjl7TTXnDUJM/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

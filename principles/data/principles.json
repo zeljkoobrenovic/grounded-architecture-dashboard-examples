@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-08"
+  },
+  "data": [
+    {
+      "source": "Principles",
+      "data": [
+        {
+          "id": 1,
+          "principle": "Build Differentiators",
+          "start_group": "Design",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/build-differentiators/",
+          "description": "If functionality is a differentiator for the Partnership then we should prefer to build, rather than buy and/or customise.",
+          "rationale": "Customisation of Commercial Off-The-Shelf (COTS) packages, and misuse of Software-as-a-Service (SaaS) beyond its designed-for use cases, can be costly in comparison to building equivalent functionality. It also has a longer-standing impact on the future pace of change, requiring maintenance and development on top of often-complex customisations that require specialist knowledge.",
+          "implication_1": "Extract what value we can from existing COTS packages and SaaS.",
+          "implication_2": "Use COTS packages and SaaS for their specific strengths,and compose differentiating systems around them as appropriate.",
+          "implication_3": "Legacy systems, where we can differentiate, may need a wrapper layer to facilitate strangulation and subsequent replacement.",
+          "implication_4": "Prepare for today’s differentiator becoming tomorrow’s commodity. We should watch the market and change our approach when there is value in doing so."
+        },
+        {
+          "id": 3,
+          "principle": "Design Evolutionary Systems",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/evolutionary-systems/",
+          "description": "Systems and architectures should be designed and built to enable easy, incremental change."
+        },
+        {
+          "id": 5,
+          "principle": "Small and Simple",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/small-and-simple/",
+          "description": "Where software is tending towards complexity, look for opportunities to break it down into smaller and simpler systems."
+        },
+        {
+          "id": 6,
+          "principle": "Smarts in the Nodes not the Network",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/smarts-in-the-nodes-not-the-network/",
+          "description": "Aim to have systems as decoupled and cohesive as possible, and not centrally choreographed in middleware."
+        },
+        {
+          "id": 4,
+          "principle": "Scale Horizontally",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/scale-horizontally/",
+          "description": "System components should be horizontally scalable where possible."
+        },
+        {
+          "id": 7,
+          "principle": "Cloud Native",
+          "start_group": "Operational",
+          "link": "https://engineering-principles.jlp.engineering/principles/operational/cloud-native/",
+          "description": "Build systems that are suitable for running in the public cloud, using cloud-native technologies suited to our provider of choice."
+        },
+        {
+          "id": 9,
+          "principle": "Production Ready",
+          "link": "https://engineering-principles.jlp.engineering/principles/operational/data-stewardship/",
+          "description": "Systems are engineering for use in Production from the start – they are scalable, observable and tolerant of failure."
+        },
+        {
+          "id": 8,
+          "principle": "Data Stewardship",
+          "link": "https://engineering-principles.jlp.engineering/principles/operational/production-ready/",
+          "description": "Actively protect and care for the data stored and accessed by a system, at least as much as the functional behaviour of that system."
+        },
+        {
+          "id": 10,
+          "principle": "Keep Pace with Technological Change",
+          "start_group": "Organizations",
+          "link": "https://engineering-principles.jlp.engineering/principles/organisation/keep-pace-with-technological-change/",
+          "description": "Use the latest, most appropriate tools and technologies that solve the business problem."
+        },
+        {
+          "id": 11,
+          "principle": "Model the Business Domain",
+          "link": "https://engineering-principles.jlp.engineering/principles/organisation/model-the-business-domain/",
+          "description": "Terms, concepts and capabilities of the business should be reflected in the way we write, structure and deploy our code and systems."
+        },
+        {
+          "id": 15,
+          "principle": "Design for Understandability",
+          "start_group": "Practices",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/understandability/",
+          "description": "Each codebase must be understandable and easy to change by new developers with minimal experience of the application."
+        },
+        {
+          "id": 18,
+          "principle": "Design for Testability",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/testability/",
+          "description": "Solutions should be designed - and code structured - in a way that makes execution of its tests happen more easily and quickly."
+        },
+        {
+          "id": 12,
+          "principle": "Secure by Design",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/secure-by-design/",
+          "description": "Systems will be designed and maintained with the assumption that our software and the data they hold will be attacked and possibly compromised."
+        },
+        {
+          "id": 2,
+          "principle": "Design for Emergent Reuse",
+          "link": "https://engineering-principles.jlp.engineering/principles/design/design-for-emergent-reuse/",
+          "description": "Design for well-defined use cases and adaptability. Address reuse as an optimisation opportunity rather than a goal."
+        },
+        {
+          "id": 13,
+          "principle": "Automate by Default",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/automate-by-default/",
+          "description": "Tasks that can be automated should be automated by default. The choice not to automate should always be a conscious decision."
+        },
+        {
+          "id": 17,
+          "principle": "Get Feedback Early and Often",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/get-feedback-early-and-often/",
+          "description": "Gain feedback by frequent and early releases of functionality, rather than Big Bang releases."
+        },
+        {
+          "id": 14,
+          "principle": "Create Consistent Environments",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/consistent-environments/",
+          "description": "Environments should have homogeneous application configuration, software, operating system, infrastructure and data (where appropriate)."
+        },
+        {
+          "id": 16,
+          "principle": "Pay Attention to Performance",
+          "link": "https://engineering-principles.jlp.engineering/principles/practices/performance-importance/",
+          "description": "Meet or exceed users' expectations of performance. Degradations are investigated, understood and either remedied, or accepted as appropriate in the business context."
+        }
+      ]
+    }
+  ]
+}

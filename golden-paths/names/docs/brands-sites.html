@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Paths / Names</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body style="padding: 24px">
+
+<script>
+    const data = {"sites": [{"short_name": "CA", "company": "Company A", "group": "North AMerica", "type": "General", "link": "https://www.google.com/", "country": "US"}, {"short_name": "CB", "company": "Company B", "group": "South America", "type": "General", "link": "https://www.google.com/", "country": "BR"}, {"short_name": "CC", "company": "Company A", "group": "Europe", "type": "General", "link": "https://www.google.com/", "country": "NL"}]};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+
+    html += '<h1>Organization Names</h1>';
+    html += '<table>'
+    html += '<tr>'
+    html += '<td style="text-align: right; font-weight: bold; padding-right: 20px">Short Name</td>'
+    html += '<td style="text-align: left; font-weight: bold">Full Name</td>'
+    html += '<td style="text-align: left; font-weight: bold">Link</td>'
+    html += '</tr>'
+    data.sites.forEach(site => {
+        html += '<tr>'
+        html += '<td style="text-align: right; padding-right: 20px">' + site.short_name + '</td>'
+        html += '<td style="text-align: left; ">' + site.company + '</td>'
+        html += '<td style="text-align: left; "><a target="_blank" href="' + site.link + '">' + site.link
+            .replace(/http.*?\/\//g, '')
+            .replace(/www[.]/g, '')
+            .replace(/\/.*/g, '') + '</a></td>'
+        html += '</tr>'
+    });
+    html += '</table>'
+    html += '<br>';
+
+    div.outerHTML = html;
+</script>
+</body>
+</html>

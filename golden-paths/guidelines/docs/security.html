@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Golden Paths</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .app {
+            margin: 10px;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            min-height: 300px;
+            width: 360px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .type {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 12px;
+            margin-bottom: 0px;
+            overflow: hidden;
+            color: lightgrey;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+            color: #5009DC;
+            overflow: hidden;
+        }
+
+        .qualifier {
+            color: grey;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 2px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 15px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 14px;
+            text-align: left;
+        }
+
+        .constraint {
+            font-size: 15px;
+            color: crimson;
+            margin: 3px;
+            line-height: 21px;
+            padding: 0px 14px 0px 10px;
+            text-align: left;
+            border-left: 4px dotted crimson;
+            margin-left: 16px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    var array = [{"type": "General", "start_group": "General", "path": "Secure Product Lifecycle (SPLC) Assessment", "link": "https://beguier.eu/nicolas/articles/splc-vs-sdlc-differences-why-they-matter.html#:~:text=The%20Secure%20Product%20LifeCycle%20(SPLC)%20is%20a%20framework%20for%20managing,rather%20than%20just%20software%20development.", "icon": "security-assessment.png"}, {"type": "General", "path": "Security Guidelines", "link": "https://owasp.org/www-project-top-ten/", "icon": "security-guidelines.png"}];
+
+    var appendObject = document.body;
+
+    let prev_group = '';
+    array.forEach(function (app) {
+        if (app.start_group && app.start_group != prev_group) {
+            prev_group = app.start_group;
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = app.start_group;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        var div = document.createElement('div');
+        appendObject.appendChild(div);
+        var html = '<div class="app">';
+        if (app.link) {
+            html += '    <a target="_blank" href="' + app.link + '">\n';
+        }
+        html += '    <div class="type">' + app.type + '</div>';
+        html += '    <div class="name">' + app.path.replace(/\&/g, '&amp;');
+        if (app.warning) {
+            html += '<img title="' + app.warning + '" src="icons/warning.png" style="width: 26px; margin-left: 14px; vertical-align: top">';
+        }
+        html += '</div>\n';
+        html += '    <div class="qualifier">' + (app.qualifier ? app.qualifier : '-') + '</div>\n';
+        html += '    <div><img class="icon" src="icons/' + app.icon + '" onerror="this.src=\'icons/tech.png\';"></div>\n';
+        html += '    <div class="description">' + (app.description ? app.description : '') + '</div>\n';
+        if (app.constraints) {
+            html += '    <div class="constraint">Constraint: ' + (app.constraints);
+            html += ' <div style="margin-top: 4px; font-size: 90%; color: grey">';
+            html += app.constraints_explanation + '</div></div>\n';
+        }
+        if (app.link) {
+            html += '    <div><img style="height: 20px" src="icons/link.png"></div>\n';
+            html += '    </a>\n';
+        }
+        html += '</div>';
+
+        div.outerHTML = html;
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-09"
+  },
+  "data": [
+    {
+      "source": "Frontend",
+      "data": [
+        {
+          "group": "Mobile Apps",
+          "brand": "Brand A",
+          "object": "A B2C App",
+          "domain": "B2C",
+          "expected": "2024-01",
+          "done": "2024-01",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand A",
+          "object": "A B2B App",
+          "domain": "B2B",
+          "expected": "2024-01",
+          "done": "2024-01",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand C",
+          "object": "C B2B App",
+          "domain": "B2B",
+          "expected": "2024-07",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "B B2C App",
+          "domain": "B2C",
+          "expected": "2024-07",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "B B2B App",
+          "domain": "B2B",
+          "expected": "2024-07",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand C",
+          "object": "C B2B App",
+          "domain": "B2B",
+          "expected": "2024-08",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Target",
+          "object": "New Mobile App"
+        }
+      ]
+    },
+    {
+      "source": "Backend",
+      "data": [
+        {
+          "group": "Legacy Databases",
+          "brand": "Brand A",
+          "object": "A B2C Main DB",
+          "domain": "B2C",
+          "expected": "2024-03",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand A",
+          "object": "B B2B Main DB",
+          "domain": "B2B",
+          "expected": "2024-04",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "A B2C Main DB",
+          "domain": "B2C",
+          "expected": "2024-05",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "B B2B Main DB",
+          "domain": "B2B",
+          "expected": "2024-06",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        }
+      ]
+    },
+    {
+      "source": "Infra",
+      "data": [
+        {
+          "group": "Legacy CI/CD",
+          "brand": "Brand A",
+          "object": "A CI/CD",
+          "domain": "B2C",
+          "expected": "2024-05",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "B CI/CD",
+          "domain": "B2C",
+          "expected": "2024-05",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        }
+      ]
+    },
+    {
+      "source": "Backoffice",
+      "data": [
+        {
+          "group": "CRMs",
+          "brand": "Brand A",
+          "object": "A CRM",
+          "domain": "B2C",
+          "expected": "2024-11",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        },
+        {
+          "brand": "Brand B",
+          "object": "B CRM",
+          "domain": "B2C",
+          "expected": "2024-11",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        }
+      ]
+    },
+    {
+      "source": "Other",
+      "data": [
+        {
+          "group": "Internal Website",
+          "brand": "Brand A",
+          "object": "A CI/CD",
+          "domain": "B2C",
+          "expected": "2024-12",
+          "group_icon": "mobile.png",
+          "roi_infra": "L",
+          "roi_maintenance": "XL"
+        }
+      ]
+    }
+  ]
+}

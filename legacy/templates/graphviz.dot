@@ -1,0 +1,29 @@
+graph G {
+    graph[
+        rankdir=RL
+        fontname="Verdana"
+    ]
+
+    node [
+        fixedsize="false"
+        fontname="Verdana"
+        color="white"
+        fillcolor="deepskyblue2"
+        fontcolor="black"
+        shape="octagone"
+        style="filled"
+        width=3
+    ]
+
+    edge [
+        fontname="Verdana"
+        color="#00003333"
+        fontcolor="black"
+        fontsize="12"
+        penwidth=5
+    ]
+
+    rankdir=RL
+
+${code}
+}

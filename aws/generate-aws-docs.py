@@ -51,3 +51,4 @@ def generate(dataFile, folder, mediaLinkPrefix):
 
 generate('json/services.json', 'services', 'https://zeljkoobrenovic.github.io/sokrates-media/')
 generate('json/regions.json', 'regions', 'https://zeljkoobrenovic.github.io/sokrates-media/')
+generate('json/api-operations.json', 'api-operations', 'https://zeljkoobrenovic.github.io/sokrates-media/')

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Principles</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px;
+            margin-right: 18px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .app {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 380px;
+            width: 220px;
+            object-fit: cover;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 12px;
+            color: #5009DC;
+            overflow: hidden;
+            height: 3em;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 8px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<script>
+    var array = [{"id": 2, "principle": "Design for Emergent Reuse", "start_group": "DELETE", "link": "http://engineering-principles.onejl.uk/architecture/Design_for_Emergent_Reuse.html", "description": "Design for well-defined use cases and adaptability. Address reuse as an optimisation opportunity rather than a goal."}];
+
+    var appendObject = document.body;
+
+    array.forEach(function (app) {
+        if (app.start_group) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = app.start_group;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        var div = document.createElement('div');
+        appendObject.appendChild(div);
+        var html = '<div class="app">';
+        html += '    <a target="_blank" href="' + app.link + '">\n';
+        html += '    <div class="name">' + app.principle + '</div>\n';
+        html += '    <div><img class="icon" src="icons/' + app.id + '.png"></div>\n';
+        html += '    <div class="description">' + app.description + '</div>\n';
+        html += '    </a>\n';
+        html += '    <br>\n';
+        html += '</div>';
+
+        div.outerHTML = html;
+
+    });
+</script>
+</body>
+</html>

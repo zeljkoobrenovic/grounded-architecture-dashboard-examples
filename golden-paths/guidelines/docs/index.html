@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Strategic Tech Golden Path</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3JKMKS4NR"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'G-L3JKMKS4NR');
+    </script>
+
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 280px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 24px; margin-top: 10px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 0px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 100px">
+        <div style="display: inline-block; vertical-align: middle">
+            <b>Golden Guidelines & Processes</b>
+        </div>
+    </h1>
+    <div style="margin-top: 6px; margin-left: 4px; font-size: 16px; color: grey">
+        A curated list of key guidelines and processes
+        (<a target="_blank"
+            href="https://docs.google.com/presentation/d/1MD3bSf6RoNG3WeiT2n5AsLi2jIUUkFDZb1FyMhSaP5w/edit?usp=sharing">golden
+        paths</a>).
+    </div>
+</div>
+<div style="margin-left: 30px">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'Overview')">Overview</button>
+        <button class="tablinks" onclick="openTab(event, 'Summaries')">Summaries</button>
+        <button class="tablinks" onclick="openTab(event, 'Owners')">Owners</button>
+        <button class="tablinks" onclick="openTab(event, 'Legend')">About</button>
+    </div>
+    <div id="Overview" class="tabcontent" style="display: block;">
+        <div>
+            <iframe id="Model0Frame" src="overview.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 250px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Summaries" class="tabcontent" style="">
+        <div>
+            <iframe id="Model1Frame" src="summaries.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 250px)">
+            </iframe>
+        </div>
+    </div>
+
+    <div id="Owners" class="tabcontent" style="">
+        <div>
+            <iframe id="OwnersFrame" src="owners.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 250px)">
+            </iframe>
+        </div>
+    </div>
+
+    <div id="Legend" class="tabcontent">
+        <div>
+            <img src="slides/img_1.png">
+        </div>
+        <div>
+            <img src="slides/img_2.png">
+        </div>
+    </div>
+</div>
+<script>
+</script>
+<div style="margin-left: 27px; color: #a0a0a0; font-size: 80%">
+    generated based on this source <a target="_blank" style="text-decoration: underline; color: #a0a0a0;"
+                                      href="https://docs.google.com/spreadsheets/d/1v3ndbeTOcLl74llWOFoze-P6x4J-M7MlZndhAQfO2zc/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Architecture Backlog</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .activityType {
+            border: 1px solid lightgrey;
+            text-align: left;
+            border-radius: 6px;
+            margin: 8px;
+            margin-right: 18px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: darkgrey;
+        }
+
+        .model {
+            margin: 10px 0px 0px 0px;
+            border: solid lightgrey 1px;
+            object-fit: contain;
+            text-align: left;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+            width: 100%;
+            padding: 12px;
+        }
+
+        .block {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            display: inline-block;
+            object-fit: contain;
+            text-align: center;
+            vertical-align: top;
+            border-radius: 12px;
+            background-color: white;
+        }
+
+        .subBlock {
+            margin: 10px;
+            padding: 4px;
+            border: solid lightgrey 1px;
+            border-radius: 6px;
+            object-fit: contain;
+            text-align: center;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .item {
+            padding: 4px;
+            border: solid lightgrey 1px;
+            border-radius: 2px;
+            object-fit: contain;
+            vertical-align: top;
+            background-color: white;
+            text-align: left;
+            width: 160px;
+            min-width: 160px;
+            max-width: 160px;
+            overflow-x: hidden;
+            white-space: nowrap;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #5009DC;
+            overflow: hidden;
+            height: 3em;
+        }
+
+        .qualifier {
+            font-weight: bold;
+            font-size: 14px;
+            margin-top: 6px;
+            margin-bottom: 4px;
+            color: grey;
+            overflow: hidden;
+        }
+
+        .source {
+            font-size: 11px;
+            color: grey;
+            margin: 3px;
+        }
+
+        .description {
+            font-size: 12px;
+            color: grey;
+            margin: 3px;
+            line-height: 21px;
+            padding: 8px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            position: absolute;
+            top: 165px;
+            left: 168px;
+            width: 27px;
+            opacity: 0.9;
+        }
+
+        .role {
+            color: grey;
+            font-size: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .link {
+            color: grey;
+            font-size: 80%;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: contain;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<script>
+    var architects = ${architects};
+    var activityTypes = ${data};
+
+    function architect(name) {
+        console.log(name);
+        return architects.filter(a => a.name.trim().toLowerCase() === name.trim().toLowerCase())[0];
+        return null;
+    }
+
+    var appendObject = document.body;
+
+    let html = '';
+    const div = document.createElement('div');
+    appendObject.appendChild(div);
+
+    function isNotActive(status) {
+        return !status || status.toLowerCase().startsWith('not ') || status.toLowerCase().startsWith('unknown') ||
+            status.toLowerCase().startsWith('coming inactive') || status.toLowerCase().startsWith('- ');
+    }
+
+    function isActive(status) {
+        return !isNotActive(status) && !isDone(status);
+    }
+
+    function isDone(status) {
+        return status && (status.toLowerCase() === 'done' || status.toLowerCase() === 'canceled');
+    }
+
+    html += '<table style="font-size: 130%; text-align: left; padding: 20px" class="activityType">';
+    let totalActivities = 0;
+    let totalDone = 0;
+    let totalActive = 0;
+    let totalOther = 0;
+
+    activityTypes.forEach(activityType => {
+        totalActivities += activityType.data.length;
+        totalDone += activityType.data.filter(a => isDone(a.status)).length;
+        totalActive += activityType.data.filter(a => isActive(a.status)).length;
+        totalOther += activityType.data.filter(a => isNotActive(a.status)).length;
+    });
+    let index = 0;
+    activityTypes.forEach(activityType => {
+
+        let count = activityType.data.length;
+        let countDone = activityType.data.filter(a => isDone(a.status)).length;
+        let countActive = activityType.data.filter(a => isActive(a.status)).length;
+        let countOther = activityType.data.filter(a => isNotActive(a.status)).length;
+
+        index += 1;
+        html += '<tr>';
+        html += '<td style="font-size: 80%; padding-right: 10px; color: #8c8c8c">' + index + '.</td>';
+        html += '<td>';
+        html += '<a href="#type' + index + '">';
+        html += activityType.source;
+        html += '</a>';
+        html += '</td>';
+        html += '<td style="text-align: right; padding-left: 12px; color: #8c8c8c; font-size: 90%">';
+        html += count + (count === 1 ? ' item' : ' items');
+        html += '</td>';
+        html += '<td style="text-align: right; padding-left: 12px; color: #8c8c8c; font-size: 70%">';
+        html += countDone + ' done';
+        html += '</td>';
+        html += '<td style="text-align: right; padding-left: 12px; color: #8c8c8c; font-size: 70%">';
+        html += countActive + ' active';
+        html += '</td>';
+        html += '<td style="text-align: right; padding-left: 12px; color: #8c8c8c; font-size: 70%">';
+        html += countOther + (' inactive');
+        html += '</td>';
+        html += '</tr>';
+    });
+    html += '<tr>';
+    html += '<td></td>';
+    html += '<td></td>';
+    html += '<td style="text-align: right; padding-left: 12px; font-size: 70%">';
+    html += totalActivities + (totalActivities === 1 ? ' item' : ' items');
+    html += '</td>';
+    html += '<td style="text-align: right; padding-left: 12px; font-size: 70%">';
+    html += totalDone + ' done';
+    html += '</td>';
+    html += '<td style="text-align: right; padding-left: 12px; font-size: 90%">';
+    html += totalActive + ' active';
+    html += '</td>';
+    html += '<td style="text-align: right; padding-left: 12px; font-size: 70%">';
+    html += totalOther + ' inactive';
+    html += '</td>';
+    html += '</tr>';
+    html += '</table>';
+
+    function tagColor(status) {
+        if (status.toLowerCase().startsWith('not ')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('unknown')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('no ')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('inactive')) return 'lightgrey';
+        if (status.toLowerCase().startsWith('-')) return 'lightgrey';
+
+        if (status.toLowerCase().includes('regular')) return 'lightgreen';
+        if (status.toLowerCase().includes('active')) return 'lightgreen';
+        if (status.toLowerCase().includes('supported')) return 'lightgreen';
+        if (status.toLowerCase().includes('supporting')) return 'lightgreen';
+        if (status.toLowerCase().includes('run ')) return '#7FFFD4';
+        if (status.toLowerCase().includes('maintenance')) return '#7FFFD4';
+        if (status.toLowerCase().includes('in progress')) return 'lightgreen';
+
+        if (status.toLowerCase().includes('ad-hoc')) return 'lemonchiffon';
+        if (status.toLowerCase().includes('planned')) return 'lemonchiffon';
+        if (status.toLowerCase().includes('exploration')) return 'lemonchiffon';
+
+        if (status.toLowerCase().includes('done')) return 'darkgrey';
+        return "lightgrey";
+    }
+
+    index = 0;
+    activityTypes.forEach(activityType => {
+        index += 1;
+        html += '<a id="type' + index + '">';
+        html += '<div class="activityType" style="margin-top: 52px">';
+        html += '<div style="font-size: 180%; margin-bottom: 8px">';
+        html += activityType.source;
+        html += ' (' + activityType.data.length + ')';
+        html += '</div>';
+        html += '<table style="font-size: 100%;">';
+        activityType.data.forEach(item => {
+            if (item.group) {
+                html += '<tr>';
+                html += '<td colspan="5" style="color: grey; font-size: 80%; margin-top: 12px"><hr>';
+                html += item.group;
+                html += '</td>';
+                html += '</tr>';
+            }
+            let status = item.status ? item.status : '-';
+            html += '<tr style="' + (isDone(status) ? 'text-decoration: line-through;' : '') + '">';
+            html += '<td style="font-weight: bold">';
+            html += '<div style="background-color: ' + tagColor(status) + '; ' +
+                'border-radius: 8px; font-size: 80%; padding: 4px; white-space: nowrap; overflow: hidden">';
+            html += status;
+            html += '</div>';
+            html += '</td>';
+            html += '<td style="font-weight: bold; max-width: 520px;  min-width: 520px; width: 520px; white-space: nowrap; overflow: hidden" ' +
+                'title="' + item.initiative + '">';
+            if (item.link) html += '<a href="' + item.link + '" target="_blank">';
+
+            function truncate(str, n) {
+                return (str.length > n) ? str.slice(0, n - 1) + '&hellip;' : str;
+            };
+            html += truncate(item.initiative, 64);
+            if (item.link) html += '</a>';
+
+            html += '</td>';
+            html += '<td style="max-width: 140px">';
+            if (item.architects) {
+                const names = item.architects.split(',');
+                html += '<div style="white-space: nowrap" title="' + item.architects + '">'
+                names.forEach(name => {
+                    const object = architect(name);
+                    if (object) {
+                        html += '<img src="' + object.image + '" style="margin-right: 2px; border-radius: 50%; height: 34px; width: 34px; object-fit: contain; vertical-align: middle">';
+                    }
+                });
+                html += '</div>'
+            }
+            html += '</td>';
+            /*html += '<td style="color: #8c8c8c; padding-left: 18px; font-size: 90%">';
+            if (item.architects) {
+                const names = item.architects.split(',');
+                let first = true;
+                names.forEach(name => {
+                    if (!first) html += ', ';
+                    first = false;
+                    html += name;
+                });
+            }
+            html += '</td>';*/
+            html += '<td style="color: #8c8c8c; padding-left: 18px; font-size: 90%">' + (item.note ? item.note : '') + '</td>';
+            html += '</tr>';
+        });
+        html += '</table>';
+        html += '</div>';
+    });
+    div.outerHTML = html;
+
+</script>
+</body>
+</html>

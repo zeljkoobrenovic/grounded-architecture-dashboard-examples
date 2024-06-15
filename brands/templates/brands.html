@@ -167,6 +167,13 @@
         html += '</a>'
         html += '<div style="margin-top: 8px">';
 
+        if (brand.linkedin_people) {
+             html += '<div style="font-size: 80%; margin-right: 0px; display: inline-block; vertical-align: top; padding-top: 2px; color: grey">';
+             html += brand.linkedin_people + ' 😀';
+             html += '</div>';
+        }
+        if (brand.linkedin)
+            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
         if (brand.facebook)
             html += '<a href="' + brand.facebook + '" target="_blank" title="Facebook"><img class="channel" src="icons/facebook.svg"></a>';
         if (brand.instagram)
@@ -179,8 +186,6 @@
             html += '<a href="' + brand.pinterest + '" target="_blank" title="Pinterest"><img class="channel" src="icons/pinterest.svg"></a>';
         if (brand.tiktok)
             html += '<a href="' + brand.tiktok + '" target="_blank" title="TikTok"><img class="channel" style="border-radius: 50%; border: 1px solid grey" src="icons/tiktok.png"></a>';
-        if (brand.linkedin)
-            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
         if (brand.xing)
             html += '<a href="' + brand.xing + '" target="_blank" title="Xing"><img class="channel" src="icons/xing.png"></a>';
 

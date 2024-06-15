@@ -278,21 +278,36 @@
                 html += '<tr>';
                 html += '<td>';
                 html += '<div class="domain" title="' + month.service + '" style="' + style + '">';
-                html += '<div><a target="_blank" href="https://www.google.com/search?q=Amazon AWS ' + month.service + '">';
+                html += '<div>';
                 html += '<div style="color: grey; ">' + month.service + '</div>';
                 html += '<img class="image" src="${media-link-prefix}' + getImage(month.service) + '" onerror="this.onerror=null;this.src=\'../logos/general/aws.svg\';">';
-                html += '</a></div>';
+                html += '</div>';
                 html += '</div>';
                 html += '</td>';
 
+                const costs = [];
                 months.sort().reverse().forEach(m => {
+                    costs.push({
+                        month: m,
+                        costs: getCosts(month.service, m)
+                    });
+                });
+
+                let index = 0;
+                costs.forEach(cost => {
+                    const m = cost.month;
+                    const nextCost = index + 1 < costs.length ? costs[index + 1].costs : null;
                     html += '<td style="text-align: center; vertical-align: bottom; font-size: 12px">';
                     let value = getCosts(month.service, m);
+                    let delta = nextCost ? ((value > nextCost ? '<span style="color: crimson">▲+</span>' : '<span style="color: green">▼</span>') + Math.round(100 * (value / nextCost - 1))) + '%' : '';
                     if (value > 0) {
+                        color = (delta.includes('+')) ? 'crimson' : 'darkgreen';
+                        html += '<div style="width: 100%; text-align: center; font-size: 90%; color: ' + color + '">' + delta + '</div>'
                         html += '$' + numberWithCommas(value);
                         html += '<div style="width: 100%; background-color: #1e73be; height: ' + (56 * value / max) + 'px"></div>'
                     }
                     html += '</td>';
+                    index += 1;
                 })
 
 

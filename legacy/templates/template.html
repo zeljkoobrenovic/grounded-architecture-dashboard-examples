@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Legacy Targets</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .crossed {
+            background: linear-gradient(to top right,
+            rgba(0, 0, 200, 0) 0%,
+            rgba(0, 0, 200, 0) calc(50% - 5px),
+            rgba(0, 0, 200, 1) 50%,
+            rgba(0, 0, 200, 0) calc(50% + 5px),
+            rgba(0, 0, 200, 0) 100%);
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #d0d0d0;
+            overflow: hidden;
+            width: 100px;
+            font-size: 70%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            border: 4px solid blue;
+            border-radius: 10px;
+        }
+
+        .group {
+            border-radius: 10px;
+            border-left: 6px solid grey;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+            overflow: hidden;
+            width: 100px;
+            font-size: 70%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        }
+
+        .target-group {
+            border-radius: 10px;
+            border-left: 6px solid blue;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+            overflow: hidden;
+            width: 100px;
+            font-size: 70%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: center;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: -6px; margin-top: 10px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 58px; margin-bottom: 5px; margin-left: 6px">
+        <img src="assets/logo.png" style="vertical-align: middle; height: 90px">
+        <div style="display: inline-block; vertical-align: top; padding-top: 6px">
+            <b>Legacy Tech Debt</b>
+        </div>
+    </h1>
+    <div style="margin-left: 12px; font-size: 16px; color: grey">Big chunks of legacy we plan to retire</div>
+</div>
+
+<div class="tab">
+    <button id="overview_tab" class="tablinks active" onclick="openTab(event, 'overview')">Legacy Assets</button>
+    <button id="roadmap_tab" class="tablinks" onclick="openTab(event, 'roadmap')">Roadmap</button>
+    <button id="current_landscapes" class="tablinks" onclick="openTab(event, 'landscapes')">Brands</button>
+    <button id="current_domains" class="tablinks" onclick="openTab(event, 'domains')">Domains</button>
+</div>
+<div id="overview" class="tabcontent" style="display: block; margin: 0; padding: 6px">
+    <div style="margin-left: 0px; margin-top: 20px; margin-bottom: 0px; color: grey; text-align: left; margin-left: 32px">
+        <div>
+            <input id="filter" type="text" placeholder="search..."
+                   style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+                   onkeyup="update()">
+            <div id="search-summary" style="width: 100px; display: inline-block"></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="display: inline-block"><label><input type="checkbox" id="expected" onchange="update()">&nbsp;possible
+                closures in 2024</label></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div style="display: inline-block"><label><input type="checkbox" id="done"
+                                                             onchange="update()">&nbsp;done</label></div>
+        </div>
+        <br>
+    </div>
+
+    <div id="content"></div>
+</div>
+
+<div id="roadmap" class="tabcontent" style="text-align: left; padding: 10px;">
+    <div style="margin-bottom: 12px">
+        <label>
+            <input type="checkbox" id="savings" onchange="updateRoadmap()">
+            &nbsp;show estimated (T-shirt size) long-term savings
+        </label>
+    </div>
+
+    <div id="roadmap_content"></div>
+</div>
+
+<div id="landscapes" class="tabcontent" style="text-align: left; padding: 20px">
+    <div style="margin-left: 0px; margin-top: 20px; margin-bottom: 0px; color: grey; text-align: left; margin-left: 32px">
+        <div>
+            <div style="display: inline-block"><label><input type="checkbox" id="expected_brands"
+                                                             onchange="updateLandscapes()">&nbsp;expected
+                closure in 2024</label></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <br>
+    </div>
+    <div id="landscapes_content" style="margin-top: 30px">
+    </div>
+</div>
+
+<div id="domains" class="tabcontent" style="text-align: left; padding: 20px">
+    <div style="margin-left: 0px; margin-top: 20px; margin-bottom: 0px; color: grey; text-align: left; margin-left: 32px">
+        <div>
+            <div style="display: inline-block"><label><input type="checkbox" id="expected_domains"
+                                                             onchange="updateDomains()">&nbsp;expected
+                closure in 2024</label></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <br>
+    </div>
+    <div id="domains_content" style="margin-top: 30px">
+    </div>
+</div>
+
+<script>
+    const data = ${data};
+    const brands = [
+        {
+            brand: 'brand_a',
+            displayName: 'Brand A',
+            logo: 'logos/a.png"',
+            color: 'red'
+        }, {
+            brand: 'brand_b',
+            displayName: 'Brand B',
+            logo: 'logos/b.png"',
+            color: 'black'
+        },
+        {
+            brand: 'brand_c',
+            displayName: 'Brand C',
+            logo: 'logos/c.png"',
+            color: 'powderblue'
+        }
+    ];
+
+    function brandById(brandName) {
+        let brand = brands.filter(b => brandName && b.brand && b.brand.toLowerCase() === brandName.toLowerCase())[0];
+        return brand ? brand.logo : '';
+    }
+
+
+    function brandId(brand) {
+        return brand.toLowerCase().replace(' ', '_').trim();
+    }
+
+    function update() {
+        const sections = [];
+        let count = 0;
+
+        const filter = document.getElementById('filter').value.toLowerCase().trim();
+        const expected = document.getElementById('expected').checked;
+        const done = document.getElementById('done').checked;
+
+        data.forEach(section => {
+            const sectionObject = {name: section.source, count: 0, groups: []};
+            sections.push(sectionObject);
+            let group = null;
+            let groupAdded = false;
+            section.data.filter(item => item.brand && item.object).forEach(item => {
+                if (item.group) {
+                    groupAdded = false;
+                    group = {
+                        name: item.group,
+                        domain: item.domain,
+                        count: 0,
+                        logo: item.group_icon,
+                        brand_a: [],
+                        brand_b: [],
+                        brand_c: [],
+                        target: []
+                    };
+                }
+                item.group_object = group;
+                if ((!filter || (group.name + ' ' + item.object).toLowerCase().includes(filter)) && (!expected || ((item.expected + '').includes('2024'))) && (!done || item.done) && item.brand) {
+                    if (item.brand.toLowerCase().trim() !== 'target') {
+                        count += 1;
+                        group.count += 1;
+                        sectionObject.count += 1;
+                    }
+                    if (!groupAdded) {
+                        sectionObject.groups.push(group);
+                        groupAdded = true;
+                    }
+                    console.log(item);
+                    group[brandId(item.brand)].push(item);
+                }
+            });
+        });
+
+        let html = '';
+
+        let items = []
+        sections.forEach(section => {
+            section.groups.forEach(group => {
+                items = items.concat(group.brand_a);
+                items = items.concat(group.brand_b);
+                items = items.concat(group.brand_c);
+            });
+        });
+        console.log(items);
+
+        const target = 50;
+
+        const date = new Date();
+        let month = date.getUTCMonth() + 1;
+        let year = date.getFullYear();
+        let currentMonth = year + '-' + (month < 10 ? '0' : '') + month;
+
+
+        const from2023 = items.filter(i => i.done && i.done.startsWith('2023'));
+        const done2024 = items.filter(i => i.done && i.done.startsWith('2024') && (!i.done.startsWith(currentMonth)));
+        const expected2024 = items.filter(i => !i.done && i.expected && i.expected.startsWith('2024'));
+
+        const doneCount = from2023.length + done2024.length;
+        const donePerc = Math.round(100 * doneCount / target);
+        const target2024 = target - from2023.length;
+        const done2024Perc = Math.round(100 * done2024.length / target2024);
+
+        if (filter.length === 0 && !expected && !done) {
+            html += '<table style="margin-bottom: 30px; margin-left: 20px">';
+            html += '<tr>';
+            html += '<td colspan="' + from2023.length + '" style="text-align: left; color: grey"></td>';
+            html += '<td colspan="' + (done2024.length + 1) + '" style="text-align: right; color: black">';
+            html += '<div style="font-size: 70%; color: darkgreen; margin-top: 4px">progress<br>in 2024</div>';
+            html += '<div style="font-size: 200%; color: darkgreen">' + done2024Perc + '%</div>';
+            html += '<div style="color: darkgreen">' + done2024.length + ' / ' + target2024 + '</div>';
+            html += '<div style="font-size: 220%; margin-bottom: 0px">↓</div>';
+            html += '</td>';
+            html += '<td colspan="' + expected2024.length + '" style="text-align: right"></td>';
+
+            html += '</tr>';
+
+            html += '<tr>';
+            let index = 0;
+
+            function checkForTarget() {
+                index += 1;
+                if (index === target) {
+                    html += '<div style="background-color: blue; display: inline-block; margin: 4px; vertical-align: middle; padding: 3px; color: white">NEXT<br>TARGET&nbsp;(' + target + ')</div>';
+                }
+            }
+
+            from2023.forEach(item => {
+                html += '<td style="vertical-align: middle">';
+                const title = item.object;
+                html += '<div title="' + title + '" style="background-color: grey; height: 20px; width: 10px; display: inline-block; vertical-align: middle;"></div>';
+                checkForTarget();
+                html += '</td>';
+            });
+
+            html += '<td>&nbsp;</td>';
+
+            let prevMonth = '2024-01';
+            let flip = false;
+
+            done2024.sort((a, b) => a.done.localeCompare(b.done)).forEach(item => {
+                html += '<td style="vertical-align: middle">';
+                const title = item.object + ', done in ' + item.done;
+                if (prevMonth !== item.done) {
+                    flip = !flip;
+                    prevMonth = item.done;
+                }
+                html += '<div title="' + title + '" style="opacity: ' + (flip ? 0.5 : 1.0) + '; background-color: darkgreen; height: 20px; width: 20px; display: inline-block; vertical-align: middle; color: white; margin-left: -2px"><div style="vertical-align: middle; font-size: 70%; margin-top: 4px"></div>';
+                checkForTarget();
+                html += '</td>';
+            });
+
+            expected2024.forEach(item => {
+                html += '<td style="vertical-align: middle">';
+                const title = item.object;
+                html += '<div title="' + title + '" style="background-color: #f0f0f0; height: 20px; width: 10px; display: inline-block; vertical-align: middle;"></div>';
+                checkForTarget();
+                html += '</td>';
+            });
+
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td colspan="' + from2023.length + '" style="text-align: left; color: grey; vertical-align: top">from<br>2023 (' + from2023.length + ')</td>';
+            html += '<td colspan="' + (done2024.length + 1) + '" style="text-align: right; color: grey">';
+            html += '<div style="font-size: 70%; margin-top: 0px; color: grey">overall<br>retiring<br>progress</div>';
+            html += '<div style="font-size: 90%">' + donePerc + '%</div>';
+            html += '<div style="font-size: 80%">' + doneCount + ' / ' + target + '</div>';
+            html += '</td>';
+            html += '</tr>';
+            html += '</table>';
+        }
+
+        html += '<br>';
+        html += '<br>';
+        html += '<table>';
+
+        html += '<tr>';
+        html += '<td></td>';
+        html += '<td></td>';
+        brands.forEach(brand => {
+            html += '<td>';
+            html += '<img src="' + brand.logo + '" style="width: 70px">';
+            html += '</td>';
+        });
+        html += '<td>';
+        html += '</td>';
+        html += '<td>';
+        html += '<img src="logos/target.png" style="width: 80px">';
+        html += '</td>';
+        html += '</tr>';
+
+
+        document.getElementById('search-summary').innerHTML = ' = <b>' + count + '</b> items';
+
+
+        const addItems = function (items, title, logo) {
+            let html = '';
+
+            html += '<div style="color: lightgrey; font-size: 12px">' + title + '</div>';
+            items.forEach(item => {
+                let style = item.done ? 'opacity: 0.5; text-decoration: line-through' : '';
+
+                style += !item.done && (item.expected + '').includes('2024') ? 'border: 2px solid orange; border-left: 6px solid orange;' : '';
+
+                if (item.link) {
+                    html += '<a target="_blank" href="' + item.link + '">';
+                }
+                html += '<div class="' + (item.done ? 'crossed' : 'group') + '" style="' + style + '">';
+                html += '<img src="assets/' + logo + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="width: 22px; filter: grayscale(1);"><br>';
+                html += item.object;
+                html += '</div>';
+                if (item.link) {
+                    html += '</a>';
+                }
+            });
+
+            return html;
+        }
+
+        const addTargetItems = function (items, title, logo) {
+            let html = '';
+
+            html += '<div style="color: lightgrey; font-size: 12px">' + title + '</div>';
+            items.forEach(item => {
+                if (item.link) {
+                    html += '<a target="_blank" href="' + item.link + '">';
+                }
+                html += '<div class="target-group">';
+                html += '<img src="assets/' + logo + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="width: 22px; filter: grayscale(1);"><br>';
+                html += item.object;
+                html += '</div>';
+                if (item.link) {
+                    html += '</a>';
+                }
+            });
+
+            return html;
+        }
+
+
+        sections.forEach(section => {
+            if (!section.groups.length) return;
+            let group = '';
+            html += '<tr>';
+            html += '<td></td>';
+            html += '<td style="text-align: center; padding-top: 36px; padding-bottom: 16px; font-weight: bold; color: darkblue; font-size: 160%" colspan="10">';
+            html += section.name.toUpperCase() + ' (' + section.count + ')';
+            html += '</td>';
+            html += '</tr>';
+            section.groups.forEach(group => {
+                html += '<tr>';
+                html += '<td style="text-align: right; padding-right: 6px; max-width: 150px">';
+                html += group.name + '&nbsp;(' + group.count + ')';
+                html += '<div style="font-size: 70%">' + group.domain + '</div>';
+                html += '</td>';
+                html += '<td style="text-align: right; padding-right: 6px; max-width: 150px; padding: 12px;">';
+                html += '<img src="assets/' + group.logo + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="width: 42px; filter: grayscale(1);">';
+                html += '</td>';
+                html += '<td style="border: 1px dashed lightgrey; vertical-align: top">';
+                html += addItems(group.brand_a, 'Brand A', group.logo);
+                html += '</td>';
+                html += '<td style="border: 1px dashed lightgrey; vertical-align: top">';
+                html += addItems(group.brand_b, 'Brand B', group.logo);
+                html += '</td>';
+                html += '<td style="border: 1px dashed lightgrey; vertical-align: top">';
+                html += addItems(group.brand_c, 'Brand A', group.logo);
+                html += '</td>';
+                html += '<td>';
+                html += '<img src="assets/arrow.png" style="width: 32px">';
+                html += '</td>';
+                html += '<td style="border: 1px dashed lightgrey; vertical-align: top">';
+                html += addTargetItems(group.target, 'Target', group.logo);
+                html += '</td>';
+                html += '</tr>';
+            });
+        });
+
+        html += '</table>';
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    function updateLandscapes() {
+
+        const sections = [];
+        let count = 0;
+
+        const filter = document.getElementById('filter').value.toLowerCase().trim();
+        const expected = document.getElementById('expected_brands').checked;
+        const done = document.getElementById('done').checked;
+        data.forEach(section => {
+            const sectionObject = {name: section.source, count: 0, groups: []};
+            sections.push(sectionObject);
+            let group = null;
+            let groupAdded = false;
+            section.data.filter(item => item.brand && item.object).forEach(item => {
+                if (item.group) {
+                    groupAdded = false;
+                    group = {
+                        name: item.group,
+                        count: 0,
+                        logo: item.group_icon,
+                        brand_a: [],
+                        brand_b: [],
+                        brand_c: [],
+                        target: []
+                    };
+                }
+                if ((!filter || (group.name + ' ' + item.object).toLowerCase().includes(filter)) && (!expected || ((item.expected + '').includes('2024'))) && (!done || item.done)) {
+                    if (item.brand.toLowerCase().trim() !== 'target') {
+                        count += 1;
+                        group.count += 1;
+                        sectionObject.count += 1;
+                    }
+                    if (!groupAdded) {
+                        sectionObject.groups.push(group);
+                        groupAdded = true;
+                    }
+                    group[brandId(item.brand)].push(item);
+                }
+            });
+        });
+
+        const addItems = function (items, title, logo) {
+            let html = '';
+
+            items.forEach(item => {
+                let style = item.done ? 'opacity: 0.5; text-decoration: line-through' : '';
+                style += !item.done && (item.expected + '').includes('2024') ? 'border: 2px solid orange; border-left: 6px solid orange;' : '';
+
+                if (item.link) {
+                    html += '<a target="_blank" href="' + item.link + '">';
+                }
+                html += '<div class="' + (item.done ? 'crossed' : 'group') + '" style="' + style + '; display: inline-block; vertical-align: top;">';
+                html += '<img src="assets/' + logo + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="height: 42px; filter: grayscale(1);"><br>';
+                html += item.object;
+                const wl_links = item.wl_capability_links ? item.wl_capability_links.trim().split('\n').filter(l => l.trim().length > 0) : [];
+                const extra_links = item.extra_links ? item.extra_links.trim().split('\n').filter(l => l.trim().length > 0) : [];
+                wl_links.forEach(link => {
+                    html += '<div title="' + link + '" style="white-space: nowrap; overflow: hidden; margin: 2px; padding: 2px; border-radius: 5px; border: 2px solid blue; color: blue">' + link + '</div>';
+                });
+                extra_links.forEach(link => {
+                    html += '<div title="' + link + '" style="white-space: nowrap; overflow: hidden; margin: 2px; padding: 2px; border-radius: 5px; background-color: lightgrey">' + link + '</div>';
+                });
+                html += '</div>';
+                if (item.link) {
+                    html += '</a>';
+                }
+            });
+
+            return html;
+        }
+
+        let html = '';
+
+        brands.forEach(brand => {
+            html += '<div style="background-color: rgba(200,200,200,0.2);margin: 12px; padding: 10px; box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; text-align: center; margin-bottom: 90px; border: 6px solid ' + brand.color + ';">';
+            html += '<div>';
+            html += '<img src="' + brand.logo + '" style="height: 42px"/>';
+            html += '</div>';
+            sections.forEach(section => {
+                if (!section.groups.filter(g => g[brand.brand]).length) return;
+                let group = '';
+                html += '<div style="display: inline-block; margin: 10px; padding: 7px; box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">';
+                html += '<div>' + section.name + '</div>';
+                section.groups.filter(g => g[brand.brand].length).forEach(group => {
+                    html += '<div style="display: inline-block; margin: 10px; padding: 7px; vertical-align: top; box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">';
+
+                    html += '<div style="font-size: 80%; color: grey;">';
+                    html += group.name + '&nbsp;(' + group[brandId(brand.brand)].length + ')';
+                    html += '</div>';
+
+                    html += addItems(group[brandId(brand.brand)], brand.displayName, group.logo);
+
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+
+        html += '</table>';
+
+        document.getElementById('landscapes_content').innerHTML = html;
+    }
+
+    function updateDomains() {
+        const sections = [];
+        let count = 0;
+
+        const expected = document.getElementById('expected_domains').checked;
+
+        data.forEach(section => {
+            const sectionObject = {name: section.source, count: 0, groups: []};
+            sections.push(sectionObject);
+            let group = null;
+            let groupAdded = false;
+            section.data.filter(item => item.object && item.brand && item.brand.toLowerCase().trim() !== 'target').forEach(item => {
+                let domain = item.domain ? item.domain : 'undefined';
+                if (item.group) {
+                    groupAdded = false;
+                    group = {
+                        name: item.group,
+                        count: 0,
+                        logo: item.group_icon,
+                        undefined: [],
+                        b2c: [],
+                        b2b: []
+                    };
+                }
+                if ((!expected || ((item.expected + '').includes('2024')))) {
+                    count += 1;
+                    group.count += 1;
+                    sectionObject.count += 1;
+                    if (!groupAdded) {
+                        sectionObject.groups.push(group);
+                        groupAdded = true;
+                    }
+                    if (!group[brandId(domain)]) {
+                        domain = 'undefined';
+                    }
+                    group[brandId(domain)].push(item);
+                }
+            });
+        });
+
+        const addItems = function (items, title, logo) {
+            let html = '';
+
+            items.forEach(item => {
+                let style = item.done ? 'opacity: 0.5; text-decoration: line-through' : '';
+                style += !item.done && (item.expected + '').includes('2024') ? 'border: 2px solid orange; border-left: 6px solid orange;' : '';
+
+                if (item.link) {
+                    html += '<a target="_blank" href="' + item.link + '">';
+                }
+                html += '<div class="' + (item.done ? 'crossed' : 'group') + '" style="' + style + '; display: inline-block; vertical-align: top;">';
+                html += '<img src="' + brandById(item.brand) + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="height: 32px; width: 100%; object-fit: contain"><br>';
+                html += '<img src="assets/' + logo + '" onerror="this.onerror=null;this.src=\'assets/logo.png\';" style="height: 42px; filter: grayscale(1);"><br>';
+                html += item.object;
+                const wl_links = item.wl_capability_links ? item.wl_capability_links.trim().split('\n').filter(l => l.trim().length > 0) : [];
+                const extra_links = item.extra_links ? item.extra_links.trim().split('\n').filter(l => l.trim().length > 0) : [];
+                wl_links.forEach(link => {
+                    html += '<div title="' + link + '" style="white-space: nowrap; overflow: hidden; margin: 2px; padding: 2px; border-radius: 5px; border: 2px solid blue; color: blue">' + link + '</div>';
+                });
+                extra_links.forEach(link => {
+                    html += '<div title="' + link + '" style="white-space: nowrap; overflow: hidden; margin: 2px; padding: 2px; border-radius: 5px; background-color: lightgrey">' + link + '</div>';
+                });
+                html += '</div>';
+                if (item.link) {
+                    html += '</a>';
+                }
+            });
+
+            return html;
+        }
+
+        let html = '';
+
+        const domains = [
+            {
+                brand: 'b2c',
+                displayName: 'B2C',
+                logo: 'logos/b2c.png"',
+                color: 'red'
+            },
+            {
+                brand: 'b2b',
+                displayName: 'B2B',
+                logo: 'logos/b2b.png"',
+                color: 'blue'
+            },
+            {
+                brand: 'undefined',
+                displayName: 'Undefined',
+                logo: 'logos/undefined.png"',
+                color: 'green'
+            }
+        ];
+
+        domains.forEach(domain => {
+            html += '<div style="background-color: rgba(200,200,200,0.2);margin: 12px; padding: 10px; box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; text-align: center; margin-bottom: 90px; border: 6px solid ' + domain.color + ';">';
+            html += '<div style="font-size: 200%">';
+            html += domain.displayName.toUpperCase();
+            html += '</div>';
+            sections.forEach(section => {
+                if (!section.groups.filter(g => g[domain.brand]).length) return;
+                let group = '';
+                html += '<div style="display: inline-block; margin: 10px; padding: 7px; box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;">';
+                html += '<div>' + section.name + '</div>';
+                section.groups.filter(g => g[domain.brand].length).forEach(group => {
+                    html += '<div style="display: inline-block; margin: 10px; padding: 7px; vertical-align: top; box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;">';
+
+                    html += '<div style="font-size: 80%; color: grey;">';
+                    html += group.name + '&nbsp;(' + group[brandId(domain.brand)].length + ')';
+                    html += '</div>';
+
+                    html += addItems(group[brandId(domain.brand)], domain.displayName, group.logo);
+
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+
+        html += '</table>';
+
+        document.getElementById('domains_content').innerHTML = html;
+    }
+
+    function updateRoadmap() {
+        const showSavings = document.getElementById('savings').checked;
+        console.log(showSavings);
+
+        let html = '';
+
+        const items = [];
+
+        data.forEach(section => {
+            section.data.filter(item => item.brand && item.brand.toLowerCase().trim() !== 'target').forEach(item => items.push(item));
+        });
+
+        tShirtSizes = {
+            s: 1,
+            m: 2,
+            l: 5,
+            xl: 10,
+            xxl: 20,
+            xxxl: 50
+        }
+
+        const roiInfra = {
+            roiScope: 1000000,
+            s: 0,
+            s_cost: 0,
+            m: 0,
+            m_cost: 0,
+            l: 0,
+            l_cost: 0,
+            xl: 0,
+            xl_cost: 0,
+            xxl: 0,
+            xxl_cost: 0,
+            xxxl: 0,
+            xxxl_cost: 0
+        }
+
+        const roiMaintenance = {
+            roiScope: 2000000,
+            s: 0,
+            s_cost: 0,
+            m: 0,
+            m_cost: 0,
+            l: 0,
+            l_cost: 0,
+            xl: 0,
+            xl_cost: 0,
+            xxl: 0,
+            xxl_cost: 0,
+            xxxl: 0,
+            xxxl_cost: 0
+        }
+
+        items.forEach(item => {
+            roiInfra[item.roi_infra.toLowerCase()] += 1;
+            roiMaintenance[item.roi_maintenance.toLowerCase()] += 1;
+        });
+
+        console.log(roiInfra);
+        console.log(roiMaintenance);
+
+        let totalRoiInfraPoints = 0;
+        totalRoiInfraPoints += roiInfra.s * tShirtSizes.s;
+        totalRoiInfraPoints += roiInfra.m * tShirtSizes.m;
+        totalRoiInfraPoints += roiInfra.l * tShirtSizes.l;
+        totalRoiInfraPoints += roiInfra.xl * tShirtSizes.xl;
+        totalRoiInfraPoints += roiInfra.xxl * tShirtSizes.xxl;
+        totalRoiInfraPoints += roiInfra.xxxl * tShirtSizes.xxxl;
+
+        let totalRoiMaintenancePoints = 0;
+        totalRoiMaintenancePoints += roiMaintenance.s * tShirtSizes.s;
+        totalRoiMaintenancePoints += roiMaintenance.m * tShirtSizes.m;
+        totalRoiMaintenancePoints += roiMaintenance.l * tShirtSizes.l;
+        totalRoiMaintenancePoints += roiMaintenance.xl * tShirtSizes.xl;
+        totalRoiMaintenancePoints += roiMaintenance.xxl * tShirtSizes.xxl;
+        totalRoiMaintenancePoints += roiMaintenance.xxxl * tShirtSizes.xxxl;
+
+        roiInfraPointCost = roiInfra.roiScope / totalRoiInfraPoints;
+        roiMaintenancePointCost = roiMaintenance.roiScope / totalRoiMaintenancePoints;
+
+        roiMaintenance.s_cost = Math.round(roiMaintenancePointCost * tShirtSizes.s / 1000);
+        roiMaintenance.m_cost = Math.round(roiMaintenancePointCost * tShirtSizes.m / 1000);
+        roiMaintenance.l_cost = Math.round(roiMaintenancePointCost * tShirtSizes.l / 1000);
+        roiMaintenance.xl_cost = Math.round(roiMaintenancePointCost * tShirtSizes.xl / 1000);
+        roiMaintenance.xxl_cost = Math.round(roiMaintenancePointCost * tShirtSizes.xxl / 1000);
+        roiMaintenance.xxxl_cost = Math.round(roiMaintenancePointCost * tShirtSizes.xxxl / 1000);
+
+        roiInfra.s_cost = Math.round(roiInfraPointCost * tShirtSizes.s / 1000);
+        roiInfra.m_cost = Math.round(roiInfraPointCost * tShirtSizes.m / 1000);
+        roiInfra.l_cost = Math.round(roiInfraPointCost * tShirtSizes.l / 1000);
+        roiInfra.xl_cost = Math.round(roiInfraPointCost * tShirtSizes.xl / 1000);
+        roiInfra.xxl_cost = Math.round(roiInfraPointCost * tShirtSizes.xxl / 1000);
+        roiInfra.xxxl_cost = Math.round(roiInfraPointCost * tShirtSizes.xxxl / 1000);
+
+        let prevMonth = '';
+
+        let cumulative = 0;
+        let cumulativeMaintenance = 0;
+        let cumulativeInfra = 0;
+
+        // summary
+
+
+        // details
+        html += '<table>';
+        html += '<tr>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td colspan="4"></td>';
+        html += '<td colspan="10">';
+        if (showSavings) {
+            html += '<table style="margin-bottom: 20px; box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;">';
+            html += '<tr>';
+            html += '<td></td>';
+            html += '<td style="text-align: right">T-Shirt Size</td>';
+            html += '<td>S</td>';
+            html += '<td>M</td>';
+            html += '<td>L</td>';
+            html += '<td>XL</td>';
+            html += '<td>XXL</td>';
+            html += '<td>XXXL</td>';
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td></td>';
+            html += '<td style="text-align: right">Points</td>';
+            html += '<td>' + tShirtSizes.s + '</td>';
+            html += '<td>' + tShirtSizes.m + '</td>';
+            html += '<td>' + tShirtSizes.l + '</td>';
+            html += '<td>' + tShirtSizes.xl + '</td>';
+            html += '<td>' + tShirtSizes.xxl + '</td>';
+            html += '<td>' + tShirtSizes.xxxl + '</td>';
+            html += '</tr>';
+            html += '<tr style="background-color: skyblue">';
+            html += '<td rowspan="2">Infrastructure';
+            html += '<div style="font-size: 80%">(€?M savings pool)</div></td>';
+            html += '<td style="text-align: right">Savings</td>';
+            html += '<td>€' + roiInfra.s_cost + 'k</td>';
+            html += '<td>€' + roiInfra.m_cost + 'k</td>';
+            html += '<td>€' + roiInfra.l_cost + 'k</td>';
+            html += '<td>€' + roiInfra.xl_cost + 'k</td>';
+            html += '<td>€' + roiInfra.xxl_cost + 'k</td>';
+            html += '<td>€' + roiInfra.xxxl_cost + 'k</td>';
+            html += '</tr>';
+            html += '<tr style="background-color: skyblue">';
+            html += '<td style="text-align: right">Count</td>';
+            html += '<td>' + roiInfra.s + '</td>';
+            html += '<td>' + roiInfra.m + '</td>';
+            html += '<td>' + roiInfra.l + '</td>';
+            html += '<td>' + roiInfra.xl + '</td>';
+            html += '<td>' + roiInfra.xxl + '</td>';
+            html += '<td>' + roiInfra.xxxl + '</td>';
+            html += '</tr>';
+            html += '<tr style="background-color: yellowgreen">';
+            html += '<td rowspan="2">Maintenance';
+            html += '<div style="font-size: 80%">(€??M savings pool)</div></td>';
+            html += '<td style="text-align: right">Savings</td>';
+            html += '<td>€' + roiMaintenance.s_cost + 'k</td>';
+            html += '<td>€' + roiMaintenance.m_cost + 'k</td>';
+            html += '<td>€' + roiMaintenance.l_cost + 'k</td>';
+            html += '<td>€' + roiMaintenance.xl_cost + 'k</td>';
+            html += '<td>€' + roiMaintenance.xxl_cost + 'k</td>';
+            html += '<td>€' + roiMaintenance.xxxl_cost + 'k</td>';
+            html += '</tr>';
+            html += '<tr style="background-color: yellowgreen">';
+            html += '<td style="text-align: right">Count</td>';
+            html += '<td>' + roiMaintenance.s + '</td>';
+            html += '<td>' + roiMaintenance.m + '</td>';
+            html += '<td>' + roiMaintenance.l + '</td>';
+            html += '<td>' + roiMaintenance.xl + '</td>';
+            html += '<td>' + roiMaintenance.xxl + '</td>';
+            html += '<td>' + roiMaintenance.xxxl + '</td>';
+            html += '</tr>';
+            html += '</table>';
+        }
+        html += '</td>';
+        html += '</tr>';
+
+        html += '<tr>';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        if (showSavings) {
+            html += '<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>';
+            html += '<td style="text-align: center" colspan="3"><b>Estimated long-term<br>savings per year</b></td>';
+            html += '<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>';
+            html += '<td style="text-align: center" colspan="3"><b>Estimated long-term<br>cumulative savings per year</b></td>';
+        }
+        html += '</tr>';
+
+        html += '<tr>';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        if (showSavings) {
+            html += '<td>&nbsp;</td>';
+            html += '<td style="text-align: center">Infra</td>';
+            html += '<td style="text-align: center">Maintenance</td>';
+            html += '<td style="text-align: center">Total</td>';
+            html += '<td>&nbsp;</td>';
+            html += '<td style="text-align: center">Infra</td>';
+            html += '<td style="text-align: center">Maintenance</td>';
+            html += '<td style="text-align: center">Total</td>';
+        }
+        html += '</tr>';
+
+        items.filter(item => item.expected)
+            .sort((a, b) => (a.done + '').localeCompare((b.done + '')))
+            .sort((a, b) => a.expected.localeCompare(b.expected))
+            .forEach(item => {
+                if (item.done) {
+                    html += '<tr style="">';
+                } else {
+                    html += '<tr style="opacity: 0.4">';
+                }
+                let style = '';
+                if (item.expected !== prevMonth) {
+                    style = 'border-top: 4px solid black;';
+                }
+
+                let infraCost = roiInfra[item.roi_infra.toLowerCase() + '_cost'];
+                let maintenanceCost = roiMaintenance[item.roi_maintenance.toLowerCase() + '_cost'];
+
+                html += '<td style="' + style + '">' + (item.expected != prevMonth ? item.expected : '') + '</td>';
+                html += '<td style="text-align: right; ' + style + '">' + item.brand + '</td>';
+                html += '<td style="text-align: left; ' + style + '">' + item.object + '</td>';
+                html += '<td></td>';
+                if (showSavings) {
+                    html += '<td style="text-align: center; ' + style + '">';
+                    html += '<div style="display: inline-block; background-color: skyblue; padding: 3px; border-radius: 4px;">' + item.roi_infra + '</div> ';
+                    html += '(€' + infraCost + 'k)</td>';
+                    html += '<td style="text-align: center; ' + style + '">';
+                    html += '<div style="display: inline-block; background-color: yellowgreen; padding: 3px; border-radius: 4px;">' + item.roi_maintenance + '</div> ';
+                    html += '(€' + maintenanceCost + 'k)</td>';
+                    html += '<td style="text-align: center; ' + style + '">€' + (maintenanceCost + infraCost) + 'k</td>';
+                    cumulativeMaintenance += maintenanceCost;
+                    cumulativeInfra += infraCost;
+                    cumulative += maintenanceCost + infraCost;
+                    html += '<td></td>';
+                    html += '<td style="text-align: center; ' + style + '">€' + (cumulativeInfra) + 'k</td>';
+                    html += '<td style="text-align: center; ' + style + '">€' + (cumulativeMaintenance) + 'k</td>';
+                    html += '<td style="text-align: center; ' + style + '">€' + (cumulative) + 'k</td>';
+                    html += '</tr>';
+                }
+
+                prevMonth = item.expected;
+            });
+
+        items.filter(item => !item.expected).forEach(item => {
+            let infraCost = roiInfra[item.roi_infra.toLowerCase() + '_cost'];
+            let maintenanceCost = roiMaintenance[item.roi_maintenance.toLowerCase() + '_cost'];
+
+            html += '<tr style="opacity: 0.4">';
+            let style = '';
+            if (item.expected !== prevMonth) {
+                style = 'border-top: 4px solid black;'
+            }
+            html += '<td style="' + style + '">????-??</td>';
+            html += '<td style="text-align: right; ' + style + '">' + item.brand + '</td>';
+            html += '<td style="text-align: left; ' + style + '">' + item.object + '</td>';
+            html += '<td></td>';
+            html += '<td style="text-align: center; ' + style + '">';
+            if (showSavings) {
+                html += '<div style="display: inline-block; background-color: skyblue; padding: 3px; border-radius: 4px;">' + item.roi_infra + '</div> ';
+                html += '(€' + infraCost + 'k)</td>';
+                html += '<td style="text-align: center; ' + style + '">';
+                html += '<div style="display: inline-block; background-color: yellowgreen; padding: 3px; border-radius: 4px;">' + item.roi_maintenance + '</div> ';
+                html += '(€' + maintenanceCost + 'k)</td>';
+                html += '<td style="text-align: center; ' + style + '">€' + (maintenanceCost + infraCost) + 'k</td>';
+                cumulativeMaintenance += maintenanceCost;
+                cumulativeInfra += infraCost;
+                cumulative += maintenanceCost + infraCost;
+                html += '<td></td>';
+                html += '<td style="text-align: center; ' + style + '">€' + (cumulativeInfra) + 'k</td>';
+                html += '<td style="text-align: center; ' + style + '">€' + (cumulativeMaintenance) + 'k</td>';
+                html += '<td style="text-align: center; ' + style + '">€' + (cumulative) + 'k</td>';
+            }
+
+            html += '</tr>';
+
+            prevMonth = item.expected;
+        });
+
+        html += '</table>';
+
+        document.getElementById('roadmap_content').innerHTML = html;
+    }
+
+    update();
+    updateRoadmap();
+    updateLandscapes();
+    updateDomains();
+</script>
+<div style="margin: 22px; color: grey;">
+    generated from this <a
+        href="https://docs.google.com/spreadsheets/d/1F1o6zZO-lN_dsKvZbWDWOJ98uigVwLjWNHg3L7TbGA0/edit?usp=sharing"
+        target="_blank">data sheet</a>
+</div>
+</body>
+</html>
