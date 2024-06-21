@@ -1,0 +1,28 @@
+digraph G {
+    graph [
+        rankdir="LR"
+    ]
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+    ]
+
+    edge [
+        fontname="Arial"
+        color="deepskyblue4"
+        fontcolor="black"
+        fontsize="12"
+    ]
+
+"Capability A1" -> "topic 1"
+"Capability A1" [fillcolor=grey]
+"topics 1" -> "Capability A2"
+"Capability A2" [fillcolor=grey]
+ "topic 1" [image="../images/aws/Amazon-Simple-Notification-Service.png", imagepos="tc", height=0.9, labelloc="b", fontsize=10]
+ "topics 1" [image="../images/aws/Amazon-Simple-Notification-Service.png", imagepos="tc", height=0.9, labelloc="b", fontsize=10]
+
+}

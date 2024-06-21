@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body>
+
+<div id="Main"></div>
+
+<script>
+    const capabilities = ${capabilities};
+    const array = ${data};
+
+    function capabilityByName(name) {
+        let search = capabilities.filter(c => c.capability.toLowerCase() === name.toLowerCase());
+        return search ? search[0] : null;
+    }
+
+    array.forEach(capability => {
+        const months = capability.months;
+        capability.months = [];
+
+        let prevYear = null;
+        let latestMonth = null;
+        months.forEach(month => {
+            if (prevYear != month.year) {
+                latestMonth = {
+                    year: month.year,
+                    month: 12,
+                    buildEffort: month.buildEffort,
+                    maintenanceEffort: month.maintenanceEffort
+                };
+                prevYear = month.year;
+                capability.months.push(latestMonth)
+            } else {
+                latestMonth.buildEffort += month.buildEffort;
+                latestMonth.maintenanceEffort += month.maintenanceEffort;
+            }
+        });
+    });
+    array.forEach(capability => {
+        capability.months.forEach(month => {
+            month.buildEffort /= 12;
+            month.maintenanceEffort /= 12;
+        });
+    });
+</script>
+
+<script>
+
+    const startingAt = function (capability) {
+        let n = 10000000;
+
+        capability.months.forEach(month => {
+            if (month.buildEffort > 0 && n === 10000000) {
+                n = month.year * 1000 + month.month;
+                return;
+            }
+        });
+
+        return n;
+    }
+
+
+    function displayTable(sorted) {
+        const getTotalMYs = function (year) {
+            let effort = 0;
+            sorted.forEach(capability => {
+                capability.months.filter(m => m.year === year).forEach(month => {
+                    effort += month.buildEffort + month.maintenanceEffort;
+                });
+            });
+
+            return Math.round(effort);
+        }
+
+        let html = '<table>';
+        html += '<tr style="font-size: 80%">';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        console.log(sorted[0]);
+        if (sorted[0]) {
+            console.log(sorted[0].months);
+            sorted[0].months.forEach(month => {
+                html += '<td>' + month.year + '</td>';
+            });
+        }
+        html += '</tr>';
+
+        html += '<tr style="font-size: 50%">';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        if (sorted[0]) {
+            sorted[0].months.forEach(month => {
+                let count = getTotalMYs(month.year, month.month);
+                html += '<td style="font-size: 120%">' + (count ? count + '' : '') + '<span style="font-size: 80%;">MY</span></td>';
+            });
+        }
+        html += '</tr>';
+
+
+        let index = 0;
+        sorted.forEach(capability => {
+            index += 1;
+            html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+            html += '<td style="vertical-align: bottom; font-size: 70%; color: grey">' + index + '</td>';
+            html += '<td style="text-align: right; width: 260px; min-width: 280px; max-width: 280px; vertical-align: bottom; overflow: hidden; font-size: 80%">';
+            html += '<div style="font-size: 80%; color: grey">' + capability.domain + '</div>';
+            html += '<div style="font-weight: bold; font-size: 110%">' + capability.capability + '</div>';
+            html += '</td>';
+            html += '<td style="font-size: 80%; width: 20px; min-width: 30px; max-width: 30px; vertical-align: bottom; color: grey; padding-left: 12px">';
+            html += Math.round(capability.man_months / 12) + '<span style="font-size: 70%">MY</span>';
+            html += '</td>';
+            capability.months.forEach(month => {
+                const monthId1 = month.year + '-' + (month.month < 10 ? '0' : '') + (month.month);
+                const monthId2 = month.year + '-' + month.month;
+
+                const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                html += '<td style="border-bottom: 1px solid lightgrey; vertical-align: bottom; text-align: left; ' + border + '">';
+
+                const totalEffort = Math.round(10 * (month.buildEffort + month.maintenanceEffort)) / 10;
+
+                const title = month.year + ' ' + month.month
+                    + '\nbuilding: ' + month.buildEffort + ' FTE'
+                    + '\maintenance: ' + month.maintenanceEffort + ' FTE';
+
+                const lineStyle = '';
+
+                html += '<div style="vertical-align: bottom; margin-top: 10px; width: 42px; text-align: center; font-size: 70%;' + (totalEffort > 0 ? '' : 'color: lightgrey') + '">' + totalEffort + '</div>';
+                html += '<div style="display: inline-block; vertical-align: bottom;' + lineStyle + '" title="' + (title) + '">';
+                html += '<div style="border-radius: 1px; background-color: #b0b0b0; width: 40px; height: ' + (month.maintenanceEffort) + 'px"></div>';
+                html += '<div style="border-radius: 1px; background-color: #315b7c; width: 40px; height: ' + (month.buildEffort) + 'px"></div>';
+                html += '</div>';
+
+                html += '</td>';
+            });
+            html += '</tr>';
+        });
+
+        html += '</table>';
+        return html;
+    }
+
+    function display() {
+        const sorted = array;
+
+        console.log(sorted);
+
+
+        let html = '';
+        html += '<div style="font-size: 90%; margin-bottom: 10px"><a href="roadmap-per-year.html" target="_blank">Open in new Tab...</a></div>';
+        html += '<div style="font-size: 80%">';
+        html += '<div style="display: inline-block">Legend:</div>';
+        html += '<div style="color: white; background-color: #315b7c; display: inline-block; margin: 2px; padding: 2px">Building</div>';
+        html += '<div style="background-color: #b0b0b0; display: inline-block; margin: 2px; padding: 2px">Maintenance</div>';
+        html += '</div>';
+        html += displayTable(sorted);
+        html += '<h2 style="margin-top: 42px">Domain A</h2>';
+        html += displayTable(sorted.filter(c => c.domain.toLowerCase().includes('domain a')));
+        html += '<h2 style="margin-top: 42px">Domain B</h2>';
+        html += displayTable(sorted.filter(c => c.domain.toLowerCase().includes('domain b')));
+        html += '<h2 style="margin-top: 42px">Domain C</h2>';
+        html += displayTable(sorted.filter(c => c.domain.toLowerCase().includes('domain c')));
+
+        document.getElementById('Main').outerHTML = html;
+    }
+
+    display();
+
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;" href="${data_sheet}">data sheet</a>
+</div>
+</body>
+</html>

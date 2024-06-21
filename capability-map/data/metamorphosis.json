@@ -1,0 +1,3323 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-20"
+  },
+  "data": [
+    {
+      "source": "Capability A1",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users",
+          "current": "User 1\nUser 2",
+          "planned": "User 1\nUser 2",
+          "target": "User 1\n"
+        },
+        {
+          "section": "Machine Users",
+          "current": "SEO Bot",
+          "planned": "SEO Bot",
+          "target": "SEO Bot"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)",
+          "current": "topic 1"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)",
+          "current": "api 1"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability A2",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users",
+          "current": "User 1\nUser 2",
+          "planned": "User 1\nUser 2",
+          "target": "User 1\n"
+        },
+        {
+          "section": "Machine Users",
+          "current": "SEO Bot",
+          "planned": "SEO Bot",
+          "target": "SEO Bot"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)",
+          "current": "api 1"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)",
+          "current": "topics 1"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability A3",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability A4",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability A5",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability B1",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability B2",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability B3",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability B4",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability B5",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability C1",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability C2",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability C3",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability C4",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    },
+    {
+      "source": "Capability C5",
+      "data": [
+        {
+          "group": "Product Features",
+          "subgroup": "Users",
+          "section": "Human Users"
+        },
+        {
+          "section": "Machine Users"
+        },
+        {
+          "subgroup": "Features",
+          "section": "Key Product Features"
+        },
+        {
+          "section": "Product Features Debt"
+        },
+        {
+          "group": " ",
+          "subgroup": "Websites",
+          "section": "Websites (Consumer)"
+        },
+        {
+          "section": "Websites (Pro)"
+        },
+        {
+          "subgroup": "Mobile Apps",
+          "section": "Mobile (Consumer)"
+        },
+        {
+          "section": "Mobile (Pro)"
+        },
+        {
+          "subgroup": "3rd Party SaaS Platforms",
+          "section": "Salesforce CRM Platform"
+        },
+        {
+          "section": "Mulesoft Developer Portal Platform"
+        },
+        {
+          "section": "Auth0 Hosted UI"
+        },
+        {
+          "section": "Social Media Platforms"
+        },
+        {
+          "subgroup": "Public APIs",
+          "section": "Public APIs"
+        },
+        {
+          "subgroup": "Internal Channels",
+          "section": "Technical Artifacts Stores"
+        },
+        {
+          "section": "Websites (Internal)"
+        },
+        {
+          "group": "Web Frontend",
+          "subgroup": "Web Components",
+          "section": "Microfrontends"
+        },
+        {
+          "section": "Microfrontend Includes"
+        },
+        {
+          "section": "Web Pages"
+        },
+        {
+          "subgroup": "Web Dependencies",
+          "section": "Web API Dependencies (Internal)"
+        },
+        {
+          "section": "Web API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Web)"
+        },
+        {
+          "subgroup": "Web Infra",
+          "section": "Web Infra"
+        },
+        {
+          "subgroup": "Web Tech Debt",
+          "section": "Web Tech Debt"
+        },
+        {
+          "group": "Mobile Frontend",
+          "subgroup": "Mobile Components",
+          "section": "iOS Components"
+        },
+        {
+          "section": "Android Components"
+        },
+        {
+          "subgroup": "Mobile Dependencies",
+          "section": "Mobile API Dependencies (Internal)"
+        },
+        {
+          "section": "Mobile API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Deep Links (Mobile)"
+        },
+        {
+          "subgroup": "Mobile Infra",
+          "section": "iOS Infra"
+        },
+        {
+          "section": "Android Infra"
+        },
+        {
+          "subgroup": "Mobile Tech Debt",
+          "section": "iOS Tech Debt"
+        },
+        {
+          "section": "Android Tech Debt"
+        },
+        {
+          "group": "Backend Interfaces",
+          "subgroup": "Exposed Gateways and Brokers",
+          "section": "Public APIs"
+        },
+        {
+          "section": "Internal APIs"
+        },
+        {
+          "section": "BFF APIs"
+        },
+        {
+          "section": "Utility APIs"
+        },
+        {
+          "section": "Event Topics (Sending)"
+        },
+        {
+          "section": "Data Models (Exposed)"
+        },
+        {
+          "section": "Tech Debt (Exposed)"
+        },
+        {
+          "subgroup": "External Endpoint Dependencies",
+          "section": "API Dependencies (Internal)"
+        },
+        {
+          "section": "API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Dependencies"
+        },
+        {
+          "section": "Event Topics (Receiving)"
+        },
+        {
+          "section": "Data Models (Dependencies)"
+        },
+        {
+          "section": "Tech Debt (Dependencies)"
+        },
+        {
+          "group": "Backend Internals",
+          "subgroup": "Compute",
+          "section": "Microservices and Serverless Components"
+        },
+        {
+          "subgroup": "Data",
+          "section": "Key Operational Data Storages"
+        },
+        {
+          "subgroup": "Backend Tech Debt",
+          "section": "Backend Tech Debt"
+        },
+        {
+          "group": "Backend Infrastructure",
+          "subgroup": "Public Cloud",
+          "section": "Infra Packages"
+        },
+        {
+          "section": "Technical Integrations"
+        },
+        {
+          "section": "Backend Infrastructure Tech Debt"
+        },
+        {
+          "group": "Data Mesh",
+          "subgroup": "Data Mesh",
+          "section": "Data APIs"
+        },
+        {
+          "section": "Data Mesh API Dependencies (Internal)"
+        },
+        {
+          "section": "Data Mesh API Dependencies (3rd Party)"
+        },
+        {
+          "section": "Data Mesh Events (Sending)"
+        },
+        {
+          "section": "Data Mesh Events (Receiving)"
+        },
+        {
+          "section": "Data Mesh Services"
+        },
+        {
+          "section": "Data Mesh Storages"
+        },
+        {
+          "section": "Data Mesh Tech Debt"
+        },
+        {
+          "group": "Data Mesh Infrastructure",
+          "subgroup": "Data Mesh Infra",
+          "section": "Data Mesh Infra Packages"
+        },
+        {
+          "section": "Data Mesh Technical Integrations"
+        }
+      ]
+    }
+  ]
+}

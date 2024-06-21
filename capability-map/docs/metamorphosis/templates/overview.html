@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Architectural States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .zone {
+            border-radius: 4px;
+            border-left: 6px solid grey;
+            border-top: 1px solid grey;
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<div id="content"></div>
+
+<script>
+    function isFalse(value) {
+        return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+    }
+
+    function isTrue(value) {
+        return !isFalse(value);
+    }
+
+    const sections = ${sections};
+</script>
+<script>
+    const data = ${data};
+
+    function getFieldId(name) {
+        return name.toLowerCase().replace(/ /g, '_');
+    }
+
+    function fieldsDeepCount(capability, section) {
+        let count = 0;
+
+        if (section.fields) {
+            section.fields.forEach(field => {
+                console.log(field)
+                const id = getFieldId(field.field);
+                if (capability[id]) {
+                    const values = capability[id].trim().split('\n').filter(line => line.trim().length > 0);
+                    count += values.length;
+                }
+            });
+        }
+        if (section.children) {
+            section.children.forEach(child => count += fieldsDeepCount(capability, child));
+        }
+
+        return count;
+    }
+
+    function fieldTotalCount(field) {
+        const id = getFieldId(field.field);
+
+        const releaseObjectsMap = {};
+
+        let count = {
+            capabilities: 0,
+            releases: 0,
+            objects: []
+        };
+
+        data.data.forEach(capability => {
+            if (capability[id]) {
+                const values = capability[id].trim().split('\n').filter(line => line.trim().length > 0);
+                count.capabilities += 1;
+                count.releases += values.length;
+                values.forEach(value => {
+                    if (!releaseObjectsMap[value]) {
+                        releaseObjectsMap[value] = {
+                            value,
+                            count: 1
+                        }
+                        count.objects.push(releaseObjectsMap[value]);
+                    } else {
+                        releaseObjectsMap[value].count += 1;
+                    }
+                });
+            }
+        });
+
+        return count;
+    }
+
+    function renderSummary(section) {
+        let html = '';
+
+        html += '<div class="zone" style="' + section.style + '">';
+        html += '<div>' + section.name + '</div>';
+
+        if (section.fields) {
+            section.fields.forEach(field => {
+                html += '<div class="zone" style="display: inline-block; text-align: center">';
+                let counts = fieldTotalCount(field);
+                if (field.icon) {
+                    html += '<div style="margin-left: 10px; vertical-align: center; display: inline-block; margin-top: 2px"><img src="icons/' + field.icon + '" style="height: 42px; width: 42px; object-fit: contain"></div>';
+                }
+                html += '<div style="text-align: center; font-size: 20px">' + counts.capabilities + ' <span style="color: grey; font-size: 80%">' + (counts.capabilities === 1 ? 'capability' : 'capabilities') + '</span></div>';
+                html += '<div style="text-align: center; font-size: 14px; color: grey">' + counts.releases + ' releases</div>';
+                html += '<div style="margin-top: 10px">' + field.field + '</div>';
+
+                counts.objects.forEach(object => {
+                    html += '<div style="margin: 2px; border: 1px solid lightgrey;">' + object.value + ' (' + object.count + ')' + '</div>';
+                });
+
+                html += '</div>';
+            });
+        }
+
+        if (section.children) {
+            section.children.forEach(child => {
+                html += renderSummary(child);
+            });
+        }
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        let html = '';
+
+        sections.forEach(section => {
+            html += renderSummary(section);
+        });
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

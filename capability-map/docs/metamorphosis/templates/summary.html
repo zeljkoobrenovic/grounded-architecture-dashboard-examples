@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Architectural States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .zone {
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+        }
+
+        .capability {
+            margin: 14px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+            width: 100px;
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body style="margin: 5px">
+
+<div style="margin-bottom: 12px">
+    <a style="margin-left: 10px" target="_blank" href="summary.html">Open in new window... <img src="icons/new_window.png"
+                                                                                            style="height: 18px"></a>
+</div>
+<div id="content"></div>
+
+<script>
+    const capabilities = ${capabilities};
+    let filter = '';
+
+    const fields = [];
+    const fieldsMap = {};
+
+    const all = {
+        field: '',
+        current: {
+            values: [],
+            capabilities: []
+        },
+        planned: {
+            values: [],
+            capabilities: []
+        },
+        target: {
+            values: [],
+            capabilities: []
+        },
+    }
+
+    capabilities.data.forEach(capability => {
+        capability.data.filter(item => item.section).forEach(item => {
+            const field = item.section;
+            let id = field.toLowerCase().trim();
+            if (!fieldsMap[id]) {
+                fieldsMap[id] = {
+                    field,
+                    current: {
+                        values: [],
+                        capabilities: []
+                    },
+                    planned: {
+                        values: [],
+                        capabilities: []
+                    },
+                    target: {
+                        values: [],
+                        capabilities: []
+                    },
+                }
+                fields.push(fieldsMap[id]);
+            }
+            if (item.current) {
+                item.current.split('\n').filter(i => i.trim().length > 0).forEach(value => {
+                    fieldsMap[id].current.values.push(value);
+                    all.current.values.push(value);
+                });
+                fieldsMap[id].current.capabilities.push(capability);
+                all.current.capabilities.push(capability);
+            }
+            if (item.planned) {
+                item.planned.split('\n').filter(i => i.trim().length > 0).forEach(value => {
+                    fieldsMap[id].planned.values.push(value);
+                    all.planned.values.push(value);
+                });
+                fieldsMap[id].planned.capabilities.push(capability);
+                all.planned.capabilities.push(capability);
+            }
+            if (item.target) {
+                item.target.split('\n').filter(i => i.trim().length > 0).forEach(value => {
+                    fieldsMap[id].target.values.push(value);
+                    all.target.values.push(value);
+                });
+                fieldsMap[id].target.capabilities.push(capability);
+                all.target.capabilities.push(capability);
+            }
+        });
+    });
+
+    function getUniqueValues(values) {
+        const uniqueValues = [];
+        const uniqueValuesMap = {};
+
+        values.forEach(value => {
+            let valudId = value.trim().toLowerCase();
+            if (!uniqueValuesMap[valudId]) {
+                uniqueValuesMap[valudId] = {
+                    value,
+                    count: 0
+                }
+                uniqueValues.push(uniqueValuesMap[valudId]);
+            }
+            uniqueValuesMap[valudId].count += 1;
+        });
+
+        return uniqueValues.sort((a, b) => b.count - a.count);
+    }
+
+    function addColumns(field, state, bgColor) {
+        let html = '';
+        let uniqueValues = getUniqueValues(field[state].values);
+        let title = uniqueValues.map(u => u.value + ' (' + u.count + ')').join('\n');
+
+        html += '<td title="' + title + '">';
+        html += '<div style="font-size: 20px; width: 50px; height: 50px; background-color: ' + bgColor + '; border-radius: 50%">';
+        html += '<div style="padding-top: 14px">';
+        html += field[state].values.length;
+        html += '</div>';
+        html += '</div>';
+        html += '</td>';
+
+        html += '<td style="font-size: 90%; color: grey; cursor: help; vertical-align: middle" title="' + title + '">' + uniqueValues.length + '</td>';
+
+        let capabilities = getUniqueValues(field[state].capabilities.map(c => c.source)).map(c => c.value);
+        html += '<td style="font-size: 90%; color: grey; vertical-align: middle" title="' + (capabilities.join('\n')) + '">' + capabilities.length + '</td>';
+
+        html += '<td></td>';
+
+        return html;
+    }
+
+    function update() {
+        let html = '';
+
+        html += '<div>';
+        html += '<table>';
+        html += '<tr style="text-align: center; font-size: 13px">';
+        html += '<td style="text-align: right">' + fields.length + '</td><td></td>';
+
+        html += addColumns(all, 'current', '#9CE781');
+        html += addColumns(all, 'planned', '#9CE78155');
+        html += addColumns(all, 'target', '#f0f0f0');
+
+
+        html += '</tr>';
+
+        html += '<tr style="text-align: center; font-size: 13px">';
+        html += '<td style="text-align: right">Attention Points</td><td></td><td colspan="3">Current</td><td></td><td colspan="3">Planned</td><td></td><td colspan="3">Target</td><td></td>';
+        html += '</tr>';
+
+        html += '<tr style="text-align: center; font-size: 13px">';
+        html += '<td style="text-align: right"></td><td></td><td colspan="3"><img src="icons/current.png" style="height: 70px"></td><td></td><td colspan="3"><img src="icons/planned.png" style="height: 70px"></td><td></td><td colspan="3"><img src="icons/target.png" style="height: 70px"></td><td></td>';
+        html += '</tr>';
+
+        html += '<tr style="text-align: center; font-size: 10px">';
+        html += '<td></td><td style="width: 50px"></td>';
+        html += '<td>Instances</td><td>Types</td><td>Capabilitues</td><td style="width: 50px"></td>';
+        html += '<td>Instances</td><td>Types</td><td>Capabilitues</td><td style="width: 50px"></td>';
+        html += '<td>Instances</td><td>Types</td><td>Capabilitues</td><td style="width: 50px"></td>';
+        html += '</tr>';
+
+        fields.filter(f => f.current.values.length || f.planned.values.length || f.target.values.length).forEach(field => {
+            html += '<tr style="text-align: center">';
+            html += '<td style="text-align: right">' + field.field + '</td>';
+            html += '<td></td>';
+
+            html += addColumns(field, 'current', '#9CE781');
+            html += addColumns(field, 'planned', '#9CE78155');
+            html += addColumns(field, 'target', '#f0f0f0');
+
+            html += '</tr>';
+        });
+
+        html += '</table>';
+        html += '</div>';
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Architectural States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .zone {
+            border-radius: 4px;
+            border-left: 6px solid grey;
+
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body style="margin: 12px">
+
+<div id="content"></div>
+<div style="margin-bottom: 12px">
+    <a style="margin-left: 10px" target="_blank" href="data-models.html">Open in new window... <img src="icons/new_window.png"
+                                                                                            style="height: 18px"></a>
+</div>
+<div class="tab">
+    <button id="current_tab" class="tablinks active" onclick="openTab(event, 'current')">current</button>
+    <button id="planned_tab" class="tablinks" onclick="openTab(event, 'planned')">planned (in-flight)</button>
+    <button id="target_tab" class="tablinks" onclick="openTab(event, 'target')">target</button>
+</div>
+<div id="current" class="tabcontent" style="display: block">
+</div>
+<div id="planned" class="tabcontent" style="">
+</div>
+<div id="target" class="tabcontent" style="">
+</div>
+<script>
+    const capabilities = {"metadata": {"exportDate": "2024-06-20"}, "data": [{"source": "Capability A1", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users", "current": "User 1\nUser 2", "planned": "User 1\nUser 2", "target": "User 1\n"}, {"section": "Machine Users", "current": "SEO Bot", "planned": "SEO Bot", "target": "SEO Bot"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)", "current": "topic 1"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)", "current": "api 1"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability A1", "domain": "Domain A", "id": "11", "type": "full-stack", "group": "group 1", "details_sheet_gid": "291047612", "discussions_sheet_gid": "1840455912", "targets_sheet_gid": "233479549", "architecture_sheet_gid": "1234955447", "code": "CA1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability A2", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users", "current": "User 1\nUser 2", "planned": "User 1\nUser 2", "target": "User 1\n"}, {"section": "Machine Users", "current": "SEO Bot", "planned": "SEO Bot", "target": "SEO Bot"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)", "current": "api 1"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)", "current": "topics 1"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability A2", "domain": "Domain A", "id": "12", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1766740356", "discussions_sheet_gid": "1209528792", "targets_sheet_gid": "1986843523", "architecture_sheet_gid": "2137395311", "code": "CA2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability A3", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability A3", "domain": "Domain A", "id": "13", "type": "full-stack", "group": "group 2", "details_sheet_gid": "195514348", "discussions_sheet_gid": "2082074986", "targets_sheet_gid": "1844483418", "architecture_sheet_gid": "2042109651", "code": "CA3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability A4", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability A4", "domain": "Domain A", "id": "14", "type": "full-stack", "group": "group 2", "details_sheet_gid": "171150465", "discussions_sheet_gid": "1431821887", "targets_sheet_gid": "768035962", "architecture_sheet_gid": "841262351", "code": "CA4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability A5", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability A5", "domain": "Domain A", "id": "15", "type": "full-stack", "group": "group 2", "details_sheet_gid": "772748672", "discussions_sheet_gid": "1597358312", "targets_sheet_gid": "313373638", "architecture_sheet_gid": "948138652", "code": "CA5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability B1", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability B1", "domain": "Domain B", "id": "21", "type": "service", "group": "group 1", "details_sheet_gid": "2001049117", "discussions_sheet_gid": "489621651", "targets_sheet_gid": "1221044062", "architecture_sheet_gid": "606228574", "code": "CB1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability B2", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability B2", "domain": "Domain B", "id": "22", "type": "full-stack", "group": "group 1", "details_sheet_gid": "862916601", "discussions_sheet_gid": "1783629905", "targets_sheet_gid": "140667984", "architecture_sheet_gid": "120799152", "code": "CB2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability B3", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability B3", "domain": "Domain B", "id": "23", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1370364299", "discussions_sheet_gid": "1017311922", "targets_sheet_gid": "1673153432", "architecture_sheet_gid": "1875352428", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability B4", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability B4", "domain": "Domain B", "id": "24", "type": "full-stack", "group": "group 2", "details_sheet_gid": "525069511", "discussions_sheet_gid": "403259920", "targets_sheet_gid": "1500472736", "architecture_sheet_gid": "230243033", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability B5", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability B5", "domain": "Domain B", "id": "25", "type": "full-stack", "group": "group 2", "details_sheet_gid": "660645108", "discussions_sheet_gid": "1833885594", "targets_sheet_gid": "641479465", "architecture_sheet_gid": "921165756", "code": "CB5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability C1", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability C1", "domain": "Domain C", "id": "31", "type": "full-stack", "group": "group 1", "details_sheet_gid": "2107771530", "discussions_sheet_gid": "204407008", "targets_sheet_gid": "464963013", "architecture_sheet_gid": "1045639371", "code": "CC1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability C2", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability C2", "domain": "Domain C", "id": "32", "type": "full-stack", "group": "group 1", "details_sheet_gid": "918146987", "discussions_sheet_gid": "1490937320", "targets_sheet_gid": "1680293632", "architecture_sheet_gid": "128200640", "code": "CC2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability C3", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability C3", "domain": "Domain C", "id": "33", "type": "full-stack", "group": "group 2", "details_sheet_gid": "240446995", "discussions_sheet_gid": "1730094096", "targets_sheet_gid": "645595510", "architecture_sheet_gid": "835948869", "code": "CC3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability C4", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability C4", "domain": "Domain C", "id": "34", "type": "full-stack", "group": "group 2", "details_sheet_gid": "393686049", "discussions_sheet_gid": "1098101193", "targets_sheet_gid": "138213142", "architecture_sheet_gid": "424751642", "code": "CC4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}, {"source": "Capability C5", "data": [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}], "info": {"capability": "Capability C5", "domain": "Domain C", "id": "35", "type": "full-stack", "group": "group 2", "details_sheet_gid": "2058726936", "discussions_sheet_gid": "267157410", "targets_sheet_gid": "321811413", "architecture_sheet_gid": "2121439041", "code": "CC5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}}]};
+
+    const gatewayImage = '<img src="icons/data-model.png" style="width: 50px; margin-top: 4px;">';
+    const arrowImage = '<img src="visuals/images/right.png" style="width: 30px; margin-top: 5px;">';
+    const lineImage = '<img src="visuals/images/line.png" style="width: 30px; margin-top: 5px;">';
+    const apiImage = '<img src="icons/api-out.png" style="width: 30px; margin-top: 5px;">';
+    const mobileImage = '<img src="icons/mobile.png" style="width: 50px; margin-top: 5px;">';
+    const mobileSmallImage = '<img src="icons/mobile.png" style="width: 30px; margin-top: 5px;">';
+    const webImage = '<img src="icons/web.png" style="width: 30px; margin-top: 5px;">';
+    const backendImage = '<img src="icons/backend.png" style="width: 30px; margin-top: 5px;">';
+
+    const inwards = [
+        {
+            field: 'data models (dependencies)',
+            section: 'data models (dependencies)',
+            image1: gatewayImage,
+            image2: backendImage,
+            image3: lineImage,
+            image4: lineImage,
+            current: 0,
+            planned: 0,
+            target: 0,
+            currentCapabilities: [],
+            plannedCapabilities: [],
+            targetCapabilities: []
+        }
+    ];
+
+    const outwards = [
+        {
+            field: 'Data Models (Exposed)',
+            section: 'Data Models (Exposed)',
+            image1: gatewayImage,
+            image2: backendImage,
+            image3: lineImage,
+            image4: lineImage,
+            current: 0,
+            planned: 0,
+            target: 0,
+            currentCapabilities: [],
+            plannedCapabilities: [],
+            targetCapabilities: []
+        }
+    ];
+
+    outwards.forEach(model => {
+        capabilities.data.forEach(capability => {
+            capability.data.forEach(item => {
+                if (item.section && item.section.toLowerCase().trim() === model.field.toLowerCase().trim()) {
+                    const currentValues = getValues(item, 'current');
+                    const plannedValues = getValues(item, 'planned');
+                    const targetValues = getValues(item, 'target');
+
+                    model.current += currentValues.length;
+                    if (currentValues.length > 0) model.currentCapabilities.push(capability);
+
+                    model.planned += plannedValues.length;
+                    if (plannedValues.length > 0) model.plannedCapabilities.push(capability);
+
+                    model.target += targetValues.length;
+                    if (targetValues.length > 0) model.targetCapabilities.push(capability);
+                }
+            });
+        });
+    });
+
+    inwards.forEach(model => {
+        capabilities.data.forEach(capability => {
+            capability.data.forEach(item => {
+                if (item.section && item.section.toLowerCase().trim() === model.field.toLowerCase().trim()) {
+                    const currentValues = getValues(item, 'current');
+                    const plannedValues = getValues(item, 'planned');
+                    const targetValues = getValues(item, 'target');
+
+                    model.current += currentValues.length;
+                    if (currentValues.length > 0) model.currentCapabilities.push(capability);
+
+                    model.planned += plannedValues.length;
+                    if (plannedValues.length > 0) model.plannedCapabilities.push(capability);
+
+                    model.target += targetValues.length;
+                    if (targetValues.length > 0) model.targetCapabilities.push(capability);
+                }
+            });
+        });
+    });
+
+    function getFieldInfo(fieldName) {
+        let section = null;
+        inwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field;
+                return;
+            }
+        });
+        outwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field;
+                return;
+            }
+        });
+
+        return section;
+    }
+
+    function getSection(fieldName) {
+        let section = null;
+        inwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field.section;
+                return;
+            }
+        });
+        outwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field.section;
+                return;
+            }
+        });
+
+        return section;
+    }
+
+
+    function getValues(row, state) {
+        return row[state] && row[state].trim().length > 0 ? row[state].split('\n').filter(r => r.length > 0) : [];
+    }
+
+    function getAPIs(state) {
+        const topics = [];
+        const topicsMap = {};
+
+        capabilities.data.forEach(capability => {
+            capability.data.forEach(row => {
+                if (row.section && row[state]) {
+                    if ([].concat(outwards).concat(inwards).map(i => i.field.toLowerCase()).includes(row.section.toLowerCase().trim())) {
+                        const values = getValues(row, state);
+                        values.forEach(api => {
+                            api = api.trim().toLowerCase();
+                            let id = api;
+                            if (!topicsMap[id]) {
+                                topicsMap[id] = {
+                                    topic: api,
+                                    producers: [],
+                                    consumers: [],
+                                    field: row.section.toLowerCase().trim(),
+                                    fieldInfo: getFieldInfo(row.section)
+                                }
+                                topics.push(topicsMap[id]);
+                            }
+
+                            topicsMap[id].consumers.push(capability);
+                        });
+                    }
+                }
+            });
+        });
+
+        return topics;
+    }
+
+    function valueOf(capability, fields, state) {
+        const value = [];
+
+        capability.data.forEach(row => {
+            fields.forEach(field => {
+                if (row.section && row.section.toLowerCase() === field.field.toLowerCase() && row[state]) {
+                    value.push({
+                        value: row[state],
+                        field
+                    });
+                    return;
+                }
+            });
+        });
+
+        return value;
+    }
+
+    function getStateTable(state) {
+        let html = '<div style="padding: 12px">';
+
+        let topics = getAPIs(state);
+
+        console.log(topics);
+
+        html += '<div>';
+        html += '<a href="visuals/apis/' + state + '.svg" target="_blank">dependencies graph (2D)</a> | ';
+        html += '<a href="visuals/apis/' + state + '-3d.html" target="_blank">dependencies graph (3D)</a>';
+        html += '</div>';
+
+        html += '<div style="margin-top: 20px; margin-bottom: 30px; vertical-align: top">';
+
+        html += '<div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; border: 1px solid lightgrey; display: inline-block; width: 130px; text-align: center; margin: 4px; padding: 8px">';
+        html += '<div style="font-size: 42px;">';
+        html += topics.length;
+        html += '</div>';
+        html += '<div style="color: grey">';
+        html += 'data models';
+        html += '<div style="text-align: left; margin-top: 15px; white-space: nowrap; font-size: 11px; overflow: hidden">' + topics.map(t => t.topic).join('<br>') + '</div>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '</div>';
+
+
+        let tabHTML = '<img src="icons/' + state + '.png" style="height: 28px; margin-bottom: 6px">' + '<br>' + state + ' (' + topics.length + ')';
+        document.getElementById(state + '_tab').innerHTML = tabHTML;
+
+        function hasAPI(capability, state, type) {
+            let found = false;
+
+            capability.data.forEach(item => {
+                if (item.section && item.section.toLowerCase().trim() === type.trim().toLowerCase()) {
+                    found = item[state] && item[state].trim().length > 0;
+                    return;
+                }
+            });
+
+            return found;
+        }
+
+        let models = [].concat(outwards).concat(inwards);
+
+        models.forEach(type => {
+            const api_caps = capabilities.data.filter(c => hasAPI(c, state, type.field));
+            html += '<h1 style="margin-top: 60px">CAPABILITIES WITH ' + type.field.toUpperCase() + ' (' + api_caps.length + ')</h1>';
+
+            api_caps.forEach(capability => {
+                const sending = valueOf(capability, outwards, state);
+                const receiving = valueOf(capability, inwards, state);
+
+                if (sending.length || receiving.length) {
+                    html += '<div style="margin: 12px; padding: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">';
+                    html += '<table style="">';
+                    html += '<tr>';
+                    html += '<td style="width: 400px; color: blue; text-align: right">';
+                    if (receiving.length) {
+                        html += '<table style="margin-left: auto; margin-right: -22px">';
+                        receiving.forEach(receivedFiled => {
+                            receivedFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(received => {
+                                received = received.trim().toLowerCase();
+                                html += '<tr>';
+                                html += '<td>' + received + '</td>';
+                                html += '<td>' + receivedFiled.field.image1 + '</td>';
+                                html += '<td>' + receivedFiled.field.image3 + '</td>';
+                                html += '<td style="background-color: rgba(255,255,255, 0.5)">' + receivedFiled.field.image2 + '</td>';
+                                html += '</tr>';
+                            });
+                        });
+                        html += '</table>';
+                    }
+                    html += '</td>';
+                    html += '<td style="width: 200px; text-align: center; border-left: 2px solid black; border-right: 2px solid black">';
+                    html += '<div style="background-color: #f0f0f0; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; padding: 10px; border: 1px solid lightgrey; border-radius: 5px">';
+                    html += '<div style=""><img style="width: 72px;" src="../../assets/icons/' + capability.info.id + '.png"></div>';
+                    html += '<div>' + capability.info.capability + '</div>';
+                    html += '</div>';
+                    html += '</td>';
+
+                    html += '<td style="width: 300px; color: blue">';
+                    if (sending.length) {
+                        html += '<table style="margin-left: -8px">';
+                        sending.forEach(sendingFiled => {
+                            sendingFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(sent => {
+                                sent = sent.trim().toLowerCase();
+                                html += '<tr>';
+                                html += '<td>' + sendingFiled.field.image3 + '</td>';
+                                html += '<td>' + sendingFiled.field.image1 + '</td>';
+                                html += '<td>' + sent + '</td>';
+                                html += '</tr>';
+                            });
+                        });
+                        html += '</table>';
+                    }
+                    html += '</td>';
+
+                    html += '</tr>';
+                    html += '</table>';
+                    html += '</div>';
+                }
+            });
+        });
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        document.getElementById('current').innerHTML = getStateTable('current');
+        document.getElementById('planned').innerHTML = getStateTable('planned');
+        document.getElementById('target').innerHTML = getStateTable('target');
+    }
+
+    update();
+</script>
+</body>
+</html>

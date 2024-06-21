@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capability C4</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129891352-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-129891352-1');
+    </script>
+
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .review-image {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            width: 400px;
+            margin: 10px;
+            padding: 10px
+        }
+
+        .review-image-small {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            width: 180px;
+            margin: 6px;
+            padding: 6px;
+        }
+
+        .tab-image {
+            width: 24px;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        .tab-image-selected {
+            width: 24px;
+            margin: 2px;
+            padding: 2px;
+            border-bottom: 4px solid blue;
+        }
+
+        .group {
+            margin-top: 2px;
+            margin-bottom: 40px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+            overflow: hidden;
+            border: 1px solid lightgrey;
+        }
+
+        .repo {
+            overflow: hidden;
+            margin: 10px;
+            padding: 7px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+        }
+
+        .aws {
+            overflow: hidden;
+            margin: 10px;
+            padding: 7px;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+        }
+
+
+        .person {
+            text-align: center;
+            padding: 6px;
+            margin: 4px;
+            display: inline-block;
+            font-size: 11px;
+            width: 110px;
+            overflow: hidden;
+            white-space: nowrap;
+            vertical-align: top;
+        }
+
+        .docs {
+            text-align: center;
+            padding: 6px;
+            margin: 4px;
+            display: inline-block;
+            font-size: 11px;
+            width: 110px;
+            overflow: hidden;
+            vertical-align: top;
+        }
+
+        .team {
+            text-align: center;
+            padding: 6px;
+            margin: 8px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 13px;
+            width: 110px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            white-space: nowrap;
+            vertical-align: top;
+            border: 2px solid grey;
+            height: 140px;
+        }
+
+        .legacy-team {
+            text-align: center;
+            padding: 6px;
+            margin: 8px;
+            border-radius: 5px;
+            display: inline-block;
+            font-size: 13px;
+            width: 110px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            white-space: nowrap;
+            vertical-align: top;
+            border: 2px dashed grey;
+            height: 140px;
+        }
+
+        .number {
+            display: inline-block;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+            margin: 8px;
+            width: 100px;
+        }
+
+        .dependency-icon {
+            height: 32px;
+            margin-left: 8px;
+            margin-right: 8px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+            padding: 4px;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function initTab() {
+            if (window.location.hash) {
+                tabName = window.location.hash.substring(1);
+                if (document.getElementById('tab_' + tabName)) {
+                    openTab(tabName);
+                }
+            }
+        }
+
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+
+        function initTab() {
+            if (window.location.hash) {
+                tabName = window.location.hash.substring(1);
+                if (document.getElementById('tab_' + tabName)) {
+                    openTab(tabName);
+                }
+            }
+        }
+
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+    </script>
+</head>
+<body onload="initTab()" onhashchange="initTab()">
+
+<script>
+    const config = {"sheets": {"details": "https://docs.google.com/spreadsheets/d/1I3iwH3wf7Kb8kLZM-yFxF4vh4ul_6hAxSPBxRJBDOpQ/edit?usp=sharing", "documents": "https://docs.google.com/spreadsheets/d/13HCJKwVhPZxGb2gx51583986g0BQVDrJnZD2h-Y7sLs/edit?usp=sharing", "targets": "https://docs.google.com/spreadsheets/d/1Oz-S0ZfLHvzen73_Pau6DHCv_cB9vzVoWXdqCYV5WDg/edit?usp=sharing", "roadmap": "https://docs.google.com/spreadsheets/d/1XDtdieBm3T7TqC-sH0YrrJvyVHZSdM41Eb6YKCSNEVU/edit?usp=sharing", "dependencies": "https://docs.google.com/spreadsheets/d/1hHXWjKpfHmr98rVswinT7z2sLIhm4fJCdaIglC_y_S8/edit?usp=sharing", "metamorphosis": "https://docs.google.com/spreadsheets/d/1X5zMMmC6sk-08kD-KN4-S-4XNMhTU4cGk-zUrWy8-Yg/edit?usp=sharing"}, "landingPages": {"sourceCodeLinkPattern": "https://github.com/${repo}", "sourceCodeAnalysisLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/asf/activemq/activemq/html/index.html", "sourceCodeLandscapeLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/${landscape}/_sokrates_landscape/index.html", "awsAnalysisLink": "../../../../aws/docs/index.html", "awsLinkPattern": "../../../../aws/docs/accounts/trends.html?filter=${filter}"}, "domains": [{"name": "Domain A"}, {"name": "Domain B"}, {"name": "Domain C"}], "cumulativeMaintenanceFactor": 0.11, "types": [{"id": "full-stack", "name": "full-stack capability", "color": "#b6d7a8ff"}, {"id": "service", "name": "service", "color": "#fff2ccff"}, {"id": "integration", "name": "complex integration", "color": "#ead1dcff"}, {"id": "development", "name": "development/design", "color": "#c9daf8ff"}, {"id": "other", "name": "other", "color": "#f3f3f3ff"}]};
+    const all_capabilities = [{"capability": "Capability A1", "domain": "Domain A", "id": "11", "type": "full-stack", "group": "group 1", "details_sheet_gid": "291047612", "discussions_sheet_gid": "1840455912", "targets_sheet_gid": "233479549", "architecture_sheet_gid": "1234955447", "code": "CA1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability A2", "domain": "Domain A", "id": "12", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1766740356", "discussions_sheet_gid": "1209528792", "targets_sheet_gid": "1986843523", "architecture_sheet_gid": "2137395311", "code": "CA2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability A3", "domain": "Domain A", "id": "13", "type": "full-stack", "group": "group 2", "details_sheet_gid": "195514348", "discussions_sheet_gid": "2082074986", "targets_sheet_gid": "1844483418", "architecture_sheet_gid": "2042109651", "code": "CA3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability A4", "domain": "Domain A", "id": "14", "type": "full-stack", "group": "group 2", "details_sheet_gid": "171150465", "discussions_sheet_gid": "1431821887", "targets_sheet_gid": "768035962", "architecture_sheet_gid": "841262351", "code": "CA4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability A5", "domain": "Domain A", "id": "15", "type": "full-stack", "group": "group 2", "details_sheet_gid": "772748672", "discussions_sheet_gid": "1597358312", "targets_sheet_gid": "313373638", "architecture_sheet_gid": "948138652", "code": "CA5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability B1", "domain": "Domain B", "id": "21", "type": "service", "group": "group 1", "details_sheet_gid": "2001049117", "discussions_sheet_gid": "489621651", "targets_sheet_gid": "1221044062", "architecture_sheet_gid": "606228574", "code": "CB1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability B2", "domain": "Domain B", "id": "22", "type": "full-stack", "group": "group 1", "details_sheet_gid": "862916601", "discussions_sheet_gid": "1783629905", "targets_sheet_gid": "140667984", "architecture_sheet_gid": "120799152", "code": "CB2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability B3", "domain": "Domain B", "id": "23", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1370364299", "discussions_sheet_gid": "1017311922", "targets_sheet_gid": "1673153432", "architecture_sheet_gid": "1875352428", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability B4", "domain": "Domain B", "id": "24", "type": "full-stack", "group": "group 2", "details_sheet_gid": "525069511", "discussions_sheet_gid": "403259920", "targets_sheet_gid": "1500472736", "architecture_sheet_gid": "230243033", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability B5", "domain": "Domain B", "id": "25", "type": "full-stack", "group": "group 2", "details_sheet_gid": "660645108", "discussions_sheet_gid": "1833885594", "targets_sheet_gid": "641479465", "architecture_sheet_gid": "921165756", "code": "CB5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability C1", "domain": "Domain C", "id": "31", "type": "full-stack", "group": "group 1", "details_sheet_gid": "2107771530", "discussions_sheet_gid": "204407008", "targets_sheet_gid": "464963013", "architecture_sheet_gid": "1045639371", "code": "CC1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability C2", "domain": "Domain C", "id": "32", "type": "full-stack", "group": "group 1", "details_sheet_gid": "918146987", "discussions_sheet_gid": "1490937320", "targets_sheet_gid": "1680293632", "architecture_sheet_gid": "128200640", "code": "CC2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability C3", "domain": "Domain C", "id": "33", "type": "full-stack", "group": "group 2", "details_sheet_gid": "240446995", "discussions_sheet_gid": "1730094096", "targets_sheet_gid": "645595510", "architecture_sheet_gid": "835948869", "code": "CC3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability C4", "domain": "Domain C", "id": "34", "type": "full-stack", "group": "group 2", "details_sheet_gid": "393686049", "discussions_sheet_gid": "1098101193", "targets_sheet_gid": "138213142", "architecture_sheet_gid": "424751642", "code": "CC4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}, {"capability": "Capability C5", "domain": "Domain C", "id": "35", "type": "full-stack", "group": "group 2", "details_sheet_gid": "2058726936", "discussions_sheet_gid": "267157410", "targets_sheet_gid": "321811413", "architecture_sheet_gid": "2121439041", "code": "CC5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]}];
+    const capability = {"capability": "Capability C4", "domain": "Domain C", "id": "34", "type": "full-stack", "group": "group 2", "details_sheet_gid": "393686049", "discussions_sheet_gid": "1098101193", "targets_sheet_gid": "138213142", "architecture_sheet_gid": "424751642", "code": "CC4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "discussions": [{"type": "ADR", "date": "2022-01", "title": "ADR process", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html", "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they\u2019re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."}, {"type": "ADR", "date": "2022-06", "title": "Example ADR", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html", "summary": "This decision defines the software development lifecycle approach for ABC application development."}, {"type": "Memo", "date": "2022-12", "title": "Best ADR Practices", "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html", "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."}, {"type": "Memo", "date": "2023-12", "title": "ADR Resources", "link": "https://github.com/joelparkerhenderson/architecture-decision-record", "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"}, {"type": "Talk", "date": "2024-04", "title": "ADR: The Basics", "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY", "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "}]};
+    const capability_targets = [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}];
+    const dependencies = [{"capability": "Capability C4", "dependency": "Capability B2", "image_id": "22"}];
+    const reverse_dependencies = [];
+    const roadmap = [{"domain": "Domain C", "capability": "Capability C4", "man_months": "222", "months": [{"year": 2024, "month": 1, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 2, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 3, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 4, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 5, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 6, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 7, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 8, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 9, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 10, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 11, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2024, "month": 12, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2025, "month": 1, "buildEffort": 10, "maintenanceEffort": 2}, {"year": 2025, "month": 2, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 3, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 4, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 5, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 6, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 7, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 8, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 9, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 10, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 11, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2025, "month": 12, "buildEffort": 1, "maintenanceEffort": 5}, {"year": 2026, "month": 1, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 2, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 3, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 4, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 5, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 6, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 7, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 8, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 9, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 10, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 11, "buildEffort": 0, "maintenanceEffort": 0}, {"year": 2026, "month": 12, "buildEffort": 0, "maintenanceEffort": 0}]}];
+</script>
+<div id="Header"></div>
+
+<div style="margin: 20px;">
+    <div class="tab">
+        <button class="tablinks active" id="tab_HomeTab" onclick="openTab('HomeTab')">Home</button>
+        <button class="tablinks" id="tab_DiscussionsTab" onclick="openTab('DiscussionsTab')">Decisions &amp; Discussions
+            (0)
+        </button>
+        <button class="tablinks" id="tab_ImplementationTab" onclick="openTab('ImplementationTab')">Implementation
+        </button>
+        <button class="tablinks" id="tab_DependenciesTab" onclick="openTab('DependenciesTab')">Dependencies</button>
+    </div>
+
+    <div id="HomeTab" class="tabcontent" style="display: block; padding: 10px">
+        <div id="Home"></div>
+    </div>
+    <div id="ImplementationTab" class="tabcontent" style="padding: 10px;">
+        <div id="Implementation"></div>
+    </div>
+    <div id="DiscussionsTab" class="tabcontent" style="padding: 10px;">
+        <div id="RFCs"></div>
+    </div>
+    <div id="DependenciesTab" class="tabcontent" style="padding: 10px;">
+        <div id="Dependencies"></div>
+    </div>
+</div>
+
+<script>
+    const hightlight = ['feature flagging', 'AWS Account', 'AWS AppConfig', 'CI/CD', 'Kameleoon', 'PostHog', 'KPIs', 'Blue/Green Deployment', 'Canary Deploymen', 'A/B Testing', 'Feature Flagging', 'Chargebee', 'Recurly', 'Purchasely', 'data model', 'OCR', 'COCO', 'YOLO', 'AWS', 'SEO', 'M2M', 'SSR', 'Terraform', 'Terragrunt', 'SonarCloud', 'CircleCI', 'SonarLint', 'Lambda', 'OpenAPI', 'Redis', 'TLS', 'SSL', 'ECR', 'monorepo', 'Fortinet', 'Firewall', 'SecretManager', 'Classified', 'Github Flow', 'GitHub Actions', 'GitHub', 'Changeset', 'S3', 'BFF', 'CRM', 'B2C', 'B2B', 'Apple', 'Google Analytics', 'Google', 'Stripe', 'database', 'Jira', 'Confluence', 'Cronjob', 'CNA', 'backup', 'Backstage', 'Roadie', 'Swagger', 'Datadog', 'Renovate', 'AuthN/Z', 'GA4', 'GA3', 'SDK'];
+</script>
+
+<script>
+    function isFalse(value) {
+        return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+    }
+
+    function isTrue(value) {
+        return !isFalse(value);
+    }
+
+    function displayTable(roadmap) {
+        let html = '';
+        html += '<table>';
+        html += '<tr>';
+        html += '<td>';
+        html += '<table style="display: inline-block; vertical-align: top">';
+        html += '<tr style="font-size: 10px">';
+        html += '<td></td>';
+        html += '<td></td>';
+        roadmap.months.forEach(month => {
+            if (month.month === 6) {
+                html += '<td colspan="2" style="text-align: center">' + month.year + '</td>';
+            } else if (month.month === 7 && month.year > 2022) {
+            } else {
+                html += '<td></td>';
+            }
+        });
+        html += '</tr>';
+        html += '<tr style="font-size: 80%">';
+        html += '<td>';
+        html += '</td>';
+        roadmap.months.forEach(month => {
+            html += '<td>' + month.month + '</td>';
+        });
+        html += '</tr>';
+        html += '<tr style="font-size: 50%">';
+        html += '<td></td>';
+        html += '</tr>';
+
+        let index = 0;
+        html += '<tr style="height: 32px;">';
+        html += '<td>';
+        html += '<div class="number" style="vertical-align: bottom">';
+        html += '<div style="font-size: 43px">' + Math.round(roadmap.man_months / 12);
+        html += '<span style="color: #b0b0b0; font-size: 80%">MY</span></div>';
+        html += '<div style="font-size: 14px; color: #b0b0b0">(estimated<br>total&nbsp;effort)</div>';
+        html += '</div>';
+        html += '</td>';
+        roadmap.months.forEach(month => {
+            const monthId1 = month.year + '-' + (month.month < 10 ? '0' : '') + (month.month);
+            const monthId2 = month.year + '-' + month.month;
+
+            const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+            html += '<td style="padding-bottom: 12px; vertical-align: bottom; text-align: left; ' + border + '">';
+
+            const title = month.year + ' ' + month.month
+                + '\nbuilding: ' + month.buildEffort + ' FTE'
+                + '\nmaintenance: ' + month.retiringEffort + ' FTE';
+
+            const lineStyle =
+                ((monthId1 === capability.confirmed_live || monthId2 === capability.confirmed_live) ? 'border: 3px solid crimson;' :
+                    (monthId1 === capability.expected_live || monthId2 === capability.expected_live) ? 'border: 3px dotted crimson;' : '');
+
+            html += '<div style="display: inline-block; cursor: help; vertical-align: bottom;' + lineStyle + '" title="' + (title) + '">';
+            html += '<div style="border-radius: 1px; background-color: #d0d0d0; width: 20px; height: ' + (month.maintenanceEffort * 3) + 'px">&nbsp;</div>';
+            html += '<div style="border-radius: 1px; background-color: #315b7c; width: 20px; height: ' + (month.buildEffort * 3) + 'px">&nbsp;</div>';
+            html += '</div>';
+
+            html += '</td>';
+        });
+        html += '</tr>';
+        html += '</table>';
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+        return html;
+    }
+
+    function addRoadmap() {
+        let html = '';
+
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="index.html#Progress">Roadmap</a></div>';
+
+        if (roadmap && roadmap.length) {
+            html += displayTable(roadmap[0]);
+        }
+        html += '</div>';
+
+        return html;
+    }
+
+</script>
+
+<script>
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+    function addNavigation() {
+        html += '<div style="margin: 20px 20px 10px 20px; font-size: 85%; color: black">';
+        let prev_domain = all_capabilities[0].domain;
+        all_capabilities.filter(c => c.domain && c.domain.toLowerCase().trim() !== 'on ice').forEach(cap => {
+            if (prev_domain.toLowerCase() !== cap.domain.toLowerCase()) {
+                prev_domain = cap.domain;
+                html += '<div style="margin-top: 5px; margin-left: 4px; vertical-align: top; display: inline-block; border-left: 2px solid lightgrey; height: 30px;">&nbsp;</div>';
+            }
+            html += '<a href="' + cap.id + '.html">';
+            const tabClass = cap.id === capability.id ? 'tab-image-selected' : 'tab-image';
+            const style = isTrue(cap.in_flight) ? '' : 'opacity: 0.2';
+            html += '<img src="../../assets/icons/' + cap.id + '.png" style="' + style + '" class="' + tabClass + '">';
+            html += '</a>';
+        });
+        html += '</div>';
+    }
+
+    addNavigation();
+
+    html += '<div style="margin: 20px">';
+
+    function addHeader() {
+        html += '<table>';
+        html += '<tr>';
+        html += '<td>';
+        html += '<div>';
+        html += '<img src="../../assets/icons/' + capability.id + '.png" style="width: 110px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="vertical-align: top">';
+        html += '<div style="margin-left: 20px; font-size: 90%; color: grey; vertical-align: top">';
+        html += capability.domain;
+        html += ' / <span style="color: blue; font-weight: bold;">' + capability.code + '</span>';
+        html += '</div>';
+        html += '<div style="font-size: 50px; margin-left: 20px">';
+        if (isFalse(capability.in_flight)) {
+            html += '[Not In-Flight] ';
+        }
+        html += capability.capability;
+        html += '</div>';
+        html += '<div style="font-size: 16px; margin-left: 20px; color: grey; margin-top: 3px">';
+        html += capability.short_description ? capability.short_description : '';
+        html += '</div>';
+        if (capability.description) {
+            html += '<div style="font-size: 50px">';
+            html += capability.description;
+            html += '</div>';
+        }
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+    }
+
+    addHeader();
+
+    function addDocs() {
+        html += '<div  class="" style="margin-top: 32px">';
+
+        function addGroup(docs, icon) {
+            if (docs) {
+                docs.split('\n').forEach(doc => {
+                    const elements = doc.trim().split(',');
+                    const label = elements.length > 0 ? elements[0].trim() : '';
+                    const link = elements.length > 1 ? elements[1].trim() : '';
+                    if (label && link) {
+                        html += '<a target="_blank" href="' + link + '">';
+                        html += '<div class="docs">';
+                        html += '<div>';
+                        if (label.startsWith('Security ')) icon = 'security.png';
+                        html += '<img src="../../assets/icons/' + icon + '" ' + 'style="width: 54px;">';
+                        html += '</div>';
+                        html += '<div style="font-size: 110%">' + label.replace(/_/g, ' ') + '</div>';
+                        html += '</div>';
+                        html += '</a>';
+                    }
+                });
+            }
+        }
+
+        capability.architecture_docs = 'Architectural Metamorphosis,../../metamorphosis/docs/details/' + capability.id + '.html\n';
+
+
+        addGroup(capability.architecture_docs, 'architecture.png');
+        addGroup(capability.document_links, 'docs.png');
+        addGroup(capability.slack_channels, 'slack.png');
+        if (capability.details_sheet_gid || capability.targets_sheet_gid || capability.architecture_sheet_gid) {
+            capability.edit_docs = '';
+
+            if (capability.details_sheet_gid) {
+                const detailsSheetLink = config.sheets.details.replace('?usp=sharing', '') + '#gid=' + capability.details_sheet_gid;
+                capability.edit_docs += 'Edit data...,' + detailsSheetLink + '\n';
+            }
+
+            if (capability.targets_sheet_gid) {
+                const targetsSheetLink = config.sheets.targets.replace('?usp=sharing', '') + '#gid=' + capability.targets_sheet_gid;
+                capability.edit_docs += 'Edit release targets...,' + targetsSheetLink + '\n';
+            }
+
+            if (capability.discussions_sheet_gid) {
+                const discussionsSheetLink = config.sheets.documents.replace('?usp=sharing', '') + '#gid=' + capability.discussions_sheet_gid;
+                capability.edit_docs += 'Edit decisions and discussions...,' + discussionsSheetLink + '\n';
+            }
+
+            if (capability.architecture_sheet_gid) {
+                const targetsSheetLink = config.sheets.metamorphosis.replace('?usp=sharing', '') + '#gid=' + capability.architecture_sheet_gid;
+                capability.edit_docs += 'Edit architecture metamorphosis...,' + targetsSheetLink + '\n';
+            }
+
+            addGroup(capability.edit_docs, 'edit.png');
+        }
+
+        html += '</div>';
+    }
+
+    function addPeople() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Teams and People</div>';
+
+        if (capability.teams) {
+            capability.teams.trim().split('\n').forEach(t => {
+                t = t.trim();
+                html += '<div class="team">';
+                html += '<div><img src="../../assets/icons/team.png" style="width: 80px; margin-top: 16px; margin-bottom: 20px"></div>';
+                html += '<div>' + t + '</div>';
+                html += '</div>';
+            });
+        }
+        if (capability.teams_maintenance_legacies) {
+            capability.teams_maintenance_legacies.trim().split('\n').forEach(t => {
+                t = t.trim();
+                html += '<div class="legacy-team">';
+                html += '<div><img src="../../assets/icons/team.png" style="width: 80px; margin-top: 2px; margin-top: 16px; margin-bottom: 20px"></div>';
+                html += '<div>' + t + '</div>';
+                html += '</div>';
+            });
+        }
+        if (capability.people) {
+            capability.people.split('\n').forEach(person => {
+                const elements = person.trim().replace(/\(/, ',').replace(/\)/, ' ').trim().split(',');
+                const name = elements.length > 0 ? elements[0].trim() : '';
+                const role = elements.length > 1 ? elements[1].trim() : '';
+                if (name) {
+                    let type = '';
+                    if (role.toLowerCase().includes('engineer')) {
+                        type = 'engineer';
+                    } else if (role.toLowerCase().includes('tech')) {
+                        type = 'engineer';
+                    } else if (role.toLowerCase().includes('marketing')) {
+                        type = 'marketing';
+                    } else if (role.toLowerCase().includes('design')) {
+                        type = 'designer';
+                    } else if (role.toLowerCase().includes('product')) {
+                        type = 'product';
+                    } else if (role.toLowerCase().startsWith('pm ')) {
+                        type = 'product';
+                    } else if (role.toLowerCase().includes('ux')) {
+                        type = 'ux';
+                    } else if (role.toLowerCase().includes('architect')) {
+                        type = 'architecture';
+                    } else if (role.toLowerCase().includes('scientist')) {
+                        type = 'science';
+                    }
+                    html += '<a target="_blank" href="../../../pople/docs/workday.html?filter=' + name + '">';
+                    html += '<div class="person">';
+                    html += '<div><img src="../../assets/icons/' + type + '.png" ' +
+                        'style="width: 34px;"' +
+                        'onerror="this.onerror=null;this.src=\'../../assets/icons/person.png\';"\n></div>';
+                    html += '<div><img src="people/' + name + '.jpeg" ' +
+                        'style="width: 84px; border-radius: 50%; border: 1px solid black;"' +
+                        'onerror="this.onerror=null;this.src=\'../../assets/icons/person.png\';"\n></div>';
+                    html += '<div style="font-size: 110%">' + name + '</div>';
+                    html += '<div style="font-size: 80%; color: grey">' + role + '</div>';
+                    html += '</div>';
+                    html += '</a>';
+                }
+            });
+        }
+
+        html += '</div>';
+    }
+
+    function addMilestones() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Release Targets</div>';
+
+        if (capability_targets.length > 0) {
+            html += '<table style="margin-top: 24px">';
+            let first = true;
+
+            let prevCycle = null;
+
+            function addTargets(list) {
+                capability_targets.forEach(target => {
+                        html += '<tr>';
+                        html += '<td style="vertical-align: middle; color: blue;">';
+                        html += target.okr_target === 'true' ? '<img src="../../assets/icons/okr.png" style="width: 20px">' : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        let okrFragment = '<a target="_blank" href="../../progress-report.html">OKR 3.1</a>';
+                        html += target.okr_target === 'true' ? okrFragment : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.live_date_yyyy_mm ? target.live_date_yyyy_mm : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += 'Live ' + (target.brand_or_country ? ' on ' + target.brand_or_country : '');
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.channel ? 'via ' + target.channel : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.capability ? 'on ' + target.capability : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: top">';
+                        let status = target.status ? target.status : 'Not Live';
+                        let color = status.toLowerCase().startsWith('live') ? 'yellowgreen' : (status.toLowerCase().startsWith('partial') ? 'orange' : 'lightgrey');
+                        html += '<div style="background-color: ' + color + '; padding: 8px; ">';
+                        html += status ? status : '';
+                        html += '</div>';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; padding-left: 6px">';
+                        if (target.slack_announcement_link) {
+                            html += '<div style="margin-left: 12px">';
+                            html += '<a href="' + target.slack_announcement_link + '" target="_blank">';
+                            html += '<img src="../../assets/icons/slack_announcement.png" style="height: 30px">';
+                            html += '</a>';
+                            html += '</div>';
+                        }
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; padding-left: 10px">';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle">';
+                        html += '</td>';
+                        html += '</tr>';
+                    }
+                )
+                ;
+                first = false;
+            }
+
+            addTargets(capability_targets);
+
+            html += '</table>';
+        } else {
+            html += '<p style="color: grey">Milestones not defined.</p>';
+        }
+
+        html += '</div>';
+    }
+
+    function addSummaryTimeline() {
+        const monthsMap = {};
+
+        capability.discussions.forEach(discussion => {
+            const id = discussion.date;
+            if (!monthsMap[id]) {
+                monthsMap[id] = [];
+            }
+            monthsMap[id].push(discussion);
+        });
+
+        let html = '';
+        html += '<table style="font-size: 70%; color: grey; text-align: center">';
+
+        const currentTime = new Date();
+        const currentYear = currentTime.getFullYear();
+        const currentMonth = currentTime.getMonth() + 1;
+
+        html += '<tr>';
+        for (let year = currentYear; year >= 2021; year--) {
+            for (let month = (year === currentYear ? currentMonth : 12); month >= 1; month--) {
+                const id = year + '-' + (month < 10 ? '0' : '') + month;
+                let count = monthsMap[id] ? monthsMap[id].length : 0;
+                html += '<td style="vertical-align: bottom;">';
+                html += '<div style="width: 12px; ">' + (count > 0 ? count : '') + '</div>';
+                html += '<div style="width: 12px; background-color: blue; height: ' + (count * 5) + 'px"></div>';
+                html += '</td>';
+            }
+        }
+        html += '</tr>';
+
+        html += '<tr>';
+        for (let year = currentYear; year >= 2021; year--) {
+            for (let month = (year === currentYear ? currentMonth : 12); month >= 1; month--) {
+                if (month === 1) {
+                    html += '<td style="text-align: center; border-right: 1px solid grey">' + month + '</td>';
+                } else {
+                    html += '<td style="text-align: center">' + month + '</td>';
+                }
+            }
+        }
+        html += '</tr>';
+
+        html += '<tr>';
+        for (let year = currentYear; year >= 2021; year--) {
+            html += '<td colspan="' + (year === currentYear ? currentMonth : 12) + '" style="text-align: center;">' + year + '</td>';
+        }
+        html += '</tr>';
+
+        html += '</table>';
+
+        return html;
+    }
+
+    function addDiscussions() {
+        let discussionsOnly = capability.discussions && capability.discussions.filter(d => d.type && !(d.type.toLowerCase().trim() === 'common themes'));
+        if (discussionsOnly && discussionsOnly.length === 0) {
+            html += '<div style="margin: 20px">No documented discussions.</div>';
+            return;
+        }
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">' +
+            'RFCs, ADRs, TDRs, Security Reviews' +
+            '</div>';
+
+        let commonThemes = capability.discussion_summary ? capability.discussion_summary : [];
+        if (discussionsOnly) {
+            html += addSummaryTimeline();
+            html += '<hr>';
+            discussionsOnly.reverse().forEach(discussion => {
+                const type = discussion.type.toLowerCase().replace(' ', '_');
+                const title = discussion.date + ': ' + discussion.title + '\n\n' + discussion.summary;
+                html += '<a target="_blank" href="' + discussion.link + '" title="' + title + '">';
+                const border = discussion.highlight ? '2px solid crimson; margin: 2px;' : '1px solid lightgrey; margin: 3px;';
+                html += '<div style="display: inline-block; border: ' + border + ';width: 100px; text-align: center; vertical-align: top; padding: 2px; max-height: 120px; overflow: hidden">';
+                html += '<div style="font-size: 70%">' + discussion.date + '</div>';
+                html += '<img style="width: 40px; margin: 8px" src="../../assets/icons/change_log_' + type + '.png">';
+                html += '<div style="font-size: 70%">' + discussion.title + '</div>';
+                html += '</div>';
+                html += '</a>';
+            });
+            html += '<hr>';
+
+            html += '<table style="margin-top: 24px; font-size: 110%;">';
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td style="width: 440px;"></td>';
+            html += '<td style="text-align: center; padding: 0px;"></td>';
+            html += '<td style="width: 440px;"></td>';
+            html += '</tr>';
+            let index = 0;
+
+            const yearColors = {
+                '2022': '#b0b0b0',
+                '2023': '#e0e0e0',
+                '2024': '#f0f0f0',
+                '2025': 'skyblue',
+                '2026': 'skyblue',
+            }
+
+            document.getElementById('tab_DiscussionsTab').innerHTML = 'Decisions &amp; Discussions (' + discussionsOnly.length + ')';
+
+            discussionsOnly.forEach(discussion => {
+                index += 1;
+                const type = discussion.type.toLowerCase().replace(' ', '_');
+                const date = discussion.date;
+                const label = discussion.title;
+                const link = discussion.link;
+                const description = discussion.summary;
+                const highlight = discussion.highlight;
+
+                function describe(type, label, description, highlight) {
+                    let html = '';
+                    const border = highlight ? 'border: 3px dashed crimson;' : 'border: 2px dashed #d0d0d0;';
+                    html += '<div style="text-align: left; background-color: #f8f8f8; ' + border + '; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; padding: 8px; border-radius: 10px; margin: 12px">'
+                    html += '<a target="_blank" href="' + link + '">';
+                    html += '<div style="color: grey; font-size: 70%;"><span style="background-color: yellow;">' + type.toUpperCase().replace('_', ' ') + '</span></div>';
+                    html += '<div style="color: blue; font-size: 131%;">';
+                    html += discussion.title;
+                    html += '</div>';
+                    if (description && description.length > 0) {
+                        if (description && description.length > 0) {
+                            html += '<div style="margin: 1px; font-size: 90%; color: #404040; padding: 3px; ">';
+                            html += '<ul style="margin-left: -20px">';
+                            const lines = description.split(". ");
+                            lines.forEach(line => {
+                                hightlight.forEach(h => {
+                                    line = line.replace('\\"', '"')
+                                    line = line.replace(h, '<span style="background-color: yellow">' + h + '</span>')
+                                });
+                                html += '<li style="margin-bottom: 10px">' + line + '</li>';
+                            });
+                            if (highlight) {
+                                html += '<li style="margin-bottom: 10px; color: crimson">HIGHLIGHT: ' + highlight + '</li>';
+                            }
+                            html += '</ul>';
+                            html += '</div>';
+                        }
+
+                        html += '</div>';
+                    }
+                    html += '</a>';
+                    html += '</div>';
+                    return html;
+                }
+
+
+                if (date && label && link) {
+                    let testLabel = label.toLowerCase();
+                    const labelStyle = testLabel.includes('deprecated') || testLabel.includes('withdraw') || testLabel.includes('rejected') || testLabel.includes('stopped') ? 'text-decoration: line-through; opacity: 0.5;' : '';
+
+                    const left = index % 2 == 1;
+
+                    const bgColor = yearColors[date.substring(0, 4)];
+
+                    html += '<tr>';
+                    html += '<td style="text-align: right; ' + labelStyle + '">';
+                    if (left) {
+                        html += describe(type, label, description, highlight);
+                    }
+                    if (!left) {
+                        html += '<img style="width: 80px; margin: 8px" src="../../assets/icons/change_log_' + type + '.png">';
+                    }
+                    html += '</td>';
+                    html += '<td>';
+                    html += '<div style="text-align: center; vertical-align: middle; background-color: ' + bgColor + '; border-radius: 50%; height: 102px; width: 102px; white-space: nowrap"><div style="padding-top: 41px">' + date + '</div></div>';
+                    html += '</td>';
+                    html += '<td style="' + labelStyle + '">';
+                    if (left) {
+                        html += '<img style="width: 80px; margin: 8px" src="../../assets/icons/change_log_' + type + '.png">';
+                    }
+                    if (!left) {
+                        html += describe(type, label, description, highlight);
+                    }
+                    html += '</td>';
+                    html += '</tr>';
+                }
+            });
+            html += '</table>';
+
+            if (commonThemes && commonThemes.length) {
+                html += '<hr>';
+                html += '<div style="width: 800px">';
+                html += '<div style="border: 3px dashed black; padding: 10px; margin: 10px; border-radius: 10px">';
+                html += '<h2 style="margin-top: 4px">Summary of Common Themes (Generated)</h2>';
+                html += '<div>';
+                commonThemes.forEach(line => {
+                    html += '<div style="margin-bottom: 14px; line-height: 22px; margin-bottom: 32px; padding-left: 30px;">';
+                    let count = 0;
+                    while (line.includes('**')) {
+                        let n = line.indexOf('**')
+                        let tags = count % 2 == 0 ? '<div style="margin-left: -20px; margin-bottom: 12px; font-size: 131%; color: blue; background-color: white"><b>' : '</b></div>';
+                        let remainder = line.substring(n + 2);
+                        if (remainder.startsWith(':')) {
+                            remainder = remainder.substring(1).trim();
+                        }
+                        line = line.substring(0, n) + tags + remainder;
+
+                        count += 1;
+                    }
+                    hightlight.forEach(h => {
+                        line = line.replace('\\"', '"')
+                        line = line.replace(h, '<u style="background-color: yellow">' + h + '</u>')
+                    });
+                    html += line;
+                    console.log(line);
+                    html += '</div>';
+                });
+                html += '</div>';
+                html += '</div>';
+                html += '</div>';
+            }
+        } else {
+            html += '<p style="color: grey">No change documentation provided.</p>';
+        }
+        html += '</div>';
+    }
+
+    function addImplementationEvidence() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Implementation Evidence</div>';
+
+        html += '<div style="font-size: 150%; margin-bottom: 12px; margin-top: 32px; margin-left: 12px">Source Code Repositories</div>';
+        if (capability.source_code_repositories) {
+            if (capability.source_code_landscape_analysis) {
+                const landscapeLink = config.landingPages.sourceCodeLandscapeLinkPattern.replace('${landscape}', capability.source_code_landscape_analysis)
+                html += '<div style="display: flex; align-items: center; font-size: 131%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><img class="icon" style="width: 50px;" src="../../assets/icons/atlas.png"><a target="_blank" href="' + landscapeLink + '">Capability Source Code Landscape</a></div>';
+            }
+            let repos = capability.source_code_repositories.trim().split('\n');
+            if (repos.length) {
+                html += '<table class="repo">';
+                html += '<tr>';
+                html += '<td rowspan="' + (repos.length + 1) + '">';
+                html += '<img src="../../assets/icons/github.png" style="width: 78px; margin: 18px">';
+                html += '</td>';
+                html += '</td>';
+                html += '</tr>';
+                repos.forEach(repo => {
+                    const repoElements = repo.split(',');
+                    const repoSrcId = repoElements[0].trim();
+                    const repoAnalysisId = repoElements.length > 1 ? repoElements[1].trim() : repoSrcId;
+                    const description = repoElements.length > 2 ? repoSrcId + ', ' + repoElements[2].trim() : repoSrcId;
+
+                    const repoLink = config.landingPages.sourceCodeLinkPattern.replace('${repo}', repoSrcId)
+                    const analysisLink = config.landingPages.sourceCodeAnalysisLinkPattern.replace('${repo}', repoAnalysisId)
+                    if (repo.trim() === '') {
+                        html += '<tr>';
+                        html += '<td style="height: 24px">';
+                        html += '<hr>';
+                        html += '</td>';
+                        html += '</tr>';
+                        return;
+                    }
+                    html += '<tr>';
+                    html += '<td style="vertical-align: middle">';
+                    html += '<img src="../../assets/icons/repo.png" style="width: 32px; margin-right: 1px; margin-top: 8px">';
+                    html += '</td>';
+                    html += '<td style="vertical-align: middle">';
+                    html += '<td>';
+                    html += '<div>';
+                    html += '<a target="_blank" href="' + repoLink + '" ">';
+                    html += description;
+                    html += '</a>';
+                    html += '</td>';
+                    html += '<td style="padding-left: 34px; padding-right: 4px">';
+                    const repoName = repo.split('/');
+                    const prefix = 'https://d3axxy9bcycpv7.cloudfront.net/asf/';
+                    html += '<a target="_blank" href="' + analysisLink + '" ">';
+                    html += '<img src="../../assets/icons/analysis.png" style="width: 30px; margin-right: 8px; margin-top: 6px">';
+                    html += '<div style="font-size: 9px; text-align: center">report</div></a>';
+                    html += '</td>';
+                    html += '</tr>';
+                });
+                html += '</table>';
+            } else {
+                html += '<p style="color: grey; margin-left: 12px">No source code evidence provided.</p>';
+            }
+        } else {
+            html += '<p style="color: grey; margin-left: 12px">No source code evidence provided.</p>';
+        }
+        html += '<div style="font-size: 150%; margin-bottom: 12px; margin-top: 32px; margin-left: 12px">Legacy Source Code Repositories</div>';
+        html += '<div style="font-size: 150%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><a target="_blank" href="' + config.landingPages.awsAnalysisLink + '">AWS Accounts</a></div>';
+        if (capability.aws_accounts || capability.aws_workspace_config_path) {
+            let awsAccounts = capability.aws_accounts ? capability.aws_accounts.trim().split('\n') : [];
+            if (awsAccounts.length || capability.aws_workspace_config_path) {
+                html += '<table class="aws">';
+                awsAccounts.forEach(account => {
+                    html += '<tr>';
+                    html += '<td style="vertical-align: middle; width: 42px;">';
+                    html += '<img src="../../assets/icons/aws.png" style="border-radius: 4px; padding: 4px; border: 1px solid orange; width: 32px; margin-right: 8px; margin-top: 6px">';
+                    html += '</td>';
+                    html += '<td style="vertical-align: middle; padding-right: 20px">';
+                    html += '<a target="_blank" href="' + config.landingPages.awsLinkPattern.replace('${filter}', account.replace(/\,.*/, '')) + '">';
+                    html += account;
+                    html += '</a>';
+                    html += '</td>';
+                    html += '</tr>';
+                });
+                if (capability.aws_workspace_config_path) {
+                    capability.aws_workspace_config_path.trim().split('\n').forEach(config => {
+                        html += '<tr>';
+                        html += '<td style="vertical-align: middle; text-align: center">';
+                        html += '<img src="../../assets/icons/config.png" style="width: 32px; margin-right: 8px; margin-top: 6px">';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; padding-right: 20px">';
+                        const prefix = 'https://github.com/asf/';
+                        html += '<a target="_blank" href="' + prefix + config + '" ">';
+                        html += config;
+                        html += '</a>';
+                        html += '</td>';
+                        html += '</tr>';
+                    });
+                }
+                html += '</table>';
+            } else {
+                html += '<p style="color: grey; margin-left: 12px">No AWS evidence provided.</p>';
+            }
+        } else {
+            html += '<p style="color: grey; margin-left: 12px">No AWS evidence provided.</p>';
+        }
+
+        html += '</div>';
+    }
+
+    function addDependencies() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="index.html#Synergies">Target Dependencies</a></div>';
+
+        function statusOf(dependency) {
+            let status = 4;
+            return status;
+        }
+
+        first = true;
+        if (dependencies.length || reverse_dependencies.length) {
+            html += '<table>';
+            let first = true;
+            reverse_dependencies.sort((a, b) => statusOf(b) - statusOf(a)).filter(d => !d.capability.toLowerCase().includes('legacy')).forEach(dependency => {
+                const status = statusOf(dependency);
+
+                html += '<tr>';
+
+                if (first) {
+                    html += '<td rowspan="100" style="width: 100px; text-align: center; padding-right: 26px">';
+                    html += '<img src="../../assets/icons/' + capability.id + '.png" style="height: 78px; margin: 12px">';
+                    html += '<div style="font-size: 80%; color: grey">' + capability.capability + '</div>';
+                    html += '</td>';
+                    first = false;
+                }
+
+                html += '<td style="padding-right: 14px; padding-right: 32px; vertical-align: middle">';
+                const extraStyle = status >= 3 ? '' : 'opacity: 0.2';
+                html += '<img src="../../assets/icons/dependency-from.png" style="height: 30px; ' + extraStyle + '">';
+                html += '</td>';
+
+                html += '<td style="padding-right: 14px">';
+                if (dependency.image_id) {
+                    html += '<img src="../../assets/icons/' + dependency.image_id + '.png" style="height: 38px">';
+                }
+                html += '</td>';
+                html += '<td style="vertical-align: top">';
+                html += '<div style="color: grey; padding-right: 12px; font-size: 80%">';
+                html += dependency.source;
+                html += '</div>';
+                if (dependency.image_id) {
+                    html += '<a href="' + dependency.image_id + '.html">';
+                }
+                html += dependency.capability;
+                if (dependency.image_id) {
+                    html += '</a>';
+                }
+                html += '</td>';
+                html += '<td style="">';
+                html += '<img src="../../assets/icons/synergy.png" class="dependency-icon">';
+                html += '</td>';
+                html += '<td style="color: grey; font-size: 90%">';
+                html += dependency.note ? dependency.note : '';
+                html += '</td>';
+                html += '</tr>';
+            });
+            dependencies.sort((a, b) => statusOf(b) - statusOf(a)).forEach(dependency => {
+                const status = statusOf(dependency);
+
+                html += '<tr>';
+                if (first) {
+                    html += '<td rowspan="100" style="width: 100px; text-align: center; padding-right: 26px">';
+                    html += '<img src="../../assets/icons/' + capability.id + '.png" style="height: 78px; margin: 12px">';
+                    html += '<div style="font-size: 80%; color: grey">' + capability.capability + '</div>';
+                    html += '</td>';
+                    first = false;
+                }
+
+                html += '<td style="padding-right: 14px; padding-right: 32px; vertical-align: middle">';
+                const extraStyle = status >= 3 ? '' : 'opacity: 0.2';
+                html += '<img src="../../assets/icons/dependency-to.png" style="height: 30px; ' + extraStyle + '">';
+                html += '</td>';
+                html += '<td style="padding-right: 14px; vertical-align: middle">';
+                if (dependency.image_id) {
+                    html += '<img src="../../assets/icons/' + dependency.image_id + '.png" style="height: 38px">';
+                }
+                html += '</td>';
+                html += '<td style="padding-right: 14px; vertical-align: middle">';
+                html += '<div style="color: grey; padding-right: 12px; font-size: 80%">';
+                html += dependency.dependency_domain;
+                html += '</div>';
+                if (dependency.image_id) {
+                    html += '<a href="' + dependency.image_id + '.html">';
+                }
+                html += dependency.dependency;
+                if (dependency.image_id) {
+                    html += '</a>';
+                }
+                html += '</td>';
+
+                html += '<td style="color: grey; font-size: 90%">';
+                html += dependency.note ? dependency.note : '';
+                html += '</td>';
+                html += '</tr>';
+            });
+            html += '</table>';
+        } else {
+            html += '<p style="color: grey">No dependecy data provided.</p>';
+        }
+
+        html += '</div>';
+    }
+
+    addDocs();
+    document.getElementById('Header').innerHTML = html;
+    html = '';
+
+    addPeople();
+    addMilestones();
+    html += addRoadmap();
+    document.getElementById('Home').innerHTML = html;
+    html = '';
+
+    addDiscussions();
+    document.getElementById('RFCs').innerHTML = html;
+    html = '';
+
+    addImplementationEvidence();
+    document.getElementById('Implementation').innerHTML = html;
+    html = '';
+    addDependencies();
+    document.getElementById('Dependencies').innerHTML = html;
+
+</script>
+
+<div style="margin: 30px; font-size: 80%; color: grey">
+    <p>data sources:</p>
+    <div style="color: grey" id="DataSources">
+    </div>
+</div>
+
+<script>
+
+    function addDataSoruceLinks() {
+        const linkOf = (href, label) => '<li><a target="_blank" href="' + href + '">' + label + '</a></li>';
+
+        let html = '';
+
+        html += linkOf(config.sheets.details, 'main capabilities sheet (basic data per capability)');
+        html += linkOf(config.sheets.targets, 'capabilities\' release targets (including OKR targets)');
+        html += linkOf(config.sheets.documents, 'capabilities\' decision & discussion documents');
+        html += linkOf(config.sheets.dependencies, 'target synergies and dependencies sheet');
+        html += linkOf(config.sheets.roadmap, 'roadmap');
+
+        return html;
+    }
+    document.getElementById('DataSources').innerHTML = addDataSoruceLinks();
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+digraph G {
+    graph [
+        rankdir="LR"
+    ]
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+    ]
+
+    edge [
+        fontname="Arial"
+        color="deepskyblue4"
+        fontcolor="black"
+        fontsize="12"
+    ]
+
+"api 1" -> "Capability A1"
+"Capability A1" [fillcolor=grey]
+"api 1" -> "Capability A2"
+"Capability A2" [fillcolor=grey]
+ "api 1" [image="../../icons/backend.png", imagepos="tc", height=1.3, labelloc="b", fontsize=8]
+
+}

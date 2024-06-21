@@ -114,7 +114,6 @@ def process(awsgroup):
                                 if not cost == '':
                                     value = float(cost)
                                 monthObject['total'] += value
-                                print(column + ': ' + str(value))
                                 column = rename(column)
                                 if not services_map.get(column):
                                     services_map[column] = {
@@ -145,3 +144,4 @@ def process(awsgroup):
 process('services')
 process('regions')
 process('api-operations')
+process('accounts')

@@ -72,7 +72,7 @@
         const filter = document.getElementById('filter').value.toLowerCase().trim();
         let html = '';
 
-        const filteredData = data.filter(item => item.label.toLowerCase().includes(filter) || item.value.toLowerCase().includes(filter))
+        const filteredData = data.filter(item => !filter || item.title.toLowerCase().includes(filter))
         document.getElementById('search-summary').innerHTML = ' = ' + filteredData.length + ' ' + (filteredData.length === 1 ? 'item' : 'items');
 
         filteredData.forEach(item => {

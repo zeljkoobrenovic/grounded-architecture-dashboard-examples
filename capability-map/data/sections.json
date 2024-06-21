@@ -1,0 +1,300 @@
+[
+  {
+    "name": "delivery channels",
+    "style": "margin-bottom: 30px;",
+    "icon": "delivery.png",
+    "children": [
+      {
+        "name": "privates channels",
+        "style": "",
+        "children": [
+          {
+            "name": "web sites",
+            "style": "",
+            "fields": [
+              {
+                "field": "B2C Website Releases",
+                "icon": "web.png"
+              }
+            ]
+          },
+          {
+            "name": "mobile apps",
+            "style": "",
+            "fields": [
+              {
+                "field": "B2C Mobile App Releases",
+                "icon": "mobile.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "pro channels",
+        "style": "",
+        "children": [
+          {
+            "name": "web sites",
+            "style": "",
+            "fields": [
+              {
+                "field": "B2B Website Releases",
+                "icon": "web.png"
+              }
+            ]
+          },
+          {
+            "name": "mobile apps",
+            "style": "",
+            "fields": [
+              {
+                "field": "B2B Mobile App Releases",
+                "icon": "mobile.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "internal channels",
+        "style": "",
+        "children": [
+          {
+            "name": "internal web sites",
+            "style": "",
+            "fields": [
+              {
+                "field": "Internal  Web Releases",
+                "icon": "web.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "external channels",
+        "style": "",
+        "children": [
+          {
+            "name": "external saas channels",
+            "style": "",
+            "fields": [
+              {
+                "field": "Releases via External SaaS Platforms",
+                "icon": "saas.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "technical channels",
+        "style": "",
+        "children": [
+          {
+            "name": "public apis",
+            "style": "",
+            "fields": [
+              {
+                "field": "Public APIs Releases"
+              }
+            ]
+          },
+          {
+            "name": "development artifacts",
+            "style": "",
+            "fields": [
+              {
+                "field": "Build Packages",
+                "icon": "package.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "frontend components",
+    "style": "",
+    "children": [
+      {
+        "name": "web components",
+        "icon": "browser.png",
+        "style": "",
+        "fields": [
+          {
+            "field": "Web Runtime Components",
+            "icon": "mfe.png"
+          }
+        ],
+        "children": [
+          {
+            "name": "web dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Web Runtime Component Dependencies",
+                "icon": "mfe.png"
+              },
+              {
+                "field": "Frontend Package Dependencies",
+                "icon": "package.png"
+              }
+            ]
+          },
+          {
+            "name": "api dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Web API Client Endpoints",
+                "icon": "api-out.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "mobile components",
+        "icon": "mobile.png",
+        "style": "",
+        "fields": [
+          {
+            "field": "Mobile Components",
+            "icon": "mobile.png"
+          }
+        ],
+        "children": [
+          {
+            "name": "mobile dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Mobile Package Dependencies",
+                "icon": "package.png"
+              }
+            ]
+          },
+          {
+            "name": "api dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Mobile Package Dependencies",
+                "icon": "package.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "backend",
+    "style": "",
+    "icon": "backend.png",
+    "children": [
+      {
+        "name": "exposed interfaces",
+        "style": "",
+        "fields": [
+          {
+            "field": "BFF Server Endpoints",
+            "icon": "api-in.png"
+          },
+          {
+            "field": "API Server Endpoints",
+            "icon": "api-in.png"
+          },
+          {
+            "field": "Internal API Server Endpoints",
+            "icon": "api-in.png"
+          },
+          {
+            "field": "Event Sending Endpoints",
+            "icon": "event-out.png"
+          }
+        ]
+      },
+      {
+        "name": "internals",
+        "style": "",
+        "fields": [
+          {
+            "field": "Services",
+            "icon": "service.png"
+          },
+          {
+            "field": "Jobs",
+            "icon": "job.png"
+          },
+          {
+            "field": "Data Storages",
+            "icon": "data.png"
+          },
+          {
+            "field": "Data Mesh Assets",
+            "icon": "data.png"
+          }
+        ]
+      },
+      {
+        "name": "dependencies",
+        "style": "",
+        "children": [
+          {
+            "name": "api dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Backend API Client Endpoints",
+                "icon": "api-out.png"
+              }
+            ]
+          },
+          {
+            "name": "event dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Event Receiving Endpoints",
+                "icon": "event-in.png"
+              }
+            ]
+          },
+          {
+            "name": "3rd party api dependencies",
+            "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "3rd Party API Dependencies",
+                "icon": "api-out.png"
+              }
+            ]
+          },
+          {
+            "name": "legacy dependencies",
+            "style": "border: 1px dashed crimson; margin-left: 36px; margin-right: 36px;",
+            "fields": [
+              {
+                "field": "Legacy ACLs",
+                "icon": "legacy.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "infra",
+    "fields": [
+      {
+        "field": "Backend Package Dependencies",
+        "icon": "package.png"
+      }
+    ]
+  }
+]

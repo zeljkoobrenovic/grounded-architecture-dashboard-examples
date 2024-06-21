@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Usage Trend</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .domain {
+            padding: 5px;
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+            font-size: 10px;
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .image {
+            height: 64px;
+            width: 64px;
+            object-fit: contain;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-129891352-1');
+    </script>
+</head>
+<body>
+<div style="margin-left: 23px; margin-bottom: 10px">
+    <h1 style="font-size: 50px; margin-bottom: 5px; margin-left: 6px">
+        <img src="https://zeljkoobrenovic.github.io/sokrates-media/general/aws.png"
+             style="vertical-align: middle; height: 40px">
+        <b style="padding-top: 20px; padding-left: 12px">Usage Explorer</b>
+    </h1>
+    <div style="margin-top: 30px; font-size: 120%; border-bottom: 2px solid lightgrey">
+        <div style="padding: 10px; margin-right: 10px; display: inline-block; background-color: #f6f6f6">
+            <a href="../services/index.html" style="margin-bottom: 20px">Services</a>
+        </div>
+        <div style="padding: 10px; margin-right: 40px; display: inline-block; background-color: #f6f6f6">
+            <a href="../regions/index.html" style="margin-bottom: 20px">Regions</a>
+        </div>
+        <div style="padding: 10px; margin-right: 40px; display: inline-block; background-color: #c0c0c0">
+            <a href="../accounts/index.html" style="margin-bottom: 20px">Accounts</a>
+        </div>
+        <div style="padding: 10px; margin-right: 10px; display: inline-block; background-color: #f6f6f6">
+            <a href="../api-operations/index.html" style="margin-bottom: 20px">API Operations</a>
+        </div>
+    </div>
+</div>
+
+<iframe src="trends.html" style="margin-left: 8px; width: calc(100% - 30px); height: calc(100vh - 180px)"
+        frameborder="0"></iframe>
+
+</body>
+</html>

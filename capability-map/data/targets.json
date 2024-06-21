@@ -1,0 +1,1627 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-20"
+  },
+  "data": [
+    {
+      "source": "Capability A1",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-02",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-12",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability A2",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-02",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-12",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability A3",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-02",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-12",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability A4",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability A5",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability B1",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability B2",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability B3",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability B4",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability B5",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability C1",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability C2",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability C3",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability C4",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    },
+    {
+      "source": "Capability C5",
+      "data": [
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-10",
+          "status": "Live (100%)",
+          "target": "Feature 1 in US"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2023-12",
+          "status": "Partially Live",
+          "target": "Feature 1 in CA"
+        },
+        {
+          "okr_target": "true",
+          "live_date_yyyy_mm": "2024-04",
+          "status": "Partially Live",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "live_date_yyyy_mm": "2024-10",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in US"
+        },
+        {
+          "okr_target": "false",
+          "target": "Feature 2 in CA"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        },
+        {
+          "okr_target": "false"
+        }
+      ]
+    }
+  ]
+}

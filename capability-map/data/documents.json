@@ -1,0 +1,607 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-20"
+  },
+  "data": [
+    {
+      "source": "Capability A1",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability A2",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability A3",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability A4",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability A5",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability B1",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability B2",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability B3",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability B4",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability B5",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability C1",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability C2",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability C3",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability C4",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    },
+    {
+      "source": "Capability C5",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-01",
+          "title": "ADR process",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html",
+          "summary": "An architectural decision record (ADR) is a document that describes a choice the team makes about a significant aspect of the software architecture they’re planning to build. \nEach ADR describes the architectural decision, its context, and its consequences. ADRs have states and therefore follow a lifecycle. For an example of an ADR, see the appendix.\nThe ADR process outputs a collection of architectural decision records. This collection creates the decision log. \nThe decision log provides the project context as well as detailed implementation and design information. \nProject members skim the headlines of each ADR to get an overview of the project context. They read the ADRs to dive deep into project implementations and design choices.\nWhen the team accepts an ADR, it becomes immutable. If new insights require a different decision, the team proposes a new ADR. \nWhen the team accepts the new ADR, it supersedes the previous ADR."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Example ADR",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/appendix.html",
+          "summary": "This decision defines the software development lifecycle approach for ABC application development."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Best ADR Practices",
+          "link": "https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html",
+          "summary": "Promote ownership.\nPreserve ADR history.\nSchedule regular review meetings.\nStore ADRs in a central location.\nAddress non-compliant code."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "ADR Resources",
+          "link": "https://github.com/joelparkerhenderson/architecture-decision-record",
+          "summary": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation"
+        },
+        {
+          "type": "Talk",
+          "date": "2024-04",
+          "title": "ADR: The Basics",
+          "link": "https://www.youtube.com/watch?v=7Gqn2dbt_JY",
+          "summary": "This video describes the basic idea and implementation or Architecture Decision Records, or \\\"ADRs\\\".  It describes the idea behind them to document design decisions with their context and alternatives considered. "
+        }
+      ]
+    }
+  ]
+}

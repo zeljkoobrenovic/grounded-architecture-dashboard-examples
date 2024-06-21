@@ -1,0 +1,56 @@
+{
+  "sheets": {
+    "details": "https://docs.google.com/spreadsheets/d/1I3iwH3wf7Kb8kLZM-yFxF4vh4ul_6hAxSPBxRJBDOpQ/edit?usp=sharing",
+    "documents": "https://docs.google.com/spreadsheets/d/13HCJKwVhPZxGb2gx51583986g0BQVDrJnZD2h-Y7sLs/edit?usp=sharing",
+    "targets": "https://docs.google.com/spreadsheets/d/1Oz-S0ZfLHvzen73_Pau6DHCv_cB9vzVoWXdqCYV5WDg/edit?usp=sharing",
+    "roadmap": "https://docs.google.com/spreadsheets/d/1XDtdieBm3T7TqC-sH0YrrJvyVHZSdM41Eb6YKCSNEVU/edit?usp=sharing",
+    "dependencies": "https://docs.google.com/spreadsheets/d/1hHXWjKpfHmr98rVswinT7z2sLIhm4fJCdaIglC_y_S8/edit?usp=sharing",
+    "metamorphosis": "https://docs.google.com/spreadsheets/d/1X5zMMmC6sk-08kD-KN4-S-4XNMhTU4cGk-zUrWy8-Yg/edit?usp=sharing"
+  },
+  "landingPages": {
+    "sourceCodeLinkPattern": "https://github.com/${repo}",
+    "sourceCodeAnalysisLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/asf/activemq/activemq/html/index.html",
+    "sourceCodeLandscapeLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/${landscape}/_sokrates_landscape/index.html",
+    "awsAnalysisLink": "../../../../aws/docs/index.html",
+    "awsLinkPattern": "../../../../aws/docs/accounts/trends.html?filter=${filter}"
+  },
+  "domains": [
+    {
+      "name": "Domain A"
+    },
+    {
+      "name": "Domain B"
+    },
+    {
+      "name": "Domain C"
+    }
+  ],
+  "cumulativeMaintenanceFactor": 0.11,
+  "types": [
+    {
+      "id": "full-stack",
+      "name": "full-stack capability",
+      "color": "#b6d7a8ff"
+    },
+    {
+      "id": "service",
+      "name": "service",
+      "color": "#fff2ccff"
+    },
+    {
+      "id": "integration",
+      "name": "complex integration",
+      "color": "#ead1dcff"
+    },
+    {
+      "id": "development",
+      "name": "development/design",
+      "color": "#c9daf8ff"
+    },
+    {
+      "id": "other",
+      "name": "other",
+      "color": "#f3f3f3ff"
+    }
+  ]
+}

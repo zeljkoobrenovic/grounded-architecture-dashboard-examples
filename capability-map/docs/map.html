@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image-small {
+            margin: 4px;
+            padding: 3px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 140px;
+            max-width: 144px;
+            display: inline-block;
+            overflow: hidden;
+            background-color: lightgray;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+            min-height: 52px;
+        }
+
+        .container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 5px;
+            padding-top: 4px;
+            margin-top: 4px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function isFalse(value) {
+            return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+        }
+
+        function isTrue(value) {
+            return !isFalse(value);
+        }
+    </script>
+</head>
+<body>
+
+<div style="text-align: center; margin-bottom: 22px">
+    <h1>All Capabilities (<span id="CurrentCount"></span>)</h1>
+</div>
+<div style="padding: 5px; font-size: 80%; text-align: center">
+    <div style="text-align: left; margin: 5px; border: 5px solid crimson; padding: 3px; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked id="LiveChecked"
+                                                                               onchange="update()"></div>
+            <div id="LiveBlock" style="display: inline-block; vertical-align: middle;">LIVE</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; border: 5px dotted crimson; padding: 3px; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked
+                                                                               id="InFlightChecked" onchange="update()">
+            </div>
+            <div id="InFlightBlock" style="display: inline-block; vertical-align: middle;">In-Flight</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; border: 1px solid lightgrey; padding: 8px; opacity: 0.9; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked
+                                                                               id="NotInFlightChecked"
+                                                                               onchange="update()"></div>
+            <div id="NotInFlightBlock" style="display: inline-block; vertical-align: middle;">Not In-Flight</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; padding: 6px; display: inline-block; vertical-align: middle">
+        <div style="display: inline-block; margin-left: 12px; padding-top: 0px;">
+            <label style="vertical-align: middle">
+                <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" id="TargetChecked"
+                                                                                   onchange="update()"></div>
+                <div style="display: inline-block; vertical-align: middle; padding-bottom: 5px;">Show OKR Targets Only
+                </div>
+            </label>
+        </div>
+        <div style="display: inline-block; margin-left: 20px; padding-top: 6px; background-color: yellow; padding: 8px">
+            <a href="progress-report.html" target="_blank">Progress report...</a>
+        </div>
+    </div>
+</div>
+<div id="Current"></div>
+
+<script>
+    const config = {"sheets": {"details": "https://docs.google.com/spreadsheets/d/1I3iwH3wf7Kb8kLZM-yFxF4vh4ul_6hAxSPBxRJBDOpQ/edit?usp=sharing", "documents": "https://docs.google.com/spreadsheets/d/13HCJKwVhPZxGb2gx51583986g0BQVDrJnZD2h-Y7sLs/edit?usp=sharing", "targets": "https://docs.google.com/spreadsheets/d/1Oz-S0ZfLHvzen73_Pau6DHCv_cB9vzVoWXdqCYV5WDg/edit?usp=sharing", "roadmap": "https://docs.google.com/spreadsheets/d/1XDtdieBm3T7TqC-sH0YrrJvyVHZSdM41Eb6YKCSNEVU/edit?usp=sharing", "dependencies": "https://docs.google.com/spreadsheets/d/1hHXWjKpfHmr98rVswinT7z2sLIhm4fJCdaIglC_y_S8/edit?usp=sharing", "metamorphosis": "https://docs.google.com/spreadsheets/d/1X5zMMmC6sk-08kD-KN4-S-4XNMhTU4cGk-zUrWy8-Yg/edit?usp=sharing"}, "landingPages": {"sourceCodeLinkPattern": "https://github.com/${repo}", "sourceCodeAnalysisLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/asf/activemq/activemq/html/index.html", "sourceCodeLandscapeLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/${landscape}/_sokrates_landscape/index.html", "awsAnalysisLink": "../../../../aws/docs/index.html", "awsLinkPattern": "../../../../aws/docs/accounts/trends.html?filter=${filter}"}, "domains": [{"name": "Domain A"}, {"name": "Domain B"}, {"name": "Domain C"}], "cumulativeMaintenanceFactor": 0.11, "types": [{"id": "full-stack", "name": "full-stack capability", "color": "#b6d7a8ff"}, {"id": "service", "name": "service", "color": "#fff2ccff"}, {"id": "integration", "name": "complex integration", "color": "#ead1dcff"}, {"id": "development", "name": "development/design", "color": "#c9daf8ff"}, {"id": "other", "name": "other", "color": "#f3f3f3ff"}]};
+    const array = [{"domain": "Domain A", "groups": [{"group": "group 1", "items": [{"capability": "Capability A1", "domain": "Domain A", "id": "11", "type": "full-stack", "group": "group 1", "details_sheet_gid": "291047612", "discussions_sheet_gid": "1840455912", "targets_sheet_gid": "233479549", "architecture_sheet_gid": "1234955447", "code": "CA1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability A2", "domain": "Domain A", "id": "12", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1766740356", "discussions_sheet_gid": "1209528792", "targets_sheet_gid": "1986843523", "architecture_sheet_gid": "2137395311", "code": "CA2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}, {"group": "group 2", "items": [{"capability": "Capability A3", "domain": "Domain A", "id": "13", "type": "full-stack", "group": "group 2", "details_sheet_gid": "195514348", "discussions_sheet_gid": "2082074986", "targets_sheet_gid": "1844483418", "architecture_sheet_gid": "2042109651", "code": "CA3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability A4", "domain": "Domain A", "id": "14", "type": "full-stack", "group": "group 2", "details_sheet_gid": "171150465", "discussions_sheet_gid": "1431821887", "targets_sheet_gid": "768035962", "architecture_sheet_gid": "841262351", "code": "CA4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability A5", "domain": "Domain A", "id": "15", "type": "full-stack", "group": "group 2", "details_sheet_gid": "772748672", "discussions_sheet_gid": "1597358312", "targets_sheet_gid": "313373638", "architecture_sheet_gid": "948138652", "code": "CA5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}]}, {"domain": "Domain B", "groups": [{"group": "group 1", "items": [{"capability": "Capability B1", "domain": "Domain B", "id": "21", "type": "service", "group": "group 1", "details_sheet_gid": "2001049117", "discussions_sheet_gid": "489621651", "targets_sheet_gid": "1221044062", "architecture_sheet_gid": "606228574", "code": "CB1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability B2", "domain": "Domain B", "id": "22", "type": "full-stack", "group": "group 1", "details_sheet_gid": "862916601", "discussions_sheet_gid": "1783629905", "targets_sheet_gid": "140667984", "architecture_sheet_gid": "120799152", "code": "CB2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability B3", "domain": "Domain B", "id": "23", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1370364299", "discussions_sheet_gid": "1017311922", "targets_sheet_gid": "1673153432", "architecture_sheet_gid": "1875352428", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}, {"group": "group 2", "items": [{"capability": "Capability B4", "domain": "Domain B", "id": "24", "type": "full-stack", "group": "group 2", "details_sheet_gid": "525069511", "discussions_sheet_gid": "403259920", "targets_sheet_gid": "1500472736", "architecture_sheet_gid": "230243033", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability B5", "domain": "Domain B", "id": "25", "type": "full-stack", "group": "group 2", "details_sheet_gid": "660645108", "discussions_sheet_gid": "1833885594", "targets_sheet_gid": "641479465", "architecture_sheet_gid": "921165756", "code": "CB5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}]}, {"domain": "Domain C", "groups": [{"group": "group 1", "items": [{"capability": "Capability C1", "domain": "Domain C", "id": "31", "type": "full-stack", "group": "group 1", "details_sheet_gid": "2107771530", "discussions_sheet_gid": "204407008", "targets_sheet_gid": "464963013", "architecture_sheet_gid": "1045639371", "code": "CC1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability C2", "domain": "Domain C", "id": "32", "type": "full-stack", "group": "group 1", "details_sheet_gid": "918146987", "discussions_sheet_gid": "1490937320", "targets_sheet_gid": "1680293632", "architecture_sheet_gid": "128200640", "code": "CC2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}, {"group": "group 2", "items": [{"capability": "Capability C3", "domain": "Domain C", "id": "33", "type": "full-stack", "group": "group 2", "details_sheet_gid": "240446995", "discussions_sheet_gid": "1730094096", "targets_sheet_gid": "645595510", "architecture_sheet_gid": "835948869", "code": "CC3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability C4", "domain": "Domain C", "id": "34", "type": "full-stack", "group": "group 2", "details_sheet_gid": "393686049", "discussions_sheet_gid": "1098101193", "targets_sheet_gid": "138213142", "architecture_sheet_gid": "424751642", "code": "CC4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}, {"capability": "Capability C5", "domain": "Domain C", "id": "35", "type": "full-stack", "group": "group 2", "details_sheet_gid": "2058726936", "discussions_sheet_gid": "267157410", "targets_sheet_gid": "321811413", "architecture_sheet_gid": "2121439041", "code": "CC5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2", "inflight": true}]}]}];
+    const targets = {"metadata": {"exportDate": "2024-06-20"}, "data": [{"source": "Capability A1", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-02", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-12", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability A2", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-02", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-12", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability A3", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-02", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-12", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability A4", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability A5", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability B1", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability B2", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability B3", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability B4", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability B5", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability C1", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability C2", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability C3", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability C4", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}, {"source": "Capability C5", "data": [{"okr_target": "true", "live_date_yyyy_mm": "2023-10", "status": "Live (100%)", "target": "Feature 1 in US"}, {"okr_target": "true", "live_date_yyyy_mm": "2023-12", "status": "Partially Live", "target": "Feature 1 in CA"}, {"okr_target": "true", "live_date_yyyy_mm": "2024-04", "status": "Partially Live", "target": "Feature 2 in US"}, {"okr_target": "false", "live_date_yyyy_mm": "2024-10", "target": "Feature 2 in CA"}, {"okr_target": "false", "target": "Feature 2 in US"}, {"okr_target": "false", "target": "Feature 2 in CA"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}, {"okr_target": "false"}]}]};
+
+    const typeColorMap = {};
+
+    config.types.forEach(type => {
+        typeColorMap[type.id.toLowerCase()] = type;
+        typeColorMap[type.name.toLowerCase()] = type;
+    });
+
+    function colorOf(type) {
+        if (type && typeColorMap[type.toLowerCase()]) {
+            return typeColorMap[type.toLowerCase()].color;
+        }
+        return '#f3f3f3ff';
+    }
+
+    function targetByCapability(name) {
+        let result = targets.data.filter(c => c.source.toLowerCase() === name.toLowerCase())[0];
+        return result ? result.data : [];
+    }
+
+    array.forEach(domain => {
+        domain.groups.forEach(group => {
+            group.items.forEach(capability => {
+                capability.targets = targetByCapability(capability.capability);
+                console.log(capability.targets);
+                capability.targets_okr = capability.targets.filter(t => t.okr_target + '' === 'true');
+                console.log(capability.targets_okr);
+                capability.targets_okr_done = capability.targets_okr.filter(t => t.status && t.status.toLowerCase().startsWith("live"));
+                capability.targets_okr_partially = capability.targets_okr.filter(t => t.status && t.status.toLowerCase().startsWith("part"));
+                capability.targets_okr_not_done = capability.targets_okr.filter(t => !t.status || t.status === '' || t.status.toLowerCase().startsWith("not"));
+            });
+        });
+    });
+
+</script>
+
+<script>
+    function count(capabilities) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        capabilities.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || c.targets_okr.length > 0);
+                items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+                n += items.length;
+            });
+        });
+
+        return n;
+    }
+
+    function countGroupItem(groups) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        groups.forEach(function (group) {
+            let items = group.items;
+            items = items.filter(c => !targetChecked || (c.targets_okr.length > 0));
+            items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+            n += items.length;
+        });
+
+        return n;
+    }
+
+    function processCapabilities(capabilities, showChannels) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+
+        let html = '';
+        html += '<div style="padding: 8px">';
+
+        let targetChecked = document.getElementById('TargetChecked').checked;
+
+        let totalTarget = 0;
+        let totalPartiallyReached = 0;
+        let totalReached = 0;
+        capabilities.filter(source => source.domain).forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || c.targets_okr.length > 0);
+                items.forEach(function (item) {
+                    if (targetChecked) {
+                        totalTarget += item.targets_okr.length;
+                        totalPartiallyReached += item.targets_okr_partially.length;
+                        totalReached += item.targets_okr_done.length;
+                    }
+                });
+            });
+        });
+
+        const goal = 146; // Math.floor(totalTarget * 0.8);
+
+        const reachedPerc = Math.round(100 * totalReached / goal);
+        const partiallyReachedPerc = Math.round(100 * totalPartiallyReached / goal);
+
+
+        function checkForGoal(index) {
+            if (index === goal) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 5px; color: white">GOAL</div>';
+            }
+        }
+
+        if (totalTarget) {
+            html += '<div style="margin-left: 6px">';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: green; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + reachedPerc + '%</span> ';
+            html += ' REACHED (' + totalReached + ')</div>';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: orange; font-size: 12px; padding-top: 5px; color: black; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + partiallyReachedPerc + '%</span> ';
+            html += ' PARTIALLY REACHED (' + totalPartiallyReached + ')</div>';
+            // html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: blue; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            // html += '<span style="font-size: 140%">80%</span> ';
+            // html += ' GOAL (' + goal + ')</div>';
+            html += '</div>';
+
+            let index = 0;
+            html += '<div style="text-align: center; margin-top: 8px;">';
+            const totalNotReached = totalTarget - totalReached - totalPartiallyReached;
+            for (let i = 0; i < totalReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px solid black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: green; font-size: 7px; padding-top: 5px; color: white">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalPartiallyReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px solid grey; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: orange; font-size: 7px; padding-top: 5px">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalNotReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: lightgrey; font-size: 7px; padding-top: 5px; color: #323232">' + index + '</div>';
+                checkForGoal(index);
+            }
+            html += '</div>';
+        }
+
+        function addGroupedCapabilities(source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || (c.targets_okr.length > 0));
+                items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+                if (items.length === 0) return;
+                html += '<div class="container">';
+                if (group.group) {
+                    html += '<div style="font-size: 60%; color: grey; text-align: center">' + group.group.toLowerCase() + ' (' + items.length + ')</div>';
+                }
+
+                items.forEach(function (item) {
+                    if (item.id) {
+                        html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                    }
+                    let style = 'border: 5px solid white; opacity: 0.6';
+                    if (isTrue(item.live)) {
+                        style = 'border: 5px solid crimson';
+                    } else if (isTrue(item.in_flight)) {
+                        style = 'border: 5px dotted crimson';
+                    }
+                    html += '<div class="image-small" style="' + style + '; display: inline-block; vertical-align: top; ';
+                    html += 'background-color: ' + colorOf(item.type);
+                    html += (item.capability.includes('*') ? '; border: 4px solid crimson' : '');
+                    html += '">' + '<img style="width: 36px" src="assets/icons/' + item.id + '.png">';
+                    html += '<div style="margin-left: 4px; overflow: hidden; vertical-align: top; display: inline-block; width: calc(100% - 40px)">';
+                    html += item.capability;
+                    html += '</div>';
+
+                    function titleOf(target) {
+                        let title = 'Target: Live ';
+                        title += target.brand_or_country ? ' on ' + target.brand_or_country : '';
+                        title += target.channel ? ' via ' + target.channel : '';
+                        title += target.capability ? ' on ' + target.capability : '';
+                        return title;
+                    }
+
+                    if (targetChecked) {
+                        html += '<div style="text-align: center; margin-top: 8px;">';
+                        item.targets_okr_done.forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: green" title="' + titleOf(target) + '"></div>';
+                        });
+                        item.targets_okr_partially.forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: orange" title="' + titleOf(target) + '"></div>';
+                        });
+                        item.targets_okr_not_done.forEach(target => {
+                            html += '<div style="border: 1px dotted black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: lightgrey" title="' + titleOf(target) + '"></div>';
+                        });
+                        html += '</div>';
+                    }
+                    html += '</div>';
+
+                    if (item.id) {
+                        html += '</a>';
+                    }
+                });
+                html += '</div>';
+            });
+        }
+
+        capabilities.filter(source => source.domain).forEach(function (source) {
+            html += '<div style="border-left: 1px solid grey; height: 100%; padding: 6px; margin: 5px; width: calc(33% - 30px); display: inline-block; vertical-align: top; text-align: center" class="container">';
+            html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + ' (' + countGroupItem(source.groups) + ')</div>';
+            if (showChannels) {
+                html += '<div class="channel"></div>';
+            }
+            addGroupedCapabilities(source);
+
+            html += '</div>';
+        });
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        document.getElementById('CurrentCount').innerHTML = count(array);
+        document.getElementById('Current').innerHTML = processCapabilities(array, true);
+
+        let liveCount = 0;
+        let inFlightCount = 0;
+        let notInFlight = 0;
+
+        array.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                group.items.forEach(function (item) {
+                    if (isTrue(item.in_flight)) inFlightCount += 1;
+                    else notInFlight += 1;
+
+                    if (isTrue(item.live)) liveCount += 1;
+                });
+            });
+        });
+
+        document.getElementById('LiveBlock').innerHTML = 'LIVE (' + liveCount + ')';
+        document.getElementById('InFlightBlock').innerHTML = 'In-flight + LIVE (' + inFlightCount + ')';
+        document.getElementById('NotInFlightBlock').innerHTML = 'Not In-flight (' + notInFlight + ')';
+    }
+
+</script>
+<div style="width: 160px; padding: 15px; margin-top: 20px; margin-bottom: 20px; font-size: 80%; display: inline-block"
+     id="Legend">
+</div>
+
+<script>
+    update();
+
+    const addLegend = () => {
+        let html = '<div style="margin-bottom: 3px">Legend:</div>';
+
+        config.types.forEach(type => {
+            html += '    <div style="background-color: ' + type.color + '; padding: 8px">' + type.name + '</div>';
+        });
+
+        document.getElementById("Legend").innerHTML = html;
+    };
+
+    addLegend();
+
+</script>
+
+</body>
+</html>

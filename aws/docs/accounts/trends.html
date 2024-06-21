@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Usage Trend</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .domain {
+            padding-top: 5px;
+            text-align: center;
+            font-size: 10px;
+            width: 82px;
+            white-space: nowrap;
+            overflow: hidden;
+            margin-right: 8px;
+        }
+
+        .image {
+            height: 64px;
+            width: 80px;
+            object-fit: contain;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<script>
+    const getImage = function (service) {
+        const id = service.toLowerCase();
+
+        if (id.includes('ec2')) return 'aws/Amazon-EC2.png'
+        if (id.includes('runinstance')) return 'aws/Amazon-EC2.png'
+        if (id.includes('relational database')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbinstance')) return 'aws/Amazon-RDS.png'
+        if (id.includes('createdbproxy')) return 'aws/Amazon-RDS.png'
+        if (id.includes('elasticsearch')) return 'general/elasticsearch.png'
+        if (id.includes('esdomain')) return 'general/elasticsearch.png'
+        if (id.includes('circleci')) return 'general/circleci.png'
+        if (id.includes('databricks')) return 'general/databricks.png'
+        if (id.includes('cloudwatch')) return 'aws/Amazon-CloudWatch.png'
+        if (id.includes('s3')) return 'aws/Amazon-Simple-Storage-Service.png'
+        if (id.includes('cloudfront')) return 'aws/Amazon-CloudFront.png'
+        if (id.includes('cloudtrail')) return 'aws/AWS-CloudTrail.png'
+        if (id.includes('vpc')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('natgateway')) return 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('dynamodb')) return 'aws/Amazon-DynamoDB.png'
+        if (id.includes('elasticache')) return 'aws/Amazon-ElastiCache.png'
+        if (id.includes('route 53')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('registrar')) return 'aws/Amazon-Route-53.png'
+        if (id.includes('guardduty')) return 'aws/Amazon-GuardDuty.png'
+        if (id.includes('api gateway')) return 'aws/Amazon-API-Gateway.png'
+        if (id.includes('kinesis firehose')) return 'aws/Amazon-Kinesis-Firehose.png'
+        if (id.includes('kinesis')) return 'aws/Amazon-Kinesis.png'
+        if (id.includes('opensearch')) return 'aws/Amazon-OpenSearch-Service.png'
+        if (id.includes('sns')) return 'aws/Amazon-Simple-Notification-Service.png'
+        if (id.includes('sqs')) return 'aws/Amazon-Simple-Queue-Service.png'
+        if (id.includes('lambda')) return 'aws/AWS-Lambda.png'
+        if (id.includes('redshift')) return 'aws/Amazon-Redshift.png'
+        if (id.includes('glue')) return 'aws/AWS-Glue.png'
+        if (id.includes('waf')) return 'aws/AWS-WAF.png'
+        if (id.includes('shield')) return 'aws/AWS-Shield.png'
+        if (id.includes('config')) return 'aws/AWS-Config.png'
+        if (id.includes('elastic container service for kubernetes')) return 'aws/Amazon-Elastic-Container-Kubernetes.png'
+        if (id.includes('elastic container')) return 'aws/Amazon-Elastic-Container-Service.png'
+        if (id.includes('secrets manager')) return 'aws/AWS-Secrets-Manager.png'
+        if (id.includes('transfer family')) return 'aws/AWS-Transfer-Family.png'
+        if (id.includes('managed streaming for apache kafka')) return 'aws/Amazon-Managed-Streaming-for-Apache-Kafka.png'
+        if (id.includes('managed workflows for apache airflow')) return 'aws/Amazon-Managed-Workflows-for-Apache-Airflow.png'
+        if (id.includes('elastic file system')) return 'aws/Amazon-EFS.png'
+        if (id.includes('documentdb')) return 'aws/Amazon-DocumentDB.png'
+        if (id.includes('key management service')) return 'aws/AWS-Key-Management-Service.png'
+        if (id.includes('confluent')) return 'general/confluent.png'
+        if (id.includes('netgo group')) return 'general/okta.png'
+        if (id.includes('center for internet security')) return 'general/cis.png'
+
+        if (id.includes('glacier')) return 'aws/Amazon-Simple-Storage-Service-Glacier.png'
+        if (id.includes('athena')) return 'aws/Amazon-Athena.png'
+        if (id.includes('step functions')) return 'aws/AWS-Step-Functions.png'
+        if (id.includes('ses')) return 'aws/Amazon-Simple-Email-Service.png'
+        if (id.includes('x-ray')) return 'aws/AWS-X-Ray.png'
+        if (id.includes('backup')) return 'aws/AWS-Backup.png'
+        if (id.includes('cloud wan')) return 'aws/AWS-Cloud-WAN.png'
+        if (id.includes('directory service')) return 'aws/AWS-Directory-Service.png'
+        if (id.includes('network firewall')) return 'aws/AWS-Network-Firewall.png'
+        if (id.includes('systems manager')) return 'aws/AWS-Systems-Manager.png'
+        if (id.includes('direct connect')) return 'aws/AWS-Direct-Connect.png'
+        if (id.includes('certificate manager')) return 'aws/AWS-Certificate-Manager.png'
+        if (id.includes('quicksight')) return 'aws/Amazon-QuickSight.png'
+        if (id.includes('codebuild')) return 'aws/AWS-CodeBuild.png'
+        if (id.includes('codepipeline')) return 'aws/AWS-CodePipeline.png'
+        if (id.includes('codeartifact')) return 'aws/AWS-CodeArtifact.png'
+        if (id.includes('data pipeline')) return 'aws/AWS-Data-Pipeline.png'
+        if (id.includes('security hub')) return 'aws/AWS-Security-Hub.png'
+        if (id.includes('sagemaker')) return 'aws/Amazon-SageMaker.png'
+        if (id.includes('lightsail')) return 'aws/Amazon-Lightsail.png'
+        if (id.includes('global accelerator')) return 'aws/AWS-Global-Accelerator.png'
+        if (id.includes('cognito')) return 'aws/Amazon-Cognito.png'
+        if (id.includes('amplify')) return 'aws/AWS-Amplify.png'
+        if (id.includes('cost explorer')) return 'aws/AWS-Cost-Explorer.png'
+        if (id.includes('elemental mediaconvert')) return 'aws/AWS-Elemental-MediaConvert.png'
+        if (id.includes('elemental mediaconnect')) return 'aws/AWS-Elemental-MediaConnect.png'
+        if (id.includes('elemental medialive')) return 'aws/AWS-Elemental-MediaLive.png'
+        if (id.includes('elemental mediapackage')) return 'aws/AWS-Elemental-MediaPackage.png'
+        if (id.includes('elemental mediastore')) return 'aws/AWS-Elemental-MediaStore.png'
+        if (id.includes('elemental mediatailor')) return 'aws/AWS-Elemental-MediaTailor.png'
+        if (id.includes('macie')) return 'aws/Amazon-Macie.png'
+        if (id.includes('budgets')) return 'aws/AWS-Budgets.png'
+        if (id.includes('devops guru')) return 'aws/Amazon-DevOps-Guru.png'
+        if (id.includes('service catalog')) return 'aws/AWS-Service-Catalog.png'
+        if (id.includes('comprehend')) return 'aws/Amazon-Comprehend.png'
+        if (id.includes('rekognition')) return 'aws/Amazon-Rekognition.png'
+        if (id.includes('firewall manager')) return 'aws/AWS-Firewall-Manager.png'
+        if (id.includes('cloudshell')) return 'aws/AWS-CloudShell.png'
+        if (id.includes('aurora')) return 'aws/Amazon-Aurora.png'
+        if (id.includes('sql server')) return 'general/sqlserver.png'
+        if (id.includes('postgres')) return 'general/postgresql.png'
+        if (id.includes('mysql')) return 'general/mysql.png'
+        if (id.includes('mariadb')) return 'general/mariadb.png'
+        if (id.includes('neptune')) return 'aws/Amazon-Neptune.png'
+        if (id == 'translate') return 'aws/Amazon-Translate.png'
+        if (id === 'dms') return 'aws/AWS-Database-Migration-Service.png'
+
+        if (id.includes('emr')) return 'aws/Amazon-EMR.png'
+        if (id.includes('kafka')) return 'general/kafka.png'
+        if (id.includes('airflow')) return 'general/airflow.png'
+        if (id.includes('mongodb')) return 'general/mongodb.png'
+        if (id.includes('datadog')) return 'general/datadog.png'
+
+        if (id.includes('(ireland)')) return 'flags/4x3/ie.svg'
+        if (id.includes('(frankfurt)')) return 'flags/4x3/de.svg'
+        if (id.includes('(paris)')) return 'flags/4x3/fr.svg'
+        if (id.includes('(london)')) return 'flags/4x3/gb.svg'
+        if (id.includes('(milan)')) return 'flags/4x3/it.svg'
+        if (id.includes('(stockholm)')) return 'flags/4x3/se.svg'
+        if (id.includes('(sao paulo)')) return 'flags/4x3/br.svg'
+        if (id.includes('(singapore)')) return 'flags/4x3/sg.svg'
+        if (id.includes('(mumbai)')) return 'flags/4x3/in.svg'
+        if (id.includes('(tokyo)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(osaka)')) return 'flags/4x3/jp.svg'
+        if (id.includes('(sydney)')) return 'flags/4x3/au.svg'
+        if (id.includes('(seoul)')) return 'flags/4x3/kr.svg'
+        if (id.includes('(cape town)')) return 'flags/4x3/za.svg'
+        if (id.includes('(bahrain)')) return 'flags/4x3/bh.svg'
+        if (id.includes('(hong kong)')) return 'flags/4x3/hk.svg'
+        if (id.startsWith('us ')) return 'flags/4x3/us.svg'
+        if (id.startsWith('eu ')) return 'flags/4x3/eu.svg'
+        if (id.startsWith('canada ')) return 'flags/4x3/ca.svg'
+        if (id.includes('global')) return 'flags/4x3/un.svg'
+
+        return 'general/aws.svg';
+    }
+</script>
+<div id="Header"></div>
+<div id="Content"></div>
+<script>
+    function findGetParameter(parameterName) {
+        var result = null, tmp = [];
+        location.search.substr(1).split("&").forEach(function (item) {
+            tmp = item.split("=");
+            if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+        return result;
+    }
+
+    const filterParam = findGetParameter('filter');
+
+    const all = [{"month": "2023-06", "total": 12.873739689899999, "services": [{"service": "account-1", "usage": 0.6807428226994137, "costs": 8.7637058952}, {"service": "account-2", "usage": 0.17322083976496205, "costs": 2.23}, {"service": "account-3", "usage": 0.07767751304498902, "costs": 1.0000000827}, {"service": "account-4", "usage": 0.068356204583692, "costs": 0.879999984}, {"service": "account-5", "usage": 2.485680211873895e-06, "costs": 3.2e-05}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.3422673144119032e-07, "costs": 1.728e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2023-07", "total": 12.875643906699999, "services": [{"service": "account-1", "usage": 0.6807925327554835, "costs": 8.7656422261}, {"service": "account-2", "usage": 0.17319522162612716, "costs": 2.23}, {"service": "account-3", "usage": 0.07766601622771174, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.06834609648858658, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.0, "costs": 0}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.32902091141986e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2023-08", "total": 19.502856121799997, "services": [{"service": "account-1", "usage": 0.7302360409294543, "costs": 14.2416884412}, {"service": "account-2", "usage": 0.17330794930194285, "costs": 3.38}, {"service": "account-3", "usage": 0.05127453960357197, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.04512159630898109, "costs": 0.8800000008}, {"service": "account-5", "usage": 2.932903757417495e-05, "costs": 0.000572}, {"service": "account-6", "usage": 3.0457077480873984e-05, "costs": 0.000594}, {"service": "account-7", "usage": 8.774099492469959e-08, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0.0}, {"service": "account-12", "usage": 0.0, "costs": 0.0}, {"service": "SNS", "usage": 0.0, "costs": 0.0}, {"service": "account-13", "usage": 0.0, "costs": 0.0}]}, {"month": "2023-09", "total": 14.249633839600001, "services": [{"service": "account-1", "usage": 0.6947288720773116, "costs": 9.8996320449}, {"service": "account-2", "usage": 0.1733377873286697, "costs": 2.47}, {"service": "account-3", "usage": 0.0701772476371274, "costs": 1.0000000827}, {"service": "account-4", "usage": 0.0617559716906173, "costs": 0.879999984}, {"service": "account-5", "usage": 0.0, "costs": 0}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.212662738882353e-07, "costs": 1.728e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2023-10", "total": 14.299918368299998, "services": [{"service": "account-1", "usage": 0.6951030370729085, "costs": 9.9399166877}, {"service": "account-2", "usage": 0.1734275634396385, "costs": 2.48}, {"service": "account-3", "usage": 0.06993046693306976, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.06153881288936449, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.0, "costs": 0}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.1966501877335058e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2023-11", "total": 14.2909011821, "services": [{"service": "account-1", "usage": 0.6949106470513491, "costs": 9.9308993874}, {"service": "account-2", "usage": 0.17353699171234296, "costs": 2.48}, {"service": "account-3", "usage": 0.06997459921929523, "costs": 1.0000000827}, {"service": "account-4", "usage": 0.0615776411009153, "costs": 0.879999984}, {"service": "account-5", "usage": 0.0, "costs": 0}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.209160974511809e-07, "costs": 1.728e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2023-12", "total": 14.2660267294, "services": [{"service": "account-1", "usage": 0.6950796628163227, "costs": 9.9160250488}, {"service": "account-2", "usage": 0.1731386073257332, "costs": 2.47}, {"service": "account-3", "usage": 0.07009659995513397, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.06168500995350448, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.0, "costs": 0}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.1994930560963344e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2024-01", "total": 14.3103876822, "services": [{"service": "account-1", "usage": 0.6952669782647295, "costs": 9.9495400016}, {"service": "account-2", "usage": 0.173300685842687, "costs": 2.48}, {"service": "account-3", "usage": 0.06987930661332478, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.06149379180653432, "costs": 0.8800000008}, {"service": "account-5", "usage": 4.276613699021147e-05, "costs": 0.000612}, {"service": "account-6", "usage": 1.6351758260963207e-05, "costs": 0.000234}, {"service": "account-7", "usage": 1.1957747323145404e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0.0}, {"service": "account-12", "usage": 0.0, "costs": 0.0}, {"service": "SNS", "usage": 0.0, "costs": 0.0}, {"service": "account-13", "usage": 0.0, "costs": 0.0}]}, {"month": "2024-02", "total": 14.4508285292, "services": [{"service": "account-1", "usage": 0.6962944484372091, "costs": 10.0620316802}, {"service": "account-2", "usage": 0.1730004611810587, "costs": 2.5}, {"service": "account-3", "usage": 0.06920017895024874, "costs": 0.9999999202}, {"service": "account-4", "usage": 0.06089616156069059, "costs": 0.8799999888}, {"service": "account-5", "usage": 0.0006086294624718588, "costs": 0.0087952}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.2040832098201686e-07, "costs": 1.74e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}, {"month": "2024-03", "total": 14.405754731499998, "services": [{"service": "account-1", "usage": 0.6963485938688807, "costs": 10.0314270509}, {"service": "account-2", "usage": 0.17284759086973078, "costs": 2.49}, {"service": "account-3", "usage": 0.06941670098084997, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.06108669883680368, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.00029849182359029813, "costs": 0.0043}, {"service": "account-6", "usage": 1.8048342821738956e-06, "costs": 2.6e-05}, {"service": "account-7", "usage": 1.1878586244830655e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0.0}, {"service": "account-12", "usage": 0.0, "costs": 0.0}, {"service": "SNS", "usage": 0.0, "costs": 0.0}, {"service": "account-13", "usage": 0.0, "costs": 0.0}]}, {"month": "2024-04", "total": 15.0051007187, "services": [{"service": "account-1", "usage": 0.7013810251126255, "costs": 10.524292924}, {"service": "account-2", "usage": 0.1732744117311901, "costs": 2.6}, {"service": "account-3", "usage": 0.06664401002345535, "costs": 1.0000000827}, {"service": "account-4", "usage": 0.058646722904252574, "costs": 0.879999984}, {"service": "account-5", "usage": 5.198232351935703e-05, "costs": 0.00078}, {"service": "account-6", "usage": 1.7327441173119008e-06, "costs": 2.6e-05}, {"service": "account-7", "usage": 1.1516083979672941e-07, "costs": 1.728e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0.0}, {"service": "account-12", "usage": 0.0, "costs": 0.0}, {"service": "SNS", "usage": 0.0, "costs": 0.0}, {"service": "account-13", "usage": 0.0, "costs": 0.0}]}, {"month": "2024-05", "total": 15.0949200845, "services": [{"service": "account-1", "usage": 0.7022549006261353, "costs": 10.6004816039}, {"service": "account-2", "usage": 0.1729058508020881, "costs": 2.61}, {"service": "account-3", "usage": 0.06624745033442313, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.05829775817783992, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.00029392669687306687, "costs": 0.0044368}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.1336264057185178e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}]}];
+    const array = [{"service": "account-1", "usage": 0.7022549006261353, "costs": 10.6004816039}, {"service": "account-2", "usage": 0.1729058508020881, "costs": 2.61}, {"service": "account-3", "usage": 0.06624745033442313, "costs": 0.9999999686}, {"service": "account-4", "usage": 0.05829775817783992, "costs": 0.8800000008}, {"service": "account-5", "usage": 0.00029392669687306687, "costs": 0.0044368}, {"service": "account-6", "usage": 0.0, "costs": 0}, {"service": "account-7", "usage": 1.1336264057185178e-07, "costs": 1.7112e-06}, {"service": "account-8", "usage": 0.0, "costs": 0.0}, {"service": "account-9", "usage": 0.0, "costs": 0.0}, {"service": "account-10", "usage": 0.0, "costs": 0}, {"service": "account-12", "usage": 0.0, "costs": 0}, {"service": "SNS", "usage": 0.0, "costs": 0}, {"service": "account-13", "usage": 0.0, "costs": 0}];
+    const months = ["2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05"];
+    const mediaLinkPrefix = "https://zeljkoobrenovic.github.io/sokrates-media/";
+
+    const numberWithCommas = function (x) {
+        return Math.round(x).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    const getCosts = function (service, month) {
+        let filtered = all.filter(m => m.month === month)[0].services.filter(s => s.service === service);
+
+        if (filtered.length > 0) return filtered[0].costs;
+
+        return 0;
+    }
+
+    const getTotalCosts = function (month) {
+        let filter = document.getElementById('filter').value.trim().toLowerCase().replace(/\*/g, '');
+
+        let costs = 0;
+
+        all.filter(m => m.month === month).forEach(month => {
+            let services = month.services.filter(s => filter.length === 0 || s.service.toLowerCase().includes(filter));
+            if (services && services.length) {
+                costs += services.map(s => s.costs).reduce((a, b) => a + b);
+            }
+        });
+
+        return costs;
+    }
+
+    let html = '';
+
+    html += '<div style="margin-left: 6px; margin-bottom: 28px; white-space: nowrap">';
+
+    const params = filterParam ? '?filter=' + filterParam : '';
+
+    html += '<a href="trends.html' + params + '" style="background-color: #c0c0c0; margin-right: 8px; padding: 14px; padding-bottom: 9px">Trend</a>';
+    months.reverse().forEach(month => {
+        html += '<a href="' + month + '.html' + params + '" style="background-color: #f6f6f6; margin-right: 8px; padding: 14px; padding-bottom: 9px">';
+        html += month + '</a>';
+    });
+    html += '</div>';
+    html += '<div style="margin-left: 10px; margin-top: 20px; margin-bottom: 4px; color: grey">\n' +
+        '    <div>\n' +
+        '        <input id="filter" type="text" placeholder="search..."\n' +
+        '               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px" onkeyup="update()">\n' +
+        '        <div id="summary" style="display: inline-block"></div>\n' +
+        '    </div>\n' +
+        '</div>';
+    document.getElementById('Header').innerHTML = html;
+
+    function update() {
+        let html = '';
+        let filter = document.getElementById('filter').value.trim().toLowerCase().replace(/\*/g, '');
+        console.log(filter);
+        let filtered = array.filter(a => filter.length === 0 || a.service.toLowerCase().includes(filter));
+        html += '<table>';
+        html += '<tr style="font-size: 60%; color: grey;">';
+
+        let maxTotal = 1;
+        let allCostsTotal = 0;
+        months.sort().reverse().forEach(month => {
+            let value = getTotalCosts((month));
+            maxTotal = Math.round(Math.max(maxTotal, value));
+            allCostsTotal += value;
+        });
+
+        html += '<td style="background-color: white; vertical-align: middle">$' + numberWithCommas(allCostsTotal) + '</td>';
+
+        months.sort().reverse().forEach(month => {
+            let value = getTotalCosts(month);
+            html += '<td style="background-color: white; padding: 6px; vertical-align: bottom">'
+                + '<div style="color: blue">$' + numberWithCommas(value) + '</div>'
+                + '<div style="width: 100%; background-color: #000000; height: ' + (56 * value / maxTotal) + 'px"></div>'
+                + month
+                + '</td>';
+        })
+
+        html += '</tr>';
+
+        let max = 1;
+        filtered.filter(m => m.usage >= 0).forEach(function (month) {
+            months.sort().reverse().forEach(m => {
+                max = Math.max(max, getCosts(month.service, m));
+            });
+        });
+
+        filtered.filter(m => m.usage >= 0).sort((a, b) => b.costs - a.costs).forEach(function (month) {
+                const style = month.usage > 0.01 ? '' : 'opacity: 0.7';
+                html += '<tr>';
+                html += '<td>';
+                html += '<div class="domain" title="' + month.service + '" style="' + style + '">';
+                html += '<div>';
+                html += '<div style="color: grey; ">' + month.service + '</div>';
+                html += '<img class="image" src="https://zeljkoobrenovic.github.io/sokrates-media/' + getImage(month.service) + '" onerror="this.onerror=null;this.src=\'../logos/general/aws.svg\';">';
+                html += '</div>';
+                html += '</div>';
+                html += '</td>';
+
+                const costs = [];
+                months.sort().reverse().forEach(m => {
+                    costs.push({
+                        month: m,
+                        costs: getCosts(month.service, m)
+                    });
+                });
+
+                let index = 0;
+                costs.forEach(cost => {
+                    const m = cost.month;
+                    const nextCost = index + 1 < costs.length ? costs[index + 1].costs : null;
+                    html += '<td style="text-align: center; vertical-align: bottom; font-size: 12px">';
+                    let value = getCosts(month.service, m);
+                    let delta = nextCost ? ((value > nextCost ? '<span style="color: crimson">▲+</span>' : '<span style="color: green">▼</span>') + Math.round(100 * (value / nextCost - 1))) + '%' : '';
+                    if (value > 0) {
+                        color = (delta.includes('+')) ? 'crimson' : 'darkgreen';
+                        html += '<div style="width: 100%; text-align: center; font-size: 90%; color: ' + color + '">' + delta + '</div>'
+                        html += '$' + numberWithCommas(value);
+                        html += '<div style="width: 100%; background-color: #1e73be; height: ' + (56 * value / max) + 'px"></div>'
+                    }
+                    html += '</td>';
+                    index += 1;
+                })
+
+
+                html += '</tr>';
+            }
+        );
+        html += ('</table>');
+        html += ('<div style="color: grey; font-size: 80%">' + filtered.length + ' items</div>');
+        document.getElementById('Content').innerHTML = html;
+    }
+
+    if (filterParam) {
+        document.getElementById('filter').value = filterParam;
+    }
+
+    update();
+
+</script>
+
+<div style="margin-top: 27px; color: #a0a0a0; font-size: 60%">
+    generated on 2024-06-20
+</div>
+</body>
+</html>

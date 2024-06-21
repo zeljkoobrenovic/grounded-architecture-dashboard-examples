@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Architectural States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .zone {
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+        }
+
+        .capability {
+            margin: 14px;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            display: inline-block;
+            vertical-align: top;
+            overflow: hidden;
+            width: 100px;
+            font-size: 13px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body style="margin: 5px">
+
+<div id="content"></div>
+
+<script>
+
+    function isFalse(value) {
+        return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+    }
+
+    function isTrue(value) {
+        return !isFalse(value);
+    }
+
+    const capabilities_info = ${capabilities_info};
+    const capabilities = ${capabilities};
+    let filter = '';
+
+    const groupedCapabilities = [];
+    const groupMap = {};
+
+    function getCapabilityByName(name) {
+        return capabilities_info.filter(c => c.capability && c.capability.toLowerCase().trim() === name.toLowerCase().trim())[0];
+    }
+
+    capabilities.data.forEach(capability => {
+        const info = getCapabilityByName(capability.source);
+        let domain = 'Undefined';
+        if (info) {
+            domain = info.domain + '';
+        }
+        if (domain.toLowerCase().includes('on ice')) return;
+        console.log(domain);
+        if (!groupMap[domain]) {
+            groupMap[domain] = {
+                domain,
+                capabilities: []
+            }
+            groupedCapabilities.push(groupMap[domain]);
+        }
+        groupMap[domain].capabilities.push(capability);
+    });
+
+    function getFieldId(name) {
+        return name.toLowerCase().replace(/ /g, '_');
+    }
+
+    function update() {
+        function countState(capability, state) {
+            let count = capability.data.filter(item => item[state] && item.section && !item.section.toLowerCase().includes(' debt'))
+                .map(item => item[state].split('\n').filter(s => s.trim().length > 0).length)
+                .reduce((a, b) => a + b, 0);
+
+            return count > 0 ? '' + count : '';
+        }
+
+        function countDebtState(capability, state) {
+            let count = capability.data.filter(item => item[state] && item.section && item.section.toLowerCase().includes(' debt'))
+                .map(item => item[state].split('\n').filter(s => s.trim().length > 0).length)
+                .reduce((a, b) => a + b, 0);
+            return count > 0 ? '-' + count : '';
+        }
+
+        let html = '';
+
+        html += '<div>';
+
+        groupedCapabilities.forEach(domain => {
+            html += '<div style="text-align: center; border: 1px solid lightgrey; border-radius: 8px; margin: 8px;">';
+            html += '<div style="font-size: 80%; color: grey">' + domain.domain.toLowerCase() + '</div>';
+            domain.capabilities.filter(c => c.info && isTrue(c.info.in_flight) && !c.info.domain.toLowerCase().includes('on ice')).forEach(capability => {
+                let info = capability.info;
+                html += '<div class="capability" style="text-align: center">';
+                html += '<a target="_blank" href="details/' + info.id + '.html">';
+                html += '<table style="width: 100%">';
+                html += '<tr>';
+                html += '<td colspan="3">';
+                html += '<div>';
+                html += '<img src="../../assets/icons/' + info.id + '.png" style="height: 42px;"></div>';
+                html += '' + capability.source + '';
+                html += '</a>';
+                html += '</td>';
+                html += '</tr>';
+                html += '<tr style="font-size: 14px; color: cadetblue">';
+                html += '<td>' + countState(capability, 'current') + '</td>';
+                html += '<td>' + countState(capability, 'planned') + '</td>';
+                html += '<td>' + countState(capability, 'target') + '</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '<td><img src="icons/current.png" style="height: 20px"></td>';
+                html += '<td><img src="icons/planned.png" style="height: 20px"></td>';
+                html += '<td><img src="icons/target.png" style="height: 20px"></td>';
+                html += '</tr>';
+                html += '<tr style="font-size: 14px; color: crimson">';
+                html += '<td>' + countDebtState(capability, 'current') + '</td>';
+                html += '<td>' + countDebtState(capability, 'planned') + '</td>';
+                html += '<td>' + countDebtState(capability, 'target') + '</td>';
+                html += '</tr>';
+                html += '</table>';
+                html += '</a>';
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+
+        html += '<div style="opacity: 0.5">';
+        groupedCapabilities.forEach(domain => {
+            html += '<div style="text-align: center; border: 1px solid lightgrey; border-radius: 8px; margin: 8px;">';
+            html += '<div style="font-size: 80%; color: grey">' + domain.domain.toLowerCase() + ' (not in flight)</div>';
+            domain.capabilities.filter(c => (!c.info || isFalse(c.info.in_flight)) && !c.info.domain.toLowerCase().includes('on ice')).forEach(capability => {
+                html += '<div class="capability" style="text-align: center">';
+                html += '' + capability.source + '';
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+        html += '</div>';
+
+        html += '</div>';
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

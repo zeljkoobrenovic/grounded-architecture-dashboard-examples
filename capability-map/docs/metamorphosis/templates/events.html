@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Architectural States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+            margin: 0;
+        }
+
+        .zone {
+            border-radius: 4px;
+            border-left: 6px solid grey;
+
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body style="margin: 12px">
+
+<div class="tab">
+    <button id="current_tab" class="tablinks active" onclick="openTab(event, 'current')">current</button>
+    <button id="planned_tab" class="tablinks" onclick="openTab(event, 'planned')">planned (in-flight)</button>
+    <button id="target_tab" class="tablinks" onclick="openTab(event, 'target')">target</button>
+</div>
+<div id="current" class="tabcontent" style="display: block">
+</div>
+<div id="planned" class="tabcontent" style="">
+</div>
+<div id="target" class="tabcontent" style="">
+</div>
+<script>
+    const capabilities = ${capabilities};
+
+    const snsImage = '<img src="visuals/images/aws/Amazon-Simple-Notification-Service.png" style="width: 50px; margin-top: 4px;">';
+    const gatewayImage = '<img src="icons/api.png" style="width: 50px; margin-top: 4px;">';
+    const sqsImage = '<img src="visuals/images/aws/Amazon-Simple-Queue-Service.png" style="width: 30px; border-radius: 50%; margin-top: 5px">';
+    const arrowImage = '<img src="visuals/images/right.png" style="width: 30px; margin-top: 5px;">';
+    const lineImage = '<img src="visuals/images/line.png" style="width: 30px; margin-top: 5px;">';
+    const apiImage = '<img src="icons/api-out.png" style="width: 30px; margin-top: 5px;">';
+    const mobileImage = '<img src="icons/mobile.png" style="width: 30px; margin-top: 5px;">';
+    const webImage = '<img src="icons/web.png" style="width: 30px; margin-top: 5px;">';
+    const backendImage = '<img src="icons/backend.png" style="width: 30px; margin-top: 5px;">';
+
+    const sections = [
+        'events'
+    ]
+
+    const inwards = [
+        {
+            field: 'event topics (receiving)',
+            section: 'events',
+            image1: snsImage,
+            image2: sqsImage,
+            image3: arrowImage,
+            image4: lineImage
+        }
+    ];
+
+    const outwards = [
+        {
+            field: 'event topics (sending)',
+            section: 'events',
+            image1: snsImage,
+            image2: sqsImage,
+            image3: arrowImage,
+            image4: lineImage
+        }
+    ];
+
+    function getFieldInfo(fieldName) {
+        let section = null;
+        inwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field;
+                return;
+            }
+        });
+        outwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field;
+                return;
+            }
+        });
+
+        return section;
+    }
+
+    function getSection(fieldName) {
+        let section = null;
+        inwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field.section;
+                return;
+            }
+        });
+        outwards.forEach(field => {
+            if (field.field === fieldName.toLowerCase()) {
+                section = field.section;
+                return;
+            }
+        });
+
+        return section;
+    }
+
+
+    function getValues(row, state) {
+        return row[state].split('\n').filter(r => r.length > 0);
+    }
+
+    function getTopics(state) {
+        const topics = [];
+        const topicsMap = {};
+
+        capabilities.data.forEach(capability => {
+            capability.data.forEach(row => {
+                if (row.section && row[state]) {
+                    if (outwards.map(o => o.field).includes(row.section.toLowerCase().trim())) {
+                        const values = getValues(row, state);
+                        values.forEach(topic => {
+                            topic = topic.replace(/\(.*/g, '').trim().toLowerCase();
+                            if (!topicsMap[topic]) {
+                                topicsMap[topic] = {
+                                    topic,
+                                    producers: [],
+                                    consumers: [],
+                                    field: row.section.toLowerCase().trim(),
+                                    fieldInfo: getFieldInfo(row.section)
+                                }
+                                topics.push(topicsMap[topic]);
+                            }
+
+                            topicsMap[topic].producers.push(capability);
+                        });
+                    } else if (inwards.map(i => i.field).includes(row.section.toLowerCase().trim())) {
+                        const values = getValues(row, state);
+                        values.forEach(topic => {
+                            topic = topic.replace(/\(.*/g, '').trim().toLowerCase();
+                            if (!topicsMap[topic]) {
+                                topicsMap[topic] = {
+                                    topic,
+                                    producers: [],
+                                    consumers: [],
+                                    field: row.section.toLowerCase().trim(),
+                                    fieldInfo: getFieldInfo(row.section)
+                                }
+                                topics.push(topicsMap[topic]);
+                            }
+
+                            topicsMap[topic].consumers.push(capability);
+                        });
+                    }
+                }
+            });
+        });
+
+        return topics;
+    }
+
+    function countProducers(topics) {
+        let producers = [];
+        const map = {};
+
+        topics.forEach(topic => {
+            topic.producers.forEach(producer => {
+                if (!map[producer.source]) {
+                    producers.push(producer);
+                    map[producer.source] = producer;
+                }
+            });
+        });
+
+        return producers;
+    }
+
+    function countConsumers(topics) {
+        let consumers = [];
+        const map = {};
+
+        topics.forEach(topic => {
+            topic.consumers.forEach(consumer => {
+                if (!map[consumer.source]) {
+                    consumers.push(consumer);
+                    map[consumer.source] = consumer;
+                }
+            });
+        });
+
+        return consumers;
+    }
+
+    function valueOf(capability, fields, state) {
+        const value = [];
+
+        capability.data.forEach(row => {
+            fields.forEach(field => {
+                if (row.section && row.section.toLowerCase() === field.field.toLowerCase() && row[state]) {
+                    value.push({
+                        value: row[state],
+                        field
+                    });
+                    return;
+                }
+            });
+        });
+
+        return value;
+    }
+
+    function getStateTable(state) {
+        let html = '<div style="padding: 12px">';
+
+        let topics = getTopics(state);
+
+        html += '<div>';
+        html += '<a href="visuals/events/' + state + '.svg" target="_blank">dependencies graph (2D)</a> | ';
+        html += '<a href="visuals/events/' + state + '-3d.html" target="_blank">dependencies graph (3D)</a>';
+        html += '</div>';
+
+        sections.forEach(section => {
+            html += '<table style="box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; padding: 20px; border-radius: 4px">';
+
+            html += '<tr style="color: grey">';
+            html += '<td style="text-align: right; padding-bottom: 10px; vertical-align: top">';
+            html += '<div>';
+            html += '<div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; border: 1px solid lightgrey; display: inline-block; min-width: 130px; text-align: center; margin: 4px; padding: 8px">';
+            let producers = countProducers(topics);
+            html += '<div style="font-size: 52px">' + producers.length + '</div>';
+            html += '<div>producers</div>';
+            html += '<div style="text-align: center; margin-top: 15px; white-space: nowrap; font-size: 11px; overflow: hidden">' + producers.map(p => p.source).join('<br>') + '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</td>';
+            html += '<td colspan="3" style="text-align: center; font-weight: bold; padding-bottom: 10px; vertical-align: top">'
+            html += '<div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; border: 1px solid lightgrey; display: inline-block; min-width: 130px; text-align: center; margin: 4px; padding: 8px">';
+            html += '<div>';
+            html += '<div style="font-size: 52px">' + topics.length + '</div>';
+            html += '<div>topics</div>';
+            html += '<div style="text-align: center; margin-top: 15px; white-space: nowrap; font-size: 11px; overflow: hidden">' + topics.map(t => '&lt;' + t.topic + '&gt;').join('<br>') + '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</td>';
+            html += '<td style="text-align: left; padding-bottom: 10px; vertical-align: top">';
+            html += '<div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; border: 1px solid lightgrey; display: inline-block; min-width: 130px; text-align: center; margin: 4px; padding: 8px">';
+            html += '<div>';
+            let consumers = countConsumers(topics);
+            html += '<div style="font-size: 52px">' + consumers.length + '</div>';
+            html += '<div>consumer</div>';
+            html += '<div style="text-align: center; margin-top: 15px; white-space: nowrap; font-size: 11px; overflow: hidden">' + consumers.map(c => c.source).join('<br>') + '</div>';
+            html += '</div>';
+            html += '</div>';
+            html += '</td>';
+            html += '</tr>';
+            html += '<tr>';
+            html += '<td colspan="5" style="padding-bottom: 32px">';
+            html += '<hr>';
+            html += '</td>';
+            html += '</tr>';
+            topics.filter(t => getSection(t.field) === section).forEach(topic => {
+                html += '<tr>';
+                html += '<td style="white-space: nowrap; text-align: right; background-color: #f0f0f0; border-right: 2px solid black">';
+                html += '<table style="margin-left: auto;">';
+                topic.producers.forEach(producer => {
+                    html += '<tr>';
+                    html += '<td style="">' + producer.source + '</td>';
+                    html += '<td style=""><img style="width: 32px;" src="../../assets/icons/' + producer.info.id + '.png"></td>';
+                    html += '</tr>';
+                });
+                html += '</table>';
+                html += '</td>';
+                html += '<td style="white-space: nowrap;  text-align: right; max-width: 230px">';
+                html += '<div style="display: inline-block; overflow: hidden; white-space: nowrap; ">----</div>';
+                html += '<div style="display: inline-block; vertical-align: top; margin-top: 0px; color: blue; white-space: nowrap;">' + topic.topic + '</div>';
+                html += '</td>';
+                html += '<td style="">' + topic.fieldInfo.image1 + '</td>';
+                html += '<td style="">' + topic.fieldInfo.image3 + '</td>';
+                html += '<td style="">';
+                html += '<table style="margin-left: -5px; background-color: #f0f0f0; border-radius: 9px">';
+                topic.consumers.forEach(consumer => {
+                    html += '<tr>';
+                    html += '<td style="border-left: 2px solid black">' + topic.fieldInfo.image4 + '</td>';
+                    html += '<td style="background-color: rgba(255,255,255, 0.5)">' + topic.fieldInfo.image2 + '</td>';
+                    html += '<td style=""><img style="background-color: rgba(255,255,255, 0.5); width: 32px;" src="../../assets/icons/' + consumer.info.id + '.png"></td>';
+                    html += '<td style="">' + consumer.source + '</td>';
+                    html += '</tr>';
+                });
+                html += '</table>';
+                html += '</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '<td style="height: 20px"></td>';
+                html += '</tr>';
+            });
+            html += '</table>';
+        });
+
+        let tabHTML = '<img src="icons/' + state + '.png" style="height: 28px; margin-bottom: 6px">' + '<br>' + state + ' (' + topics.length + ')';
+        document.getElementById(state + '_tab').innerHTML = tabHTML;
+
+        html += '<h1 style="margin-top: 90px">Overview Per Capability</h1>';
+
+        capabilities.data.forEach(capability => {
+            const sending = valueOf(capability, outwards, state);
+            const receiving = valueOf(capability, inwards, state);
+
+            if (sending.length || receiving.length) {
+                html += '<div style="margin: 12px; padding: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">';
+                html += '<table style="">';
+                html += '<tr>';
+                html += '<td style="width: 300px; color: blue; text-align: right">';
+                if (receiving.length) {
+                    html += '<table style="margin-left: auto; margin-right: -22px">';
+                    receiving.forEach(receivedFiled => {
+                        receivedFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(received => {
+                            received = received.replace(/\(.*/g, '').trim().toLowerCase();
+                            html += '<tr>';
+                            html += '<td>' + received + '</td>';
+                            html += '<td>' + receivedFiled.field.image1 + '</td>';
+                            html += '<td>' + receivedFiled.field.image3 + '</td>';
+                            html += '<td style="background-color: rgba(255,255,255, 0.5)">' + receivedFiled.field.image2 + '</td>';
+                            html += '</tr>';
+                        });
+                    });
+                    html += '</table>';
+                }
+                html += '</td>';
+                html += '<td style="width: 200px; text-align: center; border-left: 2px solid black; border-right: 2px solid black">';
+                html += '<div style="background-color: #f0f0f0; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; padding: 10px; border: 1px solid lightgrey; border-radius: 5px">';
+                html += '<div style=""><img style="width: 72px;" src="../../assets/icons/' + capability.info.id + '.png"></div>';
+                html += '<div>' + capability.info.capability + '</div>';
+                html += '</div>';
+                html += '</td>';
+
+                html += '<td style="width: 300px; color: blue">';
+                if (sending.length) {
+                    html += '<table style="margin-left: -8px">';
+                    sending.forEach(sendingFiled => {
+                        sendingFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(sent => {
+                            sent = sent.replace(/\(.*/g, '').trim().toLowerCase();
+                            html += '<tr>';
+                            html += '<td>' + sendingFiled.field.image3 + '</td>';
+                            html += '<td>' + sendingFiled.field.image1 + '</td>';
+                            html += '<td>' + sent + '</td>';
+                            html += '</tr>';
+                        });
+                    });
+                    html += '</table>';
+                }
+                html += '</td>';
+
+                html += '</tr>';
+                html += '</table>';
+                html += '</div>';
+            }
+        });
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        document.getElementById('current').innerHTML = getStateTable('current');
+        document.getElementById('planned').innerHTML = getStateTable('planned');
+        document.getElementById('target').innerHTML = getStateTable('target');
+    }
+
+    update();
+</script>
+</body>
+</html>

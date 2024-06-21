@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Metamorphosis</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129891352-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-129891352-1');
+    </script>
+
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 280px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function initTab() {
+            if (window.location.hash) {
+                tabName = window.location.hash.substring(1);
+                if (document.getElementById('tab_' + tabName)) {
+                    openTab(tabName);
+                }
+            }
+        }
+
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 24px; margin-top: -30px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 0px; margin-left: 6px; white-space: nowrap">
+        <img src="logo.png" style="vertical-align: middle; height: 120px">
+        <div style="display: inline-block; vertical-align: middle">
+            <b>Capabilities Architectural Metamorphosis</b>
+        </div>
+    </h1>
+    <div style="margin-bottom: 20px; margin-top: -10px; margin-left: 12px; font-size: 16px; color: grey">The visual
+        overview of capabilities' transformation (CURRENT -> PLANNED -> TARGET)
+    </div>
+</div>
+<div style="margin-left: 30px">
+    <div class="tab">
+        <button class="tablinks active" id="tab_capabilities" onclick="openTab('capabilities')">Capabilities</button>
+        <button class="tablinks" id="tab_events" onclick="openTab('events')">Backend: Event-Driven Map</button>
+        <button class="tablinks" id="tab_apis" onclick="openTab('apis')">Backend: APIs Map</button>
+        <button class="tablinks" id="tab_models" onclick="openTab('models')">Data Models Map</button>
+        <button class="tablinks" id="tab_tech_debt" onclick="openTab('tech_debt')">Tech Debt Map</button>
+        <button class="tablinks" id="tab_summary" onclick="openTab('summary')">Summary</button>
+    </div>
+    <div id="summary" class="tabcontent" style="">
+        <div>
+            <iframe id="SummaryFrame" src="summary.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="capabilities" class="tabcontent" style="display: block">
+        <div>
+            <iframe id="CapabilitiesFrame" src="capabilities.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="events" class="tabcontent">
+        <div>
+            <iframe id="EventsFrame" src="events.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="apis" class="tabcontent">
+        <div>
+            <iframe id="ApisFrame" src="apis.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="models" class="tabcontent">
+        <div>
+            <iframe id="ModelsFrame" src="data-models.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="tech_debt" class="tabcontent">
+        <div>
+            <iframe id="TechDebtFrame" src="tech-debt.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="mobile" class="tabcontent">
+        <div>
+            <iframe id="MobileFrame" src="mobile.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="data_models" class="tabcontent">
+        <div>
+            <iframe id="DataModelsFrame" src="data-models.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+</div>
+<script>
+</script>
+<div style="margin-left: 30px; margin-top: 10px; font-size: 90%; color: grey">
+    generated from this <a target="_blank" href="${data_sheet}">
+    data sheet...
+</a>
+</div>
+</body>
+</html>

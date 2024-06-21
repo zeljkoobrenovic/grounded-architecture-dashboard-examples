@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "exportDate": "2024-06-20"
+  },
+  "data": [
+    {
+      "source": "Domain A",
+      "data": [
+        {
+          "capability": "Capability A1",
+          "dependency": "Capability B1"
+        },
+        {
+          "capability": "Capability A2",
+          "dependency": "Capability B2"
+        },
+        {
+          "capability": "Capability A3",
+          "dependency": "Capability C1"
+        },
+        {
+          "capability": "Capability A4",
+          "dependency": "Capability C2"
+        },
+        {
+          "capability": "Capability A5",
+          "dependency": "Capability C3"
+        }
+      ]
+    },
+    {
+      "source": "Domain B",
+      "data": [
+        {
+          "capability": "Capability B1",
+          "dependency": "Capability A1"
+        },
+        {
+          "capability": "Capability B2",
+          "dependency": "Capability A2"
+        },
+        {
+          "capability": "Capability B3",
+          "dependency": "Capability C1"
+        },
+        {
+          "capability": "Capability B4",
+          "dependency": "Capability C2"
+        },
+        {
+          "capability": "Capability B5",
+          "dependency": "Capability C3"
+        }
+      ]
+    },
+    {
+      "source": "Domain C",
+      "data": [
+        {
+          "capability": "Capability C1",
+          "dependency": "Capability A1"
+        },
+        {
+          "capability": "Capability C2",
+          "dependency": "Capability A2"
+        },
+        {
+          "capability": "Capability C3",
+          "dependency": "Capability B1"
+        },
+        {
+          "capability": "Capability C4",
+          "dependency": "Capability B2"
+        },
+        {
+          "capability": "Capability C5",
+          "dependency": "Capability B3"
+        }
+      ]
+    }
+  ]
+}

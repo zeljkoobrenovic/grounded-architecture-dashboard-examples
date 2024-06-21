@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capability Architecture States</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab-image {
+            width: 24px;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        .tab-image-selected {
+            width: 24px;
+            margin: 2px;
+            padding: 2px;
+            border-bottom: 4px solid blue;
+        }
+
+        .zone {
+            margin: 4px;
+            padding: 4px;
+            background-color: #f8f8f8;
+            font-size: 95%;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+            text-align: left;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div id="navigation" style="margin: -30px; padding: 0"></div>
+<script>
+    function isFalse(value) {
+        return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+    }
+
+    function isTrue(value) {
+        return !isFalse(value);
+    }
+
+    const all_capabilities = [{"capability": "Capability A1", "domain": "Domain A", "id": "11", "type": "full-stack", "group": "group 1", "details_sheet_gid": "291047612", "discussions_sheet_gid": "1840455912", "targets_sheet_gid": "233479549", "architecture_sheet_gid": "1234955447", "code": "CA1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability A2", "domain": "Domain A", "id": "12", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1766740356", "discussions_sheet_gid": "1209528792", "targets_sheet_gid": "1986843523", "architecture_sheet_gid": "2137395311", "code": "CA2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability A3", "domain": "Domain A", "id": "13", "type": "full-stack", "group": "group 2", "details_sheet_gid": "195514348", "discussions_sheet_gid": "2082074986", "targets_sheet_gid": "1844483418", "architecture_sheet_gid": "2042109651", "code": "CA3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability A4", "domain": "Domain A", "id": "14", "type": "full-stack", "group": "group 2", "details_sheet_gid": "171150465", "discussions_sheet_gid": "1431821887", "targets_sheet_gid": "768035962", "architecture_sheet_gid": "841262351", "code": "CA4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability A5", "domain": "Domain A", "id": "15", "type": "full-stack", "group": "group 2", "details_sheet_gid": "772748672", "discussions_sheet_gid": "1597358312", "targets_sheet_gid": "313373638", "architecture_sheet_gid": "948138652", "code": "CA5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability B1", "domain": "Domain B", "id": "21", "type": "service", "group": "group 1", "details_sheet_gid": "2001049117", "discussions_sheet_gid": "489621651", "targets_sheet_gid": "1221044062", "architecture_sheet_gid": "606228574", "code": "CB1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability B2", "domain": "Domain B", "id": "22", "type": "full-stack", "group": "group 1", "details_sheet_gid": "862916601", "discussions_sheet_gid": "1783629905", "targets_sheet_gid": "140667984", "architecture_sheet_gid": "120799152", "code": "CB2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability B3", "domain": "Domain B", "id": "23", "type": "full-stack", "group": "group 1", "details_sheet_gid": "1370364299", "discussions_sheet_gid": "1017311922", "targets_sheet_gid": "1673153432", "architecture_sheet_gid": "1875352428", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability B4", "domain": "Domain B", "id": "24", "type": "full-stack", "group": "group 2", "details_sheet_gid": "525069511", "discussions_sheet_gid": "403259920", "targets_sheet_gid": "1500472736", "architecture_sheet_gid": "230243033", "code": "CB3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability B5", "domain": "Domain B", "id": "25", "type": "full-stack", "group": "group 2", "details_sheet_gid": "660645108", "discussions_sheet_gid": "1833885594", "targets_sheet_gid": "641479465", "architecture_sheet_gid": "921165756", "code": "CB5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability C1", "domain": "Domain C", "id": "31", "type": "full-stack", "group": "group 1", "details_sheet_gid": "2107771530", "discussions_sheet_gid": "204407008", "targets_sheet_gid": "464963013", "architecture_sheet_gid": "1045639371", "code": "CC1", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability C2", "domain": "Domain C", "id": "32", "type": "full-stack", "group": "group 1", "details_sheet_gid": "918146987", "discussions_sheet_gid": "1490937320", "targets_sheet_gid": "1680293632", "architecture_sheet_gid": "128200640", "code": "CC2", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability C3", "domain": "Domain C", "id": "33", "type": "full-stack", "group": "group 2", "details_sheet_gid": "240446995", "discussions_sheet_gid": "1730094096", "targets_sheet_gid": "645595510", "architecture_sheet_gid": "835948869", "code": "CC3", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability C4", "domain": "Domain C", "id": "34", "type": "full-stack", "group": "group 2", "details_sheet_gid": "393686049", "discussions_sheet_gid": "1098101193", "targets_sheet_gid": "138213142", "architecture_sheet_gid": "424751642", "code": "CC4", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}, {"capability": "Capability C5", "domain": "Domain C", "id": "35", "type": "full-stack", "group": "group 2", "details_sheet_gid": "2058726936", "discussions_sheet_gid": "267157410", "targets_sheet_gid": "321811413", "architecture_sheet_gid": "2121439041", "code": "CC5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"}];
+    let capability = {"capability": "Capability C5", "domain": "Domain C", "id": "35", "type": "full-stack", "group": "group 2", "details_sheet_gid": "2058726936", "discussions_sheet_gid": "267157410", "targets_sheet_gid": "321811413", "architecture_sheet_gid": "2121439041", "code": "CC5", "short_description": "A capability to do something", "in_flight": "true", "live": "false", "people": "Person1 Name, Role 1\nPerson2 Name, Role 2\n", "teams": "Team 1", "slack_channels": "#org-slack-channel-1", "document_links": "https://grounded-architecture.ot, Grounded Architecture", "source_code_repositories": "apache/activemq, asf/activemq/activemq, ActiveMQ main repo\napache/activemq-artemis, asf/activemq/activemq-artemis, Artemis main repo", "source_code_landscape_analysis": "asf/activemq", "aws_accounts": "account-1\naccount-2"};
+
+    function addNavigation() {
+        let html = '';
+        html += '<div style="margin: 20px 20px 10px 20px; font-size: 85%; color: black">';
+        let prev_domain = all_capabilities[0].domain;
+        all_capabilities.filter(c => c.domain.toLowerCase().trim() !== 'on ice').forEach(cap => {
+            if (prev_domain.toLowerCase() !== cap.domain.toLowerCase()) {
+                prev_domain = cap.domain;
+                html += '<div style="margin-top: 5px; margin-left: 4px; vertical-align: top; display: inline-block; border-left: 2px solid lightgrey; height: 30px;">&nbsp;</div>';
+            }
+            html += '<a href="' + cap.id + '.html">';
+            const tabClass = cap.id === capability.id ? 'tab-image-selected' : 'tab-image';
+            const style = isTrue(cap.in_flight) ? '' : 'opacity: 0.2';
+            html += '<img src="../../../assets/icons/' + cap.id + '.png" style="' + style + '" class="' + tabClass + '">';
+            html += '</a>';
+        });
+        html += '</div>';
+
+        document.getElementById('navigation').innerHTML = html;
+    }
+
+    addNavigation();
+
+</script>
+<div id="header" style="margin-top: 50px; text-align: left; margin-bottom: 12px;">
+</div>
+
+<div class="tab">
+    <button id="overview_tab" class="tablinks active" onclick="openTab(event, 'overview')">overview</button>
+    <button id="current_tab" class="tablinks" onclick="openTab(event, 'current')">current</button>
+    <button id="planned_tab" class="tablinks" onclick="openTab(event, 'planned')">planned (in-flight)</button>
+    <button id="target_tab" class="tablinks" onclick="openTab(event, 'target')">target</button>
+</div>
+<div id="overview" class="tabcontent" style="display: block">
+    <div style="padding-top: 16px; margin-left: 10px">
+        <label><input id="show_section_names" type="checkbox" checked onchange="update()"> show section names</label>
+        <label><input id="show_object_names" type="checkbox" checked onchange="update()"> show object names</label>
+    </div>
+    <div id="content" style="margin-top: 20px; text-align: center"></div>
+</div>
+<div id="current" class="tabcontent" style=""></div>
+<div id="planned" class="tabcontent" style=""></div>
+<div id="target" class="tabcontent" style=""></div>
+<script>
+    let capability_properties = [{"group": "Product Features", "subgroup": "Users", "section": "Human Users"}, {"section": "Machine Users"}, {"subgroup": "Features", "section": "Key Product Features"}, {"section": "Product Features Debt"}, {"group": " ", "subgroup": "Websites", "section": "Websites (Consumer)"}, {"section": "Websites (Pro)"}, {"subgroup": "Mobile Apps", "section": "Mobile (Consumer)"}, {"section": "Mobile (Pro)"}, {"subgroup": "3rd Party SaaS Platforms", "section": "Salesforce CRM Platform"}, {"section": "Mulesoft Developer Portal Platform"}, {"section": "Auth0 Hosted UI"}, {"section": "Social Media Platforms"}, {"subgroup": "Public APIs", "section": "Public APIs"}, {"subgroup": "Internal Channels", "section": "Technical Artifacts Stores"}, {"section": "Websites (Internal)"}, {"group": "Web Frontend", "subgroup": "Web Components", "section": "Microfrontends"}, {"section": "Microfrontend Includes"}, {"section": "Web Pages"}, {"subgroup": "Web Dependencies", "section": "Web API Dependencies (Internal)"}, {"section": "Web API Dependencies (3rd Party)"}, {"section": "Deep Links (Web)"}, {"subgroup": "Web Infra", "section": "Web Infra"}, {"subgroup": "Web Tech Debt", "section": "Web Tech Debt"}, {"group": "Mobile Frontend", "subgroup": "Mobile Components", "section": "iOS Components"}, {"section": "Android Components"}, {"subgroup": "Mobile Dependencies", "section": "Mobile API Dependencies (Internal)"}, {"section": "Mobile API Dependencies (3rd Party)"}, {"section": "Deep Links (Mobile)"}, {"subgroup": "Mobile Infra", "section": "iOS Infra"}, {"section": "Android Infra"}, {"subgroup": "Mobile Tech Debt", "section": "iOS Tech Debt"}, {"section": "Android Tech Debt"}, {"group": "Backend Interfaces", "subgroup": "Exposed Gateways and Brokers", "section": "Public APIs"}, {"section": "Internal APIs"}, {"section": "BFF APIs"}, {"section": "Utility APIs"}, {"section": "Event Topics (Sending)"}, {"section": "Data Models (Exposed)"}, {"section": "Tech Debt (Exposed)"}, {"subgroup": "External Endpoint Dependencies", "section": "API Dependencies (Internal)"}, {"section": "API Dependencies (3rd Party)"}, {"section": "Data Dependencies"}, {"section": "Event Topics (Receiving)"}, {"section": "Data Models (Dependencies)"}, {"section": "Tech Debt (Dependencies)"}, {"group": "Backend Internals", "subgroup": "Compute", "section": "Microservices and Serverless Components"}, {"subgroup": "Data", "section": "Key Operational Data Storages"}, {"subgroup": "Backend Tech Debt", "section": "Backend Tech Debt"}, {"group": "Backend Infrastructure", "subgroup": "Public Cloud", "section": "Infra Packages"}, {"section": "Technical Integrations"}, {"section": "Backend Infrastructure Tech Debt"}, {"group": "Data Mesh", "subgroup": "Data Mesh", "section": "Data APIs"}, {"section": "Data Mesh API Dependencies (Internal)"}, {"section": "Data Mesh API Dependencies (3rd Party)"}, {"section": "Data Mesh Events (Sending)"}, {"section": "Data Mesh Events (Receiving)"}, {"section": "Data Mesh Services"}, {"section": "Data Mesh Storages"}, {"section": "Data Mesh Tech Debt"}, {"group": "Data Mesh Infrastructure", "subgroup": "Data Mesh Infra", "section": "Data Mesh Infra Packages"}, {"section": "Data Mesh Technical Integrations"}];
+    let capability_architectures = [{}, {}, {}];
+
+    function addHeader() {
+        let html = '';
+        html += '<table>';
+        html += '<tr>';
+        html += '<td>';
+        html += '<div>';
+        html += '<img src="../../../assets/icons/' + capability.id + '.png" style="width: 110px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="vertical-align: top">';
+        html += '<div style="margin-left: 20px; font-size: 90%; color: grey; vertical-align: top">';
+        html += capability.domain;
+        html += '</div>';
+        html += '<div style="font-size: 50px; margin-left: 20px; font-weight: bold">';
+        if (isFalse(capability.in_flight)) {
+            html += '[Not In-Flight] ';
+        }
+        html += capability.capability;
+        html += '</div>';
+        html += '<div style="font-size: 16px; margin-left: 20px; color: grey; margin-top: 3px">';
+        html += capability.short_description ? capability.short_description : '';
+        html += '</div>';
+        if (capability.description) {
+            html += '<div style="font-size: 50px">';
+            html += capability.description;
+            html += '</div>';
+        }
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+
+        document.getElementById('header').innerHTML = html;
+    }
+
+    addHeader();
+
+    function getFieldId(name) {
+        return name.toLowerCase().replace(/ /g, '_');
+    }
+
+    capability_properties.forEach(property => {
+        capability_architectures[0][getFieldId(property.section)] = property.current;
+        capability_architectures[1][getFieldId(property.section)] = property.planned;
+        capability_architectures[2][getFieldId(property.section)] = property.target;
+    });
+</script>
+
+<!--copy everything from here to the end for the details page template-->
+<!--get image-->
+<script>
+    const getImage = function (service) {
+        const id = service.toLowerCase();
+
+        const prefix = 'https://zeljkoobrenovic.github.io/sokrates-media/';
+
+        if (id.includes('entry point')) return null
+
+        if (id.includes('ios & android')) return null;
+        if (id.includes('android')) return prefix + 'general/android.png'
+        if (id.includes(' ios')) return prefix + 'general/ios.png'
+        if (id.includes('(ios)')) return prefix + 'general/ios.png'
+        if (id.includes('ios ')) return prefix + 'general/ios.png'
+        if (id.includes(' mfe')) return prefix + 'general/react.png'
+        if (id.includes(' card')) return prefix + 'general/react.png'
+        if (id.includes('(react')) return prefix + 'general/react.png'
+        if (id.includes('gcp ')) return prefix + 'general/gcp.png'
+
+        if (id.includes('ec2')) return prefix + 'aws/Amazon-EC2.png'
+        if (id.includes('runinstance')) return prefix + 'aws/Amazon-EC2.png'
+        if (id.includes('(rds)')) return prefix + 'aws/Amazon-RDS.png'
+        if (id.includes('relational database')) return prefix + 'aws/Amazon-RDS.png'
+        if (id.includes('createdbinstance')) return prefix + 'aws/Amazon-RDS.png'
+        if (id.includes('createdbproxy')) return prefix + 'aws/Amazon-RDS.png'
+        if (id.includes('elasticsearch')) return prefix + 'general/elasticsearch.png'
+        if (id.includes('esdomain')) return prefix + 'general/elasticsearch.png'
+        if (id.includes('circleci')) return prefix + 'general/circleci.png'
+        if (id.includes('databricks')) return prefix + 'general/databricks.png'
+        if (id.includes('cloudwatch')) return prefix + 'aws/Amazon-CloudWatch.png'
+        if (id.includes('s3')) return prefix + 'aws/Amazon-Simple-Storage-Service.png'
+        if (id.includes('cloudfront')) return prefix + 'aws/Amazon-CloudFront.png'
+        if (id.includes('cloudtrail')) return prefix + 'aws/AWS-CloudTrail.png'
+        if (id.includes('vpc')) return prefix + 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('natgateway')) return prefix + 'aws/Amazon-Virtual-Private-Cloud.png'
+        if (id.includes('dynamodb')) return prefix + 'aws/Amazon-DynamoDB.png'
+        if (id.includes('elasticache')) return prefix + 'aws/Amazon-ElastiCache.png'
+        if (id.includes('route 53')) return prefix + 'aws/Amazon-Route-53.png'
+        if (id.includes('registrar')) return prefix + 'aws/Amazon-Route-53.png'
+        if (id.includes('guardduty')) return prefix + 'aws/Amazon-GuardDuty.png'
+        if (id.includes('api gateway')) return prefix + 'aws/Amazon-API-Gateway.png'
+        if (id.includes('kinesis firehose')) return prefix + 'aws/Amazon-Kinesis-Firehose.png'
+        if (id.includes('kinesis')) return prefix + 'aws/Amazon-Kinesis.png'
+        if (id.includes('opensearch')) return prefix + 'aws/Amazon-OpenSearch-Service.png'
+        if (id.includes('sns')) return prefix + 'aws/Amazon-Simple-Notification-Service.png'
+        if (id.includes('sqs')) return 'prefix + aws/Amazon-Simple-Queue-Service.png'
+        if (id.includes('lambda')) return prefix + 'aws/AWS-Lambda.png'
+        if (id.includes('redshift')) return prefix + 'aws/Amazon-Redshift.png'
+        if (id.includes('glue')) return prefix + 'aws/AWS-Glue.png'
+        if (id.includes('waf')) return prefix + 'aws/AWS-WAF.png'
+        if (id.includes('shield')) return prefix + 'aws/AWS-Shield.png'
+        if (id.includes('config')) return prefix + 'aws/AWS-Config.png'
+        if (id.includes('elastic container service for kubernetes')) return prefix + 'aws/Amazon-Elastic-Container-Kubernetes.png'
+        if (id.includes('(ecs)')) return prefix + 'aws/Amazon-Elastic-Container-Service.png'
+        if (id.includes('elastic container')) return prefix + 'aws/Amazon-Elastic-Container-Service.png'
+        if (id.includes('secrets manager')) return prefix + 'aws/AWS-Secrets-Manager.png'
+        if (id.includes('transfer family')) return prefix + 'aws/AWS-Transfer-Family.png'
+        if (id.includes('managed streaming for apache kafka')) return prefix + 'aws/Amazon-Managed-Streaming-for-Apache-Kafka.png'
+        if (id.includes('managed workflows for apache airflow')) return prefix + 'aws/Amazon-Managed-Workflows-for-Apache-Airflow.png'
+        if (id.includes('elastic file system')) return prefix + 'aws/Amazon-EFS.png'
+        if (id.includes('documentdb')) return prefix + 'aws/Amazon-DocumentDB.png'
+        if (id.includes('key management service')) return prefix + 'aws/AWS-Key-Management-Service.png'
+        if (id.includes('confluent')) return prefix + 'general/confluent.png'
+        if (id.includes('netgo group')) return prefix + 'general/okta.png'
+        if (id.includes('center for internet security')) return prefix + 'general/cis.png'
+
+        if (id.includes('glacier')) return prefix + 'aws/Amazon-Simple-Storage-Service-Glacier.png'
+        if (id.includes('athena')) return prefix + 'aws/Amazon-Athena.png'
+        if (id.includes('step functions')) return prefix + 'aws/AWS-Step-Functions.png'
+        if (id.includes('ses')) return prefix + 'aws/Amazon-Simple-Email-Service.png'
+        if (id.includes('x-ray')) return prefix + 'aws/AWS-X-Ray.png'
+        if (id.includes('backup')) return prefix + 'aws/AWS-Backup.png'
+        if (id.includes('cloud wan')) return prefix + 'aws/AWS-Cloud-WAN.png'
+        if (id.includes('directory service')) return prefix + 'aws/AWS-Directory-Service.png'
+        if (id.includes('network firewall')) return prefix + 'aws/AWS-Network-Firewall.png'
+        if (id.includes('systems manager')) return prefix + 'aws/AWS-Systems-Manager.png'
+        if (id.includes('direct connect')) return prefix + 'aws/AWS-Direct-Connect.png'
+        if (id.includes('certificate manager')) return prefix + 'aws/AWS-Certificate-Manager.png'
+        if (id.includes('quicksight')) return prefix + 'aws/Amazon-QuickSight.png'
+        if (id.includes('codebuild')) return prefix + 'aws/AWS-CodeBuild.png'
+        if (id.includes('codepipeline')) return prefix + 'aws/AWS-CodePipeline.png'
+        if (id.includes('codeartifact')) return prefix + 'aws/AWS-CodeArtifact.png'
+        if (id.includes('data pipeline')) return prefix + 'aws/AWS-Data-Pipeline.png'
+        if (id.includes('security hub')) return prefix + 'aws/AWS-Security-Hub.png'
+        if (id.includes('sagemaker')) return prefix + 'aws/Amazon-SageMaker.png'
+        if (id.includes('lightsail')) return prefix + 'aws/Amazon-Lightsail.png'
+        if (id.includes('global accelerator')) return prefix + 'aws/AWS-Global-Accelerator.png'
+        if (id.includes('cognito')) return prefix + 'aws/Amazon-Cognito.png'
+        if (id.includes('amplify')) return prefix + 'aws/AWS-Amplify.png'
+        if (id.includes('cost explorer')) return prefix + 'aws/AWS-Cost-Explorer.png'
+        if (id.includes('elemental mediaconvert')) return prefix + 'aws/AWS-Elemental-MediaConvert.png'
+        if (id.includes('elemental mediaconnect')) return prefix + 'aws/AWS-Elemental-MediaConnect.png'
+        if (id.includes('elemental medialive')) return prefix + 'aws/AWS-Elemental-MediaLive.png'
+        if (id.includes('elemental mediapackage')) return prefix + 'aws/AWS-Elemental-MediaPackage.png'
+        if (id.includes('elemental mediastore')) return prefix + 'aws/AWS-Elemental-MediaStore.png'
+        if (id.includes('elemental mediatailor')) return prefix + 'aws/AWS-Elemental-MediaTailor.png'
+        if (id.includes('macie')) return prefix + 'aws/Amazon-Macie.png'
+        if (id.includes('budgets')) return prefix + 'aws/AWS-Budgets.png'
+        if (id.includes('devops guru')) return prefix + 'aws/Amazon-DevOps-Guru.png'
+        if (id.includes('service catalog')) return prefix + 'aws/AWS-Service-Catalog.png'
+        if (id.includes('comprehend')) return prefix + 'aws/Amazon-Comprehend.png'
+        if (id.includes('rekognition')) return prefix + 'aws/Amazon-Rekognition.png'
+        if (id.includes('firewall manager')) return prefix + 'aws/AWS-Firewall-Manager.png'
+        if (id.includes('cloudshell')) return prefix + 'aws/AWS-CloudShell.png'
+        if (id.includes('aurora')) return prefix + 'aws/Amazon-Aurora.png'
+        if (id.includes('sql server')) return prefix + 'general/sqlserver.png'
+        if (id.includes('postgres')) return prefix + 'general/postgresql.png'
+        if (id.includes('mysql')) return prefix + 'general/mysql.png'
+        if (id.includes('mariadb')) return prefix + 'general/mariadb.png'
+        if (id.includes('neptune')) return prefix + 'aws/Amazon-Neptune.png'
+        if (id == 'translate') return 'aws/Amazon-Translate.png'
+        if (id === 'dms') return 'aws/AWS-Database-Migration-Service.png'
+
+        if (id.includes('emr')) return prefix + 'aws/Amazon-EMR.png'
+        if (id.includes('kafka')) return prefix + 'general/kafka.png'
+        if (id.includes('airflow')) return prefix + 'general/airflow.png'
+        if (id.includes('mongodb')) return prefix + 'general/mongodb.png'
+        if (id.includes('datadog')) return prefix + 'general/datadog.png'
+
+        if (id.includes('(ireland)')) return prefix + 'flags/4x3/ie.svg'
+        if (id.includes('(frankfurt)')) return prefix + 'flags/4x3/de.svg'
+        if (id.includes('(paris)')) return prefix + 'flags/4x3/fr.svg'
+        if (id.includes('(london)')) return prefix + 'flags/4x3/gb.svg'
+        if (id.includes('(milan)')) return prefix + 'flags/4x3/it.svg'
+        if (id.includes('(stockholm)')) return prefix + 'flags/4x3/se.svg'
+        if (id.includes('(sao paulo)')) return prefix + 'flags/4x3/br.svg'
+        if (id.includes('(singapore)')) return prefix + 'flags/4x3/sg.svg'
+        if (id.includes('(mumbai)')) return prefix + 'flags/4x3/in.svg'
+        if (id.includes('(tokyo)')) return prefix + 'flags/4x3/jp.svg'
+        if (id.includes('(osaka)')) return prefix + 'flags/4x3/jp.svg'
+        if (id.includes('(sydney)')) return prefix + 'flags/4x3/au.svg'
+        if (id.includes('(seoul)')) return prefix + 'flags/4x3/kr.svg'
+        if (id.includes('(cape town)')) return prefix + 'flags/4x3/za.svg'
+        if (id.includes('(bahrain)')) return prefix + 'flags/4x3/bh.svg'
+        if (id.includes('(hong kong)')) return prefix + 'flags/4x3/hk.svg'
+        if (id.startsWith('us ')) return prefix + 'flags/4x3/us.svg'
+        if (id.startsWith('eu ')) return prefix + 'flags/4x3/eu.svg'
+        if (id.startsWith('canada ')) return prefix + 'flags/4x3/ca.svg'
+        if (id.includes('global')) return prefix + 'flags/4x3/un.svg'
+
+
+        return null;
+    }
+</script>
+
+<!--sections-->
+<script>
+    const sections =
+        [
+            {
+                "fields": [
+                    {
+                        "field": "Human Users",
+                        "iconStyle": "width: 50px; height: 50px",
+                        "icon": "person.png"
+                    },
+                    {
+                        "field": "Machine Users",
+                        "icon": "machine.png",
+                        "iconStyle": "width: 50px; height: 50px",
+                        "noExtraIcon": true
+                    }
+                ]
+            },
+            {
+                "name": "product features",
+                "icon": "product.png",
+                "style": "border-bottom: 24px solid grey",
+                "fields": [
+                    {
+                        "field": "Key Product Features",
+                        "icon": "feature.png",
+                        "iconStyle": "width: 40px; height: 40px",
+                        "noExtraIcon": true
+                    },
+                    {
+                        "field": "Product Features Debt",
+                        "icon": "legacy.png",
+                        "iconStyle": "width: 40px; height: 40px",
+                        "noExtraIcon": true
+                    }
+                ]
+            },
+            {
+                "name": "delivery channels",
+                "icon": "delivery.png",
+                "children": [
+                    {
+                        "name": "consumer channels",
+                        "style": "",
+                        "children": [
+                            {
+                                "name": "web sites",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Websites (Consumer)",
+                                        "icon": "web.png"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mobile apps",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Mobile (Consumer)",
+                                        "icon": "mobile.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "pro channels",
+                        "style": "",
+                        "children": [
+                            {
+                                "name": "web sites",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Websites (Pro)",
+                                        "icon": "web.png"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "mobile apps",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Mobile (Pro)",
+                                        "icon": "mobile.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "internal channels",
+                        "style": "",
+                        "children": [
+                            {
+                                "name": "internal web sites",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Websites (Internal)",
+                                        "icon": "web.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "external channels",
+                        "style": "",
+                        "children": [
+                            {
+                                "name": "external saas channels",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Salesforce CRM Platform",
+                                        "icon": "saas.png"
+                                    },
+                                    {
+                                        "field": "Mulesoft Developer Portal Platform",
+                                        "icon": "saas.png"
+                                    },
+                                    {
+                                        "field": "Auth0 Hosted UI",
+                                        "icon": "saas.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "technical channels",
+                        "style": "",
+                        "children": [
+                            {
+                                "name": "public apis",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Public APIs"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "internal channels",
+                                "style": "",
+                                "fields": [
+                                    {
+                                        "field": "Technical Artifacts Stores",
+                                        "icon": "package.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "web components",
+                "icon": "browser.png",
+                "style": "",
+                "fields": [
+                    {
+                        "field": "Microfrontends",
+                        "icon": "mfe.png"
+                    }
+                ],
+                "children": [
+                    {
+                        "name": "web dependencies",
+                        "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+                        "fields": [
+                            {
+                                "field": "Microfrontend Includes",
+                                "icon": "mfe.png"
+                            },
+                            {
+                                "field": "CDN Dependencies (web)",
+                                "icon": "cdn.png"
+                            },
+                            {
+                                "field": "Web API Dependencies (Internal)",
+                                "icon": "api-out.png"
+                            },
+                            {
+                                "field": "Web API Dependencies (3rd Party)",
+                                "icon": "api-out.png"
+                            }
+                        ]
+                    },
+                    {
+                        "fields": [
+                            {
+                                "field": "Web Tech Debt",
+                                "style": "border: 2px dashed crimson; background-color: rgba(100,0,0,0.05)",
+                                "icon": "legacy.png"
+                            }
+                        ]
+                    }, {
+                        "style": "border: 1px dashed grey; ",
+                        "fields": [
+                            {
+                                "field": "Web Infra",
+                                "icon": "package.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "mobile components",
+                "icon": "mobile.png",
+                "style": "",
+                "fields": [
+                    {
+                        "field": "iOS Components",
+                        "icon": "mobile.png"
+                    },
+                    {
+                        "field": "Android Components",
+                        "icon": "mobile.png"
+                    }
+                ],
+                "children": [
+                    {
+                        "name": "mobile dependencies",
+                        "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+                        "fields": [
+                            {
+                                "field": "CDN Dependencies (mobile)",
+                                "icon": "cdn.png"
+                            },
+                            {
+                                "field": "Mobile API Dependencies (Internal)",
+                                "icon": "api-out.png"
+                            },
+                            {
+                                "field": "Mobile API Dependencies (3rd Party)",
+                                "icon": "api-out.png"
+                            }
+                        ]
+                    }, {
+                        "name": "",
+                        "fields": [
+                            {
+                                "field": "iOS Tech Debt",
+                                "style": "border: 2px dashed crimson; background-color: rgba(100,0,0,0.05)",
+                                "icon": "legacy.png"
+                            },
+                            {
+                                "field": "Android Tech Debt",
+                                "style": "border: 2px dashed crimson; background-color: rgba(100,0,0,0.05)",
+                                "icon": "legacy.png"
+                            }
+                        ],
+                    },
+                    {
+                        "style": "border: 1px dashed lightgrey; margin-left: 36px; margin-right: 36px;",
+                        "fields": [
+                            {
+                                "field": "iOS Infra",
+                                "icon": "package.png"
+                            },
+                            {
+                                "field": "Android Infra",
+                                "icon": "package.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "backend",
+                "style": "",
+                "icon": "backend.png",
+                "children": [
+                    {
+                        "name": "exposed interfaces",
+                        "style": "",
+                        "fields": [
+                            {
+                                "field": "Public APIs",
+                                "icon": "Amazon-API-Gateway.png"
+                            },
+                            {
+                                "field": "Internal APIs",
+                                "icon": "Amazon-API-Gateway.png"
+                            },
+                            {
+                                "field": "BFF APIs",
+                                "icon": "Amazon-API-Gateway.png"
+                            },
+                            {
+                                "field": "Utility APIs",
+                                "icon": "Amazon-API-Gateway.png"
+                            },
+                            {
+                                "field": "Event Topics (Sending)",
+                                "icon": "event-out.png"
+                            },
+                            {
+                                "field": "Data Models (Exposed)",
+                                "icon": "data-model.png"
+                            },
+                            {
+                                "field": "Tech Debt (Exposed)",
+                                "icon": "event-out.png"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "dependencies",
+                        "style": "",
+                        "fields": [
+                            {
+                                "field": "API Dependencies (Internal)",
+                                "icon": "api-out.png"
+                            },
+                            {
+                                "field": "Event Topics (Receiving)",
+                                "icon": "event-in.png"
+                            },
+                            {
+                                "field": "API Dependencies (3rd Party)",
+                                "icon": "api-out.png"
+                            },
+                            {
+                                "field": "Data Models (Dependencies)",
+                                "icon": "data-model.png"
+                            },
+                            {
+                                "field": "Tech Debt (Dependencies)",
+                                "icon": "legacy.png"
+                            }
+                        ]
+                    }, {
+                        "name": "internals",
+                        "style": "",
+                        "fields": [
+                            {
+                                "field": "Microservices and Serverless Components",
+                                "icon": "service.png"
+                            },
+                            {
+                                "field": "Key Operational Data Storages",
+                                "icon": "data.png"
+                            },
+                            {
+                                "field": "Backend Tech Debt",
+                                "style": "border: 2px dashed crimson; background-color: rgba(100,0,0,0.05)",
+                                "icon": "legacy.png"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "backend infra",
+                "icon": "cloud.png",
+                "fields": [
+                    {
+                        "field": "Infra Packages",
+                        "icon": "package.png"
+                    },
+                    {
+                        "field": "Technical Integrations",
+                        "icon": "package.png"
+                    },
+                    {
+                        "field": "Backend Infrastructure Tech Debt",
+                        "icon": "legacy.png"
+                    }
+                ]
+            },
+            {
+                "name": "data mesh",
+                "icon": "data-mesh.png",
+                "fields": [
+                    {
+                        "field": "Data APIs",
+                        "icon": "api-in.png"
+                    },
+                    {
+                        "field": "Data Mesh Internal API Dependencies",
+                        "icon": "api-out.png"
+                    },
+                    {
+                        "field": "Data Mesh 3rd Party API Dependencies",
+                        "icon": "api-out.png"
+                    },
+                    {
+                        "field": "Data Mesh Events (Sending)",
+                        "icon": "event-out.png"
+                    },
+                    {
+                        "field": "Data Mesh Events (Receiving)",
+                        "icon": "event-in.png"
+                    },
+                    {
+                        "field": "Data Mesh Services",
+                        "icon": "service.png"
+                    },
+                    {
+                        "field": "Data Mesh Packages",
+                        "icon": "package.png"
+                    },
+                    {
+                        "field": "Data Mesh Storages",
+                        "icon": "data.png"
+                    },
+                    {
+                        "field": "Data Mesh Tech Debt",
+                        "icon": "legacy.png"
+                    }
+                ]
+            },
+            {
+                "name": "data mesh infra",
+                "icon": "cloud.png",
+                "fields": [
+                    {
+                        "field": "Data Mesh Infra Packages",
+                        "icon": "package.png"
+                    },
+                    {
+                        "field": "Data Mesh Infra Tech Debt",
+                        "icon": "package.png"
+                    }
+                ]
+            }
+        ];
+</script>
+
+<script>
+
+    function getFieldId(name) {
+        return name.toLowerCase().replace(/ /g, '_');
+    }
+
+    function fieldsDeepCount(capability, section) {
+        let count = 0;
+
+        if (section.fields) {
+            section.fields.forEach(field => {
+                const id = getFieldId(field.field);
+                if (capability[id]) {
+                    const values = capability[id].trim().split('\n').filter(line => line.trim().length > 0);
+                    count += values.length;
+                }
+            });
+        }
+        if (section.children) {
+            section.children.forEach(child => count += fieldsDeepCount(capability, child));
+        }
+
+        return count;
+    }
+
+    function renderSection(capability, section, prevCapability) {
+        const showSectionNames = document.getElementById('show_section_names').checked;
+        const showObjectNames = document.getElementById('show_object_names').checked;
+        let deepCount = fieldsDeepCount(capability, section);
+        if (deepCount === 0) return '';
+
+        let html = '';
+
+        let style = section.style ? section.style : '';
+        html += '<div class="zone" style="text-align: center; display: inline-block; ' + style + '">';
+        if (section.icon) {
+            html += '<div style="vertical-align: middle; display: block; margin-top: 2px">';
+            const extraStyle = section.iconStyle ? section.iconStyle : '';
+            html += '<img src="../icons/' + section.icon + '" style="height: 60px;' + extraStyle + '">';
+            html += '</div>';
+        }
+        if (showSectionNames && section.name) {
+            html += '<div style="margin-bottom: 6px; color: grey">' + section.name + ' (' + deepCount + ')</div>';
+        }
+        if (section.fields) {
+            section.fields.forEach(field => {
+                const id = getFieldId(field.field);
+                if (capability[id]) {
+                    console.log(prevCapability);
+                    const prevValues = prevCapability && prevCapability[id] ? prevCapability[id].trim().split('\n').filter(line => line.trim().length > 0) : [];
+                    let fieldStyle = field.style ? field.style : '';
+                    html += '<div class="zone" style="color: grey; display: block; ' + fieldStyle + '">';
+                    const values = capability[id].trim().split('\n').filter(line => line.trim().length > 0);
+                    if (showSectionNames) {
+                        html += '<div style="color: grey">' + field.field.toLowerCase() + ' (' + values.length + ')' + '</div>';
+                    }
+                    values.forEach(value => {
+                        if (prevValues.includes(value)) {
+                            html += '<div style="display: inline-block; opacity: 0.3" title="' + value + '">';
+                        } else {
+                            html += '<div style="display: inline-block; color: blue; border-radius: 18px; cursor: help;" title="' + value + '">';
+                        }
+                        html += '<div class="zone" style="vertical-align: middle; display: inline-block; background-color: white; cursor: help;">';
+                        const extraImage = getImage(value);
+                        const extraStyle = field.iconStyle ? field.iconStyle : '';
+                        if (extraImage && !field.noExtraIcon) {
+                            html += '<div style="vertical-align: middle; display: inline-block; margin-right: 3px; margin-top: 1px;"><img src="' + extraImage + '" style="height: 30px; width: 30px; object-fit: contain;  border-radius: 5px;' + extraStyle + '"></div>';
+                        }
+                        if (field.icon) {
+                            html += '<div style="vertical-align: middle; display: inline-block; margin-top: 2px"><img src="../icons/' + field.icon + '" style="height: 30px; width: 30px; object-fit: contain; ' + extraStyle + '"></div>';
+                        }
+                        if (showObjectNames) {
+                            html += '<div style="text-align: left; display: inline-block; vertical-align: middle; margin-left: 4px; margin-right: 6px; max-width: 300px;">' + value + '</div>';
+                        }
+
+                        html += '</div>';
+                        html += '</div>';
+                    });
+                    html += '</div>';
+                }
+            });
+        }
+        if (section.children) {
+            section.children.forEach(child => html += renderSection(capability, child, prevCapability));
+        }
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        let html = '';
+
+        html += '<table style="width: 100%; margin-top: 32px">';
+
+        html += '<tr>';
+        const stateLabels = ['current', 'planned', 'target'];
+        let index = 0;
+        capability_architectures.forEach(state => {
+            html += '<td style="text-align: center; font-size: 160%;">';
+            html += '<div><img src="../icons/' + stateLabels[index] + '.png" style="height: 50px"></div>';
+            html += '<div>' + stateLabels[index] + '</div>';
+            html += '</td>';
+            index += 1;
+        });
+        html += '</tr>';
+        sections.forEach(section => {
+            index++;
+            html += '<tr>';
+            let prevState = null;
+            index = 1;
+            capability_architectures.forEach(state => {
+                html += '<td style="vertical-align: top; width: 400px">';
+
+                if (fieldsDeepCount(state, section) > 0) {
+                    html += '<div class="zone" style="width: calc(100% - 20px)">';
+                    html += renderSection(state, section, prevState)
+                    html += '</div>';
+                }
+                prevState = state;
+                html += '</td>';
+            });
+            html += '</tr>';
+            html += '<tr><td style="height: 10px"></td></tr>';
+        });
+        html += '</table>';
+
+        document.getElementById('content').innerHTML = html;
+
+        index = 0;
+
+        capability_architectures.forEach(capability => {
+            let html = '';
+            const state = stateLabels[index];
+
+            function valueOf(capability, fields, state, section) {
+                const value = [];
+
+                fields.filter(f => f.section === section).forEach(field => {
+                    if (capability[getFieldId(field.field)]) {
+                        value.push({
+                            value: capability[getFieldId(field.field)],
+                            field
+                        });
+                        return;
+                    }
+                });
+
+                return value;
+            }
+
+            const snsImage = '<img src="../visuals/images/aws/Amazon-Simple-Notification-Service.png" style="width: 50px; margin-top: 4px;">';
+            const gatewayImage = '<img src="../icons/api.png" style="width: 50px; margin-top: 4px;">';
+            const sqsImage = '<img src="../visuals/images/aws/Amazon-Simple-Queue-Service.png" style="width: 30px; border-radius: 50%; margin-top: 5px">';
+            const arrowImage = '<img src="../visuals/images/right.png" style="width: 30px; margin-top: 5px;">';
+            const lineImage = '<img src="../visuals/images/line.png" style="width: 30px; margin-top: 5px;">';
+            const apiImage = '<img src="../icons/api-out.png" style="width: 30px; margin-top: 5px;">';
+            const mobileImage = '<img src="../icons/mobile.png" style="width: 50px; margin-top: 5px;">';
+            const mobileSmallImage = '<img src="../icons/mobile.png" style="width: 30px; margin-top: 5px;">';
+            const webImage = '<img src="../icons/web.png" style="width: 50px; margin-top: 5px;">';
+            const webSmallImage = '<img src="../icons/web.png" style="width: 30px; margin-top: 5px;">';
+            const backendImage = '<img src="../icons/backend.png" style="width: 30px; margin-top: 5px;">';
+            const debtImage = '<img src="../icons/legacy.png" style="width: 50px; margin-top: 5px;">';
+            const dependencies = [
+                {
+                    field: 'api dependencies (internal)',
+                    section: 'backend',
+                    image1: gatewayImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'web api dependencies (internal)',
+                    section: 'web',
+                    image1: gatewayImage,
+                    image2: webSmallImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'mobile api dependencies (internal)',
+                    section: 'mobile',
+                    image1: gatewayImage,
+                    image2: mobileSmallImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'api dependencies (3rd party)',
+                    section: 'backend',
+                    image1: gatewayImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'web api dependencies (3rd party)',
+                    section: 'web',
+                    image1: gatewayImage,
+                    image2: webSmallImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'mobile api dependencies (3rd party)',
+                    section: 'mobile',
+                    image1: gatewayImage,
+                    image2: mobileSmallImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'event topics (receiving)',
+                    section: 'backend',
+                    image1: snsImage,
+                    image2: sqsImage,
+                    image3: arrowImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'backend tech debt',
+                    section: 'backend',
+                    image1: debtImage,
+                    image2: backendImage,
+                    image3: lineImage,
+                    image4: lineImage
+                }
+            ];
+
+            const outwards = [
+                {
+                    field: 'internal apis',
+                    section: 'backend',
+                    image1: gatewayImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'bff apis',
+                    section: 'backend',
+                    image1: gatewayImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'public apis',
+                    section: 'backend',
+                    image1: gatewayImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'event topics (sending)',
+                    section: 'backend',
+                    image1: snsImage,
+                    image2: sqsImage,
+                    image3: arrowImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'websites (consumer)',
+                    section: 'web',
+                    image1: webImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'websites (pro)',
+                    section: 'web',
+                    image1: webImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'mobile (consumer)',
+                    section: 'mobile',
+                    image1: mobileImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'mobile (pro)',
+                    section: 'mobile',
+                    image1: mobileImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                },
+                {
+                    field: 'salesforce crm platform',
+                    section: 'web',
+                    image1: webImage,
+                    image2: backendImage,
+                    image3: apiImage,
+                    image4: lineImage
+                }
+            ];
+
+            html += '<div style="margin-left: 12px; padding: 8px; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;">';
+            html += '<table style="">';
+
+            const sections = [
+                {
+                    name: 'web',
+                    includes: ['Microfrontends', 'Microfrontend Includes', 'Web Infra']
+                },
+                {
+                    name: 'mobile',
+                    includes: ['iOS Components', 'iOS Infra', 'Android Components', 'Android Infra']
+                },
+                {
+                    name: 'backend',
+                    includes: ['Microservices and Serverless Components', 'Key Operational Data Storages']
+                },
+                {
+                    name: 'infra',
+                    includes: ['Infra Packages', 'Technical Integrations']
+                }
+            ];
+            sections.forEach(section => {
+                const exposing = valueOf(capability, outwards, state, section.name);
+                const receiving = valueOf(capability, dependencies, state, section.name);
+
+                html += '<tr>';
+                html += '<td colspan="5" style="border-top: 10px solid grey"></td>';
+                html += '<td style="text-align: center">';
+                html += '</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '<td style="text-align: right">';
+                if (receiving.length) {
+                    html += '<table style="margin-left: auto; margin-right: -22px">';
+                    receiving.forEach(receivedFiled => {
+                        receivedFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(received => {
+                            received = received.replace(/\(.*/g, '').trim().toLowerCase();
+                            html += '<tr>';
+                            const color = received.includes(' bff') ? 'green' : 'darkgrey';
+                            html += '<td style="color: ' + color + '">' + received + '</td>';
+                            html += '<td>' + receivedFiled.field.image1 + '</td>';
+                            html += '<td>' + receivedFiled.field.image3 + '</td>';
+                            html += '<td style="background-color: rgba(255,255,255, 0.5)">' + receivedFiled.field.image2 + '</td>';
+                            html += '</tr>';
+                        });
+                    });
+                    html += '</table>';
+                }
+                html += '</td>';
+                html += '<td style="text-align: center; border-left: 2px dashed black; border-right: 2px dashed black">';
+                html += '<div style="background-color: #f0f0f0; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; padding: 10px; border: 1px solid lightgrey; border-radius: 5px">';
+                html += section.name;
+                if (section.includes) {
+                    section.includes.forEach(inc => {
+                        if (capability[getFieldId(inc)]) {
+                            html += '<div style="border: 1px solid grey; margin: 10px;">';
+                            html += '<div style="font-size: 80%; color: grey">';
+                            html += inc;
+                            html += '</div>';
+                            let values = capability[getFieldId(inc)].split('\n').filter(line => line.trim().length > 0);
+                            values.forEach(value => {
+                                const extraImage = getImage(value);
+                                html += '<div style="text-align: left; margin: 6px; padding: 4px; border-radius: 8px; background-color: white">';
+                                if (extraImage) {
+                                    html += '<div style="vertical-align: middle; display: inline-block; margin-right: 5px; margin-top: 1px;"><img src="' + extraImage + '" style="height: 50px; width: 50px; object-fit: contain;  border-radius: 5px"></div>';
+                                }
+                                html += value;
+                                html += '</div>';
+                            });
+                            html += '</div>';
+                        }
+                    });
+                }
+                html += '</div>';
+                html += '</td>';
+
+                html += '<td>';
+                if (exposing.length) {
+                    html += '<table style="margin-left: -8px">';
+                    exposing.forEach(sendingFiled => {
+                        sendingFiled.value.split('\n').filter(e => e.trim().length > 0).forEach(sent => {
+                            sent = sent.replace(/\(.*/g, '').trim().toLowerCase();
+                            html += '<tr>';
+                            html += '<td>' + sendingFiled.field.image3 + '</td>';
+                            html += '<td>' + sendingFiled.field.image1 + '</td>';
+                            const color = sent.includes(' bff') ? 'green' : '#606060';
+                            html += '<td style="color: ' + color + '">' + sent + '</td>';
+                            html += '</tr>';
+                        });
+                    });
+                    html += '</table>';
+                    html += '</td>';
+
+                    html += '</tr>';
+                }
+            });
+
+            html += '</table>';
+            html += '</div>';
+            index += 1;
+            document.getElementById(state).innerHTML = html;
+        });
+
+    }
+
+    update();
+</script>
+</body>
+</html>

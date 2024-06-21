@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Whitelabel Capabilities</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 280px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body style="margin-left: -20px; padding: 0">
+<div style="margin-left: 30px">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'PerCapability')">Per Capability</button>
+        <button class="tablinks" onclick="openTab(event, 'YearlySummary')">Yearly View</button>
+        <button class="tablinks" onclick="openTab(event, 'Summary')">Summary</button>
+    </div>
+    <div id="PerCapability" class="tabcontent" style="display: block">
+        <div>
+            <iframe src="roadmap-per-capability.html" id="PerCapabilityFrame"
+                    style="border: none; width: calc(100%); height: calc(100vh - 80px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Summary" class="tabcontent">
+        <div>
+            <iframe id="SummaryFrame" src="roadmap-sum.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 80px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="YearlySummary" class="tabcontent">
+        <div>
+            <iframe id="YearlySummaryFrame" src="roadmap-per-year.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 80px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Releases" class="tabcontent">
+        <div>
+            <iframe id="ReleasesFrame" src="releases.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 80px)">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

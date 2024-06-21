@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body>
+
+<div id="Main"></div>
+
+<script>
+    const data = ${data};
+    const config = ${config};
+
+    const total = data[0];
+
+    const monthsMap = {};
+
+    total.months.forEach(month => {
+        const key = month.year + '-' + month.month;
+        monthsMap[key] = month;
+    });
+
+    for (let i = 1; i < data.length; i++) {
+        data[i].months.forEach(month => {
+            const key = month.year + '-' + month.month;
+
+            if (monthsMap[key]) {
+                monthsMap[key].buildEffort += month.buildEffort;
+                monthsMap[key].maintenanceEffort += month.maintenanceEffort;
+            }
+        });
+    }
+</script>
+
+<script>
+
+    function display() {
+        let html = '';
+        html += '<div style="font-size: 90%; margin-bottom: 10px"><a href="roadmap-sum.html" target="_blank">Open in new Tab...</a></div>';
+        html += '<table>';
+        html += '<tr style="font-size: 10px">';
+        html += '<td></td>';
+        html += '<td></td>';
+        total.months.forEach(month => {
+            if (month.month === 6) {
+                html += '<td colspan="2" style="text-align: center">' + month.year + '</td>';
+            } else {
+                html += '<td></td>';
+            }
+        });
+        html += '</tr>';
+        html += '<tr style="font-size: 80%">';
+        html += '<td></td>';
+        html += '<td>MY</td>';
+        total.months.forEach(month => {
+            html += '<td>' + month.month + '</td>';
+        });
+        html += '</tr>';
+
+        const effort = function (total) {
+            const data = {
+                build: 0,
+                maintenance: 0
+            }
+
+            total.months.forEach(month => {
+                data.build += month.buildEffort;
+                data.maintenance += month.maintenanceEffort;
+            });
+
+            return data;
+        }
+
+        const draw = function (capability, buildFactor, maintenanceFactor, manMonths, title) {
+            html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+            html += '<td style="width: 280px; min-width: 280px; max-width: 280px; vertical-align: bottom; overflow: hidden; font-size: 80%">';
+            html += title;
+            html += '</td>';
+            html += '<td style="font-size: 80%; width: 20px; min-width: 30px; max-width: 30px; vertical-align: bottom">';
+            html += Math.round(manMonths / 12);
+            html += '</td>';
+            capability.months.forEach(month => {
+                const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                html += '<td style="vertical-align: bottom; text-align: left; ' + border + '">';
+                const title = month.year + ' ' + month.month
+                    + '\nbuilding: ' + month.buildEffort + ' FTE'
+                    + '\nmaintenance: ' + month.maintenanceEffort + ' FTE'
+                    + '\n\nTOTAL: ' + (month.buildEffort + month.maintenanceEffort) + ' FTE';
+                html += '<div style="display: inline-block; vertical-align: bottom;" title="' + (title) + '">';
+                html += '<div style="border-radius: 1px; background-color: #b0b0b0; width: 20px; height: ' + (month.maintenanceEffort * maintenanceFactor) + 'px">&nbsp;</div>';
+                html += '<div style="border-radius: 1px; background-color: #315b7c; width: 20px; height: ' + (month.buildEffort * buildFactor) + 'px">&nbsp;</div>';
+                html += '</div>';
+                html += '</td>';
+            });
+            html += '</tr>';
+        }
+
+
+        const drawCumulative = function (capability, buildFactor, maintenanceFactor, manMonths) {
+            html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+            html += '<td style="width: 220px; min-width: 220px; max-width: 220px; vertical-align: bottom; overflow: hidden; font-size: 80%">';
+            html += '<b>New Run & Maintenance</b><br>(' + Math.round(100 * config.cumulativeMaintenanceFactor) + '% of cummulative effort)';
+            html += '</td>';
+            html += '<td style="font-size: 80%; width: 20px; min-width: 30px; max-width: 30px; vertical-align: bottom">';
+            html += Math.round(manMonths / 12);
+            html += '</td>';
+            build = 0;
+            maintenance = 0;
+            capability.months.forEach(month => {
+                const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                html += '<td style="vertical-align: bottom; text-align: left; ' + border + '">';
+                const maintenanceEffort = month.maintenanceEffort * maintenanceFactor / 12;
+                const buildEffort = month.buildEffort * buildFactor / 12;
+                build += buildEffort;
+                maintenance += maintenanceEffort;
+                const title = month.year + ' ' + month.month
+                    + '\nbuilding: ' + Math.round(build) + ' FTE'
+                    + '\nmaintenance: ' + Math.round(maintenance) + ' FTE'
+                    + '\n\nTOTAL: ' + (Math.round(build) + Math.round(maintenance)) + ' FTE';
+                html += '<div style="display: inline-block; vertical-align: bottom;" title="' + (title) + '">';
+                html += '<div style="border-radius: 1px; background-color: lightgrey; width: 20px; height: ' + (build) + 'px">&nbsp;</div>';
+                html += '</div>';
+                html += '</td>';
+            });
+            html += '<td style="font-size: 80%; width: 20px; min-width: 30px; max-width: 30px; vertical-align: top">';
+            html += Math.round(build + maintenance);
+            html += '</td>';
+            html += '</tr>';
+        }
+
+        let effortData = effort(total);
+        draw(total, 1, 1, effortData.build + effortData.maintenance, '<b>Build and Maintenance Efforts</b>');
+        html += '<tr style="height: 100px"><td></td></tr>';
+        drawCumulative(total, config.cumulativeMaintenanceFactor, config.cumulativeMaintenanceFactor, 0);
+        html += '<tr style="height: 100px"><td></td></tr>';
+        draw(total, 1, 0, effortData.build, '<b>Building</b>');
+        draw(total, 0, 1, effortData.maintenance, '<b>Maintenance</b>');
+        html += '</table>';
+
+
+        document.getElementById('Main').outerHTML = html;
+    }
+
+    display();
+
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;" href="${data_sheet}">data sheet</a>
+</div>
+</body>
+</html>
