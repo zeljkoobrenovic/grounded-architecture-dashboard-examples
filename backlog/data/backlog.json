@@ -4,7 +4,102 @@
   },
   "data": [
     {
-      "source": "Strategic Initiaitves",
+      "source": "Big Picture Dashboard",
+      "data": [
+        {
+          "initiative": "Architecture Dashboard Website",
+          "type": "Infrastructure",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Mark the Minion"
+        },
+        {
+          "initiative": "GitHub Repositories Analysis",
+          "type": "Source Code Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jorge the Minion"
+        },
+        {
+          "initiative": "AWS Costs Analysis",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "GCP Costs Analysis",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Incidents Explorer",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Data Models",
+          "type": "Infrastructure Analysis",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Capabilities Map",
+          "type": "Strategy",
+          "status": "In progress",
+          "architects": "Felonious Gru, Lucy Wilde"
+        },
+        {
+          "initiative": "Architecture Summits",
+          "type": "Community Building",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Architecture Talks",
+          "type": "Community Building",
+          "status": "Maintenance",
+          "architects": "Dave the Minion"
+        },
+        {
+          "initiative": "Architecture Backlog",
+          "type": "Architecture System",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Who-is-Who",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Competition Overview",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Slack Buzz",
+          "type": "Knowledge Base",
+          "status": "Maintenance",
+          "architects": "Felonious Gru"
+        },
+        {
+          "initiative": "Decision Records Index",
+          "type": "Architecture System",
+          "status": "Maintenance",
+          "architects": "Felonious Gru, Jerry the Minion"
+        },
+        {
+          "initiative": "Teams",
+          "type": "Knowledge Base",
+          "status": "In progress",
+          "architects": "Felonious Gru"
+        }
+      ]
+    },
+    {
+      "source": "Strategic Initiatives",
       "data": [
         {
           "group": "General",
@@ -176,101 +271,6 @@
           "initiative": "Brand D Legacy",
           "architects": "Lucy Wilde, Larry The Minion, Jorge the Minion, Margo",
           "status": "Ad-Hoc"
-        }
-      ]
-    },
-    {
-      "source": "Big Picture Dashboard",
-      "data": [
-        {
-          "initiative": "Architecture Dashboard Website",
-          "type": "Infrastructure",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Mark the Minion"
-        },
-        {
-          "initiative": "GitHub Repositories Analysis",
-          "type": "Source Code Analysis",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jorge the Minion"
-        },
-        {
-          "initiative": "AWS Costs Analysis",
-          "type": "Infrastructure Analysis",
-          "status": "Maintenance",
-          "architects": "Felonious Gru"
-        },
-        {
-          "initiative": "GCP Costs Analysis",
-          "type": "Infrastructure Analysis",
-          "status": "Maintenance",
-          "architects": "Felonious Gru"
-        },
-        {
-          "initiative": "Incidents Explorer",
-          "type": "Infrastructure Analysis",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Data Models",
-          "type": "Infrastructure Analysis",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Capabilities Map",
-          "type": "Strategy",
-          "status": "In progress",
-          "architects": "Felonious Gru, Lucy Wilde"
-        },
-        {
-          "initiative": "Architecture Summits",
-          "type": "Community Building",
-          "status": "Maintenance",
-          "architects": "Felonious Gru"
-        },
-        {
-          "initiative": "Architecture Talks",
-          "type": "Community Building",
-          "status": "Maintenance",
-          "architects": "Dave the Minion"
-        },
-        {
-          "initiative": "Architecture Backlog",
-          "type": "Architecture System",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Who-is-Who",
-          "type": "Knowledge Base",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Competition Overview",
-          "type": "Knowledge Base",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Slack Buzz",
-          "type": "Knowledge Base",
-          "status": "Maintenance",
-          "architects": "Felonious Gru"
-        },
-        {
-          "initiative": "Decision Records Index",
-          "type": "Architecture System",
-          "status": "Maintenance",
-          "architects": "Felonious Gru, Jerry the Minion"
-        },
-        {
-          "initiative": "Teams",
-          "type": "Knowledge Base",
-          "status": "In progress",
-          "architects": "Felonious Gru"
         }
       ]
     },
