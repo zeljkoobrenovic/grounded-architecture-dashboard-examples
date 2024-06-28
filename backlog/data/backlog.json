@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "exportDate": "2024-06-09"
+    "exportDate": "2024-06-28"
   },
   "data": [
     {
@@ -496,11 +496,6 @@
           "status": "Active"
         },
         {
-          "initiative": "Olivia Xhignesse",
-          "architects": "Kevin the Minion",
-          "status": "Inactive"
-        },
-        {
           "initiative": "Lucy Wilde",
           "architects": "Felonious Gru",
           "status": "Active"
@@ -513,11 +508,6 @@
         {
           "initiative": "Tim the Minion",
           "status": "Inactive"
-        },
-        {
-          "initiative": "Amin Khansari",
-          "architects": "Dave the Minion",
-          "status": "Active"
         }
       ]
     },
