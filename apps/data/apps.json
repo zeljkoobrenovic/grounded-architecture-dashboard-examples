@@ -45,6 +45,13 @@
     "source": "source code"
   },
   {
+    "name": "Marketplace Currency",
+    "link": "../../value-exchange/docs/index.html",
+    "icon": "value-exchange.png",
+    "description": "money, data, attention, or services",
+    "source": "source code"
+  },
+  {
     "startgroup": "architecture practice",
     "name": "Grounded Architecture",
     "link": "https://grounded-architecture.io/",

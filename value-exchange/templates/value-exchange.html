@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Exchange</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 14px; margin-top: 0px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 5px; margin-left: 6px; margin-top: 0">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 100px">
+        <div style="display: inline-block; vertical-align: middle">
+            <b>Marketplaces Value Exchange</b>
+        </div>
+    </h1>
+    <div style="margin-left: 12px; font-size: 16px; color: grey">Exchanging value via four "currencies": money, data,
+        attention, or
+        services.
+    </div>
+</div>
+
+<script>
+    const data = ${data};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+
+    function addSummaryStream(items, icon, arrowIcon, color) {
+        if (items) {
+            html += '<div style="display: inline-block; cursor: help" title="' + items + '">';
+            html += '<div style="background-color: ' + color + '; border-radius: 50%; display: inline-block; vertical-align: middle; cursor: help" title="' + items + '">';
+            html += '<img src="icons/' + icon + '.png" style="width: 42px; vertical-align: middle">';
+            html += '</div>';
+            html += '<div style="display: inline-block; margin-left: -12px; vertical-align: top; background-color: white; border: 1px solid lightgrey; width: 12px; height: 12px; border-radius: 50%; font-size: 10px; text-align: center">' + items.split('\n').filter(item => item.trim().length).length + '</div>';
+            html += '</div>';
+        } else {
+            html += '<div style="display: inline-block; vertical-align: middle;">';
+            html += '<img src="icons/' + icon + '.png" style="width: 42px; vertical-align: middle; opacity: 0.08">';
+            html += '</div>';
+        }
+    }
+
+    html += '<div style="margin-left: 25px">';
+    html += '<div style="margin-bottom: 24px">';
+    html += '<div style="width: 80px; text-align: center; display: inline-block; vertical-align: top">';
+    html += '<img src="icons/attention.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+    html += '<div style="font-size: 80%; color: #c0c0c0; text-align: center">attention</div>';
+    html += '</div>';
+    html += '<div style="width: 80px; text-align: center; display: inline-block; vertical-align: top">';
+    html += '<img src="icons/money.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+    html += '<div style="font-size: 80%; color: #c0c0c0; text-align: center">money</div>';
+    html += '</div>';
+    html += '<div style="width: 80px; text-align: center; display: inline-block; vertical-align: top">';
+    html += '<img src="icons/service.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+    html += '<div style="font-size: 80%; color: #c0c0c0; text-align: center"><a style="color: #c0c0c0" href="icons/value_pyramides.svg" target="_blank">valuable</a><br>service</div>';
+    html += '</div>';
+    html += '<div style="width: 80px; text-align: center; display: inline-block; vertical-align: top">';
+    html += '<img src="icons/data.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+    html += '<div style="font-size: 80%; color: #c0c0c0; text-align: center"><a style="color: #c0c0c0" href="icons/value_pyramides.svg" target="_blank">valuable</a><br>data</div>';
+    html += '</div>';
+    html += '</div>';
+    html += '<table>';
+    html += '<tr style="color: #c0c0c0">';
+    html += '<td></td>';
+    html += '<td>Actor</td>';
+    html += '<td>Actor\'s Input</td>';
+    html += '<td></td>';
+    html += '<td></td>';
+    html += '<td></td>';
+    html += '<td>Actor\'s Gain</td>';
+    html += '</tr>';
+    const safeIconName = (iconName) => iconName.replace(/\(.*/g, '').trim().toLowerCase();
+
+    data.data[0].data.forEach(item => {
+        html += '<tr>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top; padding-top: 10px">';
+        html += '<img src="icons/' + safeIconName(item.actor) + '.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top; padding-top: 10px">';
+        html += item.actor.toUpperCase();
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top;">';
+        addSummaryStream(item.attention_in, 'attention', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        addSummaryStream(item.money_in, 'money', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        addSummaryStream(item.services_in, 'service', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        addSummaryStream(item.data_in, 'data', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        html += '</td>';
+        html += '<td style="border-top: 3px dashed grey; vertical-align: top;">';
+        html += '<div style=" vertical-align: top; ">';
+        html += '<img src="icons/arrow-in.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="border-top: 3px dashed grey; vertical-align: top;">';
+        html += '<div style=" vertical-align: top; ">';
+        html += '<img src="icons/marketplace.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="border-top: 3px dashed grey; vertical-align: top;">';
+        html += '<div style=" vertical-align: top; ">';
+        html += '<img src="icons/arrow-in.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top;">';
+        addSummaryStream(item.attention_out, 'attention', 'arrow-out', 'rgba(255, 255,0, 0.5)');
+        addSummaryStream(item.data_out, 'data', 'arrow-out', 'rgba(255, 255,0, 0.5)');
+        addSummaryStream(item.services_out, 'service', 'arrow-out', 'rgba(255, 255,0, 0.5)');
+        addSummaryStream(item.money_out, 'money', 'arrow-out', 'rgba(255, 255,0, 0.5)');
+        html += '</td>';
+        html += '</tr>';
+    });
+    html += '</table>';
+
+    html += '<div style="margin-top: 50px">';
+    html += '<h2>Detailed View</h2>';
+    html += '</div>';
+
+    function addStream(items, icon, arrowIcon, color) {
+        if (items) {
+            items.split('\n').filter(item => item.trim().length).forEach(input => {
+                input = input.trim();
+                html += '<div style="font-size: 70%">';
+                html += '<div style="border-radius: 50%; display: inline-block; vertical-align: middle; background-color: ' + color + '">';
+                html += '<img src="icons/' + safeIconName(icon) + '.png" style="width: 42px; vertical-align: middle">';
+                html += '</div>';
+                html += '<div style="display: inline-block; width: 200px; overflow: hidden; white-space: nowrap; background-color: ' + color + '; vertical-align:middle">&nbsp;' + input + '</div>'
+                html += '</div>';
+            });
+        }
+    }
+
+    html += '<table>';
+    data.data[0].data.forEach(item => {
+        html += '<tr>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top; padding-top: 10px">';
+        html += '<img src="icons/' + safeIconName(item.actor) + '.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top; padding-top: 10px">';
+        html += item.actor.toUpperCase();
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top;">';
+        addStream(item.attention_in, 'attention', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        addStream(item.services_in, 'service', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        addStream(item.money_in, 'money', 'arrow-in', 'rgba(0, 255,0, 0.5);');
+        addStream(item.data_in, 'data', 'arrow-in', 'rgba(0, 255,0, 0.5)');
+        html += '</td>';
+        html += '<td style="border-top: 3px dashed grey; vertical-align: top;">';
+        html += '<div style=" vertical-align: top; ">';
+        html += '<img src="icons/arrow-in.png" style="width: 42px; vertical-align: middle; margin-left: 12px; margin-right: 12px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="border-top: 3px solid grey; vertical-align: top;">';
+        addStream(item.attention_out, 'attention', 'arrow-in', 'rgba(255, 255,0, 0.5)');
+        addStream(item.services_out, 'service', 'arrow-in', 'rgba(255, 255,0, 0.5)');
+        addStream(item.money_out, 'money', 'arrow-in', 'rgba(255, 255,0, 0.5)');
+        addStream(item.data_out, 'data', 'arrow-in', 'rgba(255, 255,0, 0.5)');
+        html += '</td>';
+        html += '</tr>';
+    });
+    html += '</table>';
+
+    html += '</div>';
+
+    div.outerHTML = html;
+</script>
+
+<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} from <a style="color: #a0a0a0;" target="_blank" href="${source_link}">this data source</a>
+</div>
+</body>
+</html>

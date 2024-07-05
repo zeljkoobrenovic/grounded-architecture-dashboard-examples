@@ -1,0 +1,50 @@
+{
+  "metadata": {
+    "exportDate": "2024-07-05"
+  },
+  "data": [
+    {
+      "source": "Value Exchange",
+      "data": [
+        {
+          "actor": "Buyer (B2C)",
+          "attention_in": "Buyer Attention (??million MAU)",
+          "money_in": "Advanced Buyer Features (like exclusives)",
+          "data_in": "Search Queries\nPersonal Data\nFeedback Data\nInteraction Data",
+          "services_out": "Search and Information Services\nNotification Services\nTrust and Safety Services\nCustomer Support Services"
+        },
+        {
+          "actor": "Broker (B2B)",
+          "attention_out": "Buyer Attention\nSeller Attention",
+          "money_in": "Listing Posting (Subscription)\nListing Posting (Pay-per-Listing)\nOn-Top-Products (OTPs)\nBundles (Listing Posting + OTPs)",
+          "data_in": "Active Lisitngs Data (??M+ active listings)\nExternal Listings Data\nAgency Data (10K+ accounts)",
+          "data_out": "Buyer Leads Data\nSeller Leads Data\nListing Analytics",
+          "services_out": "Listing Posting Services\nBroker Online Services\nTrust and Safety Services"
+        },
+        {
+          "actor": "Seller (B2C)",
+          "attention_in": "Seller Attention",
+          "money_in": "Pay per Listing",
+          "data_in": "Inventory Data\nPersonal Data",
+          "data_out": "Seller Analytics",
+          "services_out": "Estimation and Information Services\nSeller Services\nTrust and Safety Services\nConsumer Portal Services"
+        },
+        {
+          "actor": "Advertiser",
+          "attention_out": "Buyers' Attention",
+          "money_in": "Ads Subscription\nAds Pay Per Click\n",
+          "data_in": "Media Ads Data",
+          "data_out": "Ads Analytics",
+          "services_out": "Ad Services"
+        },
+        {
+          "actor": "Marketplace",
+          "money_out": "Broker Revenue\nSeller Revenue\nBuyer Revenue\nAdvertisers Revenue",
+          "data_in": "Inventory Data\nMarket Data\nSEO Metadata",
+          "data_out": "Broker Data\nSeller Data\nBuyer Data\nAdvertisers Data",
+          "services_in": "Buyer Services\nSeller Services\nBroker Services\nAd Services\nTrust and Safety Services"
+        }
+      ]
+    }
+  ]
+}
