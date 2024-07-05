@@ -92,9 +92,56 @@
         ::-ms-input-placeholder {
             color: lightgrey;
         }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
     </style>
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </head>
 <body>
 <div style="margin-top: 10px"><img src="icons/architecture.png" style="height: 124px"></div>
@@ -103,18 +150,26 @@
     Insights (see <a href="https://grounded-architecture.io/" target="_blank">Grounded Architecture</a>, and
     <a href="https://grounded-architecture.io/data" target="_blank">Data Foundation</a>)
 </div>
-<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
-    <div>
-        <input id="filter" type="text" placeholder="search..."
-               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
-               onkeyup="update()">
-        <div id="summary" style="display: inline-block"></div>
-    </div>
+<div class="tab">
+    <button id="overview_tab" class="tablinks active" onclick="openTab(event, 'overview')">Active</button>
+    <button id="current_tab" class="tablinks" onclick="openTab(event, 'archive')">Archive</button>
 </div>
-<div id="content"></div>
-<script>
-    const array = [{"startgroup": "knowledge sharing", "name": "Architecture Summit", "link": "../../summit/docs/index.html", "icon": "summit.png", "description": "March 3, 2030", "source": ""}, {"startgroup": "technical dashboards", "name": "All Repositories", "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html", "icon": "atlas.png", "description": "analysis of all active<br>source code repositories", "source": "source code analysis"}, {"name": "AWS Usage Explorer", "link": "../../aws/docs/index.html", "icon": "aws.png", "description": "tech radar generated<br>from AWS billing report", "source": "cloud billing report"}, {"name": "Incidents Explorer", "link": "../../incidents/docs/index.html", "icon": "incidents.png", "description": "visualization of incidents' timeline", "source": "slack"}, {"startgroup": "progress tracking", "name": "Capability Map", "link": "../../capability-map/docs/index.html", "icon": "capabilities.png", "description": "a configurable map<br>of capabilities", "source": ""}, {"name": "Legacy Assets", "link": "../../legacy/docs/index.html", "icon": "legacydebt.png", "description": "overview of legacy assets<br>and WL connectors and ACLs", "source": "source code"}, {"name": "Marketplace Currency", "link": "../../value-exchange/docs/index.html", "icon": "value-exchange.png", "description": "money, data, attention, or services", "source": "source code"}, {"startgroup": "architecture practice", "name": "Grounded Architecture", "link": "https://grounded-architecture.io/", "icon": "grounded-architecture.jpeg", "description": "the grounded architecture vision", "source": ""}, {"name": "Architecture Backlog", "link": "../../backlog/docs/index.html", "icon": "backlog.png", "description": "an overview of what<br>architects actually do", "source": ""}, {"name": "Golden Guidelines", "startgroup": "golden paths", "link": "../../golden-paths/guidelines/docs/index.html", "icon": "golden-process.png", "description": "key guidelines and processes", "source": "conventions document"}, {"name": "Golden Paths: Tech", "link": "../../golden-paths/tech/docs/index.html", "icon": "golden-paths.png", "description": "recommended technologies<br>for WL products", "source": "golden paths sheet"}, {"name": "Naming Conventions", "link": "../../golden-paths/names/docs/index.html", "icon": "tags.png", "description": "naming and tagging<br>conventions", "source": "conventions document"}, {"name": "Architecture Principles", "link": "../../principles/docs/index.html", "icon": "principles.png", "description": "The John Lewis Partnership Engineering Principles", "source": "sheet"}, {"startgroup": "org info", "name": "Who-is-Who", "link": "../../people/docs/workday.html", "icon": "who-is-who.png", "description": "people index based on<br>Workday data", "source": "workday"}, {"name": "Key People", "link": "../../people/docs/index.html", "icon": "architecture.png", "description": "architects per domain", "source": "sheet"}, {"name": "#Slack Buzz", "link": "../../slack/docs/index.html", "icon": "slack.png", "description": "overview of activity in Slack channels in past 30 days", "source": "slack analytics"}, {"startgroup": "brands", "name": "Real Estate", "link": "../../brands/docs/brands.html", "icon": "real-estate.png", "description": "overview of<br>RE brands", "source": "public online resources"}, {"name": "Travel", "link": "../../brands/docs/travel.html", "icon": "travel.png", "description": "index of travel companies", "source": "public online resources"}, {"startgroup": "source code", "name": "This Source Code", "link": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples", "icon": "github.png", "description": "source code of<br>this dashboard", "source": "manual entry"}];
 
+<div id="overview" class="tabcontent" style="display: block; margin: 0; padding: 6px">
+    <div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+        <div>
+            <input id="filter" type="text" placeholder="search..."
+                   style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+                   onkeyup="update()">
+            <div id="summary" style="display: inline-block"></div>
+        </div>
+    </div>
+    <div id="active_apps"></div>
+</div>
+<div id="archive" class="tabcontent" style="margin: 0; padding: 6px">
+    <div id="archived_apps"></div>
+</div>
+<script>
     function parseStartGroup(group) {
         group = group.trim();
         if (group.startsWith('[')) {
@@ -126,11 +181,11 @@
         }
     }
 
-    function update() {
+    function update(apps, divId) {
         const filter = document.getElementById('filter').value;
         let html = '';
         let prevGroup = null;
-        array.filter(a => !filter || (a.name).toLowerCase().includes(filter.toLowerCase())).forEach(function (app) {
+        apps.filter(a => !filter || (a.name).toLowerCase().includes(filter.toLowerCase())).forEach(function (app) {
             if (filter.length === 0 && app.startgroup) {
                 if (prevGroup) {
                     html += '</div>';
@@ -169,10 +224,11 @@
             html += '</div>';
         }
 
-        document.getElementById('content').innerHTML = html;
+        document.getElementById(divId).innerHTML = html;
     }
 
-    update();
+    update([{"startgroup": "technical dashboards", "name": "All Repositories", "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html", "icon": "atlas.png", "description": "analysis of all active<br>source code repositories", "source": "source code analysis"}, {"name": "AWS Usage Explorer", "link": "../../aws/docs/index.html", "icon": "aws.png", "description": "tech radar generated<br>from AWS billing report", "source": "cloud billing report"}, {"name": "Incidents Explorer", "link": "../../incidents/docs/index.html", "icon": "incidents.png", "description": "visualization of incidents' timeline", "source": "slack"}, {"startgroup": "progress tracking", "name": "Capability Map", "link": "../../capability-map/docs/index.html", "icon": "capabilities.png", "description": "a configurable map<br>of capabilities", "source": ""}, {"name": "Legacy Assets", "link": "../../legacy/docs/index.html", "icon": "legacydebt.png", "description": "overview of legacy assets<br>and WL connectors and ACLs", "source": "source code"}, {"name": "Marketplace Currency", "link": "../../value-exchange/docs/index.html", "icon": "value-exchange.png", "description": "money, data, attention, or services", "source": "source code"}, {"startgroup": "architecture practice", "name": "Grounded Architecture", "link": "https://grounded-architecture.io/", "icon": "grounded-architecture.jpeg", "description": "the grounded architecture vision", "source": ""}, {"name": "Architecture Backlog", "link": "../../backlog/docs/index.html", "icon": "backlog.png", "description": "an overview of what<br>architects actually do", "source": ""}, {"name": "Golden Guidelines", "startgroup": "golden paths", "link": "../../golden-paths/guidelines/docs/index.html", "icon": "golden-process.png", "description": "key guidelines and processes", "source": "conventions document"}, {"name": "Golden Paths: Tech", "link": "../../golden-paths/tech/docs/index.html", "icon": "golden-paths.png", "description": "recommended technologies<br>for WL products", "source": "golden paths sheet"}, {"name": "Naming Conventions", "link": "../../golden-paths/names/docs/index.html", "icon": "tags.png", "description": "naming and tagging<br>conventions", "source": "conventions document"}, {"name": "Architecture Principles", "link": "../../principles/docs/index.html", "icon": "principles.png", "description": "The John Lewis Partnership Engineering Principles", "source": "sheet"}, {"startgroup": "org info", "name": "Who-is-Who", "link": "../../people/docs/workday.html", "icon": "who-is-who.png", "description": "people index based on<br>Workday data", "source": "workday"}, {"name": "Key People", "link": "../../people/docs/index.html", "icon": "architecture.png", "description": "architects per domain", "source": "sheet"}, {"name": "#Slack Buzz", "link": "../../slack/docs/index.html", "icon": "slack.png", "description": "overview of activity in Slack channels in past 30 days", "source": "slack analytics"}, {"startgroup": "brands", "name": "Real Estate", "link": "../../brands/docs/brands.html", "icon": "real-estate.png", "description": "overview of<br>RE brands", "source": "public online resources"}, {"name": "Travel", "link": "../../brands/docs/travel.html", "icon": "travel.png", "description": "index of travel companies", "source": "public online resources"}, {"startgroup": "source code", "name": "This Source Code", "link": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples", "icon": "github.png", "description": "source code of<br>this dashboard", "source": "manual entry"}], 'active_apps');
+    update([{"startgroup": "knowledge sharing", "name": "Architecture Summit", "link": "../../summit/docs/index.html", "icon": "summit.png", "description": "March 3, 2030", "source": ""}], 'archived_apps');
 </script>
 </body>
 </html>

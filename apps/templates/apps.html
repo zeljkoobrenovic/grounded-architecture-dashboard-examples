@@ -92,9 +92,56 @@
         ::-ms-input-placeholder {
             color: lightgrey;
         }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
     </style>
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
     <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </head>
 <body>
 <div style="margin-top: 10px"><img src="icons/architecture.png" style="height: 124px"></div>
@@ -103,18 +150,26 @@
     Insights (see <a href="https://grounded-architecture.io/" target="_blank">Grounded Architecture</a>, and
     <a href="https://grounded-architecture.io/data" target="_blank">Data Foundation</a>)
 </div>
-<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
-    <div>
-        <input id="filter" type="text" placeholder="search..."
-               style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
-               onkeyup="update()">
-        <div id="summary" style="display: inline-block"></div>
-    </div>
+<div class="tab">
+    <button id="overview_tab" class="tablinks active" onclick="openTab(event, 'overview')">Active</button>
+    <button id="current_tab" class="tablinks" onclick="openTab(event, 'archive')">Archive</button>
 </div>
-<div id="content"></div>
-<script>
-    const array = ${data};
 
+<div id="overview" class="tabcontent" style="display: block; margin: 0; padding: 6px">
+    <div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+        <div>
+            <input id="filter" type="text" placeholder="search..."
+                   style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+                   onkeyup="update()">
+            <div id="summary" style="display: inline-block"></div>
+        </div>
+    </div>
+    <div id="active_apps"></div>
+</div>
+<div id="archive" class="tabcontent" style="margin: 0; padding: 6px">
+    <div id="archived_apps"></div>
+</div>
+<script>
     function parseStartGroup(group) {
         group = group.trim();
         if (group.startsWith('[')) {
@@ -126,11 +181,11 @@
         }
     }
 
-    function update() {
+    function update(apps, divId) {
         const filter = document.getElementById('filter').value;
         let html = '';
         let prevGroup = null;
-        array.filter(a => !filter || (a.name).toLowerCase().includes(filter.toLowerCase())).forEach(function (app) {
+        apps.filter(a => !filter || (a.name).toLowerCase().includes(filter.toLowerCase())).forEach(function (app) {
             if (filter.length === 0 && app.startgroup) {
                 if (prevGroup) {
                     html += '</div>';
@@ -169,10 +224,11 @@
             html += '</div>';
         }
 
-        document.getElementById('content').innerHTML = html;
+        document.getElementById(divId).innerHTML = html;
     }
 
-    update();
+    update(${active}, 'active_apps');
+    update(${archived}, 'archived_apps');
 </script>
 </body>
 </html>

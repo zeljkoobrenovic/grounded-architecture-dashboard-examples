@@ -1,13 +1,5 @@
 [
   {
-    "startgroup": "knowledge sharing",
-    "name": "Architecture Summit",
-    "link": "../../summit/docs/index.html",
-    "icon": "summit.png",
-    "description": "March 3, 2030",
-    "source": ""
-  },
-  {
     "startgroup": "technical dashboards",
     "name": "All Repositories",
     "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html",
