@@ -18,8 +18,10 @@ for source in data['data']:
 
 indexTemplate = open('templates/index.html').read();
 with open('docs/index.html', 'w') as html_file:
+    work = json.load(open('data/work.json'))
     content = indexTemplate.replace('${data}', json.dumps(sources))
     content = content.replace('${date}', date_string)
     content = content.replace('${source_link}', config['sheets']['data'])
+    content = content.replace('${work}', json.dumps(work))
 
     html_file.write(content)

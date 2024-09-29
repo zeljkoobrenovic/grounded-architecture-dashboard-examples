@@ -1,0 +1,493 @@
+{
+  "regular": [
+    {
+      "name": "Architecture Analytics",
+      "sections": [
+        {
+          "name": "Transformation Data",
+          "items": [
+            {
+              "title": "Capability Map",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "+ regular cadence",
+                "+ key experts involved",
+                "- low involvement from architects"
+              ]
+            },
+            {
+              "title": "Legacy Map",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "+ regular cadence",
+                "+/- good involvement from architects",
+                "- uneven representation across domains"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Public Cloud Data",
+          "items": [
+            {
+              "title": "AWS Usage",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "- little interest to give a talk",
+                "- many recent talks canceled",
+                "+/- OK atttendance",
+                "+ good start, some history"
+              ]
+            },
+            {
+              "title": "AWS Explorer",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "- little interest to give a talk",
+                "- many recent talks canceled",
+                "+/- OK atttendance",
+                "+ good start, some history"
+              ]
+            },
+            {
+              "title": "GCP Usage",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "+ regular cadence",
+                "+/- good involvement from architects",
+                "- uneven representation across domains"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Source Code Analyses",
+          "items": [
+            {
+              "title": "GitHub Atlas",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "- little interest to give a talk",
+                "- many recent talks canceled",
+                "+/- OK atttendance",
+                "+ good start, some history"
+              ]
+            },
+            {
+              "title": "GitHub CoPilot",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "- little interest to give a talk",
+                "- many recent talks canceled",
+                "+/- OK atttendance",
+                "+ good start, some history"
+              ]
+            },
+            {
+              "title": "TFS Analysis",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                "+/- ad-hoc, not fully automated"
+              ]
+            },
+            {
+              "title": "GitLab Analysis",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                "+/- ad-hoc, not fully automated"
+              ]
+            },
+            {
+              "title": "BitBucket Analysis",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                "+/- ad-hoc, not fully automated"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tech Docs",
+          "items": [
+            {
+              "title": "Incidents Explorer",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "ADR Inventory",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            }]
+        },
+        {
+          "name": "Product & Execution Data",
+          "items": [
+            {
+              "title": "Product Portfolio",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                ""
+              ]
+            },
+            {
+              "title": "Product Reviews",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                ""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Community Building",
+      "sections": [
+        {
+          "name": "Guilds",
+          "items": [
+            {
+              "title": "Frontend Guild",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                "+ regular cadence",
+                "+ key experts involved",
+                "- low involvement from architects"
+              ]
+            },
+            {
+              "title": "Backend Guild",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                "+ regular cadence",
+                "+/- good involvement from architects",
+                "- uneven representation across domains"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Expert Gatherings",
+          "items": [
+            {
+              "title": "Bi-Weekly Architecture Talks",
+              "link": "",
+              "ragStatus": "red",
+              "statusNotes": [
+                "- little interest to give a talk",
+                "- many recent talks canceled",
+                "+/- OK atttendance",
+                "+ good start, some history"
+              ]
+            },
+            {
+              "title": "Architecture Summits",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Key Stakeholder Relationships",
+          "items": [
+            {
+              "title": "Domain Engineering Leaders",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Engineering Managers",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Engineers",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Domain Product Leaders",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Product Managers",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "ProductOps",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Security CoE",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "DevOps CoE",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "QA CoE",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "HR & Talent Management",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Commercial Stakeholders",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Governance & Execution",
+      "sections": [
+        {
+          "name": "Golden Paths",
+          "items": [
+            {
+              "title": "Technology Golden Paths",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+                ""
+              ]
+            },
+            {
+              "title": "Golden Guidelines",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                ""
+              ]
+            },
+            {
+              "title": "Naming Conventions",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Key Processes",
+          "items": [
+            {
+              "title": "RfC Process",
+              "link": "",
+              "ragStatus": "red",
+              "statusNotes": [
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "name": "OKR SteerCo",
+          "items": [
+            {
+              "title": "Transformation Reporting",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Legacy Retiring Reporting",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Key Programs Support",
+          "items": [
+            {
+              "title": "Program 1",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Program 2",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Program 3",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Program 4",
+              "link": "",
+              "ragStatus": "red",
+              "statusNotes": [
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Internal",
+      "sections": [
+        {
+          "name": "Team Rituals",
+          "items": [
+            {
+              "title": "Group Meetings",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Solutions Architects Meetings",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "EA Meetings",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Off-sites",
+              "link": "",
+              "ragStatus": "red",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Engagement Score",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Reporting Hygiene",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Thought Leadership",
+          "items": [
+            {
+              "title": "Internal Talks/Publishing",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "External Talks/Publishing",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Company Behaviors",
+          "items": [
+            {
+              "title": "Datafy",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Customer Obsessed",
+              "link": "",
+              "ragStatus": "amber",
+              "statusNotes": [
+              ]
+            },
+            {
+              "title": "Simplify",
+              "link": "",
+              "ragStatus": "green",
+              "statusNotes": [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

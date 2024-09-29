@@ -92,15 +92,15 @@
     <h1 style="font-size: 50px; margin-bottom: -10px; margin-left: 6px">
         <img src="icons/who-is-who.png" style="vertical-align: middle; height: 110px; vertical-align: top">
         <div style="display: inline-block;  padding-left: 6px; vertical-align: top; padding-top: 8px;">
-            <b>People</b>
-            <p style="font-size: 17px; margin-top: 4px; color: gray">A curated list of key people in the
-                organization</p>
+            <b>Architecture Team</b>
+            <p style="font-size: 17px; margin-top: 4px; color: gray">A curated list of architects and their work</p>
         </div>
     </h1>
     <br>
 </div>
 <script>
     const array = ${data};
+    const work = ${work};
 
     let div = document.createElement('div');
     document.body.appendChild(div);
@@ -112,7 +112,7 @@
         html += '<button class="tablinks' + (first ? ' active' : '') + '" onclick="openTab(event, \'' + source.name + '\')">' + source.name + ' (' + source.count + ')</button>';
         first = false;
     });
-    html += '<button class="tablinks" onclick="openTab(event, \'culture-maps\')">Culture Maps</button>';
+    html += '<button class="tablinks" onclick="openTab(event, \'kpi\')">KPIs</button>';
     html += '</div>';
 
     first = true;
@@ -125,20 +125,88 @@
         }
     });
 
-    const countries = ['de', 'fr', 'be', 'es', 'il', 'ch', 'nl', 'au', 'ie', 'se', 'us', 'ca', 'cn', 'jp', 'dk', 'no', 'fi', 'ro', 'bg', 'ru', 'tr', 'mx'];
+    html += '<div id="kpi" class="tabcontent" style="padding: 40px; overflow: auto">';
 
-    html += '<div id="culture-maps" class="tabcontent">\n';
+    function colorOf(ragStatus) {
+        if (ragStatus === 'red') return 'crimson';
+        if (ragStatus === 'green') return 'green';
 
-    countries.forEach(country => {
-        html += '<div class="map">';
-        html += '<img class="flag" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + country + '.svg"><br>';
-        html += '<a target="_blank" href="culture-map/' + country + '.png">';
-        html += '<img src="culture-map/' + country + '.png" class="mapThumb">';
-        html += '</a>';
+        if (ragStatus === 'amber') return '#FFBF00';
+        if (ragStatus === 'yellow') return '#FFBF00';
+
+        return 'lightgrey';
+    }
+
+    function distributionOf(chapter) {
+        const distribution = {
+            counts: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            percentages: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            score: 0
+        }
+        let total = 0;
+        chapter.sections.forEach(section => {
+            section.items.forEach(item => {
+                const status = item.ragStatus;
+
+                if (status === 'red') distribution.counts.red++;
+                else if (status === 'green') distribution.counts.green++;
+                else if (status === 'amber') distribution.counts.amber++;
+                else if (status === 'yellow') distribution.counts.amber++;
+
+                total += 1;
+            });
+        });
+
+        if (total > 0) {
+            distribution.percentages.red = 100 * distribution.counts.red / total;
+            distribution.percentages.amber = 100 * distribution.counts.amber / total;
+            distribution.percentages.green = 100 * distribution.counts.green / total;
+
+            distribution.score = Math.round(10 * ((distribution.counts.red * 1) + distribution.counts.amber * 5 + distribution.counts.green * 10) / total) / 10;
+        }
+
+        return distribution;
+    }
+
+    work.regular.forEach(chapter => {
+        const distribution = distributionOf(chapter);
+        html += '<div style="margin-bottom: 60px; display: inline-block; vertical-align: top; border-left: 1px solid grey; padding: 12px">';
+        html += '<div style="font-size: 160%;">' + chapter.name + ' (' + distribution.score + ')</div>';
+        html += '<div>';
+        let percentages = distribution.percentages;
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.green + '%; background-color: green"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.amber + '%; background-color: #FFBF00"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.red + '%; background-color: crimson"></div>';
+        html += '</div>';
+        chapter.sections.forEach(section => {
+            html += '<div style="margin-bottom: 40px; border-left: 1px dashed grey">';
+            html += '<div style="font-size: 130%; margin-top: 22px; margin-left: 12px;">' + section.name + '</div>';
+            section.items.forEach(item => {
+                const title = 'Status: ' + item.ragStatus + '\n\n' + item.statusNotes.join('\n');
+                html += '<div style="margin: 10px; margin-left: 40px;">';
+                html += '<div style="margin: 1px; vertical-align: middle; cursor: help; display: inline-block; width: 36px; height: 17px; background-color: ' + colorOf(item.ragStatus) + '; border-radius: 0; margin-right: 6px;" title="' + title + '"></div>';
+                html += '<div style="vertical-align: middle; display: inline-block; width: 250px; height: 22px; padding-top: 3px">';
+                if (item.link) html += '<a style="text-decoration: none; width: 400px" target="_blank" href="' + item.link + '">';
+                html += item.title;
+                if (item.link) html += '</a>&nbsp;';
+                html += '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        });
         html += '</div>';
     });
 
-    html += '</div>\n';
+
+    html += '</div>';
 
     html += '</div>';
     div.outerHTML = html;
