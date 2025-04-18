@@ -33,6 +33,13 @@
     "name": "Legacy Assets",
     "link": "../../legacy/docs/index.html",
     "icon": "legacydebt.png",
+    "description": "a spreadsheet to calcualte<br>cost of maintainting legacy assets",
+    "source": "source code"
+  },
+  {
+    "name": "Legacy Damage<br>Calculator",
+    "link": "https://docs.google.com/spreadsheets/d/1I5Q0ox4lrCrIdS3lUdeo2TKADwgi7F_8QeFMFd5bRvQ/edit?usp=sharing",
+    "icon": "damage.png",
     "description": "overview of legacy assets<br>and WL connectors and ACLs",
     "source": "source code"
   },
