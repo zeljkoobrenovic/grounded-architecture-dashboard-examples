@@ -1,0 +1,87 @@
+[
+  {
+    "group": "",
+    "prompts": [
+      {
+        "icon": "icons/cloud-cost-analyst.svg",
+        "name": "Cloud Cost Optimization Analyst",
+        "file": "prompts/cloud-cost-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "aws/data/services.csv",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/aws/data/csv/services.csv"
+          }
+        ],
+        "tips": []
+      },
+      {
+        "icon": "icons/incident-analyst.svg",
+        "name": "Production Incidents Analyst",
+        "file": "prompts/incident-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+          "You can customize it further by adding constraints (e.g., only focus on the past 30 days, or filter by criticality), or request a comparison between months/teams/brands."
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Architecture Principles Analyst",
+        "file": "prompts/architecture-principles-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "principles/data/principles.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/principles/data/principles.json"
+          }
+        ],
+        "tips": []
+      },
+      {
+        "icon": "",
+        "name": "ADR Analyst",
+        "file": "prompts/adr-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "ADR examples (copy the content of the file to the clipboard)",
+            "href": "https://github.com/joelparkerhenderson/architecture-decision-record/tree/main/locales/en/examples"
+          }
+        ],
+        "tips": []
+      },
+      {
+        "icon": "",
+        "name": "Business Strategy Analyst",
+        "file": "prompts/business-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "value-exchange/data/value-exchange.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/value-exchange/data/value-exchange.json"
+          }
+        ],
+        "tips": []
+      },
+      {
+        "icon": "",
+        "name": "Snyk Security Analyst",
+        "file": "prompts/snyk-security-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "snyk-labs test data",
+            "href": "https://github.com/snyk-labs/snyk-issues-to-csv/blob/main/output/2021-05-17/group-dcf9cae3-2f54-4ad2-98af-e70b844657f3/combined.csv"
+          }
+        ],
+        "tips": []
+      }
+    ]
+  }
+]

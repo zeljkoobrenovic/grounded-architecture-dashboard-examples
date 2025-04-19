@@ -1,13 +1,35 @@
 [
   {
-    "startgroup": "technical dashboards",
-    "name": "All Repositories",
-    "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html",
-    "icon": "atlas.png",
-    "description": "analysis of all active<br>source code repositories",
+    "startgroup": "source code",
+    "name": "OpenAI OSS Repos",
+    "link": "https://d3axxy9bcycpv7.cloudfront.net/openai/_sokrates_landscape/index.html",
+    "icon": "openai.png",
+    "description": "analysis of all public<br>source code repositories",
     "source": "source code analysis"
   },
   {
+    "name": "Apache (ASF) Repos",
+    "link": "https://d3axxy9bcycpv7.cloudfront.net/asf/_sokrates_landscape/index.html",
+    "icon": "asf.png",
+    "description": "analysis of all public<br>source code repositories",
+    "source": "source code analysis"
+  },
+  {
+    "name": "Uber OSS Repos",
+    "link": "https://d3axxy9bcycpv7.cloudfront.net/uber/_sokrates_landscape/index.html",
+    "icon": "uber.png",
+    "description": "analysis of all public<br>source code repositories",
+    "source": "source code analysis"
+  },
+  {
+    "name": "Meta OSS Repos",
+    "link": "https://d3axxy9bcycpv7.cloudfront.net/meta/_sokrates_landscape/index.html",
+    "icon": "meta.png",
+    "description": "analysis of all public<br>source code repositories",
+    "source": "source code analysis"
+  },
+  {
+    "startgroup": "operations",
     "name": "AWS Usage Explorer",
     "link": "../../aws/docs/index.html",
     "icon": "aws.png",

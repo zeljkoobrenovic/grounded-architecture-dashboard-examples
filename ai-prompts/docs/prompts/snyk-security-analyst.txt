@@ -1,0 +1,17 @@
+**Prompt:**
+
+_"You are a seasoned security analyst. Analyze this Snyk CSV file and provide a security insights report. The report should include the following sections:_
+
+1. **Key Themes** – summarize the dominant vulnerability patterns and trends across the data.
+2. **Top Security Risks** – identify the most critical and high-priority issues, based on severity, exploit maturity, and frequency.
+3. **What’s Working (Strengths)** – highlight any positive observations (e.g., low number of criticals, wide scan coverage).
+4. **Opportunities for Improvement** – suggest actions the team can take to improve security posture (e.g., better secrets management, dependency hygiene, remediation processes).
+5. **Supporting Data** – include summary stats such as:
+  - Number of total, unique, and exploitable issues
+  - Most common vulnerability types
+  - Most vulnerable packages and projects
+  - Severity breakdown_
+
+_Use bullet points where helpful, and keep it concise and actionable._  
+
+_[Input: attach or provide Snyk CSV file]_

@@ -1,0 +1,12 @@
+Analyze the following set of IT architecture principles. Your analysis should include:
+
+1. **Summary of Each Principle**: Briefly explain the purpose, value, and key trade-offs of each principle.
+2. **Categorization**: Group the principles by theme (e.g., Design, Operational, Organizational, Practices).
+3. **Strengths**: Highlight what the principles get right—alignment with best practices, clarity, relevance, and strategic value.
+4. **Gaps and Missing Elements**: Identify what's missing (e.g., governance, legacy management, integration, prioritization of principles).
+5. **Potential Conflicts or Tensions**: Point out where principles may contradict or create dilemmas and how to resolve them.
+6. **Organizational Consequences**: Describe what happens if the principles are followed at scale—both positive outcomes and risks.
+7. **Recommendations**: Suggest improvements to strengthen the architecture playbook (e.g., meta-principles, governance, prioritization, or implementation guidelines).
+8. **Summary Table**: Optionally include a concise table comparing principles on dimensions like clarity, scope, and impact.
+
+The goal is to critically evaluate the set of principles, not just summarize them.

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Prompts</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .prompt-container {
+            padding: 10px;
+            margin: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .prompt-textarea {
+            width: calc(100% - 40px);
+            height: 10em;
+            padding: 10px;
+            border: 1px solid lightgrey;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function copyToClipboard(id) {
+            const copyText = document.getElementById(id);
+
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+</head>
+<body style="">
+
+<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+    <div id="content"></div>
+</div>
+
+<script>
+    const prompts = ${prompts};
+
+    let promptCounter = 1;
+
+    function promptToHtml(prompt) {
+        let html = '';
+        html += '<div class="prompt-container">';
+        html += '<table>';
+        html += '<tr>';
+        const icon = prompt.icon ? prompt.icon : 'icons/bot.svg';
+        if (icon) {
+            html += '<td>';
+            html += '<img src="' + icon + '" style="width: 60px; height:60px; margin-top: 10px; margin-bottom: 10px; vertical-align: middle">';
+            html += '</td>';
+        }
+        html += '<td style="vertical-align: middle">';
+        html += '<div style="font-size: 24px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">' + prompt.name + '</div>';
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+        const id = 'prompt_' + promptCounter++;
+
+        html += '<div>Try on: ';
+        html += '<a target="_blank" href="https://chatgpt.com/?q=' + encodeURI(prompt.content) + '">OpenAI ChatGPT</a> | ';
+        html += '<a target="_blank" href="https://gemini.google.com/">Google Gemini</a>';
+        html += '</div>';
+
+        if (prompt.attachments) {
+            html += '<div style="margin-top: 6px">Files to upload: ';
+            let first = true;
+            prompt.attachments.forEach(attachment => {
+                if (!first) html += ' | ';
+                else first = false;
+
+                html += '<a target="_blank" href="' + attachment.href + '">' + attachment.label + '</a> ';
+            });
+            html += '</div>';
+        }
+
+        html += '<div style="margin-top: 10px; margin-bottom: 4px">Prompt (<a href="javascript:void(0)" onclick="copyToClipboard(\'' + id + '\')">copy</a>):</div>';
+        html += '<textarea class="prompt-textarea" id="' + id + '">';
+        html += prompt.content;
+        html += '</textarea>';
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        let html = '';
+
+        prompts.forEach(group => {
+            html += '<h2 style="margin-left: 10px">' + group.group + '</h2>';
+            group.prompts.forEach(prompt => {
+                html += promptToHtml(prompt);
+            });
+        });
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+
+</script>
+
+<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date}
+</div>
+</body>
+</html>

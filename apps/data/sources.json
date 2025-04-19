@@ -1,0 +1,276 @@
+{
+  "config": {
+    "websiteRoot": "https://zeljkoobrenovic.github.io/grounded-architecture-dashboard-examples/",
+    "sourceCodeRoot": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/tree/main/"
+  },
+  "current": {
+    "sokratesAnalysis": [
+      {
+        "frequency": "ad-hoc manually triggered",
+        "icon": "github.png",
+        "name": "ASF GitHub<br>(Public Repositories)",
+        "link": "https://github.com/apache",
+        "method": "Sokrates analysis",
+        "files": [
+        ]
+      },
+      {
+        "frequency": "ad-hoc manually triggered",
+        "icon": "github.png",
+        "name": "Uber GitHub<br>(Public Repositories)",
+        "link": "https://github.com/uber",
+        "method": "Sokrates analysis",
+        "files": [
+        ]
+      },
+      {
+        "frequency": "ad-hoc manually triggered",
+        "icon": "github.png",
+        "name": "Meta GitHub<br>(Public Repositories)",
+        "link": "https://github.com/facebook",
+        "method": "Sokrates analysis",
+        "files": [
+        ]
+      }
+    ],
+    "scriptedExports": [
+    ],
+    "manualExports": [
+      {
+        "frequency": "monthly (manually triggered)",
+        "icon": "aws-cost-explorer.webp",
+        "name": "AWS Cost Explorer Export",
+        "link": "https://us-east-1.console.aws.amazon.com/costmanagement/home#/cost-explorer",
+        "method": "Download CSV",
+        "files": [
+          "aws/data/csv",
+          "aws/data/json"
+        ],
+        "apps": [
+          "aws/docs"
+        ],
+        "src": [
+          "aws"
+        ]
+      },
+      {
+        "frequency": "monthly (manually triggered)",
+        "icon": "slack_logo.png",
+        "name": "Slack Analytics Export",
+        "link": "https://your-org.slack.com/stats#channels",
+        "method": "Channels CSV File Export",
+        "files": [
+          "slack/data/slack.json"
+        ],
+        "apps": [
+          "slack/docs"
+        ],
+        "src": [
+          "slack"
+        ]
+      }
+    ],
+    "sheets": [
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Golden Path Tech Index",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/12gZSAUy6Af5NbnfYMTYnsbo_QgLrI7xqjl7TTXnDUJM/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "golden-paths/tech/data/paths.json"
+        ],
+        "apps": [
+          "golden-paths/tech/docs"
+        ],
+        "src": [
+          "golden-paths/tech"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Golden Guidelines Index",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1v3ndbeTOcLl74llWOFoze-P6x4J-M7MlZndhAQfO2zc/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "golden-paths/guidelines/data/paths.json"
+        ],
+        "apps": [
+          "golden-paths/guidelines/docs"
+        ],
+        "src": [
+          "golden-paths/guidelines"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Capability Details",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1I3iwH3wf7Kb8kLZM-yFxF4vh4ul_6hAxSPBxRJBDOpQ/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "capability-map/data/details.json"
+        ],
+        "apps": [
+          "capability-map/docs"
+        ],
+        "src": [
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Capability Targets",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1Oz-S0ZfLHvzen73_Pau6DHCv_cB9vzVoWXdqCYV5WDg/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "capability-map/data/targets.json"
+        ],
+        "apps": [
+          "capability-map/docs"
+        ],
+        "src": [
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Capability Decision & Discussion",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/13HCJKwVhPZxGb2gx51583986g0BQVDrJnZD2h-Y7sLs/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "capability-map/data/documents.json"
+        ],
+        "apps": [
+          "capability-map/docs"
+        ],
+        "src": [
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Capability Dependencies Sheet",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1hHXWjKpfHmr98rVswinT7z2sLIhm4fJCdaIglC_y_S8/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "capability-map/data/dependencies.json"
+        ],
+        "apps": [
+          "capability-map/docs"
+        ],
+        "src": [
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "quarterly (manually triggered)",
+        "name": "Capability Roadmap",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1XDtdieBm3T7TqC-sH0YrrJvyVHZSdM41Eb6YKCSNEVU/edit?usp=sharing",
+        "sheetExport": "Copy to Clipboard",
+        "files": [
+          "capability-map/data/roadmap/roadmap.tsv",
+          "capability-map/data/roadmap/roadmap.json"
+        ],
+        "apps": [
+          "capability-map/docs"
+        ],
+        "src": [
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Legacy Assets",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1F1o6zZO-lN_dsKvZbWDWOJ98uigVwLjWNHg3L7TbGA0/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "legacy/data/legacy.json"
+        ],
+        "apps": [
+          "legacy/docs",
+          "capability-map/docs"
+        ],
+        "src": [
+          "legacy",
+          "capability-map"
+        ]
+      },
+      {
+        "frequency": "ad hoc (manually triggered)",
+        "name": "Architecture CoE Members",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1rJnsBLEfYH3rtGXfahoOV8zXyhyAdMF1FNTaQXbFd7Y/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "people/data/people.json"
+        ],
+        "apps": [
+          "people/docs"
+        ],
+        "src": [
+          "people"
+        ]
+      },
+      {
+        "frequency": "ad hoc (manually triggered)",
+        "name": "Brands & Competitors",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/195iHjfUCGlHEREka2hvWxV9WWBeX9PfDp6OizYSWqiQ/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "brands/data/brands.json"
+        ],
+        "apps": [
+          "brands/docs/brands.html",
+          "brands/docs/travel.html"
+        ],
+        "src": [
+          "brands"
+        ]
+      },
+      {
+        "frequency": "ad hoc (manually triggered)",
+        "name": "Architecture Backlog",
+        "sheetLink": "https://docs.google.com/spreadsheets/d/1AWCkgCy_DExnNSnSaRW3yFgFkIk4wB1bzHm2G3HRaCo/edit?usp=sharing",
+        "sheetExport": "Export JSON Script",
+        "files": [
+          "backlog/data/backlog.json"
+        ],
+        "apps": [
+          "backlog/docs"
+        ],
+        "src": [
+          "backlog"
+        ]
+      }
+    ],
+    "jsonFiles": [
+      {
+        "frequency": "continuous (manually triggered)",
+        "name": "Architecture App Index",
+        "files": [
+          "apps/data/apps.json",
+          "apps/data/archive.json",
+          "apps/data/sources.json"
+        ],
+        "apps": [
+          "apps/docs"
+        ],
+        "src": [
+          "apps"
+        ]
+      },
+      {
+        "frequency": "ad hoc (manually triggered)",
+        "name": "Architecture Talks",
+        "files": [
+          "summit/data/summit.json"
+        ],
+        "apps": [
+          "summit/docs"
+        ],
+        "src": [
+          "summit"
+        ]
+      }
+    ]
+  },
+  "archive": {}
+}

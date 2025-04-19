@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Prompts</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .prompt-container {
+            padding: 10px;
+            margin: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+
+        .prompt-textarea {
+            width: calc(100% - 40px);
+            height: 10em;
+            padding: 10px;
+            border: 1px solid lightgrey;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function copyToClipboard(id) {
+            const copyText = document.getElementById(id);
+
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+</head>
+<body style="">
+
+<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+    <div id="content"></div>
+</div>
+
+<script>
+    const prompts = [{"group": "", "prompts": [{"icon": "icons/cloud-cost-analyst.svg", "name": "Cloud Cost Optimization Analyst", "file": "prompts/cloud-cost-analyst.txt", "description": "", "attachments": [{"label": "aws/data/services.csv", "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/aws/data/csv/services.csv"}], "tips": [], "content": "You are a cloud cost optimization analyst. Analyze the attached CSV file containing public cloud service cost data over the past 12 months (AWS, GCP, Azure...). Provide a detailed management summary including:\n\n1. **Overall Financial Overview**\n   - Total AWS spend\n   - Average monthly spend\n   - Highest and lowest spending months\n\n2. **Top Cost Drivers**\n   - List the top 10 services by total spend\n   - Show each service's contribution as a percentage of total cost\n\n3. **Monthly Trends**\n   - Identify notable spikes or dips in spending\n   - Call out any unusual changes\n\n4. Architecture Inference\nBased on service usage patterns, infer the underlying cloud architecture, e.g.:\n    - Application type (monolith vs. microservices)\n    - Data pipelines (ETL, ML workloads)\n    - Use of serverless/containerization\n    - Highlight architectural inefficiencies\n\n5. **Optimization Opportunities**\n   - Recommend specific actions for top-costing services (e.g. RDS, EC2, CloudWatch, S3)\n   - Include service-specific strategies (rightsizing, reserved instances, lifecycle policies, etc.)\n\n6. **SaaS/Third-Party Services (if included)**\n   - Highlight any high SaaS spend (e.g. Okta, Datadog, CircleCI)\n   - Provide cost efficiency recommendations\n\n7. **Optional Enhancements**\n   - Benchmark spend levels against typical enterprise AWS usage\n   - Visualize top 10 services by spend (bar/pie chart)\n   - Suggest architectural or contractual changes for long-term savings\n\nPresent the findings in a clear, structured format suitable for executive review.\n"}, {"icon": "icons/incident-analyst.svg", "name": "Production Incidents Analyst", "file": "prompts/incident-analyst.txt", "description": "", "attachments": [{"label": "incidents/data/incidents.json", "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"}], "tips": ["You can customize it further by adding constraints (e.g., only focus on the past 30 days, or filter by criticality), or request a comparison between months/teams/brands."], "content": "### **Production Incident Analysis**\n\nYou are an expert in incident trend analysis. I\u2019m providing a JSON file containing structured data about production incidents. Please analyze it and provide:\n\n1. **Common Root Causes** \u2013 What recurring technical or procedural causes are seen?\n2. **Most Affected Areas** \u2013 Which systems, services, or user experiences are most impacted?\n3. **Severity Patterns** \u2013 Are there clusters or timing patterns around severity levels?\n4. **Recovery & Detection Issues** \u2013 Any trends in how incidents are discovered or resolved?\n5. **Actionable Recommendations** \u2013 Based on the issues, suggest monitoring, testing, or process improvements.\n6. **Optional Visuals** \u2013 If possible, include simple charts (bar/timeline/heatmap) showing trends like root causes or incident frequency.\n\nThe file format is JSON and includes fields like `date`, `title`, `root_cause`, `impact_areas`, `domains`, `description`, and `business_impact`."}, {"icon": "", "name": "Architecture Principles Analyst", "file": "prompts/architecture-principles-analyst.txt", "description": "", "attachments": [{"label": "principles/data/principles.json", "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/principles/data/principles.json"}], "tips": [], "content": "Analyze the following set of IT architecture principles. Your analysis should include:\n\n1. **Summary of Each Principle**: Briefly explain the purpose, value, and key trade-offs of each principle.\n2. **Categorization**: Group the principles by theme (e.g., Design, Operational, Organizational, Practices).\n3. **Strengths**: Highlight what the principles get right\u2014alignment with best practices, clarity, relevance, and strategic value.\n4. **Gaps and Missing Elements**: Identify what's missing (e.g., governance, legacy management, integration, prioritization of principles).\n5. **Potential Conflicts or Tensions**: Point out where principles may contradict or create dilemmas and how to resolve them.\n6. **Organizational Consequences**: Describe what happens if the principles are followed at scale\u2014both positive outcomes and risks.\n7. **Recommendations**: Suggest improvements to strengthen the architecture playbook (e.g., meta-principles, governance, prioritization, or implementation guidelines).\n8. **Summary Table**: Optionally include a concise table comparing principles on dimensions like clarity, scope, and impact.\n\nThe goal is to critically evaluate the set of principles, not just summarize them.\n"}, {"icon": "", "name": "ADR Analyst", "file": "prompts/adr-analyst.txt", "description": "", "attachments": [{"label": "ADR examples (copy the content of the file to the clipboard)", "href": "https://github.com/joelparkerhenderson/architecture-decision-record/tree/main/locales/en/examples"}], "tips": [], "content": "Analyze the provided Architecture Decision Record (ADR) and provide a comprehensive evaluation. Your analysis should cover the following aspects:\n\n1.  **Quality Summary:** Provide a concise overall assessment of the ADR's quality.\n\n2.  **Clarity Assessment:** Evaluate how clearly the ADR communicates its information. Identify any sentences or sections that are ambiguous or could be expressed more precisely.\n\n3.  **Completeness Check:** Determine if the ADR includes all the essential components. List any missing information or sections that would enhance the ADR's value.\n\n4.  **Missing Information Details:** Specify the exact information that is missing. This could include:\n    * Specific technology choices (e.g., naming a specific database within a category).\n    * Detailed requirements (e.g., performance metrics, scalability needs, consistency requirements).\n    * Consideration of alternative solutions (e.g., a more in-depth comparison of options).\n    * Implementation details (e.g., migration strategy, operational considerations).\n\n5.  **Unclear, Vague, or Contradictory Statements:** Pinpoint any statements that are unclear, use vague terminology, or present contradictory information. Explain why these statements are problematic.\n\n6.  **Improvement Suggestions:** Offer specific and actionable suggestions for improving the ADR. These suggestions should address the identified gaps in clarity and completeness.  Structure your suggestions to include:\n    * Specific details that should be added.\n    * How existing sections could be improved for better readability and precision.\n\nEnsure your analysis is thorough and provides constructive feedback to enhance the effectiveness of the ADR."}, {"icon": "", "name": "Business Strategy Analyst", "file": "prompts/business-analyst.txt", "description": "", "attachments": [{"label": "value-exchange/data/value-exchange.json", "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/value-exchange/data/value-exchange.json"}], "tips": [], "content": "Analyze the provided data describing the value exchange within a marketplace or e-commerce platform.\n- Describe the value exchange dynamics between each actor, detailing what each actor provides (e.g., attention, money, data, services) and what they receive in return.\n- Identify and explain the key business patterns evident in the data, such as revenue models, platform types, data monetization strategies, and core service offerings.\n- Summarize the overall function of the marketplace based on the value exchanges."}]}];
+
+    let promptCounter = 1;
+
+    function promptToHtml(prompt) {
+        let html = '';
+        html += '<div class="prompt-container">';
+        html += '<table>';
+        html += '<tr>';
+        const icon = prompt.icon ? prompt.icon : 'icons/bot.svg';
+        if (icon) {
+            html += '<td>';
+            html += '<img src="' + icon + '" style="width: 60px; height:60px; margin-top: 10px; margin-bottom: 10px; vertical-align: middle">';
+            html += '</td>';
+        }
+        html += '<td style="vertical-align: middle">';
+        html += '<div style="font-size: 24px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">' + prompt.name + '</div>';
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+        const id = 'prompt_' + promptCounter++;
+
+        html += '<div>Try on: ';
+        html += '<a target="_blank" href="https://chatgpt.com/?q=' + encodeURI(prompt.content) + '">OpenAI ChatGPT</a> | ';
+        html += '<a target="_blank" href="https://gemini.google.com/">Google Gemini</a>';
+        html += '</div>';
+
+        if (prompt.attachments) {
+            html += '<div style="margin-top: 6px">Files to upload: ';
+            let first = true;
+            prompt.attachments.forEach(attachment => {
+                if (!first) html += ' | ';
+                else first = false;
+
+                html += '<a target="_blank" href="' + attachment.href + '">' + attachment.label + '</a> ';
+            });
+            html += '</div>';
+        }
+
+        html += '<div style="margin-top: 10px; margin-bottom: 4px">Prompt (<a href="javascript:void(0)" onclick="copyToClipboard(\'' + id + '\')">copy</a>):</div>';
+        html += '<textarea class="prompt-textarea" id="' + id + '">';
+        html += prompt.content;
+        html += '</textarea>';
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        let html = '';
+
+        prompts.forEach(group => {
+            html += '<h2 style="margin-left: 10px">' + group.group + '</h2>';
+            group.prompts.forEach(prompt => {
+                html += promptToHtml(prompt);
+            });
+        });
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+
+</script>
+
+<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on 2025-04-19
+</div>
+</body>
+</html>

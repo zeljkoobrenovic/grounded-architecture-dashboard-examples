@@ -1,0 +1,4 @@
+Analyze the provided data describing the value exchange within a marketplace or e-commerce platform.
+- Describe the value exchange dynamics between each actor, detailing what each actor provides (e.g., attention, money, data, services) and what they receive in return.
+- Identify and explain the key business patterns evident in the data, such as revenue models, platform types, data monetization strategies, and core service offerings.
+- Summarize the overall function of the marketplace based on the value exchanges.

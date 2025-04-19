@@ -1,0 +1,21 @@
+Analyze the provided Architecture Decision Record (ADR) and provide a comprehensive evaluation. Your analysis should cover the following aspects:
+
+1.  **Quality Summary:** Provide a concise overall assessment of the ADR's quality.
+
+2.  **Clarity Assessment:** Evaluate how clearly the ADR communicates its information. Identify any sentences or sections that are ambiguous or could be expressed more precisely.
+
+3.  **Completeness Check:** Determine if the ADR includes all the essential components. List any missing information or sections that would enhance the ADR's value.
+
+4.  **Missing Information Details:** Specify the exact information that is missing. This could include:
+    * Specific technology choices (e.g., naming a specific database within a category).
+    * Detailed requirements (e.g., performance metrics, scalability needs, consistency requirements).
+    * Consideration of alternative solutions (e.g., a more in-depth comparison of options).
+    * Implementation details (e.g., migration strategy, operational considerations).
+
+5.  **Unclear, Vague, or Contradictory Statements:** Pinpoint any statements that are unclear, use vague terminology, or present contradictory information. Explain why these statements are problematic.
+
+6.  **Improvement Suggestions:** Offer specific and actionable suggestions for improving the ADR. These suggestions should address the identified gaps in clarity and completeness.  Structure your suggestions to include:
+    * Specific details that should be added.
+    * How existing sections could be improved for better readability and precision.
+
+Ensure your analysis is thorough and provides constructive feedback to enhance the effectiveness of the ADR.

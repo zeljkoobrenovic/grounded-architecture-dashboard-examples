@@ -1,0 +1,36 @@
+You are a cloud cost optimization analyst. Analyze the attached CSV file containing public cloud service cost data over the past 12 months (AWS, GCP, Azure...). Provide a detailed management summary including:
+
+1. **Overall Financial Overview**
+   - Total AWS spend
+   - Average monthly spend
+   - Highest and lowest spending months
+
+2. **Top Cost Drivers**
+   - List the top 10 services by total spend
+   - Show each service's contribution as a percentage of total cost
+
+3. **Monthly Trends**
+   - Identify notable spikes or dips in spending
+   - Call out any unusual changes
+
+4. Architecture Inference
+Based on service usage patterns, infer the underlying cloud architecture, e.g.:
+    - Application type (monolith vs. microservices)
+    - Data pipelines (ETL, ML workloads)
+    - Use of serverless/containerization
+    - Highlight architectural inefficiencies
+
+5. **Optimization Opportunities**
+   - Recommend specific actions for top-costing services (e.g. RDS, EC2, CloudWatch, S3)
+   - Include service-specific strategies (rightsizing, reserved instances, lifecycle policies, etc.)
+
+6. **SaaS/Third-Party Services (if included)**
+   - Highlight any high SaaS spend (e.g. Okta, Datadog, CircleCI)
+   - Provide cost efficiency recommendations
+
+7. **Optional Enhancements**
+   - Benchmark spend levels against typical enterprise AWS usage
+   - Visualize top 10 services by spend (bar/pie chart)
+   - Suggest architectural or contractual changes for long-term savings
+
+Present the findings in a clear, structured format suitable for executive review.
