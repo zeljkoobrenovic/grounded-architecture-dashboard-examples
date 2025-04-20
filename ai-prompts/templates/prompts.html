@@ -17,8 +17,12 @@
         }
 
         .prompt-container {
-            padding: 10px;
-            margin: 10px;
+            padding: 20px;
+            padding-top: 0;
+            padding-bottom: 10px;
+            margin: 10px 10px 30px;
+            border: 2px dashed grey;
+            border-radius: 12px;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         }
 
@@ -28,6 +32,7 @@
             padding: 10px;
             border: 1px solid lightgrey;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            background-color: lightyellow;
         }
     </style>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
@@ -45,7 +50,7 @@
 </head>
 <body style="">
 
-<div style="margin-left: 0px; margin-top: 20px; margin-bottom: 20px; color: grey">
+<div style="margin-top: 20px; margin-bottom: 20px; color: grey">
     <div id="content"></div>
 </div>
 
@@ -73,7 +78,7 @@
         const id = 'prompt_' + promptCounter++;
 
         html += '<div>Try on: ';
-        html += '<a target="_blank" href="https://chatgpt.com/?q=' + encodeURI(prompt.content) + '">OpenAI ChatGPT</a> | ';
+        // html += '<a target="_blank" href="https://chatgpt.com/?q=' + encodeURI(prompt.content) + '">OpenAI ChatGPT</a> | ';
         html += '<a target="_blank" href="https://gemini.google.com/">Google Gemini</a>';
         html += '</div>';
 
@@ -93,6 +98,14 @@
         html += '<textarea class="prompt-textarea" id="' + id + '">';
         html += prompt.content;
         html += '</textarea>';
+        if (prompt.tips && prompt.tips.length > 0) {
+            html += '<div style="margin-top: 10px; margin-bottom: 4px">Tips to further customize chats:</div>';
+            html += '<ul>';
+            prompt.tips.forEach(tip => {
+                html += '<li>' + tip + '</li>';
+            });
+            html += '</ul>';
+        }
         html += '</div>';
 
         return html;
@@ -115,8 +128,5 @@
 
 </script>
 
-<div style="margin-top: 4px; margin-left: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
-    generated on ${date}
-</div>
 </body>
 </html>
