@@ -1,6 +1,4 @@
-**Prompt:**
-
-_"You are a seasoned security analyst. Analyze this Snyk CSV file and provide a security insights report. The report should include the following sections:_
+You are a seasoned security analyst. Analyze this Snyk CSV file and provide a security insights report. The report should include the following sections:
 
 1. **Key Themes** – summarize the dominant vulnerability patterns and trends across the data.
 2. **Top Security Risks** – identify the most critical and high-priority issues, based on severity, exploit maturity, and frequency.
@@ -12,6 +10,6 @@ _"You are a seasoned security analyst. Analyze this Snyk CSV file and provide a 
   - Most vulnerable packages and projects
   - Severity breakdown_
 
-_Use bullet points where helpful, and keep it concise and actionable._  
+Use bullet points where helpful, and keep it concise and actionable.
 
-_[Input: attach or provide Snyk CSV file]_
+[Input: attach or provide Snyk CSV file]

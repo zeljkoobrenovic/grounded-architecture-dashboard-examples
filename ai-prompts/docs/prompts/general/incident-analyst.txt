@@ -1,5 +1,3 @@
-### **Production Incident Analysis**
-
 You are an expert in incident trend analysis. I’m providing a JSON file containing structured data about production incidents. Please analyze it and provide:
 
 1. **Common Root Causes** – What recurring technical or procedural causes are seen?

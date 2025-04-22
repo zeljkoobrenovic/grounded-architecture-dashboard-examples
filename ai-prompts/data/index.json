@@ -1,11 +1,11 @@
 [
   {
-    "group": "",
+    "group": "General",
     "prompts": [
       {
         "icon": "icons/cloud-cost-analyst.svg",
         "name": "Cloud Cost Optimization Analyst",
-        "file": "prompts/cloud-cost-analyst.txt",
+        "file": "prompts/general/cloud-cost-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -18,7 +18,7 @@
       {
         "icon": "icons/incident-analyst.svg",
         "name": "Production Incidents Analyst",
-        "file": "prompts/incident-analyst.txt",
+        "file": "prompts/general/incident-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -33,7 +33,7 @@
       {
         "icon": "",
         "name": "Architecture Principles Analyst",
-        "file": "prompts/architecture-principles-analyst.txt",
+        "file": "prompts/general/architecture-principles-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -46,7 +46,7 @@
       {
         "icon": "",
         "name": "ADR Analyst",
-        "file": "prompts/adr-analyst.txt",
+        "file": "prompts/general/adr-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -59,7 +59,7 @@
       {
         "icon": "",
         "name": "Business Strategy Analyst",
-        "file": "prompts/business-analyst.txt",
+        "file": "prompts/general/business-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -72,7 +72,7 @@
       {
         "icon": "",
         "name": "Snyk Security Analyst",
-        "file": "prompts/snyk-security-analyst.txt",
+        "file": "prompts/general/snyk-security-analyst.txt",
         "description": "",
         "attachments": [
           {
@@ -81,6 +81,132 @@
           }
         ],
         "tips": []
+      }
+    ]
+  },
+  {
+    "group": "AWS Well-Architected",
+    "prompts": [
+      {
+        "icon": "",
+        "name": "Operational Excellence Design Principles Analysis",
+        "file": "prompts/aws-well-architected/operational-excellence.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Operational Excellence Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operational-excellence.html"
+          }
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Reliability Design Principles Analysis",
+        "file": "prompts/aws-well-architected/reliability.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Reliability Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/design-principles.html"
+          }
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Security Design Principles Analysis",
+        "file": "prompts/aws-well-architected/security.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Operational Excellence Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/security.html"
+          }
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Performance Efficiency Design Principles Analysis",
+        "file": "prompts/aws-well-architected/performance-efficiency.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+          "You can customize it further by adding constraints (e.g., only focus on the past 30 days, or filter by criticality), or request a comparison between months/teams/brands."
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Operational Excellence Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html"
+          }
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Cost Optimization Principles Analysis",
+        "file": "prompts/aws-well-architected/cost-optimization.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "aws/data/services.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/aws/data/services.json"
+          }
+        ],
+        "tips": [
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Operational Excellence Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/design-principles.html"
+          }
+        ]
+      },
+      {
+        "icon": "",
+        "name": "Sustainability Design Principles Analysis",
+        "file": "prompts/aws-well-architected/sustainability.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "incidents/data/incidents.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/incidents/data/incidents.json"
+          }
+        ],
+        "tips": [
+        ],
+        "links": [
+          {
+            "label": "AWS Well-Architected Framework / Sustainability Pillar",
+            "href": "https://docs.aws.amazon.com/wellarchitected/latest/sustainability-pillar/sustainability-pillar.html"
+          }
+        ]
       }
     ]
   }
