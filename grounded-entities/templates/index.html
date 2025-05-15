@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities Map</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129891352-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-129891352-1');
+    </script>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 280px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function initTab() {
+            if (window.location.hash) {
+                tabName = window.location.hash.substring(1);
+                if (document.getElementById('tab_' + tabName)) {
+                    openTab(tabName);
+                }
+            }
+        }
+
+        function openTab(tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+    </script>
+</head>
+<body onload="initTab()" onhashchange="initTab()">
+<div style="margin-left: 24px; margin-top: 10px; text-align: left; margin-bottom: 12px;">
+    <h1 style="font-size: 50px; margin-bottom: 0px; margin-left: 6px">
+        <img src="assets/logo.png" style="vertical-align: middle; height: 120px">
+        <div style="display: inline-block; vertical-align: middle">
+            <b>Capabilities Map</b>
+        </div>
+    </h1>
+    <div style="margin-left: 12px; font-size: 16px; color: grey">The visual overview of capability areas and progress
+    </div>
+</div>
+<div style="margin-left: 30px">
+    <div class="tab">
+        <button class="tablinks active" id="tab_BigPicture" onclick="openTab('BigPicture')">Capabilities</button>
+        <button class="tablinks" id="tab_Progress" onclick="openTab('Progress')">Roadmap</button>
+        <button class="tablinks" id="tab_Discussions" onclick="openTab('Discussions')">Decisions & Discussions</button>
+        <button class="tablinks" id="tab_Tools" onclick="openTab('Tools')">More...</button>
+    </div>
+    <div id="Focus" class="tabcontent">
+        <div>
+            <iframe id="OverviewFrame" src="overview.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Details" class="tabcontent">
+        <div>
+            <iframe id="NextFrame" src="details.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Discussions" class="tabcontent">
+        <div>
+            <iframe src="map-discussions.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="BigPicture" class="tabcontent" style="display: block">
+        <div>
+            <iframe id="BigPictureFrame" src="map.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Progress" class="tabcontent">
+        <div>
+            <iframe id="ProgressFrame" src="roadmaps.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 260px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="Dependencies" class="tabcontent">
+        <div>
+            <iframe id="DependenciesFrame" src="dependency-matrix.html"
+                    style="border: none; width: calc(100%); height: calc(100vh - 220px)">
+            </iframe>
+        </div>
+    </div>
+    <div id="RefArch" class="tabcontent">
+        <div style="padding: 22px; margin-top: 0">
+            <p style="margin-top: 0">
+                White-label capabilities can be of five different types:
+            </p>
+            <div style="width: 160px; padding: 15px; margin-bottom: 20px; font-size: 80%;">
+                <div style="width: 1000px; ">
+                    <div style="vertical-align: top; display: inline-block; width: 120px; background-color: #b6d7a8ff; padding: 12px">
+                        full-stack capability
+                    </div>
+                    <div style="display: inline-block; margin: 2px; width: 800px">A white-label capability providing
+                        both backend services and front-end components (e.g., micro-frontends). Most white label
+                        capabilities in actor domains are full-stack capabilities.
+                    </div>
+                </div>
+                <div style="width: 1000px">
+                    <div style="display: inline-block; width: 120px; background-color: #fff2ccff; padding: 12px">
+                        service
+                    </div>
+                    <div style="display: inline-block; margin: 2px; width: 800px">A white-label capability providing a
+                        backend services via an API.
+                    </div>
+                </div>
+                <div style="width: 1000px">
+                    <div style="display: inline-block; width: 120px; background-color: #ead1dcff; padding: 12px">complex
+                        integration
+                    </div>
+                    <div style="display: inline-block; margin: 2px; width: 800px">A white-label capability providing a
+                        backend services that integrates with a complex external system (e.g., Salesforce or Workday).
+                    </div>
+                </div>
+                <div style="width: 1000px">
+                    <div style="display: inline-block; width: 120px; background-color: #c9daf8ff; padding: 12px">
+                        development/design
+                    </div>
+                    <div style="display: inline-block; margin: 2px; width: 800px">A white-label capability providing
+                        foundational components needed to build other capabilities.
+                    </div>
+                </div>
+                <div style="width: 1000px">
+                    <div style="display: inline-block; width: 120px; background-color: #f3f3f3ff; padding: 12px">other
+                    </div>
+                    <div style="display: inline-block; margin: 2px; width: 800px">Other white label capabilities, such
+                        as infrastructure.
+                    </div>
+                </div>
+            </div>
+            <p style="margin-top: 0">
+                While internal architecture of each capability will be different, the following diagrams show several
+                reference archtectural patterns that you may expect to find in each of white label capabilities:
+            </p>
+        </div>
+        <div>
+            <img src="assets/reference-architectures/full-stack.png"
+                 style="width: 1000px; margin: 20px">
+        </div>
+        <div>
+            <img src="assets/reference-architectures/service.png" style="width: 1000px; margin: 20px">
+        </div>
+        <div>
+            <img src="assets/reference-architectures/cicd.png" style="width: 1000px; margin: 20px">
+        </div>
+        <div>
+            <img src="assets/reference-architectures/artifacts.png" style="width: 1000px; margin: 20px">
+        </div>
+    </div>
+    <div id="Tools" class="tabcontent">
+        <div style="padding: 20px">
+            <div style="margin: 4px; padding: 16px;  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); border-radius: 14px; max-width: 900px; margin-bottom: 24px">
+                <h2 style="margin-top: 2px">Data</h2>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; padding-left: 12px">
+                            <p style="margin-top: -2px; margin-bottom: 12px">
+                                Capabilities and the roadmap are formally defined in a small database. This
+                                site is generated from this data source. You can view the data here:
+                            </p>
+                            <ul>
+                                <li><a target="_blank" href="${details_sheet}">main capabilities sheet (basic data per capability)</a></li>
+                                <li><a target="_blank" href="${targets_sheet}">capabilities' release targets (including OKR targets)</a></li>
+                                <li><a target="_blank" href="${documents_sheet}">capabilities' decision & discussion documents</a></li>
+                                <li><a target="_blank" href="${dependencies_sheet}">dependencies sheet</a></li>
+                                <li><a target="_blank" href="${roadmap_sheet}">roadmap sheet</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

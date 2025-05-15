@@ -1,0 +1,52 @@
+{
+  "sheets": {
+    "details": "https://docs.google.com/spreadsheets/d/1I3iwH3wf7Kb8kLZM-yFxF4vh4ul_6hAxSPBxRJBDOpQ/edit?usp=sharing"
+  },
+  "landingPages": {
+    "sourceCodeLinkPattern": "https://github.com/${repo}",
+    "sourceCodeAnalysisLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/asf/activemq/activemq/html/index.html",
+    "sourceCodeLandscapeLinkPattern": "https://d3axxy9bcycpv7.cloudfront.net/${landscape}/_sokrates_landscape/index.html",
+    "awsAnalysisLink": "../../../../aws/docs/index.html",
+    "awsLinkPattern": "../../../../aws/docs/accounts/trends.html?filter=${filter}"
+  },
+  "groups": [
+    {
+      "name": "Domain A",
+      "color": "#f6b93b",
+      "icon" : ""
+    },
+    {
+      "name": "Domain B"
+    },
+    {
+      "name": "Domain C"
+    }
+  ],
+  "types": [
+    {
+      "id": "full-stack",
+      "name": "full-stack capability",
+      "color": "#b6d7a8ff"
+    },
+    {
+      "id": "service",
+      "name": "service",
+      "color": "#fff2ccff"
+    },
+    {
+      "id": "integration",
+      "name": "complex integration",
+      "color": "#ead1dcff"
+    },
+    {
+      "id": "development",
+      "name": "development/design",
+      "color": "#c9daf8ff"
+    },
+    {
+      "id": "other",
+      "name": "other",
+      "color": "#f3f3f3ff"
+    }
+  ]
+}

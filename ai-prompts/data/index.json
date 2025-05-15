@@ -32,8 +32,21 @@
       },
       {
         "icon": "",
-        "name": "Architecture Principles Analyst",
+        "name": "Architecture Principles Summrizer",
         "file": "prompts/general/architecture-principles-analyst.txt",
+        "description": "",
+        "attachments": [
+          {
+            "label": "principles/data/principles.json",
+            "href": "https://github.com/zeljkoobrenovic/grounded-architecture-dashboard-examples/blob/main/principles/data/principles.json"
+          }
+        ],
+        "tips": []
+      },
+      {
+        "icon": "",
+        "name": "Architecture Principles Checklist",
+        "file": "prompts/general/principles-check.txt",
         "description": "",
         "attachments": [
           {

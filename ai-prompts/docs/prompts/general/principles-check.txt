@@ -1,0 +1,11 @@
+**Task:**
+Review the following list of principles. For each principle, assess if it passes the **Principle Effectiveness Test**, specifically applying the rule:
+
+*"A principle is only meaningful if its opposite could also make sense in some context."*
+
+**Instructions:**
+
+1. For each principle, check if the **opposite would make sense to a reasonable stakeholder in certain scenarios (even if rare or risky).**
+2. If the **opposite would NEVER make sense**, mark the principle as **Fail (Too Obvious, Tautology, or Worthless as Guidance)**.
+3. Where it fails, **suggest a more specific or trade-off-focused reframing that would create meaningful decision guidance and highlight competing priorities.**
+4. If the principle creates real tension (i.e., could have valid, conflicting alternatives), mark it as **Pass**.
