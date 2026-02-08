@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body>
+
+<div id="Content"></div>
+
+<script>
+    const capabilities = ${capabilities};
+
+    let html = '';
+
+    function processSubsystem(subsystem, displayStyle = 'inline-block') {
+        html += '<div class="container" style="display: ' + displayStyle + '">';
+        html += '<div><img style="height: 50px; border: 1px solid lightgrey; margin: 3px" src="icons/' + subsystem.id + '.png"></div>';
+        html += '<div>' + subsystem.label + '</div>';
+        subsystem.features.forEach(feature => {
+            html += '<div class="container" style="display: block">';
+            if (feature.options) {
+                html += '<div><img style="height: 50px; border: 1px solid lightgrey; margin: 3px" src="icons/' + feature.id + '.png"></div>';
+                html += '<div>' + feature.label + '</div>';
+                feature.options.forEach(option => {
+                    html += '<div class="container" style="display: block">';
+                    html += '<div>' + option.label + '</div>';
+                    html += '</div>';
+                });
+            } else {
+                html += '<div>' + feature.label + '</div>';
+            }
+            html += '</div>';
+        });
+
+        if (subsystem.subsystems) {
+            subsystem.subsystems.forEach(subsubsystem => {
+                processSubsystem(subsubsystem, 'inline-block');
+            });
+        }
+        html += '</div>';
+    }
+
+    capabilities.subsystems.forEach(subsystem => {
+        processSubsystem(subsystem, 'inline-block');
+    });
+
+    document.getElementById('Content').innerHTML = html;
+
+</script>
+
+<script>
+</script>
+
+</body>
+</html>

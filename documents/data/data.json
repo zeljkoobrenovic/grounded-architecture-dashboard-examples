@@ -1,0 +1,214 @@
+[
+  {
+    "title": "Scaling People",
+    "items": [
+      {
+        "type": "Checklist",
+        "title": "Management Prerequisites",
+        "icon": "management-checklist.png",
+        "link": "https://docs.google.com/document/d/1JiU_wDd3NhfAMROWaiWY8X8EhUgF4mGfreUoGPniWkA/edit?usp=sharing",
+        "summary": "Outlines the fundamental duties of a manager, covering legal compliance, structured communication with direct reports, team alignment, organizational clarity, and personal accountability with leadership."
+      },
+      {
+        "type": "Exercise",
+        "title": "Self Awareness",
+        "icon": "self-awareness.png",
+        "link": "https://docs.google.com/document/d/11JU94o3lxJDN9AJ1cmzSXtYaLm-zhR0G2SM8fGHmWzk/edit?usp=sharing",
+        "summary": "Defining your personal values requires identifying what drives you, explaining their underlying importance, and grounding them in real-world experiences to illustrate their impact on your life and career."
+      },
+      {
+        "type": "Exercise",
+        "title": "Identify Your Strengths",
+        "icon": "your-strengths.png",
+        "link": "https://docs.google.com/document/d/10yN2K6JbxmcntZW-N19WPB6p3-e_mGExNTNRERRZFpA/edit?usp=sharing",
+        "summary": "Categorizing your strengths into innate and acquired skills and capabilities helps distinguish between natural talents and learned expertise, providing a clear roadmap for personal development and professional growth."
+      },
+      {
+        "type": "Exercise",
+        "title": "Understand Your Values",
+        "icon": "your-values.png",
+        "link": "https://docs.google.com/document/d/1L_dcmLnjwSvMrd_HepsUnpPG9504lHT398zPGYJpp48/edit?usp=sharing",
+        "summary": "Uncovering core values involves a selective process of narrowing down life priorities, identifying the specific behaviors that embody them, and weighing the positive outcomes against the inevitable trade-offs they require in a professional setting."
+      },
+      {
+        "type": "Example",
+        "title": "Team Charter",
+        "icon": "team-charter.png",
+        "link": "https://docs.google.com/document/d/19boTY_5TA_xc9UNyGpqPRWGWT45gF2cOAsOiikMsBKo/edit?usp=sharing",
+        "summary": "This example team charter outlines a mission to deliver best-in-class dashboard account security through strong authentication and authorization, protecting users and merchants from account takeovers while building trust, reducing losses, supporting enterprise needs, and managing risks through defined metrics, interfaces, and strategic priorities."
+      },
+      {
+        "type": "Example",
+        "title": "Stripe’s Operating Principles",
+        "icon": "operating-principles.png",
+        "link": "https://docs.google.com/document/d/1DDHyvZpZRD_SvPS7aKYauYLtGTuiQ1GHpbkyUd7dy50/edit?usp=sharing",
+        "summary": "This document defines Stripe’s operating principles by outlining how teams work, the values they embody, the expectations of leaders, and enduring guideposts that emphasize user focus, urgency, craftsmanship, accountability, optimism, and long-term ambition."
+      },
+      {
+        "type": "Checklist",
+        "title": "Work Rules",
+        "icon": "work-rules.png",
+        "link": "https://docs.google.com/document/d/1iNaRr41stHn741ggJqY_7zPoF4WNlGw8qwLYFRKhBRw/edit?usp=sharing",
+        "summary": "This checklist outlines work rules for building a founder-mindset organization by emphasizing strong culture, exceptional hiring, broad empowerment, rigorous performance management, continuous learning, thoughtful incentives, and values-driven leadership."
+      },
+      {
+        "type": "Template",
+        "title": "Working With Me",
+        "icon": "me.png",
+        "link": "https://docs.google.com/document/d/1TQHPjAPfLoAu6ohva9rXO2JMyxrHgLr9F-poLJz9G1I/edit?usp=sharing",
+        "summary": "A template that clarifies your role and priorities, how you communicate and operate day-to-day, your management style, and how you’ll support and grow your team so everyone knows what to expect and how to work with you effectively."
+      },
+      {
+        "type": "Example",
+        "title": "Working With Me Example",
+        "icon": "me-example.png",
+        "link": "https://docs.google.com/document/d/1zgpqDtUhH0xnKHZVtnBWqBxwgL5WbEU1QSDmmt_hrr0/edit?usp=sharing",
+        "summary": "The person runs a results-driven, people-first team with clear ownership, regular structured communication, data-informed decisions, and high accountability—all while keeping work collaborative, transparent, and genuinely fun."
+      }
+    ]
+  },
+  {
+    "title": "Daring Leadership",
+    "items": [
+      {
+        "type": "Exercise",
+        "title": "Rumbling Tools",
+        "icon": "rumble.png",
+        "link": "https://docs.google.com/document/d/1XJEst3MQq9MovPz1qwX2l872C6tbSYbbFUEp9FJMKaU/edit?usp=sharing",
+        "summary": "This exercise provides conversation starters and reflective tools designed to support constructive “rumbling” by encouraging curiosity, shared understanding, accountability, and problem-focused dialogue."
+      },
+      {
+        "type": "Checklist",
+        "title": "Braving Trust",
+        "icon": "trust.png",
+        "link": "https://docs.google.com/document/d/1h2_P2sVkkiCFdFH-2nkOA4Oc5pcE3YqohfSVEu8tPi4/edit?usp=sharing",
+        "summary": "This checklist defines trust through the BRAVING framework—boundaries, reliability, accountability, vault, integrity, nonjudgment, and generosity—and presents it as a practical tool for fostering open, values-driven conversations and stronger trust at work."
+      },
+      {
+        "type": "Exercise",
+        "title": "Atlas of Emotions",
+        "icon": "emotions.png",
+        "link": "https://docs.google.com/presentation/d/1kuuWhKTDsDnr3vXHqV_pHfsEhLlXElb2ZwvTmJVd8W8/edit?usp=sharing",
+        "summary": "Explores thirteen categories of human emotions and experiences, mapping the internal \"places we go\" when dealing with uncertainty, comparison, disappointment, connection, hurt, and self-assessment."
+      }
+    ]
+  },
+  {
+    "title": "Transformation",
+    "items": [
+      {
+        "type": "Checklist",
+        "title": "Transformation Sets",
+        "icon": "transformation.png",
+        "link": "https://docs.google.com/document/d/1DevRKQRo1lnUz1KEtaD_dPy9Q5n6vBgX-azEMItgiBM/edit?usp=sharing",
+        "summary": "This readiness checklist outlines six interconnected sets—assessment, mindsets, skills, tools, coaching, and systems—to evaluate whether an organization is truly prepared for deep, sustainable transformation rather than incremental change."
+      },
+      {
+        "type": "Checklist",
+        "title": "The 5 C’s and Mission Clarity",
+        "icon": "mission.png",
+        "link": "https://docs.google.com/document/d/1f-TRgbf9-VLxu0I4-Rik3SJojzkiPDVQLWlnK9aEhkY/edit?usp=sharing",
+        "summary": "This checklist introduces the 5 C’s—context, color, connective tissue, cost, and consequence—as a structured questioning framework to drive mission clarity, strategic thinking, and well-informed decisions across teams and initiatives."
+      }
+    ]
+  },
+  {
+    "title": "Coach Yourself (Psychological Distancing)",
+    "items": [
+      {
+        "type": "Exercise",
+        "title": "Distancing / Becoming Your Own Coach",
+        "icon": "coach.png",
+        "link": "https://docs.google.com/document/d/1KjWkQ3uCr894ZHTbZ8nm5YVWEtaCqKru6XHSlhml6lA/edit?usp=sharing",
+        "summary": "Becoming Coach isn’t about replacing mentors or external advice. It’s about recognizing that you often already have the answers—but can’t see them because you’re too immersed."
+      },
+      {
+        "type": "Exercise",
+        "title": "Distancing / See the Big Picture",
+        "icon": "big-picture.png",
+        "link": "https://docs.google.com/document/d/1v_ldpmsDAT1BupMGfyoWqNgh7nXNIyVZY5WGDlEFmaw/edit?usp=sharing",
+        "summary": "Spatial distancing helps us see problems more clearly by shifting perspective. Because cognition, emotion, and vision are closely linked, mental imagery allows us to view situations from a neutral, balanced perspective."
+      },
+      {
+        "type": "Exercise",
+        "title": "Distancing / Be Your Future Self",
+        "icon": "future.png",
+        "link": "https://docs.google.com/document/d/1mSPvUhake25yUOy9FGyK8lJT_LGtwff6kd78EUVms8k/edit?usp=sharing",
+        "summary": "Time-traveling to your future self (1) places you on the far side of decisions, triggering a healthy regret framework; (2) clarifies what truly matters—your ideal self over what’s merely practical; (3) mitigates failures of self-control."
+      },
+      {
+        "type": "Exercise",
+        "title": "Distancing / Stop Time",
+        "icon": "distancing.png",
+        "link": "https://docs.google.com/document/d/10Fqy6oIJ47in2B-zh5fFyAOUUjs8x2FpgPyxI2pb85s/edit?usp=sharing",
+        "summary": "Whether it’s a $50 million text message or a difficult conversation with a team member, sometimes the best move is to pause. Blow the whistle for a time-out and become Coach."
+      }
+    ]
+  },
+  {
+    "title": "Coach Yourself (Remove Hidden Blockers)",
+    "items": [
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Need to Be Involved",
+        "icon": "control.png",
+        "link": "https://docs.google.com/document/d/1fsmrClrhM17S7LrmUdYS207RYQ6Xl_HKK3nzDuxBFlc/edit?usp=sharing",
+        "summary": "It can be tempting to become overly involved. It can feel like you’re doing the right thing by ensuring everything stays on course. Despite the best intentions, however, this hidden blocker can leave you too busy and scattered—and prevent teams from owning their roles and growing."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Need It Done Now",
+        "icon": "immediate.png",
+        "link": "https://docs.google.com/document/d/1rLOsAd9MqoTzACD7didiN1dqzUEuqFoUfwjmyxNji0w/edit?usp=sharing",
+        "summary": "Moving on from the hidden blocker “I need it done now” requires letting go of a definition of success that ties self-worth solely to output and accomplishment. This shift means adopting a more balanced view—one that supports well-being both inside and outside of work."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Know I'm Right",
+        "icon": "right.png",
+        "link": "https://docs.google.com/document/d/1IBv5c3exntYuFq7QcAzAucoVjIcjpN81qcztSTut_CA/edit?usp=sharing",
+        "summary": "You may be blocked by the belief that you have all the answers—or that you are the only one with the right answers. If “I know I’m right” feels like the hidden blocker holding you back, the first step is to identify how this belief shows up for you and name it."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Can't Make a Mistake",
+        "icon": "mistake.png",
+        "link": "https://docs.google.com/document/d/157WEHG6WK-kEkd6UrLehCBYWrKPq6m56p8XA4RdsRjM/edit?usp=sharing",
+        "summary": "Failure itself was not the catastrophe we believed it to be—we all fall short from time to time. What makes the difference is how we respond to failures, large and small. Rather than using mistakes as reasons to beat ourselves up, give up, or despair, we can treat them as powerful opportunities for learning and growth."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: If I Can Do It, So Can You",
+        "icon": "easy.png",
+        "link": "https://docs.google.com/document/d/196yZ0RS-FYR14O0w6kKfQQoFj1yvaj-2EDts4W-PPDQ/edit?usp=sharing",
+        "summary": "Many successful people come to believe that what worked for them should work for everyone else—that if others simply follow the same path, they’ll achieve the same results. While this belief can be motivating, it does not hold up as a universal rule."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Can't Say No",
+        "icon": "agree.png",
+        "link": "https://docs.google.com/document/d/1GaDoFVz5DUlSCpdSmV-RDcg3AMb_EWTKBv_pHN-zlKU/edit?usp=sharing",
+        "summary": "Saying no is about setting boundaries and advocating for yourself. As writer and therapist Prentis Hemphill says, “Boundaries are the distance at which I can love you and me simultaneously.” In other words, boundaries can serve both you and others—even when it means not doing what’s asked."
+      },
+      {
+        "type": "Exercise",
+        "title": "Hidden Blocker: I Don't Belong Here",
+        "icon": "not-belonging.png",
+        "link": "https://docs.google.com/document/d/1gJBmw7tJh79U-9zD8kx0qVixQolVzpY6NkOTmcZuqhE/edit?usp=sharing",
+        "summary": "Have you ever struggled with the feeling that you don’t fit in at work, don’t belong among your peers or colleagues, or don’t deserve to be where you are?"
+      }
+    ]
+  },
+  {
+    "title": "Software Managers",
+    "items": [
+      {
+        "type": "Checklist",
+        "title": "Software Managers’ Operational Excellence Checklist",
+        "icon": "operational-excellence.png",
+        "link": "https://docs.google.com/document/d/1pUqJ-mdENALobmHuSnhdJYyXPt2TBxPQZqwUoPY8jvE/edit?usp=sharing",
+        "summary": "Maintaining high software reliability requires a comprehensive approach that integrates launch readiness, rigorous incident management, fair on-call practices, and robust automation to ensure systems remain resilient and observable."
+      }
+    ]
+  }
+]

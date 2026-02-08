@@ -141,7 +141,7 @@
   {
     "startgroup": "brands",
     "name": "Real Estate",
-    "link": "../../brands/docs/brands.html",
+    "link": "../../brands/docs/real-estate.html",
     "icon": "real-estate.png",
     "description": "overview of<br>RE brands",
     "source": "public online resources"
@@ -151,6 +151,13 @@
     "link": "../../brands/docs/travel.html",
     "icon": "travel.png",
     "description": "index of travel companies",
+    "source": "public online resources"
+  },
+  {
+    "name": "ESG",
+    "link": "../../brands/docs/esg.html",
+    "icon": "esg.png",
+    "description": "index of ESG companies",
     "source": "public online resources"
   },
   {

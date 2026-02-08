@@ -1,0 +1,1383 @@
+{
+  "version": "2.1",
+  "productLine": "generic_drone_platform",
+  "subsystems": [
+    {
+      "id": "onboard",
+      "label": "Onboard Systems",
+      "required": false,
+      "features": [],
+      "subsystems": [
+        {
+          "id": "environment",
+          "label": "Operational Context",
+          "required": false,
+          "features": [
+            {
+              "id": "gps_denied",
+              "label": "GPS-Denied Operation",
+              "kind": "bool"
+            },
+            {
+              "id": "bvlos",
+              "label": "BVLOS Operation",
+              "kind": "bool"
+            },
+            {
+              "id": "multi_uav",
+              "label": "Multi-UAV / Fleet Operation",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "power",
+          "label": "Power System",
+          "required": true,
+          "features": [
+            {
+              "id": "battery",
+              "label": "Battery",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "liion",
+                  "label": "Lithium-Ion"
+                },
+                {
+                  "value": "lipo",
+                  "label": "Lithium-Polymer (LiPo)"
+                },
+                {
+                  "value": "smart",
+                  "label": "Smart Battery"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid / Fuel Cell"
+                }
+              ]
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "power_management",
+              "label": "Power Management Modules",
+              "required": false,
+              "features": [
+                {
+                  "id": "bms",
+                  "label": "Battery Management System",
+                  "kind": "bool"
+                },
+                {
+                  "id": "pdb",
+                  "label": "Power Distribution Board",
+                  "kind": "bool"
+                },
+                {
+                  "id": "voltage_regulators",
+                  "label": "Voltage Regulators / BEC",
+                  "kind": "bool"
+                },
+                {
+                  "id": "power_monitoring",
+                  "label": "Power Monitoring Sensor",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "propulsion",
+          "label": "Propulsion System",
+          "required": true,
+          "features": [
+            {
+              "id": "motor",
+              "label": "Motor",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "multirotor",
+                  "label": "Brushless Multirotor"
+                },
+                {
+                  "value": "fixed_wing",
+                  "label": "Brushless Fixed-Wing"
+                },
+                {
+                  "value": "ducted_fan",
+                  "label": "Ducted Fan"
+                },
+                {
+                  "value": "tiltrotor",
+                  "label": "Tilt-Rotor"
+                }
+              ]
+            },
+            {
+              "id": "esc",
+              "label": "ESC Protocol",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "pwm",
+                  "label": "PWM"
+                },
+                {
+                  "value": "oneshot",
+                  "label": "OneShot"
+                },
+                {
+                  "value": "dshot",
+                  "label": "DShot"
+                },
+                {
+                  "value": "blheli",
+                  "label": "BLHeli"
+                }
+              ]
+            },
+            {
+              "id": "propeller",
+              "label": "Propeller",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "2_blade",
+                  "label": "2-Blade"
+                },
+                {
+                  "value": "3_blade",
+                  "label": "3-Blade"
+                },
+                {
+                  "value": "folding",
+                  "label": "Folding"
+                },
+                {
+                  "value": "low_noise",
+                  "label": "Low-Noise"
+                }
+              ]
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "actuators",
+              "label": "Actuators",
+              "required": false,
+              "features": [
+                {
+                  "id": "servos",
+                  "label": "Servos Installed",
+                  "kind": "bool"
+                },
+                {
+                  "id": "linear_actuators",
+                  "label": "Linear Actuators",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "airframe",
+          "label": "Airframe",
+          "required": true,
+          "features": [
+            {
+              "id": "frame",
+              "label": "Airframe",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "multirotor",
+                  "label": "Multirotor"
+                },
+                {
+                  "value": "fixed_wing",
+                  "label": "Fixed-Wing"
+                },
+                {
+                  "value": "vtol",
+                  "label": "VTOL"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid VTOL"
+                }
+              ]
+            },
+            {
+              "id": "material",
+              "label": "Frame Material",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "carbon_fiber",
+                  "label": "Carbon Fiber"
+                },
+                {
+                  "value": "aluminum",
+                  "label": "Aluminum"
+                },
+                {
+                  "value": "composite",
+                  "label": "Composite Material"
+                }
+              ]
+            },
+            {
+              "id": "landing_gear",
+              "label": "Landing Gear",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "fixed",
+                  "label": "Fixed Gear"
+                },
+                {
+                  "value": "retractable",
+                  "label": "Retractable Gear"
+                },
+                {
+                  "value": "skids",
+                  "label": "Skids"
+                }
+              ]
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "mounts",
+              "label": "Mounting Interfaces",
+              "required": false,
+              "features": [
+                {
+                  "id": "rails",
+                  "label": "Rail System",
+                  "kind": "bool"
+                },
+                {
+                  "id": "plate",
+                  "label": "Universal Plate",
+                  "kind": "bool"
+                },
+                {
+                  "id": "gimbal_mount",
+                  "label": "Gimbal Mount",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "avionics",
+          "label": "Avionics",
+          "required": true,
+          "features": [
+            {
+              "id": "fcu",
+              "label": "Flight Controller",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "px4",
+                  "label": "PX4-Class FCU"
+                },
+                {
+                  "value": "ardupilot",
+                  "label": "ArduPilot-Class FCU"
+                },
+                {
+                  "value": "proprietary",
+                  "label": "Proprietary FCU"
+                }
+              ]
+            },
+            {
+              "id": "positioning",
+              "label": "Positioning System",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "gps",
+                  "label": "GPS"
+                },
+                {
+                  "value": "gps_compass",
+                  "label": "GPS + Compass"
+                },
+                {
+                  "value": "rtk",
+                  "label": "RTK GNSS"
+                },
+                {
+                  "value": "uwb",
+                  "label": "UWB Indoor Positioning"
+                },
+                {
+                  "value": "vio",
+                  "label": "Visual-Inertial Odometry"
+                }
+              ]
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "companion_computer",
+              "label": "Companion Computer",
+              "required": false,
+              "features": [
+                {
+                  "id": "type",
+                  "label": "Companion Type",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "sbc",
+                      "label": "Single-Board Computer"
+                    },
+                    {
+                      "value": "ai_module",
+                      "label": "AI Accelerator Module"
+                    }
+                  ]
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "rc_link",
+              "label": "RC Receiver",
+              "required": false,
+              "features": [
+                {
+                  "id": "protocol",
+                  "label": "RC Link Band",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "2_4ghz",
+                      "label": "2.4 GHz"
+                    },
+                    {
+                      "value": "900mhz",
+                      "label": "868/915 MHz"
+                    }
+                  ]
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "onboard_ai",
+              "label": "Onboard AI & Data Processing",
+              "required": false,
+              "features": [
+                {
+                  "id": "inference_capabilities",
+                  "label": "AI Inference Capabilities",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "basic",
+                      "label": "Basic Perception (e.g. obstacle detection)"
+                    },
+                    {
+                      "value": "advanced",
+                      "label": "Advanced Perception & Planning"
+                    }
+                  ]
+                },
+                {
+                  "id": "model_runtime",
+                  "label": "Model Runtime / Framework",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "tflite",
+                      "label": "TensorFlow Lite"
+                    },
+                    {
+                      "value": "tensorrt",
+                      "label": "NVIDIA TensorRT"
+                    },
+                    {
+                      "value": "onnx",
+                      "label": "ONNX Runtime"
+                    },
+                    {
+                      "value": "custom",
+                      "label": "Custom Runtime"
+                    }
+                  ]
+                },
+                {
+                  "id": "perception_models",
+                  "label": "Perception Models Onboard",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "object_detection",
+                      "label": "Object Detection"
+                    },
+                    {
+                      "value": "segmentation",
+                      "label": "Semantic Segmentation"
+                    },
+                    {
+                      "value": "slam_vio",
+                      "label": "SLAM / VIO Enhancement"
+                    }
+                  ]
+                },
+                {
+                  "id": "planning_ai",
+                  "label": "AI-Based Planning & Avoidance",
+                  "kind": "bool"
+                },
+                {
+                  "id": "onboard_anomaly_detection",
+                  "label": "Onboard Anomaly / Fault Detection",
+                  "kind": "bool"
+                },
+                {
+                  "id": "data_reduction",
+                  "label": "Onboard Data Reduction (Compression/Filtering)",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": [
+                {
+                  "id": "onboard_logging",
+                  "label": "Onboard Data Logging",
+                  "required": false,
+                  "features": [
+                    {
+                      "id": "log_level",
+                      "label": "Logging Level",
+                      "kind": "enum",
+                      "options": [
+                        {
+                          "value": "minimal",
+                          "label": "Minimal (events only)"
+                        },
+                        {
+                          "value": "standard",
+                          "label": "Standard Telemetry & Events"
+                        },
+                        {
+                          "value": "high_detail",
+                          "label": "High-Detail Logs & AI Outputs"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "log_rotation",
+                      "label": "Automatic Log Rotation",
+                      "kind": "bool"
+                    }
+                  ],
+                  "subsystems": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sensors",
+          "label": "Sensors",
+          "required": true,
+          "features": [],
+          "subsystems": [
+            {
+              "id": "proprioceptive",
+              "label": "Proprioceptive Sensors",
+              "required": true,
+              "features": [
+                {
+                  "id": "imu_redundant",
+                  "label": "Dual IMU Redundancy",
+                  "kind": "bool"
+                },
+                {
+                  "id": "motor_current_monitoring",
+                  "label": "Motor Current Monitoring",
+                  "kind": "bool"
+                },
+                {
+                  "id": "battery_monitoring",
+                  "label": "Battery Monitoring",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "exteroceptive",
+              "label": "Exteroceptive Sensors",
+              "required": false,
+              "features": [
+                {
+                  "id": "fpv_camera",
+                  "label": "FPV Camera",
+                  "kind": "bool"
+                },
+                {
+                  "id": "hd_camera",
+                  "label": "HD Camera",
+                  "kind": "bool"
+                },
+                {
+                  "id": "thermal_camera",
+                  "label": "Thermal Camera",
+                  "kind": "bool"
+                },
+                {
+                  "id": "lidar",
+                  "label": "LiDAR",
+                  "kind": "bool"
+                },
+                {
+                  "id": "optical_flow",
+                  "label": "Optical Flow Sensor",
+                  "kind": "bool"
+                },
+                {
+                  "id": "ultrasonic",
+                  "label": "Ultrasonic Sensor",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "communications",
+          "label": "Communications & Telemetry",
+          "required": true,
+          "features": [
+            {
+              "id": "telemetry",
+              "label": "Telemetry Link",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "433mhz",
+                  "label": "433 MHz Radio"
+                },
+                {
+                  "value": "868_915mhz",
+                  "label": "868/915 MHz Radio"
+                },
+                {
+                  "value": "wifi",
+                  "label": "Wi-Fi Telemetry"
+                }
+              ]
+            },
+            {
+              "id": "video",
+              "label": "Video Link",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "analog_fpv",
+                  "label": "Analog FPV"
+                },
+                {
+                  "value": "digital_hd",
+                  "label": "Digital HD Video"
+                }
+              ]
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "network_backhaul",
+              "label": "Network Backhaul",
+              "required": false,
+              "features": [
+                {
+                  "id": "lte_5g",
+                  "label": "LTE / 5G Backhaul",
+                  "kind": "bool"
+                },
+                {
+                  "id": "satellite",
+                  "label": "Satellite Backhaul",
+                  "kind": "bool"
+                },
+                {
+                  "id": "mesh",
+                  "label": "Mesh Network Backhaul",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "payload_system",
+          "label": "Payload System",
+          "required": false,
+          "features": [],
+          "subsystems": [
+            {
+              "id": "payload_camera",
+              "label": "Camera Payload",
+              "required": false,
+              "features": [
+                {
+                  "id": "type",
+                  "label": "Camera Payload Type",
+                  "kind": "enum",
+                  "options": [
+                    {
+                      "value": "gimbal_cam",
+                      "label": "Stabilized Gimbal Camera"
+                    },
+                    {
+                      "value": "mapping_cam",
+                      "label": "Mapping / Survey Camera"
+                    },
+                    {
+                      "value": "thermal_cam",
+                      "label": "Thermal Imaging Camera"
+                    }
+                  ]
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "payload_lidar",
+              "label": "LiDAR Payload",
+              "required": false,
+              "features": [
+                {
+                  "id": "survey_grade",
+                  "label": "Survey-Grade LiDAR",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "payload_delivery",
+              "label": "Delivery Payload",
+              "required": false,
+              "features": [
+                {
+                  "id": "winch",
+                  "label": "Winch System",
+                  "kind": "bool"
+                },
+                {
+                  "id": "drop_mechanism",
+                  "label": "Drop Mechanism",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "safety",
+          "label": "Safety & Redundancy",
+          "required": false,
+          "features": [],
+          "subsystems": [
+            {
+              "id": "failsafe",
+              "label": "Failsafe Modes",
+              "required": true,
+              "features": [
+                {
+                  "id": "rth",
+                  "label": "Return-to-Home",
+                  "kind": "bool"
+                },
+                {
+                  "id": "auto_land",
+                  "label": "Auto-Land",
+                  "kind": "bool"
+                },
+                {
+                  "id": "hover",
+                  "label": "Hover on Fail",
+                  "kind": "bool"
+                },
+                {
+                  "id": "parachute",
+                  "label": "Parachute System",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "redundancy",
+              "label": "Redundancy Features",
+              "required": false,
+              "features": [
+                {
+                  "id": "dual_imu",
+                  "label": "Dual IMU",
+                  "kind": "bool"
+                },
+                {
+                  "id": "dual_gps",
+                  "label": "Dual GPS",
+                  "kind": "bool"
+                },
+                {
+                  "id": "dual_power",
+                  "label": "Dual Power Feeds",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "geo",
+              "label": "Geofencing",
+              "required": false,
+              "features": [
+                {
+                  "id": "geofence_enabled",
+                  "label": "Geofence Enabled",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ground_control",
+      "label": "Ground Control Station",
+      "required": false,
+      "features": [],
+      "subsystems": [
+        {
+          "id": "gcs_software",
+          "label": "GCS Software",
+          "required": true,
+          "features": [
+            {
+              "id": "software_type",
+              "label": "GCS Software Type",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "desktop",
+                  "label": "Desktop GCS"
+                },
+                {
+                  "value": "tablet",
+                  "label": "Tablet / Mobile GCS"
+                },
+                {
+                  "value": "embedded",
+                  "label": "Embedded Rugged GCS"
+                }
+              ]
+            },
+            {
+              "id": "ui_mode",
+              "label": "Display Mode",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "map_2d",
+                  "label": "2D Map View"
+                },
+                {
+                  "value": "map_3d",
+                  "label": "3D Map / Terrain View"
+                },
+                {
+                  "value": "hybrid",
+                  "label": "Hybrid 2D/3D View"
+                }
+              ]
+            },
+            {
+              "id": "fleet_control",
+              "label": "Multi-UAV / Fleet Control",
+              "kind": "bool"
+            },
+            {
+              "id": "sim_integration",
+              "label": "Simulation Integration (SITL/HITL)",
+              "kind": "bool"
+            },
+            {
+              "id": "geofence_config",
+              "label": "Geofence Configuration",
+              "kind": "bool"
+            },
+            {
+              "id": "log_download",
+              "label": "Flight Log Download",
+              "kind": "bool"
+            },
+            {
+              "id": "live_kpi_panels",
+              "label": "Live KPI / Telemetry Panels",
+              "kind": "bool"
+            },
+            {
+              "id": "dual_operator_support",
+              "label": "Dual-Operator Support (Pilot + Payload)",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "roles_permissions",
+              "label": "User Roles & Permissions",
+              "required": false,
+              "features": [
+                {
+                  "id": "role_based_access",
+                  "label": "Role-Based Access Control",
+                  "kind": "bool"
+                },
+                {
+                  "id": "audit_logging",
+                  "label": "Audit Logging of Operator Actions",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        },
+        {
+          "id": "rc_transmitter",
+          "label": "RC Transmitter",
+          "required": false,
+          "features": [
+            {
+              "id": "link_protocol",
+              "label": "RC Link Protocol",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "2_4ghz",
+                  "label": "2.4 GHz Control Link"
+                },
+                {
+                  "value": "900mhz",
+                  "label": "868/915 MHz Long Range"
+                }
+              ]
+            },
+            {
+              "id": "channels",
+              "label": "Number of RC Channels",
+              "kind": "numeric",
+              "min": 4,
+              "max": 32
+            },
+            {
+              "id": "telemetry_integration",
+              "label": "Integrated Telemetry Display",
+              "kind": "bool"
+            },
+            {
+              "id": "built_in_screen",
+              "label": "Built-in Screen",
+              "kind": "bool"
+            },
+            {
+              "id": "programmable_switches",
+              "label": "Programmable Switches / Knobs",
+              "kind": "bool"
+            },
+            {
+              "id": "hardware_kill_switch",
+              "label": "Dedicated Hardware Kill Switch",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "video_ground_station",
+          "label": "Video Ground Station",
+          "required": false,
+          "features": [
+            {
+              "id": "rx_type",
+              "label": "Video Receiver Type",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "analog_rx",
+                  "label": "Analog FPV Receiver"
+                },
+                {
+                  "value": "digital_rx",
+                  "label": "Digital HD Receiver"
+                }
+              ]
+            },
+            {
+              "id": "diversity_rx",
+              "label": "Antenna Diversity Receiver",
+              "kind": "bool"
+            },
+            {
+              "id": "dvr_recording",
+              "label": "Onboard DVR Recording",
+              "kind": "bool"
+            },
+            {
+              "id": "hdmi_output",
+              "label": "HDMI / External Display Output",
+              "kind": "bool"
+            },
+            {
+              "id": "multi_view",
+              "label": "Multi-View (Multiple Cameras/UAVs)",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "ground_antennas",
+          "label": "Ground Antenna Systems",
+          "required": false,
+          "features": [
+            {
+              "id": "omni",
+              "label": "Omni-Directional Antenna",
+              "kind": "bool"
+            },
+            {
+              "id": "patch",
+              "label": "Patch Antenna",
+              "kind": "bool"
+            },
+            {
+              "id": "tracking",
+              "label": "Auto-Tracking Antenna System",
+              "kind": "bool"
+            },
+            {
+              "id": "diversity_array",
+              "label": "Diversity Antenna Array",
+              "kind": "bool"
+            },
+            {
+              "id": "mast_mount",
+              "label": "Mast / Tripod Mount",
+              "kind": "bool"
+            },
+            {
+              "id": "rtk_base_station",
+              "label": "RTK GNSS Base Station",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "ground_hardware",
+          "label": "Ground Hardware & Consoles",
+          "required": false,
+          "features": [
+            {
+              "id": "rugged_tablet",
+              "label": "Ruggedized Tablet",
+              "kind": "bool"
+            },
+            {
+              "id": "laptop",
+              "label": "Laptop Control Unit",
+              "kind": "bool"
+            },
+            {
+              "id": "base_station",
+              "label": "Portable Ground Station Case",
+              "kind": "bool"
+            },
+            {
+              "id": "joystick",
+              "label": "Joystick / Gamepad Input",
+              "kind": "bool"
+            },
+            {
+              "id": "external_monitors",
+              "label": "External Monitors / Video Wall",
+              "kind": "bool"
+            },
+            {
+              "id": "physical_estop",
+              "label": "Physical E-Stop Button",
+              "kind": "bool"
+            },
+            {
+              "id": "ups_power",
+              "label": "UPS / Backup Power for GCS",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "gcs_security",
+          "label": "GCS Security",
+          "required": false,
+          "features": [
+            {
+              "id": "link_encryption",
+              "label": "Encrypted Control & Telemetry Links",
+              "kind": "bool"
+            },
+            {
+              "id": "vpn_support",
+              "label": "VPN / Secure Tunnel Support",
+              "kind": "bool"
+            },
+            {
+              "id": "auth_method",
+              "label": "Operator Authentication Method",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "password",
+                  "label": "Username + Password"
+                },
+                {
+                  "value": "cert",
+                  "label": "Client Certificates"
+                },
+                {
+                  "value": "mfa",
+                  "label": "Multi-Factor Authentication"
+                }
+              ]
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "gcs_redundancy",
+          "label": "GCS Redundancy & Handover",
+          "required": false,
+          "features": [
+            {
+              "id": "hot_standby_gcs",
+              "label": "Hot-Standby Secondary GCS",
+              "kind": "bool"
+            },
+            {
+              "id": "link_failover",
+              "label": "Automatic Link Failover (Primary/Secondary)",
+              "kind": "bool"
+            },
+            {
+              "id": "handover_support",
+              "label": "In-Flight GCS Handover",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        }
+      ]
+    },
+    {
+      "id": "offline_systems",
+      "label": "Offline Systems",
+      "required": false,
+      "features": [],
+      "subsystems": [
+        {
+          "id": "mission_planning",
+          "label": "Mission Planning",
+          "required": false,
+          "features": [
+            {
+              "id": "planner_type",
+              "label": "Planner Type",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "2d",
+                  "label": "2D Route Planner"
+                },
+                {
+                  "value": "3d_terrain",
+                  "label": "3D Terrain-Aware Planner"
+                },
+                {
+                  "value": "fleet",
+                  "label": "Fleet-Level Planner"
+                }
+              ]
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "simulation",
+          "label": "Simulation Stack",
+          "required": false,
+          "features": [
+            {
+              "id": "sitl",
+              "label": "Software-in-the-Loop (SITL)",
+              "kind": "bool"
+            },
+            {
+              "id": "hitl",
+              "label": "Hardware-in-the-Loop (HITL)",
+              "kind": "bool"
+            },
+            {
+              "id": "physics_sim",
+              "label": "Physics-Based 3D Simulator",
+              "kind": "bool"
+            },
+            {
+              "id": "digital_twin",
+              "label": "Digital Twin Model",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "data_platform",
+          "label": "Data Platform",
+          "required": false,
+          "features": [
+            {
+              "id": "raw_logs",
+              "label": "Raw Flight Log Storage",
+              "kind": "bool"
+            },
+            {
+              "id": "telemetry_store",
+              "label": "Telemetry Data Lake",
+              "kind": "bool"
+            },
+            {
+              "id": "feature_store",
+              "label": "ML Feature Store",
+              "kind": "bool"
+            },
+            {
+              "id": "annotation_tools",
+              "label": "Annotation Tooling",
+              "kind": "bool"
+            },
+            {
+              "id": "dashboards",
+              "label": "Dashboards / BI Tools",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": []
+        },
+        {
+          "id": "ml_platform",
+          "label": "AI / ML Platform",
+          "required": false,
+          "features": [
+            {
+              "id": "training_pipeline",
+              "label": "Training Pipeline Automation",
+              "kind": "enum",
+              "options": [
+                {
+                  "value": "manual",
+                  "label": "Manual Training Scripts"
+                },
+                {
+                  "value": "orchestrated",
+                  "label": "Orchestrated Pipelines (e.g. CI/CD for models)"
+                }
+              ]
+            },
+            {
+              "id": "experiment_tracking",
+              "label": "Experiment Tracking",
+              "kind": "bool"
+            },
+            {
+              "id": "model_registry",
+              "label": "Model Registry",
+              "kind": "bool"
+            },
+            {
+              "id": "offline_batch_processing",
+              "label": "Offline Batch Processing",
+              "kind": "bool"
+            },
+            {
+              "id": "stream_processing",
+              "label": "Streaming / Near-Real-Time Processing",
+              "kind": "bool"
+            }
+          ],
+          "subsystems": [
+            {
+              "id": "deployment_targets",
+              "label": "Model Deployment Targets",
+              "required": false,
+              "features": [
+                {
+                  "id": "deploy_onboard",
+                  "label": "Deploy to Onboard AI",
+                  "kind": "bool"
+                },
+                {
+                  "id": "deploy_ground_edge",
+                  "label": "Deploy to Ground / Edge Servers",
+                  "kind": "bool"
+                },
+                {
+                  "id": "deploy_cloud",
+                  "label": "Deploy to Cloud Services",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            },
+            {
+              "id": "data_labeling",
+              "label": "Data Labeling & Curation",
+              "required": false,
+              "features": [
+                {
+                  "id": "human_labeling",
+                  "label": "Human Labeling Tools",
+                  "kind": "bool"
+                },
+                {
+                  "id": "auto_labeling",
+                  "label": "Auto / Assisted Labeling",
+                  "kind": "bool"
+                },
+                {
+                  "id": "quality_checks",
+                  "label": "Label Quality Checks",
+                  "kind": "bool"
+                }
+              ],
+              "subsystems": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c1",
+      "label": "Fixed-wing requires servos",
+      "expr": "airframe.frame_type == 'fixed_wing' => propulsion.actuators.servos == true"
+    },
+    {
+      "id": "c2",
+      "label": "Tilt-rotor requires servos",
+      "expr": "propulsion.motor_type == 'tiltrotor' => propulsion.actuators.servos == true"
+    },
+    {
+      "id": "c3",
+      "label": "Smart battery requires BMS",
+      "expr": "power.battery_type == 'smart' => power.power_management.bms == true"
+    },
+    {
+      "id": "c4",
+      "label": "LiDAR payload requires companion computer",
+      "expr": "payload_system.payload_lidar exists => avionics.companion_computer exists"
+    },
+    {
+      "id": "c5",
+      "label": "Digital HD video requires high-bandwidth telemetry",
+      "expr": "communications.video == 'digital_hd' => communications.telemetry in ['wifi','868_915mhz']"
+    },
+    {
+      "id": "c6",
+      "label": "Digital twin simulation requires telemetry data store",
+      "expr": "offline_systems.simulation.digital_twin == true => offline_systems.data_platform.telemetry_store == true"
+    },
+    {
+      "id": "c7",
+      "label": "Fleet planner implies multi-UAV context",
+      "expr": "offline_systems.mission_planning.planner_type == 'fleet' => environment.multi_uav == true"
+    },
+    {
+      "id": "c8",
+      "label": "GPS-denied requires optical flow or VIO",
+      "expr": "environment.gps_denied == true => (sensors.exteroceptive.optical_flow == true or avionics.positioning == 'vio')"
+    },
+    {
+      "id": "c9",
+      "label": "BVLOS requires mission planning",
+      "expr": "environment.bvlos == true => offline_systems.mission_planning.planner_type in ['2d','3d_terrain','fleet']"
+    },
+    {
+      "id": "c10",
+      "label": "BVLOS requires tracking antennas or backhaul",
+      "expr": "environment.bvlos == true => (ground_control.ground_antennas.tracking == true or communications.network_backhaul.lte_5g == true or communications.network_backhaul.satellite == true)"
+    },
+    {
+      "id": "c11",
+      "label": "GCS fleet control implies multi-UAV context",
+      "expr": "ground_control.gcs_software.fleet_control == true => environment.multi_uav == true"
+    },
+    {
+      "id": "c12",
+      "label": "Fleet planner implies GCS fleet control capability",
+      "expr": "offline_systems.mission_planning.planner_type == 'fleet' => ground_control.gcs_software.fleet_control == true"
+    },
+    {
+      "id": "c13",
+      "label": "GCS sim integration requires simulation stack",
+      "expr": "ground_control.gcs_software.sim_integration == true => (offline_systems.simulation.sitl == true or offline_systems.simulation.hitl == true)"
+    },
+    {
+      "id": "c14",
+      "label": "Advanced onboard AI requires companion computer",
+      "expr": "avionics.onboard_ai.inference_capabilities == 'advanced' => avionics.companion_computer exists"
+    },
+    {
+      "id": "c15",
+      "label": "ML platform requires data platform",
+      "expr": "offline_systems.ml_platform exists => offline_systems.data_platform.raw_logs == true"
+    },
+    {
+      "id": "c16",
+      "label": "Onboard AI deployment requires model registry",
+      "expr": "(avionics.onboard_ai.inference_capabilities in ['basic','advanced']) => offline_systems.ml_platform.model_registry == true"
+    },
+    {
+      "id": "c17",
+      "label": "Stream processing requires telemetry store",
+      "expr": "offline_systems.ml_platform.stream_processing == true => offline_systems.data_platform.telemetry_store == true"
+    }
+  ]
+}

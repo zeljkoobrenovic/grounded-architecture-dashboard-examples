@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document Templates & Examples</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .section {
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 5px;
+            background-color: #f8f8f8;
+        }
+
+        .doc {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 8px 18px 8px 8px;
+            padding: 11px;
+            background-color: white;
+            width: 220px;
+            vertical-align: top;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-top: 26px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+        }
+
+        body {
+            margin: 40px;
+        }
+
+        ::placeholder {
+            color: lightgrey;
+            opacity: 1;
+        }
+
+        :-ms-input-placeholder {
+            color: lightgrey;
+        }
+
+        ::-ms-input-placeholder {
+            color: lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="" class="hidden">
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">Document Templates & Examples</b>
+    </h1>
+    <br>
+</div>
+<div style="margin-left: 10px; margin-top: 20px; margin-bottom: 20px; color: grey">
+    <input id="filter" type="text" placeholder="search..."
+           style="font-size: 16px; height: 32px; width: 320px; margin-bottom: 10px"
+           onkeyup="update()">
+    <div id="search-summary" style="display: inline-block"></div>
+</div>
+</div>
+
+<div id="content"></div>
+
+<script>
+    const data = ${data};
+
+    function update() {
+        const filter = document.getElementById('filter').value.toLowerCase().trim();
+        let html = '';
+        let count = 0;
+
+        if (filter) {
+            const filteredData = data.filter(item => !filter || item.title.toLowerCase().includes(filter))
+        } else {
+            data.forEach(group => {
+                html += '<div class="section">';
+                html += '<div>&nbsp;&nbsp;&nbsp;';
+                html += group.title;
+                html += '</div>';
+                group.items.forEach(item => {
+                    html += '<div class="doc">';
+                    html += '<table>';
+                    html += '<tr>';
+                    html += '<td style="width: 80px">';
+                    html += '<img src="icons/' + item.icon + '" style="vertical-align: middle; height: 80px">';
+                    html += '</td>';
+                    html += '<td>';
+                    html += '<a target="_blank" href="' + item.link + '">';
+                    html += '<div style="font-size: 95%; color: grey">' + item.type + '</div>';
+                    html += '<div style="color: blue; font-size: 110%">' + item.title + '</div>';
+                    html += '</a>';
+                    html += '</td>';
+                    html += '</tr>';
+                    html += '<tr>';
+                    html += '<tr>';
+                    html += '<td colspan="2" style="font-size: 80%; color: grey; border-top: 1px dashed black; padding-top: 10px">' + item.summary + '</td>';
+                    html += '</table>';
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+        }
+        document.getElementById('search-summary').innerHTML = ' = ' + count + ' ' + (count === 1 ? 'item' : 'items');
+
+        document.getElementById('content').innerHTML = html;
+    }
+
+    update();
+</script>
+</body>
+</html>

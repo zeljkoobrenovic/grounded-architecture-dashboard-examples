@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTO Dashboard</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 230px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 23px; margin-top: -10px">
+    <h1 style="font-size: 50px; margin-bottom: -10px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 110px; vertical-align: top">
+        <div style="display: inline-block;  padding-left: 6px; vertical-align: top; padding-top: 8px;">
+            <b>CTO Dashboard</b>
+            <p style="font-size: 17px; margin-top: 4px; color: gray">Key performance indicators</p>
+        </div>
+    </h1>
+    <br>
+</div>
+<script>
+    const work = ${work};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '<div style="margin-left: 30px">';
+    html += '<div class="tab">';
+    html += '<button class="tablinks active" onclick="openTab(event, \'kpi\')">KPIs</button>';
+    html += '</div>';
+
+    html += '<div id="kpi" class="tabcontent" style="padding: 40px; overflow: auto; display: block">';
+
+    function colorOf(ragStatus) {
+        if (ragStatus === 'red') return 'crimson';
+        if (ragStatus === 'green') return 'green';
+
+        if (ragStatus === 'amber') return '#FFBF00';
+        if (ragStatus === 'yellow') return '#FFBF00';
+
+        return 'lightgrey';
+    }
+
+    function distributionOf(chapter) {
+        const distribution = {
+            counts: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            percentages: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            score: 0
+        }
+        let total = 0;
+        chapter.sections.forEach(section => {
+            section.items.forEach(item => {
+                const status = item.ragStatus;
+
+                if (status === 'red') distribution.counts.red++;
+                else if (status === 'green') distribution.counts.green++;
+                else if (status === 'amber') distribution.counts.amber++;
+                else if (status === 'yellow') distribution.counts.amber++;
+
+                total += 1;
+            });
+        });
+
+        if (total > 0) {
+            distribution.percentages.red = 100 * distribution.counts.red / total;
+            distribution.percentages.amber = 100 * distribution.counts.amber / total;
+            distribution.percentages.green = 100 * distribution.counts.green / total;
+
+            distribution.score = Math.round(10 * ((distribution.counts.red * 1) + distribution.counts.amber * 5 + distribution.counts.green * 10) / total) / 10;
+        }
+
+        return distribution;
+    }
+
+    html += '<table>';
+    html += '<tr>';
+
+    work.regular.forEach(chapter => {
+        const distribution = distributionOf(chapter);
+        html += '<td style="vertical-align: top; min-width: 400px">';
+        html += '<div style="margin-bottom: 60px; display: inline-block; vertical-align: top; border-left: 1px solid grey; padding: 12px">';
+        html += '<div style="font-size: 160%;">' + chapter.title + ' (' + distribution.score + ')</div>';
+        html += '<div>';
+        let percentages = distribution.percentages;
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.green + '%; background-color: green"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.amber + '%; background-color: #FFBF00"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.red + '%; background-color: crimson"></div>';
+        html += '</div>';
+        chapter.sections.forEach(section => {
+            html += '<div style="margin-bottom: 40px; border-left: 1px dashed grey">';
+            html += '<div style="font-size: 130%; margin-top: 22px; margin-left: 12px;">' + section.title + '</div>';
+            section.items.forEach(item => {
+                const title = 'Status: ' + item.ragStatus + '\n\n' + item.statusNotes.join('\n');
+                html += '<div style="margin: 10px; margin-left: 40px;">';
+                html += '<div style="margin: 1px; vertical-align: top; cursor: help; display: inline-block; padding-top: 6px; width: 36px; height: 17px; background-color: ' + colorOf(item.ragStatus) + '; border-radius: 0; margin-right: 6px;" title="' + title + '"></div>';
+                html += '<div style="vertical-align: middle; display: inline-block; width: 250px; padding-top: 0px; font-size: 90%">';
+                if (item.link) html += '<a style="text-decoration: none; width: 400px" target="_blank" href="' + item.link + '">';
+                html += item.title;
+                if (item.link) html += '</a>&nbsp;';
+                html += '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+        html += '</div>';
+        html += '</td>';
+    });
+
+    html += '</tr';
+    html += '</table>';
+
+    html += '</div>';
+
+    html += '</div>';
+    div.outerHTML = html;
+</script>
+
+<div style="margin-left: 30px; margin-top: 8px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a target="_blank" style="" href="${source_link}">data sheet</a>.
+</div>
+</body>
+</html>

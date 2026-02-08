@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "exportDate": "2024-06-15"
+    "exportDate": "2025-12-08"
   },
   "data": [
     {
-      "source": "Brands",
+      "source": "Real-Estate",
       "data": [
         {
           "startgroup": "Zillow Group",
@@ -765,6 +765,511 @@
           "techblog": "https://www.google.com/search?q=Hotel Reservation Service (HRS) tech blog",
           "ios": "https://www.google.com/search?q=Hotel Reservation Service (HRS)+iOS+App",
           "android": "https://www.google.com/search?q=Hotel Reservation Service (HRS)+ANdroid+App"
+        }
+      ]
+    },
+    {
+      "source": "ESG",
+      "data": [
+        {
+          "startgroup": "GRESB",
+          "company": "GRESB BV",
+          "type": "ESG",
+          "link": "https://www.gresb.com/",
+          "monthlyvisits": "65K",
+          "logo": "logos/gresb.png",
+          "country": "NL",
+          "linkedin": "https://www.linkedin.com/company/gresb",
+          "linkedin_people": "160"
+        },
+        {
+          "company": "Asset Impact",
+          "type": "ESG",
+          "link": "https://asset-impact.gresb.com/",
+          "logo": "logos/asset-impact.png",
+          "country": "FR",
+          "linkedin": "https://www.linkedin.com/company/asset-impact-gresb",
+          "linkedin_people": "27"
+        },
+        {
+          "startgroup": "ESG Data & Software Partners",
+          "company": "Measurabl",
+          "type": "ESG",
+          "link": "https://www.measurabl.com/",
+          "monthlyvisits": "9K",
+          "logo": "logos/measurabl.png",
+          "country": "US",
+          "linkedin": "https://www.linkedin.com/company/measurabl/",
+          "linkedin_people": "163"
+        },
+        {
+          "company": "Deepki",
+          "type": "ESG",
+          "link": "https://www.deepki.com/",
+          "monthlyvisits": "39K",
+          "logo": "logos/deepki.png",
+          "country": "FR",
+          "linkedin": "https://www.linkedin.com/company/deepki/",
+          "linkedin_people": "421"
+        },
+        {
+          "company": "EVORA Global",
+          "type": "ESG",
+          "link": "https://evoraglobal.com/",
+          "monthlyvisits": "2K",
+          "logo": "logos/evora-global.png",
+          "country": "GB",
+          "linkedin": "https://www.linkedin.com/company/evora-global/",
+          "linkedin_people": "167"
+        },
+        {
+          "startgroup": "Broad-Based ESG Rating Agencies",
+          "company": "MSCI",
+          "type": "ESG",
+          "link": "https://www.msci.com/data-and-analytics/sustainability-solutions",
+          "logo": "logos/msci.png",
+          "country": "US",
+          "linkedin": "https://www.linkedin.com/company/msci-inc/",
+          "linkedin_people": "7618"
+        },
+        {
+          "company": "Sustainalytics (Morningstar)",
+          "type": "ESG",
+          "link": "https://www.sustainalytics.com/",
+          "logo": "logos/sustainalytics.png",
+          "country": "NL",
+          "linkedin": "https://www.linkedin.com/company/sustainalytics/",
+          "linkedin_people": "1023"
+        },
+        {
+          "company": "Bloomberg (ESG Data)",
+          "type": "ESG",
+          "link": "https://www.bloomberg.com/professional/products/data/enterprise-catalog/esg/",
+          "logo": "logos/bloomberg.jpeg",
+          "country": "US",
+          "linkedin": "https://www.linkedin.com/company/bloomberg/",
+          "linkedin_people": "25353"
+        },
+        {
+          "company": "S&P Global",
+          "type": "ESG",
+          "link": "https://www.spglobal.com/esg/solutions/",
+          "logo": "logos/sp-global.png",
+          "country": "US",
+          "linkedin": "https://www.linkedin.com/company/spglobal/",
+          "linkedin_people": "38552"
+        },
+        {
+          "company": "Sustainable Flitch",
+          "type": "ESG",
+          "link": "https://www.sustainablefitch.com/",
+          "logo": "logos/sf.jpg"
+        },
+        {
+          "company": "ISS ESG",
+          "type": "ESG",
+          "link": "https://www.issgovernance.com/sustainability/",
+          "logo": "logos/iss.png"
+        },
+        {
+          "company": "LSEG Data & Analytics (formerly ) Refinitiv",
+          "type": "ESG",
+          "link": "https://www.lseg.com/en/data-analytics/sustainable-finance",
+          "logo": "logos/lseg-da.svg"
+        },
+        {
+          "startgroup": "Private Market Data Providers",
+          "company": "Preqin",
+          "type": "ESG",
+          "link": "https://www.preqin.com/esg/esg-solutions",
+          "logo": "logos/preqin.png",
+          "country": "GB",
+          "linkedin": "https://www.linkedin.com/company/preqin/",
+          "linkedin_people": "575"
+        },
+        {
+          "startgroup": "Frameworks and Aliances",
+          "company": "GRESB Foundation",
+          "type": "ESG",
+          "link": "https://www.gresb.com/nl-en/gresb-foundation/",
+          "logo": "logos/gresb-foundation.png",
+          "country": "NL",
+          "linkedin": "https://www.linkedin.com/company/gresb"
+        },
+        {
+          "company": "CDP",
+          "type": "ESG",
+          "link": "https://www.cdp.net/en",
+          "logo": "logos/cdp.png"
+        },
+        {
+          "company": "LEED",
+          "type": "ESG",
+          "link": "https://www.usgbc.org/leed",
+          "logo": "logos/leed.png"
+        },
+        {
+          "company": "BREEAM",
+          "type": "ESG",
+          "link": "https://breeam.com/",
+          "logo": "logos/breeam.png"
+        },
+        {
+          "company": "ULI Greenprint",
+          "type": "ESG",
+          "link": "https://americas.uli.org/research/centers-initiatives/uli-randall-lewis-center-for-sustainability-in-real-estate/membership/",
+          "logo": "logos/uli-greenprint.png"
+        },
+        {
+          "company": "SASB",
+          "type": "ESG",
+          "link": "https://sasb.ifrs.org/",
+          "logo": "logos/sasb.jpg"
+        },
+        {
+          "company": "TCFD",
+          "type": "ESG",
+          "link": "https://www.fsb-tcfd.org/",
+          "logo": "logos/tcfd.png"
+        }
+      ]
+    },
+    {
+      "source": "UAV",
+      "data": [
+        {
+          "startgroup": "Defense and DualUse",
+          "company": "Airbus Defence & Space",
+          "type": "uav",
+          "link": "https://www.airbus.com",
+          "country": "EU",
+          "logo": "logos/airbus_defence_space.png"
+        },
+        {
+          "company": "Thales Group",
+          "type": "uav",
+          "link": "https://www.thalesgroup.com",
+          "country": "FR",
+          "logo": "logos/thales_group.png"
+        },
+        {
+          "company": "Leonardo S.p.A.",
+          "type": "uav",
+          "link": "https://www.leonardo.com",
+          "country": "IT",
+          "logo": "logos/leonardo_s_p_a.png",
+          "linkedin": "https://www.linkedin.com/company/leonardo_company/",
+          "linkedin_people": "37000"
+        },
+        {
+          "company": "Eurodrone Consortium",
+          "type": "uav",
+          "link": "https://www.airbus.com/en/products-services/defence/uas/eurodrone",
+          "country": "EU",
+          "logo": "logos/eurodrone_consortium.png"
+        },
+        {
+          "company": "Dassault Aviation",
+          "type": "uav",
+          "link": "https://www.dassault-aviation.com",
+          "country": "FR",
+          "logo": "logos/dassault_aviation.png"
+        },
+        {
+          "company": "Rheinmetall",
+          "type": "uav",
+          "link": "https://www.rheinmetall.com",
+          "country": "DE",
+          "logo": "logos/rheinmetall.png"
+        },
+        {
+          "company": "WB Group",
+          "type": "uav",
+          "link": "https://www.wbgroup.pl",
+          "country": "PL",
+          "logo": "logos/wb_group.png"
+        },
+        {
+          "company": "Primoco UAV",
+          "type": "uav",
+          "link": "https://www.uav-stol.com",
+          "country": "CZ",
+          "logo": "logos/primoco_uav.png"
+        },
+        {
+          "startgroup": "Commercial and Enterprise",
+          "company": "Parrot SA",
+          "type": "uav",
+          "link": "https://www.parrot.com",
+          "country": "FR",
+          "logo": "logos/parrot_sa.png"
+        },
+        {
+          "company": "Delair",
+          "type": "uav",
+          "link": "https://www.delair.aero",
+          "country": "FR",
+          "logo": "logos/delair.png"
+        },
+        {
+          "company": "Hepta Airborne",
+          "type": "uav",
+          "link": "https://www.heptaairborne.com",
+          "country": "EE",
+          "logo": "logos/hepta_airborne.png"
+        },
+        {
+          "company": "Drone Hopper",
+          "type": "uav",
+          "link": "https://www.drone-hopper.com",
+          "country": "ES",
+          "logo": "logos/drone_hopper.png"
+        },
+        {
+          "company": "Rumble Tools",
+          "type": "uav",
+          "link": "https://www.rumbletools.com",
+          "country": "FI",
+          "logo": "logos/rumble_tools.png"
+        },
+        {
+          "company": "Avy",
+          "type": "uav",
+          "link": "https://www.avy.eu",
+          "country": "NL",
+          "logo": "logos/avy.png",
+          "linkedin": "https://www.linkedin.com/company/avy/",
+          "linkedin_people": "60"
+        },
+        {
+          "company": "Embention",
+          "type": "uav",
+          "link": "https://www.embention.com",
+          "country": "ES",
+          "logo": "logos/embention.png"
+        },
+        {
+          "company": "Quantum-Systems",
+          "type": "uav",
+          "link": "https://www.quantum-systems.com",
+          "country": "DE",
+          "logo": "logos/quantum_systems.png"
+        },
+        {
+          "startgroup": "Emerging_Innovators",
+          "company": "Everdrone",
+          "type": "uav",
+          "link": "https://www.everdrone.com",
+          "country": "SE",
+          "logo": "logos/everdrone.png"
+        },
+        {
+          "company": "Sky-Watch",
+          "type": "uav",
+          "link": "https://www.sky-watch.com",
+          "country": "DK",
+          "logo": "logos/sky_watch.png"
+        },
+        {
+          "company": "Atlas Dynamics",
+          "type": "uav",
+          "link": "https://www.atlasdynamics.eu",
+          "country": "LV",
+          "logo": "logos/atlas_dynamics.png"
+        },
+        {
+          "startgroup": "Defense and Military",
+          "company": "General Atomics Aeronautical Systems",
+          "type": "uav",
+          "link": "https://www.ga-asi.com",
+          "country": "US",
+          "logo": "logos/general_atomics_aeronautical_systems.png"
+        },
+        {
+          "company": "Northrop Grumman",
+          "type": "uav",
+          "link": "https://www.northropgrumman.com",
+          "country": "US",
+          "logo": "logos/northrop_grumman.png"
+        },
+        {
+          "company": "Lockheed Martin",
+          "type": "uav",
+          "link": "https://www.lockheedmartin.com",
+          "country": "US",
+          "logo": "logos/lockheed_martin.png"
+        },
+        {
+          "company": "Boeing Defense / Insitu",
+          "type": "uav",
+          "link": "https://www.boeing.com",
+          "country": "US",
+          "logo": "logos/boeing_defense_insitu.png"
+        },
+        {
+          "company": "Textron Systems",
+          "type": "uav",
+          "link": "https://www.textronsystems.com",
+          "country": "US",
+          "logo": "logos/textron_systems.png"
+        },
+        {
+          "company": "Elbit Systems",
+          "type": "uav",
+          "link": "https://elbitsystems.com",
+          "country": "IL",
+          "logo": "logos/elbit_systems.png"
+        },
+        {
+          "company": "Israel Aerospace Industries (IAI)",
+          "type": "uav",
+          "link": "https://www.iai.co.il",
+          "country": "IL",
+          "logo": "logos/israel_aerospace_industries_iai.png"
+        },
+        {
+          "company": "BAE Systems",
+          "type": "uav",
+          "link": "https://www.baesystems.com",
+          "country": "GB",
+          "logo": "logos/bae_systems.png"
+        },
+        {
+          "company": "Saab AB",
+          "type": "uav",
+          "link": "https://www.saab.com",
+          "country": "SE",
+          "logo": "logos/saab_ab.png"
+        },
+        {
+          "company": "Baykar",
+          "type": "uav",
+          "link": "https://www.baykartech.com",
+          "country": "TR",
+          "logo": "logos/baykar.png"
+        },
+        {
+          "company": "TAI (Turkish Aerospace Industries)",
+          "type": "uav",
+          "link": "https://www.tai.com.tr",
+          "country": "TR",
+          "logo": "logos/tai_turkish_aerospace_industries.png"
+        },
+        {
+          "company": "AVIC (Aviation Industry Corporation of China)",
+          "type": "uav",
+          "link": "http://www.avic.com",
+          "country": "CN",
+          "logo": "logos/avic_aviation_industry_corporation_of_china.png"
+        },
+        {
+          "startgroup": "Commercial and Enterprise",
+          "company": "DJI",
+          "type": "uav",
+          "link": "https://www.dji.com",
+          "country": "CN",
+          "logo": "logos/dji.png"
+        },
+        {
+          "company": "Autel Robotics",
+          "type": "uav",
+          "link": "https://www.autelrobotics.com",
+          "country": "CN",
+          "logo": "logos/autel_robotics.png"
+        },
+        {
+          "company": "Skydio",
+          "type": "uav",
+          "link": "https://www.skydio.com",
+          "country": "US",
+          "logo": "logos/skydio.png"
+        },
+        {
+          "company": "Yuneec International",
+          "type": "uav",
+          "link": "https://www.yuneec.com",
+          "country": "CN",
+          "logo": "logos/yuneec_international.png"
+        },
+        {
+          "company": "Parrot SA",
+          "type": "uav",
+          "link": "https://www.parrot.com",
+          "country": "FR",
+          "logo": "logos/parrot_sa.png"
+        },
+        {
+          "company": "Delair",
+          "type": "uav",
+          "link": "https://www.delair.aero",
+          "country": "FR",
+          "logo": "logos/delair.png"
+        },
+        {
+          "company": "Quantum-Systems",
+          "type": "uav",
+          "link": "https://www.quantum-systems.com",
+          "country": "DE",
+          "logo": "logos/quantum_systems.png"
+        },
+        {
+          "company": "3D Robotics (3DR)",
+          "type": "uav",
+          "link": "https://www.3dr.com",
+          "country": "US",
+          "logo": "logos/3d_robotics_3dr.png"
+        },
+        {
+          "company": "Aerovironment",
+          "type": "uav",
+          "link": "https://www.avinc.com",
+          "country": "US",
+          "logo": "logos/aerovironment.png"
+        },
+        {
+          "startgroup": "Emerging and Innovative",
+          "company": "TAF Drones",
+          "type": "uav",
+          "link": "https://tafdrone.com",
+          "country": "UA",
+          "logo": "logos/taf_drones.png"
+        },
+        {
+          "company": "Everdrone",
+          "type": "uav",
+          "link": "https://www.everdrone.com",
+          "country": "SE",
+          "logo": "logos/everdrone.png"
+        },
+        {
+          "company": "Atlas Dynamics",
+          "type": "uav",
+          "link": "https://www.atlasdynamics.eu",
+          "country": "LV",
+          "logo": "logos/atlas_dynamics.png"
+        },
+        {
+          "company": "Wing (Alphabet)",
+          "type": "uav",
+          "link": "https://wing.com",
+          "country": "US",
+          "logo": "logos/wing_alphabet.png"
+        },
+        {
+          "company": "Zipline",
+          "type": "uav",
+          "link": "https://www.flyzipline.com",
+          "country": "US",
+          "logo": "logos/zipline.png"
+        },
+        {
+          "company": "Avy",
+          "type": "uav",
+          "link": "https://www.avy.eu",
+          "country": "NL",
+          "logo": "logos/avy.png",
+          "linkedin": "https://www.linkedin.com/company/avy/",
+          "linkedin_people": "60"
         }
       ]
     }

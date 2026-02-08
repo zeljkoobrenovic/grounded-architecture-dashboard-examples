@@ -1,0 +1,342 @@
+{
+    "UAV_Companies": {
+        "EU": {
+            "Defense_and_DualUse": [
+                {
+                    "name": "Airbus Defence & Space",
+                    "country": "EU (France/Germany/Spain)",
+                    "website": "https://www.airbus.com",
+                    "notes": "Eurodrone MALE, tactical UAVs",
+                    "logo_file": "airbus_defence_space.ico"
+                },
+                {
+                    "name": "Thales Group",
+                    "country": "France",
+                    "website": "https://www.thalesgroup.com",
+                    "notes": "Surveillance drones, avionics, tactical UAVs",
+                    "logo_file": "thales_group.ico"
+                },
+                {
+                    "name": "Leonardo S.p.A.",
+                    "country": "Italy",
+                    "website": "https://www.leonardo.com",
+                    "notes": "Falco UAV series, rotary unmanned systems",
+                    "logo_file": "leonardo_s_p_a.ico"
+                },
+                {
+                    "name": "Eurodrone Consortium",
+                    "country": "EU-wide",
+                    "website": "https://www.occar.int/programmes/eurodrone",
+                    "notes": "Airbus + Dassault + Leonardo; developing MALE combat drone",
+                    "logo_file": "eurodrone_consortium.ico"
+                },
+                {
+                    "name": "Dassault Aviation",
+                    "country": "France",
+                    "website": "https://www.dassault-aviation.com",
+                    "notes": "Partner in Eurodrone, autonomous combat systems",
+                    "logo_file": "dassault_aviation.ico"
+                },
+                {
+                    "name": "Rheinmetall",
+                    "country": "Germany",
+                    "website": "https://www.rheinmetall.com",
+                    "notes": "Tactical drones, loitering munition R&D",
+                    "logo_file": "rheinmetall.ico"
+                },
+                {
+                    "name": "WB Group",
+                    "country": "Poland",
+                    "website": "https://www.wbgroup.pl",
+                    "notes": "FlyEye UAV, Warmate loitering munitions",
+                    "logo_file": "wb_group.ico"
+                },
+                {
+                    "name": "Primoco UAV",
+                    "country": "Czech Republic",
+                    "website": "https://www.uav-stol.com",
+                    "notes": "Medium-size fixed-wing UAVs with long endurance",
+                    "logo_file": "primoco_uav.ico"
+                }
+            ],
+            "Commercial_and_Enterprise": [
+                {
+                    "name": "Parrot SA",
+                    "country": "France",
+                    "website": "https://www.parrot.com",
+                    "notes": "ANAFI series; enterprise drones",
+                    "logo_file": "parrot_sa.ico"
+                },
+                {
+                    "name": "Delair",
+                    "country": "France",
+                    "website": "https://www.delair.aero",
+                    "notes": "BVLOS fixed-wing enterprise drones",
+                    "logo_file": "delair.ico"
+                },
+                {
+                    "name": "Hepta Airborne",
+                    "country": "Estonia",
+                    "website": "https://www.heptaairborne.com",
+                    "notes": "Powerline & infrastructure inspection",
+                    "logo_file": "hepta_airborne.ico"
+                },
+                {
+                    "name": "Drone Hopper",
+                    "country": "Spain",
+                    "website": "https://www.dronehopper.com",
+                    "notes": "Firefighting & heavy-lift drones",
+                    "logo_file": "drone_hopper.ico"
+                },
+                {
+                    "name": "Rumble Tools",
+                    "country": "Finland",
+                    "website": "https://www.rumbletools.com",
+                    "notes": "Industrial inspection drones",
+                    "logo_file": "rumble_tools.ico"
+                },
+                {
+                    "name": "Avy",
+                    "country": "Netherlands",
+                    "website": "https://www.avy.eu",
+                    "notes": "VTOL fixed-wing drones for medical & emergency missions",
+                    "logo_file": "avy.ico"
+                },
+                {
+                    "name": "Embention",
+                    "country": "Spain",
+                    "website": "https://www.embention.com",
+                    "notes": "High-reliability UAV autopilot systems",
+                    "logo_file": "embention.ico"
+                },
+                {
+                    "name": "Quantum-Systems",
+                    "country": "Germany",
+                    "website": "https://www.quantum-systems.com",
+                    "notes": "VTOL fixed-wing drones for mapping & defense",
+                    "logo_file": "quantum_systems.ico"
+                }
+            ],
+            "Emerging_Innovators": [
+                {
+                    "name": "Everdrone",
+                    "country": "Sweden",
+                    "website": "https://www.everdrone.com",
+                    "notes": "Autonomous emergency-response drones",
+                    "logo_file": "everdrone.ico"
+                },
+                {
+                    "name": "Sky-Watch",
+                    "country": "Denmark",
+                    "website": "https://www.sky-watch.com",
+                    "notes": "Surveillance & emergency UAVs",
+                    "logo_file": "sky_watch.ico"
+                },
+                {
+                    "name": "Atlas Dynamics",
+                    "country": "Latvia",
+                    "website": "https://www.atlasdynamics.eu",
+                    "notes": "Rugged drones for first responders",
+                    "logo_file": "atlas_dynamics.ico"
+                }
+            ]
+        },
+        "Worldwide": {
+            "Defense_and_Military": [
+                {
+                    "name": "General Atomics Aeronautical Systems",
+                    "country": "USA",
+                    "website": "https://www.ga-asi.com",
+                    "notes": "MQ-1/9 Predator & Reaper; long-endurance ISR drones",
+                    "logo_file": "general_atomics_aeronautical_systems.ico"
+                },
+                {
+                    "name": "Northrop Grumman",
+                    "country": "USA",
+                    "website": "https://www.northropgrumman.com",
+                    "notes": "Global Hawk, HALE UAV systems",
+                    "logo_file": "northrop_grumman.ico"
+                },
+                {
+                    "name": "Lockheed Martin",
+                    "country": "USA",
+                    "website": "https://www.lockheedmartin.com",
+                    "notes": "Tactical UAV programs, autonomous systems",
+                    "logo_file": "lockheed_martin.ico"
+                },
+                {
+                    "name": "Boeing Defense / Insitu",
+                    "country": "USA",
+                    "website": "https://www.boeing.com",
+                    "notes": "ScanEagle, RQ-21 Blackjack via Insitu",
+                    "logo_file": "boeing_defense_insitu.ico"
+                },
+                {
+                    "name": "Textron Systems",
+                    "country": "USA",
+                    "website": "https://www.textronsystems.com",
+                    "notes": "Aerosonde, Shadow UAV platforms",
+                    "logo_file": "textron_systems.ico"
+                },
+                {
+                    "name": "Elbit Systems",
+                    "country": "Israel",
+                    "website": "https://elbitsystems.com",
+                    "notes": "Hermes UAV series",
+                    "logo_file": "elbit_systems.ico"
+                },
+                {
+                    "name": "Israel Aerospace Industries (IAI)",
+                    "country": "Israel",
+                    "website": "https://www.iai.co.il",
+                    "notes": "Heron UAV series",
+                    "logo_file": "israel_aerospace_industries_iai.ico"
+                },
+                {
+                    "name": "BAE Systems",
+                    "country": "UK",
+                    "website": "https://www.baesystems.com",
+                    "notes": "Taranis UCAV and autonomous flight research",
+                    "logo_file": "bae_systems.ico"
+                },
+                {
+                    "name": "Saab AB",
+                    "country": "Sweden",
+                    "website": "https://www.saab.com",
+                    "notes": "Skeldar VTOL UAV",
+                    "logo_file": "saab_ab.ico"
+                },
+                {
+                    "name": "Baykar",
+                    "country": "T\u00fcrkiye",
+                    "website": "https://www.baykartech.com",
+                    "notes": "Bayraktar TB2, TB3, Akinci UCAVs",
+                    "logo_file": "baykar.ico"
+                },
+                {
+                    "name": "TAI (Turkish Aerospace Industries)",
+                    "country": "T\u00fcrkiye",
+                    "website": "https://www.tai.com.tr",
+                    "notes": "ANKA UAV series",
+                    "logo_file": "tai_turkish_aerospace_industries.ico"
+                },
+                {
+                    "name": "AVIC (Aviation Industry Corporation of China)",
+                    "country": "China",
+                    "website": "http://www.avic.com",
+                    "notes": "Wing Loong and CH-series drones",
+                    "logo_file": "avic_aviation_industry_corporation_of_china.ico"
+                }
+            ],
+            "Commercial_and_Enterprise": [
+                {
+                    "name": "DJI",
+                    "country": "China",
+                    "website": "https://www.dji.com",
+                    "notes": "Global leader in consumer and enterprise drones",
+                    "logo_file": "dji.ico"
+                },
+                {
+                    "name": "Autel Robotics",
+                    "country": "China",
+                    "website": "https://www.autelrobotics.com",
+                    "notes": "EVO series; enterprise and consumer drones",
+                    "logo_file": "autel_robotics.ico"
+                },
+                {
+                    "name": "Skydio",
+                    "country": "USA",
+                    "website": "https://www.skydio.com",
+                    "notes": "Autonomous drones with advanced AI navigation",
+                    "logo_file": "skydio.ico"
+                },
+                {
+                    "name": "Yuneec International",
+                    "country": "China",
+                    "website": "https://www.yuneec.com",
+                    "notes": "Consumer and professional drones",
+                    "logo_file": "yuneec_international.ico"
+                },
+                {
+                    "name": "Parrot SA",
+                    "country": "France",
+                    "website": "https://www.parrot.com",
+                    "notes": "ANAFI series; enterprise mapping drones",
+                    "logo_file": "parrot_sa.ico"
+                },
+                {
+                    "name": "Delair",
+                    "country": "France",
+                    "website": "https://www.delair.aero",
+                    "notes": "BVLOS fixed-wing enterprise UAVs",
+                    "logo_file": "delair.ico"
+                },
+                {
+                    "name": "Quantum-Systems",
+                    "country": "Germany",
+                    "website": "https://www.quantum-systems.com",
+                    "notes": "VTOL mapping drones; dual-use",
+                    "logo_file": "quantum_systems.ico"
+                },
+                {
+                    "name": "3D Robotics (3DR)",
+                    "country": "USA",
+                    "website": "https://www.3dr.com",
+                    "notes": "Early commercial drone pioneer; now software-focused",
+                    "logo_file": "3d_robotics_3dr.ico"
+                },
+                {
+                    "name": "Aerovironment",
+                    "country": "USA",
+                    "website": "https://www.avinc.com",
+                    "notes": "Small UAS for defense & commercial surveying",
+                    "logo_file": "aerovironment.ico"
+                }
+            ],
+            "Emerging_and_Innovative": [
+                {
+                    "name": "TAF Drones",
+                    "country": "Ukraine",
+                    "website": "https://tafdrone.com",
+                    "notes": "High-volume FPV drone manufacturing",
+                    "logo_file": "taf_drones.ico"
+                },
+                {
+                    "name": "Everdrone",
+                    "country": "Sweden",
+                    "website": "https://www.everdrone.com",
+                    "notes": "Autonomous medical-response drones",
+                    "logo_file": "everdrone.ico"
+                },
+                {
+                    "name": "Atlas Dynamics",
+                    "country": "Latvia",
+                    "website": "https://www.atlasdynamics.eu",
+                    "notes": "Rugged small UAVs for first responders",
+                    "logo_file": "atlas_dynamics.ico"
+                },
+                {
+                    "name": "Wing (Alphabet)",
+                    "country": "USA",
+                    "website": "https://wing.com",
+                    "notes": "Drone delivery systems",
+                    "logo_file": "wing_alphabet.ico"
+                },
+                {
+                    "name": "Zipline",
+                    "country": "USA",
+                    "website": "https://www.flyzipline.com",
+                    "notes": "Medical delivery drones operating globally",
+                    "logo_file": "zipline.ico"
+                },
+                {
+                    "name": "Avy",
+                    "country": "Netherlands",
+                    "website": "https://www.avy.eu",
+                    "notes": "VTOL fixed-wing drones for humanitarian use",
+                    "logo_file": "avy.ico"
+                }
+            ]
+        }
+    }
+}
