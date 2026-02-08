@@ -412,7 +412,7 @@
         let html = '';
 
         html += '<div  class="group">';
-        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/capabilities/index.html#Progress">Roadmap</a></div>';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://brand.comcapabilities/index.html#Progress">Roadmap</a></div>';
 
         if (roadmap && roadmap.length) {
             html += displayTable(roadmap[0]);
@@ -601,7 +601,7 @@
                     } else if (role.toLowerCase().includes('scientist')) {
                         type = 'science';
                     }
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/workday/index.html?filter=' + name + '">';
+                    html += '<a target="_blank" href="https://brand.comworkday/index.html?filter=' + name + '">';
                     html += '<div class="person">';
                     html += '<div><img src="icons/' + type + '.png" ' +
                         'style="width: 34px;"' +
@@ -1058,7 +1058,7 @@
     function addProductReviews() {
         html += '<div  class="group">';
         html += '<div style="font-size: 200%; margin-bottom: 12px">' +
-            '<a target="_blank" href="https://architecture.Brandgroup.co/product_reviews/index.html">' +
+            '<a target="_blank" href="https://brand.comproduct_reviews/index.html">' +
             'Product Review Evidence' +
             '</a>' +
             '</div>';
@@ -1104,7 +1104,7 @@
     function addPlanning() {
         html += '<div  class="group">';
         html += '<div style="font-size: 200%; margin-bottom: 12px">' +
-            '<a target="_blank" href="https://architecture.Brandgroup.co/planning/index/index.html">' +
+            '<a target="_blank" href="https://brand.complanning/index/index.html">' +
             'Planning Evidence' +
             '</a>' +
             '</div>';
@@ -1164,7 +1164,7 @@
                         html += '<td></td>';
                         html += '<td>';
                         people.forEach(person => {
-                            html += '<a target="_blank" href="https://architecture.Brandgroup.co/workday/index.html?filter=' + person + '">';
+                            html += '<a target="_blank" href="https://brand.comworkday/index.html?filter=' + person + '">';
                             html += '<div class="person" style="max-width: 60px; white-space: break-spaces">';
                             html += '<div><img src="people/' + person + '.jpeg" ' +
                                 'style="width: 58px; border-radius: 50%; border: 1px solid black;"' +
@@ -1244,14 +1244,14 @@
                     html += '</td>';
                     html += '<td style="padding-left: 34px; padding-right: 4px">';
                     const repoName = repo.split('/');
-                    const prefix = 'https://architecture.Brandgroup.co/sokrates/reports/';
+                    const prefix = 'https://brand.comsokrates/reports/';
                     html += '<a target="_blank" href="' + prefix + repo.replace(/\,.*/, '').trim() + '/html/index.html" ">';
                     html += '<img src="icons/analysis.png" style="width: 30px; margin-right: 8px; margin-top: 6px">';
                     html += '<div style="font-size: 9px; text-align: center">report</div></a>';
                     html += '</td>';
                     html += '<td>';
                     let compliant = isRepoNameCompliant(repo);
-                    html += '<a href="https://architecture.Brandgroup.co/golden-paths/names/index.html" target="_blank"><img src="icons/' + (compliant ? 'compliant' : 'not-compliant') + '.png" style="width: 20px; margin: 3px" title="the repository name is ' + (compliant ? '' : 'NOT ') + 'compliant with the Brand naming conventions"></a>';
+                    html += '<a href="https://brand.comgolden-paths/names/index.html" target="_blank"><img src="icons/' + (compliant ? 'compliant' : 'not-compliant') + '.png" style="width: 20px; margin: 3px" title="the repository name is ' + (compliant ? '' : 'NOT ') + 'compliant with the Brand naming conventions"></a>';
                     html += '</td>';
                     html += '</tr>';
                 });
@@ -1289,14 +1289,14 @@
                     html += '</td>';
                     html += '<td style="padding-left: 34px; padding-right: 4px">';
                     const repoName = repo.split('/');
-                    const prefix = 'https://architecture.Brandgroup.co/sokrates/reports/';
+                    const prefix = 'https://brand.comsokrates/reports/';
                     html += '<a target="_blank" href="' + prefix + repo.replace(/\,.*/, '').trim() + '/html/index.html" ">';
                     html += '<img src="icons/analysis.png" style="width: 30px; margin-right: 8px; margin-top: 6px">';
                     html += '<div style="font-size: 9px; text-align: center">report</div></a>';
                     html += '</td>';
                     html += '<td>';
                     let compliant = isRepoNameCompliant(repo);
-                    html += '<a href="https://architecture.Brandgroup.co/golden-paths/names/index.html" target="_blank"><img src="icons/' + (compliant ? 'compliant' : 'not-compliant') + '.png" style="width: 20px; margin: 3px" title="the repository name is ' + (compliant ? '' : 'NOT ') + 'compliant with the Brand naming conventions"></a>';
+                    html += '<a href="https://brand.comgolden-paths/names/index.html" target="_blank"><img src="icons/' + (compliant ? 'compliant' : 'not-compliant') + '.png" style="width: 20px; margin: 3px" title="the repository name is ' + (compliant ? '' : 'NOT ') + 'compliant with the Brand naming conventions"></a>';
                     html += '</td>';
                     html += '</tr>';
                 });
@@ -1311,7 +1311,7 @@
         if (capability.aws_accounts || capability.aws_workspace_config_path) {
             let awsAccounts = capability.aws_accounts ? capability.aws_accounts.trim().split('\n') : [];
             awsCount = awsAccounts.length;
-            html += '<div style="font-size: 150%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/aws/linked_accounts/index.html">AWS Workspaces (' + awsAccounts.length + ')</a></div>';
+            html += '<div style="font-size: 150%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><a target="_blank" href="https://brand.comaws/linked_accounts/index.html">AWS Workspaces (' + awsAccounts.length + ')</a></div>';
             if (awsAccounts.length || capability.aws_workspace_config_path) {
                 html += '<table class="aws">';
                 if (awsAccounts.length > 1) {
@@ -1321,19 +1321,19 @@
                     html += '<img src="icons/aws.png" style="border-radius: 4px; padding: 4px; border: 1px solid orange; width: 32px; margin-right: 8px; margin-top: 6px">';
                     html += '</td>';
                     html += '<td style="vertical-align: middle; padding-right: 20px; background-color: #f0f0f0; padding-left: 5px; font-size: 120%">';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/aws/linked_accounts/trends.html?filter=' + accountParams + '">';
+                    html += '<a target="_blank" href="https://brand.comaws/linked_accounts/trends.html?filter=' + accountParams + '">';
                     html += awsAccounts.length + ' Workspaces';
                     html += '</a>';
                     html += '</td>';
                     html += '<td style="background-color: #f0f0f0">';
                     html += 'graphs: ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/links-2d.html?filter=' + accountParams + '&excludeIndirectAccounts=true">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/links-2d.html?filter=' + accountParams + '&excludeIndirectAccounts=true">';
                     html += 'repositories';
                     html += '</a> | ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/links-2d.html?filter=' + accountParams + '&excludeIndirectAccounts=false">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/links-2d.html?filter=' + accountParams + '&excludeIndirectAccounts=false">';
                     html += 'repositories+other accounts';
                     html += '</a> | ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/indirect-links-2d.html?filter=' + accountParams + '">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/indirect-links-2d.html?filter=' + accountParams + '">';
                     html += 'other accounts';
                     html += '</a>';
                     html += '</td>';
@@ -1345,20 +1345,20 @@
                     html += '<img src="icons/aws.png" style="border-radius: 4px; padding: 4px; border: 1px solid orange; width: 32px; margin-right: 8px; margin-top: 6px">';
                     html += '</td>';
                     html += '<td style="vertical-align: middle; padding-right: 20px">';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/aws/linked_accounts/trends.html?filter=' + account.replace(/\,.*/, '') + '">';
+                    html += '<a target="_blank" href="https://brand.comaws/linked_accounts/trends.html?filter=' + account.replace(/\,.*/, '') + '">';
                     html += awsAccounts.length > 1 ? '&nbsp;&nbsp;•&nbsp;&nbsp;' : '';
                     html += account;
                     html += '</a>';
                     html += '</td>';
                     html += '<td>';
                     html += 'graphs: ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
                     html += 'repositories';
                     html += '</a> | ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
                     html += 'repositories+other accounts';
                     html += '</a> | ';
-                    html += '<a target="_blank" href="https://architecture.Brandgroup.co/awsexplorer/visuals/indirect-links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
+                    html += '<a target="_blank" href="https://brand.comawsexplorer/visuals/indirect-links-2d.html?filter=' + account.replace(/\,.*/, '') + '">';
                     html += 'other accounts';
                     html += '</a>';
                     html += '</td>';
@@ -1386,7 +1386,7 @@
                 html += '<p style="color: grey; margin-left: 12px">No AWS evidence provided.</p>';
             }
         } else {
-            html += '<div style="font-size: 150%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/aws/linked_accounts/index.html">AWS Workspaces (0)</a></div>';
+            html += '<div style="font-size: 150%; margin-top: 32px; margin-bottom: 18px; margin-left: 12px"><a target="_blank" href="https://brand.comaws/linked_accounts/index.html">AWS Workspaces (0)</a></div>';
             html += '<p style="color: grey; margin-left: 12px">No AWS evidence provided.</p>';
         }
 
@@ -1397,7 +1397,7 @@
 
     function addDependencies() {
         html += '<div  class="group">';
-        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/capabilities/index.html#Synergies">Target WL Dependencies</a></div>';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://brand.comcapabilities/index.html#Synergies">Target WL Dependencies</a></div>';
 
         function statusOf(dependency) {
             let status = 4;
