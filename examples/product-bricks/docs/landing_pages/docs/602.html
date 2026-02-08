@@ -523,22 +523,22 @@
             capability.edit_docs = '';
 
             if (capability.details_sheet_gid) {
-                const detailsSheetLink = 'https://docs.google.com/spreadsheets/d/1Gci5OGI2suMZOAizRQmGCLcelAVleLyLG9TslUPeJE8/edit#gid=' + capability.details_sheet_gid;
+                const detailsSheetLink = '' + capability.details_sheet_gid;
                 capability.edit_docs += 'Edit data...,' + detailsSheetLink + '\n';
             }
 
             if (capability.targets_sheet_gid) {
-                const targetsSheetLink = 'https://docs.google.com/spreadsheets/d/1jdZs46gngEQkD6lNyzpOLXf2z-qVYW_GiG_kZhlc9Zk/edit#gid=' + capability.targets_sheet_gid;
+                const targetsSheetLink = '' + capability.targets_sheet_gid;
                 capability.edit_docs += 'Edit release targets...,' + targetsSheetLink + '\n';
             }
 
             if (capability.discussions_sheet_gid) {
-                const discussionsSheetLink = 'https://docs.google.com/spreadsheets/d/1pCQWH24fp_welPgOvN0ePNXc7VuR3wghjmd5rcu5MR4/edit#gid=' + capability.discussions_sheet_gid;
+                const discussionsSheetLink = '' + capability.discussions_sheet_gid;
                 capability.edit_docs += 'Edit decisions and discussions...,' + discussionsSheetLink + '\n';
             }
 
             // if (capability.architecture_sheet_gid) {
-            //     const targetsSheetLink = 'https://docs.google.com/spreadsheets/d/1rXk2K1btY3s5TyxSkTFM2X5qyYAEqBLDKUUaG6kz0SU/edit#gid=' + capability.architecture_sheet_gid;
+            //     const targetsSheetLink = '' + capability.architecture_sheet_gid;
             //     capability.edit_docs += 'Edit architecture metamorphosis...,' + targetsSheetLink + '\n';
             // }
 
