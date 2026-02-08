@@ -1,0 +1,3008 @@
+{
+  "metadata": {
+    "exportDate": "2025-04-17"
+  },
+  "data": [
+    {
+      "source": "Mobile Apps",
+      "data": [
+        {
+          "group": "B2C Apps",
+          "group_icon": "mobile.png",
+          "link": "https://google.com",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-02",
+          "done": "2025-02"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2024-12",
+          "done": "2024-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2024-12",
+          "done": "2024-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "group": "B2B Apps",
+          "group_icon": "mobile_pro.png",
+          "link": "https://google.com",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Mobile",
+          "expected": "2025-12"
+        }
+      ]
+    },
+    {
+      "source": "Actor Pages & Portals",
+      "data": [
+        {
+          "group": "Homepages",
+          "group_icon": "homepage.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "link": "https://google.com",
+          "group_impact": "4",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12",
+          "done": "2024-11"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-10",
+          "done": "2024-10"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "group": "SERP",
+          "group_icon": "serp.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "group": "Classifieds Details Pages",
+          "group_icon": "cdp.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "group": "Home Purchase Financing",
+          "group_icon": "financing.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "group": "Estimation Funnels",
+          "group_icon": "estimation_funnel.png",
+          "aws_accounts": "aws_account",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "group": "Intermediary Profile Pages",
+          "group_icon": "intermediary_profile.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2024-09",
+          "done": "2024-09"
+        },
+        {
+          "group": "Price Maps",
+          "group_icon": "price_map.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "group": "Prospection Maps",
+          "group_icon": "prospection_map.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner"
+        },
+        {
+          "group": "Intermediary Pro Portals",
+          "group_icon": "pro_portal.png",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "group_impact": "7",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "expected": "2024-03",
+          "done": "2024-03"
+        },
+        {
+          "group": "Ad Services",
+          "group_icon": "ads_services.png",
+          "link": "https://google.com",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "extra_links": ""
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "group": "Cookie Consent Management",
+          "group_icon": "consent.png",
+          "group_impact": "4",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-12"
+        },
+        {
+          "group": "SEO Management",
+          "group_icon": "seo.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "group": "CMS",
+          "group_icon": "cms.png",
+          "link": "https://google.com",
+          "group_impact": "4",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "Website",
+          "group_icon": "cms.png",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object"
+        }
+      ]
+    },
+    {
+      "source": "Classifieds & Search",
+      "data": [
+        {
+          "group": "Classifieds Import",
+          "group_icon": "import.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2024-07",
+          "done": "2024-07",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2024-07",
+          "done": "2024-07",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "Online Classifieds Acquisition",
+          "group_icon": "form.png",
+          "group_impact": "10",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Intermediary",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Owner",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2024-10",
+          "done": "2024-10",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "expected": "2023-10",
+          "done": "2023-10",
+          "domain": "Intermediary"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "expected": "2024-02",
+          "done": "2024-02",
+          "domain": "Intermediary"
+        },
+        {
+          "group": "Classifieds Management",
+          "group_icon": "classifieds_management.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Intermediary"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Intermediary"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2024-08",
+          "done": "2024-08",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "group": "Media Management",
+          "group_icon": "media.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "wl_capability_links": "Media Management, gsl media connector, FSBO"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "wl_capability_links": "Media Management, iwt media connector"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "expected": "2024-05",
+          "done": "2024-05",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "link": "https://google.com",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "expected": "2024-08",
+          "done": "2024-08",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Platform",
+          "wl_capability_links": "Media Management, iwb media connector"
+        },
+        {
+          "group": "Classifieds Search Services",
+          "group_icon": "search.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2025-12",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "expected": "2024-01",
+          "done": "2024-01",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "expected": "2024-08",
+          "done": "2024-08",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "expected": "2024-08",
+          "done": "2024-08",
+          "domain": "Seeker"
+        },
+        {
+          "group": "Classified Details Services",
+          "group_icon": "cdp.png",
+          "group_impact": "4",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "link": "https://google.com",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Seeker",
+          "wl_capability_links": "Classifieds Details Page (CDP), iwt expose acl, agency info\nClassifieds Sort Order, ranking expose acl"
+        }
+      ]
+    },
+    {
+      "source": "Complex Backend Systems",
+      "data": [
+        {
+          "group": "Big Servers & Databases",
+          "group_icon": "server.png",
+          "group_impact": "10",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "B2B CRM, pac acl",
+          "extra_links": ""
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Classifieds Management, gsl classifieds connector, classifieds"
+        },
+        {
+          "group_impact": "10",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Classifieds Sort Order, visibility booking engine",
+          "extra_links": ""
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "expected": "2023-11",
+          "done": "2023-11",
+          "domain": "Platform"
+        },
+        {
+          "group_impact": "10",
+          "link": "https://google.com",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2024-10",
+          "done": "2024-10",
+          "domain": "Platform",
+          "wl_capability_links": "Classifieds Management, iwb classifieds connector, classifieds"
+        },
+        {
+          "group": "Payment Services",
+          "group_icon": "files.png",
+          "group_impact": "4",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object"
+        },
+        {
+          "group": "Contract & Lead Management",
+          "group_icon": "lead-management.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "wl_capability_links": "Seeker Lead Management, iwt lead management acl, contact form"
+        },
+        {
+          "group_impact": "7",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Seeker Lead Scoring, sl contact enrichi connector"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Classifieds Data Quality, legacy sync"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Intermediary"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Intermediary Lead Matching, iwb customer service connector"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Intermediary Lead Matching, iwb contract service connector"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "wl_capability_links": "Intermediary Lead Matching, iwb lead service connector"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "wl_capability_links": "Classifieds Data Quality, legacy sync"
+        },
+        {
+          "group": "Notification Services",
+          "group_icon": "notifications.png",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Estimation Funnel, notif gateway"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "Marketing Automation & Notification Service",
+          "group_icon": "marketing.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "extra_links": ""
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "wl_capability_links": "Consumer Advertising Management, se ads connector"
+        },
+        {
+          "group": "B2B CRMs",
+          "group_icon": "crm.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "wl_capability_links": "Contract Management, Backoffice"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2024-10",
+          "done": "2024-10",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "expected": "2025-02",
+          "domain": "Platform"
+        }
+      ]
+    },
+    {
+      "source": "Safety, Security, and Trust",
+      "data": [
+        {
+          "group": "Authentication System",
+          "group_icon": "auth.png",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2025-12"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "link": "https://google.com",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "User Management",
+          "group_icon": "auth.png",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "Fraud Detection",
+          "group_icon": "fraud.png",
+          "aws_accounts": "aws_account",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "aws_accounts": "aws_account",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "group": "Security Vulnerabilities",
+          "group_icon": "security.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "expected": "2025-12"
+        },
+        {
+          "group": "Dark Public Cloud Resources",
+          "group_icon": "cloud.png",
+          "group_impact": "7",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-01",
+          "done": "2024-01"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-01",
+          "done": "2024-01"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-07",
+          "done": "2024-07"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Owner",
+          "expected": "2024-07",
+          "done": "2024-07"
+        }
+      ]
+    },
+    {
+      "source": "Data Intensive Systems",
+      "data": [
+        {
+          "group": "Data Platform",
+          "group_icon": "data-infra.png",
+          "group_impact": "7",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "expected": "2024-11",
+          "done": "2024-11",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt databricks connector\nSeeker Lead Scoring, iwt scoring databrick connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt data lake selektion connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt clickhouse connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt clickhouse connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt clickhouse connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt clickhouse connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt clickhouse connector"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dwh web connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dwh web connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl data lake immobc connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl data lake immobc connectorautobiz"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl data lake immobc connectorautobiz"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dwh web connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dwh bi connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dwh customer roi connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl dmp connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, gsl harvest connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, li data lake connector"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Core Analytics, iwt redshift connector"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace",
+          "wl_capability_links": "Seeker Lead Scoring, iwb stats connector"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "group": "Geo Service",
+          "group_icon": "geo.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "group": "Rating and Scoring",
+          "group_icon": "scoring.png",
+          "group_impact": "4",
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "aws_accounts": "aws_account",
+          "domain": "Marketplace"
+        },
+        {
+          "group": "Google Analytics 3",
+          "group_icon": "ga.png",
+          "group_impact": "10",
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-06",
+          "domain": "2024-06"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-06",
+          "domain": "2024-06"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-01",
+          "domain": "2024-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-07",
+          "domain": "2024-07"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-07",
+          "domain": "2024-07"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "link": "https://google.com",
+          "expected": "Platform",
+          "done": "2024-07",
+          "domain": "2024-07"
+        }
+      ]
+    },
+    {
+      "source": "Infra",
+      "data": [
+        {
+          "group": "Data Centers",
+          "group_icon": "dc.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "L",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2024-12"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "L",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2024-10",
+          "done": "2024-10",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "L",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2024-10",
+          "done": "2024-10"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "L",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2024-07",
+          "done": "2024-07",
+          "link": "https://google.com"
+        },
+        {
+          "group": "Frontend Routing",
+          "group_icon": "routing.png",
+          "group_impact": "4",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "group": "Messaging Middlewares",
+          "group_icon": "middleware.png",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "group": "Kubernetes",
+          "group_icon": "kubernetes.png",
+          "group_impact": "7",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        }
+      ]
+    },
+    {
+      "source": "DevOps & QA",
+      "data": [
+        {
+          "group": "Source Code Repository Servers",
+          "group_icon": "src.png",
+          "group_impact": "7",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2023-04",
+          "done": "2023-04"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "CI/CD",
+          "group_icon": "cicd.png",
+          "group_impact": "4",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        },
+        {
+          "group": "Observability",
+          "group_icon": "observability.png",
+          "group_impact": "7",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "expected": "2024-04",
+          "done": "2024-04",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "aws_accounts": "aws_account"
+        }
+      ]
+    },
+    {
+      "source": "Backoffice",
+      "data": [
+        {
+          "group": "Product Backoffice",
+          "group_icon": "backoffice.png",
+          "group_impact": "4",
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "aws_accounts": "aws_account",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Platform"
+        },
+        {
+          "group": "Jira",
+          "group_icon": "jira.png",
+          "group_impact": "10",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "group": "HR Systems",
+          "group_icon": "hr.png",
+          "group_impact": "10",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-01",
+          "done": "2023-01"
+        },
+        {
+          "group": "Workspaces",
+          "group_icon": "gw.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "group": "Slack",
+          "group_icon": "slack.png",
+          "group_impact": "10",
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_B",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "roi_infra": "L",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2023-06",
+          "done": "2023-06"
+        },
+        {
+          "group": "Backoffice",
+          "group_icon": "backoffice.png",
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "L",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "L",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "L",
+          "aws_accounts": "aws_account",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "expected": "2025-12"
+        },
+        {
+          "roi_infra": "M",
+          "roi_maintenance": "S",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "CIO",
+          "link": "https://google.com"
+        }
+      ]
+    },
+    {
+      "source": "Other",
+      "data": [
+        {
+          "group": "Other Legacy Country_2",
+          "group_icon": "fr.svg",
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_D",
+          "object": "Legacy Object",
+          "domain": "Intermediary",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "S",
+          "brand": "MA",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_E",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "expected": "2024-04",
+          "done": "2024-04",
+          "link": "https://google.com"
+        },
+        {
+          "group": "Other Legacy Country_3",
+          "group_icon": "be.svg",
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_C",
+          "object": "Legacy Object",
+          "domain": "Marketplace",
+          "link": "https://google.com"
+        },
+        {
+          "group": "Other Legacy Country_1",
+          "group_icon": "de.svg",
+          "roi_infra": "L",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "M",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker",
+          "link": "https://google.com"
+        },
+        {
+          "roi_infra": "M",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Seeker"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        },
+        {
+          "roi_infra": "S",
+          "aws_accounts": "aws_account",
+          "roi_maintenance": "S",
+          "brand": "Brand_A",
+          "object": "Legacy Object",
+          "domain": "Marketplace"
+        }
+      ]
+    }
+  ]
+}

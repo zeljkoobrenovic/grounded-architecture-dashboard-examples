@@ -1,0 +1,1469 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head id="ctl00_Head"><base href="https://www.occar.int/" /><script id="ctl00_jquery" type="text/javascript" src="/systems/scripts/jquery.min.js"></script>
+<meta name="description" content="ORGANISATION FOR JOINT ARMAMENT COOPERATION
+facilitates and manages complex, cooperative defence equipment programmes to the satisfaction of its customers." />
+<meta name="keywords" content="OCCAR, facilitate,manage complex, cooperative, defence, equipment programmes, customers,ORGANISATION ,JOINT, ARMAMENT , COOPERATION
+
+" />
+<meta name="ROBOTS" content="NOFOLLOW, NOINDEX" />
+<meta charset="utf-8" /><title>
+	OCCAR - 404
+</title>
+<link href="assets/frameworks/mdl/material.min.css" rel="stylesheet" type="text/css" />
+<link type="text/css" href="systems/scripts/Semantic-UI-CSS-master/semantic.css" rel="stylesheet">
+<link href="fonts/fontello/_icons.css" rel="stylesheet" type="text/css" />
+<style>
+
+#listFilterBox button {
+    background-color: transparent !important;
+    border: none;
+    font-size: 150%;
+    color: #fedf0d;
+}
+
+#listFilterBox button i:hover{
+    color: #fff;
+}
+
+#listFilterBox {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline-flex;
+}
+
+#divFilterBox{
+    position: absolute;
+    right: 30px;
+    bottom: 0px;
+}
+
+.mdl-tabs__tab-bar {
+    justify-content: left !important;
+}
+
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+    font-weight: 500 !important;
+}
+
+@media (max-width: 1280px) {
+  .is-wrapper .is-box .is-container {
+    min-width: 100% !important;
+  }
+}
+</style><script src="assets/frameworks/mdl/material.min.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" /><link rel="shortcut icon" href="/favicon.ico?v=2" /><link href="App_Themes/default-material/StyleSheet.css" type="text/css" rel="stylesheet" /><link id="ctl00_BaseCss" type="text/css" href="assets/common/ui/base/base.css" rel="stylesheet"></link>
+<script id="ctl00_content1" type="text/javascript"></script><style>
+.blueTable-small pre {
+    font-size: 12px !important;
+}
+
+.blueTable-small p {
+    font-size: 11px;
+}
+
+@media (min-width: 780px) and (max-width: 1199px) {
+  .mdl-cell--4-col, .mdl-cell--4-col-desktop.mdl-cell--4-col-desktop {
+    width: calc(100% - 16px);
+  }
+
+  .mdl-cell--8-col, .mdl-cell--8-col-tablet.mdl-cell--8-col-tablet, .mdl-cell--9-col {
+    width: calc(100% - 16px);
+  }
+
+  .mdl-tabs.is-upgraded .mdl-tabs__panel.is-active, .mdl-tabs__panel {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  table.blueTable {
+    border: 0;
+  }
+  
+  table.blueTable thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table.blueTable tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table.blueTable tr:nth-child(1) {
+    display: none;
+  }
+
+  table.blueTable td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: left;
+    width: 100%;
+  }
+  
+  table.blueTable td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table.blueTable td:last-child {
+    border-bottom: 0;
+  }
+}
+</style><link id="ctl00_is-topbar-css" type="text/css" href="templates/occar_home/custom_topbar.css" rel="stylesheet"></link><script>$(document).ready(function ($) {$('.is-topbar').addClass('fixed static');})</script><link id="ctl00_SnippetCss" type="text/css" href="templates/occar_home/custom_content.css" rel="stylesheet"></link><link id="ctl00_BoxCss" type="text/css" href="assets/common/ui/box/box.css?1" rel="stylesheet"></link><link id="ctl00_AnimateCss" type="text/css" href="assets/scripts/animate/animate.css" rel="stylesheet"></link><link id="ctl00_SimpleLightBoxCss" type="text/css" href="assets/scripts/simplelightbox/simplelightbox.css" rel="stylesheet"></link></head>
+<body id="ctl00_pageBody" class="topstyle-4  is-wide-layout">
+
+<form name="aspnetForm" method="post" style="margin:0;height:100%" action="/404?page=programmes/eurodrone/favicon.ico" onsubmit="if (typeof(WebForm_OnSubmit) == 'function') return WebForm_OnSubmit();" id="aspnetForm">
+<input type="hidden" name="__VIEWSTATEFIELDCOUNT" id="__VIEWSTATEFIELDCOUNT" value="87" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTMyNzA1ODg4NA8WBh4PX19BbnRpWHNyZlRva2VuBSA2NWRiYmI2MmFjOTY0NGE5YmI0OTQyYjNlMmRmOWFjZB4SX19B" />
+<input type="hidden" name="__VIEWSTATE1" id="__VIEWSTATE1" value="bnRpWHNyZlVzZXJOYW1lZR4TVmFsaWRhdGVSZXF1ZXN0TW9kZQIBFgJmD2QWAgIDDxYCHgVjbGFzcwUadG9wc3R5bGUtNCAgaXMt" />
+<input type="hidden" name="__VIEWSTATE2" id="__VIEWSTATE2" value="d2lkZS1sYXlvdXQWAgIBDxYCHgVzdHlsZQUUbWFyZ2luOjA7aGVpZ2h0OjEwMCUWBAIBD2QWBAIBD2QWAmYPZBYCAgIPZBYCZg9k" />
+<input type="hidden" name="__VIEWSTATE3" id="__VIEWSTATE3" value="FgwCBQ8PFgIeFFZhbGlkYXRpb25FeHByZXNzaW9uBW1eW2EtekEtWjAtOVx1MDBDMC1cdTAxN0ZcLV9cXDohQCgpXHtcfVxbXF0s" />
+<input type="hidden" name="__VIEWSTATE4" id="__VIEWSTATE4" value="Ln49J2A7XF5cc10rKC5zdmd8LlNWR3wuZ2lmfC5HSUZ8LmpwZ3wuSlBHfC5qcGVnfC5KUEVHfC5wbmd8LlBORykkZGQCEQ8QZGQW" />
+<input type="hidden" name="__VIEWSTATE5" id="__VIEWSTATE5" value="AWZkAhkPEGRkFgFmZAIdDxBkZBYBZmQCIQ8QZGQWAWZkAiUPEGRkFgFmZAIDD2QWAmYPZBYEAgUPFgIeB1Zpc2libGVnFgZmDxYC" />
+<input type="hidden" name="__VIEWSTATE6" id="__VIEWSTATE6" value="HgRUZXh0BawCPGRpdiBpZD0iZGl2VHlwZTIiPjxkaXYgaWQ9ImlkU2VhcmNoIiBjbGFzcz0iY2wtbW9kYWwiIHN0eWxlPSJkaXNw" />
+<input type="hidden" name="__VIEWSTATE7" id="__VIEWSTATE7" value="bGF5IG5vbmU7IHotaW5kZXg6IDEwMDAwMDAiPjxkaXYgY2xhc3M9ImNsLWNvbnRlbnQiPjxkaXYgY2xhc3M9ImNsLWJvZHkiPjxk" />
+<input type="hidden" name="__VIEWSTATE8" id="__VIEWSTATE8" value="aXYgY2xhc3M9ImNsLWZvcm0gY2VudGVyIj48ZGl2IGNsYXNzPSJzZWFyY2hsb2dvIj48aW1nIHNyYz0ibG9nby5wbmciIC8+PC9k" />
+<input type="hidden" name="__VIEWSTATE9" id="__VIEWSTATE9" value="aXY+PGgxIGNsYXNzPSJzZWFyY2gtaCI+U2VhcmNoIG91ciBjb250ZW50PC9oMT48ZGl2IGNsYXNzPSJib3hTZWFyY2giPjxkaXYg" />
+<input type="hidden" name="__VIEWSTATE10" id="__VIEWSTATE10" value="Y2xhc3M9IiI+ZAIBD2QWAmYPZBYGAgIPFgIfBwWBBzxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0Ij4kKGRvY3VtZW50KS5y" />
+<input type="hidden" name="__VIEWSTATE11" id="__VIEWSTATE11" value="ZWFkeShmdW5jdGlvbiAoKSB7dmFyIElucHV0MiA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0eHRTZWFyY2gnKTtJbnB1dDIu" />
+<input type="hidden" name="__VIEWSTATE12" id="__VIEWSTATE12" value="YWRkRXZlbnRMaXN0ZW5lcigia2V5dXAiLCBmdW5jdGlvbihldmVudCkge2lmIChldmVudC5rZXlDb2RlID09PSAxMykge2V2ZW50" />
+<input type="hidden" name="__VIEWSTATE13" id="__VIEWSTATE13" value="LnByZXZlbnREZWZhdWx0KCk7d2luZG93LmxvY2F0aW9uLnJlcGxhY2UoJ3NlYXJjaC5hc3B4P3E9JyArIElucHV0Mi52YWx1ZSk7" />
+<input type="hidden" name="__VIEWSTATE14" id="__VIEWSTATE14" value="fX0pOyQoJy51aS5zZWFyY2gnKS5zZWFyY2goe3R5cGU6ICdjYXRlZ29yeScsbWluQ2hhcmFjdGVyczogMyxhcGlTZXR0aW5nczog" />
+<input type="hidden" name="__VIEWSTATE15" id="__VIEWSTATE15" value="e29uUmVzcG9uc2U6IGZ1bmN0aW9uIChnaXRodWJSZXNwb25zZSkge3ZhciByZXNwb25zZSA9IHtyZXN1bHRzOiB7fX07ICQuZWFj" />
+<input type="hidden" name="__VIEWSTATE16" id="__VIEWSTATE16" value="aChnaXRodWJSZXNwb25zZS5pdGVtcywgZnVuY3Rpb24gKGluZGV4LCBpdGVtKSB7dmFyIGxhbmd1YWdlID0gaXRlbS5sYW5ndWFn" />
+<input type="hidden" name="__VIEWSTATE17" id="__VIEWSTATE17" value="ZSB8fCAnJyxtYXhSZXN1bHRzID0gMzA7IGlmIChpbmRleCA+PSBtYXhSZXN1bHRzKSB7ICAgIHJldHVybiBmYWxzZTt9IGlmIChy" />
+<input type="hidden" name="__VIEWSTATE18" id="__VIEWSTATE18" value="ZXNwb25zZS5yZXN1bHRzW2xhbmd1YWdlXSA9PT0gdW5kZWZpbmVkKSB7ICAgIHJlc3BvbnNlLnJlc3VsdHNbbGFuZ3VhZ2VdID0g" />
+<input type="hidden" name="__VIEWSTATE19" id="__VIEWSTATE19" value="eyAgICAgICAgbmFtZTogbGFuZ3VhZ2UsICAgICAgICByZXN1bHRzOiBbXSAgICB9O30gcmVzcG9uc2UucmVzdWx0c1tsYW5ndWFn" />
+<input type="hidden" name="__VIEWSTATE20" id="__VIEWSTATE20" value="ZV0ucmVzdWx0cy5wdXNoKHsgICAgdGl0bGU6IGl0ZW0ubmFtZSwgICAgZGVzY3JpcHRpb246IGl0ZW0uZGVzY3JpcHRpb24sICAg" />
+<input type="hidden" name="__VIEWSTATE21" id="__VIEWSTATE21" value="IHVybDogaXRlbS5odG1sX3VybH0pO30pO3JldHVybiByZXNwb25zZTt9LHVybDogJ3N5c3RlbXMvc2VhcmNoMi5hc2h4P3E9e3F1" />
+<input type="hidden" name="__VIEWSTATE22" id="__VIEWSTATE22" value="ZXJ5fSZyUFVpPTEnfX0pO30pOzwvc2NyaXB0PmQCBA9kFgRmDxYCHwcFMzxpIENsYXNzPSJpY29uIGlvbi1pb3Mtc2VhcmNoLXN0" />
+<input type="hidden" name="__VIEWSTATE23" id="__VIEWSTATE23" value="cm9uZyIgc3R5bGU9IiI+PC9pPmQCAQ8WAh8HZWQCBg8PFgIfBmhkFgICAw8WAh8HBTM8aSBDbGFzcz0iaWNvbiBpb24taW9zLXNl" />
+<input type="hidden" name="__VIEWSTATE24" id="__VIEWSTATE24" value="YXJjaC1zdHJvbmciIHN0eWxlPSIiPjwvaT5kAgIPFgIfBwUqPC9kaXY+PC9kaXY+PC9kaXY+PC9kaXY+PC9kaXY+PC9kaXY+PC9k" />
+<input type="hidden" name="__VIEWSTATE25" id="__VIEWSTATE25" value="aXY+ZAIHDxYCHwcFiQQ8c3R5bGU+LmlzLXRvcGJhci1tZW51e30gLmRpdk1lbnVTZWFyY2h7cG9zaXRpb246YWJzb2x1dGU7cmln" />
+<input type="hidden" name="__VIEWSTATE26" id="__VIEWSTATE26" value="aHQ6MzBweDtmb250LXNpemU6IDIwMCU7dG9wOiAxMHB4O30gQG1lZGlhIChtYXgtd2lkdGg6IDEwMjRweCkgey5kaXZNZW51U2Vh" />
+<input type="hidden" name="__VIEWSTATE27" id="__VIEWSTATE27" value="cmNoe3JpZ2h0OjgwcHg7fSAudWkuc2VhcmNoMj4ucmVzdWx0cyB7bGVmdDogMHB4ICFpbXBvcnRhbnQ7fSAuc2VhcmNoLmFkanVz" />
+<input type="hidden" name="__VIEWSTATE28" id="__VIEWSTATE28" value="dCB7d2lkdGg6IDg1JSAhaW1wb3J0YW50OyBtYXJnaW4tcmlnaHQ6IDBweCAhaW1wb3J0YW50O30gLnVpLmNhdGVnb3J5LnNlYXJj" />
+<input type="hidden" name="__VIEWSTATE29" id="__VIEWSTATE29" value="aCAucmVzdWx0cyB7bWluLXdpZHRoOiAzMDBweCAhaW1wb3J0YW50O319IEBtZWRpYShtYXgtd2lkdGg6IDY1MHB4KSB7LmRpdk1l" />
+<input type="hidden" name="__VIEWSTATE30" id="__VIEWSTATE30" value="bnVTZWFyY2gge3RvcDogNXB4O30gLnNlYXJjaC5hZGp1c3Qge3dpZHRoOiA4NSUgIWltcG9ydGFudDsgbWFyZ2luLXJpZ2h0OiAz" />
+<input type="hidden" name="__VIEWSTATE31" id="__VIEWSTATE31" value="MHB4ICFpbXBvcnRhbnQ7fSAudWkuY2F0ZWdvcnkuc2VhcmNoIC5yZXN1bHRzIHttaW4td2lkdGg6IDIwMHB4ICFpbXBvcnRhbnQ7" />
+<input type="hidden" name="__VIEWSTATE32" id="__VIEWSTATE32" value="fX08L3N0eWxlPmQCAw9kFgYCAQ8WAh8GaGQCCQ8WAh8HBdACPGEgaWQ9ImJ0bkJhY2tUb1RvcCIgY2xhc3M9Imljb24gaW9uLWlv" />
+<input type="hidden" name="__VIEWSTATE33" id="__VIEWSTATE33" value="cy1hcnJvdy11cCI+PC9hPjxzY3JpcHQ+dmFyIGJ0biA9ICQoIiNidG5CYWNrVG9Ub3AiKTskKHdpbmRvdykuc2Nyb2xsKGZ1bmN0" />
+<input type="hidden" name="__VIEWSTATE34" id="__VIEWSTATE34" value="aW9uKCkgeyAgaWYgKCQod2luZG93KS5zY3JvbGxUb3AoKSA+IDMwMCkgeyAgICBidG4uYWRkQ2xhc3MoInNob3ciKTsgIH0gZWxz" />
+<input type="hidden" name="__VIEWSTATE35" id="__VIEWSTATE35" value="ZSB7ICAgIGJ0bi5yZW1vdmVDbGFzcygic2hvdyIpOyAgfX0pO2J0bi5vbigiY2xpY2siLCBmdW5jdGlvbihlKSB7ICBlLnByZXZl" />
+<input type="hidden" name="__VIEWSTATE36" id="__VIEWSTATE36" value="bnREZWZhdWx0KCk7ICAkKCJodG1sLCBib2R5IikuYW5pbWF0ZSh7c2Nyb2xsVG9wOjB9LCAiMzAwIik7fSk7PC9zY3JpcHQ+ZAIL" />
+<input type="hidden" name="__VIEWSTATE37" id="__VIEWSTATE37" value="D2QWBGYPFgIfBwXSBDxzY3JpcHQ+ZnVuY3Rpb24gbG9hZERvY0Nvb2tpZSgpIHt2YXIgeSA9IGRvY3VtZW50LmdldEVsZW1lbnRC" />
+<input type="hidden" name="__VIEWSTATE38" id="__VIEWSTATE38" value="eUlkKCdteU1vZGFsJyk7IHkuc3R5bGUgPSAnbGVmdDogLTUwMHB4OyAtd2Via2l0LXRyYW5zaXRpb246IG9wYWNpdHkgMC4zcyBs" />
+<input type="hidden" name="__VIEWSTATE39" id="__VIEWSTATE39" value="aW5lYXIsIGxlZnQgMC4zcyBlYXNlLW91dDsgLW1vei10cmFuc2l0aW9uOiBvcGFjaXR5IDAuM3MgbGluZWFyLCBsZWZ0IDAuM3Mg" />
+<input type="hidden" name="__VIEWSTATE40" id="__VIEWSTATE40" value="ZWFzZS1vdXQ7IC1vLXRyYW5zaXRpb246IG9wYWNpdHkgMC4zcyBsaW5lYXIsIGxlZnQgMC4zcyBlYXNlLW91dDsgdHJhbnNpdGlv" />
+<input type="hidden" name="__VIEWSTATE41" id="__VIEWSTATE41" value="bjogb3BhY2l0eSAwLjNzIGxpbmVhciwgbGVmdCAwLjNzIGVhc2Utb3V0Oyc7IHZhciB4ID0gZG9jdW1lbnQuZ2V0RWxlbWVudHNC" />
+<input type="hidden" name="__VIEWSTATE42" id="__VIEWSTATE42" value="eUNsYXNzTmFtZSgnY2MtdHlwZS1vcHQtaW4nKTsgdmFyIGk7IGZvciAoaSA9IDA7IGkgPCB4Lmxlbmd0aDsgaSsrKSB7eFtpXS5z" />
+<input type="hidden" name="__VIEWSTATE43" id="__VIEWSTATE43" value="dHlsZSA9ICdib3R0b206LTMwMHB4OyB0cmFuc2l0aW9uOmFsbCAxcyBlYXNlLWluOyAtd2Via2l0LXRyYW5zaXRpb246YWxsIDFz" />
+<input type="hidden" name="__VIEWSTATE44" id="__VIEWSTATE44" value="IGVhc2UtaW47IC1tb3otdHJhbnNpdGlvOmFsbCAxcyBlYXNlLWluOyAtby10cmFuc2l0aW9uOmFsbCAxcyBlYXNlLWluJzt9fTwv" />
+<input type="hidden" name="__VIEWSTATE45" id="__VIEWSTATE45" value="c2NyaXB0PmQCAQ8WAh8HBcMXPGRpdiBjbGFzcz0iY29udGFpbmVyIG15Y29udGVudC13cmFwIj48ZGl2IGNsYXNzPSJtb2RhbCBs" />
+<input type="hidden" name="__VIEWSTATE46" id="__VIEWSTATE46" value="ZWZ0IGZhZGUiIGlkPSJteU1vZGFsIiB0YWJpbmRleD0iLTEiIHJvbGU9ImRpYWxvZyIgYXJpYS1sYWJlbGxlZGJ5PSJteU1vZGFs" />
+<input type="hidden" name="__VIEWSTATE47" id="__VIEWSTATE47" value="TGFiZWwiPjxkaXYgY2xhc3M9Im1vZGFsLWRpYWxvZyIgc3R5bGU9ImZvbnQtc2l6ZToxMHB4ICFpbXBvcnRhbnQ7IiByb2xlPSJk" />
+<input type="hidden" name="__VIEWSTATE48" id="__VIEWSTATE48" value="b2N1bWVudCI+PGRpdiBjbGFzcz0ibW9kYWwtY29udGVudCI+PGRpdiBjbGFzcz0ibW9kYWwtaGVhZGVyIj48aDMgY2xhc3M9Im1v" />
+<input type="hidden" name="__VIEWSTATE49" id="__VIEWSTATE49" value="ZGFsLXRpdGxlIiBpZD0ibXlNb2RhbExhYmVsIj48Yj48c3BhbiBpZD0ibW9kYWwtdGl0bGUiPkNvb2tpZSBOb3RpY2U8L3NwYW4+" />
+<input type="hidden" name="__VIEWSTATE50" id="__VIEWSTATE50" value="PC9iPjwvaDM+PGJ1dHRvbiB0eXBlPSJidXR0b24iIGNsYXNzPSJjbG9zZSIgZGF0YS1kaXNtaXNzPSJtb2RhbCIgYXJpYS1sYWJl" />
+<input type="hidden" name="__VIEWSTATE51" id="__VIEWSTATE51" value="bD0iQ2xvc2UiPjxzcGFuIGFyaWEtaGlkZGVuPSJ0cnVlIj4mdGltZXM7PC9zcGFuPjwvYnV0dG9uPjwvZGl2PjxkaXYgY2xhc3M9" />
+<input type="hidden" name="__VIEWSTATE52" id="__VIEWSTATE52" value="Im1vZGFsLWJvZHkiPjxwPjxzcGFuIGlkPSJtb2RhbC1ib2R5LWhlYWRlciI+VGhpcyB3ZWJzaXRlIHVzZXMgY29va2llcyB0byBp" />
+<input type="hidden" name="__VIEWSTATE53" id="__VIEWSTATE53" value="bXByb3ZlIHlvdXIgdXNlciBleHBlcmllbmNlLjwvc3Bhbj48YnV0dG9uIHR5cGU9ImJ1dHRvbiIgaWQ9ImJ0bk1vcmVJbmZvIiBu" />
+<input type="hidden" name="__VIEWSTATE54" id="__VIEWSTATE54" value="YW1lPSJidG5Nb3JlSW5mbyIgIGNsYXNzPSJpcy1idG4teHNtYWxsLW5vc3R5bGUiIG9uY2xpY2s9Im9wZW5XaW4oKSI+TW9yZSBp" />
+<input type="hidden" name="__VIEWSTATE55" id="__VIEWSTATE55" value="bmZvcm1hdGlvbiBhYm91dCB0aGUgY29va2llIHBvbGljeSBvbiB0aGlzIHdlYnNpdGU8L2J1dHRvbj48L3A+PGJyIC8+PGRpdiBz" />
+<input type="hidden" name="__VIEWSTATE56" id="__VIEWSTATE56" value="dHlsZT0iZGlzcGxheTppbmxpbmUtZmxleDsgdmVydGljYWwtYWxpZ246bWlkZGxlOyI+PGRpdiBjbGFzcz0iZGl2U3dpdGNoIGRp" />
+<input type="hidden" name="__VIEWSTATE57" id="__VIEWSTATE57" value="c2FibGVTd2l0Y2giPjxkaXYgY2xhc3M9ImNoa2NvdmVyIj48L2Rpdj48bGFiZWwgY2xhc3M9InN3aXRjaC1tb2RhbCI+PGlucHV0" />
+<input type="hidden" name="__VIEWSTATE58" id="__VIEWSTATE58" value="IG5hbWU9ImNoa0Nvb2tpZSIgdHlwZT0iY2hlY2tib3giIGNoZWNrZWQ9ImNoZWNrZWQiIHZhbHVlPSJGdW5jdGlvbmFsIiBvbmNs" />
+<input type="hidden" name="__VIEWSTATE59" id="__VIEWSTATE59" value="aWNrPSJjaGFuZ2VUZXh0KCkiIC8+PHNwYW4gY2xhc3M9InNsaWRlci1tb2RhbCByb3VuZC1tb2RhbCI+PC9zcGFuPjwvbGFiZWw+" />
+<input type="hidden" name="__VIEWSTATE60" id="__VIEWSTATE60" value="PC9kaXY+PGRpdj48aDM+PGI+PHNwYW4gaWQ9Im1vZGFsLWJvZHktZnVuY3Rpb25hbC10aXRsZSI+RnVuY3Rpb25hbCBjb29raWVz" />
+<input type="hidden" name="__VIEWSTATE61" id="__VIEWSTATE61" value="PC9zcGFuPjwvYj48L2gzPjwvZGl2PjwvZGl2PjxkaXY+PHA+PHNwYW4gaWQ9Im1vZGFsLWJvZHktZnVuY3Rpb25hbC1jb250ZW50" />
+<input type="hidden" name="__VIEWSTATE62" id="__VIEWSTATE62" value="Ij5UaGVzZSBjb29raWVzIGFyZSByZXF1aXJlZCBhcyBhIG1pbmltdW0gZm9yIHRoZSB3ZWJzaXRlIHRvIGZ1bmN0aW9uIHByb3Bl" />
+<input type="hidden" name="__VIEWSTATE63" id="__VIEWSTATE63" value="cmx5Ljwvc3Bhbj48aW5wdXQgbmFtZT0iaGlkQ29va2llIiB0eXBlPSJoaWRkZW4iIHZhbHVlPSIiIC8+PC9wPjwvZGl2PjxkaXYg" />
+<input type="hidden" name="__VIEWSTATE64" id="__VIEWSTATE64" value="c3R5bGU9ImRpc3BsYXk6aW5saW5lLWZsZXg7IHZlcnRpY2FsLWFsaWduOm1pZGRsZTsiPjxkaXYgY2xhc3M9ImRpdlN3aXRjaCI+" />
+<input type="hidden" name="__VIEWSTATE65" id="__VIEWSTATE65" value="PGxhYmVsIGNsYXNzPSJzd2l0Y2gtbW9kYWwiPjxpbnB1dCBuYW1lPSJjaGtDb29raWUiIGNsYXNzPSJjaGtDb29raWUxIiB0eXBl" />
+<input type="hidden" name="__VIEWSTATE66" id="__VIEWSTATE66" value="PSJjaGVja2JveCIgdmFsdWU9IlN0YXRpc3RpY2FsIiBvbmNsaWNrPSJjaGFuZ2VUZXh0KCkiIC8+PHNwYW4gY2xhc3M9InNsaWRl" />
+<input type="hidden" name="__VIEWSTATE67" id="__VIEWSTATE67" value="ci1tb2RhbCByb3VuZC1tb2RhbCI+PC9zcGFuPjwvbGFiZWw+PC9kaXY+PGRpdj48aDM+PGI+PHNwYW4gaWQ9Im1vZGFsLWJvZHkt" />
+<input type="hidden" name="__VIEWSTATE68" id="__VIEWSTATE68" value="c3RhdGlzdGljYWwtdGl0bGUiPlN0YXRpc3RpY2FsIGNvb2tpZXM8L3NwYW4+PC9iPjwvaDM+PC9kaXY+PC9kaXY+PGRpdj48cD48" />
+<input type="hidden" name="__VIEWSTATE69" id="__VIEWSTATE69" value="c3BhbiBpZD0ibW9kYWwtYm9keS1zdGF0aXN0aWNhbC1jb250ZW50Ij5UaGVzZSBjb29raWVzIGNvbGxlY3QgLSBjb21wbGV0ZWx5" />
+<input type="hidden" name="__VIEWSTATE70" id="__VIEWSTATE70" value="IGFub255bW91c2x5IC0gZGF0YSBhYm91dCB0aGUgdXNlIG9mIHRoZSB3ZWJzaXRlIGluIG9yZGVyIHRvIHByb3ZpZGUgdmlzaXRv" />
+<input type="hidden" name="__VIEWSTATE71" id="__VIEWSTATE71" value="cnMgd2l0aCBhbiBldmVuIGJldHRlciB1c2VyIGV4cGVyaWVuY2UuPC9zcGFuPjxpbnB1dCBuYW1lPSJoaWRDb29raWUiIHR5cGU9" />
+<input type="hidden" name="__VIEWSTATE72" id="__VIEWSTATE72" value="ImhpZGRlbiIgdmFsdWU9IlRyU3RhdDF8Z2EiIC8+PC9wPjwvZGl2PjxkaXYgc3R5bGU9ImRpc3BsYXk6aW5saW5lLWZsZXg7IHZl" />
+<input type="hidden" name="__VIEWSTATE73" id="__VIEWSTATE73" value="cnRpY2FsLWFsaWduOm1pZGRsZTsiPjxkaXYgY2xhc3M9ImRpdlN3aXRjaCI+PGxhYmVsIGNsYXNzPSJzd2l0Y2gtbW9kYWwiPjxp" />
+<input type="hidden" name="__VIEWSTATE74" id="__VIEWSTATE74" value="bnB1dCBuYW1lPSJjaGtDb29raWUiIGNsYXNzPSJjaGtDb29raWUyIiB0eXBlPSJjaGVja2JveCIgdmFsdWU9IkNvbnRlbnQgJiBT" />
+<input type="hidden" name="__VIEWSTATE75" id="__VIEWSTATE75" value="b2NpYWwiIG9uY2xpY2s9ImNoYW5nZVRleHQoKSIgLz48c3BhbiBjbGFzcz0ic2xpZGVyLW1vZGFsIHJvdW5kLW1vZGFsIj48L3Nw" />
+<input type="hidden" name="__VIEWSTATE76" id="__VIEWSTATE76" value="YW4+PC9sYWJlbD48L2Rpdj48ZGl2PjxoMz48Yj48c3BhbiBpZD0ibW9kYWwtYm9keS1zb2NpYWwtdGl0bGUiPkNvbnRlbnQgJiBT" />
+<input type="hidden" name="__VIEWSTATE77" id="__VIEWSTATE77" value="b2NpYWw8L3NwYW4+PC9iPjwvaDM+PC9kaXY+PC9kaXY+PGRpdj48cD48c3BhbiBpZD0ibW9kYWwtYm9keS1zb2NpYWwtY29udGVu" />
+<input type="hidden" name="__VIEWSTATE78" id="__VIEWSTATE78" value="dCI+RW5zdXJlIG9wdGltYWwgaW50ZXJhY3Rpb24gd2l0aCBzb2NpYWwgbWVkaWEgc3VjaCBhcyBZb3V0dWJlLCBUd2l0dGVyLCBG" />
+<input type="hidden" name="__VIEWSTATE79" id="__VIEWSTATE79" value="YWNlYm9vaywgVmltZW8gb3IgSW5zdGFncmFtLjwvc3Bhbj48aW5wdXQgbmFtZT0iaGlkQ29va2llIiB0eXBlPSJoaWRkZW4iIHZh" />
+<input type="hidden" name="__VIEWSTATE80" id="__VIEWSTATE80" value="bHVlPSJnbWFwfHl0fGZjfGZzcHxmcHx0Ynx0c3xzdHx2bSIgLz48L3A+PC9kaXY+PHA+PGJyIC8+PGlucHV0IHR5cGU9InN1Ym1p" />
+<input type="hidden" name="__VIEWSTATE81" id="__VIEWSTATE81" value="dCIgbmFtZT0iYnRuRGlzYWJsZSIgdmFsdWU9IkFjY2VwdCBBbGwgQ29va2llcyIgaWQ9ImJ0bkRpc2FibGUiIG9uY2xpY2s9InN1" />
+<input type="hidden" name="__VIEWSTATE82" id="__VIEWSTATE82" value="Ym1pdENvb2tpZTUoKSIgY2xhc3M9ImlzLWJ0biBpcy1idG4tZ2hvc3QyIGlzLXVwcGVyIGlzLXJvdW5kZWQtMzAgaXMtYnRuLXNt" />
+<input type="hidden" name="__VIEWSTATE83" id="__VIEWSTATE83" value="YWxsIiAvPjwvcD48ZGl2PjxpbnB1dCB0eXBlPSJzdWJtaXQiIG5hbWU9ImJ0bkFjY2VwdE1pbiIgdmFsdWU9Ik9ubHkgYWNjZXB0" />
+<input type="hidden" name="__VIEWSTATE84" id="__VIEWSTATE84" value="IG1pbmltdW0gY29va2llcyIgaWQ9ImJ0bkFjY2VwdE1pbiIgb25jbGljaz0ic3VibWl0Q29va2llMigpIiBjbGFzcz0iaXMtbGlu" />
+<input type="hidden" name="__VIEWSTATE85" id="__VIEWSTATE85" value="ayIgLz48L2Rpdj48L2Rpdj48L2Rpdj48L2Rpdj5kGAEFIWN0bDAwJHBsYWNlaG9sZGVyQm9keSRncmlkTW9kdWxlcw88KwAMAgYV" />
+<input type="hidden" name="__VIEWSTATE86" id="__VIEWSTATE86" value="AQttb2R1bGVfZmlsZQgC/////w9kUkO4LTWED/VZW7fLLlcRwd4LiMuuRY5T+Tw4C1tc6Y4=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+
+<div id="ctl00_topbar" class="is-topbar">
+    <div class="is-topbar-container">
+        <div class="is-topbar-logo">
+            <a class="is-logo-link" href="default.aspx" title=""><img class="is-photo-profile" src="resources%2ftemplates%2f12%2flogot9zdV154653.svg" alt="SiteName"></a>
+
+  
+        </div>
+        <div class="is-topbar-menu">
+            
+
+<script src="systems/scripts/Semantic-UI-CSS-master/semantic.js"></script>
+<a id="is-menu-toggle" href="javascript:void(0)" title="Menu"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></a><div class="is-menu"><ul class="animated fadeIn"><li><a href="/news">News</a></li><li><a href="/human-resources">Careers</a></li><li><a href="/our-work">Our work</a></li><li><a href="/about-us">About us</a></li><li><a href="/business-opportunities">Business</a></li></ul></div><div class="divMenuSearch"><a href="javascript:showSearchModal();"><i class="icon ion-ios-search-strong"></i></a></div>
+
+
+<div id="divType2"><div id="idSearch" class="cl-modal" style="display none; z-index: 1000000"><div class="cl-content"><div class="cl-body"><div class="cl-form center"><div class="searchlogo"><img src="logo.png" /></div><h1 class="search-h">Search our content</h1><div class="boxSearch"><div class="">
+<script type="text/javascript">$(document).ready(function () {var Input2 = document.getElementById('txtSearch');Input2.addEventListener("keyup", function(event) {if (event.keyCode === 13) {event.preventDefault();window.location.replace('search.aspx?q=' + Input2.value);}});$('.ui.search').search({type: 'category',minCharacters: 3,apiSettings: {onResponse: function (githubResponse) {var response = {results: {}}; $.each(githubResponse.items, function (index, item) {var language = item.language || '',maxResults = 30; if (index >= maxResults) {    return false;} if (response.results[language] === undefined) {    response.results[language] = {        name: language,        results: []    };} response.results[language].results.push({    title: item.name,    description: item.description,    url: item.html_url});});return response;},url: 'systems/search2.ashx?q={query}&rPUi=1'}});});</script>
+
+<div id="ctl00_placeholderMenu_ctl00_ctl11_panelSearch">
+	
+    <div class="search adjust" style="float: right; border: 0px solid red; width: 50%; text-align: left; margin-right: 10px">
+        <div class="ui search search2">
+            <div class="ui left icon input">
+                <input id="txtSearch" class="prompt textbox" type="text" placeholder="Type your search..." style="padding-left: 15px !important; font-size:small;">
+                <i Class="icon ion-ios-search-strong" style=""></i>
+            </div>
+        </div>
+    </div>
+    <div id="splashsoc" style="float: right; border: 0px solid #ddd; text-align: right; margin-right: 10px">
+        <div class="size-32">
+            
+        </div>
+    </div>
+
+</div>
+
+
+<style>
+    .pnlResult #divResult .result:nth-child(1) {
+       display: none;
+    }
+
+    .ui.category.search .results {
+       min-width:600px;
+    }
+    
+    /*Adjustment for Search Result page*/
+    .title2 {
+        margin: 20px 0px 0px 0px;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .description2 {
+        margin-top: 0px;
+        font-size: 85%;
+        color: rgba(0, 0, 0, 0.7);
+    }
+</style></div></div></div></div></div></div></div>
+
+<script>
+    function showSearchModal() {
+        $(document).ready(function () {
+            jQuery('#idSearch').cleanmodal();
+            jQuery('#idSearch').data('cleanmodal').show();
+            var value = $('#txtSearch').val();
+            $('#txtSearch').focus().val('').blur().focus().val(value);
+        });
+    }
+</script>
+
+<style>.is-topbar-menu{} .divMenuSearch{position:absolute;right:30px;font-size: 200%;top: 10px;} @media (max-width: 1024px) {.divMenuSearch{right:80px;} .ui.search2>.results {left: 0px !important;} .search.adjust {width: 85% !important; margin-right: 0px !important;} .ui.category.search .results {min-width: 300px !important;}} @media(max-width: 650px) {.divMenuSearch {top: 5px;} .search.adjust {width: 85% !important; margin-right: 30px !important;} .ui.category.search .results {min-width: 200px !important;}}</style>
+
+<style>
+    .divMenuSearch a{
+        color:#000;
+    }
+
+    .divMenuSearch a:hover{
+        color:#000;
+    }
+</style>
+
+
+	
+        </div>
+    </div>
+</div>
+
+<div class="is-wrapper" id="isw">
+       
+    
+    <div class="is-section sect0 is-bg-light is-shadow-1 is-box is-section-75"><div class="is-boxes"><div class="is-box-centered is-content-top"><div class="is-container is-builder is-content-1200 ui-sortable"><div class="mdl-grid"><div class="mdl-cell mdl-cell--12-col" data-noedit=""><div class="spacer height-20"></div></div></div><div class="mdl-grid"><div class="mdl-cell mdl-cell--12-col"><h1 class="size-48 is-title2-48" style="text-align: center;"><i class="icon ion-pricetag"></i><br>PAGE NOT FOUND</h1><hr><p style="text-align: center;">The page you are looking for might have been removed,<br>had its name changed, or temporarily unavailable.</p><p style="text-align: center;">Go to our <a href="/default" title="homepage">homepage</a> or go back to previous page. <br>If an other error occurred please contact our support line.</p></div></div><div class="mdl-grid"><div class="mdl-cell mdl-cell--12-col"></div></div></div></div></div></div>  <footer class="footer">
+    <div class="mdl-grid" style="padding-top:80px; padding-right:40px; padding-left:40px; max-width: 1500px;">
+      <!-- Logo and description -->
+      <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+       <img src="/resources/site1/General/Design/occar-logo-white.svg" style="width:60%">
+      </div>
+
+      <!-- Quick Links -->
+      <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+        <h5>Quick Links</h5>
+        <a href="/about-us">About Us</a>
+        <a href="/our-work/programmes">Programmes</a>
+        <a href="/news">News</a>
+        <a href="/human-resources">Careers</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+        <h5>Contact</h5>
+        <p>OCCAR-EA Central Office<br>Bonn, Germany</p>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+        <h5>Follow Us</h5>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/company/occar/" target="_blank"><i class="icon ion-social-linkedin"></i></ion-icon> Linkedin</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      © 2025 OCCAR. All rights reserved.  
+      <br>
+      <a href="/privacy-data-protection">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </div>
+</footer>
+
+    <div id="divSystem">
+
+        <script>
+            $(document).ready(function () {
+                $('#divSystem').detach().appendTo('form:first');
+                $(".ion-ios-arrow-thin-down").addClass("ion-ios-arrow-down");
+                $(".ion-ios-arrow-thin-down").removeClass("ion-ios-arrow-thin-down");
+            });
+        </script>
+
+        
+
+            <div style="display:none">
+                <script language="javascript" type="text/javascript">
+                 <!--
+                    try {
+                        var prm = Sys.WebForms.PageRequestManager.getInstance();
+                    }
+                    catch (e) { }        
+                // -->    
+                </script>
+    
+                <!-- AJAX FIX -->  
+                <div style="display:none">
+                <input name="ctl00$placeholderBody$ic_dummy" type="text" value="dummy" id="ctl00_placeholderBody_ic_dummy" class="mdl-textfield__input" />
+                
+                </div>  
+            </div>
+
+            
+    </div>
+
+    
+    
+
+    
+    <a id="btnBackToTop" class="icon ion-ios-arrow-up"></a><script>var btn = $("#btnBackToTop");$(window).scroll(function() {  if ($(window).scrollTop() > 300) {    btn.addClass("show");  } else {    btn.removeClass("show");  }});btn.on("click", function(e) {  e.preventDefault();  $("html, body").animate({scrollTop:0}, "300");});</script>
+    
+    <script>
+        $('a[href*="#"]').filter(function () {
+            if ($(this).attr("href").match(/[\w|\W]+[\#|\#0]$/) == null) { 
+                $(this).click(function (event) {
+                    if (
+                        location.pathname.replace(/^\//, '').replace('.aspx', '') == this.pathname.replace(/^\//, '').replace('.aspx', '')
+                        &&
+                        location.hostname == this.hostname
+                    ) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000, function () {
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) {
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex', '-1');
+                                    $target.focus();
+                                };
+                            });
+                        }
+                    }
+                });
+            };
+        })
+    </script>
+
+    <style>
+        .nav-tabs>li:hover{cursor:pointer;}
+
+        .icon {color:#000;}
+
+        img {image-rendering: -webkit-optimize-contrast; }
+
+        .cookie-blocked-caption{
+            top: 65%;
+            position: absolute;
+            text-align: center;
+            background: hsla(0,0%,0%,.8);
+            color: #fff;
+        }
+
+        .cookie-blocked-caption img{
+            width: 100%;
+        }
+
+        .cookie-blocked-caption a{
+            color: #5a61e8;
+            text-decoration:underline;
+        }
+
+        .cookie-blocked-caption a:hover{
+            color: #5a61e8;
+            text-decoration:none;
+        }
+
+        #btnBackToTop{
+          display: inline-block;
+          background-color: #333333;
+          width: 50px;
+          height: 50px;
+          text-align: center;
+          border-radius: 4px;
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          transition: background-color .3s, 
+            opacity .5s, visibility .5s;
+          opacity: 0;
+          visibility: hidden;
+          z-index: 1000;
+        }
+        #btnBackToTop::before {
+          font-weight: normal;
+          font-style: normal;
+          font-size: 2em;
+          line-height: 50px;
+          color: #fff;
+          cursor: pointer;
+        }
+        #btnBackToTop:hover {
+          cursor: pointer;
+          background-color: #B4D16B;
+        }
+        #btnBackToTop:active {
+          background-color: #B4D16B;
+        }
+        #btnBackToTop.show {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        @media (min-width: 500px) {
+          #btnBackToTop {
+            margin: 30px;
+          }
+        }
+        </style>
+
+    <div id="ctl00_placeholderBody_panelModal">
+	
+    
+    <style>
+        /*Adjustment button accept all & customize with css only*/
+        #btnAcceptAll0{
+            position: absolute;
+            right: 220px;
+            top: 5px;width:140px
+        }
+
+        .cc-message {
+            font-size:90% !important;
+        }
+
+        #btnCustomize{
+            right: 30px;
+            position: absolute;
+            top: 5px;
+        }
+
+        .cc-compliance {
+            margin:0px !important; padding:0px !important;height:50px;border:red 0px solid
+        }
+
+        .is-link{
+            background: none!important;
+            border: none;
+            padding: 0!important;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .is-btn-xsmall {
+            padding: 8px 10px;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+            margin: 10px 0 0px 0 !important;
+            line-height: 1rem;
+        }
+
+        .is-btn.is-rounded-30, .is-rounded-30 {
+            border-radius: 7px;
+        }
+
+        .is-btn-ghost3, a.is-btn-ghost3 {
+            color: black;
+            border: 0px solid #fff;
+            background-color: white !important;
+        }
+
+        .cc-banner .cc-message {
+            display: block;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            max-width: 100%;
+            margin-right: 1em;
+            color: white !important;
+            text-align:left;
+            padding-left:40px;
+        }
+
+        .cc-window {
+            opacity: 1;
+            transition: opacity 1s ease;
+            background-color: rgba(27,110,136,0.8); text-align:center
+        }
+
+        @media screen and (max-width: 414px) and (orientation: portrait), screen and (max-width: 736px) and (orientation: landscape) {
+            .cc-window .cc-message {
+                margin-bottom: 0em;
+            }
+        }
+
+        .is-btn-xsmall-nostyle {
+            padding: 6px 10px;
+            font-size: 0.75em;
+            letter-spacing: 1px;
+            margin: 10px 0 0px 0 !important;
+            line-height: 1rem;
+            background: none !important;
+            border: none !important;
+            cursor: pointer !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-decoration: underline !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            text-align:left;
+        }
+
+        .cc-window.cc-banner {
+            padding: 0.8em 0.2em 0 0.2em !important;min-height:30px;align-items: unset;
+        }
+
+        @media (max-width:950px) {
+            #btnAcceptAll0{
+                top: 60px;
+                right:320px
+            }
+
+            #btnCustomize{
+                top: 60px;
+                right:100px
+            }
+
+            .cc-window.cc-banner {
+                padding: 1em 1.2em !important; min-height:120px; align-items: unset;
+            }
+        }
+
+        @media (max-width:540px) {
+            #btnAcceptAll0{
+                top: 70px; padding:10px !important; 
+                right:210px
+            }
+
+            #btnCustomize{
+                top: 70px;padding:10px !important; right:30px
+            }
+
+            .cc-compliance {
+             margin:0px !important; padding:0px !important;height:50px;border:red 0px solid
+            }
+
+            .cc-message {
+                color:white !important;
+                padding-left: 0px !important;
+            }
+
+            .cc-window {
+                min-height:90px;
+            }
+        }
+
+        /*bootstrap*/
+        /*adjustment for overflow and padding by bootstrap modal*/
+        .mycontent-wrap {
+            bottom: 0;
+            position: absolute;
+            top: 0;
+            width: auto;
+            left: -20px;
+        }
+
+        .mycontent-wrap p {
+            font-size: 16px;
+            margin: 3px !important;
+        }
+
+        .mycontent-wrap li {
+            font-size: 16px
+        }
+
+        .mycontent-wrap h3 {
+            font-size: 18px
+        }
+
+        /*adjustment for overflow and padding by bootstrap modal*/
+        .modal-open {
+            overflow: hidden;
+            padding-right:0px !important;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000000;
+            display: none;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            outline: 0;
+            padding-right:0px !important;
+        }
+
+        .modal-header {
+            min-height: 16.43px;
+            padding: 15px;
+            border-bottom: 1px solid #e5e5e5;
+            display: inline-flex;
+            width: 100% !important;
+        }
+
+        .modal-header .close {
+            margin-top: -2px;
+            border: none !important;
+            background-color: transparent !important;
+            font-size: 22px !important;
+            font-weight: bold;
+        }
+
+        .modal-header .h3 {
+            width: 100% !important;
+            font-size: 22px !important;
+            font-weight: bold;
+        }
+
+        .modal-title {
+            margin: 0;
+            line-height: 1.42857143;
+            width: 100% !important;
+        }
+
+        .modal-body {
+            position: relative;
+            padding: 15px;
+        }
+
+        .modal-footer {
+            padding: 15px;
+            text-align: right;
+            border-top: 1px solid #e5e5e5
+        }
+
+        .modal-footer .btn + .btn {
+            margin-bottom: 0;
+            margin-left: 5px
+        }
+
+        .modal-footer .btn-group .btn + .btn {
+            margin-left: -1px
+        }
+
+        .modal-footer .btn-block + .btn-block {
+            margin-left: 0
+        }
+
+        .modal-scrollbar-measure {
+            position: absolute;
+            top: -9999px;
+            width: 50px;
+            height: 50px;
+            overflow: scroll
+        }
+
+        @media (max-width:500px) {
+            .modal-dialog {
+                width: 100%;
+                margin: 30px auto;
+                z-index: 1000000 !important;
+            }
+
+            .mycontent-wrap p {
+                font-size: 14px
+            }
+
+            .mycontent-wrap li {
+                font-size: 14px
+            }
+
+            .mycontent-wrap h3 {
+                font-size: 16px
+            }
+
+            .modal-open {
+                overflow: hidden
+            }
+
+            .modal {
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1000000;
+                display: none;
+                overflow: hidden;
+                -webkit-overflow-scrolling: touch;
+                outline: 0
+            }
+
+            .modal-header {
+                min-height: 16.43px;
+                padding: 15px;
+                border-bottom: 1px solid #e5e5e5
+            }
+
+            .modal-header .close {
+                margin-top: -2px
+            }
+
+            .modal-title {
+                margin: 0;
+                line-height: 1.42857143
+            }
+
+            .modal-body {
+                position: relative;
+                padding: 15px;
+            }
+
+            .modal-footer {
+                padding: 15px;
+                text-align: right;
+                border-top: 1px solid #e5e5e5
+            }
+
+            .modal-footer .btn + .btn {
+                margin-bottom: 0;
+                margin-left: 5px
+            }
+
+            .modal-footer .btn-group .btn + .btn {
+                margin-left: -1px
+            }
+
+            .modal-footer .btn-block + .btn-block {
+                margin-left: 0
+            }
+
+            .modal-scrollbar-measure {
+                position: absolute;
+                top: -9999px;
+                width: 50px;
+                height: 50px;
+                overflow: scroll
+            }
+
+            .modal-backdrop {
+                z-index: -1;
+            }
+
+            .modal.left .modal-dialog {
+                display: flex;
+                position: absolute;
+                margin: auto;
+                width: 100% !important;
+                height: 100%;
+                -webkit-transform: translate3d(0%, 0, 0);
+                -ms-transform: translate3d(0%, 0, 0);
+                -o-transform: translate3d(0%, 0, 0);
+                transform: translate3d(0%, 0, 0);
+                z-index: 1000000 !important;
+            }
+
+            .modal.left .modal-content {
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            .modal.left .modal-body {
+                padding: 15px 15px 80px;
+                z-index: 1000000;
+            }
+
+            /*Left*/
+            .modal.left.fade .modal-dialog {
+                left: -500px;
+                -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+                -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+                -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+                transition: opacity 0.3s linear, left 0.3s ease-out;
+                z-index: 1000000;
+                background: #fff;
+            }
+
+            .modal.left.fade.show .modal-dialog {
+                left: 0;
+                z-index: 1000000;
+            }
+
+            #myModal.show {
+                display: block;
+            }
+
+            .modal-header .close{
+                cursor: pointer;
+            }
+
+            #myModal{
+                max-width:500px;
+            }
+
+            /* ----- MODAL STYLE ----- */
+            .modal-content {
+                border-radius: 0;
+                border: none;
+                z-index: 1000000;
+            }
+
+            .modal-header {
+                border-bottom-color: #EEEEEE;
+                background-color: #FAFAFA;
+                z-index: 1000000;
+            }
+
+            .modal {
+                position: fixed;
+                z-index: 1000000;
+                color: #000;
+            }
+
+            .chkcover {
+                top: 150px !important;
+                left: 0;
+                display: block;
+            }
+        }
+
+        .modal-backdrop {
+            z-index: -1;
+        }
+
+        .modal.left .modal-dialog {
+            display: flex;
+            position: absolute;
+            margin: auto;
+            width: 500px;
+            height: 100%;
+            -webkit-transform: translate3d(0%, 0, 0);
+            -ms-transform: translate3d(0%, 0, 0);
+            -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+            z-index: 1000000 !important;
+        }
+
+        .modal.left .modal-content {
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .modal.left .modal-body {
+            padding: 15px 15px 0px;
+            z-index: 1000000;
+        }
+
+        /*Left*/
+        .modal.left.fade .modal-dialog {
+            left: -500px;
+            -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+            -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+            z-index: 1000000;
+            background: #fff;
+        }
+
+        .modal.left.fade.show .modal-dialog {
+            left: 0;
+            z-index: 1000000;
+        }
+
+        #myModal.show {
+            display: block;
+        }
+
+        .modal-header .close{
+            cursor: pointer;
+        }
+
+        #myModal{
+            max-width:500px;
+        }
+
+        /* ----- MODAL STYLE ----- */
+        .modal-content {
+            border-radius: 0;
+            border: none;
+            z-index: 1000000;
+        }
+
+        .modal-header {
+            border-bottom-color: #EEEEEE;
+            background-color: #FAFAFA;
+            z-index: 1000000;
+        }
+
+        .modal {
+            position: fixed;
+            z-index: 1000000;
+            color: #000;
+        }
+
+        /* The switch - the box around the slider */
+        .divSwitch > .switch-modal {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .divSwitch > .switch-modal input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider-modal {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider-modal:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider-modal {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider-modal {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider-modal:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded slider-modals */
+        .slider-modal.round-modal {
+            border-radius: 34px;
+        }
+
+        .slider-modal.round-modal:before {
+            border-radius: 50%;
+        }
+
+        .divSwitch > label {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        /*This to disable switch*/
+        .chkcover {
+            width: 200px;
+            height: 50px;
+            background: transparent;
+            position: absolute;
+            z-index: 2;
+            top: 90px;
+            left: 0;
+            display: block;
+        }
+
+        .disableSwitch {
+            -khtml-opacity: .30;
+            -moz-opacity: .30;
+            -ms-filter: ”alpha(opacity=30)”;
+            filter: alpha(opacity=30);
+            filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.3);
+            opacity: 0.3;
+        }
+    </style>
+
+    <script>function loadDocCookie() {var y = document.getElementById('myModal'); y.style = 'left: -500px; -webkit-transition: opacity 0.3s linear, left 0.3s ease-out; -moz-transition: opacity 0.3s linear, left 0.3s ease-out; -o-transition: opacity 0.3s linear, left 0.3s ease-out; transition: opacity 0.3s linear, left 0.3s ease-out;'; var x = document.getElementsByClassName('cc-type-opt-in'); var i; for (i = 0; i < x.length; i++) {x[i].style = 'bottom:-300px; transition:all 1s ease-in; -webkit-transition:all 1s ease-in; -moz-transitio:all 1s ease-in; -o-transition:all 1s ease-in';}}</script>
+    <div class="container mycontent-wrap"><div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog" style="font-size:10px !important;" role="document"><div class="modal-content"><div class="modal-header"><h3 class="modal-title" id="myModalLabel"><b><span id="modal-title">Cookie Notice</span></b></h3><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p><span id="modal-body-header">This website uses cookies to improve your user experience.</span><button type="button" id="btnMoreInfo" name="btnMoreInfo"  class="is-btn-xsmall-nostyle" onclick="openWin()">More information about the cookie policy on this website</button></p><br /><div style="display:inline-flex; vertical-align:middle;"><div class="divSwitch disableSwitch"><div class="chkcover"></div><label class="switch-modal"><input name="chkCookie" type="checkbox" checked="checked" value="Functional" onclick="changeText()" /><span class="slider-modal round-modal"></span></label></div><div><h3><b><span id="modal-body-functional-title">Functional cookies</span></b></h3></div></div><div><p><span id="modal-body-functional-content">These cookies are required as a minimum for the website to function properly.</span><input name="hidCookie" type="hidden" value="" /></p></div><div style="display:inline-flex; vertical-align:middle;"><div class="divSwitch"><label class="switch-modal"><input name="chkCookie" class="chkCookie1" type="checkbox" value="Statistical" onclick="changeText()" /><span class="slider-modal round-modal"></span></label></div><div><h3><b><span id="modal-body-statistical-title">Statistical cookies</span></b></h3></div></div><div><p><span id="modal-body-statistical-content">These cookies collect - completely anonymously - data about the use of the website in order to provide visitors with an even better user experience.</span><input name="hidCookie" type="hidden" value="TrStat1|ga" /></p></div><div style="display:inline-flex; vertical-align:middle;"><div class="divSwitch"><label class="switch-modal"><input name="chkCookie" class="chkCookie2" type="checkbox" value="Content & Social" onclick="changeText()" /><span class="slider-modal round-modal"></span></label></div><div><h3><b><span id="modal-body-social-title">Content & Social</span></b></h3></div></div><div><p><span id="modal-body-social-content">Ensure optimal interaction with social media such as Youtube, Twitter, Facebook, Vimeo or Instagram.</span><input name="hidCookie" type="hidden" value="gmap|yt|fc|fsp|fp|tb|ts|st|vm" /></p></div><p><br /><input type="submit" name="btnDisable" value="Accept All Cookies" id="btnDisable" onclick="submitCookie5()" class="is-btn is-btn-ghost2 is-upper is-rounded-30 is-btn-small" /></p><div><input type="submit" name="btnAcceptMin" value="Only accept minimum cookies" id="btnAcceptMin" onclick="submitCookie2()" class="is-link" /></div></div></div></div>
+
+    <script>
+        var hid10 = '';
+        var hid11 = '';
+        var hid12 = '';
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(function () { hid10 = ''; hid11 = ''; hid12 = ''; document.getElementById("btnAcceptMin").value = hid12; }, 3000);          
+        });
+
+        function submitCookie() {
+            event.preventDefault();
+            _getCookieSelect();
+        }
+
+        function submitCookie2() {
+            event.preventDefault();
+            _getCookieSelect2();
+        }
+
+        function submitCookie5() {
+            event.preventDefault();
+            _getCookieSelect5();
+        }
+
+        function changeText() {
+            var x = document.getElementsByClassName("chkCookie1");
+            var y = document.getElementsByClassName("chkCookie2");
+
+            if (x[0].checked == true && y[0].checked == true) {
+                document.getElementById("btnDisable").value = hid10;
+            } else {
+                document.getElementById("btnDisable").value = hid11;
+            }
+        }
+
+        function openWin() {
+            window.open("");
+        }        
+
+        $(document).ready(function () {
+            window.setInterval(function() {
+                $("#btnCustomize").addClass("is-btn is-btn-ghost3 is-upper is-rounded-30 is-btn-xsmall");
+            }, 10);
+
+            setTimeout(function(){ 
+                var x = document.getElementsByClassName("is-lightbox");
+                var i;
+                for (i = 0; i < x.length; i++) {
+                    x[i].getElementsByTagName('IMG')[0].title = x[i].title;
+                }
+            }, 500);
+        });
+        //loadDoc();
+    </script>
+
+    <script>
+    $(document).ready(function() {
+     var intervalId = null;
+     var varCounter = 0;
+     var isCst = 'true';
+
+     var icTimer = function(){
+     var cookies = document.cookie.split(";");
+
+     if (varCounter == 0) {
+        $.each($('input'),function(){
+           if($(this).attr("type")=="hidden"){
+              var valueOfHidFiled = 'nothing';
+
+              try {
+                 valueOfHidFiled = $(this).attr("id");
+              } catch(err) {
+                 valueOfHidFiled = 'nothing';
+              }
+ 
+              try {
+                 if (valueOfHidFiled.indexOf("hidDisable") >= 0) {
+                    if ($(this).val() == '') {} else { 
+                        clearInterval(intervalId);
+                    }
+                 }
+              } catch(err2) {
+                 //do nothing
+              }     
+           }
+        });
+     } else { 
+     //no consented cookie     
+     for(var j=0; j < cookies.length; j++) {
+        var equals2 = cookies[j].indexOf("=");
+        var name2 = equals2 > -1 ? cookies[j].substr(0, equals2) : cookies[j];
+          
+        if ((name2.indexOf("pop-active") >= 0) || (name2.indexOf("wstoken") >= 0) || (name2.indexOf("aspxauth") >= 0) || (name2.indexOf("AntiXsrfToken") >= 0) || (name2.indexOf("ASP.NET_SessionId") >= 0)) {
+           //do nothing 
+        } else {
+           setExpired(name2);
+        }
+     }
+     }
+     
+     varCounter++;
+
+     if(varCounter > 5000) {
+          clearInterval(intervalId);
+     }
+};
+
+function setExpired(name) { 
+   var expires; 
+   expires = '; expires=Thu, 01 Jan 2010 00:00:00 UTC'; 
+   document.cookie = name + '=' + expires + '; path=/; domain=' + window.location.host + ';';
+   document.cookie = name + '=' + expires + '; path=/; domain=' + window.location.host + ';';
+   document.cookie = name + '=' + expires + '; path=/; domain=google.com;';
+}
+
+function startCheck() {
+   intervalId = setInterval(icTimer, 100);
+}
+
+setTimeout(startCheck, 500);   
+});
+</script>
+
+<script type="text/javascript" >
+        var theForm = document.forms['aspnetForm'];
+
+        if (!theForm) {
+            theForm = document.aspnetForm;
+        }
+
+        var elements = theForm.elements;
+        for (var i = 0, len = elements.length; i < len; ++i) {
+            elements[i].disabled = true;
+        }
+
+        function enableForm() { 
+            var elements = theForm.elements;
+            for (var i = 0, len = elements.length; i < len; ++i) {
+                elements[i].disabled = false;
+            }
+        } 
+
+        window.onLoad = enableForm();
+    </script>
+    
+</div>    
+        
+</div>
+
+<span id="dummy"></span>
+
+
+
+
+
+<script>
+    function addEventToDiv() {
+        try {
+            var element = document.getElementById('divCustomTags');
+            
+            new MutationObserver(() => {
+                changeBreaktoModule();
+            }).observe(element, { childList: true });
+            
+            var element2 = document.getElementById('ifrIdeasPanel');
+            element2.src = document.getElementById("hidCustomSrc").value
+        }
+        catch(err) {
+          
+        }
+
+        try {
+            $('div[title~="Koptekst1"]').html('<h1>Heading 1</h1>');
+            $('div[title~="Koptekst2"]').html('<h2>Heading 2</h2>');
+            $('div[title~="Koptekst3"]').html('<h3>Heading 3</h3>');
+            $('div[title~="Koptekst4"]').html('<h4>Heading 4</h4>');
+            $('div[title~="Paragraaf"]').html('<p>Paragraph</p>');
+            $('div[title~="Voorgeformatteerd"]').html('<p style="font-family:courier;">Voorgeformatteerd</p>')
+        }
+        catch(err) {
+          
+        }
+    }
+
+    function changeBreaktoModule() {
+        content = document.getElementById("divCustomTags");
+        kbButtons = content.getElementsByTagName("button");
+        
+        for (var iIndex = 0; iIndex < kbButtons.length; iIndex++){
+            if (kbButtons[iIndex].getAttribute('data-value') == '[%BREAK%]') {
+                kbButtons[iIndex].setAttribute('data-value', '[%MODULE%]');
+                kbButtons[iIndex].innerHTML = ' MODULE ';
+            }
+        };
+    }
+
+    $(document).ready(function () {
+        setTimeout(checkUseSection, 1);
+
+        try {
+            setTimeout(addEventToDiv, 1);
+        }
+        catch(err) {
+          
+        }
+
+        setTimeout(function(){ 
+            $('.cell-add-more').click(function () {
+                var $modal = $('.is-modal.snippets');
+                $modal.find('iframe').attr('src', document.getElementById("hidCustomSnippet").value);
+            });
+        }, 3000);
+
+        setTimeout(function(){ 
+            var x = document.getElementsByClassName("is-lightbox");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].getElementsByTagName('IMG')[0].title = x[i].title;
+            }
+        }, 500);
+    });
+
+    function checkUseSection() {
+        var hid1 = "true";
+
+        try {
+            hid1 = document.getElementById("hidUseSection").value;
+        }
+        catch(err) {
+            hid1 = "true";
+        }
+        
+
+        if (hid1 == "false") {
+            var x = document.getElementsByClassName("is-sidebar-button");
+            
+            var i;
+            for (i = 0; i < x.length; i++) {
+                if (x[i].title == "Sections") {
+                    x[i].style = "display:none !important;"
+                }
+
+                if (x[i].title == "HTML") {
+                    x[i].style = "display:none !important;"
+                }
+            }
+
+            var y = document.getElementsByClassName("cl-button");
+            
+            var j;
+            for (j = 0; j < y.length; j++) {
+                if (y[j].innerHTML.indexOf("cb-icon-wrench") !== -1) {
+                    y[j].style = "display:none;"
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .editAnimationText a.classic {
+        width: 100%;
+        height: 60px;
+        display: block;
+        background: #f7f7f7;
+    }
+
+    .editAnimationText a {
+        width: 51px;
+        height: 45px;
+        line-height: 1;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background-color: #fff;
+        color: #4a4a4a;
+        border: 1px solid transparent;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        border-radius: 0;
+        transition: all ease 0.3s;
+    }
+
+    .spinny-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .editAnimationText button.classic, .is-tool button.classic {
+        width: 100%;
+        height: 60px;
+        display: block;
+        background: #f7f7f7;
+    }
+
+    .is-tool button, .editAnimationText button {
+        width: 51px;
+        height: 45px;
+        line-height: 1;
+        display: inline-block;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
+        background-color: #fff;
+        color: #4a4a4a;
+        border: 1px solid transparent;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        font-size: 12px;
+        font-weight: normal;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        border-radius: 0;
+        transition: all ease 0.3s;
+    }
+</style>
+<script>
+    if (getParameterByName('act') == 'builder') {
+        $(".main-wrapper").on({
+        mouseenter: function () {
+            $("#divAnimationText").show();
+        },
+        mouseleave: function () {
+            $("#divAnimationText").hide();
+        }
+        });    
+
+        $("#divAnimationText").click(function () {
+            $(".editAnimationText").children().find("iframe").attr("src", "");
+            $(".editAnimationText").children().find("iframe").attr("src", "/assets/modules/animatingText.html");
+            $(".editAnimationText").addClass('active');
+        });
+    }
+    
+    $(document).ready( function() {
+        $("#btnAnimateOK").click(function (e) {
+            e.preventDefault();
+            $(".editAnimationText").removeClass('active');
+        });
+
+        $(".editAnimationText").on({
+            mouseleave: function () {
+                $(".editAnimationText").removeClass('active');
+            }
+        });
+
+        setTimeout(function () {
+            $("#hidAnimateTextCode").val($(".spinny-wrapper").html())
+        }, 100);
+
+        $(".main-wrapper").on({
+            mouseenter: function () {
+                $(".main-wrapper").append('<div id="divAnimationText" style="width: 40px; height: 40px; position: absolute; bottom: 0px; left: calc(50%);"><div id="lnkeditAnimationText" title="Module Settings" style="display: inline-block; width: 40px; height: 40px; background: rgb(255, 152, 0);"><i class="icon ion-android-settings" style="color: #fff;left: 14px;position: absolute;top: 5px;"> </i></div></div>');
+
+                $("#divAnimationText").click(function () {
+                    $("#hidAnimateTextCode").val($(".spinny-wrapper").html());
+                    $(".editAnimationText").children().find("iframe").attr("src", "/assets/modules/animatingText.html");
+                    $(".editAnimationText").addClass('active');
+                });
+
+                $("#divAnimationText").show();
+            },
+            mouseleave: function () {
+                $("#divAnimationText").remove();
+            }
+        });
+
+        $("#hidAnimateTextCode").change(function () {
+            if (getParameterByName('act') == 'builder') {
+                $(".spinny-wrapper").html($("#hidAnimateTextCode").val());
+            }
+        });
+    });
+
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+</script>
+
+<div class="is-modal editAnimationText">
+    <div style="max-width:900px;height:570px;padding:0;box-sizing:border-box;position:relative;" data-xoffset="0" data-yoffset="0" data-initialx="null" data-initialy="null">
+        <div class="is-modal-bar is-draggable" style="position: absolute;top: 0;left: 0;width: 100%;z-index:1;">Animation Text</div>
+        <iframe style="position: absolute;top: 0;left: 0;width:100%;height:100%;border:none;border-bottom:60px solid transparent;border-top:40px solid transparent;margin:0;box-sizing:border-box;" src=""></iframe>
+        <input id="hidAnimateTextCode" type="hidden" value="">
+        <a href="#" id="btnAnimateOK" class="input-ok classic " style="height:60px;position:absolute;left:0;bottom:0;padding-top:22px;text-decoration:none;">Ok</a>
+    </div>
+</div></form>
+
+<script id="ctl00_placeholderScript_jQueryUIJs" type="text/javascript" src="assets/scripts/cloudflare/jquery-ui.min.js"></script><script type="text/javascript" src="assets/common/ui/base/base.js"></script><script id="ctl00_placeholderScript_is-topbar-js" type="text/javascript" src="assets/scripts/topbar/topbar.js"></script><script id="ctl00_placeholderScript_BoxJs" type="text/javascript" src="assets/common/ui/box/box.js"></script><script id="ctl00_placeholderScript_SimpleLightBoxJs" type="text/javascript" src="assets/scripts/simplelightbox/simple-lightbox.js"></script><script>$(document).ready(function (e) { $('a.is-lightbox').simpleLightbox({closeText:'<i style="font-size:35px" class="icon ion-ios-close-empty"></i>',navText:['<i class="icon ion-ios-arrow-left"></i>','<i class="icon ion-ios-arrow-right"></i>'],disableScroll:false}); });</script></body>
+</html>

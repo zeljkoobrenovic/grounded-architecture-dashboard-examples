@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTO Dashboard</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .frame {
+            width: 100%;
+            height: calc(100vh - 230px);
+        }
+
+        .map {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .mapThumb {
+            height: 330px;
+            width: 450px;
+            object-fit: contain;
+        }
+
+        .flag {
+            opacity: 0.9;
+            height: 42px;
+            border-radius: 50%;
+            border: 1px solid lightgrey;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 23px; margin-top: -10px">
+    <h1 style="font-size: 50px; margin-bottom: -10px; margin-left: 6px">
+        <img src="icons/logo.png" style="vertical-align: middle; height: 110px; vertical-align: top">
+        <div style="display: inline-block;  padding-left: 6px; vertical-align: top; padding-top: 8px;">
+            <b>CTO Dashboard</b>
+            <p style="font-size: 17px; margin-top: 4px; color: gray">Key performance indicators</p>
+        </div>
+    </h1>
+    <br>
+</div>
+<script>
+    const work = {"regular": [{"title": "Business Goals", "sections": [{"title": "Thematic Goals", "items": [{"title": "Monitoring and dashboards are working and accessible.", "link": "", "ragStatus": "green", "statusNotes": [""]}]}, {"title": "Supporting Objectives", "items": [{"title": "Monitoring and dashboards are working and accessible.", "link": "", "ragStatus": "green", "statusNotes": [""]}]}, {"title": "Common Sense Metrics", "items": [{"title": "Revenue", "link": "", "ragStatus": "green", "statusNotes": [""]}]}, {"title": "Four Obsessions", "items": [{"title": " Build and Maintain a Cohesive Leadership Team", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Create Organizational Clarity", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Over-Communicate Organizational Clarity", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Reinforce Clarity Through Human Systems", "link": "", "ragStatus": "amber", "statusNotes": []}]}]}, {"title": "Operational Excellence", "sections": [{"title": "Launch Readiness", "items": [{"title": "Monitoring and dashboards are working and accessible.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Runbooks/playbooks exist and are understandable by unfamiliar team members.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Service-Level Objectives (SLOs) are defined and tracked.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Disaster recovery plans and backups are in place and tested.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Dependency failure behavior is understood (e.g., graceful degradation).", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Load and performance testing have been conducted.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Compliance requirements (security, privacy, regulations) are met.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Incident Management", "items": [{"title": "An incident review process (retrospectives, RCAs) has been established.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Incident follow-up items are tracked and completed.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Alert volume is measured; high volumes are addressed.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Weekly reviews of open incident action items occur.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "On-Call Management", "items": [{"title": "Defined on-call schedule and rotation length.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Backup plans exist when someone doesn\u2019t respond to a page.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "On-call engineers have the right skills, tools, and permissions.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "On-call pain (paging frequency, hours) is evaluated and minimized.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Clear expectations about feature work during on-call duty.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Rotation selection is fair and well-structured.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Operational Data & System Health", "items": [{"title": "Dashboards provide visibility into the health of the system and business.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Dashboards are reviewed regularly.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Awareness of current feature flags, marketing campaigns, and sales events.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Systems scale elastically, and thresholds are known.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Customer Issue Tracking", "items": [{"title": "Frequency and type of customer-reported issues are tracked.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Trends in customer issues are analyzed (growing/shrinking).", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Quality management is considered in the context of new features.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Frequency of timeouts, errors, or crashes is tracked (especially mobile).", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Failover & Recovery", "items": [{"title": "Disaster recovery plans are documented and tested.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Systems degrade gracefully when needed.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Time to full recovery is measured and optimized.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "CI/CD, Testing, and Automation", "items": [{"title": "High confidence in deployment quality.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Canary releases or feature flags are used for gradual rollouts.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Synthetics and real user monitoring (RUM) are in place for key flows.", "link": "", "ragStatus": "red", "statusNotes": [""]}, {"title": "Systems have adequate observability and instrumentation.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Rollback/failover to a known good instance is always possible.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}]}, {"title": "Governance & Execution", "sections": [{"title": "Guilds", "items": [{"title": "Frontend Guild", "link": "", "ragStatus": "green", "statusNotes": ["+ regular cadence", "+ key experts involved", "- low involvement from architects"]}, {"title": "Backend Guild", "link": "", "ragStatus": "amber", "statusNotes": ["+ regular cadence", "+/- good involvement from architects", "- uneven representation across domains"]}]}, {"title": "Golden Paths", "items": [{"title": "Technology Golden Paths (blessed technologies) are defined, used, and tracked.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Backend Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Web Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Mobile Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "DevOps Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "QA Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "QA Guidelines are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}, {"title": "Naming conventions for source code and infrastructure are defined, used, and tracked.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Budgeting & Vendor Management", "items": [{"title": "The technology budget is set and managed via a clear, transparent process.", "link": "", "ragStatus": "green", "statusNotes": [""]}, {"title": "Procurement proces is set and managed via a clear, transparent process.", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Public Cloud Transparency", "items": [{"title": "AWS Usage", "link": "", "ragStatus": "green", "statusNotes": ["- little interest to give a talk", "- many recent talks canceled", "+/- OK atttendance", "+ good start, some history"]}, {"title": "GCP Usage", "link": "", "ragStatus": "green", "statusNotes": ["+ regular cadence", "+/- good involvement from architects", "- uneven representation across domains"]}]}, {"title": "Source Code Analyses Transparency", "items": [{"title": "GitHub Atlas", "link": "", "ragStatus": "green", "statusNotes": ["- little interest to give a talk", "- many recent talks canceled", "+/- OK atttendance", "+ good start, some history"]}, {"title": "GitHub CoPilot", "link": "", "ragStatus": "green", "statusNotes": ["- little interest to give a talk", "- many recent talks canceled", "+/- OK atttendance", "+ good start, some history"]}, {"title": "TFS Analysis", "link": "", "ragStatus": "amber", "statusNotes": ["+/- ad-hoc, not fully automated"]}, {"title": "GitLab Analysis", "link": "", "ragStatus": "amber", "statusNotes": ["+/- ad-hoc, not fully automated"]}, {"title": "BitBucket Analysis", "link": "", "ragStatus": "amber", "statusNotes": ["+/- ad-hoc, not fully automated"]}]}, {"title": "Tech Docs Transparency", "items": [{"title": "Incidents Explorer", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "ADR Inventory", "link": "", "ragStatus": "green", "statusNotes": []}]}, {"title": "Key Processes", "items": [{"title": "RfC Process", "link": "", "ragStatus": "red", "statusNotes": [""]}]}]}, {"title": "People & Culture", "sections": [{"title": "Team Dynamics", "items": [{"title": "<b><u>Trust</u></b>: team members are open and vulnerable with one another. They readily admit mistakes, weaknesses, and ask for help. They trust each other's intentions and openly share their ideas and concerns without fear of ridicule or judgment.", "link": "", "ragStatus": "green", "statusNotes": ["Team members are open and vulnerable with one another.", "They readily admit mistakes, weaknesses, and ask for help.", "They trust each other's intentions and openly share their ideas and concerns without fear of ridicule or judgment."]}, {"title": "<b><u>Constructive Conflict</u></b>: Team members engage in healthy, passionate debate around ideas. Conflicts are focused on issues, not personal differences, leading to better solutions. Everyone feels safe voicing differing opinions and challenging assumptions respectfully.", "link": "", "ragStatus": "green", "statusNotes": ["Team members engage in healthy, passionate debate around ideas.", "Conflicts are focused on issues, not personal differences, leading to better solutions.", "Everyone feels safe voicing differing opinions and challenging assumptions respectfully."]}, {"title": "<b><u>Commitment</u></b>: The team clearly aligns around decisions and priorities, even when there's disagreement initially. Everyone is committed to common objectives and clear direction. Team members leave meetings confident in decisions made, avoiding ambiguity.", "link": "", "ragStatus": "green", "statusNotes": ["The team clearly aligns around decisions and priorities, even when there's disagreement initially.", "Everyone is committed to common objectives and clear direction.", "Team members leave meetings confident in decisions made, avoiding ambiguity."]}, {"title": "<b><u>Accountability</u></b>: Team members hold each other accountable, calling out behaviors or performance that contradict agreed commitments. They provide constructive feedback promptly and directly. Accountability happens peer-to-peer, not just from team leaders.", "link": "", "ragStatus": "red", "statusNotes": ["Team members hold each other accountable, calling out behaviors or performance that contradict agreed commitments.", "They provide constructive feedback promptly and directly.", "Accountability happens peer-to-peer, not just from team leaders."]}, {"title": "<b><u>Attention to Results</u></b>: The team places collective outcomes above individual or departmental goals. Everyone clearly understands and measures success based on team objectives, not personal agendas. Achieving team results is prioritized and celebrated over individual achievements.", "link": "", "ragStatus": "red", "statusNotes": ["The team places collective outcomes above individual or departmental goals.", "Everyone clearly understands and measures success based on team objectives, not personal agendas.", "Achieving team results is prioritized and celebrated over individual achievements."]}]}, {"title": "Transparent Processes", "items": [{"link": "", "ragStatus": "green", "statusNotes": [], "title": "Clearly defined, accessible <b><u>career paths</u></b> for all roles with criteria for progression and regular updates."}, {"link": "", "ragStatus": "green", "statusNotes": [], "title": "Structured, fair, and inclusive <b><u>hiring processes</u></b> with diverse interview panels and clear role requirements."}, {"link": "", "ragStatus": "green", "statusNotes": [], "title": "Consistent <b><u>onboarding experience</u></b> with clear milestones, role expectations, and cultural integration support."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "Regular, dedicated time for <b><u>meaningful 1:1s</u></b> focused on feedback, support, alignment, and development."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "Regular, <b><u>career conversations</u></b> that explore growth opportunities and align with individual aspirations."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "Clearly defined, <b><u>measurable goals</u></b> set collaboratively and reviewed regularly to track progress and adapt as needed."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "<b><u>Scheduled performance reviews</u></b> based on well-communicated criteria, with balanced feedback and growth planning."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "Individualized, actionable <b><u>development plans</u></b> aligned with career goals, reviewed regularly with measurable progress."}, {"link": "", "ragStatus": "red", "statusNotes": [], "title": "Culture of <b><u>continuous learning</u></b> supported by access to training, time for skill development, and learning incentives."}, {"link": "", "ragStatus": "amber", "statusNotes": [], "title": "Established <b><u>peer coaching practices</u></b> with clear expectations, training, and time allocated for meaningful exchanges."}]}, {"title": "Team Rituals", "items": [{"title": "Group Meetings", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Solutions Architects Meetings", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "EA Meetings", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Off-sites", "link": "", "ragStatus": "red", "statusNotes": []}, {"title": "Engagement Score", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Reporting Hygiene", "link": "", "ragStatus": "amber", "statusNotes": []}]}, {"title": "Expert Gatherings", "items": [{"title": "Bi-Weekly Architecture Talks", "link": "", "ragStatus": "red", "statusNotes": ["- little interest to give a talk", "- many recent talks canceled", "+/- OK atttendance", "+ good start, some history"]}, {"title": "Architecture Summits", "link": "", "ragStatus": "amber", "statusNotes": [""]}]}, {"title": "Thought Leadership", "items": [{"title": "Internal Talks/Publishing", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "External Talks/Publishing", "link": "", "ragStatus": "amber", "statusNotes": []}]}, {"title": "Company Behaviors", "items": [{"title": "Datafy", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Customer Obsessed", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Simplify", "link": "", "ragStatus": "green", "statusNotes": []}]}, {"title": "Key Stakeholder Relationships", "items": [{"title": "Product Managers", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "ProductOps", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "CISO", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "HR & Talent Management", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Commercial Stakeholders", "link": "", "ragStatus": "amber", "statusNotes": []}]}]}, {"title": "Cybersecurity & Compliance", "sections": [{"title": "Security Governance & Risk", "description": "Governance structures are established, regularly reviewed, and aligned with business objectives. Risks are proactively identified and mitigated.", "items": [{"title": "Cybersecurity strategy clearly documented, reviewed annually, and directly aligns with strategic initiatives.", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Risk assessments performed quarterly with comprehensive coverage of critical assets.", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "At least 90% of identified risks are mitigated within defined timelines.", "link": "", "ragStatus": "red", "statusNotes": []}, {"title": "Consistently compliant with required standards (ISO 27001, SOC2, GDPR, HIPAA).", "link": "", "ragStatus": "red", "statusNotes": []}, {"title": "Regular governance reviews conducted at least quarterly, with comprehensive reporting.", "link": "", "ragStatus": "green", "statusNotes": []}]}, {"title": "Security Operations & Incident Response", "description": "Incidents are promptly detected, clearly communicated, and effectively resolved with minimal disruption.", "items": [{"title": "Consistently achieves incident detection within defined SLA targets.", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Incident response consistently meets defined SLAs.", "link": "", "ragStatus": "red", "statusNotes": []}, {"title": "Clear tracking with incident prevention  within acceptable industry benchmarks.", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Incident response plans tested quarterly with clear, documented outcomes.", "link": "", "ragStatus": "amber", "statusNotes": []}]}, {"title": "Cybersecurity & Technical Controls", "description": "Technical defenses are robust, adaptive, and effective in preventing and mitigating threats.", "items": [{"title": "Critical vulnerabilities remediated within 48 hours; all others within agreed timelines.", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Endpoint security tools deployed comprehensively across all managed devices.", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Security alert accuracy maintained within acceptable industry standards.", "link": "", "ragStatus": "amber", "statusNotes": []}, {"title": "Monthly audits confirm all systems meet secure configuration baselines.", "link": "", "ragStatus": "green", "statusNotes": []}, {"title": "Secure software development lifecycle (SDLC) practices fully integrated into development processes.", "link": "", "ragStatus": "red", "statusNotes": []}]}]}]};
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '<div style="margin-left: 30px">';
+    html += '<div class="tab">';
+    html += '<button class="tablinks active" onclick="openTab(event, \'kpi\')">KPIs</button>';
+    html += '</div>';
+
+    html += '<div id="kpi" class="tabcontent" style="padding: 40px; overflow: auto; display: block">';
+
+    function colorOf(ragStatus) {
+        if (ragStatus === 'red') return 'crimson';
+        if (ragStatus === 'green') return 'green';
+
+        if (ragStatus === 'amber') return '#FFBF00';
+        if (ragStatus === 'yellow') return '#FFBF00';
+
+        return 'lightgrey';
+    }
+
+    function distributionOf(chapter) {
+        const distribution = {
+            counts: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            percentages: {
+                red: 0,
+                amber: 0,
+                green: 0
+            },
+            score: 0
+        }
+        let total = 0;
+        chapter.sections.forEach(section => {
+            section.items.forEach(item => {
+                const status = item.ragStatus;
+
+                if (status === 'red') distribution.counts.red++;
+                else if (status === 'green') distribution.counts.green++;
+                else if (status === 'amber') distribution.counts.amber++;
+                else if (status === 'yellow') distribution.counts.amber++;
+
+                total += 1;
+            });
+        });
+
+        if (total > 0) {
+            distribution.percentages.red = 100 * distribution.counts.red / total;
+            distribution.percentages.amber = 100 * distribution.counts.amber / total;
+            distribution.percentages.green = 100 * distribution.counts.green / total;
+
+            distribution.score = Math.round(10 * ((distribution.counts.red * 1) + distribution.counts.amber * 5 + distribution.counts.green * 10) / total) / 10;
+        }
+
+        return distribution;
+    }
+
+    html += '<table>';
+    html += '<tr>';
+
+    work.regular.forEach(chapter => {
+        const distribution = distributionOf(chapter);
+        html += '<td style="vertical-align: top; min-width: 400px">';
+        html += '<div style="margin-bottom: 60px; display: inline-block; vertical-align: top; border-left: 1px solid grey; padding: 12px">';
+        html += '<div style="font-size: 160%;">' + chapter.title + ' (' + distribution.score + ')</div>';
+        html += '<div>';
+        let percentages = distribution.percentages;
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.green + '%; background-color: green"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.amber + '%; background-color: #FFBF00"></div>';
+        html += '<div style="height: 8px; display: inline-block; width: ' + percentages.red + '%; background-color: crimson"></div>';
+        html += '</div>';
+        chapter.sections.forEach(section => {
+            html += '<div style="margin-bottom: 40px; border-left: 1px dashed grey">';
+            html += '<div style="font-size: 130%; margin-top: 22px; margin-left: 12px;">' + section.title + '</div>';
+            section.items.forEach(item => {
+                const title = 'Status: ' + item.ragStatus + '\n\n' + item.statusNotes.join('\n');
+                html += '<div style="margin: 10px; margin-left: 40px;">';
+                html += '<div style="margin: 1px; vertical-align: top; cursor: help; display: inline-block; padding-top: 6px; width: 36px; height: 17px; background-color: ' + colorOf(item.ragStatus) + '; border-radius: 0; margin-right: 6px;" title="' + title + '"></div>';
+                html += '<div style="vertical-align: middle; display: inline-block; width: 250px; padding-top: 0px; font-size: 90%">';
+                if (item.link) html += '<a style="text-decoration: none; width: 400px" target="_blank" href="' + item.link + '">';
+                html += item.title;
+                if (item.link) html += '</a>&nbsp;';
+                html += '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+        });
+        html += '</div>';
+        html += '</td>';
+    });
+
+    html += '</tr';
+    html += '</table>';
+
+    html += '</div>';
+
+    html += '</div>';
+    div.outerHTML = html;
+</script>
+
+<div style="margin-left: 30px; margin-top: 8px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a target="_blank" style="" href="${source_link}">data sheet</a>.
+</div>
+</body>
+</html>

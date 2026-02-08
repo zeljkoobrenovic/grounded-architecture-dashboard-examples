@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body>
+
+<div id="Main"></div>
+
+<script>
+    const capabilities = ${capabilities};
+    const array = ${data};
+    const sortRank = (item) => {
+        let rating = 0;
+        if (item.in_flight) {
+            rating = 1000000;
+        }
+        rating += item.domain ? item.domain.split('\n').length : 0;
+
+        return rating;
+    };
+
+    function capabilityByName(name) {
+        let search = capabilities.filter(c => c.capability.toLowerCase().trim() === name.toLowerCase().trim());
+        return search ? search[0] : null;
+    }
+
+    const programs = [];
+
+    array.forEach(capability => {
+        capability.capability = capability.capability.trim();
+        capability.original_domain = capability.domain;
+        capability.domain = '';
+        const capInfo = capabilityByName(capability.capability);
+        if (capInfo && capInfo.programs && capInfo.programs.trim().endsWith('\n')) {
+            capInfo.programs = capInfo.programs.trim().substring(0, capInfo.programs.trim().length - 1);
+        }
+        capability.domain = (capInfo && capInfo.programs) ? capInfo.programs + '' : 'Undefined';
+        if (capInfo) {
+            capability.id = capInfo.id;
+            capability.colored_status = capInfo.colored_status;
+            capability.in_flight = capInfo.in_flight;
+        }
+        if (capInfo && capInfo.programs) {
+            capInfo.programs.split('\n').forEach(program => {
+                program = program.trim().toUpperCase().trim();
+                if (program && !programs.includes(program)) {
+                    programs.push(program);
+                }
+            });
+        }
+    });
+    array.forEach(capability => {
+        const months = capability.months;
+        capability.months = [];
+
+        let prevYear = null;
+        let latestMonth = null;
+        months.forEach(month => {
+            if (prevYear != month.year) {
+                latestMonth = {
+                    year: month.year,
+                    month: 12,
+                    buildEffort: month.buildEffort,
+                    scalingEffort: month.scalingEffort,
+                    retiringEffort: month.retiringEffort
+                };
+                prevYear = month.year;
+                capability.months.push(latestMonth)
+            } else {
+                latestMonth.buildEffort += month.buildEffort;
+                latestMonth.scalingEffort += month.scalingEffort;
+                latestMonth.retiringEffort += month.retiringEffort;
+            }
+        });
+    });
+    array.forEach(capability => {
+        capability.months.forEach(month => {
+            month.buildEffort /= 12;
+            month.scalingEffort /= 12;
+            month.retiringEffort /= 12;
+        });
+
+    });
+</script>
+
+<script>
+
+    const startingAt = function (capability) {
+        let n = 10000000;
+
+        capability.months.forEach(month => {
+            if (month.buildEffort > 0 && n === 10000000) {
+                n = month.year * 1000 + month.month;
+                return;
+            }
+        });
+
+        return n;
+    }
+
+
+    function displayTable(sorted, showDetails) {
+        if (!sorted.length) return;
+        const getTotalMYs = function (year) {
+            let effort = 0;
+            sorted.forEach(capability => {
+                capability.months.filter(m => m.year === year).forEach(month => {
+                    effort += month.buildEffort + month.scalingEffort + month.retiringEffort;
+                });
+            });
+
+            return Math.round(effort);
+        }
+        const getFactoredTotalMYs = function (year) {
+            let buildEffort = 0;
+            let scalingEffort = 0;
+            let retiringEffort = 0;
+            let uniqueEffort = 0;
+            sorted.forEach(capability => {
+                const factor = capability.domain.split('\n').length;
+                capability.months.filter(m => m.year === year).forEach(month => {
+                    buildEffort += month.buildEffort / factor;
+                    scalingEffort += month.scalingEffort / factor;
+                    retiringEffort += month.retiringEffort / factor;
+                    if (factor === 1) {
+                        uniqueEffort += month.buildEffort / factor + month.scalingEffort / factor + month.retiringEffort / factor;
+                    }
+                });
+            });
+
+            buildEffort = Math.round(buildEffort);
+            scalingEffort = Math.round(scalingEffort);
+            retiringEffort = Math.round(retiringEffort);
+            uniqueEffort = Math.round(uniqueEffort);
+
+            return {
+                buildEffort, scalingEffort, retiringEffort,
+                totalEffort: buildEffort + scalingEffort + retiringEffort,
+                uniqueEffort
+            };
+        }
+
+        const getConfirmedLiveCount = function (year, month) {
+            const monthId1 = year + '-' + (month < 10 ? '0' : '') + (month);
+            const monthId2 = year + '-' + month;
+
+            let count = 0;
+            sorted.forEach(capability => {
+                if (capability.confirmed_live === monthId1 || capability.confirmed_live === monthId2) {
+                    count += 1;
+                }
+            });
+
+            return count;
+        }
+
+
+        const getConfirmedLiveTotalCount = function () {
+            let count = 0;
+            sorted.forEach(capability => {
+                if (capability.confirmed_live) {
+                    count += 1;
+                }
+            });
+
+            return count;
+        }
+
+        let html = '<table>';
+        html += '<tr style="font-size: 80%">';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        sorted[0].months.forEach(month => {
+            html += '<td>' + month.year + '</td>';
+        });
+        html += '</tr>';
+
+        html += '<tr style="font-size: 50%">';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td></td>';
+        sorted[0].months.forEach(month => {
+            let countFactored = getFactoredTotalMYs(month.year, month.month);
+            html += '<td style="font-size: 140%; vertical-align: bottom; padding-bottom: 12px; padding-top: 12px">';
+            html += '<div style="display: inline-block; vertical-align: bottom;" >';
+            html += '<div><span style="color: black; font-size: 180%">' + countFactored.totalEffort + '</div>';
+            html += '<div style="border-radius: 1px; background-color: lightgrey; width: 60px; height: ' + (countFactored.totalEffort - countFactored.uniqueEffort) + 'px; vertical-align: bottom;"></div>';
+            html += '<div style="border-radius: 1px; background-color: purple; width: 60px; height: ' + (countFactored.uniqueEffort) + 'px; vertical-align: bottom;"></div>';
+            html += '</div>';
+            html += '</td>';
+        });
+        html += '</tr>';
+
+        if (showDetails) {
+            html += '<tr style="font-size: 50%">';
+            html += '<td></td>';
+            html += '<td style="vertical-align: middle; font-size: 140%; color: purple">Unique program effort</td>';
+            html += '<td></td>';
+            html += '<td></td>';
+            sorted[0].months.forEach(month => {
+                let countFactored = getFactoredTotalMYs(month.year, month.month);
+                html += '<td style="font-size: 140%; vertical-align: bottom; padding-bottom: 12px; padding-top: 12px">';
+                html += '<div style="display: inline-block; vertical-align: bottom;" >';
+                html += '<div><span style="color: purple">' + (countFactored.uniqueEffort + '</span> / ' + countFactored.totalEffort) + '<span style="font-size: 80%; color: grey; vertical-align: bottom;"></span></div>';
+                html += '</div>';
+                html += '</td>';
+            });
+            html += '</tr>';
+
+            let index = 0;
+            sorted.forEach(capability => {
+                index += 1;
+                const factor = capability.domain.split('\n').length;
+
+                html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden; ' + (capability.in_flight ? '' : 'opacity: 0.4') + '">';
+                html += '<td style="vertical-align: bottom; font-size: 70%; color: grey">' + index + '</td>';
+                html += '<td style="text-align: right; width: 260px; min-width: 280px; max-width: 280px; vertical-align: bottom; overflow: hidden; font-size: 80%">';
+                html += '<div style="font-size: 80%; color: grey">' + capability.domain + '</div>';
+                html += '<div style="font-weight: bold; font-size: 110%;' + (factor === 1 ? 'color: purple' : '') + '">' + capability.capability + '</div>';
+                html += '</td>';
+                html += '<td style="vertical-align: bottom">';
+                if (capability.id) {
+                    html += '<img src="assets/icons/' + capability.id + '.png" style="margin-left: 4px; width: 34px; vertical-align: bottom">';
+                }
+                html += '</td>';
+                html += '<td style="font-size: 80%; width: 20px; min-width: 30px; max-width: 30px; vertical-align: bottom; color: grey; padding-left: 12px">';
+                html += Math.round(capability.man_months / 12 / factor) + '<span style="font-size: 70%">MY</span>';
+                html += '</td>';
+                capability.months.forEach(month => {
+                    const monthId1 = month.year + '-' + (month.month < 10 ? '0' : '') + (month.month);
+                    const monthId2 = month.year + '-' + month.month;
+
+                    const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                    html += '<td style="border-bottom: 1px solid lightgrey; vertical-align: bottom; text-align: left; ' + border + '">';
+
+                    const totalEffort = Math.round((month.buildEffort + month.scalingEffort + month.retiringEffort));
+
+                    const title = month.year + ' ' + month.month
+                        + '\nbuilding: ' + month.buildEffort + ' FTE'
+                        + '\nscaling: ' + month.scalingEffort + ' FTE'
+                        + '\nretiring: ' + month.retiringEffort + ' FTE';
+
+                    const lineStyle = '';
+
+                    let displayText = (totalEffort > 0 && factor > 1 ? Math.round(10 * totalEffort / factor) / 10 : '');
+                    html += '<div style="vertical-align: bottom; margin-top: 10px; width: 62px; text-align: center; font-size: 70%;' + (totalEffort > 0 ? 'color: #c0c0c0' : 'color: lightgrey') + '">' + displayText + '</div>';
+                    html += '<div style="display: inline-block; vertical-align: bottom;' + lineStyle + '" title="' + (title) + '">';
+                    html += '<div style="border-radius: 1px; background-color: #b0b0b0; width: 60px; height: ' + (month.retiringEffort) + 'px"></div>';
+                    html += '<div style="border-radius: 1px; background-color: orange; width: 60px; height: ' + (month.scalingEffort) + 'px"></div>';
+                    html += '<div style="border-radius: 1px; background-color: #315b7c; width: 60px; height: ' + (month.buildEffort) + 'px"></div>';
+                    html += '</div>';
+
+                    html += '</td>';
+                });
+                html += '</tr>';
+            });
+        }
+
+        html += '</table>';
+        return html;
+    }
+
+    function programMatrix(sorted, domain) {
+        let programSorted = sorted.filter(item => item.original_domain.toLowerCase().includes(domain.toLowerCase()))
+            .sort((a, b) => sortRank(b) - sortRank(a))
+        ;
+        let html = '';
+        html += '<div style="font-size: 150%; margin-top: 52px; margin-bottom: 20px">' + domain.toUpperCase() + ' CAPABILITIES PER PROGRAM</div>';
+        html += '<table>';
+        html += '<tr style="font-size: 60%">';
+        html += '<td></td>';
+        programSorted.forEach(item => {
+            html += '<td style="max-width: 30px; overflow: hidden; ' + (item.in_flight ? '' : 'opacity: 0.3') + '">';
+            if (item.id) {
+                html += '<img src="assets/icons/' + item.id + '.png" style="margin-left: 0px; width: 30px; vertical-align: bottom; cursor: help" title="[' + item.original_domain + ']\n' + item.capability + '">';
+            }
+            html += '</td>';
+        });
+        html += '</tr>';
+        programs.forEach(program => {
+            html += '<tr style="font-size: 60%">';
+            html += '<td style="text-align: right; vertical-align: middle">';
+            html += program + ' PROGRAM ';
+            html += '</td>';
+            programSorted.forEach(item => {
+                html += '<td>';
+                if (item.domain && item.domain.toLowerCase().trim().includes(program.toLowerCase().trim())) {
+                    html += '<div style="background-color: skyblue; height: 30px; cursor: help; ' + (item.in_flight ? '' : 'opacity: 0.4') + '" title="' + program + ' -> ' + item.capability + '">';
+                    html += '</div>';
+                } else {
+                    html += '<div style="background-color: #f0f0f0; height: 30px">';
+                    html += '</div>';
+                }
+                html += '</td>';
+            });
+            html += '</tr>';
+        });
+        html += '</table>';
+        return html;
+    }
+
+    function display() {
+        array.splice(0, 1);
+        const sorted = array;
+
+
+        let html = '';
+        html += '<div style="font-size: 90%; margin-bottom: 10px"><a href="roadmap-per-program.html" target="_blank">Open in new Tab...</a></div>';
+        html += '<div style="font-size: 80%">';
+        html += '<div style="font-size: 110%; margin-bottom: 12px">The roadmap shows how we expect to build all white label capabilities, describing the expected effort (in FTEs each year) needed to build the initial version and release it for one brand (LIVE), scale a capability to multiple brands, and retire any legacy.\n</div>';
+        html += '<div style="display: inline-block">Legend:</div>';
+        html += '<div style="color: white; background-color: #315b7c; display: inline-block; margin: 2px; padding: 2px">Building</div>';
+        html += '<div style="background-color: orange; display: inline-block; margin: 2px; padding: 2px">Scaling</div>';
+        html += '<div style="background-color: #b0b0b0; display: inline-block; margin: 2px; padding: 2px">Retiring</div>';
+        html += '</div>';
+        html += '<div style="color: grey; font-size: 80%; margin-top: 0px">Live = receives live traffic from at least one brand (WL Modules, Service),\n' +
+            '        or used to build services receiving live traffic (design / dev modules)\n' +
+            '    </div>'
+        // html += displayTable(sorted);
+
+        let undefinedItems = sorted.filter(c => c.domain.toLowerCase().includes('undefined'));
+        html += '<h1>OVERVIEW</h1>';
+        programs.forEach(program => {
+            const programCapabilities = sorted.filter(c => c.domain.toLowerCase().includes(program.toLowerCase()));
+            html += '<h2 style="margin-top: 42px">' + program + ' PROGRAM (' + programCapabilities.length + ')</h2>';
+            html += displayTable(programCapabilities, false);
+        });
+
+        if (undefinedItems.length > 0) {
+            html += '<h2 style="margin-top: 42px">UNDEFINED' + ' (' + undefinedItems.length + ')</h2>';
+            html += displayTable(undefinedItems, false);
+        }
+
+        html += '<h1>DETAILS</h1>';
+        programs.forEach(program => {
+            const programCapabilities = sorted.filter(c => c.domain.toLowerCase().includes(program.toLowerCase()));
+            html += '<h2 style="margin-top: 42px">' + program + ' PROGRAM (' + programCapabilities.length + ')</h2>';
+            html += displayTable(programCapabilities, true);
+        });
+
+        if (undefinedItems.length > 0) {
+            html += '<h2 style="margin-top: 42px">UNDEFINED' + ' (' + undefinedItems.length + ')</h2>';
+            html += displayTable(undefinedItems, true);
+        }
+
+        html += programMatrix(sorted, 'seeker');
+        html += programMatrix(sorted, 'owner');
+        html += programMatrix(sorted, 'intermediary');
+        html += programMatrix(sorted, 'data');
+        html += programMatrix(sorted, 'platform');
+
+        html += '<br>';
+        html += '<br>';
+
+
+
+        document.getElementById('Main').outerHTML = html;
+    }
+
+    display();
+
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Milestones Per Country and Brand</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image-small {
+            vertical-align: top;
+            font-size: 12px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+        }
+
+        .container {
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            overflow: auto;
+            height: calc(100vh - 120px);
+        }
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+    <script>
+        function openTab(tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+    </script>
+
+</head>
+<body style="padding: 6px">
+<div id="Content"></div>
+<script>
+    const tShirtSizes = ['S', 'M', 'L']
+    const tShirtSizesReversed = ['L', 'M', 'S']
+    const colorMap = {
+        s: {s: '#fed3b4ff', m: '#fed3b4ff', l: 'orange'},
+        m: {s: '#fed3b4ff', m: 'orange', l: 'crimson'},
+        l: {s: 'orange', m: 'crimson', l: 'crimson'},
+    }
+
+    const namingMap = {
+        s: {s: 'Nuisance', m: 'Wasteful Overhead', l: 'Expensive Inefficiency'},
+        m: {s: 'Nagging Problem', m: 'Troublesome Burden', l: 'Strategic Sinkhole'},
+        l: {s: 'Sleeping Monster', m: 'Ticking Time Bomb', l: 'Existential Threat'},
+    }
+
+
+    const countries = [
+        {
+            id: "de",
+            country: "Country_1",
+            icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/un.svg',
+            legacyBrands: ['brand_b', 'brand_a', 'country_1'],
+            brands: [
+                {
+                    id: 'de_common',
+                    brandIDs: ['Country_1'],
+                    name: 'Common',
+                    displayText: 'Common',
+                    icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/un.svg',
+                    mobile: false,
+                    web: false
+                },
+                {
+                    id: 'brand_b',
+                    brandIDs: ['Brand_B'],
+                    name: 'Brand_B',
+                    displayText: 'B2C',
+                    icon: 'assets/logos/brand_b.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_a',
+                    brandIDs: ['Brand_A'],
+                    name: 'Brand_A',
+                    displayText: 'B2C',
+                    icon: 'assets/logos/brand_a.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_a_pro',
+                    brandIDs: ['Brand_A PRO'],
+                    name: 'Brand_A PRO',
+                    displayText: 'PRO',
+                    icon: 'assets/logos/brand_a.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_a_at',
+                    brandIDs: ['Brand_A AT'],
+                    name: 'Brand_A AT',
+                    displayText: 'Country_4 B2C',
+                    icon: 'assets/logos/brand_a.svg',
+                    mobile: true,
+                    web: true
+                },
+            ]
+        },
+        {
+            id: "fr",
+            country: "Country_2",
+            icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/un.svg',
+            legacyBrands: ['brand_d', 'brand_e', 'ma', 'country_2'],
+            brands: [
+                {
+                    id: 'fr_common',
+                    name: 'Common',
+                    brandIDs: ['Country_2'],
+                    displayText: 'Common',
+                    icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/un.svg',
+                    mobile: false,
+                    web: false
+                },
+                {
+                    id: 'brand_d',
+                    brandIDs: ['Brand_D'],
+                    name: 'Brand_D',
+                    displayText: 'B2C',
+                    icon: 'assets/logos/brand_d.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_e',
+                    brandIDs: ['Brand_E'],
+                    name: 'Brand_E',
+                    displayText: 'B2C',
+                    icon: 'assets/logos/logic-immo.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'ma',
+                    name: 'Brand_F',
+                    brandIDs: ['Brand_F'],
+                    displayText: 'B2C',
+                    icon: 'assets/logos/brand_f.svg',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'brand_d_pro',
+                    brandIDs: ['Brand_D PRO'],
+                    name: 'Brand_D PRO',
+                    displayText: 'PRO',
+                    icon: 'assets/logos/brand_d.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_d_neuf',
+                    brandIDs: ['Brand_D Neuf'],
+                    name: 'Brand_D Neuf',
+                    displayText: 'Neuf',
+                    icon: 'assets/logos/se-loger-neuf.svg',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'brand_e_neuf',
+                    brandIDs: ['Brand_E Neuf'],
+                    name: 'Brand_E Neuf',
+                    displayText: 'Neuf',
+                    icon: 'assets/logos/logic-immo-neuf.svg',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'lux_residence',
+                    brandIDs: ['Brand_G'],
+                    name: 'Brand_G',
+                    displayText: 'Lux',
+                    icon: 'assets/logos/lux-residence.png',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'belles_demeures',
+                    brandIDs: ['Brand_H'],
+                    name: 'Brand_H',
+                    displayText: 'Lux',
+                    icon: 'assets/logos/belles-demeures.jpg',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'brand_d_bucom',
+                    brandIDs: ['Brand_D Bureaux & Commerces'],
+                    name: 'Brand_D Bureaux & Commerces',
+                    displayText: 'BuCom',
+                    icon: 'assets/logos/brand_d-bureaux-commerces.svg',
+                    mobile: false,
+                    web: true
+                },
+                {
+                    id: 'brand_d_construire',
+                    brandIDs: ['Brand_D Construire'],
+                    name: 'Brand_D Construire',
+                    displayText: 'BuCom',
+                    icon: 'assets/logos/brand_d-construire.svg',
+                    mobile: false,
+                    web: true
+                }
+            ]
+        },
+        {
+            id: "be",
+            country: "Country_3",
+            icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/un.svg',
+            legacyBrands: ['brand_c', 'country_3'],
+            brands: [
+                {
+                    id: 'be_common',
+                    name: 'Common',
+                    brandIDs: ['Country_3'],
+                    displayText: 'Common',
+                    icon: 'https://zeljkoobrenovic.github.io/sokrates-media/flags/4x3/un.svg',
+                    mobile: false,
+                    web: false
+                },
+                {
+                    id: 'brand_c',
+                    brandIDs: ['Brand_C'],
+                    name: 'Brand_C',
+                    displayText: 'B2C',
+                    icon: 'assets/logos/brand_c.svg',
+                    mobile: true,
+                    web: true
+                },
+                {
+                    id: 'brand_c_pro',
+                    name: 'Brand_C Pro',
+                    brandIDs: ['Brand_C PRO'],
+                    displayText: 'PRO',
+                    icon: 'assets/logos/brand_c.svg',
+                    mobile: true,
+                    web: true
+                }
+            ]
+        }
+    ]
+
+    const domains = [
+        {
+            id: 'seeker',
+            name: 'seeker',
+            color: 'rgba(156, 163, 214, 0.5)',
+            bgColor: 'rgba(156, 163, 214)'
+        },
+        {
+            id: 'owner',
+            name: 'owner',
+            color: 'rgba(207, 193, 232, 0.5)',
+            bgColor: 'rgba(207, 193, 232)'
+        },
+        {
+            id: 'intermediary',
+            name: 'intermediary',
+            color: 'rgba(242, 213, 239, 0.5)',
+            bgColor: 'rgba(242, 213, 239)'
+        },
+        {
+            id: 'platform',
+            name: 'platform experience',
+            color: 'rgba(179, 221, 196, 0.3)',
+            bgColor: 'rgba(179, 221, 196)'
+        },
+        {
+            id: 'data',
+            name: 'data',
+            color: 'rgba(247, 239, 218, 0.3)',
+            bgColor: 'rgba(247, 239, 218)',
+        }
+    ]
+
+    function domainColor(domainId) {
+        let domain = null;
+        if (domainId) {
+            domain = domains.filter(d => d.id.toLowerCase().trim() === domainId.toLowerCase().trim())[0];
+        }
+
+        return domain ? domain.bgColor : '#e0e0e0';
+    }
+</script>
+<script>
+    const array = ${data};
+    const targets = ${targets};
+    const tech_debt = ${tech_debt};
+    tech_debt.data[0].source = 'Transformation Tech Debt';
+    tech_debt.data[0].data.forEach(item => {
+        item.object = item.legacy_system;
+    });
+    const legacyRawData = ${legacy};
+    legacyRawData.data = [tech_debt.data[0]].concat(legacyRawData.data);
+    const legacy = legacyRawData;
+
+    legacy.data.forEach(group => {
+        let groupIcon = '';
+        let section = '';
+        group.data.forEach(item => {
+            item.source = group.source;
+            item.isTransformDebt = group.source.toLowerCase().includes('transformation');
+            if (item.group) {
+                section = item.group;
+            }
+            item.group = section;
+            if (item.group_icon) {
+                groupIcon = item.group_icon;
+            }
+            item.icon = groupIcon;
+        });
+    });
+
+    function targetByCapability(name) {
+        let result = targets.data.filter(c => c.source.toLowerCase() === name.toLowerCase())[0];
+        return result ? result.data : [];
+    }
+
+    function techDebtOf(capabilityName) {
+        const techDebt = [];
+        legacy.data.forEach(group => {
+            group.data.forEach(item => {
+                if (item.capability && item.capability.toLowerCase().trim() === capabilityName.toLowerCase().trim()) {
+                    techDebt.push(item);
+                }
+            });
+        });
+
+        return techDebt;
+    }
+
+    const date = new Date();
+    let month = date.getUTCMonth() + 1;
+    let year = date.getFullYear();
+    let currentMonth = year + '-' + (month < 10 ? '0' : '') + month;
+
+    array.forEach(domain => {
+        domain.groups.forEach(group => {
+            group.items = group.items.filter(i => !i.capability.toLowerCase().includes('qa '));
+            group.items.forEach(capability => {
+                capability.targets = targetByCapability(capability.capability);
+                capability.targets.forEach(t => t.capability_info = capability);
+                capability.techDebt = techDebtOf(capability.capability);
+            });
+        });
+    });
+
+    function domainCapabilities(ids) {
+        const capabilities = [];
+
+        function targetsOf(targets) {
+            if (ids) return targets.filter(t => t.brand_or_country && ids.map(i => i.toLowerCase()).includes(t.brand_or_country.toLowerCase()));
+            else return targets.filter(t => !t.brand_or_country);
+        }
+
+        array.forEach(domain => {
+            domain.groups.forEach(group => {
+                group.items.forEach(capability => {
+                    let filteredTargets;
+                    let brandTechDebt;
+                    if (ids) {
+                        filteredTargets = targetsOf(capability.targets);
+                        brandTechDebt = capability.techDebt.filter(item => ids.map(id => id.toLowerCase()).includes(item.brand.toLowerCase()));
+                    } else {
+                        filteredTargets = capability.targets;
+                        brandTechDebt = capability.techDebt;
+                    }
+                    if (filteredTargets.length > 0 || brandTechDebt.length) {
+                        capabilities.push({
+                            capability,
+                            filteredTargets
+                        })
+                    }
+                });
+            });
+        });
+
+        return capabilities;
+    }
+</script>
+
+
+<script>
+
+    function countLegacyTargets(items) {
+        let oldLegacy = items.filter(i => !i.isTransformDebt);
+        let transformDebt = items.filter(i => i.isTransformDebt);
+        let transformDebtDone = items.filter(i => i.isTransformDebt).filter(i => i.done);
+        const done = oldLegacy.filter(i => i.done).length;
+        const expected2024 = items.filter(i => i.expected && i.expected.startsWith('2024')).length;
+        const expected2025 = items.filter(i => i.expected && i.expected.startsWith('2025')).length;
+
+        return {
+            done,
+            notDone: oldLegacy.length - done,
+            expected2024,
+            expected2025,
+            expectedLater: oldLegacy.length - expected2024 - expected2025,
+            transformDebt: transformDebt.length - transformDebtDone.length
+        }
+    }
+
+    function countCountryLegacyTargets(legacyBrands) {
+        let done = 0;
+        let notDone = 0;
+        let expected2024 = 0;
+        let expected2025 = 0;
+        let expectedLater = 0;
+        let transformDebt = 0;
+
+        legacy.data.forEach(group => {
+            let countryLegacy = group.data.filter(i => !legacyBrands || legacyBrands.includes(i.brand.toLowerCase().trim()));
+            const stats = countLegacyTargets(countryLegacy);
+            done += stats.done;
+            notDone += stats.notDone;
+            expected2024 += stats.expected2024;
+            expected2025 += stats.expected2025;
+            expectedLater += stats.expectedLater;
+            transformDebt += stats.transformDebt;
+        });
+
+        return {done, notDone, expected2024, expected2025, expectedLater, transformDebt}
+    }
+
+    function legacyIconOf(item, groupIcon) {
+        const name = item.object.toLowerCase();
+
+        if (groupIcon) return 'assets/tech/' + groupIcon;
+
+        if (name.includes('datadog')) return 'assets/tech/datadog.png';
+        if (name.includes(' aws')) return 'assets/tech/aws.png';
+        if (name.includes('kafka')) return 'assets/tech/kafka.png';
+        if (name.includes(' red ')) return 'assets/tech/kafka.png';
+
+
+        return 'assets/icons/tech_debt.png';
+    }
+
+    function addLegacyLandscape(countryLegacyStats, countryTotal, country) {
+        let html = '';
+        // legacy
+        html += '<div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 20px; padding: 10px; margin-top: 100px">';
+
+        html += '<div style="font-size: 140%; padding-bottom: 10px">Legacy Landscape</div>';
+        html += '<div style="padding-top: 20px; background-color: rgba(200,0,0,0.03)">';
+
+        html += '<div style="margin: 26px">';
+        html += '</div>';
+
+        legacy.data.forEach(group => {
+            const border = group.source.toLowerCase().includes('transformation') ? '4px solid black' : '4px solid black';
+            html += '<div style="margin: 30px; padding: 20px; border-top: ' + border + '; box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px">';
+            let countryLegacy = group.data.filter(i => i.brand && ((i.brand + '').toLowerCase() !== 'target') && (!country || country.legacyBrands.includes(i.brand.toLowerCase().trim())));
+            const stats = countLegacyTargets(countryLegacy);
+
+            html += '<div style="margin-bottom: 6px; font-size: 180%">';
+            let total = stats.done + stats.transformDebt + stats.notDone;
+            html += group.source;
+            html += '</div>';
+
+            html += '<div style="">';
+
+            for (let i = 0; i < stats.done; i++) {
+                html += '<div style="vertical-align: top; text-align: center; display: inline-block; margin: 1px; height: 10px; width: 10px; background-color: green; font-size: 9px; color: lightgrey">X</div>';
+            }
+
+            for (let i = 0; i < stats.notDone; i++) {
+                html += '<div style="border-radius: 50%; vertical-align: top; display: inline-block; margin: 1px; height: 10px; width: 10px; background-color: crimson"></div>';
+            }
+
+            html += '</div>';
+            html += '<div style="font-size: 90%; color: #8c8c8c; margin-bottom: 10px">';
+            html += 'legacy retirement progress: ' + stats.done + ' / ' + total;
+            html += ' (' + Math.round(100 * stats.done / total) + '%)';
+            html += '</div>';
+
+            let section = '';
+            let groupBgColor = '#f0f0f0';
+
+            countryLegacy
+                //.sort((a, b) => (a.done ? 1 : 0) - (b.done ? 1 : 0))
+                //.sort((a, b) => (a.group.localeCompare(b.group)))
+                .filter(item => item.roi_maintenance)
+                .forEach(item => {
+                    if (item.group !== section) {
+                        if (section) {
+                            html += '</div>';
+                        }
+                        section = item.group;
+                        html += '<div style="text-align: left; border: 0px solid lightgrey; margin: 0px; display: inline-block; padding: 0px; border-radius: 4px; background-color: "' + groupBgColor + '>';
+                        groupBgColor = groupBgColor === '#f0f0f0' ? '#ffffff' : '#f0f0f0';
+                        html += '<div style="text-align: left; font-size: 12px; padding: 5px; color: blue; border-top: 1px dotted grey; border-left: 1px dotted grey; margin-left: 8px; margin-top: 20px; padding-bottom: 10px; margin-bottom: -10px;">';
+                        html += '<div style="background-color: #FFFF33; display: inline-block; padding-left: 3px; padding-right: 3px">';
+                        html += section;
+                        html += '</div>';
+                        html += '</div>';
+                    }
+                    if (item.done) {
+                        html += '<div style="opacity: 0.3; filter: grayscale(100%); display: inline-block">'
+                    }
+                    html += '<div style="vertical-align: top; text-align: center; display: inline-block; padding: 4px; margin: 8px; border: 1px dashed black; ; border-radius: 5px; width: 200px; min-height: 120px; overflow: hidden; font-size: 10px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; background-color: #ffffff">';
+                    let cellColor = colorMap[item.roi_maintenance.toLowerCase()][item.roi_infra.toLowerCase()];
+                    let naming = namingMap[item.roi_maintenance.toLowerCase()][item.roi_infra.toLowerCase()];
+                    html += '<div style="background-color: ' + domainColor(item.domain) + '; margin: -5px; padding: 4px">';
+                    html += '<table style="width: 100%">';
+                    html += '<tr>';
+                    html += '<td style="padding: 0">';
+                    html += '<div style="padding: 3px; border-radius: 9px; font-size: 9px; color: black; white-space: nowrap; background-color: #fcfcfc; border: 3px solid #f0f0f0">' + (item.domain + '').toLowerCase() + '</div>';
+                    html += '</td>';
+                    html += '<td style="padding: 0">';
+                    html += '<div style="padding: 3px; border-radius: 9px; font-size: 9px; background-color: #f0f0f0; white-space: nowrap; border: 3px solid ' + cellColor + '">' + naming.toLowerCase() + '</div>';
+                    html += '</td>';
+                    html += '</tr>';
+                    html += '</table>';
+                    html += '</div>';
+                    const icon = legacyIconOf(item, item.icon);
+                    html += '<table style="margin-top: 4px">';
+                    html += '<tr>';
+                    html += '<td style="width: 45px; padding: 0">';
+                    html += '<img style="width: 45px; height: 45px; margin: 3px; object-fit: contain" src="' + icon + '">';
+                    html += '</td>';
+                    html += '<td style="padding: 0px; padding-top: 6px">';
+                    if (item.link) {
+                        html += '<a target="_blank" href="' + item.link + '">';
+                    }
+                    html += '<div style="padding: 0px; hidden; text-align: left; font-size: 12px; font-weight: bold">' + item.object;
+                    html += '</div>';
+                    if (item.link) {
+                        html += '</a>';
+                    }
+                    html += '</td>';
+                    html += '</tr>';
+                    html += '</table>';
+
+                    html += '<table>';
+                    html += '<tr>';
+                    html += '<td style="text-align: right; padding: 0px; padding-left: 4px">';
+                    if (item.link) {
+                        html += '<a target="_blank" href="' + item.link + '">';
+                        html += '<img src="assets/icons/open_in_new_tab.png" style="height: 20px; margin-left: 8px;">';
+                        html += '</a>';
+                    } else {
+                        html += '<img src="assets/icons/open_in_new_tab.png" style="height: 20px; margin-left: 8px; opacity: 0.1">';
+                    }
+                    html += '</td>';
+                    if (item.aws_accounts) {
+                        html += '<td style="text-align: right; padding: 0px; padding-left: 4px">';
+                        if (item.aws_accounts.includes('gcp/')) {
+                            html += '<img src="assets/gcp.png" style="height: 20px; margin-left: 12px; margin-top: 2px; vertical-align: middle">';
+                        } else {
+                            html += '<img src="assets/aws.png" style="height: 20px; margin-left: 12px; margin-top: 2px; vertical-align: middle">';
+                        }
+                        html += '</td>';
+                        html += '<td style="text-align: left; padding: 0; vertical-align: middle">';
+                        const accounts = item.aws_accounts.split('\n').filter(l => l.trim().length > 0);
+
+                        accounts.forEach(account => {
+                            const info = account.split(';').filter(l => l.trim().length > 0);
+
+                            const link = info[0];
+                            const text = info.length > 1 ? info[1] : link.replace(/.*?\//g, '').replace(/\-live-overview.*/g, '').replace(/\-overview.*/g, '');
+
+                            html += '<div style="text-align: left; margin-bottom: 1px; white-space: nowrap; overflow: hidden">';
+                            html += '&nbsp;<a target="_blank" href="https://architecture.brand_igroup.co/' + link + '" style="color: blue">';
+                            html += text.trim();
+                            if (link.includes('filter=')) {
+                                html += '<img src="assets/icons/filter.png" style="height: 10px; margin-left: 2px; vertical-align: middle">';
+                            }
+                            html += '</a>';
+                            html += '</div>';
+                            html += '</li>';
+                        });
+
+                        html += '</td>';
+                    }
+                    html += '</tr>';
+                    html += '</table>';
+
+                    html += '</div>';
+                    if (item.done) {
+                        html += '</div>';
+                    }
+                });
+
+            if (section) {
+                html += '</div>';
+            }
+
+            html += '</div>';
+        });
+
+        html += '</div>';
+
+        //
+        html += '<div>';
+
+        html += '<div style="margin: 30px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">';
+        html += '<table>';
+
+        html += '<tr>';
+        html += '<td></td>';
+        html += '<td></td>';
+        html += '<td colspan="4" style="text-align: center">Legacy Risks</td>';
+        html += '</tr>';
+
+        html += '<tr>';
+        html += '<td rowspan="6" style="vertical-align: middle">Legacy Costs</td>';
+        html += '</tr>';
+
+        html += '<tr>';
+        html += '<td></td>';
+        tShirtSizes.forEach(size => html += '<td style="width: 300px">' + size + '</td>')
+        html += '</tr>';
+
+        function drawItems(sizeInfra, sizeMaintainance, expand) {
+            const countryLegacy = [];
+            legacy.data.forEach(group => {
+                group.data
+                    .filter(i => !i.isTransformDebt)
+                    .filter(i => !country || country.legacyBrands.includes(i.brand.toLowerCase().trim()))
+                    .filter(i => i.roi_infra && i.roi_infra.toLowerCase() === sizeInfra.toLowerCase())
+                    .filter(i => i.roi_maintenance && i.roi_maintenance.toLowerCase() === sizeMaintainance.toLowerCase())
+                    .forEach(i => countryLegacy.push(i));
+            });
+
+            let cellColor = colorMap[sizeMaintainance.toLowerCase()][sizeInfra.toLowerCase()];
+            let naming = namingMap[sizeMaintainance.toLowerCase()][sizeInfra.toLowerCase()];
+            html += '<td style="padding: 20px; background-color: ' + cellColor + '">';
+            html += '<div style="font-size: 15px; color: white; margin-bottom: 6px; background-color: black; padding: 2px; margin-bottom: 20px ">' + naming + ' (' + countryLegacy.length + ')</div>';
+            const count = countryLegacy.length;
+            let idealRowWidth = Math.round(Math.sqrt(count));
+            if (idealRowWidth * idealRowWidth < count) idealRowWidth += 1;
+            let index = 0;
+            countryLegacy
+                .sort((a, b) => (a.expected + '').localeCompare(b.expected + ''))
+                .sort((a, b) => (b.done ? 1 : 0) - (a.done ? 1 : 0))
+                .forEach(item => {
+                    index += 1;
+                    const title = item.object;
+                    if (expand) {
+                        if (!item.done) {
+                            let bgColor = 'white';
+                            if (!item.expected || !(item.expected.startsWith('2022') || item.expected.startsWith('2023') || item.expected.startsWith('2024'))) {
+                                bgColor += 'white;';
+                            }
+                            html += '<div title="' + title + '" style="white-space: nowrap; text-align: left; font-size: 11px; border: 1px solid white; margin: 1px; vertical-align: top; background-color: white">' + item.object + '</div>';
+                        } else {
+                            html += '<div title="' + title + '" style="white-space: nowrap; text-align: left; text-decoration: line-through; border: 1px solid white; margin: 1px; background-color: #f8f8f8; opacity: 0.5; padding: 0; font-size: 11px; vertical-align: top">' + item.object + '</div>';
+                        }
+                    } else {
+                        if (!item.done) {
+                            let bgColor = 'white';
+                            if (!item.expected || !(item.expected.startsWith('2022') || item.expected.startsWith('2023') || item.expected.startsWith('2024'))) {
+                                bgColor += '; opacity: 0.6;';
+                            }
+                            html += '<div title="' + title + '" style="border-radius: 50%; font-size: 11px; width: 24px; height: 24px; display: inline-block; margin: 1px; vertical-align: top; background-color: ' + bgColor + '"></div>';
+                        } else {
+                            html += '<div title="' + title + '" style="border-radius: 50%; font-size: 20px; width: 24px; height: 24px; display: inline-block; margin: 1px; background-color: lightgrey; padding: 0; vertical-align: top; color: black">✘</div>';
+                        }
+                        if (idealRowWidth > 1 && index % idealRowWidth == 0) html += '<br>';
+                    }
+                });
+            html += '</td>';
+        }
+
+        tShirtSizesReversed.forEach(size => {
+            html += '<tr>';
+            html += '<td style="vertical-align: middle">' + size + '</td>';
+
+            drawItems(size, 'S', false);
+            drawItems(size, 'M', false);
+            drawItems(size, 'L', false);
+            html += '</tr>';
+        });
+
+        html += '<tr>';
+        html += '<td></td>';
+        html += '<td colspan="6" style="vertical-align: middle; padding-top: 64px">DETAILS:</td>';
+        html += '</tr>';
+
+        html += '<tr>';
+        html += '<td rowspan="6" style="vertical-align: middle"></td>';
+        html += '</tr>';
+
+        tShirtSizesReversed.forEach(size => {
+            html += '<tr>';
+            html += '<td style="vertical-align: middle">' + size + '</td>';
+
+            drawItems(size, 'S', true);
+            drawItems(size, 'M', true);
+            drawItems(size, 'L', true);
+            html += '</tr>';
+        });
+
+        html += '</table>';
+        html += '</div>';
+        html += '</div>';
+        html += '</div>';
+
+        return html;
+    }
+
+    function addWLLandscape(country) {
+        let html = '';
+        html += '<div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; margin: 20px; padding: 20px; overflow-x: scroll">';
+
+        html += '<div style="font-size: 140%; padding-bottom: 10px; margin: 16px">WL Landscape</div>';
+        html += '<div style="margin-left: 14px; margin-top: 20px; margin-bottom: 20px">';
+        html += '<label><input id="' + country.id + '_2023" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">2023</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_2024" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">2024</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_2025" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">2025</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_2026" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">2026 (or undefined)</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_live" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">100% live</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_partially_live" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">partially live</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_not_live" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">not live</label>&nbsp;&nbsp;';
+        html += '<label><input id="' + country.id + '_include_transform_debt" type="checkbox" checked onchange="updateYears(\'' + country.id + '\')">include transformation tech debt</label>&nbsp;&nbsp;';
+        html += '</div>';
+
+        html += '<table style="font-size: 12px">';
+
+        html += '<tr>';
+        country.brands.forEach(brand => {
+            html += '<td>';
+            html += '<div>';
+            if (brand.web) html += '<img src="assets/icons/web.png" style="height: 28px; vertical-align: top">';
+            if (brand.mobile) html += '<img src="assets/icons/mobile.png" style="height: 28px; vertical-align: top">';
+            html += '</div>';
+            html += '</td>';
+        });
+        html += '</tr>';
+
+        html += '<tr>';
+        country.brands.forEach(brand => {
+            html += '<td style="">';
+            html += '<div style="margin-bottom: 6px">';
+            html += '<img src="' + brand.icon + '" style="height: 28px;">';
+            html += '</div>';
+            html += brand.displayText;
+            const brandCapabilities = domainCapabilities(brand.brandIDs);
+            let done = [];
+            let partially = [];
+            let notDone = [];
+            let total = [];
+            brandCapabilities.forEach(capability => {
+                let live = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('live'));
+                let part = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('part'));
+                let not = capability.filteredTargets.filter(t => !t.status || !(t.status.toLowerCase().startsWith('live') || t.status.toLowerCase().startsWith('part')));
+
+                live.forEach(t => done.push(t));
+                part.forEach(t => partially.push(t));
+                not.forEach(t => notDone.push(t));
+
+                capability.filteredTargets.forEach(t => total.push(t));
+            });
+            html += '<div style="margin-top: 10px">';
+            html += total.length;
+            html += '</div>';
+            html += '<div style="margin-top: 10px">';
+            done.forEach(t => {
+                html += '<div style="margin: 0px; width: 3px; height: 10px; display: inline-block; background-color: green"></div>'
+            });
+            partially.forEach(t => {
+                html += '<div style="margin: 0px; width: 3px; height: 10px; display: inline-block; background-color: orange"></div>'
+            });
+            notDone.filter(t => t.okr_3_1_target && t.okr_3_1_target === 'true').forEach(target => {
+                html += '<div style="margin: 0px; width: 3px; height: 10px; display: inline-block; background-color: grey"></div>'
+            });
+            notDone.filter(t => (!t.okr_3_1_target || t.okr_3_1_target === 'false') && (t.live_date_yyyy_mm && t.live_date_yyyy_mm.startsWith('2025'))).forEach(target => {
+                html += '<div style="margin: 0px; width: 3px; height: 10px; display: inline-block; background-color: #d0d0d0"></div>'
+            });
+            notDone.filter(t => (!t.okr_3_1_target || t.okr_3_1_target === 'false') && !(t.live_date_yyyy_mm && t.live_date_yyyy_mm.startsWith('2025'))).forEach(target => {
+                html += '<div style="margin: 0px; width: 3px; height: 10px; display: inline-block; background-color: #f0f0f0"></div>'
+            });
+            html += '</div>';
+            html += '</td>';
+        });
+        html += '</tr>';
+
+        html += '<tr>';
+        country.brands.forEach(brand => {
+            html += '<td style="vertical-align: top; max-width: 260px">';
+            domains.forEach(domain => {
+                const id = brand.id + '_' + domain.id;
+                html += '<div id="parent_' + id + '" style="margin: 0px; vertical-align: top;">';
+                html += '<div style="padding: 6px; margin: 12px; box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;background-color: ' + domain.color + '">';
+                html += '<img src="' + brand.icon + '" style="height: 12px; vertical-align: top">&nbsp;';
+                html += '<sup style="color: grey">' + brand.displayText.toLowerCase() + '</sup>';
+                html += '<div style="margin: 6px">' + domain.name + '</div>';
+                html += '<div id="' + id + '"></div>';
+                html += '</div>';
+                html += '</div>';
+            });
+            html += '</td>';
+        });
+        html += '</tr>';
+
+        html += '</table>';
+        html += '</div>';
+        return html;
+    }
+
+    function addProgressTable(title, icon, totalDone, totalPartially, totalNotDone, countryLegacyStats, totalLegacy, wlBoxWidth, legacyBoxWidth) {
+        const ww = wlBoxWidth + 'px';
+        const lw = legacyBoxWidth + 'px';
+
+        let html = '';
+        html += '<table>';
+        html += '<tr style="white-space: nowrap">';
+        html += '<td style="border: none; font-size: 140%">';
+        html += '<div>';
+        html += '<img src="' + icon + '" style="height: 100px; width: 100px; border-radius: 50%">';
+        html += '</div>';
+        html += title;
+        html += '</td>';
+        html += '<td style="border: none; text-align: left">';
+        html += '<div style="margin-bottom: 4px">';
+        html += '<div style="margin-bottom: 4px; margin-top: 0px">';
+        html += 'WL Rollout (' + totalDone.length + '+' + totalPartially.length + '+' + totalNotDone.length + '=' + (totalDone.length + totalPartially.length + totalNotDone.length) + ')';
+        html += '</div>';
+        html += '<div style="">';
+        totalDone.forEach(target => {
+            html += '<div style="margin: 0px; width: ' + ww + '; height: 14px; display: inline-block; background-color: green"></div>'
+        });
+        totalPartially.forEach(target => {
+            html += '<div style="margin: 0px; width: 3px; height: 14px; display: inline-block; background-color: orange"></div>'
+        });
+        totalNotDone.filter(t => t.okr_3_1_target && t.okr_3_1_target === 'true').forEach(target => {
+            html += '<div style="margin: 0px; width: ' + ww + '; height: 14px; display: inline-block; background-color: grey"></div>'
+        });
+        html += '<div style="margin: 0px; width: ' + ww + '; height: 20px; display: inline-block; background-color: black; cursor: help" title="2024 goal"></div>'
+        totalNotDone.filter(t => (!t.okr_3_1_target || t.okr_3_1_target === 'false') && (t.live_date_yyyy_mm && t.live_date_yyyy_mm.startsWith('2025'))).forEach(target => {
+            html += '<div style="margin: 0px; width: ' + ww + '; height: 14px; display: inline-block; background-color: #d0d0d0"></div>'
+        });
+        html += '<div style="margin: 0px; width: ' + ww + '; height: 20px; display: inline-block; background-color: darkgrey; cursor: help" title="2025 goal"></div>'
+        totalNotDone.filter(t => (!t.okr_3_1_target || t.okr_3_1_target === 'false') && !(t.live_date_yyyy_mm && t.live_date_yyyy_mm.startsWith('2025'))).forEach(target => {
+            html += '<div style="margin: 0px; width: ' + ww + '; height: 14px; display: inline-block; background-color: #f0f0f0"></div>'
+        });
+        html += '<div style="margin: 0px; width: ' + ww + '; height: 20px; display: inline-block; background-color: lightgrey; cursor: help" title="2026 goal"></div>'
+        html += '</div>';
+
+
+        html += '</div>';
+        html += '<div style="margin-bottom: 4px; margin-top: 20px">';
+        html += 'Legacy Retirement: ' + countryLegacyStats.done + ' / ' + totalLegacy;
+        html += ' (' + Math.round(100 * countryLegacyStats.done / totalLegacy) + '%)';
+        html += '</div>';
+
+        for (let i = 0; i < countryLegacyStats.done; i++) {
+            html += '<div style="vertical-align: top; text-align: center; display: inline-block; margin: 0px; height: 14px; width: ' + lw + '; background-color: green; font-size: 9px"></div>';
+        }
+
+        for (let i = 0; i < countryLegacyStats.expected2024; i++) {
+            html += '<div style="opacity: 0.3; vertical-align: top; display: inline-block; margin: 0px; height: 14px; width: ' + lw + '; background-color: crimson"></div>';
+        }
+
+        for (let i = 0; i < countryLegacyStats.expected2025; i++) {
+            html += '<div style="opacity: 0.6; vertical-align: top; display: inline-block; margin: 0px; height: 14px; width: ' + lw + '; background-color: crimson"></div>';
+        }
+
+        for (let i = 0; i < countryLegacyStats.expectedLater; i++) {
+            html += '<div style="vertical-align: top; display: inline-block; margin: 0px; height: 14px; width: ' + lw + '; background-color: crimson"></div>';
+        }
+
+        html += '<div>';
+        html += '<div style="margin-bottom: 3px; margin-top: 4px; font-size: 80%">Transformation Tech Debt (' + countryLegacyStats.transformDebt + '):</div>';
+        for (let i = 0; i < countryLegacyStats.transformDebt; i++) {
+            html += '<div style="vertical-align: top; display: inline-block; margin: 0px; height: 14px; width: ' + lw + '; background-color: crimson; opacity: 0.5"></div>';
+        }
+        html += '</div>';
+
+        html += '</div>';
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+
+        return html;
+    }
+
+    function buildStructure() {
+        let html = '';
+
+        html += '<div class="tab">';
+        let first = true;
+        countries.forEach(country => {
+            html += '<button class="tablinks' + (first ? ' active' : '') + '" id="tab_' + country.id +
+                '" onclick="openTab(\'' + country.id + '\')">' +
+                country.country + ' (' + country.brands.length + ')'
+            '</button>';
+            first = false;
+        });
+        html += '<button class="tablinks" id="tab_summary" onclick="openTab(\'summary\')">Summary</button>';
+        html += '</div>';
+
+        html += '<div id="summary" class="tabcontent" style=""></div>';
+
+        first = true;
+        countries.forEach(country => {
+            const countryLegacyStats = countCountryLegacyTargets(country.legacyBrands);
+            let countryTotal = countryLegacyStats.done + countryLegacyStats.notDone;
+
+            html += '<div id="' + country.id + '" class="tabcontent" style="' + (first ? 'display: block' : '') + '">';
+            first = false;
+
+            html += '<div>';
+
+            const countryIDs = [];
+
+            country.brands.forEach(brand => {
+                brand.brandIDs.forEach(id => countryIDs.push(id));
+            });
+
+            const brandCapabilities = domainCapabilities(countryIDs);
+            let totalDone = [];
+            let totalPartially = [];
+            let totalNotDone = [];
+            let totalTotal = [];
+            brandCapabilities.forEach(capability => {
+                capability.filteredTargets.forEach(t => totalTotal.push(t));
+                capability.filteredTargets.forEach(t => totalTotal.push(t));
+                let live = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('live'));
+                let part = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('part'));
+                let not = capability.filteredTargets.filter(t => (!t.status || !(t.status.toLowerCase().startsWith('live') || t.status.toLowerCase().startsWith('part'))));
+
+                live.forEach(t => totalDone.push(t));
+                part.forEach(t => totalPartially.push(t));
+                not.forEach(t => totalNotDone.push(t));
+            });
+            html += addProgressTable(country.country, country.icon, totalDone, totalPartially, totalNotDone, countryLegacyStats, countryTotal, 4, 4);
+
+            html += addWLLandscape(country);
+
+            html += addLegacyLandscape(countryLegacyStats, countryTotal, country);
+
+            html += '</div>';
+            html += '</div>';
+        });
+
+
+        document.getElementById('Content').innerHTML = html;
+    }
+
+    buildStructure();
+
+    function addSummary() {
+        const brandCapabilities = domainCapabilities(null);
+        let totalDone = [];
+        let totalPartially = [];
+        let totalNotDone = [];
+        let totalTotal = [];
+        brandCapabilities.forEach(capability => {
+            capability.filteredTargets.forEach(t => totalTotal.push(t));
+            capability.filteredTargets.forEach(t => totalTotal.push(t));
+            let live = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('live'));
+            let part = capability.filteredTargets.filter(t => t.status && t.status.toLowerCase().startsWith('part'));
+            let not = capability.filteredTargets.filter(t => (!t.status || !(t.status.toLowerCase().startsWith('live') || t.status.toLowerCase().startsWith('part'))));
+
+            live.forEach(t => totalDone.push(t));
+            part.forEach(t => totalPartially.push(t));
+            not.forEach(t => totalNotDone.push(t));
+        });
+
+        let html = '';
+
+        const countryLegacyStats = countCountryLegacyTargets(null);
+        let countryTotal = countryLegacyStats.done + countryLegacyStats.notDone;
+
+        html += addProgressTable('Brand_I Group', 'https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/eu.svg', totalDone, totalPartially, totalNotDone, countryLegacyStats, countryTotal, 1, 1);
+
+        html += addLegacyLandscape(countryLegacyStats, countryTotal, null);
+
+        document.getElementById('summary').innerHTML = html;
+    }
+
+    addSummary();
+
+</script>
+<div style="font-size: 11px;">
+</div>
+
+<script>
+    function processCapabilities(div, ids, domain, selection) {
+        let html = '';
+
+        html += '<div style="width: 220px; max-width: 220px;">';
+        const capabilities = domainCapabilities(ids).filter(c => !domain || c.capability.domain_ea.toLowerCase().includes(domain.toLowerCase()));
+
+        if (capabilities.length === 0) {
+            if (document.getElementById('parent_' + div)) {
+                document.getElementById('parent_' + div).innerHTML = '';
+            }
+
+            return '';
+        }
+
+        capabilities.forEach(capability => {
+            let isSelected = true;
+
+            let brandTechDebt = capability.capability.techDebt.filter(item => ids.map(id => id.toLowerCase()).includes(item.brand.toLowerCase()));
+
+            if (!selection) {
+                isSelected = true;
+            } else if (brandTechDebt.length && selection.y2026) {
+                isSelected = true;
+            } else {
+                isSelected = false;
+                capability.filteredTargets.forEach(target => {
+                    if (isSelected) return;
+
+                    if (!target.live_date_yyyy_mm && selection.y2026) {
+                        isSelected = true;
+                    } else if (target.live_date_yyyy_mm) {
+                        if (selection.y2023 && target.live_date_yyyy_mm.startsWith('2023')) isSelected = true;
+                        else if (selection.y2023 && target.live_date_yyyy_mm.startsWith('2022')) isSelected = true;
+                        else if (selection.y2024 && target.live_date_yyyy_mm.startsWith('2024')) isSelected = true;
+                        else if (selection.y2025 && target.live_date_yyyy_mm.startsWith('2025')) isSelected = true;
+                        else if (selection.y2026 && target.live_date_yyyy_mm.startsWith('2026')) isSelected = true;
+                    }
+
+                    if (target.status && target.status.trim().length > 0) {
+                        let status = target.status.toLowerCase();
+                        if (!selection.live && status.startsWith('live')) {
+                            isSelected = false;
+                        } else if (!selection.partiallyLive && status.startsWith('partial')) {
+                            isSelected = false;
+                        } else if (!selection.notLive && status.startsWith('not')) {
+                            isSelected = false;
+                        }
+                    } else {
+                        if (!selection.notLive) {
+                            isSelected = false;
+                        }
+                    }
+                });
+
+            }
+
+            html += '<a target="_blank" href="landing_pages/docs/' + capability.capability.id + '.html#TargetsTab">';
+            html += '<div style="padding: 3px; text-align: center; ' + (isSelected ? '' : 'opacity: 0.1;') + 'width: 56px; overflow: hidden; display: inline-block; margin: 4px; background-color: white; vertical-align: top; border-radius: 4px; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">';
+
+            html += '<div style="text-align: center; overflow: hidden; text-align: center; height: 14px; white-space: nowrap; overflow: hidden">';
+            capability.filteredTargets.forEach(target => {
+                let bgColor = 'lightgrey';
+                if (target.status) {
+                    if (target.status.toLowerCase().startsWith('live')) {
+                        bgColor = 'green';
+                    } else if (target.status.toLowerCase().includes('partially')) {
+                        bgColor = 'orange';
+                    }
+                }
+                html += '<div style="margin: 1px; width: 6px; height: 10px; border-radius: 0; display: inline-block; background-color: ' + bgColor + '"></div>'
+            });
+            html += '</div>';
+
+            html += '<div style="; background-color: white">';
+            html += '<img style="width: 28px; height: 28px; margin: 3px" src="assets/icons/' + capability.capability.id + '.png">';
+            html += '</div>';
+
+            html += '<div style="text-align: center; overflow: hidden; max-height: 35px; height: 35px; font-size: 10px">';
+            html += capability.capability.capability;
+            html += '</div>';
+
+            if ((!selection || (selection && selection.includeTransformDebt)) && capability.capability.techDebt.length) {
+                if (brandTechDebt.length) {
+                    const techDebtInfo = brandTechDebt.map(td => td.object).join('\n');
+                    html += '<div style="padding-top: 3px; margin: -3px; height: 12px; margin-top: 2px; background-color: crimson; color: white; text-align: center; overflow: hidden; text-align: center; white-space: nowrap; overflow: hidden" title="' + techDebtInfo + '">';
+                    brandTechDebt.forEach(item => {
+                        html += '*';
+                    });
+                    html += '</div>';
+                }
+            }
+
+
+            html += '</div>';
+            html += '</a>';
+        });
+        html += '</div>';
+
+        if (document.getElementById(div)) {
+            document.getElementById(div).innerHTML = html;
+        }
+
+    }
+
+    function updateDomain(domain, selection) {
+        processCapabilities('de_common_' + domain, ['country_1'], domain, selection);
+        processCapabilities('brand_a_' + domain, ['brand_a'], domain, selection);
+        processCapabilities('brand_a_pro_' + domain, ['brand_a pro'], domain, selection);
+        processCapabilities('brand_b_' + domain, ['brand_b'], domain, selection);
+
+        processCapabilities('brand_a_at_' + domain, ['brand_a at'], domain, selection);
+
+        processCapabilities('fr_common_' + domain, ['country_2'], domain, selection);
+        processCapabilities('brand_d_' + domain, ['brand_d'], domain, selection);
+        processCapabilities('brand_d_pro_' + domain, ['brand_d pro'], domain, selection);
+        processCapabilities('brand_e_' + domain, ['brand_e'], domain, selection);
+        processCapabilities('ma_' + domain, ['meilleurs agents'], domain, selection);
+        processCapabilities('brand_d_neuf_' + domain, ['brand_d neuf'], domain, selection);
+        processCapabilities('brand_e_neuf_' + domain, ['brand_e neuf'], domain, selection);
+        processCapabilities('lux_residence_' + domain, ['lux residence'], domain, selection);
+        processCapabilities('belles_demeures_' + domain, ['belles demeures'], domain, selection);
+        processCapabilities('brand_d_bucom_' + domain, ['brand_d bureaux & commerces'], domain, selection);
+        processCapabilities('brand_d_construire_' + domain, ['brand_d construire'], domain, selection);
+
+        processCapabilities('be_common_' + domain, ['country_3'], domain, selection);
+        processCapabilities('brand_c_' + domain, ['brand_c'], domain, selection);
+        processCapabilities('brand_c_pro_' + domain, ['brand_c pro'], domain, selection);
+
+        processCapabilities('brand_a_at_' + domain, ['brand_a at', 'country_4'], domain, selection);
+    }
+
+    function checkCountry(countryID, selection) {
+        document.getElementById(countryID + '_2023').checked = selection.y2023;
+        document.getElementById(countryID + '_2024').checked = selection.y2024;
+        document.getElementById(countryID + '_2025').checked = selection.y2025;
+        document.getElementById(countryID + '_2026').checked = selection.y2026;
+
+        document.getElementById(countryID + '_live').checked = selection.live;
+        document.getElementById(countryID + '_partially_live').checked = selection.partiallyLive;
+        document.getElementById(countryID + '_not_live').checked = selection.notLive;
+        document.getElementById(countryID + '_include_transform_debt').checked = selection.includeTransformDebt;
+    }
+
+    function updateYears(countryID) {
+        const y2023 = document.getElementById(countryID + '_2023').checked;
+        const y2024 = document.getElementById(countryID + '_2024').checked;
+        const y2025 = document.getElementById(countryID + '_2025').checked;
+        const y2026 = document.getElementById(countryID + '_2026').checked;
+
+        const live = document.getElementById(countryID + '_live').checked;
+        const partiallyLive = document.getElementById(countryID + '_partially_live').checked;
+        const notLive = document.getElementById(countryID + '_not_live').checked;
+        const includeTransformDebt = document.getElementById(countryID + '_include_transform_debt').checked;
+
+        let selection = {y2023, y2024, y2025, y2026, live, partiallyLive, notLive, includeTransformDebt};
+
+        checkCountry('de', selection);
+        checkCountry('fr', selection);
+        checkCountry('be', selection);
+
+        updateDomain('seeker', selection);
+        updateDomain('owner', selection);
+        updateDomain('intermediary', selection);
+        updateDomain('data', selection);
+        updateDomain('platform', selection);
+    }
+
+    function update() {
+        updateDomain('seeker');
+        updateDomain('owner');
+        updateDomain('intermediary');
+        updateDomain('data');
+        updateDomain('platform');
+    }
+</script>
+
+<script>
+    update();
+</script>
+
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

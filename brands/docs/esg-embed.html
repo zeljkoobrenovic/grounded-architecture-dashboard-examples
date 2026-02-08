@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 15px;
+            margin-right: 25px;
+            padding: 5px;
+            background-color: #f0f1f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .brand {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 220px;
+            width: 240px;
+            object-fit: contain;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: top;
+            background-color: white;
+            background-color: #f8f8f8;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 120%;
+            margin-top: 14px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            border: 0.5px solid #d0d0d0;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+
+        .type {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .photo {
+            width: 212px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 4px;
+            padding: 13px;
+            margin-top: 4px;
+            background-color: white;
+            border: 0.5px solid lightgrey;
+        }
+
+        .channel {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .mobile {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .channel-blog {
+            display: inline-block;
+            width: 24px;
+            margin: 1px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px" class="hidden">
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="icons/esg.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">ESG (example data)</b>
+    </h1>
+    <br>
+</div>
+<script>
+    const array = [{"startgroup": "GRESB", "company": "GRESB BV", "type": "ESG", "link": "https://www.gresb.com/", "monthlyvisits": "65K", "logo": "logos/gresb.png", "country": "NL", "linkedin": "https://www.linkedin.com/company/gresb", "linkedin_people": "160"}, {"company": "Asset Impact", "type": "ESG", "link": "https://asset-impact.gresb.com/", "logo": "logos/asset-impact.png", "country": "FR", "linkedin": "https://www.linkedin.com/company/asset-impact-gresb", "linkedin_people": "27"}, {"startgroup": "ESG Data & Software Partners", "company": "Measurabl", "type": "ESG", "link": "https://www.measurabl.com/", "monthlyvisits": "9K", "logo": "logos/measurabl.png", "country": "US", "linkedin": "https://www.linkedin.com/company/measurabl/", "linkedin_people": "163"}, {"company": "Deepki", "type": "ESG", "link": "https://www.deepki.com/", "monthlyvisits": "39K", "logo": "logos/deepki.png", "country": "FR", "linkedin": "https://www.linkedin.com/company/deepki/", "linkedin_people": "421"}, {"company": "EVORA Global", "type": "ESG", "link": "https://evoraglobal.com/", "monthlyvisits": "2K", "logo": "logos/evora-global.png", "country": "GB", "linkedin": "https://www.linkedin.com/company/evora-global/", "linkedin_people": "167"}, {"startgroup": "Broad-Based ESG Rating Agencies", "company": "MSCI", "type": "ESG", "link": "https://www.msci.com/data-and-analytics/sustainability-solutions", "logo": "logos/msci.png", "country": "US", "linkedin": "https://www.linkedin.com/company/msci-inc/", "linkedin_people": "7618"}, {"company": "Sustainalytics (Morningstar)", "type": "ESG", "link": "https://www.sustainalytics.com/", "logo": "logos/sustainalytics.png", "country": "NL", "linkedin": "https://www.linkedin.com/company/sustainalytics/", "linkedin_people": "1023"}, {"company": "Bloomberg (ESG Data)", "type": "ESG", "link": "https://www.bloomberg.com/professional/products/data/enterprise-catalog/esg/", "logo": "logos/bloomberg.jpeg", "country": "US", "linkedin": "https://www.linkedin.com/company/bloomberg/", "linkedin_people": "25353"}, {"company": "S&P Global", "type": "ESG", "link": "https://www.spglobal.com/esg/solutions/", "logo": "logos/sp-global.png", "country": "US", "linkedin": "https://www.linkedin.com/company/spglobal/", "linkedin_people": "38552"}, {"company": "Sustainable Flitch", "type": "ESG", "link": "https://www.sustainablefitch.com/", "logo": "logos/sf.jpg"}, {"company": "ISS ESG", "type": "ESG", "link": "https://www.issgovernance.com/sustainability/", "logo": "logos/iss.png"}, {"company": "LSEG Data & Analytics (formerly ) Refinitiv", "type": "ESG", "link": "https://www.lseg.com/en/data-analytics/sustainable-finance", "logo": "logos/lseg-da.svg"}, {"startgroup": "Private Market Data Providers", "company": "Preqin", "type": "ESG", "link": "https://www.preqin.com/esg/esg-solutions", "logo": "logos/preqin.png", "country": "GB", "linkedin": "https://www.linkedin.com/company/preqin/", "linkedin_people": "575"}, {"startgroup": "Frameworks and Aliances", "company": "GRESB Foundation", "type": "ESG", "link": "https://www.gresb.com/nl-en/gresb-foundation/", "logo": "logos/gresb-foundation.png", "country": "NL", "linkedin": "https://www.linkedin.com/company/gresb"}, {"company": "CDP", "type": "ESG", "link": "https://www.cdp.net/en", "logo": "logos/cdp.png"}, {"company": "LEED", "type": "ESG", "link": "https://www.usgbc.org/leed", "logo": "logos/leed.png"}, {"company": "BREEAM", "type": "ESG", "link": "https://breeam.com/", "logo": "logos/breeam.png"}, {"company": "ULI Greenprint", "type": "ESG", "link": "https://americas.uli.org/research/centers-initiatives/uli-randall-lewis-center-for-sustainability-in-real-estate/membership/", "logo": "logos/uli-greenprint.png"}, {"company": "SASB", "type": "ESG", "link": "https://sasb.ifrs.org/", "logo": "logos/sasb.jpg"}, {"company": "TCFD", "type": "ESG", "link": "https://www.fsb-tcfd.org/", "logo": "logos/tcfd.png"}];
+
+    let appendObject = document.body;
+
+    array.forEach(function (brand) {
+        if (brand.startgroup) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = brand.startgroup;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        let div = document.createElement('div');
+        appendObject.appendChild(div);
+        let html = '<div class="brand">';
+
+
+        if (brand.country)
+            html += '<img class="flag" title="' + brand.country + '" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + brand.country.toLowerCase() + '.svg">\n';
+
+        if (brand.type)
+            html += '    <img title="' + brand.type + '" class="type" src="icons/' + brand.type.toLowerCase() + '.png">';
+
+        let width = (brand.ios || brand.android) ? ((brand.ios && brand.android) ? 109 : 134) : 159;
+
+        let statsLink = 'https://www.similarweb.com/website/' + brand.link.replace(/.*\/\//, '').replace(/\//g, '').replace(/www[.]/g, '') + '/#overview';
+
+        html += "<div style='display: inline-block; width: " + width + "px; text-align: left; vertical-align: top; padding-top: 4px; padding-left: 4px; font-size: 80%;'>" + (brand.monthlyvisits ?
+            "<a href='" + statsLink + "' target='_blank'>" + brand.monthlyvisits + ' <span style="color: #a0a0a0">visits/m</span></a>'
+            : '') + "</div>"
+
+        if (brand.ios)
+            html += '<a href="' + brand.ios + '" target="_blank" title="iOS App"><img class="mobile" src="icons/ios.png"></a>';
+        if (brand.android)
+            html += '<a href="' + brand.android + '" target="_blank" title="Android App"><img class="mobile" src="icons/android.png"></a>';
+
+
+        html += '    <div class="container">\n';
+        html += '<a href="' + brand.link + '" target="_blank">'
+        html += '    <div><img class="photo" src="' + brand.logo + '"></div>\n';
+        html += '    </div>\n';
+        html += '</a>'
+        html += '<div style="margin-top: 8px">';
+
+        if (brand.linkedin_people) {
+             html += '<div style="font-size: 80%; margin-right: 0px; display: inline-block; vertical-align: top; padding-top: 2px; color: grey">';
+             html += brand.linkedin_people + ' 😀';
+             html += '</div>';
+        }
+        if (brand.linkedin)
+            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
+        if (brand.facebook)
+            html += '<a href="' + brand.facebook + '" target="_blank" title="Facebook"><img class="channel" src="icons/facebook.svg"></a>';
+        if (brand.instagram)
+            html += '<a href="' + brand.instagram + '" target="_blank" title="Instagram"><img class="channel" src="icons/instagram.svg"></a>';
+        if (brand.youtube)
+            html += '<a href="' + brand.youtube + '" target="_blank" title="Youtube"><img class="channel" src="icons/youtube.svg"></a>';
+        if (brand.twitter)
+            html += '<a href="' + brand.twitter + '" target="_blank" title="Twitter"><img class="channel" src="icons/twitter.svg"></a>';
+        if (brand.pinterest)
+            html += '<a href="' + brand.pinterest + '" target="_blank" title="Pinterest"><img class="channel" src="icons/pinterest.svg"></a>';
+        if (brand.tiktok)
+            html += '<a href="' + brand.tiktok + '" target="_blank" title="TikTok"><img class="channel" style="border-radius: 50%; border: 1px solid grey" src="icons/tiktok.png"></a>';
+        if (brand.xing)
+            html += '<a href="' + brand.xing + '" target="_blank" title="Xing"><img class="channel" src="icons/xing.png"></a>';
+
+        html += '&nbsp;&nbsp;&nbsp;';
+
+        if (brand.blog)
+            html += '<a href="' + brand.blog + '" target="_blank" title="Blog"><img class="channel-blog" src="icons/blog.png"></a>';
+        if (brand.techblog)
+            html += '<a href="' + brand.techblog + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/tech-blog.png"></a>';
+        if (brand.github)
+            html += '<a href="' + brand.github + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/github.png"></a>';
+
+        html += '</div>';
+        html += '</div>';
+
+        div.outerHTML = html;
+    });
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on 2025-12-09 based on this source <a style="text-decoration: underline; color: #a0a0a0;"
+               href="https://docs.google.com/spreadsheets/d/195iHjfUCGlHEREka2hvWxV9WWBeX9PfDp6OizYSWqiQ/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

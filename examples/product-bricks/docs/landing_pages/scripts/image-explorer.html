@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Explorer</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+
+<script>
+    let params = new URLSearchParams(window.location.search);
+    let image = params.get('image');
+
+    document.getElementById('image').src = image
+</script>
+
+<div style="">
+    <div></div>
+    <div><img id="image" src=""></div>
+</div>
+</body>
+</html>

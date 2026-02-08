@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .image-small {
+            margin: 4px;
+            padding: 3px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 160px;
+            max-width: 260px;
+            display: inline-block;
+            overflow: hidden;
+            background-color: lightgray;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+        }
+
+        .container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+
+        function isFalse(value) {
+            return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+        }
+
+        function isTrue(value) {
+            return !isFalse(value);
+        }
+
+        function initTab() {
+            if (window.location.hash) {
+                tabName = window.location.hash.substring(1);
+                if (document.getElementById('tab_' + tabName)) {
+                    openTab(tabName);
+                }
+            }
+        }
+
+        function openTab(tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            console.log(tabcontent);
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            history.pushState({}, "", '#' + tabName);
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById('tab_' + tabName).className += " active";
+        }
+    </script>
+</head>
+<body onload="initTab()" onhashchange="initTab()">
+<h1>Decisions & Discussions Grouped By Month</h1>
+<div style="text-align: left; margin-bottom: 10px; margin-top: 20px; margin-left: 2px;">
+    <div><span id="DocsCount"></span> documented conversations:</div>
+</div>
+
+<div id="Timeline">
+</div>
+
+<div class="tab" id="Tabs">
+</div>
+
+<div id="Table">
+</div>
+<script>
+    const hightlight = ['Brand_I Workspaces', 'feature flagging', 'Brand_I Workspace', 'AWS Account', 'AWS AppConfig', 'CI/CD', 'Kameleoon', 'PostHog', 'KPIs', 'Blue/Green Deployment', 'Canary Deploymen', 'A/B Testing', 'Feature Flagging', 'Chargebee', 'Recurly', 'Purchasely', 'data model', 'OCR', 'COCO', 'YOLO', 'AWS', 'SEO', 'brand_b', 'Brand_A', 'Brand_D', 'Logic-Immo', 'Brand_C', 'M2M', 'SSR', 'Terraform', 'Terragrunt', 'SonarCloud', 'CircleCI', 'SonarLint', 'Lambda', 'OpenAPI', 'ml-lib', 'Redis', 'TLS', 'SSL', 'ECR', 'monorepo', 'Fortinet', 'Firewall', 'SecretManager', 'Classified', 'Github Flow', 'GitHub Actions', 'GitHub', 'Changeset', 'S3', 'BFF', 'CRM', 'B2C', 'B2B', 'Apple', 'Google Analytics', 'Google', 'Stripe', 'database', 'CuCa', 'Jira', 'Confluence', 'Cronjob', 'CNA', 'backup', 'Backstage', 'Roadie', 'Swagger', 'Datadog', 'Renovate', 'AuthN/Z', 'GA4', 'GA3', 'SDK', 'Intermediary ID', "IDs", 'Mulesoft Anypoint', 'Mulesoft', 'Okta', 'CORS', 'FQDN', 'HTTPOnly', 'OAuth', 'HTTP', 'PKCE', 'Bitrise CI', 'QA', 'Github', 'Digital Services Act', 'DSA', 'Lokalize', 'iOS', 'Android', 'Universal Placeholders', 'SNS', 'SQS', 'Amazon', 'PII', 'Accessibility', 'Lighthouse CI', 'Core Web Vitals', 'GDPR', 'ECS', 'Fargate', 'React Hook', 'Formik', 'React', 'NodeJS', 'NextJS', 'DynamoDB', 'API Gateway', 'API Management', 'API', 'GeoApi', 'Python', 'TypeScript', 'Mapbox', 'mapbox', 'JupyterlabExtensions', 'Jupyter', 'Spark', 'LakeFormation', 'SentinelOne', 'Auth0', 'Cognito', 'RBAC', 'Role-Based Access Control', 'CircleCi', 'CodeBuild', 'SQL', 'CodeArtifact', 'MFE', 'CDKTF', 'A/B testing', 'DNS', 'ACL', 'C#', 'DDoS', 'i18n', 'JSON', 'CMS', 'MVP', 'Test scenarios', 'ACT', 'SSoT', 'SSOT', 'micro frontend', 'dependencies', 'dependency', 'package.json', 'dynamodb', 'Sold Property', 'Sold Properties', 'Gemini', 'ChatGPT', 'CloudFormation', 'VPC', 'mTanService', 'Brand_F', 'NX', 'GSL', 'IWT', 'IMN', 'IWB', 'FRSBO', 'FSBO', 'fraud', 'churn', 'Algorithm', 'algorithm', 'event model', 'responsiveness', 'EventBridge', 'Cloudwatch', 'Nest.js', 'Cache', 'Typescript', 'Eslint', 'Code Style', 'Cypress', 'authentication', 'authentication flow', 'mobile', 'authorization', 'DynamoDb', 'OWASP', 'DDOS', 'Cloudfront', 'Datadome', 'Country_2', 'Country_1', 'Country_3', 'robots.txt', 'URL', 'URLs', 'WAF', 'visual testing', 'EKS', 'Hangfire', 'IAM', 'Security Assessment', 'Security Architecture', 'security architecture', 'security group', 'cipher', 'security', 'security', 'RCA', 'Design System', 'distributed tracing', 'user monitoring', 'Tagging', 'tagging', 'validation logic', 'Language translation', 'Node.js', 'legacy', 'CDNs', 'APIs', 'Ultranotif', 'Client-side rendering', 'client-side rendering', 'Server-side rendering', 'server-side rendering', 'NFRs', 'NFR', '99.9%', 'micro-frontend architecture', 'antivirus check', 'Antivirus check', 'OTP', 'CloudImage', 'Flamingo', 'datalake', 'property model', 'Property Model', 'historization', 'brands specification', 'geo configuration', 'GeoRef', 'Salesforce', 'Marketing Cloud', 'Legal constraints', 'legal constraints', '30%', '10%', 'Data Domain', 'Naming Convention', 'Git', 'Unified Contract Gateway', 'Unified Contracts Gateway', 'Uber', 'Airbnb', 'Zillow', 'machine learning', 'legal', 'French', 'infrastructure', 'UUID', 'non-registered user', 'Zero Trust', 'separate user pools', 'user pool', 'OAuth', 'excellent cooperation', 'Obsevability', 'Traces', 'Context propagation', 'Sampling mechanisms', 'instrumentation', '.net Core', '.net', 'Cassiopeia', 'non-breaking changes', 'Breaking changes', 'Monthly license fee', 'monthly license fee', 'operational, analytical, and historical data', 'historical data', 'transition strategy', 'product strategy', 'financial profile', 'financial', 'Axe devtools', 'property probability prediction', 'customising per brand', 'Bitrise', 'IDEs', 'The decision is', 'Tableau', 'is chosen', 'reconciliation process', 'confidential', 'environment variables', 'configuration parameters', 'sending notifications to users', 'model', 'Event notification', 'Event carried state', 'data product', 'Business & Contractual Score', 'real-time', 'tier-based', 'critical issues were absent', 'testing framework', 'harmonized ranking', 'Relevancy sort order', 'Scala', 'Model training', 'dataset', 'seeker fit score', 'Seeker FeedBackLoop Schema', 'lambda', 'GET', 'POST', 'Bounded context', 'SANDBOX', 'DEV', 'PREVIEW', 'LIVE', 'concrete implemention', 'idempotent', 'idempotency', 'event consumer', 'event producer', 'data integrity', 'Organisation Decision Record', 'ODR', 'unified convention', 'structured approach', 'guide on documenting a system', 'anti-pattern', 'best practices', 'PNPM', 'NPM', 'arc42', 'third-party tools', 'AAPSC', 'R-Audit', 'Reacj.js', 'Suspense', 'single reference point of operational data', 'Single Source of Truth', 'plug-and-play', 're-brandable', 'Private and Pro user', 'Localise', 'Tone of Voice', 'Pagination', 'Lokalise', 'SageMaker', 'Event Bridge', 'Lake Formation', 'data compliance', 'Ultimmo', 'Plato', 'touchpoints', 'pricing', 'billing', 'Cancellations', 'lead categorization', 'lead score', 'research repository'];
+</script>
+<script>
+    const array = ${data};
+
+    const discussions = ${discussions};
+    const summaries = ${summaries};
+    const summariesMap = {};
+    summaries.forEach(s => summariesMap[s.capability] = s);
+
+    const discussionsMap = {};
+    const discussionsTypesMap = {};
+    const discussionsTypes = [];
+    const months = [];
+    let allDiscussions = [];
+    let allLinks = {};
+    let discussionsCount = 0;
+    discussions.forEach(discussion => {
+        let items = discussion.data.filter(d => d.type && !(d.type.toLowerCase().trim() === 'common themes'));
+        discussionsMap[discussion.source.toLowerCase().trim()] = items;
+        items.forEach(item => {
+            const month = (item.date + '     ').substring(0, 7);
+            if (!months.includes(month)) {
+                months.push(month);
+            }
+            if (!allLinks[item.link]) {
+                allDiscussions.push(item);
+                item.capability = discussion.source;
+                allLinks[item.link] = true;
+                discussionsCount += 1;
+            }
+            const type = item.type;
+            if (!discussionsTypesMap[type]) {
+                discussionsTypesMap[type] = {label: type, discussions: []};
+                discussionsTypes.push(discussionsTypesMap[type]);
+            }
+            discussionsTypesMap[type].discussions.push(item);
+        });
+    });
+
+    allDiscussions = allDiscussions.sort((a, b) => b.date.localeCompare(a.date));
+
+    function discussionsOf(capabilityName) {
+        let key = capabilityName.toLowerCase().trim();
+        if (discussionsMap[key]) {
+            return discussionsMap[key];
+        }
+
+        return [];
+    }
+</script>
+
+<script>
+    document.getElementById('DocsCount').outerHTML = discussionsCount;
+
+    function createTabs() {
+        let html = '';
+        let contentHtml = '';
+        let first = true;
+        months.sort((a, b) => b.localeCompare(a)).forEach(month => {
+            const id = month.replace('-', '_');
+            let table = createTable(month, id, first);
+            contentHtml += table.html;
+            html += '<button class="tablinks' + (first ? ' active' : '') + '" id="tab_' + id + '" onclick="openTab(\'' + id + '\')">' + month + ' (' + table.count + ')</button>';
+            first = false;
+        });
+
+        document.getElementById('Tabs').innerHTML = html;
+        document.getElementById('Table').innerHTML = contentHtml;
+    }
+
+    createTabs();
+
+    function addSummaryTimeline() {
+        const monthsMap = {};
+
+        allDiscussions.forEach(discussion => {
+            const id = discussion.date;
+            if (!monthsMap[id]) {
+                monthsMap[id] = [];
+            }
+            monthsMap[id].push(discussion);
+        });
+
+        let html = '';
+        html += '<table style="font-size: 70%; color: grey; text-align: center; margin-bottom: 16px">';
+
+        html += '<tr>';
+        for (let year = 2024; year >= 2021; year--) {
+            for (let month = 12; month >= 1; month--) {
+                const id = year + '-' + (month < 10 ? '0' : '') + month;
+                let count = monthsMap[id] ? monthsMap[id].length : 0;
+                html += '<td style="vertical-align: bottom;">';
+                html += '<div style="width: 12px; text-align: center">' + (count > 0 ? count : '') + '</div>';
+                html += '<div style="width: 12px; background-color: blue; height: ' + (count * 1) + 'px"></div>';
+                html += '</td>';
+            }
+        }
+        html += '</tr>';
+
+        html += '<tr>';
+        for (let year = 2024; year >= 2021; year--) {
+            for (let month = 12; month >= 1; month--) {
+                if (month === 1) {
+                    html += '<td style="text-align: center; border-right: 1px solid grey">' + month + '</td>';
+                } else {
+                    html += '<td style="text-align: center">' + month + '</td>';
+                }
+            }
+        }
+        html += '</tr>';
+
+        html += '<tr>';
+        for (let year = 2024; year >= 2021; year--) {
+            html += '<td colspan="12" style="text-align: center;">' + year + '</td>';
+        }
+        html += '</tr>';
+
+        html += '</table>';
+
+        document.getElementById('Timeline').innerHTML = html;
+    }
+
+    addSummaryTimeline();
+
+
+    function createTable(month, id, first) {
+        let html = '<div id="' + id + '" class="tabcontent" style="padding: 10px; display: ' + (first ? 'block' : 'none') + ';">';
+
+        let list = allDiscussions.filter(d => d.date.startsWith(month));
+
+        html += '<div style="display: inline-block; margin: 8px; padding: 2px; text-align: center; border-top: 3px solid grey">';
+        let prevCapability = '';
+
+        list.forEach(discussion => {
+            if (discussion.capability.toLowerCase() !== prevCapability) {
+                if (prevCapability !== '') {
+                    html += '</div>'
+                    html += '<div style="display: inline-block; margin: 8px; padding: 2px; text-align: center; border-top: 3px solid grey">';
+                }
+                html += '<div style="font-size: 90%; color: blue; text-align: center">' + discussion.capability.toLowerCase() + '</div>';
+                prevCapability = discussion.capability.toLowerCase();
+            }
+            html += '<a target="_blank" href="' + discussion.link + '">';
+            html += '<div style="width: 299px; vertical-align: top; display: inline-block; border: 1px dashed lightgrey; padding: 10px; margin: 10px;">';
+            const type = discussion.type.toLowerCase().replace(' ', '_');
+            html += '<div>';
+            html += '<img style="border: 1px solid grey; padding: 2px; width: 64px; margin: 1px" src="landing_pages/docs/icons/change_log_' + type + '.png">';
+            html += '</div>';
+            html += '<div>' + discussion.type + '</div>';
+
+            const description = discussion.summary;
+
+
+            html += '<div style="color: black; font-size:120%;">';
+            html += discussion.capability;
+            html += '</div>';
+            html += '<div style="color: blue; font-size: 130%">';
+            html += discussion.title;
+            html += '</div>';
+            if (description && description.length > 0) {
+                html += '<div style="margin: 1px; font-size: 90%; color: #404040; padding: 3px; text-align: left">';
+                html += '<ul style="margin-left: -20px">';
+                const lines = description.split(". ");
+                lines.forEach(line => {
+                    hightlight.forEach(h => {
+                        line = line.replace('\\"', '"')
+                        line = line.replace(h, '<span style="background-color: yellow">' + h + '</span>')
+                    });
+                    html += '<li style="margin-bottom: 10px">' + line + '</li>';
+                });
+                html += '</ul>';
+                html += '</div>';
+            }
+
+            html += '</a>';
+            html += '</div>';
+        });
+
+        html += '</div>';
+
+        html += '</div>';
+
+        return {count: list.length, html};
+    }
+
+    // createTable();
+
+
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

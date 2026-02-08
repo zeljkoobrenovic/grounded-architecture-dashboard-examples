@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Group</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .group {
+            display: inline-block;
+            border: 1px solid lightgrey;
+            border-radius: 6px;
+            margin: 15px;
+            margin-right: 25px;
+            padding: 5px;
+            background-color: #f0f1f8;
+        }
+
+        .group-title {
+            font-size: 90%;
+            margin-left: 11px;
+            margin-top: 4px;
+            color: blue;
+        }
+
+        .brand {
+            margin: 10px;
+            padding-top: 10px;
+            border: solid lightgrey 1px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 2px;
+            display: inline-block;
+            height: 220px;
+            width: 240px;
+            object-fit: contain;
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            vertical-align: top;
+            background-color: white;
+            background-color: #f8f8f8;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 120%;
+            margin-top: 14px;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .flag {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            border: 0.5px solid #d0d0d0;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+
+        .type {
+            height: 24px;
+            opacity: 0.9;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .photo {
+            width: 212px;
+            height: 110px;
+            object-fit: contain;
+            border-radius: 4px;
+            padding: 13px;
+            margin-top: 4px;
+            background-color: white;
+            border: 0.5px solid lightgrey;
+        }
+
+        .channel {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .mobile {
+            display: inline-block;
+            width: 24px;
+            border-radius: 50%;
+            margin: 1px;
+        }
+
+        .channel-blog {
+            display: inline-block;
+            width: 24px;
+            margin: 1px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body>
+<div style="margin-left: 23px" >
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="icons/uav.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">UAV (example data)</b>
+    </h1>
+    <br>
+</div>
+<script>
+    const array = [{"startgroup": "Defense and DualUse", "company": "Airbus Defence & Space", "type": "uav", "link": "https://www.airbus.com", "country": "EU", "logo": "logos/airbus_defence_space.png"}, {"company": "Thales Group", "type": "uav", "link": "https://www.thalesgroup.com", "country": "FR", "logo": "logos/thales_group.png"}, {"company": "Leonardo S.p.A.", "type": "uav", "link": "https://www.leonardo.com", "country": "IT", "logo": "logos/leonardo_s_p_a.png", "linkedin": "https://www.linkedin.com/company/leonardo_company/", "linkedin_people": "37000"}, {"company": "Eurodrone Consortium", "type": "uav", "link": "https://www.airbus.com/en/products-services/defence/uas/eurodrone", "country": "EU", "logo": "logos/eurodrone_consortium.png"}, {"company": "Dassault Aviation", "type": "uav", "link": "https://www.dassault-aviation.com", "country": "FR", "logo": "logos/dassault_aviation.png"}, {"company": "Rheinmetall", "type": "uav", "link": "https://www.rheinmetall.com", "country": "DE", "logo": "logos/rheinmetall.png"}, {"company": "WB Group", "type": "uav", "link": "https://www.wbgroup.pl", "country": "PL", "logo": "logos/wb_group.png"}, {"company": "Primoco UAV", "type": "uav", "link": "https://www.uav-stol.com", "country": "CZ", "logo": "logos/primoco_uav.png"}, {"startgroup": "Commercial and Enterprise", "company": "Parrot SA", "type": "uav", "link": "https://www.parrot.com", "country": "FR", "logo": "logos/parrot_sa.png"}, {"company": "Delair", "type": "uav", "link": "https://www.delair.aero", "country": "FR", "logo": "logos/delair.png"}, {"company": "Hepta Airborne", "type": "uav", "link": "https://www.heptaairborne.com", "country": "EE", "logo": "logos/hepta_airborne.png"}, {"company": "Drone Hopper", "type": "uav", "link": "https://www.drone-hopper.com", "country": "ES", "logo": "logos/drone_hopper.png"}, {"company": "Rumble Tools", "type": "uav", "link": "https://www.rumbletools.com", "country": "FI", "logo": "logos/rumble_tools.png"}, {"company": "Avy", "type": "uav", "link": "https://www.avy.eu", "country": "NL", "logo": "logos/avy.png", "linkedin": "https://www.linkedin.com/company/avy/", "linkedin_people": "60"}, {"company": "Embention", "type": "uav", "link": "https://www.embention.com", "country": "ES", "logo": "logos/embention.png"}, {"company": "Quantum-Systems", "type": "uav", "link": "https://www.quantum-systems.com", "country": "DE", "logo": "logos/quantum_systems.png"}, {"startgroup": "Emerging_Innovators", "company": "Everdrone", "type": "uav", "link": "https://www.everdrone.com", "country": "SE", "logo": "logos/everdrone.png"}, {"company": "Sky-Watch", "type": "uav", "link": "https://www.sky-watch.com", "country": "DK", "logo": "logos/sky_watch.png"}, {"company": "Atlas Dynamics", "type": "uav", "link": "https://www.atlasdynamics.eu", "country": "LV", "logo": "logos/atlas_dynamics.png"}, {"startgroup": "Defense and Military", "company": "General Atomics Aeronautical Systems", "type": "uav", "link": "https://www.ga-asi.com", "country": "US", "logo": "logos/general_atomics_aeronautical_systems.png"}, {"company": "Northrop Grumman", "type": "uav", "link": "https://www.northropgrumman.com", "country": "US", "logo": "logos/northrop_grumman.png"}, {"company": "Lockheed Martin", "type": "uav", "link": "https://www.lockheedmartin.com", "country": "US", "logo": "logos/lockheed_martin.png"}, {"company": "Boeing Defense / Insitu", "type": "uav", "link": "https://www.boeing.com", "country": "US", "logo": "logos/boeing_defense_insitu.png"}, {"company": "Textron Systems", "type": "uav", "link": "https://www.textronsystems.com", "country": "US", "logo": "logos/textron_systems.png"}, {"company": "Elbit Systems", "type": "uav", "link": "https://elbitsystems.com", "country": "IL", "logo": "logos/elbit_systems.png"}, {"company": "Israel Aerospace Industries (IAI)", "type": "uav", "link": "https://www.iai.co.il", "country": "IL", "logo": "logos/israel_aerospace_industries_iai.png"}, {"company": "BAE Systems", "type": "uav", "link": "https://www.baesystems.com", "country": "GB", "logo": "logos/bae_systems.png"}, {"company": "Saab AB", "type": "uav", "link": "https://www.saab.com", "country": "SE", "logo": "logos/saab_ab.png"}, {"company": "Baykar", "type": "uav", "link": "https://www.baykartech.com", "country": "TR", "logo": "logos/baykar.png"}, {"company": "TAI (Turkish Aerospace Industries)", "type": "uav", "link": "https://www.tai.com.tr", "country": "TR", "logo": "logos/tai_turkish_aerospace_industries.png"}, {"company": "AVIC (Aviation Industry Corporation of China)", "type": "uav", "link": "http://www.avic.com", "country": "CN", "logo": "logos/avic_aviation_industry_corporation_of_china.png"}, {"startgroup": "Commercial and Enterprise", "company": "DJI", "type": "uav", "link": "https://www.dji.com", "country": "CN", "logo": "logos/dji.png"}, {"company": "Autel Robotics", "type": "uav", "link": "https://www.autelrobotics.com", "country": "CN", "logo": "logos/autel_robotics.png"}, {"company": "Skydio", "type": "uav", "link": "https://www.skydio.com", "country": "US", "logo": "logos/skydio.png"}, {"company": "Yuneec International", "type": "uav", "link": "https://www.yuneec.com", "country": "CN", "logo": "logos/yuneec_international.png"}, {"company": "Parrot SA", "type": "uav", "link": "https://www.parrot.com", "country": "FR", "logo": "logos/parrot_sa.png"}, {"company": "Delair", "type": "uav", "link": "https://www.delair.aero", "country": "FR", "logo": "logos/delair.png"}, {"company": "Quantum-Systems", "type": "uav", "link": "https://www.quantum-systems.com", "country": "DE", "logo": "logos/quantum_systems.png"}, {"company": "3D Robotics (3DR)", "type": "uav", "link": "https://www.3dr.com", "country": "US", "logo": "logos/3d_robotics_3dr.png"}, {"company": "Aerovironment", "type": "uav", "link": "https://www.avinc.com", "country": "US", "logo": "logos/aerovironment.png"}, {"startgroup": "Emerging and Innovative", "company": "TAF Drones", "type": "uav", "link": "https://tafdrone.com", "country": "UA", "logo": "logos/taf_drones.png"}, {"company": "Everdrone", "type": "uav", "link": "https://www.everdrone.com", "country": "SE", "logo": "logos/everdrone.png"}, {"company": "Atlas Dynamics", "type": "uav", "link": "https://www.atlasdynamics.eu", "country": "LV", "logo": "logos/atlas_dynamics.png"}, {"company": "Wing (Alphabet)", "type": "uav", "link": "https://wing.com", "country": "US", "logo": "logos/wing_alphabet.png"}, {"company": "Zipline", "type": "uav", "link": "https://www.flyzipline.com", "country": "US", "logo": "logos/zipline.png"}, {"company": "Avy", "type": "uav", "link": "https://www.avy.eu", "country": "NL", "logo": "logos/avy.png", "linkedin": "https://www.linkedin.com/company/avy/", "linkedin_people": "60"}];
+
+    let appendObject = document.body;
+
+    array.forEach(function (brand) {
+        if (brand.startgroup) {
+            var groupDiv = document.createElement('div');
+            var title = document.createElement('div');
+            title.innerHTML = brand.startgroup;
+            title.classList.add('group-title');
+            groupDiv.appendChild(title);
+            groupDiv.classList.add('group');
+            document.body.append(groupDiv);
+            appendObject = groupDiv
+        }
+        let div = document.createElement('div');
+        appendObject.appendChild(div);
+        let html = '<div class="brand">';
+
+
+        if (brand.country)
+            html += '<img class="flag" title="' + brand.country + '" src="https://zeljkoobrenovic.github.io/sokrates-media/flags/1x1/' + brand.country.toLowerCase() + '.svg">\n';
+
+        if (brand.type)
+            html += '    <img title="' + brand.type + '" class="type" src="icons/' + brand.type.toLowerCase() + '.png">';
+
+        let width = (brand.ios || brand.android) ? ((brand.ios && brand.android) ? 109 : 134) : 159;
+
+        let statsLink = 'https://www.similarweb.com/website/' + brand.link.replace(/.*\/\//, '').replace(/\//g, '').replace(/www[.]/g, '') + '/#overview';
+
+        html += "<div style='display: inline-block; width: " + width + "px; text-align: left; vertical-align: top; padding-top: 4px; padding-left: 4px; font-size: 80%;'>" + (brand.monthlyvisits ?
+            "<a href='" + statsLink + "' target='_blank'>" + brand.monthlyvisits + ' <span style="color: #a0a0a0">visits/m</span></a>'
+            : '') + "</div>"
+
+        if (brand.ios)
+            html += '<a href="' + brand.ios + '" target="_blank" title="iOS App"><img class="mobile" src="icons/ios.png"></a>';
+        if (brand.android)
+            html += '<a href="' + brand.android + '" target="_blank" title="Android App"><img class="mobile" src="icons/android.png"></a>';
+
+
+        html += '    <div class="container">\n';
+        html += '<a href="' + brand.link + '" target="_blank">'
+        html += '    <div><img class="photo" src="' + brand.logo + '"></div>\n';
+        html += '    </div>\n';
+        html += '</a>'
+        html += '<div style="margin-top: 8px">';
+
+        if (brand.linkedin_people) {
+             html += '<div style="font-size: 80%; margin-right: 0px; display: inline-block; vertical-align: top; padding-top: 2px; color: grey">';
+             html += brand.linkedin_people + ' 😀';
+             html += '</div>';
+        }
+        if (brand.linkedin)
+            html += '<a href="' + brand.linkedin + '" target="_blank" title="Linkedin"><img class="channel" src="icons/linkedin.svg"></a>';
+        if (brand.facebook)
+            html += '<a href="' + brand.facebook + '" target="_blank" title="Facebook"><img class="channel" src="icons/facebook.svg"></a>';
+        if (brand.instagram)
+            html += '<a href="' + brand.instagram + '" target="_blank" title="Instagram"><img class="channel" src="icons/instagram.svg"></a>';
+        if (brand.youtube)
+            html += '<a href="' + brand.youtube + '" target="_blank" title="Youtube"><img class="channel" src="icons/youtube.svg"></a>';
+        if (brand.twitter)
+            html += '<a href="' + brand.twitter + '" target="_blank" title="Twitter"><img class="channel" src="icons/twitter.svg"></a>';
+        if (brand.pinterest)
+            html += '<a href="' + brand.pinterest + '" target="_blank" title="Pinterest"><img class="channel" src="icons/pinterest.svg"></a>';
+        if (brand.tiktok)
+            html += '<a href="' + brand.tiktok + '" target="_blank" title="TikTok"><img class="channel" style="border-radius: 50%; border: 1px solid grey" src="icons/tiktok.png"></a>';
+        if (brand.xing)
+            html += '<a href="' + brand.xing + '" target="_blank" title="Xing"><img class="channel" src="icons/xing.png"></a>';
+
+        html += '&nbsp;&nbsp;&nbsp;';
+
+        if (brand.blog)
+            html += '<a href="' + brand.blog + '" target="_blank" title="Blog"><img class="channel-blog" src="icons/blog.png"></a>';
+        if (brand.techblog)
+            html += '<a href="' + brand.techblog + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/tech-blog.png"></a>';
+        if (brand.github)
+            html += '<a href="' + brand.github + '" target="_blank" title="Tech Blog"><img class="channel-blog" src="icons/github.png"></a>';
+
+        html += '</div>';
+        html += '</div>';
+
+        div.outerHTML = html;
+    });
+</script>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" >
+    generated on 2025-12-09 based on this source <a style="text-decoration: underline; color: #a0a0a0;"
+               href="https://docs.google.com/spreadsheets/d/195iHjfUCGlHEREka2hvWxV9WWBeX9PfDp6OizYSWqiQ/edit?usp=sharing">data
+    sheet</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,5505 @@
+{
+  "metadata": {
+    "exportDate": "2025-05-19"
+  },
+  "data": [
+    {
+      "source": "Homepage",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "TDR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Unified B2C Web Shell",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-07-19",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Search Engine Results Page (SERP)",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Saved Search / Alerts",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "PRD",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Classified Details Page (CDP)",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Consumer Contacting Management",
+      "data": [
+        {
+          "type": "PRD",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Home Purchase Financing",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Consumer Portal",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Seeker Profile",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Consumer Advertising Management",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "SEO Management",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Memo",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Estimation Funnel",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-07-27",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-08-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-08-18",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-08-21",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-04-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Price Page",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Owner Coaching Experience",
+      "data": [
+        {
+          "type": "Security Assessment",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "FSBO Online Classifieds Acquisition",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Owner Classifieds Management",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Owner Property Management",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Owner Rental Management",
+      "data": []
+    },
+    {
+      "source": "Unified Frontend",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Design System",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "RFC",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        }
+      ]
+    },
+    {
+      "source": "User Tracking",
+      "data": []
+    },
+    {
+      "source": "Cookie Consent Management",
+      "data": []
+    },
+    {
+      "source": "Unified Mobile Apps Foundation",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "A/B Testing Management",
+      "data": []
+    },
+    {
+      "source": "Intermediary Entity SSoT",
+      "data": []
+    },
+    {
+      "source": "Intermediary Profile & Directory",
+      "data": []
+    },
+    {
+      "source": "Intermediary Members Management",
+      "data": []
+    },
+    {
+      "source": "Agency Visibility Management",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Agents Ratings & Reviews",
+      "data": []
+    },
+    {
+      "source": "Online Classifieds Acquisition",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Classifieds Portfolio Management",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Classifieds Visibility Management",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2024-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Classifieds Performance Management",
+      "data": []
+    },
+    {
+      "source": "Intermediary Seeker Leads Inbox",
+      "data": []
+    },
+    {
+      "source": "Seller Lead Management",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "TDR",
+          "date": "2024-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Call Tracking",
+      "data": []
+    },
+    {
+      "source": "Pro Tool Foundation",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Property Valuation Tool",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2024-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Prospection Map",
+      "data": [
+        {
+          "type": "Security Assessment",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Off-Platform Advertising",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Data Foundation",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2022-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        }
+      ]
+    },
+    {
+      "source": "Data Platform",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "GeoRef",
+      "data": [
+        {
+          "type": "Security Assessment",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Location Insights",
+      "data": []
+    },
+    {
+      "source": "Property Knowledge",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Market Knowledge",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Property Estimation",
+      "data": [
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Economic Content Creation",
+      "data": []
+    },
+    {
+      "source": "Monthly Price Update",
+      "data": []
+    },
+    {
+      "source": "Housing Data Consolidation",
+      "data": []
+    },
+    {
+      "source": "Data Monetization",
+      "data": []
+    },
+    {
+      "source": "Business Analytics",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Memo",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Product Analytics",
+      "data": []
+    },
+    {
+      "source": "Marketing Analytics",
+      "data": []
+    },
+    {
+      "source": "Classifieds Analytics",
+      "data": []
+    },
+    {
+      "source": "Intermediary Analytics",
+      "data": []
+    },
+    {
+      "source": "Classifieds Sort Order",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-09",
+          "title": "Document Title",
+          "link": "https://google.com"
+        }
+      ]
+    },
+    {
+      "source": "Classifieds Recommendations",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2019-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Lead Scorings",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Lead x Agent Matching",
+      "data": []
+    },
+    {
+      "source": "Actor Scoring",
+      "data": []
+    },
+    {
+      "source": "Fraud Detection",
+      "data": [
+        {
+          "type": "PRD",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Unstructured Data Processing",
+      "data": [
+        {
+          "type": "Security Assessment",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Property Decision Tools",
+      "data": []
+    },
+    {
+      "source": "Chat Messaging Services",
+      "data": [
+        {
+          "type": "RFC",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Notification Service",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Marketing Automation",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Seeker Lead Management",
+      "data": []
+    },
+    {
+      "source": "B2B CRM",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "B2C CRM",
+      "data": []
+    },
+    {
+      "source": "Unified Contracts Gateway",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Authentication Service",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "User Management",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-04-28",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Privacy Services",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Identity Verification",
+      "data": []
+    },
+    {
+      "source": "Classifieds Import",
+      "data": []
+    },
+    {
+      "source": "Classifieds Management",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "PRD",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Classifieds Export",
+      "data": []
+    },
+    {
+      "source": "Sold Properties Management",
+      "data": [
+        {
+          "type": "TDR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Media Management",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Software Vendors Integration Hub",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Payment Platform",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Content Management",
+      "data": [
+        {
+          "type": "PRD",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "PRD",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Product Backoffice",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Document Management",
+      "data": []
+    },
+    {
+      "source": "AWS Foundation",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "DevOps Tooling",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "QA Tooling",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Technology Golden Paths",
+      "data": [
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2022-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2.",
+          "highlight": ""
+        },
+        {
+          "type": "Memo",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Golden Guidelines",
+      "data": [
+        {
+          "type": "Memo",
+          "date": "2021-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2022-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2022-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Memo",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ODR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Memo",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com"
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2023-12",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "RFC",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Guideline",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    },
+    {
+      "source": "Intermediary Profile",
+      "data": [
+        {
+          "type": "Architecture",
+          "date": "2023-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-04",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-05",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Talk",
+          "date": "2023-06",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-08",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-09",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2023-10",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Security Assessment",
+          "date": "2023-11",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "Architecture",
+          "date": "2024-01",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-02",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-03",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        },
+        {
+          "type": "ADR",
+          "date": "2024-07",
+          "title": "Document Title",
+          "link": "https://google.com",
+          "summary": "Summary point 1. Summary points 2."
+        }
+      ]
+    }
+  ]
+}

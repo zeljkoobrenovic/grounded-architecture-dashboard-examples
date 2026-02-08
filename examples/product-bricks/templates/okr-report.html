@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KR Progress Report</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image-small {
+            vertical-align: top;
+            font-size: 12px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+        }
+
+        .container {
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body style="padding: 20px">
+
+<div style="text-align: left; margin-bottom: 52px; margin-left: 20px; font-size: 200%">
+    <table>
+        <tr>
+            <td style="background-color: white">
+                <img src="assets/icons/okr.png" style="height: 100px">
+            </td>
+            <td style="background-color: white; vertical-align: top">
+                <h1 style="margin-top: 20px">KR Progress Report</h1>
+            </td>
+        </tr>
+    </table>
+    <div style="margin-left: 12px; margin-top: -32px; color: grey">Reaching 75% of overall transformation goal</div>
+    <hr>
+</div>
+<div style="display: inline-block; vertical-align: middle; margin-left: 20px; margin-top: -20px; color: grey">
+    <label><input type="checkbox" id="ExcludeCurrentMonth" onchange="update()">exclude current month</label>
+</div>
+
+<div id="Current"></div>
+<div id="Roadmap"></div>
+
+<script>
+    const array = ${data};
+    const targets = ${targets};
+
+    function targetByCapability(name) {
+        let result = targets.data.filter(c => c.source.toLowerCase() === name.toLowerCase())[0];
+        return result ? result.data : [];
+    }
+
+    const date = new Date();
+    let month = date.getUTCMonth() + 1;
+    let year = date.getFullYear();
+    let currentMonth = year + '-' + (month < 10 ? '0' : '') + month;
+
+    array.forEach(domain => {
+        domain.groups.forEach(group => {
+            group.items = group.items.filter(i => !i.capability.toLowerCase().includes('qa '));
+            group.items.forEach(capability => {
+                capability.targets = targetByCapability(capability.capability);
+                capability.targets.forEach(t => t.capability_info = capability);
+                capability.targets_okr_3_1 = capability.targets.filter(t => true || t.okr_3_1_target + '' === 'true');
+                capability.targets_okr_3_1_done = capability.targets_okr_3_1.filter(t => t.status && t.status.toLowerCase().startsWith("live"));
+                capability.targets_okr_3_1_partially = capability.targets_okr_3_1.filter(t => t.status && t.status.toLowerCase().startsWith("part"));
+                capability.targets_okr_3_1_not_done = capability.targets_okr_3_1.filter(t => !t.status || t.status === '' || t.status.toLowerCase().startsWith("not"));
+
+                capability.targets_okr_3_1_done_prev_month = capability.targets_okr_3_1_done.filter(t => t.live_date_yyyy_mm !== currentMonth);
+                capability.targets_okr_3_1_partially_prev_month = capability.targets_okr_3_1_partially.filter(t => t.live_date_yyyy_mm !== currentMonth);
+                capability.targets_okr_3_1_not_done_prev_month = capability.targets_okr_3_1_not_done.filter(t => t.live_date_yyyy_mm !== currentMonth);
+            });
+        });
+    });
+</script>
+
+<script>
+    function count(capabilities) {
+        const showLive = true; // document.getElementById('LiveChecked').checked;
+        const showInFlight = true; // document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = true; // document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = true; // document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        capabilities.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || (c.target && c.target.trim() !== '0' && c.target.trim() !== ''));
+                items = items.filter(c => (showLive && c.live) || (showInFlight && c.in_flight) || (showNotInFlight && !c.in_flight));
+                items = items.filter(c => (c.domain_ea + '').toLowerCase() !== 'on ice');
+                n += items.length;
+            });
+        });
+
+        return n;
+    }
+
+    function countGroupItem(groups) {
+        const showLive = true; // document.getElementById('LiveChecked').checked;
+        const showInFlight = true; // document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = true; // document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = true; // document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        groups.forEach(function (group) {
+            let items = group.items;
+            items = items.filter(c => !targetChecked || (c.target && c.target.trim() !== '0' && c.target.trim() !== ''));
+            items = items.filter(c => (showLive && c.live) || (showInFlight && c.in_flight) || (showNotInFlight && !c.in_flight));
+            n += items.length;
+        });
+
+        return n;
+    }
+
+    function processCapabilities(capabilities, showChannels) {
+        const showLive = true; // document.getElementById('LiveChecked').checked;
+        const showInFlight = true; // document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = true; // document.getElementById('NotInFlightChecked').checked;
+
+        let html = '';
+        html += '<div style="margin-left: 24px">';
+        html += '<h2 style="">Progress in 2025</h2>';
+        html += '<div style="padding: 8px; max-width: 1140px">';
+
+        let targetChecked = true; // document.getElementById('TargetChecked').checked;
+        const excludeCurrentMonth = document.getElementById('ExcludeCurrentMonth').checked;
+
+        let totalTarget = 0;
+        let totalPartiallyReached = 0;
+        let totalReached = 0;
+        capabilities.filter(source => source.domain && !(source.domain.includes('On Ice') || source.domain.includes('Internal'))).forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || c.targets_okr_3_1.length > 0);
+                items.forEach(function (item) {
+                    if (targetChecked) {
+                        totalTarget += item.targets_okr_3_1.length;
+                        if (excludeCurrentMonth) {
+                            totalPartiallyReached += item.targets_okr_3_1_partially_prev_month.length;
+                            totalReached += item.targets_okr_3_1_done_prev_month.length;
+                        } else {
+                            totalPartiallyReached += item.targets_okr_3_1_partially.length;
+                            totalReached += item.targets_okr_3_1_done.length;
+                        }
+                    }
+                });
+            });
+        });
+
+        console.log('totalTarget', totalTarget);
+
+        totalTarget = Math.min(415, totalTarget);
+
+        const goal_2023 = 32;
+        const goal_2024 = 146;
+        const goal_2026 = totalTarget;
+
+        const goal_2025 = Math.floor(goal_2026 * 0.75);
+        const goal_2025_only = goal_2025 - goal_2024;
+
+        totalPartiallyReached2025 = totalPartiallyReached;
+
+        if (totalReached < goal_2024) {
+            totalPartiallyReached2025 -= goal_2024 - (totalReached);
+        }
+
+        console.log(goal_2023);
+        console.log(goal_2024);
+        console.log(goal_2025);
+        console.log(goal_2026);
+        console.log(totalReached);
+        console.log(totalPartiallyReached);
+        console.log(totalPartiallyReached2025);
+        console.log(totalReached + totalPartiallyReached);
+
+        const reachedPerc = Math.round(100 * totalReached / goal_2026);
+        const targetPercentage = 80;
+        const partiallyReachedPerc = Math.round(100 * totalPartiallyReached2025 / goal_2025_only);
+        const okr3_1_perc = Math.round(100 * (totalReached + totalPartiallyReached) / goal_2026);
+        const okr3_1_perc_2025 = Math.max(0, Math.round(100 * (totalReached - goal_2024) / goal_2025_only));
+        const okr3_1_part_perc_2025 = Math.round(100 * (totalPartiallyReached2025) / goal_2025_only);
+
+        html += '<div style="text-align: center; width: 1100px; padding: 10px; border: 1px solid lightgrey; display:inline-block; border-radius: 5px; margin: 0px; font-size: 32px; color: black; vertical-align: top;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; ">';
+        html += '<div> ';
+        html += '<span style="font-size: 140%; color: darkgreen">' + okr3_1_perc_2025 + '%</span> of the 2025 targets fully reached';
+        html += '</div> ';
+        html += '<div style="font-size: 70%; color: #d0d0d0"> ';
+        html += '<span style="font-size: 140%; color: darkgrey">' + okr3_1_part_perc_2025 + '%</span> of the 2025 targets fully or partially reached';
+        html += '</div> ';
+        html += '<div style="width: 100%; text-align: left;">';
+        html += '<div style="margin: 0; padding: 0; display: inline-block; background-color: darkgreen; height: 8px; width: ' + okr3_1_perc_2025 + '%;"></div>';
+        html += '<div style="margin: 0; padding: 0; display: inline-block; background-color: orange; height: 8px; width: ' + Math.min(partiallyReachedPerc, 100 - okr3_1_perc_2025) + '%;"></div>';
+        html += '<div style="margin: 0; padding: 0; display: inline-block; background-color: lightgrey; height: 8px; width: ' + (100 - okr3_1_perc_2025 - partiallyReachedPerc) + '%;"></div>';
+        html += '</div>';
+        html += '</div>';
+
+        html += '</div>';
+
+        html += '<br>';
+
+        function checkForGoal(index) {
+            if (index === goal_2023) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 2px; padding-bottom: 3px; color: white; vertical-align: top; text-align: center">2023<br>goal</div><hr>';
+            }
+            if (index === goal_2024) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 2px; padding-bottom: 3px; color: white; vertical-align: top; text-align: center">2024<br>goal</div><hr>';
+            }
+            if (index === goal_2025) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 2px; padding-bottom: 3px; color: white; vertical-align: top; text-align: center">2025<br>goal</div><hr>';
+            }
+            if (index === goal_2026) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 2px; padding-bottom: 3px; color: white; vertical-align: top; text-align: center">2026<br>goal</div>';
+            }
+        }
+
+        if (totalTarget) {
+            html += '<div style="margin-left: 16px; max-width: 1020px; text-align: center">';
+
+            html += '<div style="max-width: 1050px">';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: green; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + Math.max(0, okr3_1_perc_2025) + '%</span> ';
+            html += ' of 2025 GOAL FULLY REACHED (' + Math.max(0, totalReached - goal_2024) + ')</div>';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: orange; font-size: 12px; padding-top: 5px; color: black; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + partiallyReachedPerc + '%</span> ';
+            html += ' of 2025 GOAL PARTIALLY REACHED (' + totalPartiallyReached2025 + ')</div>';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: blue; padding-top: 5px; color: white; vertical-align: top">';
+            html += ' 2025 GOAL (' + (goal_2025_only) + ')</div>';
+            html += '</div>';
+
+            let index = 0;
+            html += '<div style="text-align: right; margin-top: 8px;">';
+            const totalNotReached = totalTarget - totalReached - totalPartiallyReached;
+            for (let i = 0; i < totalReached; i++) {
+                index += 1;
+                let isOld = i < goal_2024;
+                const opacity = isOld ? '; opacity: 0.5;' : '';
+                html += '<div style="border: 1px solid black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: green; font-size: 7px; padding-top: 5px; text-align: center; color: white' + opacity + '">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalPartiallyReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px solid grey; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: orange; font-size: 7px; padding-top: 5px; text-align: center">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalNotReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: lightgrey; font-size: 7px; padding-top: 5px; text-align: center; color: #323232">' + index + '</div>';
+                checkForGoal(index);
+            }
+            html += '</div>';
+            html += '<h2 style="text-align: left; margin-top: 42px">Overall Progress</h2>';
+            html += '<div style="max-width: 1050px; opacity: 0.4; margin-top: 24px">';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: green; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + reachedPerc + '%</span> ';
+            html += ' FULLY REACHED</div>';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: blue; padding-top: 5px; color: white; vertical-align: top">';
+            html += ' OVERALL GOAL: ' + goal_2026 + '</div>';
+            html += '</div>';
+            html += '<div style="text-align: center; width: 1100px; padding: 10px; border: 1px solid lightgrey; display:inline-block; border-radius: 5px; margin: 0px; font-size: 24px; margin-top: 10px; color: black; vertical-align: top;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; color: grey ">';
+            html += '<span style="font-size: 140%">' + okr3_1_perc + '%</span> ';
+            html += ' of the all targets fully or partially reached';
+            html += '<div style="background-color: darkgrey; height: 4px; width: ' + okr3_1_perc + '%; margin-top: 4px; "></div>';
+
+            html += '</div>';
+        }
+
+        function addGroupedCapabilities(source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => c.targets_okr_3_1.length > 0);
+                items = items.filter(c => (showLive && c.live) || (showInFlight && c.in_flight) || (showNotInFlight && !c.in_flight));
+                if (items.length === 0) return;
+
+                items.forEach(function (item) {
+                    if (item.id) {
+                        html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                    }
+                    let style = '';
+                    html += '<div class="image-small" style="width: 1100px; ' + style + '; vertical-align: top; background-color: ' + colorOf(item.type);
+                    html += '; display: block">' + '<img style="width: 16px" src="assets/icons/' + item.id + '.png">';
+                    html += '<div style="margin-left: 4px; overflow: hidden; vertical-align: top; display: inline-block; width: 220px">';
+                    html += '<div style="margin-top: 1px; text-align: right; margin-right: 8px; padding-top: 2px">' + item.capability + '</div>';
+                    html += '</div>';
+
+
+                    function titleOf(target) {
+                        let title = 'Target: Live ';
+                        title += target.brand_or_country ? ' on ' + target.brand_or_country : '';
+                        title += target.channel ? ' via ' + target.channel : '';
+                        title += target.capability ? ' on ' + target.capability : '';
+                        title += target.live_date_yyyy_mm ? '; date ' + target.live_date_yyyy_mm : '';
+                        return title;
+                    }
+
+                    function displayTargets(dateFilterFunction, width) {
+                        html += '<div style="border: 1px solid grey; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: ' + width + 'px;">';
+                        let done = excludeCurrentMonth ? item.targets_okr_3_1_done_prev_month : item.targets_okr_3_1_done;
+                        let partially = excludeCurrentMonth ? item.targets_okr_3_1_partially_prev_month : item.targets_okr_3_1_partially;
+                        let notDone = excludeCurrentMonth ? item.targets_okr_3_1_not_done_prev_month : item.targets_okr_3_1_not_done;
+                        done.filter(t => dateFilterFunction(t.live_date_yyyy_mm)).forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 10px; width: 10px; border-radius: 1px; margin: 2px; background-color: green" title="' + titleOf(target) + '"></div>';
+                        });
+                        partially.filter(t => dateFilterFunction(t.live_date_yyyy_mm)).forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 10px; width: 10px; border-radius: 1px; margin: 2px; background-color: orange" title="' + titleOf(target) + '"></div>';
+                        });
+                        notDone.filter(t => dateFilterFunction(t.live_date_yyyy_mm)).forEach(target => {
+                            html += '<div style="border: 1px dotted black; display:inline-block; height: 10px; width: 10px; border-radius: 1px; margin: 2px; background-color: lightgrey" title="' + titleOf(target) + '"></div>';
+                        });
+                        html += '</div>';
+                    }
+
+                    if (targetChecked) {
+                        displayTargets((date) => date && date.match(/2022\-12/), 20);
+                        displayTargets((date) => date && date.match(/2023\-01/), 20);
+                        displayTargets((date) => date && date.match(/2023\-02/), 20);
+                        displayTargets((date) => date && date.match(/2023\-03/), 20);
+                        displayTargets((date) => date && date.match(/2023\-04/), 20);
+                        displayTargets((date) => date && date.match(/2023\-05/), 20);
+                        displayTargets((date) => date && date.match(/2023\-06/), 20);
+                        displayTargets((date) => date && date.match(/2023\-07/), 20);
+                        displayTargets((date) => date && date.match(/2023\-08/), 20);
+                        displayTargets((date) => date && date.match(/2023\-09/), 20);
+                        displayTargets((date) => date && date.match(/2023\-10/), 20);
+                        displayTargets((date) => date && date.match(/2023\-11/), 20);
+                        displayTargets((date) => date && date.match(/2023\-12/), 20);
+                        displayTargets((date) => date && date.match(/2024\-01/), 20);
+                        displayTargets((date) => date && date.match(/2024\-02/), 20);
+                        displayTargets((date) => date && date.match(/2024\-03/), 20);
+                        displayTargets((date) => date && date.match(/2024\-04/), 20);
+                        displayTargets((date) => date && date.match(/2024\-05/), 20);
+                        displayTargets((date) => date && date.match(/2024\-06/), 20);
+                        displayTargets((date) => date && date.match(/2024\-07/), 20);
+                        displayTargets((date) => date && date.match(/2024\-08/), 20);
+                        displayTargets((date) => date && date.match(/2024\-09/), 20);
+                        displayTargets((date) => date && date.match(/2024\-10/), 20);
+                        displayTargets((date) => date && date.match(/2024\-11/), 20);
+                        displayTargets((date) => date && date.match(/2024\-12/), 20);
+                        displayTargets((date) => date && date.match(/2025\-01/), 20);
+                        displayTargets((date) => date && date.match(/2025\-02/), 20);
+                        displayTargets((date) => date && date.match(/2025\-03/), 20);
+                        displayTargets((date) => date && date.match(/2025\-04/), 20);
+                        displayTargets((date) => date && date.match(/2025\-05/), 20);
+                        displayTargets((date) => date && date.match(/2025\-06/), 20);
+                        displayTargets((date) => date && date.match(/2025\-07/), 20);
+                        displayTargets((date) => date && date.match(/2025\-08/), 20);
+                        displayTargets((date) => date && date.match(/2025\-09/), 20);
+                        displayTargets((date) => date && date.match(/2025\-10/), 20);
+                        displayTargets((date) => date && date.match(/2025\-11/), 20);
+                        displayTargets((date) => date && date.match(/2025\-12/), 20);
+                        // displayTargets((date) => !date || date.trim() === '' || date.match(/202[5-9].*/), 100);
+                    }
+                    html += '</div>';
+
+                    if (item.id) {
+                        html += '</a>';
+                    }
+                });
+            });
+        }
+
+        function stats(dateFilterFunction) {
+            const result = {
+                done: [],
+                partially: [],
+                not_done: [],
+                all: []
+            }
+            capabilities.filter(source => source.domain).forEach(function (source) {
+                source.groups.forEach(function (group) {
+                    let items = group.items;
+                    if (items.length === 0) return;
+
+                    items.forEach(function (item) {
+                        result.done = result.done.concat(item.targets_okr_3_1_done.filter(t => dateFilterFunction(t.live_date_yyyy_mm)));
+                        result.partially = result.partially.concat(item.targets_okr_3_1_partially.filter(t => dateFilterFunction(t.live_date_yyyy_mm)));
+                        result.not_done = result.not_done.concat(item.targets_okr_3_1_not_done.filter(t => dateFilterFunction(t.live_date_yyyy_mm)));
+                        result.all = result.all.concat(item.targets_okr_3_1.filter(t => dateFilterFunction(t.live_date_yyyy_mm)));
+                    });
+                });
+            });
+            return result;
+        }
+
+
+        const undefinded = stats((date) => !date || date.trim() === '' || date.match(/202[5-9].*/), 200);
+
+
+        html += '<br>';
+        html += '<br>';
+        html += '</div>';
+        html += '</div>';
+
+
+        html += '<div style="margin-left: 24px">';
+        html += '<h2>Progress Per Capability</h2>';
+        html += '<div style="color: grey; font-size: 90%; margin-bottom: 22px">For each capability that is the part of resale program we have defined several release targets (going live with 100% of traffic viw web or mobile, or being adopted by other capability)</div>';
+
+        html += '<div style="margin-left: 240px">';
+        html += '<div style="padding-left: 12px">';
+
+        months = [
+            /2022\-12/,
+            /2023\-01/, /2023\-02/, /2023\-03/, /2023\-04/, /2023\-05/, /2023\-06/,
+            /2023\-07/, /2023\-08/, /2023\-09/, /2023\-10/, /2023\-11/, /2023\-12/,
+            /2024\-01/, /2024\-02/, /2024\-03/, /2024\-04/, /2024\-05/, /2024\-06/,
+            /2024\-07/, /2024\-08/, /2024\-09/, /2024\-10/, /2024\-11/, /2024\-12/,
+            /2025\-01/, /2025\-02/, /2025\-03/, /2025\-04/, /2025\-05/, /2025\-06/,
+            /2025\-07/, /2025\-08/, /2025\-09/, /2025\-10/, /2025\-11/, /2025\-12/,
+        ];
+
+        months.forEach(m => {
+            const q = stats((date) => date && date.match(m), 100);
+            html += '<div style="display: inline-block; ' + (('' + m).endsWith('12/') ? '; border-right: 1px solid black' : '') + '">';
+            if (q.done.length > 0) {
+                html += '<div style="background-image: linear-gradient(white, green); color: white; border: 1px solid white; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px; height: ' + Math.min(50, 1 + q.done.length * 4) + 'px">&nbsp;</div>';
+                html += '<div style="background-color: green; color: white; border: 1px solid #f0f0f0; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px">' + q.done.length + '</div>';
+            } else {
+                html += '<div style="color: grey; border: 1px solid  white; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px">&nbsp;</div>';
+                html += '<div style="color: grey; border: 1px solid #f0f0f0; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px">-</div>';
+            }
+            if (q.partially.length) {
+                html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px; background-color: orange; color: white">' + q.partially.length + '</div>';
+            } else {
+                html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px; color: grey">-</div>';
+            }
+            html += '<div style="height: 16px; border: 1px solid #f0f0f0; text-align: center; margin-top: 0px;  vertical-align: middle; width: 20px; max-width:20px; color: lightgrey;">' + (q.not_done.length > 0 ? q.not_done.length : '-') + '</div>';
+            html += '</div>';
+        });
+
+
+        html += '</div>';
+
+        html += '<div style="padding-left: 12px; color: grey; font-size: 80%; margin-top: 4px;">';
+
+        html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 21px; max-width:21px; border-right: 1px solid black;">12</div>';
+        for (let i = 1; i <= 11; i++) {
+            html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 20px; max-width:20px">' + i + '</div>';
+        }
+        html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 21px; max-width:21px; border-right: 1px solid black;">12</div>';
+
+        for (let i = 1; i <= 11; i++) {
+            html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 20px; max-width:20px">' + i + '</div>';
+        }
+        html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 21px; max-width:21px; border-right: 1px solid black;">12</div>';
+
+        for (let i = 1; i <= 11; i++) {
+            html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 20px; max-width:20px">' + i + '</div>';
+        }
+        html += '<div style="border: 1px solid #f0f0f0; text-align: center; margin-top: 0px; display: inline-block; vertical-align: middle; width: 21px; max-width:21px; border-right: 1px solid black;">12</div>';
+
+        html += '</div>';
+
+        html += '<div>';
+        html += '<div style="margin-left: 34px; width: 263px; text-align: center; border: 1px solid lightgrey; display: inline-block">2023</div>';
+        html += '<div style="width: 264px; text-align: center; border: 1px solid lightgrey; display: inline-block">2024</div>';
+        html += '<div style="width: 264px; text-align: center; border: 1px solid lightgrey; display: inline-block">2025</div>';
+        html += '</div>';
+
+        html += '</div>';
+
+
+        capabilities.filter(source => source.domain).forEach(function (source) {
+            html += '<div style="border-left: 1px solid grey; height: 100%; padding: 6px; margin: 5px; vertical-align: top; text-align: center" class="container">';
+            html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + ' (' + countGroupItem(source.groups) + ')</div>';
+            addGroupedCapabilities(source);
+
+            html += '</div>';
+        });
+        html += '</div>';
+        html += '</div>';
+        html += '<div style="padding: 8px">';
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        // document.getElementById('CurrentCount').innerHTML = count(array);
+        document.getElementById('Current').innerHTML = processCapabilities(array, true);
+
+        let liveCount = 0;
+        let inFlightCount = 0;
+        let notInFlight = 0;
+
+        array.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                group.items.forEach(function (item) {
+                    if (item.in_flight) inFlightCount += 1;
+                    else notInFlight += 1;
+
+                    if (item.live) liveCount += 1;
+                });
+            });
+        });
+    }
+
+    function roadmap(statusPrefixes, colors) {
+
+        const milestones = [];
+
+        targets.data.forEach(capability => {
+            capability.data.forEach(item => {
+                item.owning_capability = capability.source;
+                if (!item.live_date_yyyy_mm) item.live_date_yyyy_mm = '2024-12';
+                milestones.push(item);
+            });
+        });
+
+        let html = '';
+
+        let index = 0;
+
+        function inScope(m, statusPrefix) {
+            let status = (m.status + '').toLowerCase();
+            return status.startsWith(statusPrefix) || (statusPrefix.toLowerCase().startsWith('not ') && !m.status);
+        }
+
+        function compare(statusPrefix) {
+            if (statusPrefix.toLowerCase().startsWith('not '))
+                return (a, b) => (a.live_date_yyyy_mm + '').localeCompare(b.live_date_yyyy_mm + '');
+            else
+                return (a, b) => (b.live_date_yyyy_mm + '').localeCompare(a.live_date_yyyy_mm + '');
+        }
+
+        statusPrefixes.forEach(statusPrefix => {
+            let prevMonth = '2022-12';
+            let filtered = milestones
+                .filter(m => m.okr_3_1_target == 'true')
+                .filter(m => inScope(m, statusPrefix))
+                .sort(compare(statusPrefix));
+            html += '<div style="margin-left: 32px; margin-top: 42px;">';
+            html += '<h2>' + statusPrefix.toUpperCase() + ' MILESTONES (' + filtered.length + ')</h2>';
+            html += '<table>';
+            filtered.forEach(m => {
+                if (prevMonth !== m.live_date_yyyy_mm) {
+                    html += '<tr>';
+                    html += '<td style="border-bottom: 1px solid lightgrey; border-bottom: 1px solid lightgrey; background-color: lightgrey;" colspan="12"></td>';
+                    html += '</tr>';
+                    prevMonth = m.live_date_yyyy_mm;
+                }
+                html += '<tr style="' + ((m.live_date_yyyy_mm + '').includes('2025') ? '' : ';opacity: 0.6;') + '">';
+                html += '<td style="white-space: nowrap">' + m.live_date_yyyy_mm + '</td>';
+                html += '<td style="width: 90px; white-space: nowrap; padding: 4px; background-color: ' + colors[index] + '">' + (m.status ? m.status : 'Not Live') + '</td>';
+                const link = 'https://architecture.brand_igroup.co/capabilities-2024/landing_pages/docs/' + m.capability_info.id + '.html';
+                html += '<td style="text-align: left; width: 400px;"><a target="_blank" href="' + link + '"><b>' + (m.owning_capability ? m.owning_capability : '') + '</b></a></td>';
+                html += '<td style="text-align: left; width: 400px;">' + (m.brand_or_country ? '' + m.brand_or_country : '') + ' ';
+                html += (m.channel ? ' via ' + m.channel : '') + ' ';
+                html += (m.capability ? ' in ' + m.capability : '') + '</td>';
+                html += '<td>';
+                if (m.slack_announcement_link) {
+                    html += '<div style="margin-left: 5px; margin-right: 5px;">';
+                    html += '<a href="' + m.slack_announcement_link + '" target="_blank">';
+                    html += '<img src="landing_pages/docs/icons/slack_announcement.png" style="height: 30px">';
+                    html += '</a>';
+                    html += '</div>';
+                }
+                html += '</td>';
+                html += '</tr>';
+            });
+            html += '</table>';
+            html += '</div>';
+            index++;
+        });
+
+        document.getElementById('Roadmap').innerHTML = html;
+    }
+
+</script>
+
+<script>
+
+    update();
+    roadmap(['live', 'partially live', 'not live'], ['lightgreen', 'orange', 'lightgrey']);
+
+</script>
+
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

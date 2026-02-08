@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+    </script>
+</head>
+<body>
+
+<div id="Main"></div>
+
+<script>
+    const array = ${data};
+</script>
+
+<script>
+
+    function displayTable(sorted) {
+        let liveCount = sorted.filter(item => item.confirmed_live).length;
+
+        let html = '';
+        html += '<table>';
+        let prev_expectation = '';
+        html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+        html += '<td style="color: grey; text-align: left"></td>';
+        html += '<td style="color: grey; text-align: left"></td>';
+        html += '<td style="color: grey; text-align: center">';
+        html += '<div style="margin: 12px; color: blue; padding: 20px; border: 2px solid blue; font-size: 140%">';
+        html += liveCount;
+        html += '</div>';
+        html += '</td>';
+        html += '</tr>';
+        html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+        html += '<td style="color: grey; text-align: left">Expected</td>';
+        html += '<td style="color: grey; text-align: left"></td>';
+        html += '<td style="color: grey; text-align: center; color: blue">Live Since</td>';
+        html += '</tr>';
+        sorted.forEach(capability => {
+            html += '<tr style="height: 32px; white-space: nowrap; overflow: hidden">';
+            html += '<td style="font-size: 140%; vertical-align: top; color: grey; padding-right: 12px">';
+            html += capability.expected_live !== prev_expectation ? capability.expected_live : '';
+            prev_expectation = capability.expected_live;
+            html += '</td>';
+            html += '<td style="text-align: left; vertical-align: bottom; overflow: hidden; font-size: 80%">';
+            html += '<div style="font-size: 100%; color: grey">' + capability.domain + '</div>';
+            let colorStyle = capability.confirmed_live ? 'color: blue' : '';
+            html += '<div style="font-weight: bold; font-size: 130%; margin-bottom: 22px;' + colorStyle + '">' + capability.capability + '</div>';
+            html += '</td>';
+            html += '<td style="color: grey">';
+            html += capability.confirmed_live;
+            html += '</td>';
+            html += '</tr>';
+        });
+
+        html += '</table>';
+        return html;
+    }
+
+    function display() {
+        array.splice(0, 1);
+        const sorted = array.sort((a, b) => a.expected_live.localeCompare(b.expected_live));
+
+
+        let html = '';
+        html += '<div style="margin: 20px">';
+        html += displayTable(sorted);
+        html += '</div>';
+
+        document.getElementById('Main').outerHTML = html;
+    }
+
+    display();
+
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

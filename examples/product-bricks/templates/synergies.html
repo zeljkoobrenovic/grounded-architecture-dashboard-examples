@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Synergies</title>
+    <style>
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body style="margin: 20px">
+
+<script>
+
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+
+    const append = function (htmlFragment) {
+        html += htmlFragment;
+    }
+
+    function appendTable(synergy) {
+        const capabilities_data = ${capabilities};
+        const data = ${data};
+
+        function capabilityByName(name) {
+            return capabilities_data.filter(c => c.capability && c.capability.toLowerCase() === (name + '').toLowerCase())[0];
+        }
+
+        data.data.forEach(domain => {
+            domain.data = domain.data
+                .filter(l => !synergy || l.capability.toLowerCase().endsWith(' legacy') || (capabilityByName(l.capability) && (capabilityByName(l.capability).synergy_streams + '').toLowerCase().includes(synergy.toLowerCase())))
+                .filter(l => !synergy || (capabilityByName(l.dependency) && (capabilityByName(l.dependency).synergy_streams + '').toLowerCase().includes(synergy.toLowerCase())));
+        });
+
+
+        function brandsLiveCount(name) {
+            const capability = capabilityByName(name);
+            if (capability && capability.live) {
+                if (capability.live_brands) {
+                    return Math.max(1, capability.live_brands.split(',').length);
+                }
+
+                return 1;
+            }
+            return 0;
+        }
+
+        function isCapabilityInSynergyStream(name, synergy_stream) {
+            const capability = capabilityByName(name);
+            if (!synergy_stream || (capability && capability.synergy_stream && capability.synergy_stream.toLowerCase().includes(synergy_stream.toLowerCase()))) {
+                return true;
+            }
+            return false;
+        }
+
+        const dependencies = [];
+        const dependenciesMap = {};
+        const extractDependencies = function () {
+            data.data.forEach(domain => {
+                domain.data.forEach(link => {
+                    const dependency = link.dependency;
+                    const dependency_capability_info = capabilityByName(link.dependency);
+                    if (!dependenciesMap[dependency]) {
+                        dependenciesMap[dependency] = {
+                            domain: link.dependency_domain,
+                            dependency: dependency
+                        };
+                        dependencies.push(dependenciesMap[dependency]);
+                    }
+                });
+            });
+        }
+        extractDependencies();
+
+        const countDependenciesOf = function (capabilityName) {
+            let counters = {
+                usage: 0,
+                inFlight: 0,
+                techDebt: 0,
+                live: 0
+            }
+            data.data.forEach(domain => {
+                domain.data.filter(l => !capabilityName || (l.capability && l.capability.toLowerCase() === capabilityName.toLowerCase())).forEach(link => {
+                    counters.usage += 1;
+                    counters.live += 1;
+                });
+            });
+
+            return counters;
+        }
+        const countDependenciesOfDomain = function (domainLinks) {
+            let counters = {
+                usage: 0,
+                inFlight: 0,
+                techDebt: 0,
+                live: 0
+            }
+            domainLinks.forEach(link => {
+                counters.usage += 1;
+                counters.live += 1;
+            });
+
+            return counters;
+        }
+        const countFactoredDependenciesOfDomain = function (domainLinks) {
+            let counters = {
+                usage: 0,
+                inFlight: 0,
+                techDebt: 0,
+                live: 0
+            }
+            domainLinks.forEach(link => {
+                const count = brandsLiveCount(link.capability);
+                counters.usage += count;
+                counters.inFlight += count;
+                counters.live += count;
+            });
+
+            return counters;
+        }
+        const countCapabilitiesOf = function (dependencyName) {
+            let counters = {
+                usage: 0,
+                inFlight: 0,
+                techDebt: 0,
+                live: 0
+            }
+            data.data.forEach(domain => {
+                domain.data.filter(l => l.dependency && dependencyName && l.dependency.toLowerCase() === dependencyName.toLowerCase()).forEach(link => {
+                    counters.usage += 1;
+                    counters.live += 1;
+                });
+            });
+
+            return counters;
+        }
+
+        const capabilities = [];
+        const capabilitiesMap = {};
+        const extractCapabilities = function () {
+            data.data.forEach(domain => {
+                domain.data.forEach(link => {
+                    const capability = link.capability;
+                    const capability_info = capabilityByName(link.capability);
+                    if (!capabilitiesMap[capability]) {
+                        capabilitiesMap[capability] = {
+                            domain: domain.source,
+                            capability: capability,
+                            in_flight: link.in_flight,
+                            expected_live: link.expected_live,
+                            confirmed_live: link.confirmed_live,
+                        };
+                        capabilities.push(capabilitiesMap[capability]);
+                    }
+                    capabilitiesMap[capability][link.dependency] = link;
+                });
+            });
+        }
+        extractCapabilities();
+
+        function brandsLiveAll() {
+            let count = 0;
+            capabilities.forEach(c => {
+                count += brandsLiveCount(c.capability);
+            });
+            return count;
+        }
+
+
+        if (synergy) {
+            append('<table style="box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; padding: 43px">');
+        } else {
+            append('<table>');
+        }
+
+        const all_counts = countDependenciesOf(null);
+
+        append('<tr style="text-align: center">');
+        append('<td colspan="2" style="padding-top: 3px; vertical-align: top; text-align: right; font-size: 80%"></td>');
+
+        append('<td style="font-size: 110%" colspan="2">');
+        append('<div style="margin-bottom: 4px; padding-bottom: 4px; margin-left: 10px; margin-right: 10px; ">');
+        let allData = [];
+
+        data.data.forEach(domain => {
+            allData = allData.concat(domain.data);
+        });
+
+        const counts_all = countFactoredDependenciesOfDomain(allData);
+        append('<div style="text-align: center; display: inline-block;color: darkgreen;">' + (counts_all.live ? counts_all.live : '-') + '</div>');
+        append('</td>');
+
+        data.data.forEach(domain => {
+            append('<td style="min-width: 200px; font-size: 110%" colspan="' + (capabilities.filter(c => c.domain === domain.source).length) + '">');
+            append('<div style="margin-bottom: 4px; padding-bottom: 4px; margin-left: 10px; margin-right: 10px; ">');
+            const counts = countFactoredDependenciesOfDomain(domain.data);
+            append('<div style="text-align: center; display: inline-block;color: darkgreen;">' + (counts.live ? counts.live : '-') + '</div>');
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        data.data.forEach(domain => {
+            append('<td style="font-size: 80%" colspan="' + (capabilities.filter(c => c.domain === domain.source).length) + '">');
+            append('<div style="margin-bottom: 4px; padding-bottom: 4px; margin-left: 10px; margin-right: 10px; ">');
+            const counts = countDependenciesOfDomain(domain.data);
+            append('<div style="text-align: center; display: inline-block; border: 2px solid green; color: darkgreen; width: 22px">' + (counts.live ? counts.live : '-') + '</div>');
+            append('</div>');
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        data.data.forEach(domain => {
+            append('<td style="font-size: 80%" colspan="' + (capabilities.filter(c => c.domain === domain.source).length) + '">');
+            append('<div style="font-size: 130%; margin-bottom: 4px; padding-bottom: 4px; margin-left: 10px; margin-right: 10px; border-bottom: 1px solid lightgrey; ">');
+            append(domain.source.toUpperCase());
+            append('</div>');
+            append('</td>');
+        });
+        append('</tr>');
+        append('<tr style="text-align: center">');
+        append('<td colspan="2" style="text-align: right; padding-bottom: 0px; font-size: 80%"></td>');
+        append('<td>');
+        append('</td>');
+        append('<td></td>');
+        capabilities.filter(c => isCapabilityInSynergyStream(c.capability, synergy)).forEach(capability => {
+            append('<td style="font-size: 70%; padding-bottom: 0px">');
+            const count = brandsLiveCount(capability.capability);
+            const counts = countDependenciesOf(capability.capability);
+
+            const live = count * counts.live
+            const debt = count * counts.techDebt
+
+            append('<span style="color: green; font-weight: bold; font-size: 100%">' + (live ? live : '-') + '</span>');
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td colspan="2" style="text-align: right; padding-bottom: 0px; font-size: 80%">Brand Launches: </td>');
+        append('<td style="padding-bottom: 0px">');
+        append('<div style="border: 1px solid #5009dc; background-color: #5009dc; color: white; padding: 5px">');
+        append('<span style="color: white; font-weight: bold; font-size: 140%">' + brandsLiveAll() + '</span>');
+        append('</div>');
+        append('</td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            append('<td style="font-size: 70%; padding-bottom: 0px; text-align: center">');
+            const count = brandsLiveCount(capability.capability);
+            if (count) {
+                append('<div style="margin: 0 auto; width: 23px; border-bottom: 4px solid #5009dc;  border-top: 4px solid #5009dc; color: #5009dc; font-weight: bold; font-size: 210%">' + (count ? count : '-') + '</div>');
+            } else {
+                append('<div style="margin: 0 auto; width: 23px; color: #5009dc; font-weight: bold; font-size: 210%">' + (count ? count : '-') + '</div>');
+            }
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            const capability_info = capabilityByName(capability.capability);
+            append('<td style="font-size: 70%; padding-bottom: 0px; vertical-align: top">');
+            append('<img src="assets/synergies/up.png" style="width: 28px; filter: grayscale(100%)"><br><br>');
+            if (capability_info) {
+                append('<img src="assets/icons/' + capability_info.id + '.png" style="width: 40px">');
+            } else {
+                if (capability.capability.toLowerCase().startsWith("fr ")) {
+                    append('<img src="assets/icons/fr.svg" style="width: 40px; filter: grayscale(1);">');
+                } else if (capability.capability.toLowerCase().startsWith("de ")) {
+                    append('<img src="assets/icons/de.svg" style="width: 40px; filter: grayscale(1);">');
+                } else if (capability.capability.toLowerCase().startsWith("be ")) {
+                    append('<img src="assets/icons/be.svg" style="width: 40px; filter: grayscale(1);">');
+                }
+            }
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            append('<td style="font-size: 60%; vertical-align: top; color: black; ' +
+                'overflow: hidden; max-width: 30px; max-height: 2em">');
+            append(capability.capability);
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        capabilities.forEach(capability => {
+            append('<td style="border-bottom: 1px solid lightgrey; height: 1px; margin-bottom: 14px"></td>');
+        });
+        append('</tr>');
+
+
+        append('<tr style="text-align: center">');
+        append('<td colspan="2" style="text-align: right; padding-bottom: 0px; font-size: 80%">Target Synergies: ' +
+            '</td>');
+        append('<td style="padding-bottom: 0px">');
+        append('<div style="border: 1px solid green; background-color: green; color: white; padding: 5px">');
+        append('<span style="color: white; font-weight: bold; font-size: 140%">' + all_counts.live + '</span>');
+        append('</div>');
+        append('</td>');
+        append('<td><img src="assets/synergies/synergy.png" style="width: 34px;"></td>');
+        let domain = '';
+        capabilities.forEach(capability => {
+            let border = '';
+            if (domain !== capability.domain) {
+                domain = capability.domain;
+                border = 'border-left: 1px solid lightgrey';
+            }
+            append('<td style="font-size: 70%; padding-bottom: 0px;' + border + '">');
+            const counts = countDependenciesOf(capability.capability);
+            let live = counts.live;
+            if (live) {
+                append('<div style="width: 30px; height: 30px; background-color: darkgreen; color: white; margin: 0 auto; font-weight: bold; font-size: 180%"><div style="padding-top: 4px">' + live + '</div></div>');
+            } else {
+                append('<span style="margin: 0 auto; font-weight: bold; font-size: 210%">' + (live ? live : '-') + '</span>');
+            }
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        append('<td style="border-bottom: 1px solid lightgrey; height: 1px"></td>');
+        capabilities.forEach(capability => {
+            append('<td style="border-bottom: 1px solid lightgrey; height: 1px; margin-bottom: 14px"></td>');
+        });
+        append('</tr>');
+
+        dependencies.forEach(dependency => {
+            const dependency_capability_info = capabilityByName(dependency.dependency);
+            append('<tr style="font-size: 80%">');
+            append('<td style="min-width: 200px; text-align: right; ">');
+            append('<div style="font-size: 90%">' + dependency.domain + '</div>');
+            append('<div>' + dependency.dependency + '</div>');
+            append('</td>');
+            append('<td style="padding-right: 12px">');
+            if (dependency_capability_info) {
+                append('<img src="assets/icons/' + dependency_capability_info.id + '.png" style="width: 32px">');
+            }
+            append('</td>');
+            append('<td style="font-size: 120%; text-align: center" colspan="2">');
+            const counts = countCapabilitiesOf(dependency.dependency);
+            let live = counts.live;
+            if (live) {
+                append('<div style="text-align: center; display: inline-block; border: 1px solid darkgreen; background-color: darkgreen; color: white; width: 22px">' + live + '</div>');
+            } else {
+                append('<div style="text-align: center; display: inline-block; border: 1px dashed white; color: darkgreen; width: 22px">-</div>');
+            }
+            let debt = counts.techDebt;
+            if (debt) {
+                append('<div style="text-align: center; display: inline-block; border: 1px solid crimson; background-color: crimson; color: white; width: 22px">' + debt + '</div>');
+            } else {
+                append('<div style="text-align: center; display: inline-block; border: 1px dashed white; color: darkgreen; width: 22px">-</div>');
+            }
+            append('<div style="margin-left: 2px; text-align: center; display: inline-block; border: 1px dashed lightgrey; color: #00aa00; width: 22px">' + (counts.inFlight ? counts.inFlight : '&nbsp;') + '</div>');
+            append('<div style="text-align: center; display: inline-block; color: lightgrey; width: 22px">' + (counts.usage ? counts.usage : '-') + '</div>');
+            append('</td>');
+            let domain = '';
+            capabilities.forEach(capability => {
+                let border = '';
+                if (domain !== capability.domain) {
+                    domain = capability.domain;
+                    border = 'border-left: 1px solid lightgrey';
+                }
+                append('<td style="width: 50px;min-width: 50px;max-width: 50px; text-align: center; ' + border + '">');
+                let link = capability[dependency.dependency];
+                if (link) {
+                    const note = link.note ? '\n\n' + link.note : '';
+                    append('<div>');
+                    append('<img src="assets/synergies/synergy.png" style="width: 24px; vertical-align: middle" title="LIVE' + note + '">');
+                    append('</div>');
+                } else {
+                    append('')
+                }
+                append('</td>');
+            });
+
+            append('<td style="color: blue; font-size: 80%">');
+            if (dependency_capability_info) {
+                let teams = dependency_capability_info.team ? dependency_capability_info.team : '';
+                let legacyTeams = dependency_capability_info.teams_maintaining_legacies ? dependency_capability_info.teams_maintaining_legacies : '';
+                append('<div style="color: blue" title="teams building WL capability: ' + teams + '">');
+                append(teams);
+                append('</div>');
+                append('<div style="color: skyblue" title="teams maintaining legacies: ' + legacyTeams + '">');
+                append(legacyTeams);
+                append('</div>');
+            }
+            append('</td>');
+            append('</tr>');
+        });
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            const capability_info = capabilityByName(capability.capability);
+            append('<td style="font-size: 70%; padding-bottom: 0px; vertical-align: top">');
+            if (capability_info) {
+                append('<img src="assets/icons/' + capability_info.id + '.png" style="width: 40px">');
+            }
+            append('</td>');
+        });
+        append('</tr>');
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            append('<td style="font-size: 60%; vertical-align: top; color: black; overflow: hidden; max-width: 30px">');
+            append(capability.capability);
+            append('</td>');
+        });
+        append('</tr>');
+
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            const capability_info = capabilityByName(capability.capability);
+            append('<td style="font-size: 60%; vertical-align: top; color: black; overflow: hidden; max-width: 30px; color: grey">');
+            append(capability_info && capability_info.synergy_streams ? capability_info.synergy_streams.replace(/\,/g, '<br>') : '');
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            const capability_info = capabilityByName(capability.capability);
+            append('<td style="font-size: 60%; vertical-align: top; color: black; overflow: hidden; max-width: 30px; color: blue">');
+            append(capability_info && capability_info.team ? capability_info.team.replace(/\,/g, '<br>') : '');
+            append('</td>');
+        });
+        append('</tr>');
+        append('<tr style="text-align: center">');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        append('<td></td>');
+        capabilities.forEach(capability => {
+            const capability_info = capabilityByName(capability.capability);
+            append('<td style="font-size: 60%; vertical-align: top; color: black; overflow: hidden; max-width: 30px; color: skyblue">');
+            append(capability_info && capability_info.teams_maintaining_legacies ? capability_info.teams_maintaining_legacies.replace(/\,/g, '<br>') : '');
+            append('</td>');
+        });
+        append('</tr>');
+
+        append('</table>');
+    }
+
+    appendTable('');
+
+    div.outerHTML = html;
+</script>
+
+<div style="margin-top: 24px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated based on this source
+    <a style="color: #a0a0a0;" target="_blank"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

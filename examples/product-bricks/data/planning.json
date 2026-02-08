@@ -1,0 +1,5147 @@
+{
+  "metadata": {
+    "exportDate": "2025-03-19"
+  },
+  "data": [
+    {
+      "source": "Cycle 9",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "DevOps Tooling",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Lead Scorings",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design System",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Private (Owner/Seeker) Subscription",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Developer Portal",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead x Agent Matching",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Payment Platform",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "User Tracking"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Cookie Consent Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Import",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "User Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unstructured Data Processing",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Lead Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Profile",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Sort Order",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Off-Platform Advertising",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Export",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Contracts Gateway",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Mortgage Rate Estimation",
+          "assignee": "Assignee"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "assignee": "Assignee"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 8",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2C CRM",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Call Tracking",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)",
+          "leading_domain": "Seeker",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "leading_domain": "Mobile",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Data Quality",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Data Quality",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Export",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Import",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Import",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Sort Order",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Visibility Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "leading_domain": "Mobile",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Content Moderation",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Content Moderation",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Cookie Consent Management",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Cookie Consent Management",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics",
+          "leading_domain": "Data Analytics",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Catalog",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Integration Platform",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Integration Platform",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design system",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design system",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "DevOps Tooling",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "DevOps Tooling",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Economic Content Creation",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Economic Content Creation",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel",
+          "leading_domain": "Mobile",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Historized Data Storage",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Identity Verification",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Infringing Contents Detection",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Infringing Contents Detection",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Infringing Contents Detection",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Performance Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Online Classified Acquisition",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Pro Tool Foundation",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Malicious Users Detection",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "leading_domain": "Data & Science",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing automation",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing automation",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Notification Service",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Off-Platform Advertising",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Off-Platform Advertising",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Classifieds Management",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Classifieds Management",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Coaching Experience",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Property Management",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Property Management",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Payment Platform",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Payment Platform",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Price Page",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Price Page",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Private (Owner/Seeker) Subscription",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Property Knowledge",
+          "leading_domain": "Data & Science",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Property Valuation Tool",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling",
+          "brand_i": "QA",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling",
+          "brand_i": "AI",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Lead Management",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Profile",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Scorings",
+          "leading_domain": "Marketplace Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Properties Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Properties Management",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Properties Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Properties Management",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Contracts Gateway",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Contracts Gateway",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation",
+          "leading_domain": "Mobile",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation",
+          "leading_domain": "Mobile",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unstructured Data Processing",
+          "leading_domain": "Data & Science",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "User Tracking",
+          "leading_domain": "Design",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "User Tracking",
+          "leading_domain": "Marketplace Design",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "User Tracking",
+          "leading_domain": "Marketplace Design",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Seeker",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Seeker",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1",
+          "leading_domain": "Platform Experience",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "All",
+          "leading_domain": "Program Management",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "QA",
+          "leading_domain": "Program Management",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT Service",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT Service",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT Service",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Apps Management",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Apps Management",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Apps Management",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Apps Management",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Apps Management",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Enterprise Systems",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Enterprise Systems",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Enterprise Systems",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Enterprise Systems",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Enterprise Systems",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "leading_domain": "Platform Experience",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security",
+          "leading_domain": "Security (CISO)",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security",
+          "leading_domain": "Security (CISO)",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Internal Communications",
+          "leading_domain": "CIO",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "M&A",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "leading_domain": "Owner/Seller",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "FinOps",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "FinOps",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "FinOps",
+          "leading_domain": "CIO",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Intermediary",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2",
+          "leading_domain": "Mobile",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "leading_domain": "Program Management",
+          "reporter": "Reporter"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Sustainability",
+          "leading_domain": "Seeker",
+          "assignee": "Assignee",
+          "reporter": "Reporter"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 7",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Notification Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Agency Visibility Management",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "A/B Testing Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "None"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "None",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Common Leads Management Platform",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Call Tracking",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Property Decision Tools",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Price Page"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Property Knowledge"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Sort Order"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Economic Content Creation",
+          "legacy": "No"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "None"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Yes"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 6",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Cookie Consent Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified B2C Web Shell",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified B2C Web Shell",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Design System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Content Management System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Search / Alerts"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Notification Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Notification Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Contacting Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Contacting Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Software Vendors Integration Hub"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Contracts Gateway"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Portfolio Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Catalog"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Mobile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Call Tracking",
+          "brand_i": "PoC"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seeker Lead Scoring"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Research"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Prospection Map"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Mobile Apps Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "brand_i": "Marketing Operations"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation",
+          "brand_i": "Marketing Operations"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Integration Platform"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Actor Scorings",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Coaching Experience"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Price Page"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Sold Properties Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Payment Platform"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "FinOps"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Legal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Legal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Legal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Legal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Legal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "IT"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "QA Tooling"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 5",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Marketing Automation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Product Backoffice"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Chat Messaging Services"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Data Catalog"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Core Analytics"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "FSBO Online Classifieds Acquisition",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Call Tracking",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "GeoRef"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Market Knowledge"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Payment Platform"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Searches / Alerts"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Page"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Home Purchase Financing"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified B2C Web Shell"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Saved Searches / Alerts"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "SEO Management",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Portfolio Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Lead Scorings"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Off-Platform Advertising",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Contracts Gateway"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "HR"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Owner Hub"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "CIO"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "CIO"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Discovery"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Classifieds Data Quality",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "brand_i": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "link": "https://google.com",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Cookie Consent Management",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Software Vendors Integration Hub"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 4",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "CIO"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Seller Lead Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Online Classifieds Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Off-Platform Advertising",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Call Tracking",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "GeoRef"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Core Analytics"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Core Analytics"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classifieds Data Quality",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Historized Data Storage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Actor Scoring",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Actor Scoring",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Seeker Lead Scorings",
+          "legacy": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Seeker Lead Scorings",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3, Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Prospection Map"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "FSBO Online Classifieds Acquisition",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "FSBO Online Classifieds Acquisition",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified Contracts Gateway"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Design System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Product Backoffice"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Marketing Automation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3, Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "HR"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "CIO"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Product"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Cookie Consent Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified B2C Web Shell"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classified Details Page (CDP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Search Engine Results Page (SERP)"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Consumer Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 3",
+      "data": [
+        {
+          "initiative_name": "Initiative",
+          "wl": "AWS Foundation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "QSL CRM"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classifieds Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Historized Data Storage"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Design System"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Estimation Funnel"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "GeoRef"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Homepage"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Intermediary Profile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Actor Scoring",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Lead Scorings"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Marketing Automation"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Media Management"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Price Page"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Prospection Map"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Prospection Map"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Authentication Service"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified B2C Web Shell"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Unified Frontend"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Sold Properties Acquisition"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "OTP"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "OTP"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Mobile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "FSBO Online Classifieds Acquisition",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "brand_i": "Security"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1, Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Mobile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Consumer Portal"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "B2B CRM",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Mobile"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "wl": "Classifieds Data Quality",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_1"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Global"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_2"
+        },
+        {
+          "initiative_name": "Initiative",
+          "legacy": "Country_3"
+        }
+      ]
+    },
+    {
+      "source": "Cycle 2",
+      "data": []
+    },
+    {
+      "source": "Cycle 1",
+      "data": []
+    }
+  ]
+}

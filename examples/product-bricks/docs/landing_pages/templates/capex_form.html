@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>${capability_name}</title>
+    <style>
+        @page {
+            size: auto;
+            margin: 30mm;
+        }
+
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+            background-color: #f6f6f6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        .group {
+            margin-top: 42px;
+            padding: 20px;
+            overflow: hidden;
+            border: 3px dashed black;
+            border-radius: 12px;
+            break-inside: avoid;
+            background-color: white;
+        }
+
+        .number {
+            display: inline-block;
+            border-radius: 4px;
+            padding: 15px;
+            text-align: center;
+            margin: 8px;
+            width: 100px;
+        }
+
+        .dependency-icon {
+            height: 32px;
+            margin-left: 8px;
+            margin-right: 8px;
+            padding: 4px;
+            border-radius: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+</head>
+<body style="padding: 20px">
+
+<script>
+    const all_capabilities = ${all_capabilities};
+    const capability = ${capability_data};
+    const capability_targets = ${capability_targets};
+    const product_reviews = ${product_reviews};
+    const beebole = ${beebole};
+    const planning = ${planning};
+    const dependencies = ${dependencies};
+    const reverse_dependencies = ${reverse_dependencies};
+    const roadmap = ${roadmap};
+
+</script>
+<div id="Main"></div>
+<script>
+
+    function displayTable(roadmap) {
+        let html = '';
+        html += '<table>';
+        html += '<tr>';
+        html += '<td>';
+        html += '<table style="display: inline-block; vertical-align: top">';
+        html += '<tr style="font-size: 10px">';
+        html += '<td></td>';
+        html += '<td></td>';
+        roadmap.months.forEach(month => {
+            if (month.month === 6) {
+                html += '<td colspan="2" style="text-align: center">' + month.year + '</td>';
+            } else if (month.month === 7 && month.year > 2022) {
+            } else {
+                html += '<td></td>';
+            }
+        });
+        html += '</tr>';
+        html += '<tr style="font-size: 80%">';
+        html += '<td>';
+        html += '</td>';
+        roadmap.months.forEach(month => {
+            html += '<td>' + month.month + '</td>';
+        });
+        html += '</tr>';
+        html += '<tr style="font-size: 50%">';
+        html += '<td></td>';
+        html += '</tr>';
+
+        let index = 0;
+        html += '<tr style="height: 32px;">';
+        html += '<td>';
+        html += '<div class="number" style="vertical-align: bottom">';
+        html += '<div style="font-size: 43px">' + Math.round(roadmap.man_months / 12);
+        html += '<span style="color: #b0b0b0; font-size: 80%">MY</span></div>';
+        html += '<div style="font-size: 14px; color: #b0b0b0">(estimated<br>total&nbsp;effort)</div>';
+        html += '</div>';
+        html += '</td>';
+        roadmap.months.forEach(month => {
+            const monthId1 = month.year + '-' + (month.month < 10 ? '0' : '') + (month.month);
+            const monthId2 = month.year + '-' + month.month;
+
+            const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+            html += '<td style="border-bottom: 1px solid lightgrey; vertical-align: bottom; text-align: left; ' + border + '">';
+
+            const title = month.year + ' ' + month.month
+                + '\nbuilding: ' + month.buildEffort + ' FTE'
+                + '\nscaling: ' + month.scalingEffort + ' FTE'
+                + '\nretiring: ' + month.retiringEffort + ' FTE';
+
+            const lineStyle =
+                ((monthId1 === capability.confirmed_live || monthId2 === capability.confirmed_live) ? 'border: 3px solid crimson;' :
+                    (monthId1 === capability.expected_live || monthId2 === capability.expected_live) ? 'border: 3px dotted crimson;' : '');
+
+            html += '<div style="display: inline-block; vertical-align: bottom;' + lineStyle + '" title="' + (title) + '">';
+            html += '<div style="border-radius: 1px; background-color: #b0b0b0; width: 20px; height: ' + (month.retiringEffort * 3) + 'px">&nbsp;</div>';
+            html += '<div style="border-radius: 1px; background-color: orange; width: 20px; height: ' + (month.scalingEffort * 3) + 'px">&nbsp;</div>';
+            html += '<div style="border-radius: 1px; background-color: #315b7c; width: 20px; height: ' + (month.buildEffort * 3) + 'px">&nbsp;</div>';
+            html += '</div>';
+
+            html += '</td>';
+        });
+        html += '</tr>';
+        if (beebole && beebole.length) {
+            console.log(beebole);
+            html += '<tr>';
+            html += '<td style="vertical-align: top">';
+            if (beebole && beebole.length) {
+                const totalFTEs = beebole.map((b => b.fte)).reduce((a, b) => a + b);
+                html += '<div class="number">';
+                html += '<div style="font-size: 43px; color: #1ccfc9">' + Math.round(totalFTEs / 12);
+                html += '<span style="color: #b0b0b0; font-size: 80%">MY</span></div>';
+                html += '<div style="font-size: 14px; color: #b0b0b0">(reported<br>effort)</div>';
+                html += '</div>';
+                html += '</div>';
+            }
+            html += '</td>';
+            roadmap.months.forEach(month => {
+                const monthId1 = month.year + '-' + (month.month < 10 ? '0' : '') + (month.month);
+                const monthId2 = month.year + '-' + month.month;
+                const border = month.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                html += '<td style="border-bottom: 1px solid lightgrey; vertical-align: top; text-align: left;' + border + '">';
+                beebole.forEach(b_item => {
+                    if (b_item.year + '' === month.year + '' && (b_item.month + '' === month.month + '' || b_item.month + '' === '0' + month.month)) {
+                        const border = b_item.month === 12 ? 'border-right: 1px solid lightgrey' : '';
+                        let fte = Math.round(b_item.fte);
+                        const title = b_item.year + ' ' + b_item.month + ': ' + fte + ' FTEs';
+                        html += '<div style="border-radius: 1px; background-color: #1ccfc9; width: 20px; height: ' + (fte * 3) + 'px" title="' + title
+                            + '">&nbsp;</div>';
+                    }
+                });
+                html += '</td>';
+            });
+            html += '</tr>';
+        }
+
+        html += '</table>';
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+        return html;
+    }
+
+    function addBenefit() {
+        let html = '';
+
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Future Economic Benefit and Expected Net Business Value</div>';
+
+        html += '</div>';
+
+        return html;
+    }
+
+    function addRoadmap() {
+        let html = '';
+
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/capabilities/index.html#Progress">Expected Investment</a></div>';
+
+        if (roadmap && roadmap.length) {
+            html += displayTable(roadmap[0]);
+        }
+        html += '</div>';
+
+        return html;
+    }
+
+    function isFalse(value) {
+        return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+    }
+
+    function isTrue(value) {
+        return !isFalse(value);
+    }
+
+</script>
+
+<script>
+    let div = document.createElement('div');
+    document.body.appendChild(div);
+
+    let html = '';
+
+    html += '<div style="margin: 20px">';
+
+    function addHeader() {
+        html += '<table>';
+        html += '<tr>';
+        html += '<td>';
+        html += '<div>';
+        html += '<img src="icons/' + capability.id + '.png" style="width: 70px">';
+        html += '</div>';
+        html += '</td>';
+        html += '<td style="vertical-align: top">';
+        html += '<div style="margin-left: 20px; font-size: 90%; color: grey; vertical-align: top">';
+        html += capability.domain_ea;
+        html += '</div>';
+        html += '<div style="font-size: 50px; margin-left: 20px">';
+        if (isFalse(capability.in_flight)) {
+            html += '[Not In-Flight] ';
+        }
+        html += capability.capability;
+        html += ' Capability CAPEX Form</div>';
+        if (capability.description) {
+            html += '<div style="font-size: 50px">';
+            html += capability.description;
+            html += '</div>';
+        }
+        html += '</td>';
+        html += '</tr>';
+        html += '</table>';
+    }
+
+    addHeader();
+
+    function addMetaData() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Metadata</div>';
+
+        html += '<table style="font-size: 120%">';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey; max-width: 200px">Definition:</td>';
+        html += '<td style="font-weight: bold">';
+        html += capability.short_description ? capability.short_description : '';
+        html += '</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey; max-width: 200px">Type:</td>';
+        html += '<td style="font-weight: bold">Capability</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey">Legal Entity:</td>';
+        html += '<td style="font-weight: bold">Brand_I Group</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey">IC Code:</td>';
+        html += '<td style="font-weight: bold">DCF</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey">Sponsor:</td>';
+        html += '<td style="font-weight: bold">...</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey">Date:</td>';
+        html += '<td style="font-weight: bold">${date}</td>';
+        html += '</tr>';
+        html += '<tr>';
+        html += '<td style="text-align: right; color: grey; vertical-align: top">IFRS Criteria<br>(tinder&nbsp;IAS&nbsp;38):</td>';
+        html += '<td style="font-weight: bold">' +
+            '<div><input type="checkbox" checked> “Identifiability” and “Control”</div>' +
+            '<div><input type="checkbox" checked> Feasibility and intention of completion</div>' +
+            '<div><input type="checkbox" checked> Probable future economic benefits</div>' +
+            '<div><input type="checkbox" checked> Expenditure can be measured reliable</div></td>';
+        html += '</tr>';
+        html += '</table>';
+
+        html += '</div>';
+    }
+
+    function addMilestones() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">Release Targets</div>';
+
+        if (capability_targets.length > 0) {
+            html += '<table style="margin-top: 24px">';
+            let first = true;
+
+            let prevCycle = null;
+
+            function addTargets(list) {
+                capability_targets.forEach(target => {
+                        html += '<tr>';
+                        html += '<td style="vertical-align: middle; color: blue;">';
+                        html += target.okr_3_1_target === 'true' ? '<img src="icons/okr.png" style="width: 20px">' : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                    let okrFragment = '<a target="_blank" href="../../okr-report.html">OKR 3.1</a>';
+                    html += target.okr_3_1_target === 'true' ? okrFragment : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.live_date_yyyy_mm ? target.live_date_yyyy_mm : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += 'Live ' + (target.brand_or_country ? ' on ' + target.brand_or_country : '');
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.channel ? 'via ' + target.channel : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; color: blue; padding-right: 12px">';
+                        html += target.capability ? 'via ' + target.capability : '';
+                        html += '</td>';
+                        html += '<td style="vertical-align: top">';
+                        let status = target.status ? target.status : 'Not Live';
+                        let color = status.toLowerCase().startsWith('live') ? 'yellowgreen' : (status.toLowerCase().startsWith('partial') ? 'orange' : 'lightgrey');
+                        html += '<div style="background-color: ' + color + '; padding: 8px; ">';
+                        html += status ? status : '';
+                        html += '</div>';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; padding-left: 6px">';
+                        if (target.slack_announcement_link) {
+                            html += '<div style="margin-left: 12px">';
+                            html += '<a href="' + target.slack_announcement_link + '" target="_blank">';
+                            html += '<img src="icons/slack_announcement.png" style="height: 30px">';
+                            html += '</a>';
+                            html += '</div>';
+                        }
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle; padding-left: 10px">';
+                        html += '</td>';
+                        html += '<td style="vertical-align: middle">';
+                        html += '</td>';
+                        html += '</tr>';
+                    }
+                )
+                ;
+                first = false;
+            }
+
+            addTargets(capability_targets);
+
+            html += '</table>';
+        } else {
+            html += '<p style="color: grey">Milestones not defined.</p>';
+        }
+
+        html += '</div>';
+    }
+
+    function addPlanning() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px">' +
+            '<a target="_blank" href="https://architecture.Brandgroup.co/planning/index/index.html">' +
+            'Initiatives' +
+            '</a>' +
+            '</div>';
+
+        let filtered_plans = planning.filter(c => c.initiatives.length);
+        if (filtered_plans.length) {
+            html += '<table style="margin-top: 24px">';
+            html += '<tr>';
+            let first = true;
+            filtered_plans.forEach(cycle => {
+                html += '<td style="text-align: center; font-size: 120%; color: lightgrey;">';
+                html += '<div style="border-bottom: 3px dashed lightgrey; margin-left: 10px; margin-right: 10px">';
+                const style = first ? 'font-size: 140%;' : '';
+                html += '<div style="color: black;' + style + '">Cycle #' + cycle.cycle + '</div>';
+                html += '<div style="color: grey; font-size: 85%">' + cycle.info + '</div>';
+                html += '</div>';
+                html += '</td>';
+                first = false;
+            });
+            html += '</tr>';
+            html += '<tr>';
+
+            first = true;
+            planning.filter(c => c.initiatives.length).forEach(cycle => {
+                const width = first ? 400 : 300;
+                html += '<td style="vertical-align: top; width: ' + width + 'px">';
+                cycle.initiatives.forEach(initiative => {
+                    let style = 'overflow: hidden; vertical-align: top;border: 1px solid black;  margin: 16px; padding: 16px; background: #f8f8f8; display: inline-block;';
+                    if (first) {
+                        style += '; font-size: 110%';
+                    } else {
+                        style += '; font-size: 90%; color: #a0a0a0;';
+                    }
+                    html += '<div style="' + style + '; width: calc(100% - 70px)">';
+                    html += '<table><tr><td>';
+                    html += '<img src="icons/planning.png" style="width: 42px; margin-right: 12px;">';
+                    html += '</td><td style="vertical-align: top">';
+                    if (initiative.link) {
+                        html += '<a target="_blank" href="' + initiative.link + '">';
+                    }
+                    html += initiative.initiative_name;
+                    if (initiative.link) {
+                        html += '</a>';
+                    }
+                    html += '</td></tr></table>';
+                    html += '</div>';
+                });
+                html += '</td>';
+                first = false;
+            });
+            html += '</tr>';
+            html += '</table>';
+        } else {
+            html += '<p style="color: grey">No planned initiatives provided.</p>';
+        }
+        html += '</div>';
+    }
+
+    function addDependencies() {
+        html += '<div  class="group">';
+        html += '<div style="font-size: 200%; margin-bottom: 12px"><a target="_blank" href="https://architecture.Brandgroup.co/capabilities/index.html#Synergies">Target WL Dependencies</a></div>';
+
+        function statusOf(dependency) {
+            let status = 4;
+
+            return status;
+        }
+
+        first = true;
+        if (dependencies.length || reverse_dependencies.length) {
+            html += '<table>';
+            let first = true;
+            reverse_dependencies.sort((a, b) => statusOf(b) - statusOf(a)).filter(d => !d.capability.toLowerCase().includes('legacy')).forEach(dependency => {
+                const status = statusOf(dependency);
+
+                html += '<tr>';
+
+                if (first) {
+                    html += '<td rowspan="100" style="width: 100px; text-align: center; padding-right: 26px">';
+                    html += '<img src="icons/' + capability.id + '.png" style="height: 78px; margin: 12px">';
+                    html += '<div style="font-size: 80%; color: grey">' + capability.capability + '</div>';
+                    html += '</td>';
+                    first = false;
+                }
+
+                html += '<td style="padding-right: 14px; padding-right: 32px; vertical-align: middle">';
+                const extraStyle = status >= 3 ? '' : 'opacity: 0.2';
+                html += '<img src="icons/dependency-from.png" style="height: 30px; ' + extraStyle + '">';
+                html += '</td>';
+
+                html += '<td style="padding-right: 14px">';
+                if (dependency.image_id) {
+                    html += '<img src="icons/' + dependency.image_id + '.png" style="height: 38px">';
+                }
+                html += '</td>';
+                html += '<td style="vertical-align: top">';
+                html += '<div style="color: grey; padding-right: 12px; font-size: 80%">';
+                html += dependency.source;
+                html += '</div>';
+                if (dependency.image_id) {
+                    html += '<a href="' + dependency.image_id + '.html">';
+                }
+                html += dependency.capability;
+                if (dependency.image_id) {
+                    html += '</a>';
+                }
+                html += '</td>';
+                html += '<td style="' + (status === 1 ? '' : 'filter: grayscale(100%); opacity: 0.1') + '">';
+                html += '<img src="icons/committed.png" class="dependency-icon">';
+                html += '</td>';
+                html += '<td style="' + (status === 2 ? '' : 'filter: grayscale(100%); opacity: 0.1') + '">';
+                html += '<img src="icons/debt.png" class="dependency-icon">';
+                html += '</td>';
+                html += '<td style="' + (status === 3 ? '' : 'filter: grayscale(100%); opacity: 0.1') + '">';
+                html += '<img src="icons/in-flight.png" class="dependency-icon">';
+                html += '</td>';
+                html += '<td style="' + (status === 4 ? '' : 'filter: grayscale(100%); opacity: 0.1') + '">';
+                html += '<img src="icons/synergy.png" class="dependency-icon">';
+                html += '</td>';
+                html += '<td style="color: grey; font-size: 90%">';
+                html += dependency.note ? dependency.note : '';
+                html += '</td>';
+                html += '</tr>';
+            });
+            dependencies.sort((a, b) => statusOf(b) - statusOf(a)).forEach(dependency => {
+                const status = statusOf(dependency);
+
+                html += '<tr>';
+                if (first) {
+                    html += '<td rowspan="100" style="width: 100px; text-align: center; padding-right: 26px">';
+                    html += '<img src="icons/' + capability.id + '.png" style="height: 78px; margin: 12px">';
+                    html += '<div style="font-size: 80%; color: grey">' + capability.capability + '</div>';
+                    html += '</td>';
+                    first = false;
+                }
+
+                html += '<td style="padding-right: 14px; padding-right: 32px; vertical-align: middle">';
+                const extraStyle = status >= 3 ? '' : 'opacity: 0.2';
+                html += '<img src="icons/dependency-to.png" style="height: 30px; ' + extraStyle + '">';
+                html += '</td>';
+                html += '<td style="padding-right: 14px; vertical-align: middle">';
+                if (dependency.image_id) {
+                    html += '<img src="icons/' + dependency.image_id + '.png" style="height: 38px">';
+                }
+                html += '</td>';
+                html += '<td style="padding-right: 14px; vertical-align: middle">';
+                html += '<div style="color: grey; padding-right: 12px; font-size: 80%">';
+                html += dependency.dependency_domain;
+                html += '</div>';
+                if (dependency.image_id) {
+                    html += '<a href="' + dependency.image_id + '.html">';
+                }
+                html += dependency.dependency;
+                if (dependency.image_id) {
+                    html += '</a>';
+                }
+                html += '</td>';
+                html += '<td style="color: grey; font-size: 90%">';
+                html += dependency.note ? dependency.note : '';
+                html += '</td>';
+                html += '</tr>';
+            });
+            html += '</table>';
+        } else {
+            html += '<p style="color: grey">No dependecy data provided.</p>';
+        }
+
+        html += '</div>';
+    }
+
+    addMetaData();
+    addPlanning();
+    html += addBenefit();
+    html += addRoadmap();
+    addMilestones();
+    addDependencies();
+
+    html += '</div>';
+
+    div.outerHTML = html;
+</script>
+</body>
+</html>

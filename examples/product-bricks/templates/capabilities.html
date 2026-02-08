@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .domain-title {
+            font-size: 120%;
+            color: black;
+            margin: 6px;
+        }
+
+        .progress-container {
+            width: 66px;
+            height: 10px;
+            display: inline-block;
+            background-color: #d9d9d9;
+            margin-right: 6px;
+        }
+
+        .progress {
+            height: 8px;
+            background-color: blue;
+        }
+
+        .domain {
+            border: 1px solid grey;
+            border-radius: 6px;
+            padding: 5px;
+            margin: 20px;
+        }
+
+        .sub-domain {
+            border: 1px solid grey;
+            border-radius: 6px;
+            padding: 5px;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .capability {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            height: 170px;
+            width: 122px;
+            margin: 16px;
+            padding: 5px;
+            object-fit: cover;
+            border: 1px solid #c3c3c3;
+            vertical-align: middle;
+            background-color: white;
+            display: inline-block;
+            overflow: hidden;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .image {
+            height: 80px;
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+
+        .image-small {
+            height: 36px;
+            padding: 2px;
+            margin: 6px;
+            padding: 3px;
+            vertical-align: top;
+            font-size: 11px;
+            width: 100px;
+            max-width: 100px;
+            display: inline-block;
+            overflow: hidden;
+            background-color: lightgray;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        }
+
+        .image-small-inactive {
+            height: 40px;
+            margin: 3px;
+            border: 1px solid lightgrey;
+            padding: 3px;
+            opacity: 0.33;
+            font-size: 60%;
+            max-width: 100px;
+        }
+
+        .status {
+            height: 20px;
+            width: 20px;
+            object-fit: contain;
+            vertical-align: top;
+            margin-right: 4px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            height: 36px;
+        }
+
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 8px 10px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tab button:hover {
+            background-color: #ddd;
+        }
+
+        .tab button.active {
+            background-color: #ccc;
+        }
+
+        .tabcontent {
+            display: none;
+            padding: 0;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function openTab(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+<div style="margin-left: 23px" class="hidden">
+    <h1 style="font-size: 50px; margin-bottom: 20px; margin-left: 6px">
+        <img src="assets/logo.png" style="vertical-align: middle; height: 80px">
+        <b style="padding-top: 20px; padding-left: 12px">Product Capabilities</b>
+    </h1>
+    <br>
+</div>
+
+<div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'Overview')">Overview</button>
+    <button class="tablinks" onclick="openTab(event, 'Details')">Details</button>
+</div>
+<div id="Overview" class="tabcontent" style="display: block">
+    <div id="OverviewContent"></div>
+</div>
+<div id="Details" class="tabcontent">
+    <div id="DetailsContent">
+
+    </div>
+</div>
+
+<script>
+    const getRatingByLetter = function (letter) {
+        if (!letter) return 0;
+        if (letter.toUpperCase() === 'S') return 1;
+        if (letter.toUpperCase() === 'M') return 2;
+        if (letter.toUpperCase() === 'L') return 3;
+        if (letter.toUpperCase() === 'L') return 4;
+
+        return 0;
+    }
+
+    const colorOf = function (type) {
+        if (type) {
+            if (type.includes('full-stack')) return '#b6d7a8ff'
+            if (type.includes('service')) return '#fff2ccff'
+            if (type.includes('integration')) return '#ead1dcff'
+            if (type.includes('development')) return '#c9daf8ff'
+            if (type.includes('other')) return '#f3f3f3ff'
+        }
+        return '#f3f3f3ff';
+    }
+
+    const array = ${data};
+
+    let html = '';
+    html += '<div style="padding: 8px">';
+    capabilities.filter(source => !(source.domain.includes('Data') || source.domain.includes('Platform'))).forEach(function (source) {
+        html += '<div style="border-left: 1px solid grey; height: 100%; padding: 6px; margin: 5px; width: calc(33% - 60px); display: inline-block; vertical-align: top; text-align: center">';
+        html += '<div style="font-size: 70%; color: black; text-align: left">' + source.domain.toLowerCase() + '</div>';
+        html += '<div style="background-color: #38761dff; width: 100%; color: white; font-size: 70%; height: 18px; padding-top: 4px; margin-top: 4px">unified white-label frontend/app channels</div>';
+        source.groups.forEach(function (group) {
+            html += '<div style="width: calc(100% - 10px); display: inline-block; vertical-align: top; margin: 0px; padding: 4px; text-align: center">';
+            html += '<div style="font-size: 60%; color: grey; text-align: center">' + group.group.toLowerCase() + '</div>';
+            group.items.forEach(function (item) {
+                if (item.id) {
+                    html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                }
+                html += '<div class="image-small" style="display: inline-block; vertical-align: top; '
+                    + 'background-color: ' + colorOf(item.type)
+                    + '">' + '<img style="width: 36px" src="assets/icons/' + item.id + '.png">'
+                    + '<div style="margin-left: 4px; overflow: hidden; vertical-align: top; display: inline-block; width: calc(100% - 40px)">'
+                    + item.capability
+                    + '</div>'
+                    + '</div>';
+                if (item.id) {
+                    html += '</a>';
+                }
+            });
+            html += '</div>';
+        });
+
+        html += '</div>';
+    });
+    html += '</div>';
+    html += '<div style="padding: 8px">';
+    array.filter(source => source.domain.includes('Data') || source.domain.includes('Platform')).forEach(function (source) {
+        html += '<div style="border-left: 1px solid grey; padding: 6px; margin: 5px; max-width: calc(50% - 60px); display: inline-block; vertical-align: top; text-align: center">';
+        html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + '</div>';
+        html += '<div style="background-color: #38761dff; width: 100%; color: white; font-size: 70%; height: 18px; padding-top: 4px; margin-top: 4px">APIs / integration interfaces</div>';
+        source.groups.forEach(function (group) {
+            html += '<div style="border: 1px solid lightgreen; display: inline-block; vertical-align: top; margin: 5px; padding: 3px; text-align: center">';
+            html += '<div style="font-size: 60%; color: grey; text-align: center">' + group.group.toLowerCase() + '</div>';
+            group.items.forEach(function (item) {
+                if (item.id) {
+                    html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                }
+                html += '<div class="image-small" style="display: inline-block; vertical-align: top; '
+                    + 'background-color: ' + colorOf(item.type)
+                    + '">' + '<img style="width: 36px" src="assets/icons/' + item.id + '.png">'
+                    + '<div style="margin-left: 4px; overflow: hidden; vertical-align: top; display: inline-block; width: calc(100% - 40px)">'
+                    + item.capability
+                    + '</div>'
+                    + '</div>';
+                if (item.id) {
+                    html += '</a>';
+                }
+            });
+            html += '</div>';
+        });
+        html += '</div>';
+    });
+    html += '</div>';
+    document.getElementById('OverviewContent').outerHTML = html;
+    html = '';
+    array.forEach(function (source) {
+            html += '<div style="padding: 8px">';
+            let count = 0;
+            source.groups.forEach(function (group) {
+                count += group.items.length;
+            });
+            html += '<div class="domain-title">' + source.domain + ' (' + count + ')</div>';
+            source.groups.forEach(function (group) {
+                html += '<div class="sub-domain">';
+                html += '<div style="font-size: 80%; color: grey; margin: 3px;">' + group.group.toLowerCase() + '</div>';
+                group.items.forEach(function (item) {
+                    let description = item.short_description + '\n\n';
+                    description += 'ID: ' + item.id + '\n';
+                    description += 'Effort: ' + item.effort + '\n';
+                    description += 'Status: ' + item.status + '\n';
+                    description += 'Progress: ' + (100 * item.white_label_progress) + '%\n';
+                    const bgColor = colorOf(item.type);
+                    if (item.inflight) {
+                        html += '<div class="capability" style="background-color: ' + bgColor + '; border: 2px solid green" title="' + description + '"';
+                    } else {
+                        html += '<div class="capability" title="' + description + '" style="background-color: ' + bgColor + '"';
+                    }
+                    html += '>';
+                    html += '<div style="width: 100%; text-align: left">';
+                    if (item.inflight) {
+                        html += '<img class="status" src="assets/icons/in-flight.png">';
+                    } else {
+                        html += '<img class="status" src="assets/icons/not-in-flight.png">';
+                    }
+                    let effort = item.effort ? item.effort.toUpperCase() : '';
+                    let extra = effort === 'L' ? 'font-size: 120%; font-weight: bold; color: crimson' : effort === 'S' ? 'font-size: 90%; font-weight: bold; color: grey' : '';
+                    html += '<div class="progress-container">';
+                    html += '<div class="progress" style="height: 10px; width: ' + (Math.round(60 * item.white_label_progress)) + 'px"></div>';
+                    html += '</div>';
+                    html += '<div style="margin-left: 4px; margin-right: 8px; display: inline-block;' + extra + '">' + effort + '</div>';
+                    html += '</div>';
+                    if (item.id) {
+                        html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                        html += '<div><img class="image" src="assets/icons/' + item.id + '.png"></div>';
+                        html += '<div style="font-size: 77%">' + (item.capability) + '</div>';
+                        html += '</a>';
+                    } else {
+                        html += '<div><img class="image" src="assets/icons/' + item.id + '.png"></div>';
+                        html += '<div style="font-size: 77%">' + (item.capability) + '</div>';
+                    }
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+            html += '</div>';
+        }
+    );
+    html += '</div>';
+
+    document.getElementById('DetailsContent').outerHTML = html;
+</script>
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

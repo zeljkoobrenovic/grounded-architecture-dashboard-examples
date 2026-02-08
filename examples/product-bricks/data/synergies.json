@@ -1,0 +1,1656 @@
+{
+  "metadata": {
+    "exportDate": "2024-11-23"
+  },
+  "data": [
+    {
+      "source": "Seeker",
+      "data": [
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes",
+          "note": "hosting CDNs and BFFs"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "use custom web shell, expected to migrate to WL shell at the end of Cycle 5"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "DevOps Toolings",
+          "note": "Canary Release System can be integrated into Unified Frontend"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "note": "hosting images shown on a home page"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "authentication of registered users"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Classifieds Recommendations",
+          "note": "highlighted or personalized classfieds"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Content Management",
+          "note": "content fragments"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Geographic Information System",
+          "note": "location display"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Intermediary",
+          "dependency": "Intermediary Profile",
+          "note": "MFE Agency Card (SpotLight)"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Seeker",
+          "dependency": "Search Engine Results Page (SERP)",
+          "note": "MFE Search Component"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "SEO box linking"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "Head-Info"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Seeker",
+          "dependency": "Consumer Advertising Management",
+          "note": "Advertising integration"
+        },
+        {
+          "capability": "Homepage",
+          "dependency_domain": "Seeker",
+          "dependency": "Saved Search / Alerts",
+          "note": "Display Saved Search"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes",
+          "note": "AWS Foundation"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes",
+          "note": "all Web components, Gemini"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Shell"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "DevOps Toolings",
+          "note": "Canary Release System can be integrated into Unified Frontend"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Historized Data Storage",
+          "note": "to be defined"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "note": "indirectly via classifieds management"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "User Authenticiation"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "ACP/classifieds data"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "ACP/new build data"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Mapping of commercial products / effects"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Geographic Information System"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Classifieds Sort Order",
+          "note": "Classified sort order"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Geographic Information System",
+          "note": "Geographic Isochrone"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "Classified Details Page (CDP)",
+          "note": "Classified Card"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Intermediary Profile",
+          "note": "Agency Data"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Agency Visibility Management",
+          "note": "Agency logo / url"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Visibility Management",
+          "note": "Classified Effect data "
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Performance Management",
+          "note": "Customer Statistics"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Classifieds Recommendations",
+          "note": "Similar Classifieds, Extended Classfieds"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "SEO Components Url Resolver"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "SEO Components HeadInfo"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "SEO Components BreadCrumb"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "SEO Management",
+          "note": "SEO Components Link boxes"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "dependency_domain": "Seeker",
+          "dependency": "Consumer Advertising Management",
+          "note": "Advertising integration"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "NewBuild ",
+          "note": "New build CDP"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "CDP",
+          "note": "Legacy - Classified Key - OnlineId"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "CDP",
+          "note": "Legacy - New Build - Project Url"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "CDP",
+          "note": "Legacy - Contact Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Consumer Portal",
+          "note": "Header & Footer"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Consumer Portal",
+          "note": "Heart Button"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Consumer Portal",
+          "note": "Already Contacted"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Consumer Portal",
+          "note": "Already Seen"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Seeker Profile",
+          "note": "Share Seeker Profile"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Home Purchase Financing",
+          "note": "Finance"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Home Purchase Financing",
+          "note": "Mortage Calculator"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Search Engine Results Page (SERP)",
+          "note": "Back to search "
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Saved Search / Alerts",
+          "note": "Anonymous Save Search"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Saved Search / Alerts",
+          "note": "Authenticated Save Search"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Saved Search / Alerts",
+          "note": "Back to search "
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "SEO Management",
+          "note": "Head-Info"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "SEO Management",
+          "note": "URL"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "SEO Management",
+          "note": "BreadCrumb"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "SEO Management",
+          "note": "Linkbox"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Seeker ",
+          "dependency": "Consumer Advertising Management",
+          "note": "Advertising integration"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Owner",
+          "dependency": "Unified Frontend",
+          "note": "Unified Shell"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Owner",
+          "dependency": "Owner Classifieds Management ",
+          "note": " FSBO Display lead with Seeker Profile"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Owner",
+          "dependency": "Owner Classifieds Management ",
+          "note": " FRBO Display lead with Seeker Profile"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Owner",
+          "dependency": "Price page",
+          "note": "Price map entry"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Intermediary Profile",
+          "note": "SSOT Intermediary Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Portfolio Management",
+          "note": "Display lead "
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Portfolio Management",
+          "note": "Display Lead with Seeker Profile"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Visit/Planning Manager",
+          "note": "Book a visit / Classified Configuration"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Visit/Planning Manager",
+          "note": "Book a visit / Display Lead"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Agency Visibility Management",
+          "note": "Farbwelt "
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Visibility Management",
+          "note": "Partner Badges?"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Performance Management",
+          "note": "Customer Statistics"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Intermediary",
+          "dependency": "Online Classifieds Acquisition",
+          "note": "CDP Preview"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Classifieds Management",
+          "note": "Classified Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Classifieds Management",
+          "note": "New Build Classified Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Classifieds Management",
+          "note": "Contact Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Classifieds Management",
+          "note": "Contact Setting \n( display tel, email, company name)"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Seeker Lead Management",
+          "note": "Seeker Lead"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Seeker Lead Management",
+          "note": "Lead with attach Seeker Profile"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Seeker Lead Management",
+          "note": "Lead with Book a visit"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Seeker Lead Management",
+          "note": "Cancellation Policy ?"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Notification Services",
+          "note": "Lead Confirmation Email ?"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Notification Services",
+          "note": "Optin"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Notification Services",
+          "note": "Plan Boost"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Media Management",
+          "note": "Image"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Media Management",
+          "note": "Images Detection : Floor Plan, Energy"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Media Management",
+          "note": "Documents "
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Media Management",
+          "note": "3D Tours"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Authentication Service",
+          "note": "Authentification"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Authentication Service",
+          "note": "Login / Logout"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Authentication Service",
+          "note": "Signin / Signout"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "User Management",
+          "note": "Get User Personal Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "AWS Foundation",
+          "note": "AWS Foundation"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "DevOps Tooling",
+          "note": "DevOps Tooling"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "QA Tooling",
+          "note": "QA Tooling"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Chat Messaging Services",
+          "note": "Chat"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Similar Listing"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Agency Logo"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Agency website link"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Farbwelt"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Owner Flag"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Plato"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Hide Rating"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Product Backoffice",
+          "note": "Link to CDP WL"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Platform Experience",
+          "dependency": "Design System",
+          "note": "all Web components, Gemini"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Classifieds Recommandation",
+          "note": "Similar Listing"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Agents Ratings & Reviews",
+          "note": "Agents Rating & Review"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Seeker Lead Scoring",
+          "note": "Seeker Lead Value"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Malicious Users Detection",
+          "note": "Fraud"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Geographic Information System",
+          "note": "Geo Data"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Geographic Information System",
+          "note": "POI"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Geographic Information System",
+          "note": "Travel TIme"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Property Knowledge",
+          "note": "Price per m2 comparison"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "Property Knowledge",
+          "note": "Price History/new price"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "MarketPlace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Historized Data Storage",
+          "note": "to be defined"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes",
+          "note": "all Web components, Gemini"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Shell"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "DevOps Toolings",
+          "note": "Canary Release System can be integrated into Unified Frontend"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Historized Data Storage",
+          "note": "to be defined"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "note": "Media data"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "Sign in"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "Sign up"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "ACP/classifieds data"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "New Build Data"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Classifieds Sort Order",
+          "note": "Classified sort order"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Product Backoffice",
+          "note": "Back office / Customer Care"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway",
+          "note": "Mapping of commercial products / effects"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service",
+          "note": "ACT"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "User Management",
+          "note": "User Personal Data (PII)"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Marketing Automation "
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Geographic Information System",
+          "note": "expect international search"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Property Estimation",
+          "note": "?"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Market Knowledge",
+          "note": "?"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "dependency_domain": "Intermediary",
+          "dependency": "Classifieds Visibility Management"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes",
+          "note": "all Web components, Gemini"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Shell"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "DevOps Toolings",
+          "note": "Canary Release System can be integrated into Unified Frontend"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "ACP/classifieds data"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "Sign in"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "Sign up "
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "User Management",
+          "note": "User Personal Data (PII)"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Privacy Services",
+          "note": "GDPR"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Product Backoffice",
+          "note": "Back office / Customer Care"
+        },
+        {
+          "capability": "Consumer Portal",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "note": "Media (favorite classified via CDP Classified Card)"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes",
+          "note": "all Web components, Gemini"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Shell"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "DevOps Toolings",
+          "note": "Canary Release System can be integrated into Unified Frontend"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "A/B Testing Management",
+          "note": "A/B Testing"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "User Tracking",
+          "note": "User Tracking / GA4"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Marketplace & Data",
+          "dependency": "Cookie Consent Management",
+          "note": "CMP"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "User Authentication"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "User Management",
+          "note": "User Personal Data (PII)"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Seeker Lead Management",
+          "note": "Seeker Lead with Profile"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Product Backoffice",
+          "note": "Backoffice / Customer Care"
+        },
+        {
+          "capability": "Seeker Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Document Management"
+        },
+        {
+          "capability": "Consumer Contacting Management"
+        }
+      ]
+    },
+    {
+      "source": "Owner",
+      "data": [
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Geographic Information System",
+          "confirmed_live": "yes",
+          "note": "geoapi v2"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Seeker Lead Scorings"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Market Knowledge",
+          "confirmed_live": "yes",
+          "note": "MarketAPI v2, CoreAPI planned by Youcef for Q2"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Estimation"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Knowledge",
+          "note": "Raw data about buildings?"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2B CRM"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2C CRM"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Import"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "note": "Parcels UI"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Marketing Automation "
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "QSL CRM"
+        },
+        {
+          "capability": "Price Page",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Unclear capability scope"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage",
+          "note": "Data published on SQS bus (cf Felix/Selma)"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Geographic Information System",
+          "confirmed_live": "yes",
+          "note": "geoapi v2"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Seeker Lead Scorings"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Market Knowledge",
+          "confirmed_live": "yes",
+          "note": "Market API v2 (tbc)"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Estimation",
+          "confirmed_live": "yes",
+          "note": "MarketAPI v2, CoreAPI planned by Youcef for Q2"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Knowledge"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "Contact information saved by the WLEF"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2B CRM"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2C CRM",
+          "note": "No feature, no debt"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Import"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Marketing Automation ",
+          "note": "Estimation email (tbc by Selma/Bernard)"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service"
+        },
+        {
+          "capability": "Estimation Funnel",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage",
+          "note": "Unclear capability scope"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Geographic Information System",
+          "note": "MA Geo API"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Seeker Lead Scorings"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Market Knowledge",
+          "note": "Unclear capability scope"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Estimation"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Knowledge",
+          "note": "Unclear capability scope"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service",
+          "note": "GSL auth"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Payment Platform"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2B CRM"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Import"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "note": "LibUI, switch to Gemini considered for cycle 5"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway",
+          "note": "May be used for paid features (cycle 5)"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Marketing Automation ",
+          "note": "GSL"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "note": "GSL media management"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service",
+          "note": "GSL"
+        },
+        {
+          "capability": "FSBO Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Unclear capability scope"
+        }
+      ]
+    },
+    {
+      "source": "Intermediary",
+      "data": [
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "It is not ready yet (for IWB)!"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management",
+          "note": "It is not ready yet (for IWB)!"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Data Catalog"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service"
+        },
+        {
+          "capability": "Intermediary Profile",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Privacy Services",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Geographic Information System"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Data Catalog"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Data Catalog"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Privacy Services"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Market Knowledge"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Estimation"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Knowledge"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Historized Data Storage",
+          "note": "No data pushed anywhere now, some data may be useful for analytics dashboards in the future?"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Geographic Information System",
+          "confirmed_live": "yes",
+          "note": "GeoAPI V2"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Seeker Lead Scorings"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Market Knowledge"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Estimation",
+          "note": "EstimaAPI will be used to retrieve the estimates in Country_2 (cycle 4), others brands use the results from Estima Funnel directly, not EstimaAPI"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Marketplace Design",
+          "dependency": "Property Knowledge"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Authentication Service"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "AWS Foundation",
+          "confirmed_live": "yes"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2B CRM",
+          "note": "Brand CRM used"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "B2C CRM"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Import"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Classifieds Management"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Design System",
+          "note": "Parcels UI"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Contracts Gateway"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Marketing Automation "
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Media Management"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Notification Service",
+          "note": "Maybe in the future, discovery planned for cycle 4"
+        },
+        {
+          "capability": "Prospection Map",
+          "dependency_domain": "Platform Experience ",
+          "dependency": "Unified Frontend",
+          "note": "Unclear capability scope"
+        }
+      ]
+    }
+  ]
+}

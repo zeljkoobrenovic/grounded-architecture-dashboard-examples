@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image-small {
+            height: 40px;
+            padding: 2px;
+            margin: 6px;
+            padding: 3px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 130px;
+            max-width: 130px;
+            overflow: hidden;
+            background-color: lightgray;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+        }
+
+        .container {
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+
+        function platformDependencies(capabilities) {
+            const dependencies = [];
+            capabilities.filter(source => source.domain && (source.domain.includes('Data') || source.domain.includes('Platform'))).forEach(function (source) {
+                source.groups.forEach(function (group) {
+                    group.items.forEach(function (item) {
+                        dependencies.push(item)
+                    });
+                });
+            });
+
+            return dependencies;
+        }
+    </script>
+</head>
+<body>
+
+<div id="Current"></div>
+
+<script>
+    const array = ${data};
+</script>
+
+<script>
+    function count(capabilities) {
+        let n = 0;
+
+        capabilities.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                n += group.items.length;
+            });
+        });
+
+        return n;
+    }
+
+    function countGroupItem(groups) {
+        let n = 0;
+
+        groups.forEach(function (group) {
+            n += group.items.length;
+        });
+
+        return n;
+    }
+
+    function processCapabilities(capabilities) {
+        let html = '';
+        html += '<div style="padding: 8px">';
+        capabilities.forEach(function (source) {
+            html += '<div style="border-left: 1px solid grey; height: 100%; padding: 6px; margin: 5px; vertical-align: top; text-align: center">';
+            html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + ' (' + countGroupItem(source.groups) + ')</div>';
+            source.groups.forEach(function (group) {
+                html += '<div style="vertical-align: top; margin: 0px; padding: 4px; text-align: center">';
+                group.items.forEach(function (item) {
+                    html += '<div style="text-align: left">';
+                    if (item.id) {
+                        html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                    }
+                    html += '<div class="image-small" style="display: inline-block; vertical-align: middle; '
+                        + 'background-color: ' + colorOf(item.type)
+                        + '">' + '<img style="width: 36px" src="assets/icons/' + item.id + '.png">'
+                        + '<div style="display: inline-block; margin-left: 4px; overflow: hidden; vertical-align: top; width: calc(100% - 40px)">'
+                        + item.capability
+                        + '</div>'
+                        + '</div>';
+
+                    platformDependencies(capabilities).forEach(platformDependency => {
+                        let op = '0.1';
+                        if (platformDependency.capability.includes('development')) {
+                            op = 1.0;
+                        }
+                        html += '<div style="vertical-align: top; display: inline-block; max-width: 32px; opacity: ' + op + '">' +
+                            '<img style="width: 30px" src="assets/icons/' + platformDependency.id + '.png">' +
+                            '<div style="font-size: 9px; overflow: hidden; white-space: nowrap">' + platformDependency.capability + '</div>' +
+                            '</div>';
+                    })
+
+                    if (item.id) {
+                        html += '</a>';
+                    }
+                    html += '</div>';
+                });
+                html += '</div>';
+            });
+
+            html += '</div>';
+        });
+        html += '</div>';
+
+        return html;
+    }
+
+    document.getElementById('CurrentCount').outerHTML = count(array);
+
+    document.getElementById('Current').outerHTML = processCapabilities(array, true);
+
+</script>
+<div style="width: 160px; padding: 15px; margin-top: 20px; margin-bottom: 20px; font-size: 80%; transform: scale(0.9)">
+    <div style="margin-bottom: 3px">Legend:</div>
+    <div style="background-color: #b6d7a8ff; padding: 8px">full-stack capability</div>
+    <div style="background-color: #fff2ccff; padding: 8px">service</div>
+    <div style="background-color: #ead1dcff; padding: 8px">complex integration</div>
+    <div style="background-color: #c9daf8ff; padding: 8px">development/design</div>
+    <div style="background-color: #f3f3f3ff; padding: 8px">other</div>
+</div>
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

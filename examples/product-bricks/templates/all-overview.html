@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capabilities</title>
+    <style type="text/css" media="all">
+        body {
+            font-family: Vollkorn, Ubuntu, Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .image-small {
+            margin: 4px;
+            padding: 3px;
+            vertical-align: top;
+            font-size: 12px;
+            width: 140px;
+            max-width: 144px;
+            display: inline-block;
+            overflow: hidden;
+            background-color: lightgray;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            text-align: left;
+            min-height: 50px;
+        }
+
+        .container {
+            display: inline-block;
+            vertical-align: top;
+            margin: 5px;
+            padding: 3px;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .channel {
+            background-color: #38761dff;
+            width: 100%;
+            color: white;
+            font-size: 70%;
+            height: 18px;
+            padding-top: 4px;
+            margin-top: 4px;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        th {
+            horiz-align: center;
+            background-color: #f0f0f0;
+        }
+
+        td {
+            vertical-align: top;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" target="_blank" href="https://fonts.googleapis.com/css?family=Lato">
+    <script>
+        function colorOf(type) {
+            if (type) {
+                if (type.includes('full-stack')) return '#b6d7a8ff'
+                if (type.includes('service')) return '#fff2ccff'
+                if (type.includes('integration')) return '#ead1dcff'
+                if (type.includes('development')) return '#c9daf8ff'
+                if (type.includes('other')) return '#f3f3f3ff'
+            }
+            return '#f3f3f3ff';
+        }
+
+        function isFalse(value) {
+            return !value || (value + '').toLowerCase().trim() === 'false' || (value + '').toLowerCase().trim() === 'no';
+        }
+
+        function isTrue(value) {
+            return !isFalse(value);
+        }
+    </script>
+</head>
+<body>
+
+<div style="text-align: center; margin-bottom: 22px">
+    <h1>All Capabilities (<span id="CurrentCount"></span>)</h1>
+</div>
+<div style="padding: 5px; font-size: 80%; text-align: center">
+    <div style="text-align: left; margin: 5px; border: 3px solid black; padding: 3px; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked id="LiveChecked"
+                                                                               onchange="update()"></div>
+            <div id="LiveBlock" style="display: inline-block; vertical-align: middle;">LIVE</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; border: 3px dashed darkgrey; padding: 3px; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked
+                                                                               id="InFlightChecked" onchange="update()">
+            </div>
+            <div id="InFlightBlock" style="display: inline-block; vertical-align: middle;">In-Flight</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; border: 1px solid lightgrey; padding: 8px; opacity: 0.9; display: inline-block">
+        <label style="vertical-align: middle">
+            <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" checked
+                                                                               id="NotInFlightChecked"
+                                                                               onchange="update()"></div>
+            <div id="NotInFlightBlock" style="display: inline-block; vertical-align: middle;">Not In-Flight</div>
+        </label>
+    </div>
+    <div style="text-align: left; margin: 5px; padding: 6px; display: inline-block; vertical-align: middle">
+        <div style="display: inline-block; margin-left: 12px; padding-top: 0px;">
+            <label style="vertical-align: middle">
+                <div style="display: inline-block; vertical-align: middle;"><input type="checkbox" id="TargetChecked"
+                                                                                   onchange="update()"></div>
+                <div style="display: inline-block; vertical-align: middle; padding: 5px;">Show Targets
+                </div>
+            </label>
+        </div>
+        <div style="display: inline-block; margin-left: 20px; padding-top: 6px; background-color: yellow; padding: 8px">
+            <a href="okr-report.html" target="_blank">OKR report...</a>
+        </div>
+    </div>
+    <!--div style="text-align: left; margin: 5px 5px 5px 15px; padding: 6px; display: inline-block; vertical-align: middle">
+        <a target="_blank" href="all-overview-programs.html">Show per program...</a>
+    </div-->
+</div>
+<div id="Current"></div>
+
+<script>
+    const array = ${data};
+    const targets = ${targets};
+
+    function targetByCapability(name) {
+        let result = targets.data.filter(c => c.source.toLowerCase() === name.toLowerCase())[0];
+        return result ? result.data : [];
+    }
+
+    array.forEach(domain => {
+        domain.groups.forEach(group => {
+            group.items.forEach(capability => {
+                capability.targets = targetByCapability(capability.capability);
+                console.log(capability.targets);
+                // capability.targets = capability.targets.filter(t => t.okr_3_1_target + '' === 'true');
+                console.log(capability.targets);
+                capability.targets_done = capability.targets.filter(t => t.status && t.status.toLowerCase().startsWith("live"));
+                capability.targets_partially = capability.targets.filter(t => t.status && t.status.toLowerCase().startsWith("part"));
+                capability.targets_not_done = capability.targets.filter(t => !t.status || t.status === '' || t.status.toLowerCase().startsWith("not"));
+            });
+        });
+    });
+
+</script>
+
+<script>
+    function count(capabilities) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        capabilities.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || c.targets.length > 0);
+                items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+                items = items.filter(c => (c.domain_ea + '').toLowerCase() !== 'on ice');
+                items = items.filter(c => !(c.domain_ea + '').toLowerCase().startsWith('internal'));
+                n += items.length;
+            });
+        });
+
+        return n;
+    }
+
+    function countGroupItem(groups) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+        const targetChecked = document.getElementById('TargetChecked').checked;
+        let n = 0;
+
+        groups.forEach(function (group) {
+            let items = group.items;
+            items = items.filter(c => !targetChecked || (c.targets.length > 0));
+            items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+            n += items.length;
+        });
+
+        return n;
+    }
+
+    function processCapabilities(capabilities, showChannels) {
+        const showLive = document.getElementById('LiveChecked').checked;
+        const showInFlight = document.getElementById('InFlightChecked').checked;
+        const showNotInFlight = document.getElementById('NotInFlightChecked').checked;
+
+        let html = '';
+        html += '<div style="padding: 8px">';
+
+        let targetChecked = document.getElementById('TargetChecked').checked;
+
+        let totalTarget = 0;
+        let totalPartiallyReached = 0;
+        let totalReached = 0;
+        capabilities.filter(source => source.domain && !(source.domain.includes('On Ice') || source.domain.includes('Internal'))).forEach(function (source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || c.targets.length > 0);
+                items.forEach(function (item) {
+                    if (targetChecked) {
+                        totalTarget += item.targets.length;
+                        totalPartiallyReached += item.targets_partially.length;
+                        totalReached += item.targets_done.length;
+                    }
+                });
+            });
+        });
+
+        const goal = 312; // Math.floor(totalTarget * 0.8);
+
+        const reachedPerc = Math.round(100 * totalReached / goal);
+        const partiallyReachedPerc = Math.round(100 * totalPartiallyReached / goal);
+
+
+        function checkForGoal(index) {
+            if (index === goal) {
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: blue; font-size: 7px; padding-top: 5px; color: white">GOAL</div>';
+            }
+        }
+
+        if (totalTarget) {
+            html += '<div style="margin-left: 6px">';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: green; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + reachedPerc + '%</span> ';
+            html += ' REACHED (' + totalReached + ')</div>';
+            html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: orange; font-size: 12px; padding-top: 5px; color: black; vertical-align: top">';
+            html += '<span style="font-size: 140%">' + partiallyReachedPerc + '%</span> ';
+            html += ' PARTIALLY REACHED (' + totalPartiallyReached + ')</div>';
+            // html += '<div style="padding: 5px; border: 1px solid black; display:inline-block; border-radius: 5px; margin: 2px; background-color: blue; font-size: 12px; padding-top: 5px; color: white; vertical-align: top">';
+            // html += '<span style="font-size: 140%">80%</span> ';
+            // html += ' GOAL (' + goal + ')</div>';
+            html += '</div>';
+
+            let index = 0;
+            html += '<div style="text-align: center; margin-top: 8px;">';
+            const totalNotReached = totalTarget - totalReached - totalPartiallyReached;
+            for (let i = 0; i < totalReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px solid black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: green; font-size: 7px; padding-top: 5px; color: white">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalPartiallyReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px solid grey; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: orange; font-size: 7px; padding-top: 5px">' + index + '</div>';
+                checkForGoal(index);
+            }
+            for (let i = 0; i < totalNotReached; i++) {
+                index += 1;
+                html += '<div style="border: 1px dotted black; display:inline-block; height: 14px; width: 20px; border-radius: 5px; margin: 2px; background-color: lightgrey; font-size: 7px; padding-top: 5px; color: #323232">' + index + '</div>';
+                checkForGoal(index);
+            }
+            html += '</div>';
+        }
+
+        function addGroupedCapabilities(source) {
+            source.groups.forEach(function (group) {
+                let items = group.items;
+                items = items.filter(c => !targetChecked || (c.targets.length > 0));
+                items = items.filter(c => (showLive && isTrue(c.live)) || (showInFlight && isTrue(c.in_flight)) || (showNotInFlight && isFalse(c.in_flight)));
+                if (items.length === 0) return;
+                html += '<div class="container">';
+                if (group.group) {
+                    html += '<div style="font-size: 60%; color: grey; text-align: center">' + group.group.toLowerCase() + ' (' + items.length + ')</div>';
+                }
+
+                items.forEach(function (item) {
+                    if (item.id) {
+                        html += '<a target="_blank" href="landing_pages/docs/' + item.id + '.html">';
+                    }
+                    let style = 'border: 5px solid white; opacity: 0.6';
+                    if (isTrue(item.live)) {
+                        style = 'border: 3px solid black';
+                    } else if (isTrue(item.in_flight)) {
+                        style = 'border: 3px dashed darkgrey';
+                    }
+                    html += '<div class="image-small" style="' + style + '; display: inline-block; vertical-align: top; ';
+                    html += 'background-color: ' + colorOf(item.type);
+                    html += (item.capability.includes('*') ? '; border: 4px solid crimson' : '');
+                    html += '">' + '<img style="width: 36px" src="assets/icons/' + item.id + '.png">';
+                    html += '<div style="margin-left: 4px; overflow: hidden; vertical-align: top; display: inline-block; width: calc(100% - 40px)">';
+                    html += item.capability;
+                    html += '</div>';
+
+                    function titleOf(target) {
+                        let title = 'Target: Live ';
+                        title += target.brand_or_country ? ' on ' + target.brand_or_country : '';
+                        title += target.channel ? ' via ' + target.channel : '';
+                        title += target.capability ? ' on ' + target.capability : '';
+                        return title;
+                    }
+
+                    if (targetChecked) {
+                        html += '<div style="text-align: center; margin-top: 8px;">';
+                        item.targets_done.forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: green" title="' + titleOf(target) + '"></div>';
+                        });
+                        item.targets_partially.forEach(target => {
+                            html += '<div style="border: 1px solid black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: orange" title="' + titleOf(target) + '"></div>';
+                        });
+                        item.targets_not_done.forEach(target => {
+                            const movedTo2025 = target.live_date_yyyy_mm.startsWith('2025');
+                            html += '<div style="border: 1px dotted black; display:inline-block; height: 20px; width: 20px; border-radius: 5px; margin: 2px; background-color: ' + ( 'lightgrey') + '" title="' + titleOf(target) + '"></div>';
+                        });
+                        html += '</div>';
+                    }
+                    html += '</div>';
+
+                    if (item.id) {
+                        html += '</a>';
+                    }
+                });
+                html += '</div>';
+            });
+        }
+
+        capabilities.filter(source => source.domain && !(source.domain.includes('Data') || source.domain.includes('Platform') || source.domain.includes('On Ice') || source.domain.includes('Internal'))).forEach(function (source) {
+            html += '<div style="border-left: 1px solid grey; height: 100%; padding: 6px; margin: 5px; width: calc(33% - 30px); display: inline-block; vertical-align: top; text-align: center" class="container">';
+            html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + ' (' + countGroupItem(source.groups) + ')</div>';
+            if (showChannels) {
+                html += '<div class="channel">unified white-label frontend/app channels</div>';
+            }
+            addGroupedCapabilities(source);
+
+            html += '</div>';
+        });
+        html += '</div>';
+        html += '<div style="padding: 8px">';
+        capabilities.filter(source => source.domain && (source.domain.includes('Data') || source.domain.includes('Platform') || source.domain.includes('On Ice') || source.domain.includes('Internal'))).forEach(function (source) {
+            html += '<div style="border-left: 1px solid grey; padding: 6px; margin: 5px; width: calc(100% - 60px); display: inline-block; vertical-align: top; text-align: center">';
+            html += '<div style="font-size: 70%; color: black; text-align: left; width">' + source.domain.toLowerCase() + ' (' + countGroupItem(source.groups) + ')</div>';
+            if (showChannels && !source.domain.includes('Internal')) {
+                html += '<div class="channel">APIs / integration interfaces</div>';
+            } else {
+                html += '<div class="channel">- - -</div>';
+            }
+            addGroupedCapabilities(source);
+            html += '</div>';
+        });
+        html += '</div>';
+
+        return html;
+    }
+
+    function update() {
+        document.getElementById('CurrentCount').innerHTML = count(array);
+        document.getElementById('Current').innerHTML = processCapabilities(array, true);
+
+        let liveCount = 0;
+        let inFlightCount = 0;
+        let notInFlight = 0;
+
+        array.forEach(function (source) {
+            source.groups.forEach(function (group) {
+                group.items.forEach(function (item) {
+                    if (isTrue(item.in_flight)) inFlightCount += 1;
+                    else notInFlight += 1;
+
+                    if (isTrue(item.live)) liveCount += 1;
+                });
+            });
+        });
+
+        document.getElementById('LiveBlock').innerHTML = 'LIVE (' + liveCount + ')';
+        document.getElementById('InFlightBlock').innerHTML = 'In-flight including LIVE (' + inFlightCount + ')';
+        document.getElementById('NotInFlightBlock').innerHTML = 'Not In-flight (' + notInFlight + ')';
+    }
+
+</script>
+<div style="width: 160px; padding: 15px; margin-top: 20px; margin-bottom: 20px; font-size: 80%; display: inline-block">
+    <div style="margin-bottom: 3px">Legend:</div>
+    <div style="background-color: #b6d7a8ff; padding: 8px">full-stack capability</div>
+    <div style="background-color: #fff2ccff; padding: 8px">service</div>
+    <div style="background-color: #ead1dcff; padding: 8px">complex integration</div>
+    <div style="background-color: #c9daf8ff; padding: 8px">development/design</div>
+    <div style="background-color: #f3f3f3ff; padding: 8px">other</div>
+</div>
+
+<script>
+
+    update();
+
+</script>
+
+
+<div style="margin: 27px; color: #a0a0a0; font-size: 80%" class="hidden">
+    generated on ${date} based on this source
+    <a style="text-decoration: underline; color: #a0a0a0;"
+       href="">data
+        sheet</a>
+</div>
+</body>
+</html>

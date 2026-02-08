@@ -1,0 +1,694 @@
+{
+  "metadata": {
+    "exportDate": "2025-04-17"
+  },
+  "data": [
+    {
+      "source": "Transformation Tech Debt",
+      "data": [
+        {
+          "capability": "Homepage",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "brand": "Brand_B",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Search Engine Results Page (SERP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Saved Search / Alerts",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Messaging",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Messaging",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Package",
+          "comment": ""
+        },
+        {
+          "capability": "Classified Details Page (CDP)",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Home Purchase Financing",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Package"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Consumer Portal",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Seeker Profile",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Seeker Profile",
+          "brand": "Brand_B",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "SEO Management",
+          "brand": "Brand_B",
+          "legacy_system": "Legacy System",
+          "type": "Static content"
+        },
+        {
+          "capability": "SEO Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Static content"
+        },
+        {
+          "capability": "SEO Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Static content"
+        },
+        {
+          "capability": "SEO Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Static content"
+        },
+        {
+          "capability": "Owner Classifieds Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Unified Frontend",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "Static content"
+        },
+        {
+          "capability": "Agency Visibility Management",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Agency Visibility Management",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Agency Visibility Management",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Agency Visibility Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Property Valuation Tool",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Online Classifieds Acquisition",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Classifieds Portfolio Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Database"
+        },
+        {
+          "capability": "Seller Lead Management",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Seller Lead Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Seller Lead Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Seller Lead Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Call Tracking",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Database"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Prospection Map",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Data Catalog",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Core Analytics",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "type": "bucket",
+          "comment": ""
+        },
+        {
+          "capability": "Core Analytics",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "bucket",
+          "comment": ""
+        },
+        {
+          "capability": "Core Analytics",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "lambdaInvoke",
+          "comment": ""
+        },
+        {
+          "capability": "Core Analytics",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Database",
+          "comment": ""
+        },
+        {
+          "capability": "Core Analytics",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Database",
+          "comment": ""
+        },
+        {
+          "capability": "Classifieds Sort Order",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Messaging",
+          "comment": ""
+        },
+        {
+          "capability": "Classifieds Recommendations",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "Database"
+        },
+        {
+          "capability": "Classifieds Data Quality",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API",
+          "comment": ""
+        },
+        {
+          "capability": "Classifieds Data Quality",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Messaging",
+          "comment": ""
+        },
+        {
+          "capability": "Notification Service",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Notification Service",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Marketing Automation",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Marketing Automation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Marketing Automation",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Seeker Lead Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Seeker Lead Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "comment": ""
+        },
+        {
+          "capability": "Seeker Lead Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "comment": ""
+        },
+        {
+          "capability": "Seeker Lead Management",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "comment": ""
+        },
+        {
+          "capability": "B2B CRM",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "B2B CRM",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Contracts Gateway",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Authentication Service",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Authentication Service",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Authentication Service",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "User Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "User Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "User Management",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "User Management",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "User Management",
+          "brand": "Brand_C"
+        },
+        {
+          "capability": "Classifieds Export",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Sold Properties Management",
+          "brand": "Brand_C",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Sold Properties Management",
+          "brand": "Brand_F",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Sold Properties Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Media Management",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System",
+          "type": "API"
+        },
+        {
+          "capability": "Media Management",
+          "brand": "Country_1",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Media Management",
+          "brand": "Country_2",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Classifieds Management",
+          "brand": "Country_1",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Classifieds Management",
+          "brand": "Country_2",
+          "legacy_system": "Legacy System",
+          "type": "Messaging"
+        },
+        {
+          "capability": "Software Vendors Integration Hub",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "AWS Foundation",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "AWS Foundation",
+          "brand": "Brand_D"
+        },
+        {
+          "capability": "DevOps Tooling",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Tooling"
+        },
+        {
+          "capability": "DevOps Tooling",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Tooling"
+        },
+        {
+          "capability": "QA Tooling",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System",
+          "type": "Tooling"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_B",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_D",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        },
+        {
+          "capability": "Unified Mobile Apps Foundation",
+          "brand": "Brand_A",
+          "legacy_system": "Legacy System"
+        }
+      ]
+    }
+  ]
+}
